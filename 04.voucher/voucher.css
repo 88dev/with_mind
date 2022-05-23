@@ -1,0 +1,344 @@
+* {
+    box-sizing: border-box;
+}
+html, body, p {
+    margin: 0;
+    padding: 0;
+}
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.vocher {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1000px;
+}
+.vocher .wrap_btn {
+    padding: 60px 0;
+}
+.vocher .wrap_btn .wrap_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vocher .wrap_btn .wrap_link a {
+    display: inline-block;
+    width: 520px;
+    height: 100px;
+    border: 1px solid #E6E6E6;
+    padding: 25px 30px;
+    vertical-align: top;
+}
+.vocher .wrap_btn .wrap_link a.individual {
+    border-top: 2px solid #3B61D5;
+}
+.vocher .wrap_btn .wrap_link a.corporate {
+    border-top: 2px solid #5F4EEE;
+}
+.vocher .wrap_btn .wrap_link a > * {
+    display: inline-block;
+}
+.vocher .wrap_btn .wrap_link a p {
+    margin-left: 10px;
+    vertical-align: top;
+}
+.vocher .wrap_btn .wrap_link a p > span {
+    display: block;
+}
+.vocher .wrap_btn .wrap_link a p > span:first-of-type {
+    font-size: 20px;
+    font-weight: 400;
+}
+.vocher .wrap_btn .wrap_link a.individual p > span:first-of-type {
+    color: #3B61D5;
+}
+.vocher .wrap_btn .wrap_link a.individual p > span:first-of-type {
+    color: #5F4EEE;
+}
+.vocher .wrap_btn .wrap_link a > span {
+    float: right;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: top;
+}
+.vocher .wrap_btn .wrap_link a.individual > span {
+    background: #3B61D5;
+}
+.vocher .wrap_btn .wrap_link a.corporate > span {
+    background: #5F4EEE;
+}
+
+
+input[id="btn_nav"] {
+    display: none;
+}
+input[id="btn_nav"] + label {
+    position: absolute;
+    background: url(images/img_nav.png);
+    width: 42px;
+    height: 217px;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+input[id="btn_nav"] + label span {
+    position: absolute;
+    width: 100%;
+    height: 217px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    background-image: url(images/img_nav_arrow_left.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+input[id="btn_nav"]:checked + label {
+    z-index: 2;
+    right: 74px;
+    /* transition: all .2s; */
+}
+input[id="btn_nav"]:checked + label span {
+    background-image: url(images/img_nav_arrow_right.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div[class="nav_bar"] {
+    position: relative;
+    width: 74px;
+    height: 100%;
+    background: #3B61D5;
+    position: fixed;
+    top: 0;
+    right: -116px;
+    border-radius: 10px 0px 0px 10px;
+    z-index: 1;
+    /* transition: all .2s; */
+}
+input[id="btn_nav"]:checked + label + div{
+    right: 0;
+}
+.wrap_nav .nav_bar .top {
+    position: absolute;
+    top: 0;
+}
+.wrap_nav .nav_bar .top button {
+    margin: 30px 25px;
+}
+.wrap_nav .nav_bar .bottom {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    border-top: 1px solid #FFF;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.wrap_nav .nav_bar .bottom button {
+    margin: 30px auto;
+}
+.wrap_nav .nav_bar button {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.wrap_nav .nav_bar button.home {
+    background: url(images/icon_home.png);
+}
+.wrap_nav .nav_bar button.user {
+    background: url(images/icon_user.png);
+}
+.wrap_nav .nav_bar button.logout {
+    background: url(images/icon_logout.png);
+}
+.wrap_nav .nav_bar span {
+    right: 55px;
+    width: 74px;
+    height: 28px;
+    line-height: 28px;
+    padding-right: 4px;
+    text-align: center;
+    font-size: 12px;
+    color: #3B61D5;
+}
+.wrap_nav .nav_bar span.tooltip_main {
+    display: none;
+    background: url(images/icon_tooltip.png);
+    position: absolute;
+    top: 30px;
+}
+.wrap_nav .nav_bar span.tooltip_user {
+    display: none;
+    background: url(images/icon_tooltip.png);
+    position: absolute;
+    top: 83px;
+}
+.vocher .wrap_contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: url(images/img_bg_voucher_01.png), url(images/img_bg_voucher_02.png) no-repeat;
+    background-position: center, bottom;
+    background-size: 100% 100%, 100% 70% !important;
+}
+.vocher .wrap_contents .inner_header {
+    position: relative;
+}
+.vocher .wrap_contents h1 {
+    border: 1px solid blue;
+    width: 450px;
+    max-height: 148px;
+    text-align: center;
+    margin: 0 auto;
+}
+.vocher .wrap_contents h1 img {
+    display: inline-block;
+    margin: 0 auto;
+}
+.vocher .wrap_contents .inner_header .name {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    font-size: 16px;
+    color: #333;
+}
+.vocher .wrap_contents .inner_body {
+    width: 100%;
+    /* background: url(images/img_bg_voucher_02.png) no-repeat; */
+}
+.vocher .wrap_contents .inner_body .greeting {
+    margin: 50px 0;
+    line-height: 50px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 300;
+}
+.vocher .wrap_contents .inner_body .greeting span {
+    display: inline-block;
+    background: linear-gradient(90.94deg, #3B61D5 -3.39%, #2EEEE3 102.67%);
+    padding: 1px 10px 2px 5px;
+    color: #FFF;
+    font-weight: 700;
+}
+
+.vocher .wrap_contents .inner_body .card_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.card_container > section {
+    display: flex;
+    gap: 20px;
+}
+.card {
+    position: relative;
+    width: 245px;
+    height: 245px;
+}
+.card a {
+    display: block;
+    background: #FFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.04);
+    transition: 0.25s ease;
+}
+.card a:hover {
+    transform: translate(-30px, -30px);
+    border-color: #5bc0eb;
+}
+.card_display {
+    display: block;
+    height: 100%;
+    text-align: center;
+    padding: 65px 0;
+}
+.card_hover {
+    display: block;
+    border: 1px solid #3B61D5;
+    border-radius: 10px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    padding: 30px 0 50px;
+}
+.card_hover hr {
+    width: 48px;
+    height: 2px;
+    border-color: #3B61D5;
+}
+.card_hover span {
+    display: block;
+}
+.card_pri .card_hover p {
+    margin: 20px 0 40px;
+}
+.card_biz .card_hover p,
+.card_uni .card_hover p {
+    margin: 30px 0 50px;
+}
+.card_hover span b {
+    font-size: 22px;
+    color: #3B61D5;
+}
+.card_display i {
+    font-size: 60px;
+    margin-top: 200px;
+}	
+.card_display h2 {
+    margin: 20px 0 0;
+}		
+.card_hover {
+    display: none;
+}
+.card_hover h2 {
+    margin: 20px 0;
+}
+.card_hover h2 p {
+    font-weight: normal;
+    line-height: 22px;
+}
+.card_border {
+    position: absolute;
+    background: #FFF;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: 2px dashed rgba(59, 97, 213, 0.5);
+    border-radius: 12px;
+    z-index: -1;
+}
+
+.card_pri a:hover .card_display {
+    display: none;
+}
+.card_pri a:hover .card_hover {
+    display: block;
+}
+.card_biz a:hover .card_display {
+    display: none;
+}
+.card_biz a:hover .card_hover {
+    display: block;
+}
+.card_uni a:hover .card_display {
+    display: none;
+}
+.card_uni a:hover .card_hover {
+    display: block;
+}
