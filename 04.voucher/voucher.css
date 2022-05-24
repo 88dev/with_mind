@@ -1,30 +1,49 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
 }
 html, body, p {
     margin: 0;
     padding: 0;
+}
+body {
+    font-family: 'GmarketSansMedium';
 }
 button {
     outline: none;
     border: none;
     cursor: pointer;
 }
-.vocher {
+input[type="checkbox"] {
+    display: none;
+}
+input[type=checkbox] + label {
+    cursor: pointer;
+}
+.voucher {
     position: relative;
     width: 100vw;
     height: 100vh;
     min-width: 1000px;
 }
-.vocher .wrap_btn {
+.voucher .wrap_btn {
     padding: 60px 0;
 }
-.vocher .wrap_btn .wrap_link {
+.voucher .wrap_btn .wrap_link {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.vocher .wrap_btn .wrap_link a {
+.voucher .wrap_btn .wrap_link a {
     display: inline-block;
     width: 520px;
     height: 100px;
@@ -32,33 +51,33 @@ button {
     padding: 25px 30px;
     vertical-align: top;
 }
-.vocher .wrap_btn .wrap_link a.individual {
+.voucher .wrap_btn .wrap_link a.individual {
     border-top: 2px solid #3B61D5;
 }
-.vocher .wrap_btn .wrap_link a.corporate {
+.voucher .wrap_btn .wrap_link a.corporate {
     border-top: 2px solid #5F4EEE;
 }
-.vocher .wrap_btn .wrap_link a > * {
+.voucher .wrap_btn .wrap_link a > * {
     display: inline-block;
 }
-.vocher .wrap_btn .wrap_link a p {
+.voucher .wrap_btn .wrap_link a p {
     margin-left: 10px;
     vertical-align: top;
 }
-.vocher .wrap_btn .wrap_link a p > span {
+.voucher .wrap_btn .wrap_link a p > span {
     display: block;
 }
-.vocher .wrap_btn .wrap_link a p > span:first-of-type {
+.voucher .wrap_btn .wrap_link a p > span:first-of-type {
     font-size: 20px;
     font-weight: 400;
 }
-.vocher .wrap_btn .wrap_link a.individual p > span:first-of-type {
+.voucher .wrap_btn .wrap_link a.individual p > span:first-of-type {
     color: #3B61D5;
 }
-.vocher .wrap_btn .wrap_link a.individual p > span:first-of-type {
+.voucher .wrap_btn .wrap_link a.individual p > span:first-of-type {
     color: #5F4EEE;
 }
-.vocher .wrap_btn .wrap_link a > span {
+.voucher .wrap_btn .wrap_link a > span {
     float: right;
     width: 50px;
     height: 50px;
@@ -69,10 +88,10 @@ button {
     line-height: 50px;
     vertical-align: top;
 }
-.vocher .wrap_btn .wrap_link a.individual > span {
+.voucher .wrap_btn .wrap_link a.individual > span {
     background: #3B61D5;
 }
-.vocher .wrap_btn .wrap_link a.corporate > span {
+.voucher .wrap_btn .wrap_link a.corporate > span {
     background: #5F4EEE;
 }
 
@@ -180,7 +199,7 @@ input[id="btn_nav"]:checked + label + div{
     position: absolute;
     top: 83px;
 }
-.vocher .wrap_contents {
+.voucher .wrap_contents {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,39 +209,39 @@ input[id="btn_nav"]:checked + label + div{
     background-position: center, bottom;
     background-size: 100% 100%, 100% 70% !important;
 }
-.vocher .wrap_contents .inner_header {
+.voucher .wrap_contents .inner_header {
     position: relative;
 }
-.vocher .wrap_contents h1 {
+.voucher .wrap_contents h1 {
     border: 1px solid blue;
     width: 450px;
     max-height: 148px;
     text-align: center;
     margin: 0 auto;
 }
-.vocher .wrap_contents h1 img {
+.voucher .wrap_contents h1 img {
     display: inline-block;
     margin: 0 auto;
 }
-.vocher .wrap_contents .inner_header .name {
+.voucher .wrap_contents .inner_header .name {
     position: absolute;
     top: 10px;
     right: 0;
     font-size: 16px;
     color: #333;
 }
-.vocher .wrap_contents .inner_body {
+.voucher .wrap_contents .inner_body {
     width: 100%;
     /* background: url(images/img_bg_voucher_02.png) no-repeat; */
 }
-.vocher .wrap_contents .inner_body .greeting {
+.voucher .wrap_contents .inner_body .greeting {
     margin: 50px 0;
     line-height: 50px;
     text-align: center;
     font-size: 35px;
     font-weight: 300;
 }
-.vocher .wrap_contents .inner_body .greeting span {
+.voucher .wrap_contents .inner_body .greeting span {
     display: inline-block;
     background: linear-gradient(90.94deg, #3B61D5 -3.39%, #2EEEE3 102.67%);
     padding: 1px 10px 2px 5px;
@@ -230,7 +249,7 @@ input[id="btn_nav"]:checked + label + div{
     font-weight: 700;
 }
 
-.vocher .wrap_contents .inner_body .card_container {
+.voucher .wrap_contents .inner_body .card_container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,18 +275,26 @@ input[id="btn_nav"]:checked + label + div{
     box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.04);
     transition: 0.25s ease;
 }
-.card a:hover {
+.card a[class="card_ani"]:hover {
     transform: translate(-30px, -30px);
     border-color: #5bc0eb;
+}
+.card a[class="card_default"]:hover {
+    border: 1px solid #3B61D5;
+    transition: none;
 }
 .card_display {
     display: block;
     height: 100%;
     text-align: center;
-    padding: 65px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card_hover {
     display: block;
+    background: #FFF;
     border: 1px solid #3B61D5;
     border-radius: 10px;
     color: #333333;
@@ -295,13 +322,17 @@ input[id="btn_nav"]:checked + label + div{
     font-size: 22px;
     color: #3B61D5;
 }
-.card_display i {
-    font-size: 60px;
-    margin-top: 200px;
-}	
-.card_display h2 {
-    margin: 20px 0 0;
-}		
+.card_display img {
+    width: 70px;
+    height: 70px;
+}
+.card_display span {
+    display: block;
+    margin-top: 10px;
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+}
 .card_hover {
     display: none;
 }
@@ -324,21 +355,263 @@ input[id="btn_nav"]:checked + label + div{
     z-index: -1;
 }
 
-.card_pri a:hover .card_display {
+.card_pri a[class="card_ani"]:hover .card_display {
     display: none;
 }
-.card_pri a:hover .card_hover {
+.card_pri a[class="card_ani"]:hover .card_hover {
     display: block;
 }
-.card_biz a:hover .card_display {
+.card_biz a[class="card_ani"]:hover .card_display {
     display: none;
 }
-.card_biz a:hover .card_hover {
+.card_biz a[class="card_ani"]:hover .card_hover {
     display: block;
 }
-.card_uni a:hover .card_display {
+.card_uni a[class="card_ani"]:hover .card_display {
     display: none;
 }
-.card_uni a:hover .card_hover {
+.card_uni a[class="card_ani"]:hover .card_hover {
     display: block;
+}
+
+
+.voucher .voucher_modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.voucher .voucher_modal .voucher_modal_body .voucher_close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: url(images/btn_close.png) no-repeat;
+    background-size: contain;
+}
+.voucher .voucher_modal .voucher_modal_body {
+    position: relative;
+    background: #FFF;
+    padding: 30px 50px;
+    border-radius: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body h5.title {
+    font-size: 20px;
+    font-size: 400;
+    margin: 0;
+}
+.voucher .voucher_modal .voucher_modal_body h5.title span {
+    font-size: 14px;
+    color: #999999;
+    margin-left: 4px;
+}
+.voucher .voucher_modal .voucher_modal_body p.login_txt {
+    margin-top: 4px;
+    font-size: 14px;
+}
+.voucher .voucher_modal .voucher_modal_body .login {
+    margin-top: 30px;
+}
+.voucher .voucher_modal .voucher_modal_body label {
+    display: block;
+    font-size: 14px;
+}
+.voucher .voucher_modal .voucher_modal_body input[type="text"] {
+    width: 360px;
+    height: 42px;
+    border: 1px solid #E2E2E2;
+    border-radius: 4px;
+    margin-top: 4px;
+    padding: 13px 16px;
+}
+.voucher .voucher_modal .voucher_modal_body input:focus {
+    outline: 1px solid #3B61D5;
+}
+.voucher .voucher_modal .voucher_modal_body .login label:nth-of-type(2) {
+    margin-top: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .login .find_pw {
+    float: right;
+    margin-top: 4px;
+    text-decoration: underline;
+    color: #999999;
+    background: none;
+}
+.voucher .voucher_modal .voucher_modal_body .btn_blue {
+    width: 360px;
+    height: 48px;
+    background: #3B61D5;
+    border-radius: 4px;
+    color: #FFF;
+    font-size: 16px;
+    margin-top: 30px;
+}
+.voucher .voucher_modal .voucher_modal_body .login p {
+    color: #999999;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 30px;
+}
+.voucher .voucher_modal .voucher_modal_body .login p a {
+    color: #3B61D5;
+    text-decoration: underline;
+}
+.voucher .voucher_modal .voucher_modal_body .sns {
+    margin-top: 30px;
+}
+.voucher .voucher_modal .voucher_modal_body .sns label {
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+}
+.voucher .voucher_modal .voucher_modal_body .sns > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding-top: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .sns button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.voucher .voucher_modal .voucher_modal_body .sns button.naver {
+    background: url('images/btn_social_naver.svg') no-repeat;
+}
+.voucher .voucher_modal .voucher_modal_body .sns button.kakao {
+    background: url('images/btn_social_kakao.svg') no-repeat;
+}
+.voucher .voucher_modal .voucher_modal_body .sns button.facebook {
+    background: url('images/btn_social_facebook.svg') no-repeat;
+}
+.voucher .voucher_modal .voucher_modal_body .sns button.apple {
+    background: url('images/btn_social_apple.svg') no-repeat;
+}
+.voucher .voucher_modal .voucher_modal_body .process {
+    width: 100%;
+    height: 22px;
+    margin-top: 5px;
+}
+.voucher .voucher_modal .voucher_modal_body .process > div {
+    float: right;
+}
+.voucher .voucher_modal .voucher_modal_body .process span {
+    display: inline-block;
+    width: 5.99px;
+    height: 6px;
+    margin-left: 10px;
+    background: #DDDDDD;
+    border-radius: 50%;
+}
+.voucher .voucher_modal .voucher_modal_body .process .ongoing {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 24px;  
+    background: #3B61D5;
+    color: #FFF;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+}
+/* .voucher .voucher_modal .voucher_modal_body .agree {
+    margin-top: 30px;
+} */
+.voucher .voucher_modal .voucher_modal_body .agree p {
+    margin-top: 30px;
+    font-size: 16px;
+}
+.voucher .voucher_modal .voucher_modal_body .agree p span {
+    color: #999999;
+    font-size: 12px;
+}
+.voucher .voucher_modal .voucher_modal_body .agree .all input[type=checkbox] + label {
+    background: url('images/icon_checkbox_none.png') left/22px no-repeat;
+    background-size: contain;
+    padding-left: 40px;
+    font-size: 16px;
+    color: #3B61D5;;
+}
+.voucher .voucher_modal .voucher_modal_body .agree .all input[type=checkbox]:checked + label {
+    background: url('images/icon_checkbox_checked.png') left/22px no-repeat;
+    background-size: contain;
+}
+.voucher .voucher_modal .voucher_modal_body .agree .each input[type=checkbox] + label {
+    display: inline-block;
+    background: url('images/img_uncheck.png') left/22px no-repeat;
+    background-size: contain;
+    padding-left: 40px;
+}
+.voucher .voucher_modal .voucher_modal_body .agree .each input[type=checkbox]:checked + label {
+    background: url('images/img_check.png') left/22px no-repeat;
+    background-size: contain;
+}
+.voucher .voucher_modal .voucher_modal_body .agree .each a {
+    width: 22px;
+    height: 22px;
+    background: url('images/icon_next.png') no-repeat;
+    float: right;
+}
+.voucher .voucher_modal .voucher_modal_body .agree .each span {
+    display: block;
+    margin: 14px 0 0 40px;
+}
+.voucher .voucher_modal .voucher_modal_body .agree .each span label:first-of-type {
+    margin-right: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .error_txt {
+    width: 100%;
+    height: 18px;
+    margin-top: 30px;
+}
+.voucher .voucher_modal .voucher_modal_body .error_txt span {
+    display: block;
+    color: rgba(239, 52, 84, 1);
+    font-size: 14px;
+    text-align: center;
+}
+.voucher .voucher_modal .voucher_modal_body span.red {
+    display: inline-block;
+    color: #F34235;
+}
+.voucher .voucher_modal .voucher_modal_body .join .join_row > div {
+    position: relative;
+    width: 360px;
+}
+.voucher .voucher_modal .voucher_modal_body .join .join_row button {
+    position: absolute;
+    right: 17px;
+    bottom: 9px;
+    width: 60px;
+    height: 24px;
+    background: #3B61D5;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #FFF;
+}
+.voucher .voucher_modal .voucher_modal_body .join .join_row #wrap_email_check {
+    /* display: none; */
+    margin-top: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .join .join_row > a {
+    font-size: 11px;
+    color: #3B61D5;
+    text-decoration: underline;
+}
+.voucher .voucher_modal .voucher_modal_body .join .join_row:not(:last-child) {
+    margin-bottom: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .join .join_row > span.red {
+    display: block;
+    margin-top: 4px;
 }

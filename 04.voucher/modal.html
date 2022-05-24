@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바우처 모달 모음</title>
+    <link rel="styleSheet" href="voucher.css" type="text/css"></link>
+</head>
+<body>
+    <section class="voucher">
+        <section class="wrap_nav">
+            <input type="checkbox" id="btn_nav" />
+            <label for="btn_nav">
+                <span></span>
+            </label>
+            <div class="nav_bar">
+                <section class="top">
+                    <button class="home"></button>
+                    <span class="tooltip_main">메인화면</span>
+                    <button class="user"></button>
+                    <span class="tooltip_user">로그인</span>
+                </section>
+                <section class="bottom">
+                    <button class="logout"></button>
+                </section>
+            </div>
+        </section>
+        <section class="wrap_btn">
+            <div class="wrap_link">
+                <a class="individual" href="main.html">
+                    <img src="images/img_individual_member.png" alt="개인회원 이미지" />
+                    <p>
+                        <span>개인회원</span>
+                        <span>AI면접/AI화상면접 이용하기</span>
+                    </p>
+                    <span class="click">Click</span>
+                </a>
+                <a class="corporate" href="https://interviewmaster.kr/company/">
+                    <img src="images/img_corporate_member.png" alt="개인회원 이미지" />
+                    <p>
+                        <span>기업회원</span>
+                        <span>AI면접/AI화상면접 이용하기</span>
+                    </p>
+                    <span class="click">Click</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="voucher_modal" id="voucher_login" style="display: none;">
+            <section class="voucher_modal_body">
+                <button class="voucher_close" id="voucher_close"></button>
+                <h5 class="title">로그인</h5>
+                <p class="login_txt">로그인 시 이용 가능한 메뉴입니다. 로그인을 진행해주세요.</p>
+                <form>
+                    <div class="login">
+                        <label>아이디(이메일)</label>
+                        <input type="text" />
+                        <label>비밀번호</label>
+                        <input type="text" />
+                        <div class="wrap_find">
+                            <button class="find_pw">비밀번호 찾기</button>
+                        </div>
+                        <button class="btn_blue">로그인</button>
+                        <p>인터뷰마스터 처음이세요? <a>회원가입</a></p>
+                    </div>
+                    <div class="sns">
+                        <label>SNS 간편 로그인</label>
+                        <div>
+                            <button class="naver"></button>
+                            <button class="kakao"></button>
+                            <button class="facebook"></button>
+                            <button class="apple"></button>
+                        </div>
+                    </div>
+                </form>
+            </section> 
+        </section>
+
+        <section class="voucher_modal" id="voucher_join" style="display: none;">
+            <section class="voucher_modal_body">
+                <button class="voucher_close" id="voucher_close"></button>
+                <h5 class="title">회원가입<span>약관동의</span></h5>
+                <div class="process">
+                    <div>
+                        <span class="ongoing">1</span>
+                        <span class=""></span>
+                    </div>
+                </div>
+                <form>
+                    <div class="agree">
+                        <p class="all">
+                            <input type="checkbox" id="all" name="agree" value="all" onclick='selectAll(this)' /> 
+                            <label for="all">약관 전체동의 <span>(아래 내용에 모두 동의합니다)</span></label>
+                        </p>
+                        <p class="each">
+                            <input type="checkbox" id="select1" name="agree" value="select1" /> 
+                            <label for="select1">[필수] 만 14세 이상입니다</label>
+                        </p>
+                        <p class="each">
+                            <input type="checkbox" id="select2" name="agree" value="select2" /> 
+                            <label for="select2">[필수] 유료 서비스 이용약관</label>
+                            <a href="https://interviewmaster.kr/company/policy/useTerms?tabType=1" target="_blank"></a>
+                        </p>
+                        <p class="each">
+                            <input type="checkbox" id="select3" name="agree" value="select3" /> 
+                            <label for="select3">[필수] 이용약관 동의</label>
+                            <a href="https://interviewmaster.kr/company/policy/useTerms?tabType=0" target="_blank"></a>
+                        </p>
+                        <p class="each">
+                            <input type="checkbox" id="select4" name="agree" value="select4" /> 
+                            <label for="select4">[필수] 개인정보 수집 및 이용 동의</label>
+                            <a href="https://interviewmaster.kr/company/policy/useTerms?tabType=2" target="_blank"></a>
+                        </p>
+                        <p class="each">
+                            <input type="checkbox" id="select5" name="agree" value="select5" /> 
+                            <label for="select5">[선택] 이벤트 및 서비스 안내 수신 동의</label>
+                            <a href="https://interviewmaster.kr/company/policy/agreeTerms?tabType=1" target="_blank"></a>
+                            <span>
+                                <input type="checkbox" id="select6" name="agree" value="select6" /> 
+                                <label for="select6">이메일</label>
+                                <input type="checkbox" id="select7" name="agree" value="select7" /> 
+                                <label for="select7">APP 알림</label>
+                            </span>
+                        </p>
+                        <div class="error_txt"><span>이용약관(필수)에 모두 동의해주세요.</span></div>
+                        <button class="btn_blue">동의하기</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+        <section class="voucher_modal" id="voucher_form_default">
+            <section class="voucher_modal_body">
+                <button class="voucher_close" id="voucher_close"></button>
+                <h5 class="title">회원가입<span>회원정보</span></h5>
+                <div class="process">
+                    <div>
+                        <span class=""></span>
+                        <span class="ongoing">2</span>
+                    </div>
+                </div>
+                <form>
+                    <div class="join">
+                        <div class="join_row">
+                            <label>이메일<span class="red">*</span></label>
+                            <div>
+                                <input type="text" placeholder="이메일을 입력하세요." />
+                                <button id="email_confirm">인증하기</button>
+                            </div>
+                            <!-- <span class="red">이메일을 입력해주세요.</span> -->
+                            <!-- <span class="red">이미 가입된 이메일입니다. 해당 이메일로 로그인 해주세요.</span>
+                            <span class="red">...를(을) 통해 이미 가입된 이메일입니다. 해당 SNS로 로그인 해주세요.</span> -->
+                            <div id="wrap_email_check">
+                                <input type="text" />
+                                <button id="email_check">인증확인</button>
+                            </div>
+                            <a>인증메일을 받지 못하셨나요?</a>
+                            <!-- <span class="red">입력한 비밀번호를 확인해주세요.</span> -->
+                        </div>
+                        <div class="join_row">
+                            <label>비밀번호<span class="red">*</span></label>
+                            <input type="text" placeholder="영문, 숫자, 특수문자 모두 포함한 8-16자" />
+                            <!-- <span class="red">비밀번호를 입력해주세요.</span> -->
+                            <!-- <span class="red">특수문자는 '! @ # $ % ^ & *'만 사용 가능합니다.</span> -->
+                        </div>
+                        <div class="join_row">
+                            <label>비밀번호 재입력<span class="red">*</span></label>
+                            <input type="text" />
+                            <!-- <span class="red">입력한 비밀번호를 확인해주세요.</span> -->
+                        </div>
+                        <div class="join_row">
+                            <label>비밀번호 재입력<span class="red">*</span></label>
+                            <input type="text" />
+                        </div>
+                        <div class="join_row">
+                            <label>이름<span class="red">*</span></label>
+                            <input type="text" placeholder="한글 2~5자 이내 / 띄어쓰기 불가" />
+                        </div>
+                        <div class="join_row">
+                            <label>생년월일<span class="red">*</span></label>
+                            
+                        </div>
+                        <button class="btn_blue">동의하기</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $( document ).ready(function() {
+
+        $('.home').on('mouseover', function(){
+            $('.tooltip_main').css('display', 'block');
+        });
+        $('.home').on('mouseout', function(){
+            $('.tooltip_main').css('display', 'none');
+        });
+        $('.user').on('mouseover', function(){
+            $('.tooltip_user').css('display', 'block');
+        });
+        $('.user').on('mouseout', function(){
+            $('.tooltip_user').css('display', 'none');
+        });
+    });
+
+    // nav 이외 클릭시 닫힘
+    $(document).mouseup(function (e){
+        var LayerPopup = $(".wrap_nav");
+        if(LayerPopup.has(e.target).length === 0){
+            $("input:checkbox[id='btn_nav']").prop("checked", false);
+        }
+    });
+    $('.voucher_close').on('click', function (){
+        $('.voucher_modal').css('display', 'none');
+    });
+
+    function selectAll(selectAll)  {
+        const checkboxes = document.getElementsByName('agree');
+        
+        checkboxes.forEach((checkbox) => {
+            checkbox.checked = selectAll.checked;
+        })
+    }
+
+    $('#email_confirm').on('click', function (){
+        $('#wrap_email_check').css('display', 'block');
+    });
+
+
+</script>
+</html>
