@@ -1,0 +1,47 @@
+<div id="container">
+    <section class="interview_info">
+        <img class="img_info" src="${pageContext.request.contextPath}/resources/img/img_interviewInfo.svg" />   
+        <img class="img_pc" src="${pageContext.request.contextPath}/resources/img/img_info.png">
+        <a href="https://interviewmaster.kr/ai/interview">모의면접 보러가기</a> 
+    </section>
+</div>
+
+
+
+
+<style>
+    .interview_info {
+        position: relative;
+        max-width: 1080px;
+        margin: 50px auto 100px
+    }
+    .interview_info > img.img_info {
+        width: 100%;
+        box-shadow: 0px 16px 40px #0000001a;
+    }
+    .interview_info > img.img_pc {
+        position: absolute;
+        top: 400px;
+        right: 20px;
+        width: 800px;
+    }
+    .interview_info > a {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: 100px;
+        width: 154px;
+        height: 48px;
+        line-height: 48px
+        ;background:#1C9FFF;
+        color: #FFFFFF;
+        text-decoration: none;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 16px; 
+        font-weight: 400;
+    }
+    .interview_info > a:hover {
+        background: #3B61D5;
+    }
+</style>
