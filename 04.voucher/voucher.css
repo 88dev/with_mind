@@ -11,7 +11,7 @@
     font-weight: 400;
     font-size: 14px;
 }
-html, body, p {
+html, body, p, h5, h6 {
     margin: 0;
     padding: 0;
 }
@@ -23,12 +23,38 @@ button {
     border: none;
     cursor: pointer;
 }
-input[type="checkbox"] {
+input[type="checkbox"],input[type="radio"] {
     display: none;
 }
-input[type=checkbox] + label {
+input[type="checkbox"] + label {
     cursor: pointer;
 }
+.wrap_radio input[type="radio"] + label {
+    display: inline-block !important;
+    background: url('images/icon_radio_none.svg') left/22px no-repeat;
+    background-size: contain;
+    padding-left: 28px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.wrap_radio input[type="radio"]:checked + label {
+    display: inline-block !important;
+    background: url('images/icon_radio_selected.svg') left/22px no-repeat;
+    background-size: contain;
+}
+.checkbox_square input[type="checkbox"] + label {
+    background: url('images/icon_checkbox_square_none.png') left/18px no-repeat;
+    background-size: contain;
+    padding-left: 22px;
+
+}
+.checkbox_square input[type="checkbox"]:checked + label {
+    background: url('images/icon_checkbox_square_checked.png') left/18px no-repeat;
+    background-size: contain;
+    padding-left: 22px;
+}
+
+
 .voucher {
     position: relative;
     width: 100vw;
@@ -388,19 +414,25 @@ input[id="btn_nav"]:checked + label + div{
     justify-content: center;
     align-items: center;
 }
+.voucher .voucher_modal .voucher_modal_body > div {
+    position: relative;
+    width: 460px;
+    height: 30px;
+}
 .voucher .voucher_modal .voucher_modal_body .voucher_close {
     position: absolute;
     width: 25px;
     height: 25px;
-    top: -30px;
+    /* top: -30px; */
     left: 50%;
     transform: translate(-50%, 0);
     background: url(images/btn_close.png) no-repeat;
     background-size: contain;
 }
-.voucher .voucher_modal .voucher_modal_body {
+.voucher .voucher_modal .voucher_modal_body > section {
     position: relative;
     background: #FFF;
+    width: 460px;
     padding: 30px 50px;
     border-radius: 10px;
 }
@@ -414,15 +446,20 @@ input[id="btn_nav"]:checked + label + div{
     color: #999999;
     margin-left: 4px;
 }
-.voucher .voucher_modal .voucher_modal_body p.login_txt {
+.voucher .voucher_modal .voucher_modal_body p.sub_txt {
     margin-top: 4px;
     font-size: 14px;
 }
 .voucher .voucher_modal .voucher_modal_body .login {
     margin-top: 30px;
 }
-.voucher .voucher_modal .voucher_modal_body label {
+.voucher .voucher_modal .voucher_modal_body .form_row {
+    margin-bottom: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .join_row > label,
+.voucher .voucher_modal .voucher_modal_body .form_row > label {
     display: block;
+    margin-bottom: 4px;
     font-size: 14px;
 }
 .voucher .voucher_modal .voucher_modal_body input[type="text"] {
@@ -446,8 +483,9 @@ input[id="btn_nav"]:checked + label + div{
     color: #999999;
     background: none;
 }
-.voucher .voucher_modal .voucher_modal_body .btn_blue {
-    width: 360px;
+.voucher .voucher_modal .voucher_modal_body .btn_blue,
+.voucher .voucher_modal .no_email_popup .btn_blue {
+    width: 100%;
     height: 48px;
     background: #3B61D5;
     border-radius: 4px;
@@ -461,14 +499,16 @@ input[id="btn_nav"]:checked + label + div{
     text-align: center;
     margin-top: 30px;
 }
-.voucher .voucher_modal .voucher_modal_body .login p a {
+.voucher .voucher_modal .voucher_modal_body .login p button {
     color: #3B61D5;
     text-decoration: underline;
+    background: none;
 }
 .voucher .voucher_modal .voucher_modal_body .sns {
     margin-top: 30px;
 }
 .voucher .voucher_modal .voucher_modal_body .sns label {
+    display: block;
     font-size: 14px;
     color: #999999;
     text-align: center;
@@ -524,9 +564,6 @@ input[id="btn_nav"]:checked + label + div{
     font-size: 12px;
     border-radius: 50%;
 }
-/* .voucher .voucher_modal .voucher_modal_body .agree {
-    margin-top: 30px;
-} */
 .voucher .voucher_modal .voucher_modal_body .agree p {
     margin-top: 30px;
     font-size: 16px;
@@ -603,15 +640,126 @@ input[id="btn_nav"]:checked + label + div{
     /* display: none; */
     margin-top: 10px;
 }
-.voucher .voucher_modal .voucher_modal_body .join .join_row > a {
+.voucher .voucher_modal .voucher_modal_body .join .join_row > a#no_email {
     font-size: 11px;
     color: #3B61D5;
     text-decoration: underline;
+    cursor: pointer;
 }
+.voucher .voucher_modal .no_email_popup {
+    display: none;
+    position: absolute;
+    width: 320px;
+    top: 280px;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 30px 20px;
+    box-shadow: 0px 16px 40px #0000001a;
+}
+.voucher .voucher_modal .no_email_popup b {
+    font-size: 16px;
+    font-weight: 500;
+}
+.voucher .voucher_modal .no_email_popup ul {
+    margin: 0;
+    padding: 20px 20px 0 20px;
+    word-break: keep-all;
+}
+.voucher .voucher_modal .no_email_popup ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.voucher .voucher_modal .no_email_popup .email_other {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: #999999;
+    text-decoration: underline;
+}
+
 .voucher .voucher_modal .voucher_modal_body .join .join_row:not(:last-child) {
     margin-bottom: 10px;
 }
 .voucher .voucher_modal .voucher_modal_body .join .join_row > span.red {
     display: block;
     margin-top: 4px;
+}
+.voucher .voucher_modal .voucher_modal_body .join .join_row .wrap_select {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .join .join_row .wrap_select .selectric-wrapper {
+    flex: 1;
+}
+.voucher .voucher_modal .voucher_modal_body .find_pw {
+    margin-top: 30px;
+}
+.voucher .voucher_modal .voucher_modal_body .find_pw_send {
+    margin: 68px 0 46px;
+    text-align: center;
+    word-break: keep-all;
+}
+.voucher .voucher_modal .voucher_modal_body .find_pw_send p:nth-of-type(2) {
+    color: #999999;
+    font-size: 12px;
+    margin-top: 10px;
+}
+#voucher_check_job .voucher_modal_body {
+    padding: 50px 50px 30px 50px;
+}
+#voucher_check_job h6 {
+    font-size: 20px;
+    text-align: center;
+}
+#voucher_check_job .check_job {
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+}
+#voucher_check_job span.gray {
+    font-size: 12px;
+    color: #999999;
+}
+#voucher_check_job .checkbox_square {
+    margin: 20px 0;
+}
+#voucher_check_job .wrap_btn {
+    padding: 0;
+}
+#voucher_check_job .wrap_btn button {
+    display: inline-block;
+    width: 175px;
+    height: 48px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#voucher_check_job .wrap_btn button:first-of-type {
+    background: #FFFFFF;
+    border: 1px solid #3B61D5;
+    margin-right: 5px;
+    color: #3B61D5;
+    font-weight: 400;
+}
+#voucher_check_job .wrap_btn button:last-of-type {
+    background: #3B61D5;
+    color: #FFF;
+}
+
+
+.voucher .voucher_modal .voucher_modal_body .modal_info {
+    width: 320px;
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+}
+.voucher .voucher_modal .voucher_modal_body .modal_info .info_title {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+@media all and (max-height: 800px){
+    .voucher .voucher_modal#voucher_form_default .voucher_modal_body > section {
+        height: 600px;
+        overflow-y: scroll;
+    }
 }
