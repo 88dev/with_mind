@@ -49,7 +49,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0 40px 0 16px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 40px;
   color: #333333;
   height: 40px;
@@ -154,6 +154,8 @@
   border: 1px solid #E3E2E2;
   border-radius: 4px;
 
+  /* background: pink; */
+  padding: 5px;
 }
 
 .selectric-above .selectric-items {
@@ -180,9 +182,10 @@
 }
 
 .selectric-items li.selected {
-  background-image: url('../images/icon_selectbox_check.png') !important;
+  background-image: url('../images/icon_selectbox_check.svg') !important;
   background-repeat: no-repeat !important;
   background-position: right 10px center !important;
+  background-size: 12px !important;
   background-color: #EFEFEF;
   color: #3B61D5;
 }
@@ -191,11 +194,13 @@
   background-image: url('../images/icon_selectbox_check.png');
   background: #EFF3FE;
   color: #3B61D5;
+  border-radius: 2px;
 }
 
 .selectric-items li:hover {
   background: #EFF3FE;
   color: #3B61D5;
+  border-radius: 2px;
 }
 
 .selectric-items .disabled {

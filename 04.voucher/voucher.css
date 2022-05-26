@@ -53,7 +53,11 @@ input[type="checkbox"] + label {
     background-size: contain;
     padding-left: 22px;
 }
-
+input[type="date"] {
+    width: 250px;
+    height: 38px;
+    padding: 10px 11px 10px 16px;
+}
 
 .voucher {
     position: relative;
@@ -235,28 +239,40 @@ input[id="btn_nav"]:checked + label + div{
     background-position: center, bottom;
     background-size: 100% 100%, 100% 70% !important;
 }
-.voucher .wrap_contents .inner_header {
+.voucher .list_contents {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 60px 0;
+    overflow-x: hidden;
+}
+.voucher .wrap_contents .inner_header,
+.voucher .list_contents .inner_header {
     position: relative;
 }
-.voucher .wrap_contents h1 {
+.voucher .wrap_contents h1,
+.voucher .list_contents h1 {
     border: 1px solid blue;
     width: 450px;
     max-height: 148px;
     text-align: center;
     margin: 0 auto;
 }
-.voucher .wrap_contents h1 img {
+.voucher .wrap_contents h1 img,
+.voucher .list_contents h1 img {
     display: inline-block;
     margin: 0 auto;
 }
-.voucher .wrap_contents .inner_header .name {
+.voucher .wrap_contents .inner_header .name,
+.voucher .list_contents .inner_header .name {
     position: absolute;
     top: 10px;
     right: 0;
     font-size: 16px;
     color: #333;
 }
-.voucher .wrap_contents .inner_body {
+.voucher .wrap_contents .inner_body,
+.voucher .list_contents .inner_body {
     width: 100%;
     /* background: url(images/img_bg_voucher_02.png) no-repeat; */
 }
@@ -270,8 +286,9 @@ input[id="btn_nav"]:checked + label + div{
 .voucher .wrap_contents .inner_body .greeting span {
     display: inline-block;
     background: linear-gradient(90.94deg, #3B61D5 -3.39%, #2EEEE3 102.67%);
-    padding: 1px 10px 2px 5px;
+    padding: 5px 10px 0px 10px;
     color: #FFF;
+    font-size: 35px;
     font-weight: 700;
 }
 
@@ -401,6 +418,62 @@ input[id="btn_nav"]:checked + label + div{
 }
 
 
+
+.voucher .list_container {
+    width: 1040px;
+}
+.voucher .list_container .title {
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 30px;
+    border-bottom: 1px solid #E2E2E2;
+    padding-bottom: 10px;
+}
+.voucher .list_container .wrap_search {
+    float: right;
+    margin-top: 10px;
+}
+.voucher .list_container .wrap_search .date_range {
+    display: inline-block;
+    width: 250px;
+    height: 38px;
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-radius: 4px;
+    padding: 10px 10px 10px 16px;
+    font-size: 14px;
+    font-family: 'GmarketSansMedium';
+    cursor: pointer;
+
+    background: url('images/icon_calendar.png') no-repeat;
+    background-position: right 10px center;
+    background-color: #FFF;
+    vertical-align: top;
+}
+.voucher .list_container .wrap_search .wrap_select {
+    display: inline-block;
+    width: 160px;
+    height: 38px;
+}
+.voucher .list_container .wrap_search .wrap_select .selectric-wrapper .label {
+    height: 38px;
+}
+.voucher .list_container .interview_list {
+    margin-top: 68px;
+}
+.voucher .list_container .interview_list > div {
+    display: inline-block;
+    width: 505px;
+    height: 180px;
+    border: 1px solid red;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.voucher .list_container .interview_list > div:nth-child(odd) {
+    margin-right: 20px;
+}
+
+/* 모달 */
 .voucher .voucher_modal {
     position: absolute;
     top: 0;
@@ -414,22 +487,25 @@ input[id="btn_nav"]:checked + label + div{
     justify-content: center;
     align-items: center;
 }
-.voucher .voucher_modal .voucher_modal_body > div {
+.voucher .voucher_modal .voucher_modal_body {
     position: relative;
     width: 460px;
-    height: 30px;
+}
+.voucher .voucher_modal .voucher_modal_body > div.wrap_close {
+    position: relative;
+    width: 460px;
+    height: 40px;
 }
 .voucher .voucher_modal .voucher_modal_body .voucher_close {
     position: absolute;
-    width: 25px;
-    height: 25px;
-    /* top: -30px; */
+    width: 30px;
+    height: 30px;
     left: 50%;
     transform: translate(-50%, 0);
     background: url(images/btn_close.png) no-repeat;
     background-size: contain;
 }
-.voucher .voucher_modal .voucher_modal_body > section {
+.voucher .voucher_modal .voucher_modal_body > section.inner_body {
     position: relative;
     background: #FFF;
     width: 460px;
@@ -450,7 +526,7 @@ input[id="btn_nav"]:checked + label + div{
     margin-top: 4px;
     font-size: 14px;
 }
-.voucher .voucher_modal .voucher_modal_body .login {
+.voucher .voucher_modal .voucher_modal_body form > div {
     margin-top: 30px;
 }
 .voucher .voucher_modal .voucher_modal_body .form_row {
@@ -462,6 +538,20 @@ input[id="btn_nav"]:checked + label + div{
     margin-bottom: 4px;
     font-size: 14px;
 }
+.voucher .voucher_modal .voucher_modal_body .form_row > textarea { 
+    width: 360px;
+    height: 121px;
+    padding: 10px 16px;
+
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-radius: 4px;
+    resize: none;
+}
+.voucher .voucher_modal .voucher_modal_body textarea::placeholder {
+    color: #999999;
+    font-size: 13px;
+}
 .voucher .voucher_modal .voucher_modal_body input[type="text"] {
     width: 360px;
     height: 42px;
@@ -470,8 +560,12 @@ input[id="btn_nav"]:checked + label + div{
     margin-top: 4px;
     padding: 13px 16px;
 }
-.voucher .voucher_modal .voucher_modal_body input:focus {
+.voucher .voucher_modal .voucher_modal_body input:focus,
+.voucher .voucher_modal .voucher_modal_body textarea:focus {
     outline: 1px solid #3B61D5;
+}
+.voucher .voucher_modal .voucher_modal_body input.error {
+    outline: 1px solid #EF3454;
 }
 .voucher .voucher_modal .voucher_modal_body .login label:nth-of-type(2) {
     margin-top: 10px;
@@ -492,6 +586,16 @@ input[id="btn_nav"]:checked + label + div{
     color: #FFF;
     font-size: 16px;
     margin-top: 30px;
+}
+.voucher .voucher_modal .voucher_modal_body .btn_white {
+    width: 100%;
+    height: 48px;
+    background: #FFF;
+    border: 1px solid #3B61D5;
+    border-radius: 4px;
+    color: #3B61D5;
+    font-size: 16px;
+    margin-top: 10px;
 }
 .voucher .voucher_modal .voucher_modal_body .login p {
     color: #999999;
@@ -621,11 +725,11 @@ input[id="btn_nav"]:checked + label + div{
     display: inline-block;
     color: #F34235;
 }
-.voucher .voucher_modal .voucher_modal_body .join .join_row > div {
+.voucher .voucher_modal .voucher_modal_body .form .form_row > div {
     position: relative;
     width: 360px;
 }
-.voucher .voucher_modal .voucher_modal_body .join .join_row button {
+.voucher .voucher_modal .voucher_modal_body .form .form_row button.confirm {
     position: absolute;
     right: 17px;
     bottom: 9px;
@@ -636,11 +740,11 @@ input[id="btn_nav"]:checked + label + div{
     font-size: 12px;
     color: #FFF;
 }
-.voucher .voucher_modal .voucher_modal_body .join .join_row #wrap_email_check {
+.voucher .voucher_modal .voucher_modal_body .form .form_row #wrap_email_check {
     /* display: none; */
     margin-top: 10px;
 }
-.voucher .voucher_modal .voucher_modal_body .join .join_row > a#no_email {
+.voucher .voucher_modal .voucher_modal_body .form .form_row > a#no_email {
     font-size: 11px;
     color: #3B61D5;
     text-decoration: underline;
@@ -649,8 +753,9 @@ input[id="btn_nav"]:checked + label + div{
 .voucher .voucher_modal .no_email_popup {
     display: none;
     position: absolute;
-    width: 320px;
-    top: 280px;
+    width: 365px;
+    top: 250px;
+    left: 65px;
     border-radius: 10px;
     background: #FFF;
     padding: 30px 20px;
@@ -668,7 +773,7 @@ input[id="btn_nav"]:checked + label + div{
 .voucher .voucher_modal .no_email_popup ul li:not(:last-child) {
     margin-bottom: 10px;
 }
-.voucher .voucher_modal .no_email_popup .email_other {
+.voucher .voucher_modal .link_gray {
     display: block;
     width: 100%;
     text-align: center;
@@ -677,19 +782,19 @@ input[id="btn_nav"]:checked + label + div{
     text-decoration: underline;
 }
 
-.voucher .voucher_modal .voucher_modal_body .join .join_row:not(:last-child) {
+.voucher .voucher_modal .voucher_modal_body .form .form_row:not(:last-child) {
     margin-bottom: 10px;
 }
-.voucher .voucher_modal .voucher_modal_body .join .join_row > span.red {
+.voucher .voucher_modal .voucher_modal_body .form .form_row > span.red {
     display: block;
     margin-top: 4px;
 }
-.voucher .voucher_modal .voucher_modal_body .join .join_row .wrap_select {
+.voucher .voucher_modal .voucher_modal_body .form .form_row .wrap_select {
     display: flex;
     width: 100%;
     gap: 10px;
 }
-.voucher .voucher_modal .voucher_modal_body .join .join_row .wrap_select .selectric-wrapper {
+.voucher .voucher_modal .voucher_modal_body .form .form_row .wrap_select .selectric-wrapper {
     flex: 1;
 }
 .voucher .voucher_modal .voucher_modal_body .find_pw {
@@ -724,41 +829,128 @@ input[id="btn_nav"]:checked + label + div{
 #voucher_check_job .checkbox_square {
     margin: 20px 0;
 }
-#voucher_check_job .wrap_btn {
+.voucher .voucher_modal .wrap_btn {
     padding: 0;
 }
-#voucher_check_job .wrap_btn button {
+.voucher .voucher_modal .wrap_btn button {
     display: inline-block;
     width: 175px;
     height: 48px;
     border-radius: 4px;
     font-size: 16px;
 }
-#voucher_check_job .wrap_btn button:first-of-type {
+.voucher .voucher_modal .wrap_btn button:first-of-type {
     background: #FFFFFF;
     border: 1px solid #3B61D5;
     margin-right: 5px;
     color: #3B61D5;
     font-weight: 400;
 }
-#voucher_check_job .wrap_btn button:last-of-type {
+.voucher .voucher_modal .wrap_btn button:last-of-type {
     background: #3B61D5;
     color: #FFF;
 }
 
-
-.voucher .voucher_modal .voucher_modal_body .modal_info {
+.voucher .voucher_modal_small .voucher_modal_body {
+    width: 320px;
+}
+.voucher .voucher_modal .voucher_modal_body .inner_body.modal_complete {
     width: 320px;
     padding: 30px 20px 20px 20px;
     text-align: center;
 }
-.voucher .voucher_modal .voucher_modal_body .modal_info .info_title {
+.voucher .voucher_modal .voucher_modal_body .info_title {
     font-size: 16px;
     margin: 10px 0;
 }
+.voucher .voucher_modal#voucher_form_myInfo .voucher_modal_body .agree p {
+    margin-top: 15px;
+}
+.voucher .voucher_modal#voucher_form_myInfo .link_gray {
+    margin-top: 30px;
+}
+#voucher_form_withdraw .wrap_btn {
+    margin-top: 30px;
+}
+#voucher_form_withdraw .withdraw_txt {
+    margin-top: 20px;
+}
+#voucher_form_withdraw .withdraw_txt .title {
+    font-size: 14px;
+}
+#voucher_form_withdraw .withdraw_txt ul {
+    list-style-type: decimal;
+    padding-left: 15px;
+    margin: 10px 0 0 0;
+    word-break: keep-all;
+}
+#voucher_form_withdraw .withdraw_txt ul li {
+    font-size: 13px;
+    color: #666666;
+}
+#voucher_ninterviewList_none .info_txt {
+    margin-top: 25px;
+}
+.voucher .voucher_modal .voucher_modal_body .interview {
+    padding: 30px !important;
+    text-align: center;
+}
+.voucher .voucher_modal .voucher_modal_body .interview h5 {
+    font-size: 20px;
+    text-align: center;
+}
+.voucher .voucher_modal .voucher_modal_body .interview input {
+    width: 175px;
+    margin-top: 15px;
+    text-align: center;
+}
+.voucher .voucher_modal .voucher_modal_body .interview input::placeholder {
+    text-align: center;
+    color: #999999;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .gray {
+    font-size: 12px;
+    color: #999999;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .error_txt {
+    height: 35px;
+    margin: 5px 0 0 0;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .error_txt span {
+    font-size: 11px;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .checkbox_square {
+    margin-top: 10px;
+    text-align: left;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .checkbox_square label {
+    color: #999;
+    font-size: 12px;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .transfer {
+    margin-top: 30px;
+    word-break: keep-all;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .transfer p:last-of-type {
+    margin-top: 10px;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .transfer p:last-of-type span {
+    color: #3B61D5;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .checkbox_square b {
+    color: #999999;
+    font-size: 12px;
+}
+.voucher .voucher_modal .voucher_modal_body .interview .checkbox_square .error_txt {
+    height: 20px;
+
+}
 
 @media all and (max-height: 800px){
-    .voucher .voucher_modal#voucher_form_default .voucher_modal_body > section {
+    .voucher .voucher_modal.voucher_modal_scroll .voucher_modal_body > section {
         height: 600px;
         overflow-y: scroll;
     }

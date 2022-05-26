@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>바우처</title>
     <link rel="styleSheet" href="voucher.css" type="text/css"></link>
+    <link rel="stylesheet" href="plugin/selectric.css">
+    <link rel="stylesheet" href="datepicker/daterangepicker.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
     <section class="voucher">
@@ -26,79 +32,44 @@
                 </section>
             </div>
         </section>
-        <section class="wrap_contents">
+        <section class="list_contents">
             <section>
                 <div class="inner_header">
                     <h1><img src="images/img_biz_logo.png"></h1>
                     <span class="name">서울문화재단</span>
                 </div>
                 <div class="inner_body">
-                    <p class="greeting">
-                        안녕하세요.<br>
-                        AI면접을 시작해볼까요?!<br>
-                        원하시는 <span>메뉴를 선택해주세요.</span>
-                    </p>
-                    <div class="card_container">
-                        <section>
-                            <div class="card card_pri">
-                                <a href="interview_pri.html" class="card_ani">
-                                    <div class="card_display">
-                                        <div class="inner_card">
-                                            <img src="images/icon_laptop.png" />
-                                            <span>모의면접</span>
-                                        </div>
-                                    </div>
-                                    <div class="card_hover">
-                                        <hr>
-                                        <p>내 직무에 맞는 기출질문 연습과<br>AI분석 결과 리포트로<br>면접 실력을 향상시켜요!</p>
-                                        <span>
-                                            면접 연습은<br><b>AI모의면접</b>
-                                        </span>
-                                    </div>
-                                </a>
-                                <div class="card_border"></div>
+                    <section class="list_container">
+                        <div class="title">AI모의면접 결과</div>
+                        <div class="wrap_search">
+                            <input type="text" id="list_date" name="list_date" value="" class="date_range" placeholder="날짜 검색"/>
+                            <div class="wrap_select">
+                                <select>
+                                    <option>전체</option>
+                                    <option>진행중</option>
+                                    <option>완료</option>
+                                </select>
                             </div>
-                            <div class="card card_biz">
-                                <a href="interview_biz.html" class="card_ani">
-                                    <div class="card_display">
-                                        <div class="inner_card">
-                                            <img src="images/icon_building.png" />
-                                            <span>기업면접</span>
-                                        </div>
-                                    </div>
-                                    <div class="card_hover">
-                                        <hr>
-                                        <p>언제 어디서나 편안하게<br>기업면접에 응시할 수 있어요!</p>
-                                        <span>
-                                            취업을 위한 기업 면접은<br><b>AI기업면접</b>
-                                        </span>
-                                    </div>
-                                </a>
-                                <div class="card_border"></div>
-                            </div>
-                            <div class="card card_uni">
-                                <a href="interview_uni.html" class="card_ani">
-                                    <div class="card_display">
-                                        <div class="inner_card">
-                                            <img src="images/icon_video.png" />
-                                            <span>화상면접</span>
-                                        </div>
-                                    </div>
-                                    <div class="card_hover">
-                                        <hr>
-                                        <p>실시간 AI분석으로 더욱 전문적인<br>면접 진행을 경험할 수 있어요!</p>
-                                        <span>
-                                            면접에 특화된 화상프로그램은<br><b>AI화상면접</b>
-                                        </span>
-                                    </div>
-                                </a>
-                                <div class="card_border"></div>
-                            </div>
-                        </section>
-                    </div>
+                        </div>
+                        <section class="interview_list">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </section>  
+                    </section>
                 </div>
             </section>
         </section>
+
+
+
+
+
         <section class="voucher_modal" id="voucher_login" style="display: none;">
             <section class="voucher_modal_body">
                 <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
@@ -136,7 +107,7 @@
         </section>
     </section>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="plugin/jquery.selectric.js"></script>
 <script>
     $( document ).ready(function() {
         // setTimeout(function(){
@@ -169,5 +140,33 @@
         $('.voucher_modal').css('display', 'none');
     });
 
+    // 셀렉트 박스
+    $(function() {
+        $('select').selectric();
+    });
+
+    //날짜
+    $(function () {
+        $('#list_date').daterangepicker({
+            "locale": {
+                "format": "YYYY-MM-DD",
+                "separator": " ~ ",
+                "applyLabel": "확인",
+                "cancelLabel": "취소",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "customRangeLabel": "Custom",
+                "weekLabel": "W",
+                "daysOfWeek": ["월", "화", "수", "목", "금", "토", "일"],
+                "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+                "firstDay": 1
+            },
+            "startDate": "2020-10-21",
+            "endDate": "2020-10-23",
+            "drops": "down"
+        }, function (start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+    });
 </script>
 </html>
