@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html {width:100%; height:100%; margin:0; padding:0; overflow:hidden;} /* 기본 스크롤 제거 */
-body {width:100%; height:100%; margin:0; padding:0; overflow-y:scroll; position:relative;} /*대체 스크롤 생성 */
+        
         html, body {
             margin: 0;
             padding: 0;
@@ -16,14 +15,16 @@ body {width:100%; height:100%; margin:0; padding:0; overflow-y:scroll; position:
         .main {
             position: relative;
             width: 100vw;
-            height: 110vh;
+            /* height: 110vh; */
         }
         #nav {
             position: absolute;
+            position: fixed;
             /* border: 3px solid red; */
             width: 116px;
-            height: 100%;
+            height: 100vh;
             right: 0;
+            box-sizing: border-box;
         }
         input[id="btn_nav"] {
             display: none;
@@ -33,7 +34,7 @@ body {width:100%; height:100%; margin:0; padding:0; overflow-y:scroll; position:
             background: url(images/img_nav.svg);
             width: 42px;
             height: 217px;
-            right: 0;
+            /* right: 0; */
             top: 50%;
             transform: translate(0, -50%);
         }
@@ -50,7 +51,7 @@ body {width:100%; height:100%; margin:0; padding:0; overflow-y:scroll; position:
         }
         input[id="btn_nav"]:checked + label {
             z-index: 2;
-            right: 73.5px;
+            /* right: 73.5px; */
             /* transition: all .2s; */
         }
         input[id="btn_nav"]:checked + label span {
@@ -60,18 +61,20 @@ body {width:100%; height:100%; margin:0; padding:0; overflow-y:scroll; position:
         }
 
         div[class="nav_bar"] {
+            position: absolute;
             width: 74px;
             height: 100%;
             background: #3B61D5;
-            position: fixed;
+            /* position: fixed; */
             top: 0;
-            right: -116px;
+            right: 0;
+            /* right: -116px; */
             z-index: 1;
             /* transition: all .2s; */
             border-radius: 10px 0 0 10px;
         }
         input[id="btn_nav"]:checked + label + div{
-            right: 0;
+            /* right: 0; */
         }
     </style>
 </head>
@@ -86,6 +89,118 @@ body {width:100%; height:100%; margin:0; padding:0; overflow-y:scroll; position:
             </div>
         </section>
         dasfafdsfds
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>asfdadsfdasffsdaafdsfdas</div>
+sdafafsdsad
+        adsf
     </section>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -93,7 +208,20 @@ body {width:100%; height:100%; margin:0; padding:0; overflow-y:scroll; position:
     $( document ).ready(function() {
         setTimeout(function(){
             $("input:checkbox[id='btn_nav']").prop("checked", false);
+            $('#nav').css('right', '-74px');
+            console.log("들어가");
         }, 5000);
+        
+        $('#btn_nav').click(function(){
+            console.log("1111");
+            if ($("input:checkbox[id='btn_nav']").is(":checked") == true) {
+                $('#nav').css('right', '0');
+            console.log("2222");
+            } else if($("input:checkbox[id='btn_nav']").is(":checked") == false) {
+                $('#nav').css('right', '-74px');
+            console.log("3333");
+            }
+        });
     });
 </script>
 </html>
