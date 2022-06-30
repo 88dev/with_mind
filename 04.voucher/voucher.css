@@ -602,6 +602,9 @@ input[id="btn_nav"]:checked + label + div{
 
 
 /* 모달 */
+.wrap_modal {
+	display: none;
+}
 .voucher .voucher_modal {
     position: absolute;
     top: 0;

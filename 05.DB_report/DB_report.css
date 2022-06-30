@@ -1,0 +1,200 @@
+:root {
+    --color-main: #6967F9;
+    --color-light-gray: #C2C2C2;
+    --color-dark-gray: #6C6C6C;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    color: #2C2C2C;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+em, i {
+    font-style: normal;
+}
+
+#db_report {
+    border: 1px solid red;
+    width: 1080px;
+    margin: 0 auto;
+}
+#db_report .head .logo_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    border-bottom: 1px solid var(--color-main);
+}
+#db_report .head .logo_area > h1 {
+    background: url('images/logo_sokind_wh.png') no-repeat;
+    width: 96px;
+    height: 24px;
+}
+#db_report .head .logo_area > div {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    gap: 30px;
+}
+#db_report .head .logo_area > div button {
+    width: 45px;
+    height: 45px;
+}
+#db_report .head .logo_area #btn_pdf {
+    background: url('images/btn_print.png') no-repeat;
+}
+#db_report .head .logo_area #btn_print {
+    background: url('images/btn_pdf.png') no-repeat;
+}
+#db_report .head .user_info {
+    padding: 20px 0;
+}
+#db_report .head .user_info .period {
+    height: 18px;
+}
+#db_report .head .user_info .period span {
+    float: right;
+    font-size: 14px;
+    color: var(--color-light-gray);
+}
+#db_report .head .user_info .info_detail {
+    width: 100%;
+    border-collapse: collapse;
+}
+#db_report .head .user_info .info_detail tr td {
+    width: 25%;
+    vertical-align: bottom;
+    padding-bottom: 6px;
+}
+#db_report .head .user_info .info_detail .name {
+    font-size: 36px;
+    font-weight: 700;
+}
+#db_report .head .user_info .info_detail tr:nth-of-type(1) td:not(:first-of-type),
+#db_report .head .user_info .info_detail tr:nth-of-type(2) td:first-of-type {
+    font-size: 14px;
+    font-weight: 400;
+}
+#db_report .head .user_info .info_detail tr:nth-of-type(2) td:not(:first-of-type) {
+    font-size: 16px;
+    font-weight: 500;
+}
+#db_report .head .user_info .info_detail tr:nth-of-type(2) td:last-of-type span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-dark-gray);
+}
+#db_report .head .user_info .info_detail tr:nth-of-type(2) td:last-of-type span em {
+    color: var(--color-main);
+    font-weight: 700;
+}
+#db_report .head .user_info .email {
+    color: var(--color-dark-gray);
+    font-size: 14px;
+}
+
+#db_report .body {
+    background: #FAFAFD;
+    width: 100%;
+    padding: 30px 40px;
+}
+#db_report .body .title {
+    display: flex;
+    justify-content: space-between;
+}
+#db_report .body .title h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+#db_report .body .title .total_stats > div:nth-of-type(1) {
+    display: inline-block;
+    width: auto;
+    min-width: 265px;
+}
+#db_report .body .title .total_stats > div:nth-of-type(2) {
+    display: inline-block;
+    width: auto;
+    min-width: 180px;
+}
+#db_report .body .title .total_stats img {
+    vertical-align: sub;
+}
+#db_report .body .title .total_stats p {
+    display: inline-block;
+    font-size: 24px;
+}
+#db_report .body .title .total_stats p em {
+    color: var(--color-main);
+    margin: 0 5px 0 14px;
+}
+#db_report .body .title .total_stats p i {
+    font-size: 14px;
+    color: var(--color-dark-gray);
+}
+#db_report .body .title .total_stats .sub_title {
+    display: block;
+    color: var(--color-light-gray);
+    font-size: 14px;
+    margin: 5px 0 0 42px;
+}
+#db_report .body .container .contents {
+    background: #FFFFFF;
+    border: 1px solid #E8E8F1;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 10px;
+}
+#db_report .body .container .contents.total_comment {
+    border-left: 4px solid var(--color-main);
+    margin-top: 20px;
+}
+#db_report .body .container .total_comment h3 {
+    color: var(--color-main);
+    font-size: 18px;
+    font-weight: 500;
+}
+#db_report .body .container .contents.total_comment p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#db_report .footer {
+    background: #8D79FE;
+    height: 50px;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: right;
+    padding: 0 40px;
+}
