@@ -2,6 +2,7 @@
     --color-main: #6967F9;
     --color-light-gray: #C2C2C2;
     --color-dark-gray: #6C6C6C;
+    --color-black: #2C2C2C;
 }
 * {
     box-sizing: border-box;
@@ -165,7 +166,7 @@ em, i {
     border-left: 4px solid var(--color-main);
     margin-top: 20px;
 }
-#db_report .body .container .total_comment h3 {
+#db_report .body .container .total_comment strong {
     color: var(--color-main);
     font-size: 18px;
     font-weight: 500;
@@ -174,6 +175,234 @@ em, i {
     margin-top: 10px;
     font-size: 14px;
 }
+#db_report .p_01 .body .container .contents.wrap_flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+#db_report .p_01 .body .container .contents.wrap_flex .score {
+    width: 325px;
+}
+#db_report .p_01 .body .container .contents.wrap_flex .grade {
+    width: 600px;
+}
+#db_report .body .container .contents strong.title {
+    display: block;
+    margin-bottom: 10px;
+}
+#db_report .body .container .contents .sub_txt {
+    font-size: 14px;
+    color: var(--color-dark-gray);
+}
+#db_report .body .container .contents .txt {
+    font-size: 12px;
+    color: var(--color-light-gray)
+}
+#db_report .body .container .contents .score .wrap_graph {
+    margin-top: 10px;
+}
+#db_report .body .container .contents .score .wrap_graph .label {
+    display: inline-block;
+    width: 60px;
+    vertical-align: top;
+}
+#db_report .body .container .contents .score .wrap_graph .label label {
+    display: block;
+    font-size: 14px;
+}
+#db_report .body .container .contents .score .wrap_graph .label label:nth-of-type(1) {
+    color: var(--color-main);
+    font-weight: 500;
+    margin-top: 18px;
+}
+#db_report .body .container .contents .score .wrap_graph .label label:nth-of-type(2) {
+    color: var(--color-light-gray);
+    font-weight: 400;
+    margin-top: 15px;
+}
+#db_report .body .container .contents .score .wrap_graph .graph {
+    display: inline-block;
+    width: 200px;
+    height: 88px;
+    border-left: 1px solid #DFE0EB;
+
+}
+#db_report .body .container .contents .score .wrap_graph .graph .score_my {
+    display: block;
+    background: linear-gradient(270deg, #6967F9 0%, #B8B7FF 100%);
+    height: 40px;
+    margin-top: 8px;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: right;
+    padding-right: 15%;
+    line-height: 40px;
+}
+#db_report .body .container .contents .score .wrap_graph .graph .score_avg {
+    display: block;
+    background: #E6E6F8;
+    height: 30px;
+    color: #C1C1EC;
+    font-size: 16px;
+    text-align: right;
+    padding-right: 15%;
+    line-height: 30px;
+}
+#db_report .body .container .contents .score .wrap_graph .say {
+    position: relative;
+    background: #FAFAFD;
+    border-radius: 5px;
+    width: 322px;
+    height: 60px;
+    margin-top: 20px;
+}
+#db_report .body .container .contents .score .wrap_graph .say img {
+    position: absolute;
+    top: -10px;
+}
+#db_report .body .container .contents .score .wrap_graph .say p {
+    font-size: 12px;
+    color: #C1C1EC;
+    padding: 12px 0 12px 90px;
+}
+#db_report .body .container .contents .wrap_label {
+    float: right;
+    font-size: 12px;
+    color: var(--color-light-gray);
+    font-weight: 400;
+}
+#db_report .body .container .contents .wrap_label span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 6px;
+    margin-right: 6px;
+}
+#db_report .body .container .contents .grade .wrap_label span:nth-of-type(1) {
+    background: #E8F1FF;
+}
+#db_report .body .container .contents .grade .wrap_label span:nth-of-type(2) {
+    background: #1E76FC;
+    margin-left: 10px;
+}
+#db_report .body .container .contents .grade .wrap_prize {
+    margin-top: 38px;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(1) {
+    display: inline-block;
+    width: 80px;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(1) strong {
+    display: block;
+    width: 80px;
+    margin-top: 12px;
+    font-size: 24px;
+    color: var(--color-main);
+    text-align: center;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) {
+    display: inline-block;
+    width: 100px;
+    margin-left: 20px;
+    vertical-align: top;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) img {
+    display: block;
+    margin-bottom: 6px;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) span {
+    font-size: 12px;
+    color: var(--color-light-gray);
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) span:first-of-type {
+    display: block;
+    margin-bottom: 20px;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) span em {
+    color: var(--color-black);
+    font-size: 16px;
+    font-weight: 700;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) span:nth-of-type(1) em {
+    margin-left: 3px;
+}
+#db_report .p_01 .body .container.wrap_grid {
+    display: grid;
+    grid-template-areas:
+    'grid01 grid02'
+    'grid01 grid03';
+    gap: 10px;
+}
+.grid_01 {
+    grid-area: grid01;
+    width: 406px;
+}
+.grid_02 {
+    grid-area: grid02;
+    width: 584px;
+}
+.grid_03 {
+    grid-area: grid03;
+    width: 584px;
+}
+#db_report .body .container .contents.grid_01 .wrap_label span:nth-of-type(1) {
+    background: #FABF48;
+}
+#db_report .body .container .contents.grid_01 .wrap_label span:nth-of-type(2) {
+    background: var(--color-main);
+    margin-left: 10px;
+}
+#db_report .body .container .contents.grid_01 .graph_radar {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 45px 0 40px 80px;
+}
+#db_report .body .container .contents.grid_01 .graph_radar canvas {
+    background: url('images/graph_.radar.png') no-repeat;
+    width: 250px;
+    height: 250px;
+    border: 1px solid red;
+    margin: 45px 0 0 12px;
+}
+#db_report .body .container .contents.grid_01 .graph_radar span {
+    position: absolute;
+    font-size: 12px;
+    color: var(--color-main);
+}
+/* 교육 역량 종합 분석도 > 스크립트 */
+#db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(1) {
+    top: 20px;
+    left: 110px;
+}
+/* 교육 역량 종합 분석도 > 어깨움직임 */
+#db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(2) {
+    top: 73px;
+    right: -20px;
+}
+/* 교육 역량 종합 분석도 > 자세 */
+#db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(3) {
+    bottom: 50px;
+    right: 12px;
+}
+/* 교육 역량 종합 분석도 > 시선분포 */
+#db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(4) {
+    bottom: -12px;
+    left: 110px;
+}
+/* 교육 역량 종합 분석도 > 표정 */
+#db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(5) {
+    bottom: 50px;
+    left: -3px;
+}
+/* 교육 역량 종합 분석도 > 억양 */
+#db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(6) {
+    top: 73px;
+    left: -3px;
+}
+
+
 
 
 
