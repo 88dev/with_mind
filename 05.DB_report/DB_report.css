@@ -1,3 +1,4 @@
+h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, div,body { -webkit-print-color-adjust:exact; }
 :root {
     --color-main: #6967F9;
     --color-light-gray: #C2C2C2;
@@ -110,13 +111,20 @@ em, i {
     color: var(--color-dark-gray);
     font-size: 14px;
 }
+#db_report .head .user_info .email .account {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
 
 #db_report .body {
     background: #FAFAFD;
     width: 100%;
     padding: 30px 40px;
 }
-#db_report .body .title {
+#db_report .p_01 .body .title {
     display: flex;
     justify-content: space-between;
 }
@@ -189,6 +197,11 @@ em, i {
 #db_report .body .container .contents strong.title {
     display: block;
     margin-bottom: 10px;
+}
+#db_report .body .container .contents strong.sub_title {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
 }
 #db_report .body .container .contents .sub_txt {
     font-size: 14px;
@@ -279,12 +292,14 @@ em, i {
     border-radius: 6px;
     margin-right: 6px;
 }
+#db_report .body .container .contents .wrap_label span:not(:nth-of-type(1)) {
+    margin-left: 10px;
+}
 #db_report .body .container .contents .grade .wrap_label span:nth-of-type(1) {
     background: #E8F1FF;
 }
 #db_report .body .container .contents .grade .wrap_label span:nth-of-type(2) {
     background: #1E76FC;
-    margin-left: 10px;
 }
 #db_report .body .container .contents .grade .wrap_prize {
     margin-top: 38px;
@@ -292,6 +307,7 @@ em, i {
 #db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(1) {
     display: inline-block;
     width: 80px;
+    margin-left: 20px;
 }
 #db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(1) strong {
     display: block;
@@ -304,7 +320,7 @@ em, i {
 #db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) {
     display: inline-block;
     width: 100px;
-    margin-left: 20px;
+    margin-left: 50px;
     vertical-align: top;
 }
 #db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) img {
@@ -327,6 +343,75 @@ em, i {
 #db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(2) span:nth-of-type(1) em {
     margin-left: 3px;
 }
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) {
+    position: relative;
+    display: inline-block;
+    background: url('images/graph_total_grade.png') no-repeat;
+    width: 310px;
+    height: 125px;
+    margin-left: 15px;
+    padding-left: 30px;
+    vertical-align: top;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) .frame {
+    display: inline-block;
+    position: relative;
+    width: 38px;
+    height: 75px;
+    margin-top: 7px;
+    vertical-align: top;
+    /* border: 1px solid red; */
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) .frame .avg {
+    position: absolute;
+    background: url('images/icon_union.png') no-repeat;
+    left: -16px;
+    bottom: 0;
+    width: 71px;
+    height: 33px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    z-index: 5;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) .frame hr {
+    position: absolute; 
+    border: 1px dashed #FABF48;
+    left: 19px;
+    bottom: -10px;
+    z-index: 5;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) .frame:not(:nth-of-type(5)) {
+    margin-right: 14.5px;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) .frame .grade_value {
+    position: absolute;
+    bottom: 0;
+    background: #E8F1FF; 
+    width: 38px;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) .frame .grade_value.student {
+    background: #1E76FC;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) .frame .student_img {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    margin-bottom: 4px;
+}
+#db_report .body .container .contents .grade .wrap_prize > div:nth-of-type(3) .frame .student_txt {
+    position: absolute;
+    bottom: 0;
+    width: 38px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: #1E76FC;
+}
+
 #db_report .p_01 .body .container.wrap_grid {
     display: grid;
     grid-template-areas:
@@ -345,26 +430,29 @@ em, i {
 .grid_03 {
     grid-area: grid03;
     width: 584px;
+    margin-top: 0 !important;
 }
 #db_report .body .container .contents.grid_01 .wrap_label span:nth-of-type(1) {
     background: #FABF48;
 }
 #db_report .body .container .contents.grid_01 .wrap_label span:nth-of-type(2) {
     background: var(--color-main);
-    margin-left: 10px;
 }
 #db_report .body .container .contents.grid_01 .graph_radar {
     position: relative;
-    width: 250px;
+    width: 270px;
     height: 250px;
-    margin: 45px 0 40px 80px;
+    margin: 45px auto 40px;
 }
 #db_report .body .container .contents.grid_01 .graph_radar canvas {
     background: url('images/graph_.radar.png') no-repeat;
-    width: 250px;
+    background-size: contain;
+    background-position: right;
     height: 250px;
-    border: 1px solid red;
-    margin: 45px 0 0 12px;
+    /* border: 1px solid red; */
+    margin-top: 45px;
+    margin-left: 28px;
+    padding: 45px 45px 20px 13px;
 }
 #db_report .body .container .contents.grid_01 .graph_radar span {
     position: absolute;
@@ -374,7 +462,7 @@ em, i {
 /* 교육 역량 종합 분석도 > 스크립트 */
 #db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(1) {
     top: 20px;
-    left: 110px;
+    left: 123px;
 }
 /* 교육 역량 종합 분석도 > 어깨움직임 */
 #db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(2) {
@@ -383,23 +471,203 @@ em, i {
 }
 /* 교육 역량 종합 분석도 > 자세 */
 #db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(3) {
-    bottom: 50px;
+    bottom: 48px;
     right: 12px;
 }
 /* 교육 역량 종합 분석도 > 시선분포 */
 #db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(4) {
-    bottom: -12px;
-    left: 110px;
+    bottom: -17px;
+    left: 123px;
 }
 /* 교육 역량 종합 분석도 > 표정 */
 #db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(5) {
-    bottom: 50px;
-    left: -3px;
+    bottom: 48px;
+    left: 5px;
 }
 /* 교육 역량 종합 분석도 > 억양 */
 #db_report .body .container .contents.grid_01 .graph_radar span:nth-of-type(6) {
     top: 73px;
-    left: -3px;
+    left: 5px;
+}
+
+#db_report .body .container .contents.grid_02 div:nth-of-type(1) {
+    height: 17px;
+}
+#db_report .body .container .contents.grid_02 .txt {
+    float: left;
+}
+#db_report .body .container .contents.grid_02 .wrap_label span:nth-of-type(1) {
+    background: #DAF1F1;
+}
+#db_report .body .container .contents.grid_02 .wrap_label span:nth-of-type(2) {
+    background: #46B8BA;
+}
+#db_report .body .container .contents.grid_02 .wrap_script {
+    display: flex;
+    margin-top: 20px;
+}
+#db_report .body .container .contents.grid_02 .wrap_script > div {
+    flex: 1;
+    height: auto;
+}
+#db_report .body .container .contents.grid_02 .wrap_script > div:nth-of-type(1) {
+    border-right: 1px solid #E8E8F1;
+    padding-right: 20px;
+}
+#db_report .body .container .contents.grid_02 .wrap_script > div:nth-of-type(2) {
+    padding-left: 20px;
+}
+#db_report .body .container .contents.grid_02 .wrap_script .wrap_graph {
+    background: url('images/graph_script.svg') no-repeat;
+    width: 252px;
+    height: 91px;
+    margin-top: 5px;
+    padding-top: 8px;
+}
+#db_report .body .container .contents.grid_02 .wrap_script .wrap_graph .frame {
+    width: 238px;
+    height: 26px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
+#db_report .body .container .contents.grid_02 .wrap_script .wrap_graph .frame .value {
+    background: #46B8BA33;
+    height: 26px;
+    line-height: 26px;
+    color: #FFF;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    font-weight: 400;
+}
+#db_report .body .container .contents.grid_02 .wrap_script .wrap_graph .frame .value.student {
+    background: #46B8BA;
+}
+#db_report .body .container .contents.grid_03 img {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+}
+#db_report .body .container .contents.grid_03 p {
+    display: inline-block;
+    width: 425px;
+    margin-top: 20px;
+    margin-left: 25px;
+    font-size: 14px;
+    word-break: keep-all;
+}
+#db_report .p_01 .body .container.wrap_flex {
+    display: flex;
+    gap: 10px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score {
+    flex: 560px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score > div:nth-of-type(1) {
+    height: 17px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score > div:nth-of-type(1) .txt {
+    vertical-align: top;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_label span:nth-of-type(1) {
+    background: #E0E0E0;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_label span:nth-of-type(2) {
+    background: #FF913C;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_label span:nth-of-type(3) {
+    background: #FD557A;
+}
+
+#db_report .p_01 .body .container.wrap_flex .contents.certificate {
+    flex: 427px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score > div:nth-of-type(2) {
+    margin-top: 25px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score > div:nth-of-type(2) .wrap_graph {
+    background: url('images/graph_avg_score.png') no-repeat;
+    width: 486px;
+    height: 140px;
+    padding-top: 1px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond {
+    display: inline-block;
+    width: 80px;
+    height: 100px;
+    margin-top: 33px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond .frame {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 100px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond .frame .value {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #E0E0E0;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond_default {
+    margin-left: 115px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond_situation {
+    margin-left: 140px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond_default .frame .value.student {
+    background: #FF913C;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .frame:nth-of-type(1) {
+    margin-right: 14px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .frame span {
+    position: absolute;
+    left: -9px;
+    width: 50px;
+    height: 38px;
+    line-height: 32px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #FFF;
+    text-align: center;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond_default .frame span {
+    background: url('images/icon_union02.png') no-repeat;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond_situation .frame span {
+    background: url('images/icon_union03.png') no-repeat;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score .wrap_graph .respond_situation .frame .value.student {
+    background: #FD557A;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score span.label:nth-of-type(1) {
+    display: inline-block;
+    color: #FF913C;
+    font-size: 14px;
+    margin-left: 130px;
+}
+#db_report .p_01 .body .container.wrap_flex .contents.score span.label:nth-of-type(2) {
+    display: inline-block;
+    color: #FD557A;
+    font-size: 14px;
+    margin-left: 180px;
+}
+#db_report .p_01 .body .container.wrap_flex p {
+    width: 100%;background: #FFFBFB;
+    height: 46px;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-top: 20px;
+    font-size: 13px;
+}
+#db_report .p_01 .body .container.wrap_flex p em:nth-of-type(1) {
+    color: #FF913C;
+    font-weight: 700;
+}
+#db_report .p_01 .body .container.wrap_flex p em:nth-of-type(2) {
+    color: #FD557A;
+    font-weight: 700;
 }
 
 
@@ -412,6 +680,23 @@ em, i {
 
 
 
+
+
+#db_report .p_none .error img {
+    display: block;
+    width: 162px;
+    margin: 30px auto 20px;
+}
+#db_report .p_none .error b {
+    display: block;
+    text-align: center;
+}
+#db_report .p_none .error p {
+    color :var(--color-light-gray);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
 
 
 

@@ -40,7 +40,7 @@
                             <td><b>Lv.5</b> 카인더<span>( 교육 <em>173</em> 일차)</span></td>
                         </tr>
                     </table>
-                    <div class="email">sokind07@sokind.kr</div>
+                    <div class="email"><span classs="account kakao"></span>sokind07@sokind.kr</div>
                 </section>
             </section>
             <section class="body">
@@ -102,6 +102,27 @@
                                     <img src="images/icon_compare.png" />
                                     <span><em>3위</em>(71명)</span>
                                 </div>
+                                <div class="graph_total_grade">
+                                    <div class="frame">
+                                        <div class="grade_value" role="progressbar" style="height: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <div class="grade_value" role="progressbar" style="height: 100%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <div class="grade_value" role="progressbar" style="height: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <span class="avg" style="bottom: 76%">평균 76점</span>
+                                        <hr style="height: calc(76% + 10px)">
+                                        <div class="grade_value" role="progressbar" style="height: 76%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <span class="student_txt" style="bottom: 20%">교육생</span>
+                                        <img src="images/icon_student.svg" class="student_img" style="bottom: 20%" />
+                                        <div class="grade_value student" role="progressbar" style="height: 20%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </section>
@@ -111,7 +132,7 @@
                         <strong class="title">교육 역량 종합 분석도</strong>
                         <div class="wrap_label"><span></span>전체평균<span></span>교육생</div>
                         <div class="graph_radar">
-                            <canvas id="analysis_total" width="182" height="182"></canvas>
+                            <canvas id="analysis_total" width="240" height="250"></canvas>
                             <span>68</span> <!-- 스크립트 -->
                             <span>60</span> <!-- 어꺠움직임 -->
                             <span>80</span> <!-- 자세 -->
@@ -119,94 +140,148 @@
                             <span>75</span> <!-- 표정 -->
                             <span>48</span> <!-- 억양 -->
                         </div>
-                        <p class="txt">교육영상에서 스크립트, 억양, 표정, 시선분포, 자세, 어깨움직임의 평균을  그래프화 합니다. 각각의 분석항목들을 점수화하여 분포도가 넓은 면적을  나타낼수록 교육 중 안정적임을 나타냅니다. 항목 별 자세한 수치들은  [기본응대, 상황응대]에서 확인이 가능합니다.</p>
+                        <p class="txt">교육영상에서 스크립트, 억양, 표정, 시선분포, 자세, 어깨움직임의 평균을 그래프화 합니다. 각각의 분석항목들을 점수화하여 분포도가 넓은 면적을 나타낼수록 교육 중 안정적임을 나타냅니다. 항목 별 자세한 수치들은 [기본응대, 상황응대]에서 확인이 가능합니다.</p>
                     </section>
                     <section class="contents grid_02">
                         <strong class="title">스크립트 일치율</strong>
+                        <div>
+                            <p class="txt">완료한 교육을 기반으로 도출된 결과</p>
+                            <div class="wrap_label"><span></span>전체평균<span></span>교육생</div>
+                        </div>
+                        <div class="wrap_script">
+                            <div>
+                                <strong class="sub_title">내용 인지도</strong>
+                                <div class="wrap_graph">
+                                    <div class="frame">
+                                        <div class="value student" role="progressbar" style="width: 75%;" aria-valuemin="0" aria-valuemax="100">상위25%</div>
+                                    </div>
+                                    <div class="frame">
+                                        <div class="value" role="progressbar" style="width: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="sub_title">어벽 멀리하기</strong>
+                                <div class="wrap_graph">
+                                    <div class="frame">
+                                        <div class="value student" role="progressbar" style="width: 80%;" aria-valuemin="0" aria-valuemax="100">상위20%</div>
+                                    </div>
+                                    <div class="frame">
+                                        <div class="value" role="progressbar" style="width: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <section class="contents grid_03">
                         <strong class="title">고객응대 퀄리티</strong>
+                        <img src="images/img_quality.png" />
+                        <p>대체로 직원을 응대하는 태도가 아주 친절한 편으로 편안한 표정과 안정적인 음성으로 고객을 응대하고 있습니다. ‘긍정 에너지를 전파하는 입점인사’ 교육에서 기업의 고객 응대 매뉴얼과 100% 일치하는 문장을 구사하였으며 친절한 표정과 긍정적인 목소리를 보여주었습니다. 다른 직원의 평균 점수와 비교하였을 때 약 20% 높은 점수를 얻었습니다. 김친절 직원은 기업의 서비스직에서 필요로 하는 역량 중 친절함의 태도를 지녔다고 판단할 수 있습니다.</p>
+                    </section>
+                </section>
+                <section class="container wrap_flex">
+                    <section class="contents score">
+                        <strong class="title">교육별 평균 점수</strong>
+                        <div>
+                            <span class="txt">최근 한달 간 교육별 평균 점수 (2022년 5월 ~ 2022년 6월)</span>
+                            <div class="wrap_label"><span></span>전체평균<span></span>기본응대<span></span>상황응대</div>
+                        </div>
+                        <div>
+                            <div class="wrap_graph">
+                                <div class="respond_default respond">
+                                    <div class="frame">
+                                        <div class="value" role="progressbar" style="height: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <span style="bottom: 90%">90점</span>
+                                        <div class="value student" role="progressbar" style="height: 90%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="respond_situation respond">
+                                    <div class="frame">
+                                        <div class="value" role="progressbar" style="height: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <span style="bottom: 100%">100점</span>
+                                        <div class="value student" role="progressbar" style="height: 100%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div><span class="label">기본응대</span><span class="label">상황응대</span></div>
+                            <p>
+                                한달 간 김친절님의 교육별 평균 점수 중 <em>기본응대는 15%</em> 높고, <em>상황응대는 약43%</em> 높습니다.
+                            </p>
+                        </div>
+                    </section>
+                    <section class="contents certificate">
+                        <strong class="title">이수증 발급</strong>
                     </section>
                 </section>
             </section>
             <section class="footer">
                 http://sokind.kr/
             </section>
-            <!-- <section>
-                <h5>그래프 테스트</h5>
-                
-                <canvas id="high_tension" width="500" height="200"></canvas> 
+        </article>
+
+
+        <article class="p_none">
+            <section class="head">
+                <section class="logo_area">
+                    <h1></h1>
+                    <div>
+                        <button type="button" id="btn_pdf" onclick="window.print()"></button>
+                        <button type="button" id="btn_print"></button>
+                    </div>
+                </section>
+                <section class="user_info">
+                    <div class="period">
+                        <span>2021. 10. 01 ~ 2022. 06. 22 학습 결과 리포트</span>
+                    </div>
+                    <table class="info_detail">
+                        <tr>
+                            <td class="name">김친절</td>
+                            <td>가입일</td>
+                            <td>교육 시작일</td>
+                            <td>교육 레벨</td>
+                        </tr>
+                        <tr>
+                            <td>기업명 입력란 / 지점명 입력란</td>
+                            <td>2021. 10. 01</td>
+                            <td>2021. 10. 02</td>
+                            <td><b>Lv.5</b> 카인더<span>( 교육 <em>173</em> 일차)</span></td>
+                        </tr>
+                    </table>
+                    <div class="email">sokind07@sokind.kr</div>
+                </section>
             </section>
-            <section>
-                <h5>그래프 테스트</h5>
-                <canvas id="video_total_biz_chart" width="275" height="260"></canvas>
-            </section> -->
+            <section class="body">
+                <section class="title">
+                    <h2>상세리포트</h2>
+                    <div class="error">
+                        <img src="images/img_error.png" />
+                        <b>앗, 이런!</b>
+                        <p>
+                            자리이탈, 인터넷 연결 끊김, 소음 등의 이유로<br>
+                            AI 분석을 위한 목소리, 얼굴 상체 정보가 확인되지 않아<br>
+                            상세리포트 확인이 어렵습니다.<br>
+                            재교육 후 다시 이용을 부탁드립니다.<br>
+                            이용에 불편을 드려 죄송합니다.
+                        </p>
+                    </div>
+                </section>
+            </section>
+            <section class="footer">
+                http://sokind.kr/
+            </section>
         </article>
     </main>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="DB_report.js"></script>
 <script>
- // 높은 긴장도 질문
-//  new Chart(document.getElementById("high_tension"), {
-//         type: 'line',
-//         data: {
-//             labels: [11, 53, 83, 108, 132, 155, 194, 221, 245, 269, 297, 328, 354, 378, 424, 457, 485, 522, 560, 584, 610, 654, 682, 721, 745, 767, 796, 835, 861, 901, 923, 946, 977, 1006, 1046, 1076, 1098, 1124, 1155, 1183, 1227, 1253],
-//             datasets: [{
-//                 data: [ 0.16089, 0.21128, 0.16189, 0.23675, 0.11947, 0.25365, 0.19212, 0.48162, 0.16319, 0.12545, 0.16497, 0.12689, 0.24296, 0.32828, 0.18608, 0.13412, 0.19764, 0.25125, 0.20378, 0.19053, 0.24486, 0.1905, 0.19726, 0.1619, 0.13009, 0.548, 0.17214, 1.0, 0.25508, 0.28343, 0.15654, 0.16781, 0.4047, 0.13187, 0.64773, 0.12517, 0.16245, 0.12902, 0.20332, 0.28693, 0.16928, 0.16073 ],
-//                 borderColor: "#F65454",
-//                 pointRadius: 0,
-//                 fill: false,
-//                 borderWidth: 2,
-//                 lineTension: 1
-//             }]
-//         },
-//         options: {
-//             responsive: false,
-//             title: {
-//                 display: false,
-//             },
-//             legend: {
-//                 display: false
-//             },
-//             tooltips: {
-//                 enabled: false,
-//                 mode: 'index',
-//                 intersect: false
-//             },
-//             hover: {
-//                 mode: 'nearest',
-//                 intersect: true
-//             },
-//             scales: {
-//                 xAxes: [{
-//                     display: true,
-//                     scaleLabel: {
-//                         display: false,
-//                     }
-//                 }],
-//                 yAxes: [{
-//                     display: false,
-//                     ticks: {
-//                         suggestedMin: 0,
-//                     },
-//                     scaleLabel: {
-//                         display: false,
-//                     }
-//                 }]
-//             },
-//             layout: {
-//                 padding: {
-//                     left: 5,
-//                     right: 5,
-//                     top: 25,
-//                     bottom: 5
-//                 }
-//             }
-//         }
-//     });
 
-    /*  영상 종합분석도(기업)  */
+
+/*  교육 역량 종합 분석도  */
 var analysis_total_chart = document.getElementById("analysis_total");
 var atChart = new Chart(analysis_total_chart, {
   type: "radar",
@@ -222,15 +297,15 @@ var atChart = new Chart(analysis_total_chart, {
     datasets: [
       {
         label: "전체평균",
-        data: [15, 20, 5, 10, 15, 40],
+        data: [15, 20, 0, 10, 15, 100],
         pointRadius: 0,
         borderColor: "#5F4EEE",
         backgroundColor: "#6967F91A",
         fill: true,
     },
     {
-        label: "그룹평균",
-        data: [30, 40, 25, 1, 5, 30],
+        label: "교육생",
+        data: [100, 100, 25, 1, 5, 30],
         pointRadius: 0,
         borderColor: "#FFAA30",
         backgroundColor: "#FABF481A",
