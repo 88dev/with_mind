@@ -596,6 +596,9 @@ main > .container:nth-of-type(1) {
     .container_video .slider_video img {
         width: 300px;
     }
+    .container_video .slider_video p {
+        width: 300px;
+    }
 
 
 
