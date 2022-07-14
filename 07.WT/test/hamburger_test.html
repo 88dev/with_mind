@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="styleSheet" href="test.css" type="text/css"></link>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    
+        <!-- 상단 바 및 메뉴버튼 아이콘 -->
+        <div class="mobile-top-bar">
+            <div class="ico toggle-side-bar-btn" data-ico-now-animating="N">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">TEST</div>
+        </div>
+
+        <!-- 좌측 사이드 바 메뉴 -->
+        <div class="left-side-bar-box">
+            <div class="left-side-bar">
+                메뉴
+            </div>
+        </div>
+
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    /* 토글 사이드 바 버튼 관련 */
+$('.toggle-side-bar-btn').click(function(){
+    //console.log("토글 사이드바 버튼클릭");
+    
+    var $clicked = $(this);
+    var nowAnimating = $clicked.attr('data-ico-now-animating');
+    
+    /* 만약 토글 사이드바 버튼의 요소가 Y가 되면 */
+    if ( nowAnimating == "Y" ){
+        return;
+        /* 함수를 리턴하여 다시 안눌리게 한다 */
+    }
+    
+    /* 만약 클릭된 버튼에 active 클래스가 있다면 */
+    if ( $clicked.hasClass('active') ){
+        /* 사이드바를 없앤다 */
+        hideLeftSideBar();
+    }
+    else {
+        /* active 클래스가 없으면 나타나게 한다 */
+        showLeftSideBar();
+    }
+    
+    /* 아이콘에 active 클래스가 없으면 active 클래스를 넣어주고 있으면 빼줌 */
+    $clicked.toggleClass('active');
+});
+
+/* 왼쪽 사이드바 함수 */
+function showLeftSideBar(){
+    $('.left-side-bar-box').addClass('active');
+};
+function hideLeftSideBar(){
+    $('.left-side-bar-box').removeClass('active');
+};
+
+
+
+/* 좌측 사이드바 배경을 클릭했을때 */
+$('.left-side-bar-box').click(function(){
+    //console.log('배경클릭');
+
+    /* 토글 사이드바 버튼을 클릭한 효과를 만듬 */
+    $('.toggle-side-bar-btn').click();
+});
+/* 사이드바를 클릭할때 상위요소인 배경이 같이 클릭되어서 사이드바가 들어가버리기 때문에 그것을 막음 */
+$('.left-side-bar').click(function(e){
+    e.stopPropagation();
+});
+</script>
+</html>
+
+
+<!-- 출처 
+https://codepen.io/wlgp73/pen/GRgxpvL -->
