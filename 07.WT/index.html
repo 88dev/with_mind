@@ -66,35 +66,35 @@
             </div>
             <section class="contents slider slider_product">
                 <div>
-                    <a>
+                    <a href="https://www.analog.com/en/products/adxl1002.html">
                         <img src="images/img_product01.png" />
                         <span>ADXL1002</span>
                         <p>ADXL1002 저잡음 및 광주파 가속도계</p>
                     </a>
                 </div>
                 <div>
-                    <a>
+                    <a href="https://www.analog.com/en/products/adxl1001.html">
                         <img src="images/img_product03.png" />
                         <span>ADXL1001</span>
                         <p>ADXL1002 저잡음 및 광주파 가속도계</p>
                     </a>
                 </div>
                 <div>
-                    <a>
+                    <a href="https://www.analog.com/en/products/adxl356.html">
                         <img src="images/img_product01.png" />
                         <span>ADXL356</span>
                         <p>Analog Devices Inc. 아날로그<br>(ADXL356) 3축 MEMS 가속도계</p>
                     </a>
                 </div>
                 <div>
-                    <a>
+                    <a href="https://www.analog.com/en/products/adxl357.html">
                         <img src="images/img_product03.png" />
                         <span>ADXL357</span>
                         <p>Analog Devices Inc. 디지털<br>(ADXL357) 3축 MEMS 가속도계</p>
                     </a>
                 </div>
                 <div>
-                    <a>
+                    <a href="https://www.analog.com/en/products/adcmxl3021.html">
                         <img src="images/img_product05.png" />
                         <span>ADXL1002</span>
                         <p>Analog Devices Inc. ADcmXL3021<br>3축 진동 센서</p>
@@ -117,7 +117,7 @@
                 <strong>디자인 센터</strong>
             </div>
             <section class="contents">
-                <a href="">
+                <a href="https://www.analog.com/en/design-center/reference-designs/circuits-from-the-lab/CN0532.html">
                     <span>CN0532</span>
                     <div>
                         <p>Analog Devices Inc. CN-0532 회로 평가 보드(EVAL-CN0532-EBZ)는 광대역 MEMS 가속도계 센서를 위한 IEPE 호환 인터페이스용...</p>
@@ -125,7 +125,7 @@
                     </div>
                     <button type="button">자세히보기</button>
                 </a>
-                <a href="">
+                <a href="https://www.analog.com/en/design-center/reference-designs/circuits-from-the-lab/cn0549.html">
                     <span>CN0549</span>
                     <div>
                         <p>CN0549 CbM(상태 기반 모니터링) 개발 플랫폼은 진동 감지 기능을 사용하며 산업용 애플리케이션에서 중요성이...</p>
@@ -141,11 +141,11 @@
                 <strong>추천하는 영상</strong>
             </div>
             <section class="contents slider slider_video">
-                <a href="">
+                <a href="https://www.analog.com/en/education/education-library/videos/6296622771001.html">
                     <img src="images/img_video01.svg" />
                     <p>CN0549 New Condition-Based Monitoring Platform from ADI</p>
                 </a>
-                <a href="">
+                <a href="https://www.analog.com/en/education/education-library/videos/6227522784001.html">
                     <img src="images/img_video02.svg" />
                     <p>CN0549 - CbM Development Platform</p>
                 </a>
@@ -154,6 +154,17 @@
                     <p>영상제목을 입력해주세요.</p>
                 </a>
             </section>
+        </section>
+        
+        <section class="container container_contact">
+            <div class="top">
+                <span>Contact</span>
+                <strong>문의하기</strong>
+            </div>
+            <form>
+
+            </form>
+            <button type="button" class="submit">보내기<img src="images/icon_send.svg" /></button>
         </section>
     </main>
     <footer>
@@ -198,9 +209,11 @@
         }
         if ( $clicked.hasClass('active') ){
             hideMobileMenu();
+            $("html").css('overflow','').css('display','');
         }
         else {
             showMobileMenu();
+            $("html").css('overflow','hidden').css('display','fixed');
         }
         $clicked.toggleClass('active');
     });
