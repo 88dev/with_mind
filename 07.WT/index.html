@@ -8,6 +8,7 @@
     <title>WT main</title>
     <link rel="styleSheet" href="WT.css" type="text/css"></link>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="WT.js"></script>
 </head>
 <body>
     <header>
@@ -20,8 +21,8 @@
                 <li><a href="">추천제품</a></li>
                 <li><a href="https://www.analog.com/en/product-category/accelerometers.html">제품소개</a></li>
                 <li><a href="">디자인센터</a></li>
-                <li><a href="">자료 다운로드</a></li>
-                <li><a href="">히스토리</a></li>
+                <li><a href="download.html">자료 다운로드</a></li>
+                <li><a href="history.html">히스토리</a></li>
                 <li><a href="">문의하기</a></li>
             </ul>
         </div>
@@ -161,37 +162,73 @@
                 <span>Contact</span>
                 <strong>문의하기</strong>
             </div>
+            <section class="info">
+                <div>
+                    <b>Info</b>
+                    <div>
+                        <label>이메일</label>
+                        <p>bkhan@wtmec.com</p>
+                        <label>웹사이트</label>
+                        <p>http://www.wtmec.com</p>
+                    </div>
+                </div>
+                <div>
+                    <b>Tel.</b>
+                    <div>
+                        <label>대표번호</label>
+                        <p>+82 31-738-6446</p>
+                        <label>팩스번호</label>
+                        <p>+82 31-5171-3045</p>
+                    </div>
+                </div>
+                <div>
+                    <b>Address</b>
+                    <p>
+                        경기도 성남시 분당구 황새울로 
+                        258번길 19 (수내동, 한원빌딩 1층 새마을금고) 7층
+                    </p>
+                </div>
+            </section>
             <form>
-                <section class="info">
-                    <div>
-                        <b>Info</b>
-                        <div>
-                            <label>이메일</label>
-                            <p>bkhan@wtmec.com</p>
-                            <label>웹사이트</label>
-                            <p>http://www.wtmec.com</p>
-                        </div>
+                <section class="contact wrap_grid">
+                    <div class="grid_code">
+                        <label>제품 코드<em class="red">*</em></label>
+                        <input type="text" />
                     </div>
-                    <div>
-                        <b>Tel.</b>
-                        <div>
-                            <label>대표번호</label>
-                            <p>+82 31-738-6446</p>
-                            <label>팩스번호</label>
-                            <p>+82 31-5171-3045</p>
-                        </div>
+                    <div class="grid_name">
+                        <label>이름<em class="red">*</em></label>
+                        <input type="text" />
                     </div>
-                    <div>
-                        <b>Address</b>
-                        <p>
-                            경기도 성남시 분당구 황새울로 
-                            258번길 19 (수내동, 한원빌딩 1층 새마을금고) 7층
-                        </p>
+                    <div class="grid_tel">
+                        <label>휴대폰 번호<em class="red">*</em></label>
+                        <input type="text" />
+                    </div>
+                    <div class="grid_email">
+                        <label>이메일<em class="red">*</em></label>
+                        <input type="text" />
+                    </div>
+                    <div class="grid_contents">
+                        <label>문의내용<em class="red">*</em></label>
+                        <textarea></textarea>
                     </div>
                 </section>
-                
+                <div class="wrap_checkbox">
+                    <input type="checkbox" id="agree">
+                    <label for="agree"><span>개인정보처리방침</span>에 동의합니다.<em class="red">*</em></label>
+                </div>
             </form>
             <button type="button" class="submit">보내기<img src="images/icon_send.svg" /></button>
+        </section>
+
+        <section class="wrap_popup" id="popup">
+            <div class="popup_body">
+                <button type="button" class="close_wh" onclick="fnClose()"></button>
+                <div class="wrap_cookies">
+                    <input type="checkbox" id="cookies" />
+                    <label for="cookies">오늘 하루동안 안볼래요</label>
+                    <button type="button" class="close_bl" onclick="fnClose()"></button>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -345,16 +382,21 @@
         ]
     });
 
-$('#slick_toggle').click( function() {
-    if ($(this).hasClass("dot_pause")){
-        $('.slider_main').slick('slickPause');
-        $(this).removeClass("dot_pause");
-        $(this).addClass("dot_play");
-    } else {
-    $('.slider_main').slick('slickPlay')  
-        $(this).removeClass("dot_play");
-        $(this).addClass("dot_pause");
-    }  
-});
+    $('#slick_toggle').click( function() {
+        if ($(this).hasClass("dot_pause")){
+            $('.slider_main').slick('slickPause');
+            $(this).removeClass("dot_pause");
+            $(this).addClass("dot_play");
+        } else {
+        $('.slider_main').slick('slickPlay')  
+            $(this).removeClass("dot_play");
+            $(this).addClass("dot_pause");
+        }  
+    });
+
+    function fnClose(){
+        console.log("click");
+        $("#popup").css("display", "none");
+    }
 </script>
 </html>
