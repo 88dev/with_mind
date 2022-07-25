@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my grade webView</title>
+    <link rel="styleSheet" href="my_grade.css" type="text/css"></link>
+    <script src="my_grade.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css">
+    <link href="https://webfontworld.github.io/kohi/KOHIBaeum.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+<body>
+    <article id="my_grade">
+        <section class="wrap_page page_1">
+            <button type="button" id="back"></button>
+            <div id="particles"></div>
+            <div class="particle_bg"></div>
+            <div class="wrap_contents">
+                <div class="title">
+                    <img src="images/img_title.svg" />
+                    <p>
+                        나의 마지막 모의면접 진행 날짜는<br>
+                        <span>2022년 03월 25일</span> 입니다.<br>
+                        인터뷰마스터 IM으로 면접마스터가 되어보세요!
+                    </p>
+                    <p class="time">2022년 1월 30일 13시 12분 분석차트</p>
+                </div>
+            </div>
+        </section>
+        <section class="wrap_page page_2">
+            <div class="wrap_flex">
+                <div class="wrap_contents">
+                    <h3>나의 면접 키워드</h3>
+                    <div class="wrap_typing">
+                        <div class="typing_txt">
+                            <ul>
+                                <li>#나는 면접 마스터</li>
+                                <li>#오늘은 취준생, 내일은 직장인</li>
+                            </ul>
+                        </div>
+                        <div class="typing">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap_circle">
+                <div class="outline center flex">
+                    <div class="waves waves1 center"></div>
+                    <div class="waves waves2 center"></div>
+                </div>
+            </div>
+        </section>
+        <section class="wrap_page page_3">
+            <div class="background">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="wrap_flex">
+                <div class="wrap_contents">
+                    <div class="result wrap_grade">
+                        <h3>나의 모의면접<br>점수 추이는</h3>
+                        <p>최근 5건의 모의면접 진행 결과</p>
+                        <div class="wrap_graph">
+                            <div class="wrap_bar">
+                                <div class="bar">
+                                    <div class="progress grade_progress" style="height: 55%;"></div>
+                                </div>
+                                <div class="font">
+                                    2022. 01. 19<br>
+                                    09:56 AM
+                                </div>
+                            </div>
+                            <div class="wrap_bar">
+                                <div class="wrap_max">
+                                    <div class="max grade_max" style="bottom: 100%">최고점수<br><b>100점</b></div>
+                                </div>
+                                <div class="bar">
+                                    <div class="progress grade_progress hit" style="height: 100%;"></div>
+                                </div>
+                                <div class="font">
+                                    2022. 01. 19<br>
+                                    09:56 AM
+                                </div>
+                            </div>
+                            <div class="wrap_bar">
+                                <div class="bar">
+                                    <div class="progress grade_progress" style="height: 70%;"></div>
+                                </div>
+                                <div class="font">
+                                    2022. 01. 19<br>
+                                    09:56 AM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result wrap_rank">
+                        <h3>나의 모의면접<br>랭킹 지수는</h3>
+                        <p>최근 5건의 모의면접 진행 결과</p>
+                        <div class="wrap_graph">
+                            <div class="wrap_bar">
+                                <div class="wrap_max">
+                                    <div class="max rank_max" style="bottom: 55%">최고순위<br><b>1위</b></div>
+                                </div>
+                                <div class="bar">
+                                    <div class="progress rank_progress hit" style="height: 55%;"></div>
+                                </div>
+                                <div class="font">
+                                    2022. 01. 19<br>
+                                    09:56 AM
+                                </div>
+                            </div>
+                            <div class="wrap_bar">
+                                <div class="bar">
+                                    <div class="progress rank_progress" style="height: 33%;"></div>
+                                </div>
+                                <div class="font">
+                                    2022. 01. 19<br>
+                                    09:56 AM
+                                </div>
+                            </div>
+                            <div class="wrap_bar">
+                                <div class="bar">
+                                    <div class="progress rank_progress" style="height: 77%;"></div>
+                                </div>
+                                <div class="font">
+                                    2022. 01. 19<br>
+                                    09:56 AM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="wrap_page page_4">
+            <div class="wrap_flex">
+                <div class="wrap_contents">
+                    <h3>가장 높은 점수의 면접은</h3>
+                    <p>전체 모의면접 진행 결과</p>
+                    <strong>2022년 03월 25일 / <em>98</em>점</strong>
+                    <button type="button">결과리포트 소환!</button>
+                </div>
+            </div>
+        </section>
+        <section class="wrap_page page_5">
+            <div class="wrap_flex">
+                <div class="wrap_contents">
+                    <h3>가장 활발히 모의면접을 진행한 월은</h3>
+                    <p>최근 1년동안의 모의면접 진행 결과</p>
+                    <strong>2022년 03월 25일 / <em>98</em>점</strong>
+                </div>
+            </div>
+        </section>
+        <section class="wrap_page page_6">
+            <div class="wrap_flex">
+                <div class="wrap_contents">
+                    <section class="slider">
+                        <div class="slider_cont">
+                            <h3>나의 모의면접 진행 횟수는</h3>
+                            <p>최근 1년동안의 모의면접 진행 횟수</p>
+                            <b><em>16</em>회</b>
+                            <div>최다 진행 마스터 <b>54회</b></div>
+                        </div>
+                        <div class="slider_cont">
+                            <h3>나의 모의면접 진행 시간은</h3>
+                            <p>최근 1년동안의 모의면접 진행 시간</p>
+                            <b><em>345</em>분</b>
+                            <div>최다 진행 마스터 <b>567분</b></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <section class="wrap_page page_7">
+            <div class="wrap_flex">
+                <div class="wrap_contents">
+                    <h3>나와 동일 직군을 선택한 성별 비율</h3>
+                    <p>최근 1년동안의 모의면접 진행 결과</p>
+                    <div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="js/Counter-Up-master/jquery.counterup.min.js"></script> -->
+    <script>
+        fnParticle();
+        fnTyping();
+        $( document ).ready( function() {
+            fnWidth();
+        });
+
+        $(".slider").slick({
+            dots: true,
+            fade: true,
+            pauseOnHover: false,
+            arrows: false,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            speed: 500,
+            slidesToShow: 1,
+            adaptiveHeight: false,
+            draggable : true,
+        });
+    </script>
+</html>
