@@ -1,0 +1,66 @@
+<!--
+
+미듬에듀 이용자 페이지
+
+index
+mideum (미듬에듀)
+    - mideum (미듬에듀)
+    - introduce (소개)
+    - history (연혁)
+    - organization (조직도)
+    - inquiry (문의)
+education (기업교육)
+    - cpsEdu (compulsory education 법정의무교육)
+    - jobTraining (직무교육)
+consulting(기업 컨설팅)
+    - labor (노무 컨설팅)
+    - tax (세무 컨설팅)
+    - voucher (바우처)
+    - branding (브랜딩 컨설팅)
+partner (기업 채용/역량 강화)
+    - interviewMaster (인터뷰마스터)
+    - soKind (쏘카인드)
+user
+    - signup (회원가입)
+        - certification (본인인증)
+        - signupForm (개인정보 입력)
+        - signupComplete (회원가입 완료)
+    - signin (로그인)
+        - findID (아이디 찾기)
+        - findPW (비밀번호 찾기)
+    - infoUpdate (회원정보 수정)
+    - inquiryHistory (나의 문의내역)
+        -inquiryDetail (나의 문의내역 상세)
+    - deleteMember (회원 탙퇴)
+
+
+
+미듬에듀 관리자 페이지
+
+index (Dashboard)
+signin (로그인)
+manageMain (메인관리)
+    -banner (배너관리)
+            - create (배너관리 등록 - 모달)
+        - detail (배너관리 상세페이지)
+        - update (배너관리 수정)
+    -popup (팝업관리)
+            - create (팝업관리 등록 - 모달)
+        - detail (팝업관리 상세페이지)
+        - update (팝업관리 수정)
+manageUser (회원관리)
+    - list (회원관리 목록)
+    - detail (회원관리 기본정보/문의내역 tab)
+manageService (서비스 관리)
+    - inquiry (1:1 문의)
+        - detail (문의관리 상세 - 답변 전 / 답변 후 -- 한 페이지에서 이루어 지는 것 같음)
+    - policy(약관)
+        - detail (약관 상세페이지)
+        - update (약관 상세페이지 수정)
+            (service / privacy / marketing)
+    - partner
+        - detail / soKind (아이엠 / 쏘카인드)
+        - update (아이엠 / 쏘카인드 수정)
+
+
+ -->

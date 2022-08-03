@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my grade webView</title>
-    <link rel="styleSheet" href="my_grade.css" type="text/css"></link>
-    <script src="my_grade.js"></script>
+    <link rel="styleSheet" href="my_grade_m.css" type="text/css"></link>
+    <script src="my_grade_m.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css">
     <link href="https://webfontworld.github.io/kohi/KOHIBaeum.css" rel="stylesheet">
@@ -71,7 +71,7 @@
                         <div class="wrap_graph">
                             <div class="wrap_bar">
                                 <div class="bar">
-                                    <div class="progress grade_progress" style="height: 55%;"></div>
+                                    <div class="progress grade_progress" style="height: 0%;"></div>
                                 </div>
                                 <div class="font">
                                     2022. 01. 19<br>
@@ -80,10 +80,10 @@
                             </div>
                             <div class="wrap_bar">
                                 <div class="wrap_max">
-                                    <div class="max grade_max" style="bottom: 100%">최고점수<br><b>100점</b></div>
+                                    <div class="max grade_max" style="bottom: 0%">최고점수<br><b>100점</b></div>
                                 </div>
                                 <div class="bar">
-                                    <div class="progress grade_progress hit" style="height: 100%;"></div>
+                                    <div class="progress grade_progress hit" style="height: 0%;"></div>
                                 </div>
                                 <div class="font">
                                     2022. 01. 19<br>
@@ -92,7 +92,7 @@
                             </div>
                             <div class="wrap_bar">
                                 <div class="bar">
-                                    <div class="progress grade_progress" style="height: 70%;"></div>
+                                    <div class="progress grade_progress" style="height: 0%;"></div>
                                 </div>
                                 <div class="font">
                                     2022. 01. 19<br>
@@ -107,10 +107,10 @@
                         <div class="wrap_graph">
                             <div class="wrap_bar">
                                 <div class="wrap_max">
-                                    <div class="max rank_max" style="bottom: 55%">최고순위<br><b>1위</b></div>
+                                    <div class="max rank_max" style="bottom: 0%">최고순위<br><b>1위</b></div>
                                 </div>
                                 <div class="bar">
-                                    <div class="progress rank_progress hit" style="height: 55%;"></div>
+                                    <div class="progress rank_progress hit" style="height: 0%;"></div>
                                 </div>
                                 <div class="font">
                                     2022. 01. 19<br>
@@ -119,7 +119,7 @@
                             </div>
                             <div class="wrap_bar">
                                 <div class="bar">
-                                    <div class="progress rank_progress" style="height: 33%;"></div>
+                                    <div class="progress rank_progress" style="height: 0%;"></div>
                                 </div>
                                 <div class="font">
                                     2022. 01. 19<br>
@@ -128,7 +128,7 @@
                             </div>
                             <div class="wrap_bar">
                                 <div class="bar">
-                                    <div class="progress rank_progress" style="height: 77%;"></div>
+                                    <div class="progress rank_progress" style="height: 0%;"></div>
                                 </div>
                                 <div class="font">
                                     2022. 01. 19<br>
@@ -145,7 +145,7 @@
                 <div class="wrap_contents">
                     <h3>가장 높은 점수의 면접은</h3>
                     <p>전체 모의면접 진행 결과</p>
-                    <strong>2022년 03월 25일 / <em>98</em>점</strong>
+                    <strong>2022년 03월 25일 / <em class="count">98</em>점</strong>
                     <button type="button">결과리포트 소환!</button>
                 </div>
             </div>
@@ -155,7 +155,7 @@
                 <div class="wrap_contents">
                     <h3>가장 활발히 모의면접을 진행한 월은</h3>
                     <p>최근 1년동안의 모의면접 진행 결과</p>
-                    <strong>2022년 03월 25일 / <em>98</em>점</strong>
+                    <strong>2022년 03월 25일 / <em class="count">98</em>점</strong>
                 </div>
             </div>
         </section>
@@ -184,38 +184,84 @@
                 <div class="wrap_contents">
                     <h3>나와 동일 직군을 선택한 성별 비율</h3>
                     <p>최근 1년동안의 모의면접 진행 결과</p>
-                    <div>
-                        
-
+                    <div class="jop_group">
+                        <img src="images/img_thumb.svg" />
+                        <span>나의 선호 직군</span>
+                        <b>디자인/ 경험 디자인</b>
+                    </div>
+                    <div class="percent">
+                        <div class="wrap_blue">
+                            <div class="progress_bar progress_blue" role="progressbar" style="height: 0%; overflow: hidden;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                            <img src="images/img_man.svg" />
+                        </div>
+                        <span>30%</span>
+                        <div class="wrap_red">
+                            <div class="progress_bar progress_red" role="progressbar" style="height: 0%; overflow: hidden;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                            <img src="images/img_woman.svg" />
+                        </div>
+                        <span>70%</span>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="wrap_page page_8">
+            <div class="bg_main08"></div>
+            <div class="wrap_flex">
+                <div class="wrap_contents">
+                    <h3>내가 자주 사용하는 단어는</h3>
+                    <p>최근 1년동안의 모의면접 진행 결과</p>
+                    <div class="wrap_word">
+                        <div class="word">
+                            <span>1</span>
+                            <p>기회글자수 최대 몇자까지 가능할까요?</p>
+                            <span>(55회)</span>
+                        </div>
+                        <div class="word">
+                            <span>2</span>
+                            <p>20자</p>
+                            <span>(53회)</span>
+                        </div>
+                        <div class="word">
+                            <span>3</span>
+                            <p>이용자</p>
+                            <span>(45회)</span>
+                        </div>
+                        <div class="word">
+                            <span>4</span>
+                            <p>커스텀</p>
+                            <span>(25회)</span>
+                        </div>
+                        <div class="word">
+                            <span>5</span>
+                            <p>인증번호</p>
+                            <span>(5회)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="wrap_page page_9">
+            <div class="wrap_flex">
+                <div class="wrap_contents">
+                    <img src="images/img_go.svg" />
+                    <button type="button">모의면접 시작</button>
+                </div>
+            </div>
+        </section>
+        <button type="button" id="top"></button>
     </article>
 </body>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-<script src="js/Counter-Up-master/jquery.counterup.min.js"></script> -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
     <script>
-        fnParticle();
-        fnTyping();
         $( document ).ready( function() {
+            fnParticle();
             fnWidth();
-        });
-
-        $(".slider").slick({
-            dots: true,
-            fade: true,
-            pauseOnHover: false,
-            arrows: false,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            speed: 500,
-            slidesToShow: 1,
-            adaptiveHeight: false,
-            draggable : true,
+            fnScrollTyping();
+            fnCount();
+            fnScroll();
         });
     </script>
 </html>

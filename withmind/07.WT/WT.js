@@ -57,26 +57,26 @@
         prevArrow : "<button type='button' class='slick-prev'></button>",		// 이전 화살표 모양 설정
         nextArrow : "<button type='button' class='slick-next'></button>",		// 다음 화살표 모양 설정
         responsive: [
-        {
-            breakpoint: 1500,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1
-            }
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
             },
             {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-            }
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
             },
             {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             },
         ]
     });

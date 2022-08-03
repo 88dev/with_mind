@@ -110,11 +110,8 @@ function fnParticle(){
 // 타이핑 스크롤
 function fnScrollTyping(){
     let runTyping = true;
-    let pageHeight = $(".wrap_page").height();
-    // console.log(pageHeight + " << page11");
-
     $(window).scroll(function () {
-        if ($(window).scrollTop() > pageHeight ) {
+        if ($(window).scrollTop() > 200 ) {
             if(runTyping == true) {
                 fnTyping();
                 runTyping = false;
@@ -125,50 +122,31 @@ function fnScrollTyping(){
 
 //타이핑
 function fnTyping(){    
-
     var typingBool = false; 
     var typingIdx = 0; 
     var liIndex = 0;
     var liLength = $(".typing_txt>ul>li").length;
-
-    // 타이핑될 텍스트를 가져온다 
     var typingTxt = ""; 
-    
     typingTxt =	$(".typing_txt>ul>li").eq(liIndex).text(); 
-    typingTxt = typingTxt.split(""); // 한글자씩 자른다. 
-    if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+    typingTxt = typingTxt.split(""); 
+    if(typingBool==false){
         typingBool=true; 
-
         refreshIntervalId3 = setInterval(function() {typing();}, 100);
     } 
-        
     function typing(){ 
-        // $(".typing ul li").removeClass("on");
-        // $(".typing ul li").eq(liIndex).addClass("on");
-        if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
-            $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+        if(typingIdx<typingTxt.length){ 
+            $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); 
             typingIdx++; 
         } else { if(liIndex<liLength-1){
-            //다음문장으로  가기위해 인덱스를 1증가
             liIndex++; 
-            //다음문장을 타이핑하기위한 셋팅  
             typingIdx=0;
             typingBool = false; 
-            // typingTxt.str.substr(0.2).css("color","red");
-            // $(".typing-txt>ul>li").eq(0).css("color","red");
             typingTxt = $(".typing_txt>ul>li").eq(liIndex).text(); 
-        
-            //다음문장 타이핑전 1초 쉰다
-            clearInterval(refreshIntervalId3);
-            //타이핑종료
-        
+            clearInterval(refreshIntervalId3);        
             setTimeout(function(){
-            //1초후에 다시 타이핑 반복 시작
                 refreshIntervalId3 = setInterval(function() {typing();}, 100);
                 }, 400);
             } else if(liIndex==liLength-1){
-            
-            //마지막 문장까지 써지면 반복종료
                 clearInterval(refreshIntervalId3);
             }
         } 
@@ -177,9 +155,6 @@ function fnTyping(){
 
 function fnWidth(){
     let num = $('.wrap_grade').children(".wrap_graph").children(".wrap_bar").length;
-
-    console.log("몇개" + num);
-
     if(num < 3) {
         console.log("1,2개");
         $(".wrap_graph").css("width", "240px");
@@ -191,3 +166,86 @@ function fnWidth(){
         $(".wrap_graph").css("width", "100%");
     }
 }
+function fnScroll() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 300) {
+            $('#top').fadeIn();
+        } else {
+            $('#top').fadeOut();
+        }
+        
+        if ($(this).scrollTop() > 650) {
+            $(".grade_progress").eq(0).animate({
+                height: "15%"
+            });
+            $(".grade_progress").eq(1).animate({
+                height: "15%"
+            });
+            $(".grade_progress").eq(2).animate({
+                height: "15%"
+            });
+            $(".grade_max").animate({
+                opacity: "1",
+                bottom: "15%"
+            });
+        }
+        if ($(this).scrollTop() > 900) {
+            $(".rank_progress").eq(0).animate({
+                height: "15%"
+            });
+            $(".rank_progress").eq(1).animate({
+                height: "15%"
+            });
+            $(".rank_progress").eq(2).animate({
+                height: "15%"
+            });
+            $(".rank_max").animate({
+                opacity: "1",
+                bottom: "15%"
+            });
+        }
+        if ( $(window).scrollTop() > 2100 ) {
+            $(".progress_blue").animate({
+                height: "30%"
+            });
+            $(".progress_red").animate({
+                height: "70%"
+            });
+        }
+        if ( $(window).scrollTop() > 2300 ) {
+            $('.word').each(function(index){
+                $(this)
+                    .delay(index*500)
+                    .animate({
+                        opacity: '1'
+                }, 'slow')
+            });
+        }
+    });
+
+}
+$(".slider").slick({
+    dots: true,
+    fade: true,
+    pauseOnHover: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 500,
+    slidesToShow: 1,
+    adaptiveHeight: false,
+    draggable : true,
+});
+// 숫자 카운트
+function fnCount(){
+    $('.count').counterUp({
+        delay: 10,
+        time: 1000
+    });
+}
+        
+$("#top").click( function() {
+    var htmloffset = jQuery( 'html' ).offset();
+    jQuery( 'html, body' ).animate( { scrollTop : htmloffset.top }, 400 );
+});

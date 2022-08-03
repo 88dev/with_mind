@@ -261,7 +261,6 @@ function fnWord(){
 
     $(window).scroll(function () {
         if ( $(window).scrollTop() > pageHeight_6 ) {
-
             $('.word').each(function(index){
                 // 각각 반복문으로 0.5초 지연시키면서 애니메이션을 실행합니다.
                 // index * 500
