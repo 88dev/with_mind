@@ -69,7 +69,7 @@ input::placeholder {
 
 
 .container {
-    max-width: 1040px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
@@ -326,8 +326,7 @@ header .gnb ul li:not(:first-of-type) {
 }
 .join_area .contents .join_form table th,
 .join_area .contents .join_form table td {
-    height: auto;
-    min-height: 88px;
+    height: 88px;
     padding: 20px;
     border-top: 1px solid #EEEEEE;
 }
