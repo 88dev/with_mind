@@ -17,6 +17,7 @@ ins {color:#000;text-decoration:none;}
 mark {color:#000;font-style:italic;font-weight:700;}
 del,s {text-decoration:line-through;}
 abbr[title],dfn[title] {border-bottom:1px dotted #000;cursor:help;}
+i, em {font-style: normal;}
 
 hr {display:block;height:1px;border:0;border-top:1px solid #cccccc;margin:1em 0;padding:0;}
 input,select {}

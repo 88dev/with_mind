@@ -2,11 +2,109 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<link rel='styleSheet' href='css/reset.css' type='text/css'></link>
-<link rel='styleSheet' href='css/style.css' type='text/css'></link>
+<link rel='styleSheet' href='../css/reset.css' type='text/css'></link>
+<link rel='styleSheet' href='../css/style.css' type='text/css'></link>
 <title></title>
 </head>
 <body>
+    <header>
+        <section class="link_wrap container">
+            <ul>
+                <li><a>로그인</a></li>
+                <li><a>회원가입</a></li>
+                <li><a>이벤트</a></li>
+                <li class="inquiry"><a>1:1 상담</a></li>
+            </ul>
+        </section>
+        <section class="gnb_area">
+            <section class="gnb container">
+                <h1 class="logo"><a></a></h1>
+                <ul>
+                    <li><a>미듬에듀</a></li>
+                    <li><a>기업교육</a></li>
+                    <li><a>기업컨설팅</a></li>
+                    <li><a>기업 채용/역량 강화</a></li>
+                </ul>
+            </section>
+        </section>
+    </header>
+    <article class="join_area container">
+        <div class="txt_area">
+            <h5>회원가입</h5>
+            <p>미듬에듀를 방문해주셔서 감사합니다.<br>회원가입을 하시면 보다 다양한 서비스를 이용하실 수 있습니다.</p>
+        </div>
+        <section class="contents">
+            <ul class="join_step">
+                <li class="active">
+                    <span>
+                        <em>STEP 1</em>
+                        본인인증
+                    </span>
+                </li>
+                <li class="active">
+                    <span>
+                        <em>STEP 2</em>
+                        회원정보 입력
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <em>STEP 3</em>
+                        가입완료
+                    </span>
+                </li>
+            </ul>
+            <section class="join_form">
+                <div class="info">필수입력 정보입니다.</div>
+                <table>
+                    <tr>
+                        <th><span>이름</span></th>
+                        <td>배수정</td>
+                    </tr>
+                    <tr>
+                        <th><span>아이디</span></th>
+                        <td>
+                            <input type="text" />
+                            <span class="error">필수항목명을 입력해주세요.</span>
+                            <span class="error">아이디 형식은 6~12자의 영문, 숫자로 생성해주세요.</span>
+                            <span class="error">해당 아이디로 가입된 회원이 있습니다. 비밀번호가 기억나지 않으시면,<br>비밀번호 재설정 기능을 이용해주세요.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>비밀번호</span></th>
+                        <td>
+                            <input type="text" class="pw" placeholder="비밀번호(8~16자의 영문, 숫자, 특수기호)" />
+                            <span class="error">비밀번호는 영문, 숫자, 특수문자를 조합하여 8자리이상으로 설정해주세요.</span>
+                            <span class="error">비밀번호가 일치하지 않습니다. 입력하신 비밀번호를 다시 한번 확인해주세요.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>이메일</span></th>
+                        <td>
+                            <div class="email">
+                                <input type="text" placeholder="이메일" />
+                                <span>@</span>
+                                <select>
+                                    <option>naver.com</option>
+                                    <option>gmail.com</option>
+                                    <option>kakao.com</option>
+                                    <option>hanmail.net</option>
+                                    <option>nate.com</option>
+                                    <option>직접입력</option>
+                                </select>
+                            </div>
+                            <span class="error">올바른 이메일 주소를 입력해주세요.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>휴대폰 번호</th>
+                        <td>010-3254-1710</td>
+                    </tr>
+                </table>
+            </section>
+            <button type="button" class="btn_black">가입하기</button>
+        </section>
+    </article>
 
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>

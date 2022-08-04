@@ -3,14 +3,30 @@
 
 /* 공통 소스 */
 body {font-family: 'Noto Sans KR', sans-serif;}
-i, em {font-style: normal;}
-/* 버튼 */
+/* button */
 
-/* 셀렉트 박스 */
+/* select */
 
-/* 라디오버튼 */
+/* input[type=checkbox] */
 
-/* 체크박스 */
+/* input[type=radio] */
 
-/* 인풋[텍스트] */
+/* input[type=text] */
 
+/* textarea */
+
+/* modal */
+
+
+/* 모바일 */
+@media (max-width: 500px) { 
+    
+} 
+/* 테블릿 */
+@media (max-width: 768px) { 
+    
+} 
+/* 데스크탑 */
+@media (max-width: 1024px) { 
+    
+} 

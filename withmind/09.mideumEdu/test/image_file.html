@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel='styleSheet' href='css/reset.css' type='text/css'></link>
+<link rel='styleSheet' href='css/style.css' type='text/css'></link>
+<title></title>
+</head>
+<body>
+    <section>
+        <h6>기업 로고이미지(CI)</h6>
+        <div class="file-div-wrapper" data-activity-template="true" data-activity="1">
+            <div class="filebox fileUpload-padding"> 
+                <label class="btn-file">파일 업로드
+                    <input type="file" name="file" id="imageFile" class="file-input-custom">
+                </label>
+                <input class="upload-name file-label-wrapper" disabled="disabled" id="printFile" value="${fileVO.fileOrgname}" placeholder="선택된 파일 없음" />
+                <button type="button" class="file_delete <c:if test="${empty fileVO.fileOrgname}">none</c:if>" id="file_delete_btn"></button>
+            </div>
+        </div>
+        <button class="purple_btn" id="updateDefaultBtn">수정완료</button>
+    </section>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+$("#file_delete_btn").on('click', function(e){
+    var delConfirm = confirm('첨부파일을 삭제 하시겠습니까?');
+    if(delConfirm){
+        $.ajax({
+            url : "${pageContext.request.contextPath}/user/deleteKioskFile",
+            method : "POST",
+            success : function(data) {	
+                    $("#printFile").val("");
+                    $("#file_delete_btn").addClass("none");
+                    $(".logout").children("span").children("img").remove();
+                    alert("삭제가 완료 되었습니다.");
+            },
+            error: function(xhr, status, err) {				
+                if (xhr.status == 403) {
+                    alert("세션이 만료되었습니다. 다시 로그인하세요.");
+                    location.reload();
+                } else if (xhr.status == 500) {
+                    alert("오류가 발생하였습니다. 관리자에게 문의하세요.");
+                }
+            }
+        });
+    }else{
+        alert("취소 되었습니다.");
+        return false;  
+    }
+});
+</script>
+</html>
