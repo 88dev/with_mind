@@ -7,6 +7,9 @@ body {
     color: #333333;
     font-weight: 500;
 }
+.m_t_0 {
+    margin-top: 0;
+}
 /* 버튼 */
 button {
     font-weight: 500;
@@ -40,21 +43,52 @@ select {
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     padding: 16px;
+    cursor: pointer;
 }
 
 /* 체크박스 */
+input[type="checkbox"],input[type="radio"] {
+    display: none;
+}
+input[type="checkbox"] + label {
+    cursor: pointer;
+}
+input[type="checkbox"].checkbox_circle + label {
+    background: url('../images/checkbox_circle_blank.svg') left/20px no-repeat;
+    background-size: contain;
+    padding-left: 30px;
+
+}
+input[type="checkbox"].checkbox_circle:checked + label {
+    background: url('../images/checkbox_circle_checked.svg') left/20px no-repeat;
+    background-size: contain;
+    padding-left: 30px;
+}
 
 /* 라디오버튼 */
+input[type="radio"] + label {
+    display: inline-block !important;
+    background: url('../images/radio_blank.svg') left/20px no-repeat;
+    background-size: contain;
+    padding-left: 28px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+input[type="radio"]:checked + label {
+    display: inline-block !important;
+    background: url('../images/radio_checked.svg') left/20px no-repeat;
+    background-size: contain;
+}
 
 /* 인풋[텍스트] */
-input[type=text] {
+input[type=text], input[type=password] {
     background: #FFFFFF;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     height: 50px;
     padding: 16px;
 }
-input[type=text]:focus {
+input[type=text]:focus, input[type=password]:focus {
     border: 1px solid #111111;
 }
 input[type=text].error {
@@ -97,6 +131,7 @@ header .gnb_area {
     padding: 25px 0;
 }
 header .gnb {
+    position: relative;
     display: flex;
     justify-content: space-between;
 }
@@ -124,16 +159,21 @@ header .gnb ul li:first-of-type {
 header .gnb ul li:not(:first-of-type) {
     margin-left: 50px;
 }
+header .gnb .btn_menu {
+    display: none;
+}
 
 .login_area {
     position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 520px;
+    width: auto;
+    max-width: 520px;
     height: 100vh;
     margin: 0 auto;
+    padding-top: 215px;
+}
+.login_area .logo_area img {
+    display: block;
+    margin: 0 auto
 }
 .login_area .contents {
     margin-top: 50px;;
@@ -153,9 +193,6 @@ header .gnb ul li:not(:first-of-type) {
 .login_area .contents .form_wrap input {
     width: 100%;
     height: 50px;
-    background: #FFFFFF;
-    border: 1px solid #D8D8D8;
-    border-radius: 4px;
     margin-bottom: 12px;
     padding: 0 16px;
 }
@@ -186,16 +223,18 @@ header .gnb ul li:not(:first-of-type) {
     width: 100%;
     height: 50px;
 }
-.login_area .contents .form_wrap .btn_blueLine {
+.login_area .contents .form_wrap .btn_blue {
     margin-top: 12px;
 }
 .login_area .footer .footer_link {
     margin-top: 30px;
+    text-align: center;
 }
 .login_area .footer .footer_link li {
     position: relative;
     display: inline-block;
 }
+.login_area .footer .footer_link span:nth-of-type(2) li::before,
 .login_area .footer .footer_link li+li::before {
     content: '';
     position: absolute;
@@ -206,19 +245,22 @@ header .gnb ul li:not(:first-of-type) {
     border-radius: 50%;
     background: #D9D9D9;
 }
-.login_area .footer .footer_link li+li {
+.login_area .footer .footer_link li+li,
+.login_area .footer .footer_link span:nth-of-type(2) li {
     padding-left: 20px;
 }
 .login_area .footer .footer_link li a {
     color: #555555;
     font-size: 14px;
 }
-.login_area .footer .footer_link li:nth-of-type(3) a {
+.login_area .footer .footer_link span:nth-of-type(2) li:nth-of-type(1) a {
     color: #111111;
 }
 .login_area .btn_black {
-    position: absolute;
-    bottom: 60px;
+    margin: 100px 0 60px;
+}
+.join_area {
+    margin-bottom: 100px;
 }
 .join_area .txt_area {
     margin-top: 100px;
@@ -248,6 +290,10 @@ header .gnb ul li:not(:first-of-type) {
     font-size: 18px;
     font-weight: 600;
 }
+.join_area .contents .join_step li:nth-of-type(2) {
+    border-right: none;
+    border-left: none;
+}
 .join_area .contents .join_step li span {
     display: flex;
     flex-direction: column;
@@ -266,31 +312,31 @@ header .gnb ul li:not(:first-of-type) {
 }
 .join_area .contents .join_step li:nth-of-type(1) span:after {
     background: var(--main-color);
-    background-image: url('../images/img_join_lock_on.svg');
+    background-image: url('../images/img_join_step1_on.svg');
     background-repeat: no-repeat;
     background-position: center;
 }
 .join_area .contents .join_step li:nth-of-type(2) span:after {
     background: #F8F8F8;
-    background-image: url('../images/img_join_input_off.svg');
+    background-image: url('../images/img_join_step2_off.svg');
     background-repeat: no-repeat;
     background-position: center;
 }
 .join_area .contents .join_step li:nth-of-type(2).active span:after {
     background: var(--main-color);
-    background-image: url('../images/img_join_input_on.svg');
+    background-image: url('../images/img_join_step2_on.svg');
     background-repeat: no-repeat;
     background-position: center;
 }
 .join_area .contents .join_step li:nth-of-type(3) span:after {
     background: #F8F8F8;
-    background-image: url('../images/img_join_website_off.svg');
+    background-image: url('../images/img_join_step3_off.svg');
     background-repeat: no-repeat;
     background-position: center;
 }
 .join_area .contents .join_step li:nth-of-type(3).active span:after {
     background: var(--main-color);
-    background-image: url('../images/img_join_website_on.svg');
+    background-image: url('../images/img_join_step3_on.svg');
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -303,7 +349,7 @@ header .gnb ul li:not(:first-of-type) {
 .join_area .contents button {
     display: block;
     width: 280px;
-    height: 56px;
+    height: 50px;
     margin: 100px auto 0 auto;
 }
 .join_area .contents .join_form {
@@ -352,11 +398,30 @@ header .gnb ul li:not(:first-of-type) {
 .join_area .contents .join_form table td input[type=text] {
     width: 560px;
 }
-.join_area .contents .join_form table td .pw {
+.join_area .contents .join_form table td .pw_input {
     position: relative;
+    width: 560px;
 }
-.join_area .contents .join_form table td .pw {
-    position: relative;
+.join_area .contents .join_form table td .pw_input a {
+    background: url('../images/img_question_mark.svg') no-repeat;
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.join_area .contents .join_form table td .pw_input #pw_notice {
+    display: none;
+    position: absolute;
+    top: -50px;
+    right: -295px;
+    width: 270px;
+    height: 120px;
+    background: url('../images/img_pw_notice.svg') no-repeat;
+}
+.join_area .contents .join_form table td .pw_input a:hover #pw_notice {
+    display: block;
 }
 .join_area .contents .join_form table td .email input,
 .join_area .contents .join_form table td .email select {
@@ -384,6 +449,98 @@ header .gnb ul li:not(:first-of-type) {
     border-radius: 50%;
     background: var(--color-red);
 }
+.join_area .contents .join_form .terms {
+    margin-top: 60px;
+}
+.join_area .contents .join_form .terms > li:not(:last-of-type) {
+    margin-bottom: 67px;
+}
+.join_area .contents .join_form .terms li div label {
+    font-size: 20px;
+    font-weight: 600;
+}
+.join_area .contents .join_form .terms li div label span {
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 5px;
+    vertical-align: text-top;
+}
+.join_area .contents .join_form .terms li:not(:last-of-type) div label span {
+    color: #E30D1E;
+}
+.join_area .contents .join_form .terms li .terms_box {
+    background: #FFFFFF;
+    height: 260px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin-top: 18px;
+    font-size: 15px;
+}
+.join_area .contents .join_form .terms li .terms_box > div {
+    height: 180px;
+    margin: 40px;
+    overflow-y: auto;
+}
+.join_area .contents .join_form .terms li .terms_box > div::-webkit-scrollbar {
+    width: 10px;
+}
+.join_area .contents .join_form .terms li .terms_box > div::-webkit-scrollbar-thumb {
+    background-color: #CCCCCC;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.join_area .contents .join_form .terms li .terms_box strong {
+    display: block;
+    margin-top: 16px;
+    font-weight: 500;
+}
+.join_area .contents .join_form .terms li .terms_box ul {
+    margin-top: 5px;
+    padding-left: 15px;
+}
+.join_area .contents .join_form .terms li .terms_box ul li span {
+    margin-left: -15px;
+}
+.join_area .contents .join_form .terms li .terms_box p {
+    margin-bottom: 30px;
+}
+.join_area .contents .join_form .terms li .terms_box_marketing p {
+    margin-top: 30px;
+}
+.join_area .contents .join_form .terms li .terms_box h6 {
+    font-weight: 500;
+}
+.join_area .contents .join_form .expiration_date {
+    margin-top: 60px;
+}
+.join_area .contents .join_form .expiration_date tr td span {
+    display: inline-block;
+    width: 100px;
+}
+.join_area .contents .welcome {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin-top: 60px;
+    padding: 86px 0;
+    text-align: center;
+}
+.join_area .contents .welcome img {
+    display: block;
+    margin: 0 auto;
+}
+.join_area .contents .welcome b {
+    display: block;
+    margin: 18px 0 8px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.join_area .contents .welcome p {
+    color: #555555;
+    font-size: 16px;
+}
+
 
 /* 데스크탑 */
 @media (max-width: 1024px) { 
@@ -391,9 +548,149 @@ header .gnb ul li:not(:first-of-type) {
 } 
 /* 테블릿 */
 @media (max-width: 768px) { 
-    
+    .container {
+        padding:  0 40px;
+    }
+    header .container {
+        padding: 9px 40px;
+    }
+    header .gnb .btn_menu {
+        display: block;
+    }
+    .ico {
+        position:absolute;
+        top:50%;
+        right:35px;
+        width:24px;
+        height:20px;
+        transform:translatey(-50%);
+        cursor:pointer;
+    }
+    .ico > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000000;
+    }
+    .ico > div:nth-child(2) {
+        top:40%;
+        transition:visibility 0s .15s;
+    }
+    .ico.active > div:nth-child(2) {
+        visibility:hidden;
+        transition:visibility 0s;
+    }
+    .ico > div:nth-child(3) {
+        top:80%;
+    }
+    .ico > div:nth-child(1), .ico > div:nth-child(3) {
+        transition:top .15s .15s, transform .15s;
+    }
+    .ico.active > div:nth-child(1), .ico.active > div:nth-child(3) {
+        top:40%;
+        transform:rotate(45deg);
+        transition:top .15s, transform .15s .15s;
+    }
+    .ico.active > div:nth-child(3) {
+        transform:rotate(-45deg);
+    }
+    .login_area .contents .form_wrap h3 {
+        font-size: 30px;
+    }
+    .join_area .contents .join_step li {
+        height: 92px;
+    }
+    .join_area .contents .join_step li span {
+        margin-left: 93px;
+        font-size: 16px;
+    }
+    .join_area .contents .join_step li span:after {
+        width: 54px;
+        height: 54px;
+        left: 23px;
+        top: 19px;
+    }
+    .join_area .contents .join_step li:nth-of-type(1) span:after {
+        background: var(--main-color);
+        background-image: url(../images/img_join_step1_on.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+    }
+    .join_area .contents .join_step li:nth-of-type(2) span:after {
+        background: #F8F8F8;
+        background-image: url('../images/img_join_step2_off.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+    }
+    .join_area .contents .join_step li:nth-of-type(2).active span:after {
+        background: var(--main-color);
+        background-image: url('../images/img_join_step2_on.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+    }
+    .join_area .contents .join_step li:nth-of-type(3) span:after {
+        background: #F8F8F8;
+        background-image: url('../images/img_join_step3_off.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+    }
+    .join_area .contents .join_step li:nth-of-type(3).active span:after {
+        background: var(--main-color);
+        background-image: url('../images/img_join_step3_on.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+    }
+    .join_area .contents .join_step li span em {
+        margin-bottom: 0;
+        font-size: 13px;
+    }
+
 } 
 /* 모바일 */
 @media (max-width: 500px) { 
+    .container {
+        padding:  0 20px;
+    }
+    header .link_wrap {
+        padding: 9px 20px;
+    }
+    header .link_wrap li:not(:first-of-type) {
+        margin-left: 20px;
+    }
+    .login_area {
+        min-width: 320px;
+        padding: 230px 20px 0 20px
+    }
+    .login_area .contents .form_wrap {
+        padding: 60px 20px;
+    }
+    .login_area .contents .form_wrap h3 {
+        font-size: 28px;
+    }
+    .login_area .contents .form_wrap .find_wrap li {
+        font-size: 14px;
+    }
+    .login_area .footer .footer_link span {
+        display: block;
+    }
+    .login_area .footer .footer_link span:nth-of-type(2) {
+        margin-top: 5px;
+    }
+    .login_area .footer .footer_link span:nth-of-type(2) li:nth-of-type(1):before {
+        display: none;
+    }
+    .login_area .btn_black {
+        font-size: 15px;
+    }
+    .join_area .contents .join_step {
+        flex-direction: column;
+    }
     
 } 
