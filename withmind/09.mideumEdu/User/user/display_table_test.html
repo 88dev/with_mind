@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel='styleSheet' href='css/reset.css' type='text/css'></link>
+<link rel='styleSheet' href='css/style.css' type='text/css'></link>
+<title></title>
+<style>
+    .table_join {
+        display: table;
+        width: 100%;
+        font-size: 15px;
+    }
+    .table_join .table_row {
+        display: table-row;
+    }
+    .table_join .table_row .table_cell {
+        display: table-cell;
+        padding: 0px 20px;
+        height: 88px;
+        border-top: 1px solid #EEEEEE;
+        vertical-align: middle;
+    }
+    .table_join .table_row:last-child .table_cell {
+        border-bottom: 1px solid #EEEEEE;
+    }
+    .table_join .table_row .table_th {
+        position: relative;
+        background: #F8F8F8;
+        width: 230px;
+        padding: 0 30px;
+    }
+    .table_join .table_row .table_th span::after {
+        content: '*';
+        position: absolute;
+        margin-top: -8px;
+        color: var(--color-red);
+    }
+    .table_join .table_row .table_td {
+        padding: 0 20px;
+    }
+    .table_join .table_row .table_td input[type=text] {
+        width: 560px;
+    }
+    .table_join .table_row .table_td .pw_input {
+        position: relative;
+        width: 560px;
+    }
+    .table_join .table_row .table_td .pw_input a {
+        background: url('../images/img_question_mark.svg') no-repeat;
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .table_join .table_row .table_td .pw_input #pw_notice {
+        display: none;
+        position: absolute;
+        top: -50px;
+        right: -295px;
+        width: 270px;
+        height: 120px;
+        background: url('../images/img_pw_notice.svg') no-repeat;
+    }
+    .table_join .table_row .table_td .pw_input a:hover #pw_notice {
+        display: block;
+    }
+    .table_join .table_row .table_td .email input,
+    .table_join .table_row .table_td .email select {
+        width: 260px;
+    }
+    .table_join .table_row .table_td .email span {
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .table_join .table_row .table_td .error {
+        position: relative;
+        display: block;
+        font-size: 14px;
+        color: var(--color-red);
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    .table_join .table_row .table_td .error::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--color-red);
+    }
+    
+    
+@media (max-width: 1024px) { 
+    .table_join .table_row .table_td input[type=text],
+    .table_join .table_row .table_td .pw_input {
+        width: 448px;
+    }
+    .table_join .table_row .table_td .email input, 
+    .table_join .table_row .table_td .email select {
+        width: 204px;
+    }
+}
+@media (max-width: 768px) { 
+    .table_join .table_row .table_th {
+        width: 200px;
+    }
+    .table_join .table_row .table_td input[type=text],
+    .table_join .table_row .table_td .pw_input {
+        width: 100%;
+    }
+    .table_join .table_row .table_td .email input, 
+    .table_join .table_row .table_td .email select {
+        width: 140px;
+    }
+}
+@media (max-width: 500px) { 
+    .table_join .table_row .table_cell {
+        display: block;
+        background: none;
+        border: none;
+        width: 100%;
+        height: auto;
+    }
+    .table_cell p {
+        width: 320px;
+        height: 50px;
+        background: #F8F8F8;
+        border: 1px solid #DDDDDD;
+        border-radius: 4px;
+    } 
+    
+}
+  </style>
+</head>
+<body>
+    <section class="table_join">
+        <div class="table_row">
+            <div class="table_cell table_th">
+                <span>이름</span>
+            </div>
+            <div class="table_cell table_td">
+                <p>배수정</p>
+            </div>
+        </div>
+        <div class="table_row">
+            <div class="table_cell table_th">
+                <span>아이디</span>
+            </div>
+            <div class="table_cell table_td">
+                <input type="text" />
+                <span class="error">필수항목명을 입력해주세요.</span>
+                <span class="error">아이디 형식은 6~12자의 영문, 숫자로 생성해주세요.</span>
+                <span class="error">해당 아이디로 가입된 회원이 있습니다. 비밀번호가 기억나지 않으시면,<br>비밀번호 재설정 기능을 이용해주세요.</span>
+            </div>
+        </div>
+        <div class="table_row">
+            <div class="table_cell table_th">
+                <span>비밀번호</span>
+            </div>
+            <div class="table_cell table_td">
+                <div class="pw_input">
+                    <input type="text" class="pw" placeholder="비밀번호(8~16자의 영문, 숫자, 특수기호)" />
+                    <a id="pw_q">
+                        <p id="pw_notice"></p>
+                    </a>
+                </div>
+                <span class="error">비밀번호는 영문, 숫자, 특수문자를 조합하여 8자리이상으로 설정해주세요.</span>
+                <span class="error">비밀번호가 일치하지 않습니다. 입력하신 비밀번호를 다시 한번 확인해주세요.</span>
+            </div>
+        </div>
+        <div class="table_row">
+            <div class="table_cell table_th">
+                <span>이메일</span>
+            </div>
+            <div class="table_cell table_td">
+                <div class="email">
+                    <input type="text" placeholder="이메일" />
+                    <span>@</span>
+                    <select>
+                        <option>naver.com</option>
+                        <option>gmail.com</option>
+                        <option>kakao.com</option>
+                        <option>hanmail.net</option>
+                        <option>nate.com</option>
+                        <option>직접입력</option>
+                    </select>
+                </div>
+                <span class="error">올바른 이메일 주소를 입력해주세요.</span>
+            </div>
+        </div>
+        <div class="table_row">
+            <div class="table_cell table_th">
+                휴대폰 번호
+            </div>
+            <div class="table_cell table_td">
+                <p>010-3254-1710</p>
+            </div>
+        </div>
+    </section>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+</script>
+</html>
