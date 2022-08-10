@@ -56,57 +56,6 @@
             </ul>
             <section class="join_form">
                 <div class="info">필수입력 정보입니다.</div>
-                <!-- <table>
-                    <tr>
-                        <th><span>이름</span></th>
-                        <td>배수정</td>
-                    </tr>
-                    <tr>
-                        <th><span>아이디</span></th>
-                        <td>
-                            <input type="text" />
-                            <span class="error">필수항목명을 입력해주세요.</span>
-                            <span class="error">아이디 형식은 6~12자의 영문, 숫자로 생성해주세요.</span>
-                            <span class="error">해당 아이디로 가입된 회원이 있습니다. 비밀번호가 기억나지 않으시면,<br>비밀번호 재설정 기능을 이용해주세요.</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><span>비밀번호</span></th>
-                        <td>
-                            <div class="pw_input">
-                                <input type="text" class="pw" placeholder="비밀번호(8~16자의 영문, 숫자, 특수기호)" />
-                                <a id="pw_q">
-                                    <p id="pw_notice"></p>
-                                </a>
-                            </div>
-                            <span class="error">비밀번호는 영문, 숫자, 특수문자를 조합하여 8자리이상으로 설정해주세요.</span>
-                            <span class="error">비밀번호가 일치하지 않습니다. 입력하신 비밀번호를 다시 한번 확인해주세요.</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><span>이메일</span></th>
-                        <td>
-                            <div class="email">
-                                <input type="text" placeholder="이메일" />
-                                <span>@</span>
-                                <select>
-                                    <option>naver.com</option>
-                                    <option>gmail.com</option>
-                                    <option>kakao.com</option>
-                                    <option>hanmail.net</option>
-                                    <option>nate.com</option>
-                                    <option>직접입력</option>
-                                </select>
-                            </div>
-                            <span class="error">올바른 이메일 주소를 입력해주세요.</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>휴대폰 번호</th>
-                        <td>010-3254-1710</td>
-                    </tr>
-                </table> -->
-
                 <section class="table_join">
                     <div class="table_row">
                         <div class="table_cell table_th">
@@ -121,10 +70,10 @@
                             <span>아이디</span>
                         </div>
                         <div class="table_cell table_td">
-                            <input type="text" />
-                            <span class="error">필수항목명을 입력해주세요.</span>
-                            <span class="error">아이디 형식은 6~12자의 영문, 숫자로 생성해주세요.</span>
-                            <span class="error">해당 아이디로 가입된 회원이 있습니다. 비밀번호가 기억나지 않으시면,<br>비밀번호 재설정 기능을 이용해주세요.</span>
+                            <input type="text" class="error" />
+                            <span class="error_txt">필수항목명을 입력해주세요.</span>
+                            <span class="error_txt">아이디 형식은 6~12자의 영문, 숫자로 생성해주세요.</span>
+                            <span class="error_txt">해당 아이디로 가입된 회원이 있습니다. 비밀번호가 기억나지 않으시면,<br>비밀번호 재설정 기능을 이용해주세요.</span>
                         </div>
                     </div>
                     <div class="table_row">
@@ -138,8 +87,8 @@
                                     <p id="pw_notice"></p>
                                 </a>
                             </div>
-                            <span class="error">비밀번호는 영문, 숫자, 특수문자를 조합하여 8자리이상으로 설정해주세요.</span>
-                            <span class="error">비밀번호가 일치하지 않습니다. 입력하신 비밀번호를 다시 한번 확인해주세요.</span>
+                            <span class="error_txt">비밀번호는 영문, 숫자, 특수문자를 조합하여 8자리이상으로 설정해주세요.</span>
+                            <span class="error_txt">비밀번호가 일치하지 않습니다. 입력하신 비밀번호를 다시 한번 확인해주세요.</span>
                         </div>
                     </div>
                     <div class="table_row">
@@ -159,7 +108,7 @@
                                     <option>직접입력</option>
                                 </select>
                             </div>
-                            <span class="error">올바른 이메일 주소를 입력해주세요.</span>
+                            <span class="error_txt">올바른 이메일 주소를 입력해주세요.</span>
                         </div>
                     </div>
                     <div class="table_row">
@@ -235,25 +184,6 @@
                         </div>
                     </li>
                 </ul>
-                <!-- <table class="expiration_date">
-                    <tr>
-                        <th><span>개인정보 유효기간 선택</span></th>
-                        <td>
-                            <span>
-                                <input type="radio" id="year_1" name="period" />
-                                <label for="year_1">1년</label>
-                            </span>
-                            <span>
-                                <input type="radio" id="year_3" name="period" />
-                                <label for="year_3">3년</label>
-                            </span>
-                            <span>
-                                <input type="radio" id="year_leave" name="period" />
-                                <label for="year_leave">회원탈퇴시</label>
-                            </span>
-                        </td>
-                    </tr>
-                </table> -->
                 <section class="table_join expiration_date">
                     <div class="table_row">
                         <div class="table_cell table_th">
