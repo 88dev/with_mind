@@ -827,6 +827,8 @@ header .gnb .btn_menu {
     .join_area .contents .join_step li:nth-of-type(2) {
         border-left: 1px solid #EEEEEE;
         border-right: 1px solid #EEEEEE;
+        border-top: none;
+        border-bottom: none;
     }
     .join_area .contents .join_step li span {
         margin-left: 94px;
