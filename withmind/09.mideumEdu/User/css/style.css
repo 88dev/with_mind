@@ -141,6 +141,10 @@ header .link_wrap li:not(:first-of-type) {
 header .link_wrap li.inquiry {
     color: #DF0011;
 }
+header .wrap_nav {
+    display: flex;
+    gap: 50px;
+}
 header .gnb_area {
     border-top: 1px solid #EEEEEE;
     border-bottom: 1px solid #EEEEEE;
@@ -172,11 +176,12 @@ header .gnb ul li {
 header .gnb ul li:first-of-type {
     color: var(--main-color);
 }
-header .gnb ul li:not(:first-of-type) {
+/* header .gnb ul li:not(:first-of-type) {
     margin-left: 50px;
-}
+} */
 header .gnb .btn_menu {
     display: none;
+    z-index: 100;
 }
 
 .login_area {
@@ -587,6 +592,41 @@ header .gnb .btn_menu {
     header .container {
         padding: 9px 40px;
     }
+    .wrap_nav {
+        position:fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 60px);
+        background-color:rgba(0,0,0,0);
+        visibility:hidden;
+        transition:visibility .1.5s, background-color .2s;
+    }
+    .wrap_nav.active {
+        background-color:rgba(0,0,0,0.5);
+        visibility:visible;
+        z-index: 100;
+    }
+    header .gnb_area {
+        padding: 11.5px 0;
+    }
+    header .gnb {
+        padding: 0 40px;
+    }
+    header .gnb h1, header .gnb h1 a {
+        width: 100px;
+        height: 25px;
+    }
+    header .gnb ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        background: #FFFFFF;
+        width: 100%;
+        height: 260px;    
+        padding-top: 10px;
+    }
     header .gnb .btn_menu {
         display: block;
     }
@@ -597,6 +637,7 @@ header .gnb .btn_menu {
         width:24px;
         height:20px;
         transform:translatey(-50%);
+        margin-top: 2px;
         cursor:pointer;
     }
     .ico > div {
