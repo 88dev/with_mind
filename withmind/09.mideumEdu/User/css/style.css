@@ -737,11 +737,12 @@ header .gnb .btn_menu {
         display: none;
         position: absolute;
         top: -130px;
-        right: -40px;
+        right: -33px;
         width: 260px;
         height: 128px;
         background: url('../images/img_pw_notice_m.svg') no-repeat;
         background-size: contain;
+        border: none;
     }
     .join_area .contents .join_form .table_join .table_row .table_td .email input, 
     .join_area .contents .join_form .table_join .table_row .table_td .email select {
