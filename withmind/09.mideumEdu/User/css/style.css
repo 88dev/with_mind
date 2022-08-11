@@ -440,11 +440,12 @@ header .gnb .btn_menu {
 .join_area .contents .join_form .table_join .table_row .table_td .pw_input #pw_notice {
     display: none;
     position: absolute;
-    top: -50px;
-    right: -295px;
-    width: 270px;
-    height: 120px;
+    top: -130px;
+    right: -120px;
+    width: 260px;
+    height: 128px;
     background: url('../images/img_pw_notice.svg') no-repeat;
+    background-size: contain;
 }
 .join_area .contents .join_form .table_join .table_row .table_td .pw_input a:hover #pw_notice {
     display: block;
@@ -731,6 +732,16 @@ header .gnb .btn_menu {
     .join_area .contents .join_form .table_join .table_row .table_td input[type=text], 
     .join_area .contents .join_form .table_join .table_row .table_td .pw_input {
         width: 100%;
+    }
+    .join_area .contents .join_form .table_join .table_row .table_td .pw_input #pw_notice {
+        display: none;
+        position: absolute;
+        top: -130px;
+        right: -40px;
+        width: 260px;
+        height: 128px;
+        background: url('../images/img_pw_notice_m.svg') no-repeat;
+        background-size: contain;
     }
     .join_area .contents .join_form .table_join .table_row .table_td .email input, 
     .join_area .contents .join_form .table_join .table_row .table_td .email select {
