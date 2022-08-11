@@ -173,12 +173,10 @@ header .gnb ul li {
     font-size: 16px;
     font-weight: 600;
 }
-header .gnb ul li:first-of-type {
+header .gnb ul li a:hover {
     color: var(--main-color);
+    font-weight: 700;
 }
-/* header .gnb ul li:not(:first-of-type) {
-    margin-left: 50px;
-} */
 header .gnb .btn_menu {
     display: none;
     z-index: 100;
@@ -622,11 +620,11 @@ header .gnb .btn_menu {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 25px;
+        gap: 34px;
         background: #FFFFFF;
         width: 100%;
-        height: 260px;    
-        padding-top: 20px;
+        height: 322px;    
+        padding: 40px;
     }
     header .gnb .btn_menu {
         display: block;
@@ -653,23 +651,11 @@ header .gnb .btn_menu {
         top:40%;
         transition:visibility 0s .15s;
     }
-    .ico.active > div:nth-child(2) {
-        visibility:hidden;
-        transition:visibility 0s;
-    }
     .ico > div:nth-child(3) {
         top:80%;
     }
     .ico > div:nth-child(1), .ico > div:nth-child(3) {
         transition:top .15s .15s, transform .15s;
-    }
-    .ico.active > div:nth-child(1), .ico.active > div:nth-child(3) {
-        top:40%;
-        transform:rotate(45deg);
-        transition:top .15s, transform .15s .15s;
-    }
-    .ico.active > div:nth-child(3) {
-        transform:rotate(-45deg);
     }
     .login_area .contents .form_wrap h3 {
         font-size: 30px;
@@ -737,7 +723,7 @@ header .gnb .btn_menu {
         display: none;
         position: absolute;
         top: -130px;
-        right: -33px;
+        right: -30px;
         width: 260px;
         height: 128px;
         background: url('../images/img_pw_notice_m.svg') no-repeat;
@@ -783,6 +769,9 @@ header .gnb .btn_menu {
     }
     header .link_wrap li:not(:first-of-type) {
         margin-left: 20px;
+    }
+    header .gnb ul li {
+        font-size: 15px;
     }
     .login_area {
         min-width: 320px;
