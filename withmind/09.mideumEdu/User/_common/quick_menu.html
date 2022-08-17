@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='../css/reset.css' type='text/css'></link>
+<link rel='styleSheet' href='../css/style.css' type='text/css'></link>
+<title></title>
+<style>
+    .quickmenu {position:absolute;width:90px;top:50%;transform:translateY(-50%);right:20px;background:#fff;z-index: 100;}
+    .quickmenu ul {position:relative;width:100%;display:inline-block;border:1px solid #EEE;border-radius: 4px;}
+    .quickmenu ul li {position: relative;background: #FFF;width:100%;height:90px;border-bottom:1px solid #EEE;text-align:center;}
+    .quickmenu ul li a {display: block;width:100%;height: 100%;color:#111111;font-size:13px;}
+    .quickmenu ul li:nth-of-type(1) a {padding-top: 40px;}
+    .quickmenu ul li:not(:nth-of-type(1)) a {padding-top: 48px;}
+    .quickmenu ul li a::after { content: ''; position: absolute; top: 23px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px;}
+    .quickmenu ul li:nth-of-type(1) a::after { background: url('../images/icon_quickmenu1.svg') no-repeat; top: 16px; }
+    .quickmenu ul li:nth-of-type(2) a::after { background: url('../images/icon_quickmenu2.svg') no-repeat;}
+    .quickmenu ul li:nth-of-type(3) a::after { background: url('../images/icon_quickmenu3.svg') no-repeat;}
+    .quickmenu ul li:nth-of-type(4) a::after { background: url('../images/icon_quickmenu_top.svg') no-repeat center; top: 28px;}
+    .quickmenu ul li:last-child {border-bottom:0;}
+
+    .content {position:relative;min-height:1000px;}
+</style>
+</head>
+<body>
+
+    <div class="quickmenu">
+        <ul>
+            <li><a href="#">미듬에듀<br>자문단</a></li>
+            <li><a href="#">기업교육</a></li>
+            <li><a href="#">1:1 문의</a></li>
+            <li><a href="#">TOP</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+    </div>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+$(document).ready(function(){
+    const currentPosition = parseInt($(".quickmenu").css("top"));
+    $(window).scroll(function() {
+        const position = $(window).scrollTop(); 
+        $(".quickmenu").stop().animate({"top":position+currentPosition+"px"},300);
+    });
+});
+</script>
+</html>
