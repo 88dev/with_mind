@@ -4,66 +4,96 @@
 <meta charset="UTF-8">
 <link rel='styleSheet' href='css/reset.css' type='text/css'></link>
 <link rel='styleSheet' href='css/style.css' type='text/css'></link>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <title></title>
-<style>
-    html,
-    body {
-        margin: 0;
-    }
-
-    .banner {
-        background: #009579;
-    }
-
-    .banner__content {
-        padding: 16px;
-        max-width: 500px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-    }
-
-    .banner__text {
-        flex-grow: 1;
-        line-height: 1.4;
-        font-family: "Quicksand", sans-serif;
-    }
-
-    .banner__close {
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .banner__text,
-    .banner__close > span {
-        color: #ffffff;
-    }
-
-</style>
 </head>
 <body>
     <div class="banner">
-        <div class="banner__content">
-            <div class="banner__text">
-                교육과 환경에 중점을 둔 <em>미듬에듀와 엔필!</em>
+        <div class="banner_content">
+            <div class="banner_text">
+                <span>교육과 환경에 중점을 둔 <em>미듬에듀와 엔필!</em></span>
                 <img src="../User/images/img_banner.svg" />
+                <a href=""><b>기업교육</b> 보러 가기<img src="images/btn_arrow_right.svg"></a>
             </div>
-            <button class="banner__close" type="button">
-                <span class="material-icons">
-                    X
-                </span>
-            </button>
+            <button class="banner_close" type="button"></button>
         </div>
     </div>
-    <div>
-        adsf
-    </div>
+    <header>
+        <section class="link_wrap container">
+            <ul>
+                <li><a>로그인</a></li>
+                <li><a>회원가입</a></li>
+                <li><a>이벤트</a></li>
+                <li class="inquiry"><a>1:1 상담</a></li>
+            </ul>
+        </section>
+        <section class="gnb_area">
+            <section class="gnb container">
+                <h1 class="logo"><a></a></h1>
+                <div class="wrap_nav">
+                    <ul>
+                        <li><a>미듬에듀</a></li>
+                        <li><a>기업교육</a></li>
+                        <li><a>기업컨설팅</a></li>
+                        <li><a>기업 채용/역량 강화</a></li>
+                    </ul>
+                </div>
+                <div class="ico btn_menu" data-ico-now-animating="N">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+        </section>
+    </header>
+    <section class="container_slider">
+        <div class="wrap_btn">
+            <button class="prev slick-prev" id="aro1_prev"></button>
+            <button class="next slick-next" id="aro1_next"></button>
+            <button type="button" id='slick_toggle' class="dot_pause"></button>
+        </div>
+        <section class="contents slider slider_main">
+            <div class="main01"></div>
+            <div class="main02">slide2</div>
+            <div class="main03">slide3</div>
+        </section>
+        <div class="slick_btn">
+            <button type="button" id='slick_toggle' class="dot_pause"></button>
+        </div>
+    </section>
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
-    document.querySelector(".banner__close").addEventListener("click", function () {
+    document.querySelector(".banner_close").addEventListener("click", function () {
         this.closest(".banner").style.display = "none";
+    });
+    $(".slider_main").slick({
+        dots: true,
+        fade: true,
+        cssEase: 'linear',
+        pauseOnHover: true,
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        speed: 700,
+        slidesToShow: 1,
+        adaptiveHeight: false,
+        draggable : true,
+        prevArrow: $('#aro1_prev'),
+		nextArrow: $('#aro1_next'),
+    });
+    $('#slick_toggle').click( function() {
+        if ($(this).hasClass("dot_pause")){
+            $('.slider_main').slick('slickPause');
+            $(this).removeClass("dot_pause");
+            $(this).addClass("dot_play");
+        } else {
+        $('.slider_main').slick('slickPlay')  
+            $(this).removeClass("dot_play");
+            $(this).addClass("dot_pause");
+        }  
     });
 
 </script>

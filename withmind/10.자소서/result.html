@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<link>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='reset.css' type='text/css'></link>
+<link rel='styleSheet' href='style.css' type='text/css'></link>
+<link rel="stylesheet" href="lib/jqcloud.min.css">
+<title>자기소개서 결과</title>
+</head>
+<body>
+    <section class="intro_header">
+        <section>
+            <a href=""></a>
+            <div>
+                <span><b>김철수 </b>(선택직군 : <b>엔지니어</b>)</span>
+            </div>
+        </section>
+    </section>
+    <section class="intro_contents">
+        <strong>AI 분석결과</strong>
+        <section class="wrap_result">
+            <section class="result_txt">
+                <div class="info">
+                    <b>작성한 자기소개서</b>
+                    <span>글자수 : 438</span>
+                </div>
+                <div class="txt">
+                    <span>[우물 안 개구리가 되지 않기 위한 끊임 없는 노력] </span>
+                    <p>‘우물 안 개구리’를 벗어나기 위해 도전정신을 잃지 않는 것이 제 학창시절 가장 큰 목표였습니다. 새로움에 대한 욕심이 많았던 저는 학업과 아르바이트를 병행하며 용돈을 모아 여행, 영어, 컴퓨터, 드럼 등 내면과 외면의 아름다움을 키우고자 아낌없이 투자했습니다.  
+                        그렇게 다양한 경험을 쌓는 것을 게을리 하지 않으며 살아온 결과, 이러한 모든 것들이 저의 밑거름이 되었고 새로움의 원천으로 거듭났습니다. 
+                        이러한 경험을 되돌아봄과 동시에 저와 같은 다른 사람들을 만나보고자 저는 학교에서 직접 동아리를 만들기로 결심하였고, 뜻이 맞는 친구들을 모아 신청서를 작성하고 부원을 모집하기도 했습니다. 하지만 그 과정에서 현실적인 문제를 맞닥뜨리며 어려움을 겪기도 했는데, 담당 선생님과 적극적인 논의를 통해 해결한 경험이 있습니다.</p>
+                </div>
+            </section>
+            <section class="result_container">
+                <section class="item">
+                    <div class="title">
+                        <b>AI  분석 핵심 키워드</b>
+                        <p>답변의 핵심 키워드를 도출해냅니다.<br>
+                            작성 의도와 다를 경우 수정을 고려해보세요.</p>
+                    </div>
+                    <div class="contents">
+                        <span class="bubble">도전</span>
+                        <span class="bubble">문제 해결</span>
+                        <div class="no_result">
+                            <span>
+                                답변에서 충분한 정보를<br>찾을 수 없어 분석이 어렵습니다.
+                            </span>
+                        </div>
+                    </div>
+                </section>
+                <section class="item">
+                    <div class="title">
+                        <b>언어 성향</b>
+                        <p>답변에 쓰인 어휘를 분석하여 인공지능을 통해 언어성향을 긍정, 부정, 중립으로 구분지어 나타내는 그래프입니다.<br>
+                            분석 결과를 토대로 자기소개서에서 느껴지는 첫인상을 예상해볼 수 있습니다.</p>
+                    </div>
+                    <div class="contents">
+                        <p class="explain">아이엠님은 <em>중립적</em> 성향의 어휘를 많이 사용한 것으로 확인됩니다.</p>
+                        <div class="progress">
+                            <div class="graph">
+                                <div class="wrap_dot"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                                <div class="wrap_bar">
+                                    <span class="bar" style="width: 0%;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="no_result">
+                            <span>
+                                답변에서 충분한 정보를<br>찾을 수 없어 분석이 어렵습니다.
+                            </span>
+                        </div>
+                    </div>
+                </section>
+                <section class="item">
+                    <div class="title">
+                        <b>단어 활용 빈도</b>
+                        <p>단어 빈도 수 워드클라우드는 답변에서 자주 사용한 단어를 선별하여 최대 10순위까지 나열합니다.<br>
+                            단어의 글자가 클수록 사용 빈도수가 높음을 의미합니다.</p>
+                    </div>
+                    <div class="contents">
+                        <b>일반단어 활용 빈도</b>
+                        <div class="wrap_flex">
+                            <div id="wordCloud"></div>
+                            <p class="explain">
+                                아이엠님의 <em>자주 사용하는 단어는
+                                [목표, 해결, 논의, 내면, 도전, 투자, 현실]</em>입니다.
+                            </p>
+                            <div class="no_result">
+                                <span>
+                                    답변에서 충분한 정보를<br>찾을 수 없어 분석이 어렵습니다.
+                                </span>
+                            </div>
+                        </div>
+                        <b>직무단어 활용 빈도</b>
+                        <div class="wrap_flex">
+                            <div id="jobWordCloud"></div>
+                            <p class="explain">
+                                아이엠님의 <em>자주 사용하는 직무 
+                                관련 단어는[컴퓨터, 목표, 논의, 원천, 외면, 결과, 문제, 현실, 투자]</em>입니다.
+                            </p>
+                            <div class="no_result">
+                                <span>
+                                    답변에서 충분한 정보를<br>찾을 수 없어 분석이 어렵습니다.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="item">
+                    <div class="title">
+                        <b>단어 중복 사용</b>
+                        <p>동어 반복은 읽는 사람이 피로감을 느끼게 하는 요소이기 때문에 지양하는 것이 좋습니다.<br>
+                            분석 결과를 참고하여 수정을 고려해보세요.</p>
+                    </div>
+                    <div class="contents duplication">
+                        <div class="use_word">
+                            <div><b>‘것을’</b><span><em>5</em>회</span></div>
+                            <div><b>‘그래서’</b><span><em>3</em>회</span><b>‘아주’</b><span><em>2</em>회</span><b>‘잘’</b><span><em>2</em>회</span></div>
+                            <div class="no_result">
+                                <span>
+                                    답변에서 충분한 정보를<br>찾을 수 없어 분석이 어렵습니다.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="use_good" style="display: none;">
+                            <img src="images/img_use_goood.svg" />
+                        </div>
+                    </div>
+                </section>
+                <section class="item">
+                    <div class="title">
+                        <b>면접 예상 질문</b>
+                        <p>직무와 관련된 예상 질문 리스트입니다.<br>
+                            면접 준비 시 참고해 보세요.</p>
+                    </div>
+                    <div class="contents">
+                        <div class="question">앨범 커버 디자인에 대해 설명해 주세요.</div>
+                        <div class="question">디자인 업무를 할 때 아이디어를 구상하는 본인만의 방법이 있나요?</div>
+                        <div class="question">HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요.HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요.
+                            HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요. HTTP에 대해 설명해 주세요.</div>
+                        <div class="no_result">
+                            <span>
+                                답변에서 충분한 정보를<br>찾을 수 없어 분석이 어렵습니다.
+                            </span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <button type="button" class="intro_add"></button>
+    </section>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script src="js/jQWCloudv3.4.1.js"></script>
+<!-- <script src="js/wordCloud.js"></script> -->
+<script>
+    // textarea 높이 자동 조절
+    function autoHeight() {
+        const textEle = $('textarea');
+        // textEle[0].style.height = 'auto';
+        const textEleHeight = textEle.prop('scrollHeight');
+        textEle.css('height', textEleHeight);
+    };
+    autoHeight(); // 함수를 실행하면 자동으로 textarea의 높이 조절
+    const textEle = $('textarea');
+        textEle.on('keyup', function() {
+        autoHeight();
+    });
+    // 글자수 세기
+    function txtLength(){
+        document.getElementById('txt_length').value = document.getElementById('intro_txt').value.length;
+    }
+    // 단어 활용 빈도
+    $(document).ready(function(){
+        $("#wordCloud").jQWCloud({
+            words: [
+                    {word: '목표', weight: 54, color: '#FFA727'},
+                    {word: '해결', weight: 36, color: '#8358C9'},
+                    {word: '논의', weight: 30, color: '#8AAF8D'},
+                    {word: '내면', weight: 24, color: '#F56566'},
+                    {word: '도전', weight: 18, color: '#538EFF'},
+                    {word: '현실', weight: 20, color: '#A2B7F7'},
+                    {word: '투자', weight: 18, color: '#FFCD32'},
+                    {word: '', weight: 18, color: '#538EFF'},
+                    {word: '', weight: 14, color: '#A2B7F7'},
+                    {word: '', weight: 14, color: '#FFCD32'}
+            ],
+            minFont: 14,
+            maxFont: 54,
+            padding_left: 1,
+            word_common_classes: 'WordClass',		
+        });
+        $("#jobWordCloud").jQWCloud({
+            words: [
+                    {word: '컴퓨터', weight: 54, color: '#FFA727'},
+                    {word: '목표', weight: 36, color: '#8358C9'},
+                    {word: '논의', weight: 30, color: '#8AAF8D'},
+                    {word: '외면', weight: 24, color: '#F56566'},
+                    {word: '원천', weight: 24, color: '#F56566'},
+                    {word: '투자', weight: 20, color: '#FFCD32'},
+                    {word: '결과', weight: 18, color: '#8AAF8D'},
+                    {word: '문제', weight: 18, color: '#538EFF'},
+                    {word: '현실', weight: 14, color: '#A2B7F7'},
+                    {word: '투자', weight: 14, color: '#FFCD32'}
+            ],
+            minFont: 14,
+            maxFont: 54,
+            padding_left: 1,
+            word_common_classes: 'WordClass'
+        });
+        
+    });
+</script>
+</html>
