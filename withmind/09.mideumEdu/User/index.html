@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
 <link rel='styleSheet' href='css/reset.css' type='text/css'></link>
 <link rel='styleSheet' href='css/style.css' type='text/css'></link>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -38,11 +39,7 @@
                         <li><a>기업 채용/역량 강화</a></li>
                     </ul>
                 </div>
-                <div class="ico btn_menu" data-ico-now-animating="N">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <div class="ico btn_menu" data-ico-now-animating="N"><div></div><div></div><div></div></div>
             </section>
         </section>
     </header>
@@ -52,14 +49,96 @@
             <button class="next slick-next" id="aro1_next"></button>
             <button type="button" id='slick_toggle' class="dot_pause"></button>
         </div>
-        <section class="contents slider slider_main">
-            <div class="main01"></div>
-            <div class="main02">slide2</div>
-            <div class="main03">slide3</div>
+        <section class="slider slider_main">
+            <div class="main01 main"></div>
+            <div class="main02 main"></div>
+            <div class="main03 main"></div>
         </section>
         <div class="slick_btn">
             <button type="button" id='slick_toggle' class="dot_pause"></button>
         </div>
+    </section>
+    <section class="direct_link">
+        <a>
+            <div class="direct_back"></div>
+            <div>
+                <div>
+                    <b>교육</b>
+                    <p>법정 교육(직무 교육, 법정 직무교육)<br>외국어 교육, 한국어 교육</p>
+                </div>
+                <span class="arrow"></span>
+            </div>
+        </a>
+        <a>
+            <div class="direct_back"></div>
+            <div>
+                <div>
+                    <b>컨설팅</b>
+                    <p>노무, 세무, R&D 분야<br>전문 기업 컨설팅</p>
+                </div>
+                <span class="arrow"></span>
+            </div>
+        </a>
+    </section>
+    <section class="container wrap_contents">
+        <strong>Mission & Vision</strong>
+        <div class="mission">
+            <div>
+                <strong>교육과 환경</strong>
+                <p>교육&환경 전문 4차산업을 선도하는 기업</p>
+                <img src="images/img_mission_01.svg" />
+            </div>
+            <div>
+                <strong>전문 플랫폼 구축</strong>
+                <p>교육&환경 플랫폼을 구축으로 보급과 관리의 효율성 제공</p>
+                <img src="images/img_mission_02.svg" />
+            </div>
+        </div>
+        <img class="arrow_down" src="images/img_mission_down.svg" />
+        <div class="core_value">
+            <span class="cv1 cv">Core Value</span>
+            <span class="cv2 cv">신뢰구축</span>
+            <span class="cv3 cv">시간관리</span>
+            <span class="cv4 cv">상호존중</span>
+            <span class="cv5 cv">고객만족</span>
+            <span class="cv6 cv">신속처리</span>
+            <span class="cv7 cv">소통원활</span>
+        </div>
+    </section>
+    <section class="container wrap_contents">
+        <strong>교육</strong>
+        <div class="wrap_more"><a>더보기 <img src="images/btn_arrow_right.svg"></a></div>
+        <div class="edu">
+            <ul class="slider_edu">
+                <li class="edu_li_01">
+                    <img src="images/img_edu_01.svg" alt="게시물 썸네일" />
+                    <b>최대 100% 국비지원 aaaaaaaaaa받고 IT ...</b>
+                    <p>회사 내 IT 인재 JAVA, SQL, 파이썬 등
+                        부담없이 교육하세요!</p>
+                </li>
+                <li class="edu_li_02">
+                    <img src="images/img_edu_02.svg" alt="게시물 썸네일" />
+                    <b>Z세대가 원하는 리더의 조건</b>
+                    <p>M세대 리더가 Z세대를 사로잡는 리더십의
+                        비밀에는 4가지 조건이 있다?</p>
+                </li>
+                <li class="edu_li_03">
+                    <img src="images/img_edu_03.svg" alt="게시물 썸네일" />
+                    <b>비대면 교육 집중도 UP! Zoo...</b>
+                    <p>비대면 조별활동과 실습으로 집중력과
+                        만족도를 동시에!</p>
+                </li>
+                <li>
+                    <img src="images/img_edu_04.svg" alt="게시물 썸네일" />
+                    <b>압도적인 교육 효과성과 효율성..</b>
+                    <p>플럽러닝 교수설계 역량 No.1 최다
+                        스마트훈련 과정 보유</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="container wrap_contents">
+
     </section>
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
@@ -94,6 +173,37 @@
             $(this).removeClass("dot_play");
             $(this).addClass("dot_pause");
         }  
+    });
+    $(".slider_edu").slick({
+        dots: false,
+        pauseOnHover: false,
+        arrows: false,
+        infinite: true,
+        autoplay: false,
+        autoplaySpeed: 1500,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        adaptiveHeight: false,
+        draggable : true,
+        responsive: [
+            {
+                breakpoint: 768,
+                dots: true,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 500,
+                dots: true,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
     });
 
 </script>
