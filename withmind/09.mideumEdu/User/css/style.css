@@ -1203,13 +1203,10 @@ header .gnb .btn_menu {
 .wrap_contents .edu {
     margin-top: 30px;
 }
-.wrap_contents .edu ul {
-    display: flex;
-    gap: 20px;
-}
 .wrap_contents .edu ul li {
     position: relative;
     width: 240px;
+    margin: 0 10px;
 }
 .wrap_contents .edu ul li::before {
     content: '';
@@ -1227,9 +1224,6 @@ header .gnb .btn_menu {
 }
 .wrap_contents .edu ul li.edu_li_03::before {
     background: url('../images/img_edu_thi.svg');
-}
-.wrap_contents .edu ul li:not(:last-of-type) {
-    margin-right: 20px;
 }
 .wrap_contents .edu ul li img {
     width: 100%;
