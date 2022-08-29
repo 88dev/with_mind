@@ -1230,7 +1230,8 @@ header .gnb .btn_menu {
 }
 .wrap_contents .edu ul li b {
     display: block;
-    width: 240px;
+    width: 100%;
+    max-width: 240px;
     white-space: normal;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -1245,6 +1246,114 @@ header .gnb .btn_menu {
     margin-top: 8px;
     color: #555555;
     font-size: 15px;
+}
+.wrap_contents.service {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+.wrap_contents.service section strong {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111111;
+}
+.wrap_contents.service section:nth-of-type(1) {
+    width: 580px;
+}
+.wrap_contents.service section:nth-of-type(2) {
+    width: 394px;
+}
+.wrap_contents.service .more {
+    float: right;
+    margin-top: 15px;
+}
+.wrap_contents.service ul {
+    border-top: 2px solid #000000;
+    margin-top: 30px;
+}
+.wrap_contents.service .notice li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 30px 0;
+    font-size: 16px;
+}
+.wrap_contents.service .notice li a {
+    width: calc(100% - 90px);
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.wrap_contents.service .notice li a .kind {
+    display: inline-block;
+    background: #F5F5F5;
+    border-radius: 17.5px;
+    width: 53px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 12px;
+}
+.wrap_contents.service .notice li a b {
+    position: relative;
+    font-weight: 500;
+    margin-right: 20px;
+}
+.wrap_contents.service .notice li a b.new::after {
+    position: absolute;
+    content: 'N';
+    background: #E52C1C;
+    top: 0;
+    right: -22px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 9px;
+    text-align: center;
+    vertical-align: text-bottom;
+}
+.wrap_contents.service .notice li .date {
+    color: #AAAAAA;
+    font-size: 15px;
+    line-height: 30px;
+}
+.wrap_contents.service .customer li:first-of-type {
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    color: #111111;
+    font-weight: 700;
+    font-size: 30px;
+}
+.wrap_contents.service .customer li {
+    border-bottom: 1px solid #EEEEEE;
+}
+.wrap_contents.service .customer li:first-of-type img {
+    margin-right: 8px;
+}
+.wrap_contents.service .customer li:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    padding: 35px;
+    margin: 0 auto;
+    color: #333333;
+    font-size: 15px;
+}
+.wrap_contents.service .customer li:last-of-type div p span {
+    display: inline-block;
+    color: #AAAAAA;
+    margin-left: 20px;
+}
+.wrap_contents.service .customer li:last-of-type div p:first-of-type {
+    margin-bottom: 10px;
 }
 
 
@@ -1299,6 +1408,14 @@ header .gnb .btn_menu {
         color: #FFFFFF;
         font-size: 20px;
     }
+    .wrap_contents.service .customer li:last-of-type {
+        flex-direction: column;
+        padding: 25px;
+    }
+    .wrap_contents.service .customer li:last-of-type div p {
+        margin-bottom: 10px;
+    }
+    
 }
 
 @media (max-width: 768px) { 
@@ -1330,6 +1447,27 @@ header .gnb .btn_menu {
     }
     .wrap_contents {
         margin-top: 60px;
+    }
+    .wrap_contents.service {
+        gap: 30px;
+    }
+    .wrap_contents.service .customer li:last-of-type {
+        flex-direction: column;
+    }
+    .wrap_contents.service .customer li:last-of-type div p {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 650px) {
+    .wrap_contents.service {
+        flex-direction: column;
+    }
+    .wrap_contents.service > section {
+        width: 100% !important;
+    }
+    .wrap_contents.service .customer li:last-of-type {
+        justify-content: space-between;
+        flex-direction: inherit;
     }
 }
 @media (max-width: 550px) { 
@@ -1376,5 +1514,11 @@ header .gnb .btn_menu {
     }
     .wrap_contents .core_value span:not(:first-of-type) {
         height: 200px;
+    }
+    .wrap_contents.service {
+        gap: 60px;
+    }
+    .wrap_contents.service .notice li a {
+        width: calc(100% - 120px);
     }
 }
