@@ -54,11 +54,11 @@
         <section class="slider slider_main">
             <div class="main01 main"></div>
             <div class="main02 main"></div>
-            <div class="main03 main"></div>
+            <!-- <div class="main03 main"></div> -->
         </section>
-        <div class="slick_btn">
+        <!-- <div class="slick_btn">
             <button type="button" id='slick_toggle' class="dot_pause"></button>
-        </div>
+        </div> -->
     </section>
     <section class="direct_link">
         <a>
@@ -112,19 +112,19 @@
         <div class="wrap_more"><a>더보기 <img src="images/btn_arrow_right.svg"></a></div>
         <div class="edu">
             <ul class="slider_edu">
-                <li class="edu_li_01">
+                <li class="edu_li_01 edu_li">
                     <img src="images/img_edu_01.png" alt="게시물 썸네일" />
                     <b>최대 100% 국비지원 aaaaaaaaaa받고 IT ...</b>
                     <p>회사 내 IT 인재 JAVA, SQL, 파이썬 등
                         부담없이 교육하세요!</p>
                 </li>
-                <li class="edu_li_02">
+                <li class="edu_li_02 edu_li">
                     <img src="images/img_edu_02.png" alt="게시물 썸네일" />
                     <b>Z세대가 원하는 리더의 조건</b>
                     <p>M세대 리더가 Z세대를 사로잡는 리더십의
                         비밀에는 4가지 조건이 있다?</p>
                 </li>
-                <li class="edu_li_03">
+                <li class="edu_li_03 edu_li">
                     <img src="images/img_edu_03.png" alt="게시물 썸네일" />
                     <b>비대면 교육 집중도 UP! Zoo...</b>
                     <p>비대면 조별활동과 실습으로 집중력과
@@ -190,7 +190,6 @@
                 <img src="images/img_logo_01.png" alt="" />
                 <img src="images/img_logo_02.png" alt="" />
                 <img src="images/img_logo_03.png" alt="" />
-                
                 <img src="images/img_logo_04.png" alt="" />
                 <img src="images/img_logo_05.png" alt="" />
                 <img src="images/img_logo_06.png" alt="" />
@@ -201,6 +200,31 @@
             </span>
         </div>
     </section>
+    <footer>
+        <section>
+            <img src="images/img_logo_wh.svg" />
+            <div class="info">
+                <strong>(주)미듬에듀</strong>
+                <p>
+                    <span>대표이사 : 홍길동</span>
+                    <span>사업자번호 : 111-11-11111</span>
+                    <span>aaa@naver.com</span>
+                    <span>02-111-1111</span>
+                </p>
+                <p>
+                    <span>개인정보책임관리자 : 홍길동</span>
+                    <span>사무실 : 서울시 서울구 서울로 111, 1층</span>
+                </p>
+                <p>Copyright © 2022 (주)미듬에듀. All rights reserved.</p>
+                <div class="link">
+                    <a>교육기관 소개</a>
+                    <a>이용약관</a>
+                    <a>개인정보처리방침</a>
+                    <a>이메일무단수집거부</a>
+                </div>
+            </div>
+        </section>
+    </footer>
 </body>
 <script src='js/jquery-3.4.1.min.js'></script>
 <script src='js/common.js'></script>
@@ -237,7 +261,7 @@
         }  
     });
     $(".slider_edu").slick({
-        dots: false,
+        dots: true,
         pauseOnHover: false,
         arrows: false,
         infinite: true,
@@ -251,15 +275,13 @@
         responsive: [
             {
                 breakpoint: 768,
-                dots: true,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToScroll: 2,
                 }
             },
             {
                 breakpoint: 500,
-                dots: true,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
