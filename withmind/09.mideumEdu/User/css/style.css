@@ -1584,10 +1584,10 @@ footer section .info .link a:not(:last-of-type) {
         height: 735px;
     }
     .container_slider .slider_main .main01 {        
-        background: #222 url('../images/img_slider_main_m_01.svg') no-repeat left center / 80% 80%;
+        background: #222 url('../images/img_slider_main_m_01.svg') no-repeat left 20px center / 80% 80%;
     }
     .container_slider .slider_main .main02 {        
-        background: #D9D2FF url('../images/img_slider_main_m_02.svg') no-repeat left center / 80% 80%;
+        background: #D9D2FF url('../images/img_slider_main_m_02.svg') no-repeat left 20px center / 80% 80%;
     }
     .direct_link {
         display: flex;
