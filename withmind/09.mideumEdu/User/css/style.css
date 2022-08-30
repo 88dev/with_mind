@@ -962,7 +962,7 @@ header .gnb .btn_menu {
 
 .container_slider {
     position: relative;
-    /* height: 460px; */
+    height: 560px;
     margin-top: 0;
 }
 .container_slider .wrap_btn{
@@ -1013,7 +1013,7 @@ header .gnb .btn_menu {
     height: 500px;
 }
 .container_slider .slider_main .main01 {
-    background: #222 url('../images/img_slider_main_d_01.svg') no-repeat center;
+    background: #222 url('../images/img_slider_main_d_011.svg') no-repeat center;
 }
 .container_slider .slider_main .main02 {
     background: #555 url('../images/img_slider_main_d_01.svg') no-repeat center;
@@ -1024,7 +1024,7 @@ header .gnb .btn_menu {
 .container_slider .slider_main .slick-slide {
     position: relative;
     width: 100%;
-    height: 460px;
+    height: 560px;
     padding: 0;
     font-size: 30px;
     font-family: "Arial";
@@ -1033,14 +1033,15 @@ header .gnb .btn_menu {
     position: relative;
     display: flex !important;
     justify-content: center;
+    gap: 8px;
     margin: -50px 0 0 0;
     padding: 0;
     list-style-type: none;
     z-index: 10;
 }
-.container_slider .slick-dots li {
+/* .container_slider .slick-dots li {
     margin: 0 5px;
-}
+} */
 .container_slider .slick-dots button {
     display: block;
     width: 12px;
@@ -1098,12 +1099,12 @@ header .gnb .btn_menu {
 }
 .direct_link a b {
     display: block;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 24px;
 }
 .direct_link a p {
     margin-top: 12px;
-    font-size: 15px;
+    font-size: 16px;
 }
 .direct_link .arrow {
     display: inline-block;
@@ -1117,7 +1118,8 @@ header .gnb .btn_menu {
 }
 .wrap_contents > strong {
     color: #111111;
-    font-size: 30px;
+    font-size: 36px;
+    font-weight: 600;
 }
 .wrap_contents .mission {
     display: flex;
@@ -1126,10 +1128,11 @@ header .gnb .btn_menu {
 }
 .wrap_contents .mission strong {
     color: #111111;
-    font-size: 22px;
+    font-size: 24px;
 }
 .wrap_contents .mission p {
     margin: 10px 0 20px;
+    font-size: 20px;
 }
 .wrap_contents .mission img {
     width: 100%;
@@ -1201,7 +1204,7 @@ header .gnb .btn_menu {
     font-size: 16px;
 }
 .wrap_contents .edu {
-    margin-top: 30px;
+    margin-top: 24px;
 }
 .wrap_contents .edu ul li {
     position: relative;
@@ -1269,7 +1272,7 @@ header .gnb .btn_menu {
 }
 .wrap_contents.service ul {
     border-top: 2px solid #000000;
-    margin-top: 30px;
+    margin-top: 24px;
 }
 .wrap_contents.service .notice li {
     display: flex;
@@ -1356,6 +1359,32 @@ header .gnb .btn_menu {
 .wrap_contents.service .customer li:last-of-type div p:first-of-type {
     margin-bottom: 10px;
 }
+.flow_logo {
+    background: #F5F5F5;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 94px;
+}
+.flow_logo div {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    width: 310%;
+    height: 94px;
+    animation: marquee 10s linear infinite;
+}
+.flow_logo div span {
+    float: left;
+    width: 50%;
+    /* display: flex;
+    gap: 20px; */
+}
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
 
 
 @media (max-width: 1024px) { 
