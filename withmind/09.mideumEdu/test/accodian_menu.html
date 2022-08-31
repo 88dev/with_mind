@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <style>
+   *{
+  box-sizing: border-box; 
+}
+  
+.que:first-child{
+    border-top: 1px solid black;
+  }
+  
+.que{
+  position: relative;
+  padding: 17px 0;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #dddddd;
+  
+}
+  
+.que::before{
+  display: inline-block;
+  content: 'Q';
+  font-size: 14px;
+  color: #006633;
+  margin-right: 5px;
+}
+
+.que.on>span{
+  font-weight: bold;
+  color: #006633; 
+}
+  
+.anw {
+  display: none;
+    overflow: hidden;
+  font-size: 14px;
+  background-color: #f4f4f2;
+  padding: 27px 0;
+}
+  
+.anw::before {
+  display: inline-block;
+  content: 'A';
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin-right: 5px;
+}
+  </style>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+  <script>
+
+//[UI조건]
+    //1. Que를 클릭했을때, anw이 슬라이드 애니메이트로 천천히 보여야 한다.
+      //2. 다시 클릭하면 anw 제자리로 이동하여 숨겨진다
+        //3.anw 이 슬라이드 애니애니메이트로 보일때만, quu에 css calss on 을 적용한다
+            //4. 하나의 anw이 보일때 다른 anw 는 슬라이드 효과로 감춰진다.  
+
+            
+window.onload = function(){
+
+    $('.que').on('click', function(){
+
+        $(this).next().stop().slideToggle(300);
+        $(this).toggleClass('on').siblings().removeClass('on');
+        $(this).next().siblings('.anw').slideUp(300);
+     
+    })  
+
+  
+};
+
+
+  </script>
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <div id="Accordion_wrap">
+       <div class="que">
+        <span>This is first question.</span>
+       </div>
+       <div class="anw">
+        <span>This is first answer.</span>
+       </div>
+        <div class="que">
+        <span>This is second question.</span>
+       </div>
+       <div class="anw">
+        <span>This is second answer.</span>
+       </div>
+        <div class="que">
+        <span>This is third question.</span>
+       </div>
+       <div class="anw">
+        <span>This is third answer.</span>
+       </div>
+  </div>
