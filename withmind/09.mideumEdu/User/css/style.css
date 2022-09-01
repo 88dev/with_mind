@@ -1833,3 +1833,122 @@ footer section .info .link a:not(:last-of-type) {
         right: -50px;
     }
 }
+
+
+/* 사이드 메뉴 */
+.wrap_side {
+    width: 200px;
+    height: 277px;
+}
+.wrap_side strong {
+    color: #111111;
+    font-weight: 600;
+    font-size: 24px;
+}
+.wrap_side ul {
+    border-top: 1px solid #111111;
+    margin-top: 20px;
+}
+.wrap_side ul li {
+    width: 100%;
+    height: 57px;
+    padding: 20px;
+}
+.wrap_side ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+} 
+.wrap_side ul li.on {
+    background: #F0F4FF;
+    color: #497BFE;
+
+}
+.wrap_side ul li a::after {
+    position: absolute;
+    content: '';
+    background: url('../images/btn_arrow_right.svg') no-repeat center / 12px;
+    top: 3px;
+    right: 0;
+    width: 14px;
+    height: 14px;
+}
+.wrap_side ul li.on a::after {
+    background: url('../images/btn_arrow_right_blue.svg') no-repeat center / 14px;
+}
+.wrap_consulting .top .site_map {
+    color: #AAAAAA;
+    font-size: 13px;
+}
+
+
+/* 노무 컨설팅 */
+
+.wrap_consulting {
+    display: block;
+    width: 100%;
+}
+.wrap_consulting .top {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+}
+.wrap_consulting .top .site_map b {
+    color: #111111;
+}
+.wrap_consulting .top strong {
+    display: block;
+    margin-top: 28px;
+    color: #111111;
+    font-size: 34px;
+    font-weight: 600;
+}
+.wrap_consulting .contents {
+    padding-top: 40px;
+}
+.wrap_consulting .contents .banner {
+    background: url('../images/img_consulting_labor.svg') no-repeat center / 100%;
+    width: 100%;
+    height: 150px;
+    border-radius: 6px;
+}
+.wrap_consulting .contents .banner div {
+    background-color: rgba(1,1,1,0.6);
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    color: #FFFFFF;
+    padding: 34px 50px;
+}
+.wrap_consulting .contents .banner div strong {
+    font-size: 24px;
+    font-weight: 600;
+}
+.wrap_consulting .contents .banner div p {
+    margin-top: 12px;
+    font-size: 16px;
+}
+.wrap_consulting .contents .wrap_hashtag {
+    margin-top: 60px;
+}
+.wrap_consulting .contents .wrap_hashtag b {
+    display: block;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+}
+.wrap_consulting .contents .wrap_hashtag .hashtag {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+.wrap_consulting .contents .wrap_hashtag .hashtag span {
+    display: inline-block;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 23px;
+    padding: 14px 16px;
+    font-size: 14px;
+}
