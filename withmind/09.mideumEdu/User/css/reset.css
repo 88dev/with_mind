@@ -25,7 +25,7 @@ hr {display:block;height:1px;border:0;border-top:1px solid #cccccc;margin:1em 0;
 input,select {}
 th,td {}
 
-body {font-size:14px;line-height:150%;}
+body {font-size:14px;}
 select,input,button,textarea,button{font-family: 'Pretendard', sans-serif;}
 table{font-size:inherit;border-collapse: collapse;}
 pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
