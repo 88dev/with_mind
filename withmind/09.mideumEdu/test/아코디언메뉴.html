@@ -130,12 +130,22 @@
         $(".list_subMenu.on").slideToggle(300);
 
         $("ul li span").click(function(){
-            $(this).addClass("on");
+            // $(this).addClass("on");
             $(this).next().slideToggle(300);
             $(this).next().addClass("on");
             $("ul li span").not(this).next().slideUp(300);
             $("ul li span").not(this).next().removeClass("on");
             $("ul li span").not(this).removeClass("on");
+
+
+            if($(this).hasClass("on")) {
+                console.log("off!!!!!!");
+                $(this).removeClass("on");
+            } else if(!$(this).hasClass("on")) {
+                console.log("on!!");
+                $(this).addClass("on");
+            }
+
             return false;
         });
     });
