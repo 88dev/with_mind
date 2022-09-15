@@ -2,18 +2,13 @@
 <html>
 
     <head>
-        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src='http://code.jquery.com/jquery-latest.min.js'></script>
         <style>
-            table {
-                width: 645px;
-            }
-
+    
             section .div_wrapper {
                 position: relative;
                 border-bottom: 1px solid #DDDDDD;
                 font-size: 14px;
-                padding: 10px 0;
-                box-sizing: border-box;
             }
 
             table tr:first-child td section .div_wrapper { 
@@ -28,10 +23,6 @@
             section .div_wrapper > div:nth-child(2) {
                 float: right;
                 padding-right: 20px;
-            }
-
-            section .div_wrapper > div span p {
-                margin: 0;
             }
 
             section .slideToggle_p {
@@ -77,31 +68,29 @@
             section .div_wrapper > div:nth-child(2) span {
                 /* font-size: 17px; */
                 /* line-height: 22px; */
-                /* color: #707070; */
+                color: #707070;
             }
 
             section .div_wrapper > div:nth-child(2) button {
                 display: inline-block;
-                /* margin: -7px 0 0 20px; */
-                /* padding: 5px; */
-                border: none;
-                background: transparent;
+                margin: -7px 0 0 20px;
+                padding: 5px;
             }
 
             section .div_wrapper > div:nth-child(2) button::after {
                 content: "";
                 display: inline-block;
-                background: url("./images/icon_chevron_down.svg") no-repeat center;
-                width: 15px;
-                height: 10px;
+                background: url("../images/ico/icon-dropdown\ \(1\).svg") no-repeat right center;
+                width: 12px;
+                height: 7px;
             }
 
             section .div_wrapper > div:nth-child(2) button.up::after {
                 content: "";
                 display: inline-block;
-                background: url("./images/icon_chevron_up.svg") no-repeat center;
-                width: 15px;
-                height: 10px;
+                background: url("../images/ico/icon-dropdown-more\ \(1\).svg") no-repeat right center;
+                width: 12px;
+                height: 7px;
             }
 
 
@@ -123,7 +112,6 @@
                     <section>
                         <section class="div_wrapper">
                             <div data-read="Y" data-index='+data.inKey+'><span>[이용방법]</span><span><p>이용방법이용방법</p></span></div>
-					        <div><button class="toggle_a"></button></div>
                         </section>
                         <div class="slideToggle_p none">
                             <section>
@@ -141,7 +129,6 @@
                     <section>
                         <section class="div_wrapper">
                             <div data-read="Y" data-index='+data.inKey+'><span>[이용방법]</span><span><p>이용방법이용방법</p></span></div>
-					        <div><button class="toggle_a"></button></div>
                         </section>
                         <div class="slideToggle_p none">
                             <section>
@@ -170,8 +157,8 @@
             $('.slideToggle_p').hide();
             $('.div_wrapper').on('click',function(){
                 $(this).parent().find('.slideToggle_p').stop().slideToggle("fast");
-                $(this).children().find('.toggle_a').toggleClass('up');
-                // $(this).toggleClass('addBorder');
+                $(this).children().find('.toggle_a').toggleClass('up')
+                $(this).toggleClass('addBorder')
             });
         });
 

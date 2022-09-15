@@ -2,13 +2,12 @@
 <html>
 
     <head>
-        <script src="js/jquery-3.4.1.min.js"></script>
         <style>
-            table.qna_table {
-                width: 100%;
+            table {
+                width: 645px;
             }
 
-            table.qna_table section .div_wrapper {
+            section .div_wrapper {
                 position: relative;
                 border-bottom: 1px solid #DDDDDD;
                 font-size: 14px;
@@ -16,61 +15,79 @@
                 box-sizing: border-box;
             }
 
-            table.qna_table tr:first-child td section .div_wrapper { 
+            table tr:first-child td section .div_wrapper { 
                 border-top: 1px solid #DDDDDD;
             }
 
-            table.qna_table section .div_wrapper > div:nth-child(1) {
+            section .div_wrapper > div:nth-child(1) {
                 float: left;
                 padding-left: 20px;
             }
 
-            table.qna_table section .div_wrapper > div:nth-child(2) {
+            section .div_wrapper > div:nth-child(2) {
                 float: right;
                 padding-right: 20px;
             }
 
-            table.qna_table section .div_wrapper > div span p {
+            section .div_wrapper > div span p {
                 margin: 0;
             }
 
-            table.qna_table section .slideToggle_p {
+            section .slideToggle_p {
                 display: block;
                 background-color: #FAFAFA;
                 width: 100%;
                 height: auto;
+                /* min-height: 300px; */
                 padding: 20px;
                 font-size: 14px;
                 box-sizing: border-box;
                 line-height: 25px;
             }
 
-            table.qna_table section .slideToggle_p h4 {
+            section .slideToggle_p h4 {
+                /* font-size: 16px; */
                 font-size: 14px;
+                /* line-height: 22px; */
                 font-weight: bold;
                 color: #000;
+                /* margin-bottom: 20px; */
             }
 
-            table.qna_table section .div_wrapper > div:nth-child(1) span {
+            section .div_wrapper > div:nth-child(1) span {
                 cursor: pointer;
             }
 
-            table.qna_table section .div_wrapper > div:nth-child(1) span:first-child {
+            section .div_wrapper > div:nth-child(1) span:first-child {
                 display: inline-block;
+                /* color: #3B61D5; */
                 margin-right: 8px;
+                /* font-size: 17px; */
+                /* line-height: 22px; */
+                /* width: 100px; */
             }
 
-            table.qna_table section .div_wrapper > div:nth-child(1) span:last-child {
+            section .div_wrapper > div:nth-child(1) span:last-child {
                 display: inline-block;
+                /* font-size: 17px; */
+                /* line-height: 22px; */
             }
 
-            table.qna_table section .div_wrapper > div:nth-child(2) button {
+            section .div_wrapper > div:nth-child(2) span {
+                /* font-size: 17px; */
+                /* line-height: 22px; */
+                /* color: #707070; */
+            }
+
+            section .div_wrapper > div:nth-child(2) button {
                 display: inline-block;
+                /* margin: -7px 0 0 20px; */
+                /* padding: 5px; */
                 border: none;
                 background: transparent;
             }
 
-            table.qna_table section .div_wrapper > div:nth-child(2) button::after {
+            section .div_wrapper > div:nth-child(2) button::after {
                 content: "";
                 display: inline-block;
                 background: url("./images/icon_chevron_down.svg") no-repeat center;
@@ -78,7 +95,7 @@
                 height: 10px;
             }
 
-            table.qna_table section .div_wrapper > div:nth-child(2) button.up::after {
+            section .div_wrapper > div:nth-child(2) button.up::after {
                 content: "";
                 display: inline-block;
                 background: url("./images/icon_chevron_up.svg") no-repeat center;
@@ -86,7 +103,8 @@
                 height: 10px;
             }
 
-            table.qna_table section .div_wrapper::after {
+
+            section .div_wrapper::after {
                 content: "";
                 display: block;
                 clear: both;
@@ -98,7 +116,7 @@
     </head>
     <body>
         
-        <table class="qna_table">
+        <table>
             <tr>
                 <td>
                     <section>
@@ -109,7 +127,6 @@
                         <div class="slideToggle_p none">
                             <section>
                                 <div>
-                                    <!-- 내용 -->
                                     afsdadsf<br>
                                     asdfadffad
                                 </div>
@@ -127,8 +144,15 @@
                         </section>
                         <div class="slideToggle_p none">
                             <section>
+                                <!-- <div>
+                                    <h4>Q.<span>'+data.inSubject+'</span></h4>
+                                    <p><span>'+data.inContent+'</span></p>
+                                </div>
                                 <div>
-                                    <!-- 내용 -->
+                                    <h4>A.<span>'+data.reSubject+'</span></h4>
+                                    <p><span>'+data.reContent+'</span></p>
+                                </div> -->
+                                <div>
                                     afsdadsf<br>
                                     asdfadffad
                                 </div>
@@ -140,6 +164,7 @@
         </table>
 
     </body>
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
     <script>
          $(document).ready(function(){
             $('.slideToggle_p').hide();

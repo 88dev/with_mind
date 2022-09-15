@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src='http://code.jquery.com/jquery-latest.min.js'></script>
         <style>
-            .container {
-                width: 500px;
-                margin: 20px auto;
+
+            .tab_title {
+                display: contents;
             }
 
             .tab_title li {
                 list-style: none;
                 float: left;
-                width: 100px;
-                padding: 10px 15px;
+                width: 200px;
+                height: 38px;
+                line-height: 38px;
                 cursor: pointer;
                 text-align: center;
-                border: 1px solid #bebebe;
+                font-size: 16px;
+                color: #A8A8A8;
+                border: 1px solid #A8A8A8;
+                margin-right: 10px;
             }
 
             .tab_title li.on {
-                background-color: #ffb715;
+                color: #0E0E0E;
                 font-weight: bold;
+                border: 1px solid #000000;
             }
 
             .tab_cont {
                 clear: both;
-                border: 1px solid #dedede;
-                height: 130px;
-                background-color: #cecece;
+                width: 387px;
             }
 
-            .tab_cont div {
+            .tab_cont > div {
                 display: none;
-                text-align: center;
+                padding-top: 30px;
             }
 
-            .tab_cont div.on {
+            .tab_cont > div.on {
                 display: block;
             }
+
+            
+
+           
+
         </style>
     </head>
     <body>
-        <div class="container">
+        <div class="tab_box">
             <ul class="tab_title">
-                <li class="on">tab1</li>
-                <li>tab2</li>
-                <li>tab3</li>
+                <li class="on">개인회원</li>
+                <li>기업회원</li>
             </ul>
             <div class="tab_cont">
                 <div class="on">
-                    tab1_content
+                    개인회원 111111
                 </div>
                 <div>
-                    tab2_content
-                </div>
-                <div>
-                    tab3_content
+                    기업회원 2222
                 </div>
             </div>
         </div>
