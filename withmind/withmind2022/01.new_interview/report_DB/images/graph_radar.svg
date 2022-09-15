@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="295" height="295" viewBox="0 0 295 295">
+  <defs>
+    <filter id="타원_579" x="0" y="0" width="295" height="295" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-color="#144788" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="타원_580" x="30" y="30" width="235" height="235" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur-2"/>
+      <feFlood flood-color="#144788" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="타원_582" x="60" y="60" width="175" height="175" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur-3"/>
+      <feFlood flood-color="#144788" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="타원_583" x="90" y="90" width="115" height="115" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur-4"/>
+      <feFlood flood-color="#144788" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="graph_radar" transform="translate(-563.5 -1225.5)">
+    <g transform="matrix(1, 0, 0, 1, 563.5, 1225.5)" filter="url(#타원_579)">
+      <circle id="타원_579-2" data-name="타원 579" cx="125" cy="125" r="125" transform="translate(22.5 14.5)" fill="#fff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 563.5, 1225.5)" filter="url(#타원_580)">
+      <circle id="타원_580-2" data-name="타원 580" cx="95" cy="95" r="95" transform="translate(52.5 44.5)" fill="#fff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 563.5, 1225.5)" filter="url(#타원_582)">
+      <circle id="타원_582-2" data-name="타원 582" cx="65" cy="65" r="65" transform="translate(82.5 74.5)" fill="#fff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 563.5, 1225.5)" filter="url(#타원_583)">
+      <circle id="타원_583-2" data-name="타원 583" cx="35" cy="35" r="35" transform="translate(112.5 104.5)" fill="#fff"/>
+    </g>
+    <path id="패스_9468" data-name="패스 9468" d="M-390.144,4412.319v250" transform="translate(5248.319 1755.144) rotate(90)" fill="#edf1fc" stroke="#dee9f7" stroke-width="1"/>
+    <path id="패스_9495" data-name="패스 9495" d="M-390.144,4412.319v250" transform="translate(3317.534 -2369.362) rotate(30)" fill="#edf1fc" stroke="#dee9f7" stroke-width="1"/>
+    <path id="패스_9496" data-name="패스 9496" d="M-390.144,4412.319v250" transform="translate(-1219.785 -2759.506) rotate(-30)" fill="#edf1fc" stroke="#dee9f7" stroke-width="1"/>
+  </g>
+</svg>

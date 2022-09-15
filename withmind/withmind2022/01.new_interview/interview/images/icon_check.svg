@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_26782" data-name="사각형 26782" width="24" height="24" transform="translate(1037 620)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_check" transform="translate(-1037 -620)" clip-path="url(#clip-path)">
+    <g id="icon_check-2" data-name="icon_check" transform="translate(1037.5 619.5)">
+      <circle id="타원_545" data-name="타원 545" cx="10" cy="10" r="10" transform="translate(1.5 2.5)" fill="none" stroke="#1ca319" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_2493" data-name="패스 2493" d="M8.725,12l3.457,3.322,4.4-6.49" transform="translate(-1.226 0.669)" fill="none" stroke="#1ca319" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
