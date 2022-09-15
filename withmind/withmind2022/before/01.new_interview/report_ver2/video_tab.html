@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .action_video {
+            position: relative;
+            width: 470px;
+            height: 307px;
+        }
+        video {
+            background: black;
+            width: 470px; 
+            height: 283px;
+            margin: 20px 0;
+        }
+
+        .voice_analysis {
+            position: absolute;
+            width: 280px;
+            height: 30px;
+            top: 248px;
+            background: rgba(255,255,255,0.5);
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .voice_analysis .voice_box {
+            display: inline-block;
+            width: 70px;
+            height: 5px;
+            margin: 5px 8px;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 5px;
+        }
+
+        .voice_analysis .voice_box .voice_size {
+            height: 3px; 
+            background-color: #6A2CFF;
+            border-radius: 5px;
+        }
+        .voice_analysis .voice_box .voice_tone {
+            height: 3px;
+            background-color: #53FFFF;
+            border-radius: 5px;
+        }
+        .voice_analysis .voice_box .voice_speed {
+            height: 3px;
+            background-color: #FFBC46;
+            border-radius: 5px;
+        }
+
+        .voice_analysis > .voice_txt {
+            text-align: center;
+            margin-top: -12px;
+        }
+
+        .voice_analysis .voice_txt span {
+            margin: 5px;
+            font-size: 10px;
+        }
+
+        .voice_analysis .purple {
+            color: #6A2CFF;
+        }
+
+        .voice_analysis .mint {
+            color: #53FFFF;
+        }
+
+        .voice_analysis .yellow {
+            color: #FFBC46;
+        }
+        .cover_video {
+            position: absolute;
+            width: 470px;
+            height: 283px;
+            margin: 80px 20px 0 35px;
+            text-align: center;
+            top: -60px;
+            user-select: none;
+            background: #333;
+            color: #FFF;
+            left: -35px;
+            z-index: 100;
+        }
+
+        .cover_video span {
+            line-height: 253px;
+        }
+
+        .none {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="action_video">
+        <video></video>
+        <div class="cover_video none">
+            <span>
+                열람 기간이 초과한 면접 영상입니다.
+            </span>
+        </div>
+        <div class="voice_analysis"> 
+            <div class="voice_box">
+                <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+            </div>
+            <div class="voice_box">
+                <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+            </div>
+            <div class="voice_box">
+                <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+            </div>
+            <div class="voice_txt">
+                <span class="purple">ㅡ 목소리 크기</span>
+                <span class="mint">ㅡ 목소리 톤</span>
+                <span class="yellow">ㅡ 목소리 속도</span>
+            </div>
+        </div>
+    </section>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".action_tab_title li").click(function() {
+            var idx = $(this).index();
+            $(".action_tab_title li").removeClass("on");
+            $(".action_tab_title li").eq(idx).addClass("on");
+            $(".action_tab_cont > section").hide();
+            $(".action_tab_cont > section").eq(idx).show();
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바우처 모달 모음</title>
+    <link rel="styleSheet" href="voucher.css" type="text/css"></link>
+    <link rel="stylesheet" href="plugin/selectric.css">
+</head>
+<body>
+    <section class="voucher">
+        <section class="wrap_nav">
+            <input type="checkbox" id="btn_nav" />
+            <label for="btn_nav">
+                <span></span>
+            </label>
+            <div class="nav_bar">
+                <section class="top">
+                    <button class="home"></button>
+                    <span class="tooltip_main">메인화면</span>
+                    <button class="user"></button>
+                    <span class="tooltip_user">로그인</span>
+                </section>
+                <section class="bottom">
+                    <button class="logout"></button>
+                </section>
+            </div>
+        </section>
+        <section class="wrap_btn">
+            <div class="wrap_link">
+                <a class="individual" href="main.html">
+                    <img src="images/img_individual_member.png" alt="개인회원 이미지" />
+                    <p>
+                        <span>개인회원</span>
+                        <span>AI면접/AI화상면접 이용하기</span>
+                    </p>
+                    <span class="click">Click</span>
+                </a>
+                <a class="corporate" href="https://interviewmaster.kr/company/">
+                    <img src="images/img_corporate_member.png" alt="개인회원 이미지" />
+                    <p>
+                        <span>기업회원</span>
+                        <span>AI면접/AI화상면접 이용하기</span>
+                    </p>
+                    <span class="click">Click</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 로그인 -->
+        <section class="wrap_modal" id="voucher_login">
+            <section class="voucher_modal">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">로그인</h5>
+                        <p class="sub_txt">로그인 시 이용 가능한 메뉴입니다. 로그인을 진행해주세요.</p>
+                        <form>
+                            <div class="login form">
+                                <div class="form_row">
+                                    <label>아이디(이메일)</label>
+                                    <input type="text" />
+                                </div>
+                                <div class="form_row">
+                                    <label>비밀번호</label>
+                                    <input type="text" />
+                                </div>
+                                <div class="wrap_find">
+                                    <button class="find_pw">비밀번호 찾기</button>
+                                </div>
+                                <button class="btn_blue">로그인</button>
+                                <p>인터뷰마스터 처음이세요? <button onclick="fnJoin();">회원가입</button></p>
+                            </div>
+                            <div class="sns">
+                                <label>SNS 간편 로그인</label>
+                                <div>
+                                    <button class="naver"></button>
+                                    <button class="kakao"></button>
+                                    <button class="facebook"></button>
+                                    <button class="apple"></button>
+                                </div>
+                            </div>
+                        </form>
+                    </section> 
+                </section>
+            </section>
+        </section>
+
+        <!-- 회원가입 약관 동의 -->
+        <section class="wrap_modal" id="voucher_join">
+            <section class="voucher_modal">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <button class="voucher_close" id="voucher_close"></button>
+                        <h5 class="title">회원가입<span>약관동의</span></h5>
+                        <div class="process">
+                            <div>
+                                <span class="ongoing">1</span>
+                                <span class=""></span>
+                                <span class=""></span><!-- 기본 회원가입만 보여야 함 -->
+                            </div>
+                        </div>
+                        <form>
+                            <div class="agree">
+                                <p class="all">
+                                    <input type="checkbox" id="all" name="agree" value="all" onclick='selectAll(this)' /> 
+                                    <label for="all">약관 전체동의 <span>(아래 내용에 모두 동의합니다)</span></label>
+                                </p>
+                                <p class="each">
+                                    <input type="checkbox" id="select1" name="agree" value="select1" /> 
+                                    <label for="select1">[필수] 만 14세 이상입니다</label>
+                                </p>
+                                <p class="each">
+                                    <input type="checkbox" id="select2" name="agree" value="select2" /> 
+                                    <label for="select2">[필수] 유료 서비스 이용약관</label>
+                                    <a href="https://interviewmaster.kr/company/policy/useTerms?tabType=1" target="_blank"></a>
+                                </p>
+                                <p class="each">
+                                    <input type="checkbox" id="select3" name="agree" value="select3" /> 
+                                    <label for="select3">[필수] 이용약관 동의</label>
+                                    <a href="https://interviewmaster.kr/company/policy/useTerms?tabType=0" target="_blank"></a>
+                                </p>
+                                <p class="each">
+                                    <input type="checkbox" id="select4" name="agree" value="select4" /> 
+                                    <label for="select4">[필수] 개인정보 수집 및 이용 동의</label>
+                                    <a href="https://interviewmaster.kr/company/policy/useTerms?tabType=2" target="_blank"></a>
+                                </p>
+                                <p class="each">
+                                    <input type="checkbox" id="select5" name="agree" value="select5" /> 
+                                    <label for="select5">[선택] 이벤트 및 서비스 안내 수신 동의</label>
+                                    <a href="https://interviewmaster.kr/company/policy/agreeTerms?tabType=1" target="_blank"></a>
+                                    <span>
+                                        <input type="checkbox" id="select6" name="agree" value="select6" /> 
+                                        <label for="select6">이메일</label>
+                                        <input type="checkbox" id="select7" name="agree" value="select7" /> 
+                                        <label for="select7">APP 알림</label>
+                                    </span>
+                                </p>
+                                <div class="error_txt"><span>이용약관(필수)에 모두 동의해주세요.</span></div>
+                                <button class="btn_blue">동의하기</button>
+                            </div>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 기본 회원가입 폼 -->
+        <section class="wrap_modal" id="voucher_form_default">
+            <section class="voucher_modal voucher_modal_scroll">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">회원가입<span>회원정보</span></h5>
+                        <div class="process">
+                            <div>
+                                <span class=""></span>
+                                <span class="ongoing">2</span>
+                                <span class=""></span>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="join form">
+                                <div class="join_row form_row">
+                                    <label>이메일<span class="red">*</span></label>
+                                    <div>
+                                        <input type="text" placeholder="이메일을 입력하세요." />
+                                        <button id="email_confirm" class="confirm">인증하기</button>
+                                    </div>
+                                    <!-- <span class="red">이메일을 입력해주세요.</span> -->
+                                    <!-- <span class="red">이미 가입된 이메일입니다. 해당 이메일로 로그인 해주세요.</span>
+                                    <span class="red">...를(을) 통해 이미 가입된 이메일입니다. 해당 SNS로 로그인 해주세요.</span> -->
+                                    <div id="wrap_email_check">
+                                        <input type="text" />
+                                        <button id="email_check" class="confirm">인증확인</button>
+                                    </div>
+                                    <a id="no_email">인증메일을 받지 못하셨나요?</a>
+                                </div>
+                                <div class="form_row">
+                                    <label>비밀번호<span class="red">*</span></label>
+                                    <input type="text" placeholder="영문, 숫자, 특수문자 모두 포함한 8-16자" />
+                                    <!-- <span class="red">비밀번호를 입력해주세요.</span> -->
+                                    <!-- <span class="red">특수문자는 '! @ # $ % ^ & *'만 사용 가능합니다.</span> -->
+                                </div>
+                                <div class="form_row">
+                                    <label>비밀번호 재입력<span class="red">*</span></label>
+                                    <input type="text" class="error" />
+                                    <span class="red">입력한 비밀번호를 확인해주세요.</span>
+                                </div>
+                                <div class="form_row">
+                                    <label>이름<span class="red">*</span></label>
+                                    <input type="text" placeholder="한글 2~5자 이내 / 띄어쓰기 불가" />
+                                </div>
+                                <div class="form_row">
+                                    <label>생년월일<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>년</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                            <option>Four</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>월</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>일</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_row wrap_radio">
+                                    <label>성별<span class="red">*</span></label>
+                                    <input type="radio" id="male" name="gender" value="male" checked>
+                                    <label for="male">남자</label>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female">여자</label>
+                                </div>
+                                <div class="form_row">
+                                    <label>관심직종<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>선택하세요</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>관심직무</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button class="btn_blue">가입하기</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="no_email_popup">
+                        <b>인증번호를 받지 못하셨나요?</b>
+                        <ul>
+                            <li>이메일이 정확한지 다시 확인해주세요.</li>
+                            <li>메일서비스에 따라 인증번호 발송이 늦어질 수 
+                                있으니 조금만 더 기다려 주세요</li>
+                            <li>계속해서 이메일이 오지 않으면 다시 인증번호를 요청해주세요.</li>
+                        </ul>
+                        <button class="btn_blue">인증번호 재요청</button>
+                        <a class="link_gray">다른 이메일로 가입</a> 
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- SNS 회원가입 폼 -->
+        <section class="wrap_modal" id="voucher_form_sns">
+            <section class="voucher_modal">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">회원가입<span>회원정보(sns)</span></h5>
+                        <div class="process">
+                            <div>
+                                <span class=""></span>
+                                <span class="ongoing">2</span>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="join form">
+                                <div class="form_row">
+                                    <label>이메일<span class="red">*</span></label>
+                                    <div>
+                                        <input type="text" placeholder="이메일을 입력하세요." />
+                                    </div>
+                                    <!-- <span class="red">이메일을 입력해주세요.</span> -->
+                                    <!-- <span class="red">이미 가입된 이메일입니다. 해당 이메일로 로그인 해주세요.</span>
+                                    <span class="red">...를(을) 통해 이미 가입된 이메일입니다. 해당 SNS로 로그인 해주세요.</span> -->
+                                </div>
+                                <div class="form_row">
+                                    <label>이름<span class="red">*</span></label>
+                                    <input type="text" placeholder="한글 2~5자 이내 / 띄어쓰기 불가" />
+                                </div>
+                                <div class="form_row">
+                                    <label>생년월일<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>년</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                            <option>Four</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>월</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>일</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_row">
+                                    <label>성별<span class="red">*</span></label>
+                                    <div class="wrap_radio">
+                                        <input type="radio" id="male" name="gender" value="male" checked>
+                                        <label for="male">남자</label>
+                                        <input type="radio" id="female" name="gender" value="female">
+                                        <label for="female">여자</label>
+                                    </div>
+                                </div>
+                                <div class="form_row">
+                                    <label>관심직종<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>선택하세요</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>관심직무</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button class="btn_blue">가입하기</button>
+                            </div>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 회원가입 완료 -->
+        <section class="wrap_modal" id="voucher_join_completed">
+            <section class="voucher_modal voucher_modal_small">
+                <section class="voucher_modal_body">
+                    <section class="inner_body modal_complete">
+                        <img src="images/icon_join_completed.png" />
+                        <p class="info_title">회원가입 완료</p>
+                        <p class="info_txt">환영합니다!<br>IM 회원가입이 완료되었습니다.</p>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 비밀번호 찾기 -->
+        <section class="wrap_modal" id="voucher_find_pw">
+            <section class="voucher_modal" id="voucher_find_pw">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">비밀번호 찾기</h5>
+                        <p class="sub_txt">회원가입 시 등록한 이메일로 임시비밀번호를 발송해드립니다.</p>
+                        <form>
+                            <div class="find_pw">
+                                <div class="form_row">
+                                    <label>이름</label>
+                                    <input type="text" placeholder="한글 2~5자 이내 띄어쓰기 불가" />
+                                </div>
+                                <div class="form_row">
+                                    <label>이메일</label>
+                                    <input type="text" placeholder="이메일을 입력해주세요." />
+                                </div>
+                            </div>
+                            </form>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 비밀번호 찾기 발송 -->
+        <section class="wrap_modal" id="voucher_find_pw_send">
+            <section class="voucher_modal">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">비밀번호 찾기</h5>
+                        <div class="find_pw_send">
+                            <p class="">
+                                회원정보에 등록된 이메일로 임시비밀번호가 발송되었습니다.<br>
+                                이메일 확인 후 로그인해주세요.
+                            </p>
+                            <p class="">
+                                회원님의 안전한 정보보호를 위해 반드시<br>
+                                로그인 후 > MY 정보 에서 비밀번호를 변경해주세요.
+                            </p>
+                        </div>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 직군, 직무 확인 -->
+        <section class="wrap_modal" id="voucher_check_job">
+            <section class="voucher_modal">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h6>AI 모의면접 시작 전 선택했던<br>직군, 직무를 확인해 주세요</h6>
+                        <div class="check_job">
+                            <div>
+                                <p>현재 직군 : 기획 사무</p>
+                                <p>현재 직무 : 사업기획 및 사무기획</p>
+                            </div>
+                        </div>
+                        <span class="gray">※ 면접질문 및 면접결과는 직군 직무에 따라 달d라집니다.<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;직군, 직무 변경을 원하시면 MY정보 버튼을 클릭해 주세요. </span>
+                        <div class="checkbox_square">
+                            <input type="checkbox" id="1" />
+                            <label for="1">일주일간 보지 않기</label>
+                        </div>
+                        <div class="wrap_btn">
+                            <button>MY 정보</button>
+                            <button>면접 시작</button>
+                        </div>  
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- MY 정보 폼 -->
+        <section class="wrap_modal" id="voucher_form_myInfo">
+            <section class="voucher_modal voucher_modal_scroll">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">MY 정보</h5>
+                        <form>
+                            <div class="join form">
+                                <div class="form_row">
+                                    <label>이메일<span class="red">*</span></label>
+                                    <div><input type="text" placeholder="이메일을 입력하세요." /></div>
+                                    <!-- <span class="red">이메일을 입력해주세요.</span> -->
+                                </div>
+                                <div class="form_row">
+                                    <label>새 비밀번호<span class="red">*</span></label>
+                                    <input type="text" placeholder="영문, 숫자, 특수문자 모두 포함한 8-16자" />
+                                    <!-- <span class="red">비밀번호를 입력해주세요.</span> -->
+                                    <!-- <span class="red">특수문자는 '! @ # $ % ^ & *'만 사용 가능합니다.</span> -->
+                                </div>
+                                <div class="form_row">
+                                    <label>새 비밀번호 재확인<span class="red">*</span></label>
+                                    <input type="text" class="" />
+                                    <!-- <span class="red">입력한 비밀번호를 확인해주세요.</span> -->
+                                </div>
+                                <div class="form_row">
+                                    <label>이름<span class="red">*</span></label>
+                                    <input type="text" placeholder="한글 2~5자 이내 / 띄어쓰기 불가" />
+                                </div>
+                                <div class="form_row">
+                                    <label>생년월일<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>년</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                            <option>Four</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>월</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>일</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_row wrap_radio">
+                                    <label>성별<span class="red">*</span></label>
+                                    <input type="radio" id="male" name="gender" value="male" checked>
+                                    <label for="male">남자</label>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female">여자</label>
+                                </div>
+                                <div class="form_row">
+                                    <label>관심직종<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>선택하세요</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>관심직무</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_row agree">
+                                    <label>부가정보</label>
+                                    <p class="each">
+                                        <input type="checkbox" id="111" name="agree" value="111" /> 
+                                        <label for="111">이벤트 및 서비스 안내 수신 동의</label>
+                                        <span>
+                                            <input type="checkbox" id="222" name="agree" value="222" /> 
+                                            <label for="222">이메일</label>
+                                            <input type="checkbox" id="333" name="agree" value="333" /> 
+                                            <label for="333">APP 알림</label>
+                                        </span>
+                                    </p>
+                                </div>
+                                <button class="btn_blue">수정하기</button>
+                                <button class="btn_white">로그아웃</button>
+                                <a class="link_gray">회원탈퇴</a>
+                            </div>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- MY 정보 수정 완료 -->
+        <section class="wrap_modal" id="voucher_info_completed">
+            <section class="voucher_modal voucher_modal_small">
+                <section class="voucher_modal voucher_modal_small">
+                    <section class="voucher_modal_body">
+                        <section class="inner_body modal_complete">
+                            <img src="images/icon_myinfo_completed.png" />
+                            <p class="info_title">MY 정보</p>
+                            <p class="info_txt">MY 정보 수정이 완료되었습니다.</p>
+                            <button class="btn_blue">확인</button>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- MY 정보 로그아웃 완료 -->
+        <section class="wrap_modal" id="voucher_logout_completed">
+            <section class="voucher_modal voucher_modal_small">
+                <section class="voucher_modal_body">
+                    <section class="inner_body modal_complete">
+                        <img src="images/icon_hand_completed.png" />
+                        <p class="info_title">MY 정보</p>
+                        <p class="info_txt">계정이 로그아웃 되었습니다.</p>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+        
+        <!-- 회원탈퇴 폼 -->
+        <section class="wrap_modal" id="voucher_form_withdraw">
+            <section class="voucher_modal">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">회원탈퇴</h5>
+                        <form>
+                            <div class="form">
+                                <div class="form_row">
+                                    <label>탈퇴사유<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>탈퇴 사유를 선택해주세요.</option>
+                                            <option>더이상 이용할 일이 없어서</option>
+                                            <option>유료서비스 가격이 부담스러워서</option>
+                                            <option>잦은 서비스 오류 및 장애로</option>
+                                            <option>서비스의 조작 및 사용이 어려워서</option>
+                                            <option>개인정보 유출에 대한 우려로</option>
+                                            <option>서비스가 만족스럽지 못해서</option>
+                                            <option>직접입력</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_row">
+                                    <textarea placeholder="탈퇴사유를 입력해주세요"></textarea>
+                                </div>
+                                <div class="form_row withdraw_txt">
+                                    <p class="title">회원탈퇴 시 유의사항</p>
+                                    <ul>
+                                        <li>회원탈퇴 시 사용하신 아이디와 이메일은 재사용 및 복구가 불가능합니다.</li>
+                                        <li>회원탈퇴 시 모든 개인서비스 이용기록은 삭제되며 복구가 불가능합니다.</li>
+                                        <li>문의글 등 게시판 형태의 기록은 자동삭제가 되지 않으며, 탈퇴 후 삭제할 수 없습니다.</li>
+                                        <li>회원탈퇴 시 면접영상 / 분석결과를 포함한 모든 서비스 기록을 삭제합니다.</li>
+                                    </ul>
+                                </div>
+                                <div class="wrap_btn">
+                                    <button>MY 정보</button>
+                                    <button>면접 시작</button>
+                                </div>  
+                            </div>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 회원 탈퇴 완료 -->
+        <section class="wrap_modal" id="voucher_withdraw_completed">
+            <section class="voucher_modal voucher_modal_small">
+                <section class="voucher_modal_body">
+                    <section class="inner_body modal_complete">
+                        <img src="images/icon_hand_completed.png" />
+                        <p class="info_title">회원탈퇴</p>
+                        <p class="info_txt">회원이 탈퇴 되었습니다.</p>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 면접 리스트 없음 -->
+        <section class="wrap_modal" id="voucher_ninterviewList_none">
+            <section class="voucher_modal voucher_modal_small">
+                <section class="voucher_modal_body">
+                    <section class="inner_body modal_complete">
+                        <img src="images/icon_interview_completed.png" />
+                        <p class="info_txt">면접을 진행한 리스트가 없습니다.<br>진행 후 선택 가능한 버튼입니다.</p>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 코드번호 입력 -->
+        <section class="wrap_modal" id="voucher_input_code">
+            <section class="voucher_modal">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body interview">
+                        <h5>AI 기업면접 시작을 위해<br>코드 번호를 입력해주세요.</h5>
+                        <input type="text" class="error" placeholder="면접코드 숫자 6자리" maxlength="6" />
+                        <div class="error_txt"><span>코드번호를 다시 확인해주세요.</span></div>
+                        <p class="gray">
+                            ※ 면접 기회는 추가 제공되지 않으며, 진행된 면접은 삭제되지 <br>&nbsp;&nbsp;&nbsp;않습니다. 좋은 결과를 위해 신중하게 진행하시기 바랍니다.
+                        </p>
+                        <div class="checkbox_square">
+                            <input type="checkbox" id="555" />
+                            <label for="555">[필수] 채용공고 정보와 주의사항 내용을 확인하였으며,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동의합니다.</label>
+                        </div>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 공고 리스트 없음 -->
+        <section class="wrap_modal" id="voucher_ninterviewList_none">
+            <section class="voucher_modal voucher_modal_small">
+                <section class="voucher_modal_body">
+                    <section class="inner_body modal_complete">
+                        <img src="images/icon_curriculum.png" />
+                        <p class="info_txt">공고 리스트가 없습니다.<br>기업이 공고를 등록했는지 확인 후 진행해주세요.</p>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+        
+        <!-- 필수 정보 작성 폼 -->
+        <section class="wrap_modal" id="voucher_form_requiredInfo">
+            <section class="voucher_modal" id="voucher_form_requiredInfo">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">AI 면접 또는 AI 화상면접 서비스<br>이용하기 전 필수 정보를 작성해주세요.</h5>
+                        <form>
+                            <div class="join form">
+                                <div class="form_row">
+                                    <label>이메일<span class="red">*</span></label>
+                                    <div><input type="text" placeholder="이메일을 입력하세요." /></div>
+                                    <!-- <span class="red">이메일을 입력해주세요.</span> -->
+                                </div>
+                                <div class="form_row">
+                                    <label>이름<span class="red">*</span></label>
+                                    <input type="text" placeholder="한글 2~5자 이내 / 띄어쓰기 불가" />
+                                </div>
+                                <div class="form_row">
+                                    <label>생년월일<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>년</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                            <option>Four</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>월</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>일</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_row wrap_radio">
+                                    <label>성별<span class="red">*</span></label>
+                                    <input type="radio" id="male" name="gender" value="male" checked>
+                                    <label for="male">남자</label>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female">여자</label>
+                                </div>
+                                <div class="form_row">
+                                    <label>관심직종<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>선택하세요</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>관심직무</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button class="btn_blue">정보 등록</button>
+                            </div>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- 계정 이전 안내 -->
+        <section class="wrap_modal" id="voucher_account_transfer">
+            <section class="voucher_modal">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body interview">
+                        <h5>인터뷰마스터 IM으로 계정 이전 안내</h5>
+                        <div class="transfer">
+                            <p>기업과의 협의사항에 따라 현 로그인 방식으로<br>진행한 회원의 모든 정보가 삭제됩니다.<br>만약 면접정보를 유지한채 계속 이용하고 싶다면 하단 버튼을 선택하세요.</p>
+                            <p><span>2022년 6월 24일</span>까지 진행하지 않을 시<br>모든 계정 정보 복구는 불가능합니다.</p>
+                            <div class="checkbox_square">
+                                <input type="checkbox" id="666" />
+                                <label for="666">[필수] <b>정보 보유기간</b> 정보와 세부 주의사항 내용을 확인하였습니다.</label>
+                                <div class="error_txt"><span>주의사항을 확인하고 위 체크박스 [필수]를 선택해주세요.</span></div>
+                            </div>
+                        </div>
+                        <button class="btn_blue">확인</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- MY 정보 폼2 -->
+        <section class="wrap_modal" id="voucher_form_myInfo2">
+            <section class="voucher_modal voucher_modal_scroll" id="voucher_form_myInfo2">
+                <section class="voucher_modal_body">
+                    <div class="wrap_close"><button class="voucher_close" id="voucher_close"></button></div>
+                    <section class="inner_body">
+                        <h5 class="title">MY 정보</h5>
+                        <form>
+                            <div class="join form">
+                                <div class="form_row">
+                                    <label>이메일<span class="red">*</span></label>
+                                    <div><input type="text" placeholder="이메일을 입력하세요." /></div>
+                                    <!-- <span class="red">이메일을 입력해주세요.</span> -->
+                                </div>
+                                <div class="form_row">
+                                    <label>이름<span class="red">*</span></label>
+                                    <input type="text" placeholder="한글 2~5자 이내 / 띄어쓰기 불가" />
+                                </div>
+                                <div class="form_row">
+                                    <label>생년월일<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>년</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                            <option>Four</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                            <option>Five</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>월</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>일</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_row wrap_radio">
+                                    <label>성별<span class="red">*</span></label>
+                                    <input type="radio" id="male" name="gender" value="male" checked>
+                                    <label for="male">남자</label>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female">여자</label>
+                                </div>
+                                <div class="form_row">
+                                    <label>관심직종<span class="red">*</span></label>
+                                    <div class="wrap_select">
+                                        <select>
+                                            <option selected disabled>선택하세요</option>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                            <option>Three</option>
+                                        </select>
+                                        <select>
+                                            <option selected disabled>관심직무</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_row agree">
+                                    <label>부가정보</label>
+                                    <p class="each">
+                                        <input type="checkbox" id="111" name="agree" value="111" /> 
+                                        <label for="111">이벤트 및 서비스 안내 수신 동의</label>
+                                        <span>
+                                            <input type="checkbox" id="222" name="agree" value="222" /> 
+                                            <label for="222">이메일</label>
+                                            <input type="checkbox" id="333" name="agree" value="333" /> 
+                                            <label for="333">APP 알림</label>
+                                        </span>
+                                    </p>
+                                </div>
+                                <button class="btn_blue">수정하기</button>
+                            </div>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+
+    </section>  
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="plugin/jquery.selectric.js"></script>
+<script>
+    $( document ).ready(function() {
+
+        $('.home').on('mouseover', function(){
+            $('.tooltip_main').css('display', 'block');
+        });
+        $('.home').on('mouseout', function(){
+            $('.tooltip_main').css('display', 'none');
+        });
+        $('.user').on('mouseover', function(){
+            $('.tooltip_user').css('display', 'block');
+        });
+        $('.user').on('mouseout', function(){
+            $('.tooltip_user').css('display', 'none');
+        });
+    });
+
+    // nav 이외 클릭시 닫힘
+    $(document).mouseup(function (e){
+        var LayerPopup = $(".wrap_nav");
+        if(LayerPopup.has(e.target).length === 0){
+            $("input:checkbox[id='btn_nav']").prop("checked", false);
+        }
+    });
+    $('.voucher_close').on('click', function (){
+        $('.voucher_modal').css('display', 'none');
+    });
+
+    function selectAll(selectAll)  {
+        const checkboxes = document.getElementsByName('agree');
+        
+        checkboxes.forEach((checkbox) => {
+            checkbox.checked = selectAll.checked;
+        })
+    }
+
+    $('#email_confirm').on('click', function (){
+        $('#wrap_email_check').css('display', 'block');
+    });
+
+    // 셀렉트 박스
+    $(function() {
+        $('select').selectric();
+    });
+
+    $('#no_email').on('click', function (){
+        $('.no_email_popup').css('display', 'block');
+    });
+
+    $(document).ready(function() {
+    });
+        function fnJoin(){
+            $('#voucher_login').hide();
+            $('#voucher_join').show();
+        }
+
+</script>
+</html>

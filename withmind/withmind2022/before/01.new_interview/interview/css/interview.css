@@ -1,0 +1,589 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    min-width: 1200px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+body.info {
+    background: transparent linear-gradient(63deg, #464C86 0%, #5D62B4 100%) 0% 0% no-repeat padding-box;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+h4, p {
+    margin: 0;
+}
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.wrap_btn .btn_white {
+    bottom: 20px;
+}
+.wrap_btn.one .btn_white {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.btn_white {
+    display: inline-block;
+    background: url('../images/btnbg.svg') no-repeat;
+    background-size: contain;
+    width: 322px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+}
+.btn_white img {
+    margin-left: 5px;
+}
+.btn_white span {
+    display: inline-block;
+    width: 13px;
+    height: 14px;
+    background: url('../images/icon-btn.svg') no-repeat;
+    background-size: contain;
+    margin-left: 5px;
+}
+.btn_white:disabled {
+    background: url('../images/btnbg2.svg') no-repeat;
+    background-size: contain;
+    color: #5B5B5B;
+    cursor: default;
+}
+.btn_white:disabled span {
+    background: url('../images/icon-btn.png') no-repeat;
+    background-size: contain;
+}
+article.pre {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 1200px;
+    height: 100vh;
+    min-height: 650px;
+    background: transparent url(../images/img-intbk.png) 0% 0% no-repeat padding-box;
+    background-size: cover;
+}
+.pre_info {
+    position: relative;
+    background: #FFFFFF;
+    width: calc(100% - 180px);
+    /* max-width: 1740px; */
+    min-width: 1020px;
+    height: calc(100vh - 180px);
+    min-height: 500px;
+    margin: auto;
+    padding: 40px;
+}
+.pre_info h4 {
+    font-size: 1.875em;
+    color: #6F85FF;
+    text-align: center;
+}
+.pre_info .btn_white {
+    bottom: 20px;
+}
+.pre_info .confirm img {
+    vertical-align: revert;
+    margin-left: 5px;
+}
+.pre_info > section a.prev {
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: url('../images/icon_chevron_left.svg') no-repeat;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+}
+.pre_info > section a.next {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: url('../images/icon_chevron_right.svg') no-repeat;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+}
+.pre_info > section a.next.on {
+    background: url('../images/icon_chevron_right_blue.svg') no-repeat;
+}
+.pre_info > section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.pre_info .info {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    text-align: center;
+}
+.pre_info .info span {
+    position: absolute;
+    color: #EBEBEB;
+    font-size: 100px;
+    font-weight: bold;
+    top: -50px;
+    left: calc(50% - 180px);
+}
+.pre_info .info img {
+    width: 300px;
+}
+.pre_info .info p {
+    font-size: 20px;
+    font-weight: 500;
+}
+article.pre > a {
+    position: absolute;
+    background: #000000;
+    width: 90px;
+    height: 90px;
+    right: 0;
+    bottom: 0;
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+}
+article.pre > a img {
+    display: block;
+    margin: 0 auto;
+}
+@keyframes blink-effect { 
+    50% { opacity: 0; } 
+} 
+.blink { 
+    animation: blink-effect 1s step-end infinite; 
+}
+
+
+/* 환경테스트 */
+.interview_test {
+    position: relative;
+}
+.interview_test .wrap_interview {
+    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1000px;
+    height: 100vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.interview_test .wrap_interview .close {
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+.interview_test .wrap_interview .contents {
+    background: url('../images/img_text_title.svg') no-repeat;
+    border-bottom: 1px solid #FFFFFF;
+    width: 670px;
+    height: auto;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 100px auto 0;
+    padding: 106px 0 30px;
+}
+.interview_test .wrap_interview .contents p {
+    font-size: 18px;
+}
+.interview_test .wrap_interview .contents p span.user {
+    background: url(../images/img-txt-underbar-deco.svg) no-repeat;
+    font-size: 25px;
+    z-index: 10;
+    background-position: bottom;
+    background-size: contain;
+    letter-spacing: 1.45px;
+}
+.interview_test .wrap_interview .contents > p:not(:nth-of-type(1)) {
+    margin-top: 20px;
+}
+.interview_test .wrap_interview .contents > div {
+    display: inline-block;
+    text-align: left;
+    margin-top: 25px;
+}
+.interview_test .wrap_interview .contents > div p:not(:last-child) {
+    margin-bottom: 15px;
+}
+.interview_test .wrap_interview .contents > div p span {
+    display: inline-block;
+    width: 110px;
+    font-size: 18px;
+    text-align: left;
+}
+.interview_test .wrap_interview .contents > div p span img {
+    margin-right: 5px;
+}
+.interview_test .wrap_interview .contents > div p:nth-of-type(1) b {
+    margin-left: 85px;
+}
+.interview_test .wrap_interview .contents > div p b {
+    font-size: 28px;
+    margin-left: 70px;
+    margin-right: 11px;
+}
+.interview_test .wrap_interview .contents > div p em {
+    font-size: 16px;
+    font-style: normal;
+}
+.interview_test .wrap_interview .btn_white {
+    bottom: 150px;
+}
+
+.interview-progress {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 455px;
+    height: 50px;
+    margin-bottom: 50px;
+    font-size: 14px;
+    color: #FFF;
+    z-index: 1;
+}
+.interview-progress hr {
+    position: absolute; 
+    background-color: #C3C3F1;
+    border: 1px solid #C3C3F1;
+    width: 80px;
+    top: 6.5px;
+    z-index: -1;
+}
+.check-hr-on {
+    background-color: #FFF !important;
+    border: 1px solid #FFF !important;
+}
+.check-hr1 {
+    left: 25px;
+}
+.check-hr2 {
+    left: 104px;
+}
+.check-hr3 {
+    left: 183px;
+}
+.check-hr4 {
+    left: 263px;
+}
+.check-hr5 {
+    left: 342px;
+}
+.check-common {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    vertical-align: top;
+}
+.check-common:not(:last-child) {
+    margin-right: 14px;
+}
+.nodot {
+    height: 35px;
+    margin-top: 3px;
+}
+.setting {
+    text-align: center;
+}
+.setting button {
+    width: 134px;
+    height: 42px;
+    margin-top: 30px;
+}
+.setting button.test_voice {
+    background: url('../images/btn_mic_no.svg') no-repeat;
+}
+.setting button.test_voice.on {
+    background: url('../images/btn_mic.svg') no-repeat;
+}
+.setting .voice_value {
+    width: 354px;
+    height: 15px;
+    margin: 10px auto 0;
+}
+.setting .voice_value span {
+    display: inline-block;
+    width: 4px;
+    height: 15px;
+    background: #FFFFFFCC;
+}
+.setting .voice_value span:not(:last-child) {
+    margin-right: 2px;
+}
+.setting .alert {
+    /* width: 360px; */
+    height: 24px;
+    margin-top: 10px;
+    /* line-height: 30px; */
+    font-size: 14px;
+
+    display: inline-block;
+    height: 40px;
+    padding: 10px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 10px;
+}
+.setting .alert img {
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-top: -4px;
+}
+.setting .alert.check {
+    color: #1CA319;
+}
+.setting .alert.no_check {
+    color: #E60006;
+}
+.setting button.test_environment {
+    background: url('../images/btn_environment_no.svg') no-repeat;
+}
+.setting button.test_environment.on {
+    background: url('../images/btn_environment.svg') no-repeat;
+}
+.environment {
+    position: relative;
+}
+.environment > button, .environment > div {
+    display: inline-block;
+}
+.environment #mark  {
+    position: absolute;
+    background: url('../images/icon_help.svg') no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    margin-left: 5px;
+}
+.environment #mark #mark_txt {
+    display: none;
+    width: 470px;
+    height: 40px;
+    line-height: 40px;
+    background: url('../images/img_bubble.svg') no-repeat;
+    font-size: 12px;
+    color: #FFFFFF;
+    padding: 0 10px 0 15px;
+    margin-left: 25px;
+    margin-top: -12px;
+}
+
+.test_result {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url('../images/img_background03.png') no-repeat;
+    background-size: cover;
+}
+.test_result h4 {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.test_result .wrap_interview .check {
+    width: 650px;
+    margin: 100px auto 0;
+    
+}
+.test_result .wrap_interview .check > section {
+    width: 540px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 5px #00000029;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    margin: 20px auto 50px;
+    padding: 30px
+}
+.test_result .wrap_interview .check video {
+    display: block;
+    width: 478px;
+    height: 300px;
+    border: 1px solid #000000;
+    margin: 0 auto;
+}
+.test_result .wrap_interview .check .check_txt div {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 10px 0 20px;
+}
+.test_result .wrap_interview .check .check_txt div img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.test_result .wrap_interview .check .check_txt p span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+.test_result .wrap_interview .check .check_txt p {
+    color: #666666;
+    font-size: 13px;
+}
+
+.test_result .wrap_interview .check .check_txt.blue div,
+.test_result .wrap_interview .check .check_txt.blue p span {
+    background: #3171EA;
+}
+.test_result .wrap_interview .check .check_txt.red div,
+.test_result .wrap_interview .check .check_txt.red p span  {
+    background: #EA4348;
+}
+.wrap_btn.two {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* 성향검사 */
+.aptitute_test {
+    background: url(../images/img-intbk.png), url(../images/img_background02.png) no-repeat;
+    background-position: top left;
+    background-size: co;
+}
+.wrap_interview .select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 750px;
+    margin: 30px auto 0;
+    gap: 25px;
+}
+.wrap_interview .select div {
+    width: 360px;
+    height: 80px;
+    border-radius: 50px 50px 50px 0;
+    background: #FFFFFF;;
+    padding: 19px 16px;
+    cursor: pointer;
+}
+.wrap_interview .select div.check {
+    background: #3496EA;
+}
+.wrap_interview .select div.check > p {
+    color: #FFFFFF;
+}
+.wrap_interview .select div span {
+    display: inline-block;
+    background: url(../images/num-answer.png) no-repeat;
+    background-size: contain;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+}
+.wrap_interview .select div p {
+    display: inline-block;
+    width: 280px;
+    text-align: center;
+}
+.wrap_aptitute_test .contents {
+    width: 750px !important;
+    background-position: center top !important;
+}
+
+
+
+
+
+
+@media screen and (max-height: 800px) { 
+    .pre_info .info img {
+        width: 200px;
+    }
+    .pre_info .info p {
+        margin-top: -10px;
+        font-size: 18px;
+    }
+    .btn_white {
+        width: 220px;
+        height: 51px;
+        line-height: 55px;
+        font-size: 16px;
+    }
+    .interview_test .wrap_interview .btn_white {
+        bottom: 100px;
+    }
+    .interview_test .wrap_interview .contents,
+    .test_result .wrap_interview .check {
+        margin: 80px auto 0;
+    }
+    .interview_test .wrap_interview .contents p {
+        font-size: 16px;
+    }
+    .test_result .wrap_interview .check > section {
+        width: 463px;
+        margin-bottom: 20px;
+    }
+    .test_result .wrap_interview .check video {
+        width: 400px;
+        height: 220px;
+    }
+    .interview_test .wrap_interview .contents > div p:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    .test_result .wrap_interview .check .check_txt p {
+        font-size: 12px;
+    }
+
+    .interview-progress {
+        margin-bottom: 40px;
+        font-size: 12px;
+    }
+    .interview-progress img {
+        width: 30px;
+        margin-top: 2px;
+    }
+}
+@media screen and (min-width: 1651px) {
+    video {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1650px) {
+    video {
+        height: 100%;
+    }
+}

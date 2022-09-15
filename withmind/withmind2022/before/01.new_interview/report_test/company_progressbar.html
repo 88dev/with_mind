@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
+
+    <style>
+
+        .graph_ability {
+            width: 450px;
+        }
+
+        .graph_ability .num {
+            width: 450px;
+            font-size: 14px;
+            color: #999999;
+            font-weight: 500;
+        }
+
+        .graph_ability .num span {
+            display: inline-block;
+            width: 32.5%;
+            margin-bottom: 5px;
+        }
+
+        .graph_ability .num span:nth-child(1) {
+            text-align: left;
+        }
+        .graph_ability .num span:nth-child(2) {
+            text-align: center;
+        }
+
+        .graph_ability .num span:nth-child(3) {
+            text-align: right;
+        }
+
+        .ability_wrap div {
+            height: 37px;
+        }
+
+        .ability_box {
+            width: 450px;
+            height: 37px;
+            background: #158FE4 0% 0% no-repeat padding-box;
+        }
+
+        .ability_wrap .ability_bar {
+            background: #F65454 !important;
+        }
+
+        .graph_ability .label {
+            width: 133px;
+            height: 30px;
+            border: 1px solid #DDDDDD;
+            border-radius: 5px;
+            margin: 20px auto 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #999999;
+            font-size: 14px;
+            line-height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .graph_ability .label span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+        .graph_ability .label span:first-child {
+            background: #158FE4;
+        }
+        .graph_ability .label span:last-child {
+            background: #F65454;
+            margin-left: 10px;
+        }
+
+
+
+        .doughnut .label {
+            width: 139px;
+            height: 30px;
+            border: 1px solid #DDDDDD;
+            border-radius: 5px;
+            margin: 20px auto 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #999999;
+            font-size: 14px;
+            line-height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .doughnut .label span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+        .doughnut .label span:nth-child(1) {
+            background: #158FE4;
+        }
+        .doughnut .label span:nth-child(2) {
+            background: #148F1D;
+            margin-left: 10px;
+        }
+        .doughnut .label span:nth-child(3) {
+            background: #F65454;
+            margin-left: 10px;
+        }
+
+        /* 심박 > 면접 긴장도 데이터 */
+        .tension {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #999999;
+            font-weight: 500;
+        }
+        .tension > div {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .tension > div:first-child {
+            margin-top: 64px;
+            margin-right: 5px;
+        }
+
+        .tension > div > span {
+            display: block;
+        }
+
+        .tension > div > span:not(:first-child) {
+            margin: 72px 0;
+        }
+
+
+        .graph_tension {
+            width: 350px;
+        }
+
+        .graph_tension .num {
+            width: 355px;
+        }
+
+        .graph_tension .num span {
+            display: inline-block;
+            width: 49%;
+            margin-bottom: 5px;
+        }
+
+        .graph_tension .num span:nth-child(1) {
+            text-align: left;
+        }
+        .graph_tension .num span:nth-child(2) {
+            text-align: right;
+        }
+
+        .tension_wrap {
+            border-left: 1px solid #DDDDDD;
+            padding: 15px 0;
+        }
+
+        .tension_box {
+            width: 350px;
+        }
+
+        .tension_box:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .tension_box .tension_bar {
+            height: 30px;
+        }
+
+        .tension_wrap .company_bar {
+            background: #5F4EEE !important;
+            margin-bottom: 10px;
+        }
+
+        .tension_wrap .same_bar {
+            background: #FFB52A !important;
+        }
+
+        .graph_tension .label {
+            width: 146px;
+            height: 30px;
+            border: 1px solid #DDDDDD;
+            border-radius: 5px;
+            margin: 20px auto 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #999999;
+            font-size: 14px;
+            line-height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .graph_tension .label span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+        .graph_tension .label span:nth-child(1) {
+            background: #5F4EEE;
+        }
+        .graph_tension .label span:nth-child(2) {
+            background: #FFB52A;
+            margin-left: 10px;
+        }
+
+
+
+        .iv_heartrate ._2nd .label {
+            width: 180px;
+            height: 30px;
+            border: 1px solid #DDDDDD;
+            border-radius: 5px;
+            margin: 20px auto 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #999999;
+            font-size: 14px;
+            line-height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .iv_heartrate ._2nd .label span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+        .iv_heartrate ._2nd .label span:nth-child(1) {
+            background: #F65454;
+        }
+        .iv_heartrate ._2nd .label span:nth-child(2) {
+            background: #158FE4;
+            margin-left: 10px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="graph_ability">
+        <div class="num">
+            <span>0</span>
+            <span>50</span>
+            <span>100</span>
+        </div>
+        <div class="ability_wrap">
+            <div class="ability_box">
+                <div class="ability_bar" role="progressbar" style="width: 70%;" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div class="label">
+            <span></span>적합
+            <span></span>부적합
+        </div>
+    </div>
+
+    <div class="doughnut">
+        <div class="label">
+            <span></span>상
+            <span></span>중
+            <span></span>하
+        </div>
+    </div>
+
+    <section class="tension">
+        <div>
+            <span>높음</span>
+            <span>보통</span>
+            <span>낮음</span>
+        </div>
+        <div class="graph_tension">
+            <div class="num">
+                <span>0</span>
+                <span>100</span>
+            </div>
+            <div class="tension_wrap">
+                <div class="tension_box">
+                    <div class="tension_bar company_bar" role="progressbar" style="width: 100%;" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="tension_bar same_bar" role="progressbar" style="width: 90%;" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="tension_box">
+                    <div class="tension_bar company_bar" role="progressbar" style="width: 70%;" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="tension_bar same_bar" role="progressbar" style="width: 70%;" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="tension_box">
+                    <div class="tension_bar company_bar" role="progressbar" style="width: 40%;" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="tension_bar same_bar" role="progressbar" style="width: 30%;" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="label">
+                <span></span>기업
+                <span></span>동종업계
+            </div>
+        </div>
+    </section>
+
+
+    <div class="iv_heartrate">
+        <div class="_2nd">
+            <canvas id="tension_chart" style="width:100%;height: 350px;"></canvas>
+            <div class="label">
+                <span></span>최고심박
+                <span></span>최저심박
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+new Chart(document.getElementById("tension_chart"), {
+    type: 'line',
+    data: {
+        labels: ['1', '2', '3', '4', '5', '6', '7'],
+        datasets: [{
+            data: [
+                10, 3, 30, 23, 10, 5, 50
+            ],
+            borderColor: "#F65454",
+            pointBackgroundColor: "#F65454",
+            fill: false,
+            borderWidth: 1,
+            lineTension: 0
+        },{
+            data: [
+                5, 13, 40, 11, 22, 35, 10
+            ],
+            borderColor: "#158FE4",
+            pointBackgroundColor: "#158FE4",
+            fill: false,
+            borderWidth: 1,
+            lineTension: 0
+        }
+        ]
+    },
+    options: {
+        responsive: true,
+        title: {
+            display: false,
+        },
+        legend: {
+            display: false
+        },
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+        },
+        hover: {
+            mode: 'nearest',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                display: false,
+                scaleLabel: {
+                    display: false,
+                }
+            }],
+            yAxes: [{
+                display: true,
+                ticks: {
+                    suggestedMin: 0,
+                },
+                scaleLabel: {
+                    display: false,
+                }
+            }]
+        }
+    }
+});
+
+</script>
+</html>

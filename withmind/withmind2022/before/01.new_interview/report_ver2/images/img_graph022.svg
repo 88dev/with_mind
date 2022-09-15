@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="278" viewBox="0 0 720 278">
+  <g id="img_graph02" transform="translate(-559 -908)">
+    <text id="놀람" transform="translate(645 1183)" fill="#666" font-size="12" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="0" y="0">놀람</tspan></text>
+    <text id="공포" transform="translate(735 1183)" fill="#666" font-size="12" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="0" y="0">공포</tspan></text>
+    <text id="혐오" transform="translate(835 1183)" fill="#666" font-size="12" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-10" y="0">혐오</tspan></text>
+    <text id="행복" transform="translate(925 1183)" fill="#666" font-size="12" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-10" y="0">행복</tspan></text>
+    <text id="슬픔" transform="translate(1015 1183)" fill="#666" font-size="12" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-10" y="0">슬픔</tspan></text>
+    <text id="화남" transform="translate(1105 1183)" fill="#666" font-size="12" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-10" y="0">화남</tspan></text>
+    <text id="중립" transform="translate(1195 1183)" fill="#666" font-size="12" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-10" y="0">중립</tspan></text>
+    <line id="선_121" data-name="선 121" x2="800" transform="translate(581 1168)" fill="none" stroke="#666" stroke-width="0.25"/>
+    <line id="선_224" data-name="선 224" x2="800" transform="translate(581 1119)" fill="none" stroke="#666" stroke-width="0.25"/>
+    <line id="선_225" data-name="선 225" x2="800" transform="translate(581 1068)" fill="none" stroke="#666" stroke-width="0.25"/>
+    <line id="선_226" data-name="선 226" x2="800" transform="translate(581 1017)" fill="none" stroke="#666" stroke-width="0.25"/>
+    <line id="선_227" data-name="선 227" x2="800" transform="translate(581 966)" fill="none" stroke="#666" stroke-width="0.25"/>
+    <line id="선_228" data-name="선 228" x2="800" transform="translate(581 915)" fill="none" stroke="#666" stroke-width="0.25"/>
+    <text id="_0" data-name="0" transform="translate(577 1172)" fill="#666" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-5" y="0">0</tspan></text>
+    <text id="_80" data-name="80" transform="translate(577 969)" fill="#666" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-11" y="0">80</tspan></text>
+    <text id="_100" data-name="100" transform="translate(577 918)" fill="#666" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-17" y="0">100</tspan></text>
+    <text id="_60" data-name="60" transform="translate(577 1020)" fill="#666" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-11" y="0">60</tspan></text>
+    <text id="_40" data-name="40" transform="translate(577 1070)" fill="#666" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-11" y="0">40</tspan></text>
+    <text id="_20" data-name="20" transform="translate(577 1121)" fill="#666" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="-11" y="0">20</tspan></text>
+  </g>
+</svg>

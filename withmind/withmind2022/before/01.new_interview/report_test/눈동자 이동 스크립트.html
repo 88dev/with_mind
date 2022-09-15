@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery</title>
+    <style>
+    #box {
+        position: relative;
+        width: 425.6px;
+        height: 425.6px;
+        border: 1px solid red;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .in {
+        position: relative;
+        position: absolute;
+        border: 1px solid blue;
+        width: 300px;
+        height: 300px;
+        left: 61.5px;
+        top: 61.5px;
+    }
+    #a {
+            position:absolute;
+            left:0;
+            width:100px;
+            height:100px;
+            background-color:#000;
+            color:#fff;
+
+            
+            animation-iteration-count: 1;
+        /* width: 10%;
+        height: 100px;
+        background-color: #bbdefb; */
+    }
+    </style>
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      $( document ).ready( function() {
+        $( '#a' ).mouseover( function() {
+          $( '#a' ).animate( {
+            // width: '100%'
+            left:'200px',
+            top: '200px'
+          }, 1000, function() {
+            $( this ).animate( {
+            //   width: '100%'
+                left:'30px',
+                top: '10px'
+            }, 1000 );
+          } );
+        } );
+      } );
+    </script>
+  </head>
+  <body>
+    <!-- <p><button>Click!</button></p> -->
+    <section id="box">
+        <div class="in">
+            <div id="a"></div>
+        </div>
+    </section>
+  </body>
+</html>
+
+<!-- 출처 https://www.codingfactory.net/11820 -->

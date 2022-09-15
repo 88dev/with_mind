@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB손해보험 결과리포트 p03</title>
+    <link rel="styleSheet" href="report.css" type="text/css"></link>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script type ="text/javascript" src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
+</head>
+<body>
+    <main id="db_report">
+        <article class="p_03">
+            <section class="blind" style="display: none;">
+                <div class="dot-pulse">
+                    <div class="dot-pulse__dot"></div>
+                </div>    
+            </section>
+            <section class="head">
+                <section class="logo_area">
+                    <h1></h1>
+                    <div>
+                        <button type="button" id="btn_print" onclick="window.print()"></button>
+                    </div>
+                </section>
+                <section class="wrap_select">
+                    <select id="select_report" size=1>
+                        <option value="">[기본응대] 뇌졸중, 급성심근경색 담보의 필요성을 말씀해주세요. ( <span>70점</span> )</option>
+                        <option value="">[기본응대] 뇌졸중, 급성심근경색 담보의 필요성을 말씀해주세요. ( <em>70점</em> )</option>
+                    </select>
+                </section>
+                <section class="user_info">
+                    <strong class="name">김친절</strong>
+                    <div class="period">2021. 10. 01 ~ 2022. 06. 22 학습 결과 리포트</div>
+                    <section class="wrap_grid">
+                        <div>기업명 입력란 / 지점명 입력란</div>
+                        <div>가입일</div>
+                        <div>교육 시작일</div>
+                        <div>교육 레벨</div>
+                        <div class="email"><span class="account kakao"></span><p>sokind07@naver.com( 아이디/sns이메일 적는란 )</p></div>
+                        <div class="date">2021. 10. 01</div>
+                        <div class="date">2021. 10. 02</div>
+                        <div class="level"><b>Lv.5</b> 카인더 <span>( 교육 <em>173</em> 일차)</span></div>
+                    </section>
+                </section>
+            </section>
+            <section class="body">
+                <section class="title detail">
+                    <h2>상세리포트</h2>
+                    <p>뇌졸중, 급성심근경색 담보의 필요성을 말씀해주세요. </p>
+                    <div>
+                        <b>Score</b>
+                        <span><em>70</em>/100점</span>
+                    </div>
+                </section>
+                <section class="container">
+                    <span class="tab speech">말</span>
+                    <section class="wrap_speech">
+                        <section class="contents grid01">
+                            <section class="video_edu">
+                                <strong class="title">교육영상</strong>
+                                <video></video>
+                                <p>교육 영상은 상세레포트 생성일로부터 90일간 제공됩니다.</p>
+                            </section>                           
+                        </section>
+                        <section class="contents grid02">
+                            <div class="wrap_top">
+                                <strong class="title">상황응대 능력</strong>
+                                <div class="stamp">
+                                    <img src="images/icon_good.png" alt="상황응대 능력 양호" />
+                                    <!-- <img src="images/icon_shortage.png" alt="상황응대 능력 미흡"> -->
+                                </div>
+                            </div>
+                            <img src="images/img_rank01.png" alt="상황응대 능력 상" /> 
+                            <!-- <img src="images/img_rank02.png" alt="상황응대 능력 중" /> 
+                            <img src="images/img_rank03.png" alt="상황응대 능력 하" />  -->
+                            <strong class="rank_txt">상</strong>
+                        </section>
+                        <section class="contents grid03">
+                            <strong class="title">상황응대 가이드</strong>
+                            <p>'이미 보험에 많이 가입된 고객에게 거절처리 회유하기' 교육에서는 '공감의 표현', '개선의 표현', '적절한 제안' 의 응대 태도가 중요합니다.</p>
+                        </section>
+                        <section class="contents grid04">
+                            <div class="wrap_top">
+                                <strong class="title">교육생 응답</strong>
+                                <div class="stamp">
+                                    <img src="images/icon_good.png" alt="상황응대 능력 양호" />
+                                    <!-- <img src="images/icon_shortage.png" alt="상황응대 능력 미흡"> -->
+                                </div>
+                            </div>
+                            <div class="wrap_answer">
+                                <div>
+                                    <span><img src="images/img_user.png" />고객</span>
+                                    <div class="inner_answer">
+                                        <p class="scroll">제가 이미 보험에 많이 가입되어 있거든요. 어떻게 해야하나요?</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="inner_answer">
+                                        <p class="scroll">
+                                            <!-- answer_red01 ~ answer_red05 / answer_green01 ~ answer_green05 -->
+                                            <em class="answer_red02">어...</em>고객님 보험 가입을 많이 하셔서 위험에 <em class="answer_green02">대비하셨다니 다행입니다. 그러시면</em> 계약
+                                            유지를 위해 더욱 큰 돈을 내고 계실 것 같은데요. <em class="answer_red01">음..</em> 그럼 잠시 보험료가 잘 활용되고
+                                            있는지 점검해 보시고 <em class="answer_green02">더 나은</em> 활용방법이 있는지 제가 <em class="answer_green03">도움 드리도록 하겠습니다.</em> 보험 가입을 권유 드리는 건 아니니 <em class="answer_green02">부담 갖지 마세요.</em>
+                                        </p>
+                                    </div>
+                                    <span><img src="images/img_user2.png" />교육생</span>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+
+
+
+                <section class="container grid_speech">
+                    <section class="contents talking">
+                        <div class="wrap_top">
+                            <strong class="title">말버릇 (어벽 사용 빈도)</strong>
+                            <div class="stamp">
+                                <img src="images/icon_good.png" alt="말버릇 양호">
+                                <!-- <img src="images/icon_shortage.png" alt="말버릇 미흡"> -->
+                            </div>
+                        </div>
+                        <section>
+                            <strong class="sub_title">습관어</strong>
+                            <section class="wrap_bubble" style="display: block;">
+                                <div class="bubble">
+                                    <span>그러니까</span>
+                                    <span>어제</span>
+                                    <span>사실상</span>
+                                    <span>솔직히</span>
+                                    <span>말입니다</span>
+                                    <span>어쨌든</span>
+                                </div>
+                                <ul class="scroll">
+                                    <li>'그러니까'<span>5회</span></li>
+                                    <li>'이제'<span>3회</span></li>
+                                    <li>'사실상'<span>1회</span></li>
+                                    <li>'솔직히'<span>1회</span></li>
+                                    <li>'말입니다'<span>1회</span></li>
+                                    <li>'어쨌든'<span>1회</span></li>
+                                </ul>
+                                <p>김친절님이 많이 사용한 <b>습관어는 [ ‘그러니까’ ‘이제’ ‘사실상’ ‘솔직히’ ‘말입니다’ ‘어쨌든’ ]</b>입니다.</p>
+                            </section>
+                            <section class="wrap_habit" style="display: none;">
+                                <b>훌륭해요!</b>
+                                <img src="images/img_good.png" />
+                                <p>습관어를 한번도 사용하지않았습니다.<br>앞으로도 습관어 사용을 지양해주시길 바랍니다.</p>
+                            </section>
+                        </section>
+                        <section>
+                            <strong class="sub_title">간투어</strong>
+                            <section class="wrap_bubble" style="display: block;">
+                                <div class="bubble">
+                                    <span>아..</span>
+                                    <span>어..</span>
+                                    <span>저..</span>
+                                    <span>그..</span>
+                                    <span>음..</span>
+                                    <span>에..</span>
+                                </div>
+                                <ul class="scroll">
+                                    <li>'아..'<span>5회</span></li>
+                                    <li>'어..'<span>4회</span></li>
+                                    <li>'저..'<span>3회</span></li>
+                                    <li>'그..'<span>2회</span></li>
+                                    <li>'음..'<span>1회</span></li>
+                                    <li>'에..'<span>1회</span></li>
+                                </ul>
+                                <p>김친절님이 많이 사용한 <b>간투어는 [ ‘아..’ ‘어..’ ‘그..’ ‘저..’ ‘음..’ ‘에..’ ]</b>입니다.</p>
+                            </section>
+                            <section class="wrap_habit" style="display: none;">
+                                <b>훌륭해요!</b>
+                                <img src="images/img_good.png" />
+                                <p>간투어를 한번도 사용하지않았습니다.<br>앞으로도 간투어 사용을 ..~</p>
+                            </section>
+                        </section>
+                        <p class="sub_txt">교육에서 자주 사용하는 단어 순위를 선별하여 나열합니다. 원이 클수록 사용 빈도수가 높음을 의미합니다.</p>
+                        <div class="alert">습관어와 간투어를 10회 이상 사용하였습니다. 고객을응대할 때 나도 모르게 자꾸 반복하게 되는 말버릇(어벽)은 듣는 이에게 불편함을 줄 수 있는 요소입니다.<br>의식적으로 교정을 위한 노력을 해보세요.</div>
+                    </section>
+                    <section class="contents language">
+                        <div class="wrap_top">
+                            <strong class="title">언어성향</strong>
+                            <div class="stamp">
+                                <img src="images/icon_good.png" alt="양호">
+                                <!-- <img src="images/icon_shortage.png" alt="미흡"> -->
+                            </div>
+                        </div>
+                        <div class="wrap_label"><span></span>전체평균<span></span>교육생</div>
+                        <div class="wrap_graph">
+                            <div class="wrap_trainee">
+                                <img style="left: 65%;" src="images/img_lang_toon.svg" class="trainee" alt="교육생" />
+                            </div>
+                            <div class="wrap_avg">
+                                <img style="left: 80%;" src="images/img_lang_avg.svg" class="avg" alt="평균" />
+                            </div>
+                        </div>
+                        <p class="txt">김친절님은 <b>중립적</b> 성향의 어휘를 많이사용한 것으로 확인됩니다.</p>
+                    </section>
+                    <section class="contents tone">
+                        <strong class="title">목소리 톤</strong>
+                        <!-- <img src="images/img_tone_Do.png" alt="목소리 도 톤">
+                        <img src="images/img_tone_Re.png" alt="목소리 레 톤">
+                        <img src="images/img_tone_Mi.png" alt="목소리 미 톤">
+                        <img src="images/img_tone_Fa.png" alt="목소리 파 톤">
+                        <img src="images/img_tone_Sol.png" alt="목소리 솔 톤">
+                        <img src="images/img_tone_La.png" alt="목소리 라 톤">
+                        <img src="images/img_tone_Ti.png" alt="목소리 시 톤"> -->
+                        <img src="images/img_tone_Sol.png" alt="목소리 솔 톤">
+                        <p class="txt">이 교육에서 김친절님 목소리는 ‘<b>솔</b>’ 톤(Tone)에 가까워요!</p>
+                    </section>
+                    <section class="contents speed">
+                        <div class="wrap_top">
+                            <strong class="title">말 빠르기</strong>
+                            <span id="tooltip_speed" class="tooltip">
+                                <span id="tooltip_contents_speed">
+                                    <em>말 빠르기란?</em>
+                                    <p>말의 빠르기를 나타내는 단위인 sps는, <em>syllable per second</em>의 약자로 1초당 음절 수를 의미합니다. 글을 따라 읽을 때, 성인기준 평균 말 빠르기는 초당 5 - 7 음절, 일반적인 대화 말 빠르기는 3.5 - 5.5 음절입니다.  남성이 여성보다 조금 더 빠른것으로 알려져 있습니다. </p>
+                                </span>
+                            </span>
+                            <div class="stamp">
+                                <img src="images/icon_good.png" alt="억양 일치율 양호" />
+                                <!-- <img src="images/icon_shortage.png" alt="억양 일치율 미흡" /> -->
+                            </div>
+                        </div>
+                        <div class="wrap_score">
+                            <div>
+                                <span>정답음성</span>
+                                <b>5</b>
+                                <em>SPS</em>
+                            </div>
+                            <div>
+                                <img src="images/img_arrow.png" />
+                            </div>
+                            <div>
+                                <span>교육생 음성</span>
+                                <b>4</b>
+                                <em>SPS</em>
+                            </div>
+                        </div>
+                        <div class="wrap_graph">
+                            <img class="graph_speed" src="images/img_speed1.5.svg" />
+                        </div>
+                        <img src="images/img_speed_guide.svg" />
+                    </section>
+                </section>
+
+
+
+
+
+
+                <section class="container">
+                    <span class="tab look">표정</span>
+                    <section class="wrap_look">
+                        <section class="contents emotion">
+                            <div class="wrap_top">
+                                <strong class="title">표정분석</strong>
+                                <div class="stamp">
+                                    <!-- <img src="images/icon_good.png" alt="표정 양호" /> -->
+                                    <img src="images/icon_shortage.png" alt="표정 미흡" />
+                                </div>
+                            </div>
+                            <section class="wrap_graph">
+                                <div class="frame">
+                                    <div class="value surprise" role="progressbar" style="height: 95%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="frame">
+                                    <div class="value fear" role="progressbar" style="height: 20%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="frame">
+                                    <div class="value bright" role="progressbar" style="height: 40%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="frame">
+                                    <div class="value empathy" role="progressbar" style="height: 30%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="frame">
+                                    <div class="value excited" role="progressbar" style="height: 90%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="frame">
+                                    <div class="value stiff" role="progressbar" style="height: 90%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </section>
+                            <p class="txt">김친절님은 해당 교육에서 <b>놀람</b> 표정이 많이 드러났어요!</p>
+                            <p class="sub_txt">교육영상에서 놀람, 두려움, 밝음, 공감, 흥분, 딱딱함 6가지 감정의 정도입니다. 표정, 안면분석을 통해 친절도와 감정상태를 보여줍니다. 두려움, 흥분의 표정은 친절도 평가에 점수 감점 요인으로 적용합니다.</p>
+                        </section>
+                        <section class="contents eyes">
+                            <div class="wrap_top">
+                                <strong class="title">시선분포</strong>
+                                <span id="tooltip_eyes" class="tooltip">
+                                    <span id="tooltip_contents_eyes">
+                                        <em>시선분포</em>
+                                        <table id="ex_eyes">
+                                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr>
+                                                <td></td>
+                                                <td class="eyes04">1</td>
+                                                <td class="eyes03">2</td>
+                                                <td class="eyes01">3</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td class="eyes01">4</td>
+                                                <td class="eyes05">5</td>
+                                                <td class="eyes04">6</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td class="eyes04">7</td>
+                                                <td class="eyes02">8</td>
+                                                <td class="eyes03">9</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        </table>
+                                        <div class="wrap_gradation">
+                                            <span class="gradation"></span>
+                                            <div>
+                                                <span>낮음</span>
+                                                <span>높음</span>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li>1. 왼쪽 상단</li>
+                                            <li>2. 중앙 상단</li>
+                                            <li>3. 오른쪽 상단</li>
+                                            <li>4. 왼쪽</li>
+                                            <li>5. 중앙</li>
+                                            <li>6. 오른쪽</li>
+                                            <li>7. 왼쪽 하단</li>
+                                            <li>8. 중앙 하단</li>
+                                            <li>9. 오른쪽 하단</li>
+                                        </ul>
+                                        <p>시선분포는 눈동자 영역을 <em>9등분</em>하여 나타냅니다.<br>
+                                            시선이 많이 밀집될 수록 진한 색을 띄며, 분산되었을 시 옅은 색으로 나타납니다. 예시의 그림에서 5번 위치가 가장 진하므로 시선이 중앙에 가장 밀집 되어있음을 알 수 있습니다. </p>
+                                    </span>
+                                </span>
+                                <div class="stamp">
+                                    <!-- <img src="images/icon_good.png" alt="시선분포 양호" /> -->
+                                    <img src="images/icon_shortage.png" alt="시선분포 미흡" />
+                                </div>
+                            </div>
+                            <section class="wrap_graph">
+                                <div class="eyes_direction">
+                                    <!-- <img src="images/img_woman9.svg" alt="오른쪽 하단"/> -->
+                                    <img src="images/img_man9.svg" alt="오른쪽 하단"/>
+                                </div>
+                                <div class="eyes_table">
+                                    <table id="" >
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="eyes04"></td>
+                                            <td class="eyes03"></td>
+                                            <td class="eyes01"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="eyes01"></td>
+                                            <td class="eyes05"></td>
+                                            <td class="eyes04"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="eyes04"></td>
+                                            <td class="eyes02"></td>
+                                            <td class="eyes03"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                    </table>
+                                    <div class="wrap_gradation">
+                                        <span class="gradation"></span>
+                                        <div>
+                                            <span>낮음</span>
+                                            <span>높음</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <p class="txt">김친절님은 <b>오른쪽 하단</b>에 시선이 가장 많이 머물렀습니다.</p>
+                            <p class="sub_txt">영역색이 진할 수록 시선이 오래 머무른 곳이며, 영역이 널리 흩어져 있다면 시선변화가 많음을 의미합니다. 실제 응대 상황에서도 지금처럼 고객과 눈을 마주치며 말하는 것이 좋습니다.</p>
+                        </section>
+                    </section>
+                </section>
+                <section class="container">
+                    <span class="tab pose">자세</span>
+                    <section class="contents pose">
+                        <strong class="title">자세분석</strong>
+                        <section class="wrap_pose">
+                            <section class="angle">
+                                <div class="wrap_top">
+                                    <strong class="title"><span></span>고개각도</strong>
+                                    <div class="stamp">
+                                        <!-- <img src="images/icon_good.png" alt="고개각도 양호" /> -->
+                                        <img src="images/icon_shortage.png" alt="고개각도 미흡" />
+                                    </div>
+                                </div>
+                                <section class="wrap_graph">
+                                    <img src="images/img_angle.svg" alt="고개 각도 안내 이미지" />
+                                    <ul>
+                                        <li><span></span>끄덕임 횟수<i>3회</i></li>
+                                        <li><span></span>두리번 횟수<i>2회</i></li>
+                                        <li><span></span>갸우뚱 횟수<i>2회</i></li>
+                                    </ul>
+                                </section>
+                                <p class="sub_txt">교육영상에서 얼굴과 어깨의 각도를 체크하여 교육생의 평균 자세를 보여줍니다.<br>기울기가 높을 수록 자세의 변화가 큼을 의미합니다.</p>
+                            </section>
+                            <section class="shoulder">
+                                <div class="wrap_top">
+                                    <strong class="title"><span></span>어꺠움직임</strong>
+                                    <div class="stamp">
+                                        <!-- <img src="images/icon_good.png" alt="어깨움직임 양호" /> -->
+                                        <img src="images/icon_shortage.png" alt="어깨움직임 미흡" />
+                                    </div>
+                                </div>
+                                <section class="wrap_graph">
+                                    <img src="images/img_shoulder.svg" />
+                                    <ul>
+                                        <li><span></span>들썩임 횟수<i>2회</i></li>
+                                        <li><span></span>좌우흔들림 횟수<i>1회</i></li>
+                                    </ul>
+                                </section>
+                                <p class="sub_txt">어깨의 움직임을 상하좌우 좌표를 체크하여 상체 움직임정도를 보여줍니다.<br>상하좌우의 좌표점 길이가 길수록 교육 중 상체가 많이 흔들렸음을 의미합니다.</p>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="footer">
+                http://sokind.kr/
+            </section>
+        </article>
+    </main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    // 억양
+    new Chart(document.getElementById("voice_accent"), {
+        type: "line",
+        data: {
+            labels: [1, 5, 8, 11, 15, 21, 23, 26, 28, 31, 33, 36, 53, 59, 61, 63, 77, 83, 90, 100, 106, 108, 114, 120, 129, 137, 142, 146, 155, 159, 165, 181, 190, 194, 200, 209, 214, 221, 225, 240, 245, 252, 263, 269, 274, 292, 296, 300, 307, 309, 320, 328, 334, 339, 342, 344, 346, 351, 354, 359, 375, 378, 381, 391, 395, 408, 412, 424, 433, 436, 445, 457, 465, 469, 471, 482, 485, 492, 513, 520, 522, 531, 537, 545, 560, 562, 564, 567, 570, 576, 581, 589, 598, 604, 609, 613, 617, 622, 625, 630, 636, 640, 654, 657, 662, 673, 682, 694, 703, 712, 714, 717, 721, 727, 731, 736, 744, 752, 761, 764, 767, 778, 795, 803, 812, 816, 822, 833, 835, 837, 845, 849, 859, 861, 868, 879, 883, 891, 897, 901, 903, 910, 916, 923, 928, 946, 950, 955, 958, 960, 977, 983, 988, 998, 1006, 1016, 1021, 1024, 1028, 1031, 1036, 1038, 1046, 1050, 1054, 1060, 1064, 1070, 1076, 1083, 1098, 1108, 1111, 1116, 1118, 1123, 1128, 1131, 1135, 1154, 1161, 1166, 1171, 1183, 1194, 1200, 1206, 1211, 1213, 1220, 1227, 1236, 1238, 1242, 1247, 1251, 1253, 1260],
+            datasets: [
+                {
+                    data: [0.00045, 0.00037, 0.00045, 0.00092, 0.00043, 0.00061, 0.00057, 0.0009, 0.00091, 0.00091, 0.00042, 0.00078, 0.00121, 0.00116, 0.00114, 0.00107, 0.00081, 0.00092, 0.0008, 0.00077, 0.00074, 0.00135, 0.0007, 0.00071, 0.00068, 0.00072, 0.00071, 0.00069, 0.00145, 0.00079, 0.00072, 0.00109, 0.00079, 0.0011, 0.00114, 0.00112, 0.001, 0.00275, 0.00071, 0.00233, 0.00093, 0.00084, 0.00076, 0.00072, 0.0007, 0.00077, 0.00094, 0.00089, 0.0009, 0.00074, 0.00063, 0.00072, 0.00063, 0.00047, 0.00059, 0.00054, 0.00093, 0.00087, 0.00139, 0.0007, 0.00094, 0.00187, 0.00091, 0.00088, 0.00086, 0.0007, 0.00061, 0.00106, 0.00094, 0.00075, 0.00082, 0.00077, 0.00075, 0.00075, 0.0009, 0.00098, 0.00113, 0.00103, 0.00071, 0.00073, 0.00143, 0.00072, 0.00074, 0.00069, 0.00116, 0.00082, 0.0004, 0.00048, 0.00046, 0.00113, 0.0011, 0.00105, 0.00066, 0.00074, 0.0014, 0.00072, 0.00138, 0.00068, 0.00138, 0.00138, 0.00073, 0.00074, 0.00109, 0.00108, 0.00091, 0.00093, 0.00113, 0.00065, 0.00074, 0.00071, 0.00074, 0.00055, 0.00092, 0.00091, 0.00061, 0.00079, 0.00074, 0.00079, 0.00108, 0.00108, 0.00313, 0.00084, 0.00098, 0.00084, 0.00068, 0.00067, 0.00127, 0.00037, 0.00571, 0.00072, 0.00074, 0.00083, 0.00075, 0.00146, 0.00078, 0.00079, 0.00146, 0.00099, 0.00093, 0.00162, 0.00082, 0.00075, 0.00087, 0.00089, 0.00088, 0.00096, 0.00091, 0.00086, 0.00085, 0.0009, 0.00231, 0.00078, 0.00068, 0.00068, 0.00075, 0.00067, 0.00072, 0.00067, 0.00064, 0.00056, 0.00071, 0.001, 0.0037, 0.00128, 0.00127, 0.00126, 0.00092, 0.00067, 0.00071, 0.00069, 0.00093, 0.00056, 0.00092, 0.00091, 0.00073, 0.00074, 0.00072, 0.00072, 0.00081, 0.00116, 0.00108, 0.00107, 0.001, 0.00164, 0.00078, 0.00082, 0.00081, 0.00079, 0.00076, 0.00063, 0.00097, 0.00079, 0.00039, 0.00053, 0.00035, 0.00083, 0.00092, 0.00076],
+                    borderColor: "#FABF48",
+                    pointRadius: 0,
+                    fill: false,
+                    borderWidth: 1,
+                    lineTension: 1,
+                    borderDash: [2]
+                },
+                {
+                    data: [0.00419, 0.00555, 0.00445, 0.00462, 0.00262, 0.00863, 0.00471, 0.00253, 0.00426, 0.01032, 0.0039, 0.0692, 0.00605, 0.0628, 0.00906, 0.00423, 0.00435, 0.00597, 0.00482],
+                    borderColor: "#6967F9",
+                    pointRadius: 0,
+                    fill: false,
+                    borderWidth: 1,
+                    lineTension: 1,
+                },
+            ],
+        },
+        options: {
+            responsive: false,
+            title: {
+                display: false,
+            },
+            legend: {
+                display: false,
+            },
+            tooltips: {
+                enabled: false,
+                mode: "index",
+                intersect: false,
+            },
+            hover: {
+                mode: "nearest",
+                intersect: true,
+            },
+            scales: {
+                xAxes: [
+                    {
+                    display: false,
+                    scaleLabel: {
+                        display: false,
+                    },
+                    },
+                ],
+                yAxes: [
+                    {
+                    display: true,
+                    scaleLabel: {
+                        display: false,
+                    },
+                    gridLines: {
+                        borderDash: [2],
+                        color: "#DFE0EB"
+                    }
+                    },
+                ],
+            },
+            layout: {
+                padding: {
+                    left: 5,
+                    right: 5,
+                    top: 5,
+                    bottom: 5,
+                },
+            },
+        },
+    });
+    </script>
+</html>

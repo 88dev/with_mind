@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .ability_tab_cont > div.wrap_ability {
+            display: none;
+        }
+        .ability_tab_cont > div.wrap_ability.on {
+            display: block;
+        }
+
+        table tr th {
+            background: #f5f5f5;
+        }
+        table tr th,
+        table tr td {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="ability_tab_box">
+        <ul class="ability_tab_title">
+            <li class="on">면접5</li>
+            <li>면접6</li>
+        </ul>
+        <div class="ability_tab_cont">
+            <div class="on wrap_ability">
+                <!-- 면접5 -->
+                면접5
+            </div>
+            <div class="wrap_ability">
+                <!-- 면접5 -->
+                면접6
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <table>
+            <tr>
+                <th colspan="3">
+                    AI 역량면접은 지원자에게 총 2개의 역량질문을 제시합니다.<br>
+                    면접관이 체크박스 선택으로 결정한 2개의 기업선호역량에 맞는 질문들이 제시됩니다. <br>
+                    <span>* 역량 2개를 필수로 선택해야합니다. 체크박스 선택 시 나타나는 역량 설명을 참고하여 선택해주시길 바랍니다. </span>
+                </th>
+            </tr>
+            <tr>
+                <th rowspan="3">기업 선호 역량</th>
+                <th>역량 목록</th>
+                <th>역량 설명</th>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <input type="checkbox" id="1" name="" value="1"><label for="1">열정</label>
+                    <input type="checkbox" id="2" name="" value="2"><label for="2">역량명1</label><br>
+                    <input type="checkbox" id="3" name="" value="3"><label for="3">글로벌 마인드</label>
+                    <input type="checkbox" id="4" name="" value="4"><label for="4">역량명2</label><br>
+                    <input type="checkbox" id="5" name="" value="5"><label for="5">역량명3</label>
+                    <input type="checkbox" id="6" name="" value="6"><label for="6">역량명4</label><br>
+                    <input type="checkbox" id="7" name="" value="7"><label for="7">역량명5</label>
+                    <input type="checkbox" id="8" name="" value="8"><label for="8">역량명</label><br>
+                    <input type="checkbox" id="9" name="" value="9"><label for="9">역량명6</label>
+                    <input type="checkbox" id="10" name="" value="10"><label for="10">역량명7</label>
+
+                </td>
+                <td>
+                    <b>열정</b><br>
+                    <p>· 회사와 고객을 위하여 맡은 바 <br>업무를 주도적으로 수행하며, <br>본인이 끝까지 책임지고자 함. </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>글로벌 마인드</b>
+                    <p>· 글로벌 프렉티스 및 네트워크를 <br>활용하여 글로벌 수준의 전문성을 <br>개발하고자 함.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>선택역량</th>
+                <td>
+                    열정 / 글로벌 마인드
+                    <div class="keyword-wrapper"></div>
+                </td>
+            </tr>
+        </table>
+    </section>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".ability_tab_title li").click(function() {
+            var idx = $(this).index();
+            $(".ability_tab_title li").removeClass("on");
+            $(".ability_tab_title li").eq(idx).addClass("on");
+            $(".ability_tab_cont > div").hide();
+            $(".ability_tab_cont > div").eq(idx).show();
+        });
+    });
+
+</script>
+</html>

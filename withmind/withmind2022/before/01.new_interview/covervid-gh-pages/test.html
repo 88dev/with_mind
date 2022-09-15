@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CoverVid</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,100,700' rel='stylesheet' type='text/css'>
+	<!-- <link rel="stylesheet" href="assets/styles/normalize.css" />
+	<link rel="stylesheet" href="assets/styles/styles.css" /> -->\
+
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 100vw; 
+			height: 100vh;
+			overflow: hidden;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Video Markup -->
+	<section class="masthead">
+		<video class="masthead-video" autoplay loop muted style="width: 100vw;">
+			<source src="assets/videos/pexels-engin-akyurt-6084644 (1).mp4" type="video/mp4">
+			<source src="assets/videos/pexels-engin-akyurt-6084644-_1_.webm" type="video/webm">
+		</video>
+		<div class="masthead-overlay"></div>
+	</section>
+
+	<!-- Load Scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="covervid.js"></script>
+	<script src="assets/scripts/scripts.js"></script>
+
+	<!-- Call CoverVid -->
+	<script type="text/javascript">
+		// If using jQuery
+			// $('.masthead-video').coverVid(1920, 1080);
+		// If not using jQuery (Native Javascript)
+			coverVid(document.querySelector('.masthead-video'), 1280, 720);
+	</script>
+
+</body>
+
+</html>

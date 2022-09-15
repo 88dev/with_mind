@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면 및 음량 체크 결과</title>
+	<link rel="stylesheet" href="./css/interview.css" /> 
+</head>
+<body>
+    <article class="test_result interview_test">
+        <section class="wrap_interview">
+            <button class="close"><img src="./images/btn-close-white.svg" alt="닫기"></button>
+			<section class="check">
+                <h4>화면 및 음량 체크 결과</h4>
+                <section>
+                    <video></video>
+                    <div class="check_txt blue">
+                        <div><img src="./images/icon_check.png" />면접 진행이 가능한 환경입니다.</div>
+                        <p><span></span>정상적인 면접 환경입니다. AI면접 진행을 위해 AI면접 시작 버튼을 눌러주세요.</p>
+                    </div>
+                    <!-- <div class="check_txt red">
+                        <div><img src="./images/icon_error_wh.svg" />불안전한 면접 환경입니다.</div>
+                        <p><span></span>화면 또는 마이크가 올바르게 작동하지 않는 상태 입니다. 점검 후 다시 진행해 주세요.</p>
+                    </div> -->
+                </section>
+                <div class="wrap_btn two">
+                    <button class="btn_white">다시 하기</button>
+                    <button class="btn_white" disabled>AI 면접 시작<span></span></button>
+                </div>
+            </section>
+            <section class="interview-progress">
+				<section class="check-pre check-common">
+					<img src="./images/check-dot.png" alt="">
+					<div>사전체크</div>
+				</section>
+				<hr class="check-hr1 check-hr-on">
+				<section class="check-ai check-common">
+					<img class="nodot" src="./images/check-nodot.png" alt="">
+					<div>자기소개<br>면접</div>
+				</section>
+				<hr class="check-hr2">
+				<section class="check-ai check-common">
+					<img class="nodot" src="./images/check-nodot.png" alt="">
+					<div>단계별<br>심층면접</div>
+				</section>
+				<hr class="check-hr3">
+				<section class="check-ai check-common">
+					<img class="nodot" src="./images/check-nodot.png" alt="">
+					<div>역량면접</div>
+				</section>
+				<hr class="check-hr4">
+				<section class="check-ai check-common">
+					<img class="nodot" src="./images/check-nodot.png" alt="">
+					<div>성향검사</div>
+				</section>
+				<hr class="check-hr5">
+				<section class="check-ai check-common">
+					<img class="nodot" src="./images/check-nodot.png" alt="">
+					<div>응시완료</div>
+				</section>
+			</section>
+        </section>
+    </article>
+</body>
+</html>

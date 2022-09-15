@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel="stylesheet" href="lib/jqcloud.min.css">
+<title></title>
+<style>
+body {
+  font-family: Lato;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tag-cloud {
+  width: 250px;
+  text-align: center;
+}
+.tag-cloud div {
+    display: inline-block;
+    line-height: 1.2em;
+    vertical-align: middle;
+    margin: 0 0.2em;
+    transition: color .12s ease;
+    cursor: pointer;
+    user-select: none;
+}
+.tag-cloud div:hover {
+  color: #4CAF50 !important;
+}
+.tag-cloud div:active {
+  transform: translateY(4px);
+
+}
+
+</style>
+</head>
+<body>
+  <div class="main">
+    <div class="tag-cloud">
+      <div tag-value="3">컴퓨터</div>
+      <div tag-value="8">Asperiores</div>
+      <div tag-value="4">Porro</div>
+      <div tag-value="1">Harum</div>
+      <div tag-value="9">컴퓨터</div>
+      <div tag-value="6">Rerum</div>
+      <div tag-value="4">Deleniti</div>
+      <div tag-value="5">Cupiditate</div>
+      <div tag-value="1">Quo</div>
+      <div tag-value="8">Ratione</div>
+      <div tag-value="8">Incidunt</div>
+      <div tag-value="2">Odio</div>
+    </div>
+  </div>
+
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script src="lib/jqcloud.min.js"></script>
+<script>
+  // config
+const fontMin = 14; //px
+const fontMax = 54; //px
+const valueAttributeName = 'tag-value'; // tag in which we puted value
+const tagsSelector = '[tag-value]'; // tags elemnts selector
+const computeColor = true; // flag, if true color will be computed with size
+
+// mechanism
+const values = [];
+document.querySelectorAll(tagsSelector).forEach(tag => {
+  const tagValue = tag.getAttribute(valueAttributeName);
+  
+  values.push({
+    el: tag,
+    val: Number(tagValue)
+  })
+});
+
+const valuesSorted = values.sort((a, b) => a.val - b.val);
+const valueMax = valuesSorted[valuesSorted.length-1].val;
+
+valuesSorted.forEach(x => {
+  const { val, el } = x;
+  
+  const fontSize = Math.floor(
+    (val/valueMax) * (fontMax-fontMin+1) + fontMin
+  );
+  
+  if (computeColor) {
+    const color = Math
+    .abs(
+      Math.floor(((val/valueMax) * 200) - 200)
+    )
+    .toString(16)
+    .repeat(3); 
+    
+    el.style.color = `#${color}`;
+  }
+  
+  el.style.fontSize = `${fontSize}px`;
+});
+
+</script>
+</html>

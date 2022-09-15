@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.559" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f57474"/>
+      <stop offset="1" stop-color="#f45457"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" r="0.554" xlink:href="#radial-gradient"/>
+    <clipPath id="clip-path">
+      <rect id="사각형_27115" data-name="사각형 27115" width="128" height="128" transform="translate(1026 524)" fill="#fff"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_27111" data-name="사각형 27111" width="106.667" height="94.815" fill="url(#radial-gradient)"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="사각형_27112" data-name="사각형 27112" width="74.286" height="66.281" fill="url(#radial-gradient-2)"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-5" r="0.787" xlink:href="#radial-gradient"/>
+    <filter id="패스_10417" x="39.538" y="43.529" width="48.918" height="44.617" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#e51a1a" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="img_heartrate" transform="translate(-1026 -524)" clip-path="url(#clip-path)">
+    <g id="그룹_21027" data-name="그룹 21027" transform="translate(1036.667 540.592)">
+      <g id="그룹_21024" data-name="그룹 21024" transform="translate(0 0)" opacity="0.15">
+        <g id="그룹_21023" data-name="그룹 21023" clip-path="url(#clip-path-2)">
+          <path id="패스_10415" data-name="패스 10415" d="M77.9,0A28.772,28.772,0,0,0,53.334,13.733,28.794,28.794,0,0,0,0,28.662c0,25.257,26,49.61,53.334,66.153,27.329-16.543,53.331-40.9,53.331-66.153A28.716,28.716,0,0,0,77.9,0" transform="translate(0 0)" fill="url(#radial-gradient)"/>
+        </g>
+      </g>
+      <g id="그룹_21026" data-name="그룹 21026" transform="translate(16.19 14.267)" opacity="0.2">
+        <g id="그룹_21025" data-name="그룹 21025" transform="translate(0 0)" clip-path="url(#clip-path-3)">
+          <path id="패스_10416" data-name="패스 10416" d="M60.1,5.218a20.025,20.025,0,0,0-17.105,9.6A20.039,20.039,0,0,0,5.848,25.255c0,17.655,18.109,34.68,37.143,46.243C62.023,59.935,80.135,42.91,80.135,25.255A20.038,20.038,0,0,0,60.1,5.218" transform="translate(-5.847 -5.217)" fill="url(#radial-gradient-2)"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -10.67, -16.59)" filter="url(#패스_10417)">
+        <path id="패스_10417-2" data-name="패스 10417" d="M41.215,10.706a10.764,10.764,0,0,0-9.193,5.157,10.767,10.767,0,0,0-19.958,5.61c0,9.485,9.731,18.633,19.958,24.849,10.229-6.216,19.96-15.364,19.96-24.849A10.767,10.767,0,0,0,41.215,10.706" transform="translate(31.97 35.32)" fill="url(#radial-gradient-5)"/>
+      </g>
+      <rect id="사각형_27113" data-name="사각형 27113" width="106.665" height="94.814" transform="translate(0 0)" fill="none"/>
+      <rect id="사각형_27114" data-name="사각형 27114" width="106.666" height="94.815" transform="translate(0 0)" fill="none" opacity="0.2"/>
+    </g>
+  </g>
+</svg>

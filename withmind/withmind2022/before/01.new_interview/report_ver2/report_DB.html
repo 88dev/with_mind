@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB 리포트</title> 
+    <link rel="styleSheet" href="./css/report_DB.css" type="text/css"></link>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script type ="text/javascript" src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+
+    <main id="report">
+        <section class="report_header">
+            <div>
+                <img class="logo" src="./images/img_logo.svg">
+                <ul class="wrap_side">
+                    <li><button class="print"></button></li>
+                    <li><button class="pdf"></button></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="wrap_info">
+                    <li><b>홍길동</b><br><span>abcd1234@withmind.net</span></li>
+                    <!-- <li class="line"></li> -->
+                    <span class="line"></span>
+                    <li><span>전형명</span><p>2021년 위드마인드개발자 채용공고 전형명이 길 경우 두 줄로 작성합니다.</p></li>
+                    <span class="line"></span>
+                    <li><span>발급일시</span><p>2021년 6월 22일</p><br><span>지원직군</span><p>연구개발</p></li>
+                    <span class="line"></span>
+                    <li><span>면접그룹</span><p>인터뷰마스터</p><br><span>면접코드</span><p>000000</p></li>
+                </ul>
+            </div>
+        </section>
+        <article class="section_main">
+            <div class="main_tab_wrap">
+                <ul class="main_tab_title">
+                    <li class="on">종합분석</li> <!-- onon -->
+                    <li>영상분석</li> <!-- offoff -->
+                    <li>역량분석(기업)</li>
+                    <li>역량분석(모의)</li>
+                    <li>성향분석</li>
+                </ul>
+                <div class="main_tab_cont">
+                    <section class="on wrap_contents total_analysis"> <!-- onon -->
+                        <!-- 종합분석 -->
+                        <h3>AI + HR 종합평가</h3>
+                        <p class="cont_smry">면접그룹 응시자 <b>71명</b>의 평균 점수는 <b>65점</b>이며, 전체 응시자 중 홍길동님은 <b>82위</b>로 <b>상위 1%</b>입니다. <br>전체 응시자 중 <b>4명</b>이 아이엠님과 동일한 <b>B+</b>등급입니다.</p>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <h4 class="tit_txt">종합등급</h4>
+                                <div>
+                                    <!-- rank_a / rank_a0 / rank_b ... -->
+                                    <div class="rank_b"></div>
+                                    <div>
+                                        <p>면접 분석의 점수 산정 결과<br><b>82점</b>으로 <b>B+</b> 등급입니다.</p>
+                                        <!-- grade_a / grade_a0 / grade_b ... -->
+                                        <div class="grade_b"></div>
+                                    </div>
+                                    <!-- step_1 / step_2 / step_3 ... -->
+                                    <div class="step_1">
+                                        <span><b>82</b><i>점</i><br>양호</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="inner_section">
+                                <h4 class="tit_txt">종합랭킹</h4>
+                                <div>
+                                    <div>
+                                        <p class="cont_smry">면접 그룹 지원자 <b>71명</b> 중</p>
+                                        <p><em>1</em>위</p>
+                                        <p><em>n%</em>상위</p>
+                                    </div>
+                                    <div>
+                                        <p class="cont_smry">면접 전형 지원분야 <b>18명</b> 중</p>
+                                        <p><em>1</em>위</p>
+                                        <p><em>n%</em>상위</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <h4 class="tit_txt">종합 등급 분포도</h4>
+                                <div class="total_grade_spread">
+                                    <div class="spread_y">
+                                        <span>200</span>
+                                        <span>175</span>
+                                        <span>150</span>
+                                        <span>125</span>
+                                        <span>100</span>
+                                        <span>75</span>
+                                        <span>50</span>
+                                        <span>25</span>
+                                        <span>0</span> 
+                                    </div>
+                                    <div class="spread_graph">
+                                        <div class="spread_graph_F">
+                                            <div class="progress_bar" role="progressbar" style="height: 15%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+                                        <div class="spread_graph_D0">
+                                            <div class="progress_bar" role="progressbar" style="height: 20%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+                                        <div class="spread_graph_D+">
+                                            <div class="progress_bar" role="progressbar" style="height: 30%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+                                        <div class="spread_graph_C0">
+                                            <div class="progress_bar" role="progressbar" style="height: 40%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+                                        <div class="spread_graph_C+ spread_avg">
+                                            <div class="progress_bar" role="progressbar" style="height: 50%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+                                        <div class="spread_graph_B0">
+                                            <div class="progress_bar" role="progressbar" style="height: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+                                        <div class="spread_graph_B+">
+                                            <div class="progress_bar" role="progressbar" style="height: 70%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+                                        <div class="spread_graph_A0">
+                                            <div class="progress_bar" role="progressbar" style="height: 80%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+
+                                        <div class="spread_graph_A+ spread_mine">
+                                            <span class="spread_mine_num" style="bottom: 100%;">
+                                                <em><b>99</b>점</em>
+                                                <span>(상위 3%)</span>
+                                                <span class="triangle"></span>
+                                            </span>
+                                            <div class="progress_bar" role="progressbar" style="height: 100%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+                                        </div>
+                                    </div>
+                                    <div class="spread_x">
+                                        <div>
+                                            <span>0~49</span>
+                                            <span>F</span>
+                                        </div>
+                                        <div>
+                                            <span>50~59</span>
+                                            <span>D0</span>
+                                        </div>
+                                        <div>
+                                            <span>60~64</span>
+                                            <span>D+</span>
+                                        </div>
+                                        <div>
+                                            <span>65~73</span>
+                                            <span>C0</span>
+                                        </div>
+                                        <div>
+                                            <span>74~79</span>
+                                            <span>C+</span>
+                                        </div>
+                                        <div>
+                                            <span>80~85</span>
+                                            <span>B0</span>
+                                        </div>
+                                        <div>
+                                            <span>86~91</span>
+                                            <span>B+</span>
+                                        </div>
+                                        <div>
+                                            <span>92~97</span>
+                                            <span>A0</span>
+                                        </div>
+                                        <div>
+                                            <span>98~100</span>
+                                            <span>A+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                        <!-- 모의용 역량 종합분석 -->
+                        <section class="inner_wrap for_mock for_common">
+                            <section class="inner_section item1">
+                                <h4 class="tit_txt">영상 종합분석도</h4>
+                                <p class="cont_smry">홍길동님은 <b>시선분포 53점, 어깨각도 100점, 얼굴각도46점, 어깨움직임 73점, 목소리톤 95점, 목소리 속도 89점</b>으로 나왔습니다.</p>
+                                <div class="wrap_graph">
+                                    <ul>
+                                        <li><span>시선분포</span><b>63</b></li>
+                                        <li><span>어깨각도</span><b>48</b></li>
+                                        <li><span>얼굴각도</span><b>46</b></li>
+                                        <li><b>50</b><span>어깨움직임</span></li>
+                                        <li><b>56</b><span>목소리톤</span></li>
+                                        <li><span>목소리속도</span><b>68</b></li>
+                                    </ul>
+                                    <div class="wrap_canvas">
+                                        <canvas id="video_total_mock_chart" width="275" height="260"></canvas>
+                                    </div>
+                                    <div class="graph_label">
+                                        <span></span>응시자
+                                        <span></span>전체평균
+                                        <span></span>그룹평균
+                                    </div>
+                                    <p class="txt_explain">총 3번의 면접영상에서 시선분포, 어깨각도, 얼굴각도, 어깨움직임, 목소리톤, 목소리속도 평균을 그래프화 합니다. 각각의 분석항목들을 점수화하여 분포도가 넓은 면적을 나타낼수록 인터뷰 중 안정적임을 나타냅니다.</p>
+                                </div>
+                                <section class="no_result">
+                                    <div>
+                                        <img src="images/img_alert.svg" alt="경고이미지" />
+                                        <p>자리이탈, 장비 불량, 인터넷 연결 끊김 등의 이유로 AI 분석을 위한 <br>목소리, 얼굴, 상체 정보가 확인되지 않아 분석이 어렵습니다.</p>
+                                    </div>
+                                </section>
+                            </section>
+                            <section class="inner_section item2">
+                                <section>
+                                    <p class="cont_smry">역량검사를 통해 연습한 홍길동님의 역량은 <b>열정</b>과 <b>글로벌마인드</b>입니다.</p>
+                                    <div>
+                                        <div>
+                                            <span>열정</span>
+                                            <span></span>
+                                            <p>회사의 미래에 대한 믿음을 바탕으로 회사와 고객을 위하여 맡은 바 업무를 주도적으로 수행하며, 본인이 끝까지 책임지고자 함</p>
+                                        </div>
+                                        <div>
+                                            <span>글로벌마인드</span>
+                                            <span></span>
+                                            <p>글로벌 비즈니스 상황에 대한 통찰력을 바탕으로 글로벌 프렉티스 및 네트워크를 활용하여 글로벌 수준의 전문성을 개발하고자 함</p>
+                                        </div>
+                                    </div>
+                                    <p class="txt_explain">지원자의 직무와 관련된 역량2개를 랜덤으로 선정하여 연습할 수 있는 질문을 제시합니다. 해당 역량에 대한 자세한 설명과 지원자의 답변 영상은 [역량분석] 탭에서 확인할 수 있습니다.</p>
+                                </section>
+                            </section>
+                            <section class="inner_section item3">
+                                <h4 class="tit_txt">성향 종합분석</h4>
+                                <h5 class="tit_sub">성향유형</h5>
+                                <p class="cont_smry">홍길동님의 성향유형은 <b>정적인 중재자형</b>으로, <b>내향적</b>, <b>사고적</b>, <b>직관적</b>, <b>판단적</b>인 세부성향을 띕니다.</p>
+                                <div>
+                                    <span>열정적인 중재자</span>
+                                    <span>내향적</span>
+                                    <span>사고적</span>
+                                    <span>판단적</span>
+                                    <span>직관적</span>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h4 class="tit_txt">직군적합성</h4>
+                                    <h5 class="tit_sub">지원분야의 직군적합성</h5>
+                                    <div class="jobApply">
+                                        <span>물류•재고•유통</span>
+                                        <em>42%</em>
+                                        <div class="jobApply_value">
+                                            <span class="job_bar on"></span> 
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span>
+                                            <span class="job_bar"></span> 
+                                        </div>
+                                    </div>
+                                    <h5 class="tit_sub">성향분석 추천 적합직군</h5>
+                                    <div class="jobGroup">
+                                        <div>
+                                            <span>1st</span>
+                                            <span>공무원</span>
+                                            <em>80%</em>
+                                            <div class="jobApply_value">
+                                                <span class="job_bar on"></span> 
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span> 
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span>2nd</span>
+                                            <span>엔지니어</span>
+                                            <em>60%</em>
+                                            <div class="jobApply_value">
+                                                <span class="job_bar on"></span> 
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <section class="no_result">
+                                    <div>
+                                        <img src="images/img_alert.svg" alt="경고이미지" />
+                                        <p>자리이탈, 장비 불량, 인터넷 연결 끊김 등의 이유로 AI 분석을 위한 <br>목소리, 얼굴, 상체 정보가 확인되지 않아 분석이 어렵습니다.</p>
+                                    </div>
+                                </section>
+                            </section>
+                        </section>
+
+                        <!-- 기업용 역량 종합분석 -->
+                        <section class="inner_wrap for_biz for_common">
+                            <section class="inner_section item1">
+                                <h4 class="tit_txt">영상 종합분석도</h4>
+                                <p class="cont_smry">홍길동님은 <b>시선분포 53점, 어깨각도 100점, 얼굴각도46점, 어깨움직임 73점, 목소리톤 95점, 목소리 속도 89점</b>으로 나왔습니다.</p>
+                                <div class="wrap_graph">
+                                    <ul>
+                                        <li><span>시선분포</span><b>63</b></li>
+                                        <li><span>어깨각도</span><b>48</b></li>
+                                        <li><span>얼굴각도</span><b>46</b></li>
+                                        <li><b>50</b><span>어깨움직임</span></li>
+                                        <li><b>56</b><span>목소리톤</span></li>
+                                        <li><span>목소리속도</span><b>68</b></li>
+                                    </ul>
+                                    <div class="wrap_canvas">
+                                        <canvas id="video_total_biz_chart" width="275" height="260"></canvas>
+                                    </div>
+                                    <div class="graph_label">
+                                        <span></span>응시자
+                                        <span></span>전체평균
+                                        <span></span>그룹평균
+                                    </div>
+                                    <p class="txt_explain">총 3번의 면접영상에서 시선분포, 어깨각도, 얼굴각도, 어깨움직임, 목소리톤, 목소리속도 평균을 그래프화 합니다. 각각의 분석항목들을 점수화하여 분포도가 넓은 면적을 나타낼수록 인터뷰 중 안정적임을 나타냅니다.</p>
+                                </div>
+                                <section class="no_result">
+                                    <div>
+                                        <img src="images/img_alert.svg" alt="경고이미지" />
+                                        <p>자리이탈, 장비 불량, 인터넷 연결 끊김 등의 이유로 AI 분석을 위한 <br>목소리, 얼굴, 상체 정보가 확인되지 않아 분석이 어렵습니다.</p>
+                                    </div>
+                                </section>
+                            </section>
+                            <section class="inner_section item2">
+                                <h4 class="tit_txt">역량 종합분석</h4>
+                                <section>
+                                    <p class="cont_smry">역량분석 결과, 홍길동님의 역량점수는 <b>80점</b>으로 기업역량적합성이 <b>적합</b> 등급입니다.</p>
+                                    <!-- good 적합 / bad 부적합 -->
+                                    <div class="good">
+                                        <span>적합<br><b>82</b><em>점</em></span>
+                                    </div>
+                                    <table>
+                                        <colgroup>
+                                            <col width="125">
+                                            <col width="130">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tr>
+                                            <th>역량등급</th>
+                                            <th>역량명</th>
+                                            <th>역량강점<br>역량약점</th>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="./images/img_fair.svg"></td>
+                                            <td>열정</td>
+                                            <td>
+                                                <span>최대10자까지입니다</span>
+                                                <span>헌신</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="./images/img_good.svg" />
+                                                <!-- <img src="./images/img_fair.svg" />
+                                                <img src="./images/img_poor.svg" /> -->
+                                            </td>
+                                            <td>글로벌마인드</td>
+                                            <td>
+                                                <span>글로벌 인식</span>
+                                                <span>외국어 활용</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </section>
+                            </section>
+                            <section class="inner_section item3">
+                                <h4 class="tit_txt">성향 종합분석</h4>
+                                <div class="biz_propensity">
+                                    <div>
+                                        <h4 class="tit_txt">성향유형</h4>
+                                        <p class="cont_smry">홍길동님의 성향유형은 <b>정적인 중재자형</b>으로, <b>내향적</b>, <b>사고적</b>, <b>직관적</b>, <b>판단적</b>인 세부성향을 띕니다.</p>
+                                        <div>
+                                            <span>열정적인 중재자</span>
+                                            <span>내향적</span>
+                                            <span>사고적</span>
+                                            <span>판단적</span>
+                                            <span>직관적</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="tit_txt">직군적합성</h4>
+                                        <h5 class="tit_sub">지원분야의 직군적합성</h5>
+                                        <div class="jobApply">
+                                            <span>물류•재고•유통</span>
+                                            <em>42%</em>
+                                            <div class="jobApply_value">
+                                                <span class="job_bar on"></span> 
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span>
+                                                <span class="job_bar"></span> 
+                                            </div>
+                                        </div>
+                                        <h5 class="tit_sub">성향분석 추천 적합직군</h5>
+                                        <div class="jobGroup">
+                                            <div>
+                                                <span>1st</span>
+                                                <span>공무원</span>
+                                                <em>80%</em>
+                                                <div class="jobApply_value">
+                                                    <span class="job_bar on"></span> 
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span> 
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span>2nd</span>
+                                                <span>엔지니어</span>
+                                                <em>60%</em>
+                                                <div class="jobApply_value">
+                                                    <span class="job_bar on"></span> 
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span>
+                                                    <span class="job_bar"></span> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <section class="no_result">
+                                    <div>
+                                        <img src="images/img_alert.svg" alt="경고이미지" />
+                                        <p>자리이탈, 장비 불량, 인터넷 연결 끊김 등의 이유로 AI 분석을 위한 <br>목소리, 얼굴, 상체 정보가 확인되지 않아 분석이 어렵습니다.</p>
+                                    </div>
+                                </section>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <div>
+                                    <h4>AI + HR 종합평가 해설</h4>
+                                    <h5>AI데이터 검색결과 약 <b>183,740개</b> 기반으로 도출된 결과입니다.</h5>
+                                </div>
+                                <p>인터뷰마스터 IM의 AI데이터를 토대로 분석한 홍길동님의 종합등급은 <b>B+</b>입니다. 면접그룹 지원자 <b>11,250명</b> 중에서는 <b>35위</b>, 지원분야인 <b>연구개발</b> 지원자 <b>3,500명</b> 중에서는 <b>24위</b>, 적합직군 1순위인 <b>공무원</b> 지원자 <b>330명</b> 중에서는 <b>15위</b> 입니다.</p>
+                                <p>홍길동님의 성향유형은 <b>열정적인 중재자</b>로, <b>내향적, 사고적, 직관적, 판단적</b>인 세부성향을 보입니다. 홍길동님은 소중한 이들을 수호하는데 심혈을 기울이는 헌신적이며 성실한 방어자이며, 장점으로는 <b>공감능력</b>과 <b>창의성</b>이, 약점으로는 <b>집중력</b>과 <b>자기비판적</b>이 대표적입니다. 해당 유형은 <b>디자인</b>과 <b>물류/재고/유통</b> 직군과 적합한 성향이며, 종합분석 결과에 따른 직군 적합성은 <b>물류/재고/유통</b> 직군이 <b>85%</b>, <b>교육</b> 직군이 <b>75%</b>로 확인됩니다.</p>
+                                <p>역량검사 결과, 홍길동님은 기업이 선택한 역량인 <b>열정</b>과 <b>글로벌마인드</b>에서 각각 <b>중</b>과 <b>상</b> 등급을 받았으므로 <b>기업역량적합성</b>이 적합 등급입니다. 역량검사에 따른 홍길동님의 상대적인 강점은 <b>자신감</b>과 <b>글로벌 인식</b>, 상대적인 약점은 <b>헌신</b>과 <b>외국어 활용</b>입니다. </p>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="wrap_contents video_analysis">
+                        <div class="sub_tab_wrap">
+                            <ul class="sub_tab_title">
+                                <li class="on">행동분석</li> <!-- onon -->
+                                <li>음성분석</li> <!-- offoff -->
+                                <li>심박분석</li>
+                            </ul>
+                            <div class="sub_tab_cont">
+                                <section class="on wrap_video"> <!-- onon -->
+                                    <div class="video_info"><span></span><p>영상분석 탭에서는 기본질문, 직무질문, 직무심층질문(Q2~Q4) 혹은 기업이 직접 입력한 총 3개의 질문들의 행동, 음성, 심박을 분석한 결과를 제공합니다.</p></div>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                        <!-- 행동분석 -->
+                                            <section class="action_video">
+                                                <h4 class="tit_txt">면접영상</h4>
+                                                <div class="action_tab_video">
+                                                    <section class="on">
+                                                        <video></video>
+                                                        <div class="cover_video none">
+                                                            <span>
+                                                                열람 기간이 초과한 면접 영상입니다.
+                                                            </span>
+                                                        </div>
+                                                        <div class="voice_analysis"> 
+                                                            <div class="voice_box">
+                                                                <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_box">
+                                                                <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_box">
+                                                                <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_txt">
+                                                                <span class="purple">ㅡ 목소리 크기</span>
+                                                                <span class="mint">ㅡ 목소리 톤</span>
+                                                                <span class="yellow">ㅡ 목소리 속도</span>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <section>
+                                                        <video></video>
+                                                        <div class="cover_video none">
+                                                            <span>
+                                                                열람 기간이 초과한 면접 영상입니다.
+                                                            </span>
+                                                        </div>
+                                                        <div class="voice_analysis"> 
+                                                            <div class="voice_box">
+                                                                <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_box">
+                                                                <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_box">
+                                                                <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_txt">
+                                                                <span class="purple">ㅡ 목소리 크기</span>
+                                                                <span class="mint">ㅡ 목소리 톤</span>
+                                                                <span class="yellow">ㅡ 목소리 속도</span>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <section>
+                                                        <video></video>
+                                                        <div class="cover_video none">
+                                                            <span>
+                                                                열람 기간이 초과한 면접 영상입니다.
+                                                            </span>
+                                                        </div>
+                                                        <div class="voice_analysis"> 
+                                                            <div class="voice_box">
+                                                                <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_box">
+                                                                <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_box">
+                                                                <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_txt">
+                                                                <span class="purple">ㅡ 목소리 크기</span>
+                                                                <span class="mint">ㅡ 목소리 톤</span>
+                                                                <span class="yellow">ㅡ 목소리 속도</span>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <section>
+                                                        <video></video>
+                                                        <div class="cover_video none">
+                                                            <span>
+                                                                열람 기간이 초과한 면접 영상입니다.
+                                                            </span>
+                                                        </div>
+                                                        <div class="voice_analysis"> 
+                                                            <div class="voice_box">
+                                                                <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_box">
+                                                                <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_box">
+                                                                <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                            </div>
+                                                            <div class="voice_txt">
+                                                                <span class="purple">ㅡ 목소리 크기</span>
+                                                                <span class="mint">ㅡ 목소리 톤</span>
+                                                                <span class="yellow">ㅡ 목소리 속도</span>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <p>면접 영상은 분석레포트 생성일로부터 90일간 제공됩니다.</p>
+                                            </section>
+                                            <section class="action_tab_box">
+                                                <ul class="action_tab_title">
+                                                    <li class="on">면접1</li>
+                                                    <li>면접2</li>
+                                                    <li>면접3</li>
+                                                    <li>면접4</li>
+                                                </ul>
+                                                <div class="action_tab_cont">
+                                                    <section class="on wrap_action">
+                                                        <span>Q1.</span>
+                                                        <p>1분 자기소개를 해주세요. 면접 질문이 들어가는 영역입니다. 글자수 최대 100자입니다. 1분 자기소개를 해주세요. 면접 질문이 들어가는 영역입니다. 글자수 최대 100자입니다..</p>
+                                                    </section>
+                                                    <section class="wrap_action">
+                                                        <span>Q2.</span>
+                                                        <p></p>
+                                                    </section>
+                                                    <section class="wrap_action">
+                                                        <span>Q3.</span>
+                                                        <p></p>
+                                                    </section>
+                                                    <section class="wrap_action">
+                                                        <span>Q4.</span>
+                                                        <p></p>
+                                                    </section>
+                                                </div>
+                                            </section>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">감정분석</h4>
+                                            <p class="cont_smry">홍길동님이 보여준 가장 높은 비율의 감정상태는 <b>중립</b>입니다.</p>
+                                            <div class="graph">
+                                                <div class="emotion"><span role="progressbar" style="height: 35%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                                <div class="emotion"><span role="progressbar" style="height: 25%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                                <div class="emotion"><span role="progressbar" style="height: 45%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                                <div class="emotion"><span role="progressbar" style="height: 30%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                                <div class="emotion"><span role="progressbar" style="height: 40%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                                <div class="emotion"><span role="progressbar" style="height: 50%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                                <div class="emotion"><span role="progressbar" style="height: 60%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                            </div>
+                                            <p class="cont_txt">총 3번의 면접영상에서의 표정, 안면분석을 통해 도출한 놀람, 공포, 혐오, 행복, 슬픔, 화남, 중립 7가지 감정의 평균 비율입니다.</p>
+                                            <div class="tip">
+                                                <img src="./images/img_tip.svg" alt="tip 이미지">
+                                                <ul>
+                                                    <li><span></span>감정분석 결과는 호감도와 감정상태 파악을 위해 사용될 수 있습니다.</li>
+                                                    <li><span></span>AI는 지원자의 미세한 표정 변화를 감지하기 때문에 인식하지 못한 결과들이 나올 수 있습니다. <br>&nbsp;&nbsp;&nbsp;감정분석 그래프를 확인하며 부정적인 감정보다는 긍정적이거나 중립적인 감정이 더 많이 표출될 수 있도록 연습하는 것을 추천드립니다.</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">시선분포<i class="fair">양호</i></h4> <!-- good/fair/poor -->
+                                            <p class="cont_smry">전체분포와 비교했을 때, 홍길동님의 시선분포 정도는 <b>양호</b>하며 면접 중 시선이 가장 많이 머무른 곳은 <b>오른쪽 하단</b> 입니다.</p>
+                                            <div class="graph eyes_graph">
+                                                <div class="red">
+                                                    <table class="red_box" style="border-collapse: collapse;">
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="red_1_1 red_color"></td>
+                                                            <td class="red_1_2 red_color"></td>
+                                                            <td class="red_1_3 red_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="red_2_1 red_color"></td>
+                                                            <td class="red_2_2 red_color"></td>
+                                                            <td class="red_2_3 red_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="red_3_1 red_color"></td>
+                                                            <td class="red_3_2 red_color"></td>
+                                                            <td class="red_3_3 red_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </table>
+                                                    <p>응시자</p>
+                                                </div>
+                                                <div class="gradation">
+                                                    <div></div>
+                                                    <div>
+                                                        <span>높음</span>
+                                                        <span>낮음</span>
+                                                    </div>
+                                                </div>
+                                                <div class="person">
+                                                    <em>L</em>
+                                                    <em>R</em>
+                                                    <div class="eyes">
+                                                        <span class="pupil"><img src="./images/img_eyes_black.svg" alt="검은자"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="purple">
+                                                    <table class="purple_box" style="border-collapse: collapse;">
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="purple_1_1 purple_color"></td>
+                                                            <td class="purple_1_2 purple_color"></td>
+                                                            <td class="purple_1_3 purple_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="purple_2_1 purple_color"></td>
+                                                            <td class="purple_2_2 purple_color"></td>
+                                                            <td class="purple_2_3 purple_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="purple_3_1 purple_color"></td>
+                                                            <td class="purple_3_2 purple_color"></td>
+                                                            <td class="purple_3_3 purple_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </table>
+                                                    <p>전체평균</p>
+                                                </div>
+                                                <div class="yellow">
+                                                    <table class="yellow_box" style="border-collapse: collapse;">
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="yellow_1_1 yellow_color"></td>
+                                                            <td class="yellow_1_2 yellow_color"></td>
+                                                            <td class="yellow_1_3 yellow_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="yellow_2_1 yellow_color"></td>
+                                                            <td class="yellow_2_2 yellow_color"></td>
+                                                            <td class="yellow_2_3 yellow_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="yellow_3_1 yellow_color"></td>
+                                                            <td class="yellow_3_2 yellow_color"></td>
+                                                            <td class="yellow_3_3 yellow_color"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </table>
+                                                    <p>그룹평균</p>
+                                                </div>
+                                            </div>
+                                            <p class="cont_txt">시선분포의 분포도가 십자모양의 중앙에 위치할수록 면접 중 안정적임을 나타냅니다. 영역색이 진할 수록 시선이 오래 머무른 곳이며, 영역이 널리 흩어져 있다면 시선변화가 많음을 의미합니다. 눈동자 움직임은 면접 중 시선이 많이 머문 방향을 나타냅니다.</p>
+                                            <h5 class="tit_sub">관련역량</h5>
+                                            <ul class="hashtag">
+                                                <li># 리더쉽</li>
+                                                <li># 업무추진 및 실행력</li>
+                                                <li># 도전정신</li>
+                                                <li># 열정</li>
+                                                <li># 원만성</li>
+                                                <li># 외향성</li>
+                                            </ul>
+                                            <div class="tip">
+                                                <img src="./images/img_tip.svg" alt="tip 이미지">
+                                                <ul>
+                                                    <li><span></span>시선처리는 면접 준비자세, 답변의 안정성, 부정행위 체크 등을 위해 사용될 수 있습니다.</li>
+                                                    <li><span></span>시선은 카메라를 정면으로 응시하는 것이 바람직하며, 천장이나 바닥을 보는 등의 행동은 자신감이 없어보일 수 있습니다.</li>
+                                                    <li><span></span>시선이 많이 불안정한 경우, 자칫 커닝 등의 부정행위로 의심받을 수 있으니 유의해야합니다.</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section gesture">
+                                            <h4 class="tit_txt">제스처</h4>
+                                            <p class="cont_smry">홍길동님의 얼굴 주변 제스처를 취한 횟수는 <b>총 5회</b>이며, 제스처를 유지한 시간은 <b>평균 64.3초</b>입니다.</p>
+                                            <div class="graph">
+                                                <div>
+                                                    <p class="num">횟수<em>10회</em></p>
+                                                    <p class="time">시간<em>20초</em></p>
+                                                </div>
+                                                <div class="person">
+                                                    <em>L</em>
+                                                    <em>R</em>
+                                                    <table style="border-collapse: collapse; width: 100%; height: 100%;">
+                                                        <tr>
+                                                            <td><img src="./images/img_hand02.gif" alt="손 이미지"></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td><img src="./images/img_hand02.gif" alt="손 이미지"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="avg">
+                                                    <p>전체평균</p>
+                                                    <p>횟수 : 15</p>
+                                                    <p>시간 : 5.4</p>
+                                                </div>
+                                                <div class="avg">
+                                                    <p>그룹평균</p>
+                                                    <p>횟수 : 7</p>
+                                                    <p>시간 : 4.1</p>
+                                                </div>
+                                            </div>
+                                            <p class="cont_txt">제스처에서는 면접 중 얼굴이나 머리에 손을 올려 표정을 가리거나 입을 가리는 등 행동을 포함하여 면접 중 보였던 모든 제스처의 횟수와 유지한 시간을 보여줍니다. 손 아이콘은 면접 중 제스처가 가장 많이, 그리고 오래 지속되었던 위치 2곳을 나타냅니다.</p>
+                                            <ul class="hashtag">
+                                                <li># 집중력</li>
+                                                <li># 사교성</li>
+                                                <li># 표현능력</li>
+                                                <li># 비상시 대처능력</li>
+                                                <li># 커뮤니케이션 능력</li>
+                                            </ul>
+                                            <div class="tip">
+                                                <img src="./images/img_tip.svg" alt="tip 이미지">
+                                                <ul>
+                                                    <li><span></span>적절한 제스처의 횟수나 유지시간에 대한 모범답안은 없습니다. 본인의 답변 내용과 관련된 제스처를 적절히 사용하는 것을 추천드립니다.</li>
+                                                    <li><span></span>과장된 제스처는 삼가하는 것이 좋습니다. 해당 항목에서 본인의 제스처가 몸과 얼굴에서 멀리 떨어져 있는 것으로 나타난다면 제스처의 정도를 줄일 필요가 있어 보입니다.</li>
+                                                    <li><span></span>제스처의 분포 위치를 통해 본인이 제스처를 취할 때 어느 쪽 손을 더 자주 사용하는지 유추할 수 있습니다.</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">자세분석</h4>
+                                            <div class="pose">
+                                                <div>
+                                                    <h5 class="tit_sub">자세각도<i class="good">양호</i></h5>
+                                                    <p class="cont_smry">전체평균과 비교했을 때, 홍길동님의 자세각도는 <b>양호</b>합니다. <br>홍길동님의 머리와 어깨 자세각도는 <b>머리가 6.674도, 어깨가 0.013도</b> 입니다.</p>
+                                                    <div class="graph">
+                                                        <div class="person_pin">
+                                                            <em>-</em>
+                                                            <em>+</em>
+                                                            <img id="head_angle" src="./images/img_sillhouette_head.png">
+                                                            <img id="head_shoulder" src="./images/img_sillhouette_shoulder.png">
+                                                        </div>
+                                                        <div class="avg">
+                                                            <p>전체평균</p>
+                                                            <p>머리 각도 : 1.18</p>
+                                                            <p>어깨 각도 : 0.02</p>
+                                                            <p>그룹평균</p>
+                                                            <p>머리 각도 : 3.34</p>
+                                                            <p>어깨 각도 : 0.01</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="cont_txt">얼굴과 어깨의 각도를 체크하여 응시자의 평균 자세를 보여줍니다. 자세각도의 기울기가 높을 수록 면접 시 바른 자세로의 교정이 필요합니다.</p><ul class="hashtag">
+                                                        <li># 인내심</li>
+                                                        <li># 진실성</li>
+                                                        <li># 강한의지</li>
+                                                        <li># 믿음과 신뢰</li>
+                                                        <li># 장기근속 가능여부</li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h5 class="tit_sub">어깨움직임<i class="poor">양호</i></h5>
+                                                    <p class="cont_smry">전체평균과 비교했을 때, 홍길동님의 어깨움직임은 <b>미흡</b>합니다. 홍길동님은 <b>우측 어깨 9회, 좌측어깨 19회</b>의 움직임과 <b>좌우로 15회</b>의 움직임이 확인됩니다.</p>
+                                                    <div class="graph">
+                                                        <div class="person">
+                                                            <em>L</em>
+                                                            <em>R</em>
+                                                            <span class="left">
+                                                                <em>x3</em>
+                                                                <img src="./images/img_arrow01.gif">
+                                                            </span>
+                                                            <span class="center">
+                                                                <em>x19</em>
+                                                                <img src="./images/img_arrow02.gif">
+                                                            </span>
+                                                            <span class="right">
+                                                                <em>x15</em>
+                                                                <img src="./images/img_arrow03.gif">
+                                                            </span>
+                                                        </div>
+                                                        <div class="avg">
+                                                            <p>전체평균</p>
+                                                            <p>우측 어깨 : 2</p>
+                                                            <p>좌측 어깨 : 2</p>
+                                                            <p>좌우 움직임 : 1</p>
+                                                            <p>그룹평균</p>
+                                                            <p>우측 어깨 : 1</p>
+                                                            <p>좌측 어깨 : 3</p>
+                                                            <p>좌우 움직임 : 2</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="cont_txt">어깨의 상하좌우 움직임 좌표를 체크하여 응시자의 상체움직임 정도를 보여줍니다. 상하좌우의 좌표점 길이가 길수록 인터뷰 중 상체가 많이 흔들렸음을 의미합니다.</p>
+                                                    <ul class="hashtag">
+                                                        <li># 인내심</li>
+                                                        <li># 진실성</li>
+                                                        <li># 강한의지</li>
+                                                        <li># 믿음과 신뢰</li>
+                                                        <li># 장기근속 가능여부</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="tip">
+                                                <img src="./images/img_tip.svg" alt="tip 이미지">
+                                                <ul>
+                                                    <li><span></span>정확한 측정을 위해선 상반신이 화면 안에 온전히 담길 수 있도록 카메라와의 거리를 조정하고, 화면의 사람모양 실루엣을 참고하며 일정한 자세를 유지하는 것이 좋습니다.</li>
+                                                    <li><span></span>면접 진행 시 머리카락 등으로 어깨가 가려질 경우 측정결과가 부정확해질 확률이 높아지므로 유의하시기 바랍니다.</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <div class="btn_wrap">
+                                        <a href="#" class="btn_blue">음성분석 결과보기</a>
+                                    </div>
+                                    <section class="no_result">
+                                        <div>
+                                            <img src="images/img_alert.svg" alt="경고이미지" />
+                                            <p>자리이탈, 장비 불량, 인터넷 연결 끊김 등의 이유로 AI 분석을 위한 <br>목소리, 얼굴, 상체 정보가 확인되지 않아 분석이 어렵습니다.</p>
+                                        </div>
+                                    </section>
+                                </section>
+                                <section class="wrap_voice"> <!-- offoff -->
+                                    <!-- 음성분석 -->
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">면접 응답분석</h4>
+                                            <p class="cont_smry">홍길동님이 면접 응답분석은 각 면접 질문별로 <b>적합, 적합, 적합</b>입니다.</p>
+                                            <table class="answer" style="border-collapse: collapse;"> 
+                                                <colgroup>
+                                                    <col width="160px;">
+                                                    <col width="480px;">
+                                                    <col width="100px;">
+                                                    <col width="100px;">
+                                                    <col width="100px;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th rowspan="2">질문</th>
+                                                        <th rowspan="2">심층성향</th>
+                                                        <th rowspan="1" colspan="3">응답 신중성도</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th rowspan="1" colspan="1">부족</th>
+                                                        <th rowspan="1" colspan="1">보통</th>
+                                                        <th rowspan="1" colspan="1">적합</th>
+                                                    </tr> 
+                                                    <tr>
+                                                        <td>질문2. <br>기본질문</td>
+                                                        <td>
+                                                            모든 응시자에게 공통으로 적용되는 기본 질문입니다. <br>응시자의 가치관, 경험등을 확인할 수 있습니다.
+                                                        </td>
+                                                        <td colspan="3" class="ask2">
+                                                            <div class="voice_my">
+                                                                <div class="voice_bar orange" role="progressbar" style="width: 30%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;응시자</div>
+                                                            </div>
+                                                            <div class="voice_all">
+                                                                <div class="voice_bar navy" role="progressbar" style="width: 40%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;전체평균</div>
+                                                            </div>
+                                                            <div class="voice_group">
+                                                                <div class="voice_bar yellow" role="progressbar" style="width: 50%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;그룹평균</div>
+                                                            </div>
+                                                        </td> 
+                                                    </tr>
+                                                    <tr>
+                                                        <td>질문3. <br>직군관련질문</td>
+                                                        <td>
+                                                            지원 직군에 대한 직무 관련 질문입니다. <br>지원 직군에 대한 이해도와 적합 인재인 지를 확인할 수 있습니다.
+                                                        </td>
+                                                        <td colspan="3" class="ask3">
+                                                            <div class="voice_my">
+                                                                <div class="voice_bar skyblue" role="progressbar" style="width: 40%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;응시자</div>
+                                                            </div>  
+                                                            <div class="voice_all">
+                                                                <div class="voice_bar navy" role="progressbar" style="width: 30%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;전체평균</div>
+                                                            </div>
+                                                            <div class="voice_group">
+                                                                <div class="voice_bar yellow" role="progressbar" style="width: 20%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;그룹평균</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>질문4. <br>직군심층질문</td>
+                                                        <td>
+                                                            지원 직군에 대한 직무 심층 질문입니다. <br>지원 직군에 대한 이해도를 좀 더 심층적으로 확인할 수 있습니다.
+                                                        </td>
+                                                        <td colspan="3" class="ask4">
+                                                            <div class="voice_my">
+                                                                <div class="voice_bar green" role="progressbar" style="width: 10%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;응시자</div>
+                                                            </div>
+                                                            <div class="voice_all">
+                                                                <div class="voice_bar navy" role="progressbar" style="width: 50%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;전체평균</div>
+                                                            </div>
+                                                            <div class="voice_group">
+                                                                <div class="voice_bar yellow" role="progressbar" style="width: 80%;" aria-valuemin="0" aria-valuemax="100">&nbsp;&nbsp;그룹평균</div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="txt_explain">총 3번의 면접 질문의 답변을 통해 응시자가 신중하게 응답하였는지 나타냅니다. 적당한 목소리 크기와 또렷한 발음으로 응답을 하고, 질문에 대한 답변을 단답형보다는 <br>본인의 경험과 생각을 최대한 많이 전달되도록 하는 것이 중요합니다.</p>
+                                            <div class="tip">
+                                                <img src="./images/img_tip.svg" alt="tip 이미지">
+                                                <ul>
+                                                    <li><span></span>기본질문, 직군관련질문, 직군심층질문 중 응시자가 더 노력해야할 유형의 질문을 파악할 수 있습니다.</li>
+                                                    <li><span></span>직군관련질문의 응답신중성도가 ‘부족’에 가까운 경우, 직군에 대한 이해도가 부족하다는 의미일 수 있습니다. 지원하는 직군에 대한 전반적인 정보와 <br>&nbsp;&nbsp;&nbsp;관련 용어들을 습득하기 위해 노력하시는 것을 추천드립니다.</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">언어분석</h4>
+                                            <div>
+                                                <div>
+                                                    <h5 class="tit_sub">사용 단어 빈도</h5>
+                                                    <p class="cont_smry">홍길동님의 자주 사용하는 상위 단어는 <b>디자인, 나트륨, 인간, 자연환경, 통합, 문제, 개념, 환경</b>입니다.</p>
+                                                    <div class="graph bubble">
+                                                        <span class="blue_1 bubble_1">디자인</span>
+                                                        <span class="blue_2 bubble_2">나트륨</span>
+                                                        <span class="blue_3 bubble_2">인간</span>
+                                                        <span class="blue_4 bubble_3">자연환경</span>
+                                                        <span class="blue_5 bubble_3">통합</span>
+                                                        <span class="blue_6 bubble_3">통합</span>
+                                                        <span class="blue_7 bubble_4">개념</span>
+                                                        <span class="blue_8 bubble_4">환경</span>
+                                                        <span class="blue_9 bubble_4">환경2</span>
+                                                        <span class="blue_10 bubble_4">환경3</span>
+                                                    </div>
+                                                    <p class="txt_explain">단어 빈도 수 그래프는 총 3개의 면접영상에서 자주 사용하는 단어 10순위를 선별하여 나열합니다. 단어의 글자가 클수록, 중앙에 위치할수록 사용 빈도수가 높음을 의미합니다.</p>
+                                                </div>
+                                                <div>
+                                                    <h5 class="tit_sub">직무언어 사용빈도</h5>
+                                                    <p class="cont_smry">홍길동님의 자주 사용하는 상위 단어는 <b>환경, 디자인, 인간, 통합, 문제</b>입니다.</p>
+                                                    <div class="graph bubble">
+                                                        <span class="red_1 bubble_1">환경</span>
+                                                        <span class="red_2 bubble_2">디자인</span>
+                                                        <span class="red_3 bubble_2">인간</span>
+                                                        <span class="red_4 bubble_3">자연환경</span>
+                                                        <span class="red_5 bubble_3">통합</span>
+                                                    </div>
+                                                    <p class="txt_explain">직무언어 그래프는 총 3개의 면접영상에서 자주 사용하는 직무언어 5순위를 선별하여 나열합니다. 단어의 글자가 클수록, 중앙에 위치할수록 사용 빈도수가 높음을 의미합니다.</p>
+                                                </div>
+                                            </div>
+                                            <div class="language_propensity">
+                                                <h5 class="tit_sub">언어성향</h5>
+                                                <p class="cont_smry">홍길동님은 <b>중립</b> 성향의 어휘를 많이 사용한 것으로 확인됩니다.</p>
+                                                <div class="video_language_graph">
+                                                    <div class="lang_graph">
+                                                        <div class="lang_label">
+                                                            <img id="group_pin" style="left:35%;" src="./images/img_group_pin.svg" />
+                                                            <img id="all_pin" style="left:55%;" src="./images/img_all_pin.svg" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="lang_my">
+                                                        <div id="robot_pin" style="left: 75%;">
+                                                            <img src="./images/img_robot.svg" />
+                                                        </div>
+                                                    </div>
+                                                    <img src="./images/img_arrow_null.svg" />
+                                                    <div class="lang_txt">
+                                                        <span>부정</span>
+                                                        <span>중립</span>
+                                                        <span>긍정</span>
+                                                    </div>
+                                                </div>
+                                                <div class="graph_label">
+                                                    <span></span>응시자
+                                                    <span></span>전체평균
+                                                    <span></span>그룹평균
+                                                </div>
+                                                <p class="txt_explain">언어 성향 그래프는 총 3번의 면접영상에서 답변한 어휘를 분석하여 인공지능을 통해 긍정, 부정, 중립으로 구분지어 그래프로 나타냅니다.</p>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section voice_part">
+                                            <h4 class="tit_txt">음성분석</h4>
+                                            <div>
+                                                <div>
+                                                    <h5 class="tit_sub">목소리톤<i class="good">양호</i></h5>
+                                                    <p class="cont_smry">전체평균과 비교했을 때, 홍길동님의 목소리톤은 <b>양호</b>합니다. 홍길동님은 <b>2번</b> 질문에서 평균에 가까운 목소리톤으로 답하였습니다.</p>
+                                                    <div class="graph voice_tone">
+                                                        <div class="position">
+                                                            <img style="left: 35%;" src="./images/img_group_pin_L.svg" />
+                                                            <img style="left: 55%" src="./images/img_all_pin_L.svg" />
+                                                        </div>
+                                                        <div class="num">
+                                                            <span>0</span>
+                                                            <span>250</span>
+                                                            <span>500</span>
+                                                        </div>
+                                                        <div class="voice_set">
+                                                            <div>
+                                                                <span>질문1</span>
+                                                                <div class="voice_set_box">
+                                                                    <div class="voice_value voice_value1" role="progressbar" style="width: 55%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <span>질문2</span>
+                                                                <div class="voice_set_box">
+                                                                    <div class="voice_value voice_value2" role="progressbar" style="width: 15%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <span>질문3</span>
+                                                                <div class="voice_set_box">
+                                                                    <div class="voice_value voice_value3" role="progressbar" style="width: 95%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="graph_label">
+                                                        <span></span>응시자
+                                                        <span></span>전체평균
+                                                        <span></span>그룹평균
+                                                    </div>
+                                                    <h5 class="tit_sub">관련역량</h5>
+                                                    <ul class="hashtag">
+                                                        <li># 피칭 능력</li>
+                                                        <li># 업무 실행력 및 추진력</li>
+                                                        <li># 새로운 프로젝트 도전 정신</li>
+                                                        <li># 직무수행능력</li>
+                                                        <li># 대인관계 개방성</li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h5 class="tit_sub">목소리 속도<i class="poor">미흡</i></h5>
+                                                    <p class="cont_smry">전체평균과 비교했을 때, 홍길동님의 목소리속도는 <b>미흡</b>하여 연습이 필요해보입니다. 홍길동님은 <b>3번</b> 질문에서 전체평균에 가까운 목소리속도로 답하였습니다.</p>
+                                                    <div class="graph voice_speed">
+                                                        <div class="position">
+                                                            <img style="left: 35%;" src="./images/img_group_pin_L.svg" />
+                                                            <img style="left: 55%" src="./images/img_all_pin_L.svg" />
+                                                        </div>
+                                                        <div class="num">
+                                                            <span>0</span>
+                                                            <span>250</span>
+                                                            <span>500</span>
+                                                        </div>
+                                                        <div class="voice_set">
+                                                            <div>
+                                                                <span>질문1</span>
+                                                                <div class="voice_set_box">
+                                                                    <div class="voice_value voice_value4" role="progressbar" style="width: 55%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <span>질문2</span>
+                                                                <div class="voice_set_box">
+                                                                    <div class="voice_value voice_value5" role="progressbar" style="width: 10%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <span>질문3</span>
+                                                                <div class="voice_set_box">
+                                                                    <div class="voice_value voice_value6" role="progressbar" style="width: 70%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="graph_label">
+                                                        <span></span>응시자
+                                                        <span></span>전체평균
+                                                        <span></span>그룹평균
+                                                    </div>
+                                                    <h5 class="tit_sub">관련역량</h5>
+                                                    <ul class="hashtag">
+                                                        <li># 배려심</li>
+                                                        <li># 인성</li>
+                                                        <li># 가치관</li>
+                                                        <li># 비상시 대처능력</li>
+                                                        <li># 소통능력</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="tip">
+                                                <img src="./images/img_tip.svg" alt="tip 이미지">
+                                                <ul>
+                                                    <li><span></span>상대방에게 가장 호감을 주는 목소리톤은 남성의 경우에는 100~150Hz, 여성의 경우에는 200~250Hz 정도의 중저음이라고 합니다. <br>&nbsp;&nbsp;&nbsp;목소리톤 그래프로 수치를 확인하며 연습하는 것을 추천드립니다.</li>
+                                                    <li><span></span>목소리속도가 빠를 경우, 긴장하고 불안정한 느낌을 줄 수 있고 느릴 경우, 답답한 느낌을 줄 수 있습니다. 긴장을 푸는 심호흡과 함께 박자를 지켜가며 <br>&nbsp;&nbsp;&nbsp;말을 해보는 연습이 도움이 될 수 있습니다.</li>
+                                                    <li><span></span>AI는 면접 진행 중 발성을 분석하므로, 마이크가 제대로 작동하는지 체크한 후 진행해주시길 바랍니다.</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <div class="btn_wrap">
+                                        <a href="#" class="btn_blue">생체분석 결과보기</a>
+                                    </div>
+                                    <section class="no_result">
+                                        <div>
+                                            <img src="images/img_alert.svg" alt="경고이미지" />
+                                            <p>자리이탈, 장비 불량, 인터넷 연결 끊김 등의 이유로 AI 분석을 위한 <br>목소리, 얼굴, 상체 정보가 확인되지 않아 분석이 어렵습니다.</p>
+                                        </div>
+                                    </section>
+                                </section>
+                                <section class="wrap_heart"><!-- offoff -->
+                                    <section class="inner_wrap">
+                                        <section class="inner_section interview_tension">
+                                            <h4 class="tit_txt">면접 긴장도</h4>
+                                            <p class="cont_smry">영상과 심반 분석 결과, 홍길동님의 면접 긴장도는 <b>보통</b>인 것으로 예상됩니다.</p>
+                                            <div class="heart_arrow normal">
+                                                <div class="arrow_wrap">
+                                                    <img class="heart_pin" src="./images/img_heart_pin02.svg">
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">심박 수치</h4>
+                                            <div class="heart_rate">
+                                                <img src="./images/img_heartrate.svg">
+                                                <p>평균심박<br><span class="green">적절</span></p>
+                                                <p><em class="red">최고</em>심박<br><span class="blue">낮음</span></p>
+                                                <p><em class="blue">최저</em>심박<br><span class="red">높음</span></p>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">응답 긴장도</h4>
+                                            <p class="cont_smry">홍길동님은 <b>질문 2번에서 가장 긴장</b>하였고, <b>질문 4번에서 가장 긴장도가 낮았던</b> 것으로 확인됩니다.</p>
+                                            <div class="graph">
+                                                <canvas id="answer_tension" width="820" height="220"></canvas>
+                                            </div>
+                                            <div class="graph_label">
+                                                <span></span>최고 심박
+                                                <span></span>최저 심박
+                                            </div>
+                                            <p class="txt_explain">면접 질문 당 평균심박수와 표준편차를 계산하여 응시자의 질문 별 긴장도와 답변 도중 동요한 정도를 파악합니다. 표준편차란 지원자의 심박수가 1분의 답변시간 동안 평균 심박수에서 얼마나 멀어지며 요동쳤는지에 대한 수치입니다. 푸른색 그래프는 해당 질문에 대한 지원자의 평균 심박을, 붉은색 그래프는 평균에서 표준편차가 더해진 심박 수치를 나타냅니다. 푸른색과 붉은색 그래프 사이의 폭이 넓을수록 표준편차가 큰 것이며, 해당 지원자의 긴장도와 동요도가 높았다고 해석할 수 있습니다.</p>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">높은 긴장도 질문</h4>
+                                            <div>
+                                                <div class="question">
+                                                    <span>Q2.</span>
+                                                    <p class="txt">홍길동님의 취미는 무엇인가요? 홍길동님의 취미에 대해 말해주세요.</p>
+                                                    <p class="detail">해달질문에 대한 홍길동님의 <b>최고심박과 최저심박 사이의 폭은 Nbpm</b>으로 6개의 면접 질문들 중 가장 당황하고 어려움을 느낀 것으로 예상됩니다. 심박 그래프를 참고하여 1분의 대답시간동안 지원자의 심박수 변화를 확인할 수 있습니다.</p>
+                                                </div>
+                                                <div class="graph">
+                                                    <canvas id="high_tension" width="395" height="160"></canvas>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="inner_wrap">
+                                        <section class="inner_section">
+                                            <h4 class="tit_txt">낮은 긴장도 질문</h4>
+                                            <div>
+                                                <div class="question">
+                                                    <span>Q4.</span>
+                                                    <p class="txt">홍길동님의 취미는 무엇인가요? 홍길동님의 취미에 대해 말해주세요.</p>
+                                                    <p class="detail">해달질문에 대한 홍길동님의 <b>최고심박과 최저심박 사이의 폭은 Nbpm</b>으로 6개의 면접 질문들 중 가장 당황하고 어려움을 느낀 것으로 예상됩니다. 심박 그래프를 참고하여 1분의 대답시간동안 지원자의 심박수 변화를 확인할 수 있습니다.</p>
+                                                </div>
+                                                <div class="graph">
+                                                    <canvas id="low_tension" width="395" height="160"></canvas>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="no_result">
+                                        <div>
+                                            <img src="images/img_alert.svg" alt="경고이미지" />
+                                            <p>자리이탈, 장비 불량, 인터넷 연결 끊김 등의 이유로 AI 분석을 위한 <br>목소리, 얼굴, 상체 정보가 확인되지 않아 분석이 어렵습니다.</p>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="wrap_contents ability_analysis_biz">
+                        <div class="analysis_info"><span></span><p>역량분석 탭에서는 역량검사 질문 2개 (Q5~Q6)에 대한 답변 내용과 영상, 음성, 심박 정보를 종합하여 분석한 결과를 제공합니다.</p></div>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                            <!-- 행동분석 -->
+                                <section class="ability_video">
+                                    <h4 class="tit_txt">면접영상</h4>
+                                    <div class="ability_biz_tab_video">
+                                        <section class="on">
+                                            <video></video>
+                                            <div class="voice_analysis"> 
+                                                <div class="voice_box">
+                                                    <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                </div>
+                                                <div class="voice_box">
+                                                    <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                </div>
+                                                <div class="voice_box">
+                                                    <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                </div>
+                                                <div class="voice_txt">
+                                                    <span class="purple">ㅡ 목소리 크기</span>
+                                                    <span class="mint">ㅡ 목소리 톤</span>
+                                                    <span class="yellow">ㅡ 목소리 속도</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section>
+                                            <video></video>
+                                            <div class="voice_analysis"> 
+                                                <div class="voice_box">
+                                                    <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                </div>
+                                                <div class="voice_box">
+                                                    <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                </div>
+                                                <div class="voice_box">
+                                                    <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                                </div>
+                                                <div class="voice_txt">
+                                                    <span class="purple">ㅡ 목소리 크기</span>
+                                                    <span class="mint">ㅡ 목소리 톤</span>
+                                                    <span class="yellow">ㅡ 목소리 속도</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <p>면접 영상은 분석레포트 생성일로부터 90일간 제공됩니다.</p>
+                                </section>
+                                <section class="ability_tab_wrap">
+                                    <ul class="ability_biz_tab_title">
+                                        <li class="on">면접5</li>
+                                        <li>면접6</li>
+                                    </ul>
+                                    <div class="ability_biz_tab_cont">
+                                        <section class="on ability_tab">
+                                            <span>Q5.</span>
+                                            <p>면접5</p>
+                                        </section>
+                                        <section class="ability_tab">
+                                            <span>Q6.</span>
+                                            <p>면접6</p>
+                                        </section>
+                                    </div>
+                                </section>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <h4 class="tit_txt">기업역량적합성</h4>
+                                <!-- good / bad -->
+                                <div class="good"><span>적합<br><b>82</b><em>점</em></span></div>
+                                <p>지원자의 면접 태도와 답변을 분석한 점수 산정 결과, 아이엠님의 역량분석 점수는 <b>80점</b>으로 기업역량에 <b>적합</b>한 수준입니다.</p>
+                            </section>
+                            <section class="inner_section">
+                                <h4 class="tit_txt">역량별 평가</h4>
+                                <div class="grid_1fr">
+                                    <div>
+                                        <img src="./images/img_fair.svg" alt="역량평가 중" />
+                                        <div>
+                                            <h5 class="tit_sub">열정</h5>
+                                            <p>회사의 미래에 대한 믿음을 바탕으로 회사와 고객을 위하여 맡은 바 업무를 주도적으로 수행하며, 본인이 끝까지 책임지고자 함</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img src="./images/img_good.svg" alt="역량평가 상" />
+                                        <!-- <img src="./images/img_poor.svg" alt="역량평가 하" /> -->
+                                        <div>
+                                            <h5 class="tit_sub">글로벌마인드</h5>
+                                            <p>글로벌 비즈니스 상황에 대한 통찰력을 바탕으로 글로벌 프렉티스 및 네트워크를 활용하여 글로벌 수준의 전문성을 개발하고자 함</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <h4 class="tit_txt">역량 세부 분석도</h4>
+                                <h5 class="tit_sub">열정</h5>
+                                <p class="cont_smry">홍길동님은 <b>열정</b> 역량의 등급은 <b>중</b>이며, 역량 내의 세부 관점 평가 결과 <b>주도성 상, 로열티 중, 업무몰입 중, 헌신 하</b>로 분석되었습니다.</p>
+                                <div class="grid">
+                                    <div class="wrap_canvas">
+                                        <canvas id="ability_detail_1" width="237" height="237"></canvas>
+                                        <span>주도성</span>
+                                        <span>로열티</span>
+                                        <span>업무몰입</span>
+                                        <span>헌신</span>
+                                    </div>
+                                    <table style="border-collapse: collapse;">
+                                        <colgroup>
+                                            <col width="85px">
+                                            <col width="50px">
+                                            <col width="555px">
+                                        </colgroup>
+                                        <tr>
+                                            <th>관점</th>
+                                            <th colspan="2">세부관점 평가</th>
+                                        </tr>
+                                        <tr>
+                                            <td>주도성</td>
+                                            <td>상</td>
+                                            <td>회사 이익을 위해 필요하다고 판단되는 업무추진에 대해서는 관련 의사결정권자를 설득해 적극적으로 동참시킴 회사 이익을 위해 필요하다고 판단되는 업무추진에 대해서는 관련 의사결정권자를 설득해 적극적으로 동참시킴 회사 이익을 위해 필요하다고 판단되는 업무추진에 대해서는..</td>
+                                        </tr>
+                                        <tr>
+                                            <td>로열티</td>
+                                            <td>중</td>
+                                            <td>업무수행의 긴장감을 늦추지 않고 스스로를 자극하며 자신의 능력을 100% 발휘하여 목표를 달성함으로써 성공경험을 축적함. 업무수행의 긴장감을 늦추지 않고 스스로를 자극하며 자신의 능력을 100% 발휘하여 목표를 달성함으로써 성공경험을 축적함.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>업무몰입</td>
+                                            <td>중</td>
+                                            <td>인기가 없고 말썽의 소지가 있는 결정사항이더라도 회사차원에서 이익이 되는 것이라면 적극적으로 지지함 인기가 없고 말썽의 소지가 있는 결정사항이더라도 회사차원에서 이익이 되는 것이라면 적극적으로 지지함</td>
+                                        </tr>
+                                        <tr>
+                                            <td>헌신</td>
+                                            <td>하</td>
+                                            <td>외부 인물을 만날때 자신이 회사의 대표라는 생각을 가지고 품위와 긍지를 잃지 않으며 자신의 업무에 최선을 다함 외부 인물을 만날때 자신이 회사의 대표라는 생각을 가지고 품위와 긍지를 잃지 않으며 자신의 업무에 최선을 다함 외부 인물을 만날때 자신이 회사의 대표라는.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <h5 class="tit_sub">글로벌마인드</h5>
+                                <p class="cont_smry">홍길동님은 <b>글로벌마인드</b> 역량의 등급은 <b>상</b>이며, 역량 내의 세부 관점 평가 결과 <b>글로벌 인식 상, 글로벌 네트워크 형성 중, 글로벌 practice 활용 중, 외국어 활용 하</b>로 분석되었습니다.</p>
+                                <div class="grid">
+                                    <div class="wrap_canvas">
+                                        <canvas id="ability_detail_2" width="237" height="237"></canvas>
+                                        <span>글로벌 인식</span>
+                                        <span>글로벌 <br>네트워크 <br>형성</span>
+                                        <span>글로벌 <br>practice <br>활용</span>
+                                        <span>외국어활용</span>
+                                    </div>
+                                    <table style="border-collapse: collapse;">
+                                        <colgroup>
+                                            <col width="85px">
+                                            <col width="50px">
+                                            <col width="555px">
+                                        </colgroup>
+                                        <tr>
+                                            <th>관점</th>
+                                            <th colspan="2">세부관점 평가</th>
+                                        </tr>
+                                        <tr> 
+                                            <td>주도성</td>
+                                            <td>상</td>
+                                            <td>회사 이익을 위해 필요하다고 판단되는 업무추진에 대해서는 관련 의사결정권자를 설득해 적극적으로 동참시킴 회사 이익을 위해 필요하다고 판단되는 업무추진에 대해서는 관련 의사결정권자를 설득해 적극적으로 동참시킴 회사 이익을 위해 필요하다고 판단되는 업무추진에 대해서는..</td>
+                                        </tr>
+                                        <tr>
+                                            <td>로열티</td>
+                                            <td>중</td>
+                                            <td>업무수행의 긴장감을 늦추지 않고 스스로를 자극하며 자신의 능력을 100% 발휘하여 목표를 달성함으로써 성공경험을 축적함. 업무수행의 긴장감을 늦추지 않고 스스로를 자극하며 자신의 능력을 100% 발휘하여 목표를 달성함으로써 성공경험을 축적함.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>업무몰입</td>
+                                            <td>중</td>
+                                            <td>인기가 없고 말썽의 소지가 있는 결정사항이더라도 회사차원에서 이익이 되는 것이라면 적극적으로 지지함 인기가 없고 말썽의 소지가 있는 결정사항이더라도 회사차원에서 이익이 되는 것이라면 적극적으로 지지함</td>
+                                        </tr>
+                                        <tr>
+                                            <td>헌신</td>
+                                            <td>하</td>
+                                            <td>외부 인물을 만날때 자신이 회사의 대표라는 생각을 가지고 품위와 긍지를 잃지 않으며 자신의 업무에 최선을 다함 외부 인물을 만날때 자신이 회사의 대표라는 생각을 가지고 품위와 긍지를 잃지 않으며 자신의 업무에 최선을 다함 외부 인물을 만날때 자신이 회사의 대표라는.</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="detail">
+                                    <span>세부관점이란?</span>
+                                    <p>세부관점이란 역량의 세부적인 키워드를 의미합니다. 포괄적인 개념인 역량 내에서 세부적으로 나누고 평가함으로서 해당 지원자가 같은 역량 내에서도 어떤 부분에서 강하고 약한지 파악할 수 있습니다. 텍스트 수정할 예정입니다.</p>
+                                </div>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <h4 class="tit_txt">AI 추천 역량질문</h4>
+                                <p class="cont_smry">역량 세부분석 결과, 홍길동님의 <b>상대적 강점은 주도성, 글로벌 인식</b>이며 <b>상대적 약점은 헌신, 외국어 활용</b>인 것으로 확인됩니다.</p>
+                                <h5 class="tit_sub">강점 꼬리질문</h5>
+                                <table style="border-collapse: collapse;">
+                                    <colgroup>
+                                        <col width="120px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tr>
+                                        <th>강점</th>
+                                        <th>꼬리질문</th>
+                                    </tr>
+                                    <tr>
+                                        <td>주도성</td>
+                                        <td>
+                                            <span>Q. 곤경에 처한 적이 있었습니까? 만약 있었다면 어떻게 극복하셨나요?</span>
+                                            <p>어려운 일을 해결했던 지원자의 과거 경험을 물으며 자기주도성을 가지고 일하는 사람인지를 파악하기 위한 질문입니다. 지원자가 처한 곤경과 대처방법에 중점을 두고 듣는 것을 조언드립니다.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>글로벌인식</td>
+                                        <td>
+                                            <span>Q. [꼬리질문?]</span>
+                                            <p>꼬리 질문 설명 내용</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <h5 class="tit_sub">약점 꼬리질문</h5>
+                                <table style="border-collapse: collapse;">
+                                    <colgroup>
+                                        <col width="120px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tr>
+                                        <th>약점</th>
+                                        <th>꼬리질문</th>
+                                    </tr>
+                                    <tr>
+                                        <td>헌신</td>
+                                        <td>
+                                            <span>Q. [꼬리질문?]</span>
+                                            <p>꼬리 질문 설명 내용</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>외국어 활용</td>
+                                        <td>
+                                            <span>Q. [꼬리질문?]</span>
+                                            <p>꼬리 질문 설명 내용</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p class="cont_txt">역량 별로 강점과 약점을 파악하여 AI가 면접관이 활용할 수 있는 꼬리질문과 해석을 제공합니다. AI 화상면접 (UNI) 서비스를 이용하시면 손쉽게 지원자를 직접 만나보고 질문하실 수 있습니다.</p>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="wrap_contents ability_analysis_mock">
+                        <!-- 역량분석(모의) -->
+                                    <div class="analysis_info"><span></span><p>역량분석 탭에서는 역량검사 질문 2개 (Q5~Q6)에 대한 영상과 함께 AI역량면접에 대한 해설과 조언을 제공합니다.</p></div>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <h4 class="tit_txt">면접영상</h4>
+                                <div class="ability_mock_tab_video">
+                                    <section class="on">
+                                        <video></video>
+                                        <div class="voice_analysis"> 
+                                            <div class="voice_box">
+                                                <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                            </div>
+                                            <div class="voice_box">
+                                                <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                            </div>
+                                            <div class="voice_box">
+                                                <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                            </div>
+                                            <div class="voice_txt">
+                                                <span class="purple">ㅡ 목소리 크기</span>
+                                                <span class="mint">ㅡ 목소리 톤</span>
+                                                <span class="yellow">ㅡ 목소리 속도</span>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <video></video>
+                                        <div class="voice_analysis"> 
+                                            <div class="voice_box">
+                                                <div class="voice_size" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                            </div>
+                                            <div class="voice_box">
+                                                <div class="voice_tone" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                            </div>
+                                            <div class="voice_box">
+                                                <div class="voice_speed" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="300"></div>
+                                            </div>
+                                            <div class="voice_txt">
+                                                <span class="purple">ㅡ 목소리 크기</span>
+                                                <span class="mint">ㅡ 목소리 톤</span>
+                                                <span class="yellow">ㅡ 목소리 속도</span>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <p>면접 영상은 분석레포트 생성일로부터 90일간 제공됩니다.</p>
+                                <section class="ability_tab_wrap">
+                                    <ul class="ability_mock_tab_title">
+                                        <li class="on">면접5</li>
+                                        <li>면접6</li>
+                                    </ul>
+                                    <div class="ability_mock_tab_cont">
+                                        <section class="on ability_tab">
+                                            <!-- 면접5 -->
+                                            <span>Q5.</span>
+                                            <p>1분 자기소개를 해주세요. 면접 질문이 들어가는 영역입니다. 글자수 최대 100자 입니다. 1분 자기소개를 해주세요. 면접 질문이 들어가는 영역입니다. 글자수 최대 100자입니다..</p>
+                                        </section>
+                                        <section class="ability_tab">
+                                            <!-- 면접6 -->
+                                            <span>Q6.</span>
+                                            <p>면접6</p>
+                                        </section>
+                                    </div>
+                                </section>
+                            </section>
+                            <section class="inner_section">
+                                <h4 class="tit_txt">역량질문 해설</h4>
+                                <div>
+                                    <span>Q5.</span>
+                                    <b>본인이 친구 혹은 동료와 함께 일(활동)을 하면서 기존의 방법과 절차보다 새로운 방법과 절차로 일을 처리한 예를 설명해 보시기 바랍니다.</b>
+                                    <p>해당 질문은 창의적인 능력을 확인하기 위한 질문입니다. 즉, 현 상황에 대한 개선 필요점을 인식하는 것과 개선사항을 도출하고 이를 다른 사람들과 공유하고 새로운 관점이나 행동을 수행하는 능력을 확인하는 질문입니다. 단순하게 창의적으로 아이디어를 제시한 내용을 답변하는 것이 아닌, 기존 방식과 다른 시도를 통해 문제를 개선한 경험을 자신의 행동과 결과, 배운 점을 포함하도록 노력하는 것이 좋습니다.</p>
+                                </div>
+                                <div>
+                                    <span>Q6.</span>
+                                    <b>본인이 친구 혹은 동료와 함께 일(활동)을 하면서 기존의 방법과 절차보다 새로운 방법과 절차로 일을 처리한 예를 설명해 보시기 바랍니다.</b>
+                                    <p>해당 질문은 창의적인 능력을 확인하기 위한 질문입니다. 즉, 현 상황에 대한 개선 필요점을 인식하는 것과 개선사항을 도출하고 이를 다른 사람들과 공유하고 새로운 관점이나 행동을 수행하는 능력을 확인하는 질문입니다. 단순하게 창의적으로 아이디어를 제시한 내용을 답변하는 것이 아닌, 기존 방식과 다른 시도를 통해 문제를 개선한 경험을 자신의 행동과 결과, 배운 점을 포함하도록 노력하는 것이 좋습니다.</p>
+                                </div>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <h4 class="tit_txt">AI추천 역량질문</h4>
+                                <span>Q. 곤경에 처한 적이 있었습니까? 만약 있었다면 어떻게 극복하셨나요?</span>
+                                <p>해당 질문은 열정이라는 역량과 관련된 꼬리질문입니다. 과거에 어려움을 느꼈었던 경험을 뒤돌아보며 본인이 극복을 한 방법과 그 과정에서 배운 점들을 자세히 얘기하시는게 좋습니다. 만일 극복하지 못했던 경험이었어도, 그 과정에서 배운 점을 충분히 설명하는 연습을 해보세요.</p>
+                                <p class="cont_smry">역량검사에서 제시된 역량질문과 관련이 있는 꼬리질문입니다. 실제 면접 시 제시될 수 있는 질문이기 때문에 해당 질문의 조언을 참고하며 연습하는 것을 추천드립니다.</p>
+                                <div class="tip">
+                                    <img src="./images/img_tip.svg" alt="tip 이미지">
+                                    <ul>
+                                        <li>
+                                            <span></span>꾸며내지 않은 실제 경험을 말합니다.
+                                            <p>역량면접의 핵심의 지원자의 과거경험을 통해 역량을 평가하는 것입니다. 여러 개가 아닌 하나의 경험에 집중하여 본인…!~</p>
+                                        </li>
+                                        <li>
+                                            <span></span>두번째 팁입니다.
+                                            <p>역량면접의 핵심의 지원자의 과거경험을 통해 역량을 평가하는 것입니다. 여러 개가 아닌 하나의 경험에 집중하여 본인…!~</p>
+                                        </li>
+                                        <li>
+                                            <span></span>세번째 팁입니다.
+                                            <p>역량면접의 핵심의 지원자의 과거경험을 통해 역량을 평가하는 것입니다. 여러 개가 아닌 하나의 경험에 집중하여 본인…!~</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="wrap_contents wrap_propensity">
+                        <!-- 성향분석 -->
+                        <div class="analysis_info"><span></span><p>성향분석 탭에서는 성향검사를 통해 도출된 지원자의 성향유형과 직군적합성에 대한 분석 정보를 제공합니다.</p></div>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <section class="propensity_kind">
+                                    <div>성향 이미지</div>
+                                    <span>용감한 수호자<em></em></span>
+                                    <p>소중한 이들을 수호하는 데 심혈을 기울이는 헌식적이며 성실한 방어자 최대 60자이므로 글씨 추가합니다.</p>
+                                </section>
+                                <section class="propensity_detail">
+                                    <div class="propensity1">
+                                        <img src="./images/img_im_robot.svg" alt="로봇 이미지">
+                                        <div>
+                                            <span>유형 설명</span>
+                                            <p>성향 분석 결과, 홍길동님의 성향유형은 용감한 수호자입니다. 해당 유형은 타인을 향한 연민이나 동정심이 있으면서도 가족이나 친구를 보호해야할 때는 가차 없는 모습을 보이기도 합니다. 조용하고 내성적인 반면 뛰어난 인간 관계를 잘 만들어갑니다. 안정적인 삻을 지향하지만 이해받고 존경받는다고 생각되는 한에서는 변화를 잘 수용합니다.글자수 최대 300까지 입니다. 길게 길게 갑 못할 것은 그들은 힘있다. 이상의 것은 풀밭에 뛰노는 방지하는 미묘한 놀이 몸이 아니다. 사랑의 가슴에 피에 얼음에 교향악이다. 한글입숨 300자……….</p>
+                                        </div>
+                                    </div>
+                                    <div class="propensity2">
+                                        <b>조직의 일원으로서, 해당 유형은</b>
+                                        <p>칭찬과 긍정적인 피드백을 통해 성장하는 스타일입니다. 너무 부정적인 피드백은 이들의 생산성을 더욱 악화시킬 수 있습니다. 긍정적인 성격으로 그룹원들과 잘 지낼 수 있으며, 창의력이 높아 번뜩이는 해결책을 내놓는 능력도 뛰어납니다. 길게 길게 갑 못할 것은 그들은 힘있다. 이상의 것은 풀밭에 뛰노는 방지하는 미묘한 놀이 몸이 아니다. 사랑의 가슴에 피에 얼음에 교향악이다.길게 길게 갑 못할 것은 그들은 힘있다.</p>
+                                    </div>
+                                    <div class="propensity3">
+                                        <b>조직의 리더로서, 해당 유형은</b>
+                                        <p>조직원들의 의견을 귀담아 듣고, 그들을 통제하기보다는 그들만의 방식으로 일처리를 할 수 있는 힘을 길러주려고 노력합니다. 부정적인 피드백을 주거나 비효율적인 조직원들에게 제제를 가하는 것을 어려워한다는 단점이 있습니다. 길게 길게 갑 못할 것은 그들은 힘있다. 이상의 것은 풀밭에 뛰노는 방지하는 미묘한 놀이 몸이 아니다. 사랑의 가슴에 피에 얼음에 교향악이다.길게 길게 갑 못할 것은 그들은 힘있다.</p>
+                                    </div>
+                                </section>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <div class="propensity_good">
+                                    <h4 class="tit_txt">성향 장점</h4>
+                                    <div>
+                                        <span>
+                                            <img src="">
+                                        </span>
+                                        <div>
+                                            <b>공감능력</b>
+                                            <p>뛰어난 공감능력으로 다른 사람들에게 언제나 친절하고 사려깊은 모습을 보입니다.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span>
+                                            <img src="">
+                                        </span>
+                                        <div>
+                                            <b>창의성</b>
+                                            <p>모든 것을 새로운 관점으로 바라보며 창의적인 아이디어를 생각해내는 능력이 뛰어납니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="propensity_bad">
+                                    <h4 class="tit_txt">성향 약점</h4>
+                                    <div>
+                                        <span>
+                                            <img src="">
+                                        </span>
+                                        <div>
+                                            <b>집중력</b>
+                                            <p>여러가지 공상을 즐겨하기 때문에 하나의 업무에 오랫동안 집중하는 것을 어려워할 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span>
+                                            <img src="">
+                                        </span>
+                                        <div>
+                                            <b>자기비판적</b>
+                                            <p>스스로가 세운 이상적인 본인의 모습에 부합하지 못할 때 좌절하고 비판적으로 변할 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section">
+                                <h4 class="tit_txt">심층성향</h4>
+                                <p class="cont_smry">홍길동님은 <b>내향적, 직관적, 사고적, 판단적</b>인 성향이 우세한 것으로 분석되었습니다.</p>
+                                <section class="mbti">
+                                    <div>외향적(E)<br><em>30%</em></div>
+                                    <div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                    </div>
+                                    <div class="red">내향적(I)<br><em>70%</em></div>
+                                </section>
+                                <section class="mbti">
+                                    <div class="blue">감각적(S)<br><em>60%</em></div>
+                                    <div>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div>직관적(N)<br><em>40%</em></div>
+                                </section>
+                                <section class="mbti">
+                                    <div>사고적(T)<br><em>48%</em></div>
+                                    <div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                        <span class="red"></span>
+                                    </div>
+                                    <div class="red">감정적(F)<br><em>52%</em></div>
+                                </section>
+                                <section class="mbti">
+                                    <div class="blue">판단적(J)<br><em>80%</em></div>
+                                    <div>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span class="blue"></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div>인식적(P)<br><em>20%</em></div>
+                                </section>
+                                <p class="notice">점수는 선호의 정도를 나타내며, 능력이나 발달 정도의 척도는 아닙니다.</p>
+                            </section>
+                            <section class="inner_section">
+                                <h4 class="tit_txt">직군적합성</h4>
+                                <p class="cont_smry">총 14개의 직군 중, 홍길동님과 적합한 상위 5개의 직군은 <b>생산, 보건/의료/복지, 사무/기획, 영업판매, 마케팅</b>입니다.</p>
+                                <div class="graph">
+                                    <div class="job"><span role="progressbar" style="height: 35%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                    <div class="job"><span role="progressbar" style="height: 56%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                    <div class="job"><span role="progressbar" style="height: 85%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                    <div class="job"><span role="progressbar" style="height: 100%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                    <div class="job"><span role="progressbar" style="height: 25%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                </div>
+                                <div class="job_suitable">
+                                    <span>생산</span>
+                                    <span>보건/<br>의료/<br>복지</span>
+                                    <span>사무/<br>기획</span>
+                                    <span>영업판매</span>
+                                    <span>마케팅</span>
+                                </div>
+                            </section>
+                        </section>
+                        <section class="term">
+                            <div>
+                                <h4 class="tit_txt">용어 설명</h4>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>외향적</th>
+                                    <td>폭넓은 대인관계를 유지하고 사교적이며 정열적이고 활동적인 성향</td>
+                                </tr>
+                                <tr>
+                                    <th>내향적</th>
+                                    <td>깊이있는 대인관계를 유지하며 조용하고 신중하며 이해한 다음 행동하는 성향</td>
+                                </tr>
+                                <tr>
+                                    <th>감각적</th>
+                                    <td>오감에 의존하며 실제의 경험을 중시하고 지금, 현실에 초점을 맞추어 정확하고 철저한 성향</td>
+                                </tr>
+                                <tr>
+                                    <th>직관적</th>
+                                    <td>육감 내지 영감에 의존하며 미래 지향적이고 가능성과 의미를 추구하며 신속, 비약적인 성향</td>
+                                </tr>
+                                <tr>
+                                    <th>사고적</th>
+                                    <td>진실과 사실에 주로 관심을 갖고 논리적이고 분석적이며 객관적으로 사실을 판단하는 성향</td>
+                                </tr>
+                                <tr>
+                                    <th>감정적</th>
+                                    <td>사람과의 관계에 주로 관심을 갖고 주변 상황을 고려하여 판단하는 성향</td>
+                                </tr>
+                                <tr>
+                                    <th>판단적</th>
+                                    <td>분명한 목적과 방향이 있으며 기한을 엄수하고 철저히 사전에 계획하고 체계적인 성향</td>
+                                </tr>
+                                <tr>
+                                    <th>인식적</th>
+                                    <td>목적과 방향은 변화 가능하고 상황에 따라 일정을 변경 할 수 있으며 자율적이고 융통성 있는 성향</td>
+                                </tr>
+                            </table>
+                        </section>
+                        <section class="no_result">
+                            <div>
+                                <img src="images/img_alert.svg" alt="경고이미지" />
+                                <p>자리이탈, 장비 불량, 인터넷 연결 끊김 등의 이유로 AI 분석을 위한 <br>목소리, 얼굴, 상체 정보가 확인되지 않아 분석이 어렵습니다.</p>
+                            </div>
+                        </section>
+                    </section> <!-- offoff -->
+                </div>
+            </div>
+
+            <section class="section_inner">
+
+            </section>
+            
+            <section class="navy_reply">
+                <span>응답신중성</span>
+                <p>홍길동님은 응답신중성 <b>'상'</b>으로 면접 응시 결과를 신뢰할 수 있습니다.<br>면접에 응하는 답변과 과정을 신중하게 한 것으로 나왔습니다.</p>
+            </section>
+        </article>
+    </main>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/jquery-animate-css-rotate-scale.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".main_tab_title li").click(function() {
+            var idx = $(this).index();
+            $(".main_tab_title li").removeClass("on");
+            $(".main_tab_title li").eq(idx).addClass("on");
+            $(".main_tab_cont > section").hide();
+            $(".main_tab_cont > section").eq(idx).show();
+        });
+        $(".sub_tab_title li").click(function() {
+            var idx = $(this).index();
+            $(".sub_tab_title li").removeClass("on");
+            $(".sub_tab_title li").eq(idx).addClass("on");
+            $(".sub_tab_cont > section").hide();
+            $(".sub_tab_cont > section").eq(idx).show();
+        });
+        $(".action_tab_title li").click(function() {
+            var idx = $(this).index();
+            $(".action_tab_title li").removeClass("on");
+            $(".action_tab_title li").eq(idx).addClass("on");
+            $(".action_tab_cont > section").hide();
+            $(".action_tab_cont > section").eq(idx).show();
+            $(".action_tab_video > section").hide();
+            $(".action_tab_video > section").eq(idx).show();
+        });
+        $(".ability_biz_tab_title li").click(function() {
+            var idx = $(this).index();
+            $(".ability_biz_tab_title li").removeClass("on");
+            $(".ability_biz_tab_title li").eq(idx).addClass("on");
+            $(".ability_biz_tab_cont > section").hide();
+            $(".ability_biz_tab_cont > section").eq(idx).show();
+            $(".ability_biz_tab_video > section").hide();
+            $(".ability_biz_tab_video > section").eq(idx).show();
+        });
+        $(".ability_mock_tab_title li").click(function() {
+            var idx = $(this).index();
+            $(".ability_mock_tab_title li").removeClass("on");
+            $(".ability_mock_tab_title li").eq(idx).addClass("on");
+            $(".ability_mock_tab_cont > section").hide();
+            $(".ability_mock_tab_cont > section").eq(idx).show();
+            $(".ability_mock_tab_video > section").hide();
+            $(".ability_mock_tab_video > section").eq(idx).show();
+        });
+
+        // 응답신중성
+
+        $(document).on('click','.main_tab_title li', function(){
+            var text = $(this).text();
+            if(text == '종합분석'){
+                $('.navy_reply').show();
+            }else{
+                $('.navy_reply').hide();
+            }
+        })
+    });
+
+    /*  영상 종합분석도(기업)  */
+        var video_total_chart = document.getElementById("video_total_biz_chart");
+        var vitChart = new Chart(video_total_chart, {
+            type: 'radar',
+            data: {
+                labels: ["시선분포", "어깨각도", "얼굴각도", "어깨움직임", "목소리톤", "목소리속도"],
+                datasets: [
+                    {
+                        label: '응시자',
+                        data: [100, 100, 100, 100, 100, 100],
+                        borderColor: '#0068ED',
+                        pointBorderColor: "#0068ED",
+                        pointBackgroundColor: "#fff",
+                        backgroundColor: "#0068ED26",
+                        fill: true
+                    },
+                    {
+                        label: '전체평균',
+                        data: [15, 20, 5, 10, 15, 40],
+                        borderColor: '#5F4EEE',
+                        pointBorderColor: "#5F4EEE",
+                        pointBackgroundColor: "#fff",
+                        fill: false
+                    },
+                    {
+                        label: '그룹평균',
+                        data: [30, 40, 25, 1, 5, 30],
+                        borderColor: '#FFAA30',
+                        pointBorderColor: "#FFAA30",
+                        pointBackgroundColor: "#fff",
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                elements: {
+                    line: {
+                        tension: 0,
+                        borderWidth: 1
+                    }
+                },
+                legend: {
+                    display: false,
+                },
+                tooltips: {
+                    enabled: false
+                },
+                scale: {
+                    pointLabels: {
+                        fontSize: 0,
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    gridLines: {
+                        display: false
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        stepSize: 100,
+                        display: false
+                    }
+                },
+            }
+        });
+
+    /*  영상 종합분석도(모의)  */
+    var video_total_chart = document.getElementById("video_total_mock_chart");
+    var vitChart = new Chart(video_total_chart, {
+        type: 'radar',
+            data: {
+                labels: [ "시선분포", "어깨각도", "얼굴각도", "어깨움직임", "목소리톤", "목소리속도" ],
+                datasets: [
+                    {
+                        label: '응시자',
+                        data: [100, 100, 100, 100, 100, 100],
+                        borderColor: '#0068ED',
+                        pointBorderColor: "#0068ED",
+                        pointBackgroundColor: "#fff",
+                        backgroundColor: "#0068ED26",
+                        fill: true
+                    },
+                    {
+                        label: '전체평균',
+                        data: [15, 20, 5, 10, 15, 40],
+                        borderColor: '#5F4EEE',
+                        pointBorderColor: "#5F4EEE",
+                        pointBackgroundColor: "#fff",
+                        fill: false
+                    },
+                    {
+                        label: '그룹평균',
+                        data: [30, 40, 25, 1, 5, 30],
+                        borderColor: '#FFAA30',
+                        pointBorderColor: "#FFAA30",
+                        pointBackgroundColor: "#fff",
+                        fill: false
+                    } 
+                ]
+            },
+            options: {
+                responsive: false,
+                elements:{
+                    line:{
+                        tension:0,
+                        borderWidth:1
+                    }
+                },
+                legend: {
+                    display: false,
+                },
+                tooltips: {
+                    enabled: false                    
+                },
+                scale: {
+                    pointLabels: {
+                        fontSize: 0,
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    gridLines:{
+                        display: false
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        stepSize: 100,
+                        display: false
+                    }
+                },
+            }
+    });
+
+    
+
+
+    $(document).ready(function(){
+        // 눈동자 움직임
+        $(window).scroll(function () {
+            // 종합 등급 분포도
+            if ( $(window).scrollTop() > 800 ) {
+                $(".pupil").addClass("x3");
+            }
+        });
+
+        $('.red_1_1').css('opacity', '0.062');
+        $('.red_1_2').css('opacity', '0.196');
+        $('.red_1_3').css('opacity', '0.058');
+        $('.red_2_1').css('opacity', '0.046');
+        $('.red_2_2').css('opacity', '0.279');
+        $('.red_2_3').css('opacity', '0.537');
+        $('.red_3_1').css('opacity', '0');
+        $('.red_3_2').css('opacity', '0');
+        $('.red_3_3').css('opacity', '0');
+
+        $('.purple_1_1').css('opacity', '0.35');
+        $('.purple_1_2').css('opacity', '0.3');
+        $('.purple_1_3').css('opacity', '0.4');
+        $('.purple_2_1').css('opacity', '0');
+        $('.purple_2_2').css('opacity', '0.5');
+        $('.purple_2_3').css('opacity', '0');
+        $('.purple_3_1').css('opacity', '0');
+        $('.purple_3_2').css('opacity', '0');
+        $('.purple_3_3').css('opacity', '0');
+
+        $('.yellow_1_1').css('opacity', '0.35');
+        $('.yellow_1_2').css('opacity', '0.3');
+        $('.yellow_1_3').css('opacity', '0.4');
+        $('.yellow_2_1').css('opacity', '0');
+        $('.yellow_2_2').css('opacity', '0.5');
+        $('.yellow_2_3').css('opacity', '0');
+        $('.yellow_3_1').css('opacity', '0');
+        $('.yellow_3_2').css('opacity', '0');
+        $('.yellow_3_3').css('opacity', '0');
+        
+        // 자세각도        
+        $(window).scroll(function () {
+            if ( $(window).scrollTop() > 700 ) {
+                $('#head_angle').animate({
+                rotate: '6.674deg'
+                },3000);
+                $('#head_shoulder').animate({
+                rotate: '0.013deg'
+                },3000);
+            }
+        });
+    });
+
+    //응답 긴장도
+    /* 심박  > 응답긴장도 */
+    new Chart(document.getElementById("answer_tension"), {
+        type: 'line',
+        data: {
+            labels: ['Q2(질문2)', 'Q2(질문3)', 'Q2(질문4)'],
+            datasets: [{
+                data: [
+                    10, 0, 30
+                ],
+                borderColor: "#F65454",
+                pointBackgroundColor: "#F65454",
+                fill: false,
+                borderWidth: 2,
+                lineTension: 0
+            },{
+                data: [
+                    5, 13, 40
+                ],
+                borderColor: "#158FE4",
+                pointBackgroundColor: "#158FE4",
+                fill: false,
+                borderWidth: 2,
+                lineTension: 0
+            }
+            ]
+        },
+        options: {
+            responsive: false,
+            title: {
+                display: false,
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false,
+                mode: 'index',
+                intersect: false
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: false,
+                    scaleLabel: {
+                        display: false,
+                    }
+                }],
+                yAxes: [{
+                    display: false,
+                    ticks: {
+                        suggestedMin: 0,
+                    },
+                    scaleLabel: {
+                        display: false,
+                    }
+                }]
+            },
+            layout: {
+                padding: {
+                    left: 100,
+                    right: 100,
+                    top: 25,
+                    bottom: 5
+                }
+            }
+        }
+    });
+    //면접 긴장도
+    $( document ).ready(function(){
+        $(".heart_pin").addClass("heart_pin3");
+    });
+
+    // 높은 긴장도 질문
+    new Chart(document.getElementById("high_tension"), {
+        type: 'line',
+        data: {
+            labels: ['','','','','','','','','','' ,'','','','','','','','','','', '','','','','','','','','','', '','','','','','','','','','', '','','','','','','','','','', '','','','','','','','','','' ],
+            datasets: [{
+                data: [
+                0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 
+                ],
+                borderColor: "#F65454",
+                pointRadius: 0,
+                fill: false,
+                borderWidth: 2,
+                lineTension: 1
+            }]
+        },
+        options: {
+            responsive: false,
+            title: {
+                display: false,
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false,
+                mode: 'index',
+                intersect: false
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: false,
+                    scaleLabel: {
+                        display: false,
+                    }
+                }],
+                yAxes: [{
+                    display: false,
+                    ticks: {
+                        suggestedMin: 0,
+                    },
+                    scaleLabel: {
+                        display: false,
+                    }
+                }]
+            },
+            layout: {
+                padding: {
+                    left: 5,
+                    right: 5,
+                    top: 25,
+                    bottom: 5
+                }
+            }
+        }
+    });
+    // 낮은 긴장도 질문
+    new Chart(document.getElementById("low_tension"), {
+        type: 'line',
+        data: {
+            labels: ['','','','','','','','','','' ,'','','','','','','','','','', '','','','','','','','','','', '','','','','','','','','','', '','','','','','','','','','', '','','','','','','','','','' ],
+            datasets: [{
+                data: [
+                0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 ,0,10,15,30,40,55,30,20,50,80 
+                ],
+                borderColor: "#158FE4",
+                pointRadius: 0,
+                fill: false,
+                borderWidth: 2,
+                lineTension: 0
+            }]
+        },
+        options: {
+            responsive: false,
+            title: {
+                display: false,
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false,
+                mode: 'index',
+                intersect: false
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: false,
+                    scaleLabel: {
+                        display: false,
+                    }
+                }],
+                yAxes: [{
+                    display: false,
+                    ticks: {
+                        suggestedMin: 0,
+                    },
+                    scaleLabel: {
+                        display: false,
+                    }
+                }]
+            },
+            layout: {
+                padding: {
+                    left: 5,
+                    right: 5,
+                    top: 25,
+                    bottom: 5
+                }
+            }
+        }
+    });
+
+    /*  역량 세부 분석도 1  */
+    var ability_detail_1 = document.getElementById("ability_detail_1");
+    var ability_detail_1 = new Chart(ability_detail_1, {
+        type: 'radar',
+            data: {
+                labels: [ "주도성", "업무몰입", "헌신", "로열티" ],
+                datasets: [
+                    {
+                        label: '응시자',
+                        data: [100, 75, 50, 25],
+                        borderColor: '#0068ED',
+                        pointBorderColor: "#0068ED",
+                        pointBackgroundColor: "#fff",
+                        backgroundColor: "#0068ED26",
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                elements:{
+                    line:{
+                        tension:0,
+                        borderWidth:1
+                    }
+                },
+                legend: {
+                    display: false,
+                },
+                tooltips: {
+                    enabled: false                    
+                },
+                scale: {
+                    pointLabels: {
+                        fontSize: 0,
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    gridLines:{
+                        display: false
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        stepSize: 100,
+                        display: false
+                    }
+                },
+            }
+    });
+    /*  역량 세부 분석도 2  */
+    var ability_detail_2 = document.getElementById("ability_detail_2");
+    var ability_detail_2 = new Chart(ability_detail_2, {
+        type: 'radar',
+            data: {
+                labels: [ "주도성", "업무몰입", "헌신", "로열티" ],
+                datasets: [
+                    {
+                        label: '응시자',
+                        data: [100, 75, 50, 25],
+                        borderColor: '#0068ED',
+                        pointBorderColor: "#0068ED",
+                        pointBackgroundColor: "#fff",
+                        backgroundColor: "#0068ED26",
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                elements:{
+                    line:{
+                        tension:0,
+                        borderWidth:1
+                    }
+                },
+                legend: {
+                    display: false,
+                },
+                tooltips: {
+                    enabled: false                    
+                },
+                scale: {
+                    pointLabels: {
+                        fontSize: 0,
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    gridLines:{
+                        display: false
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        stepSize: 100,
+                        display: false
+                    }
+                },
+            }
+    });
+
+
+
+</script>
+</html>

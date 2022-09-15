@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="89.001" height="115" viewBox="0 0 89.001 115">
+  <defs>
+    <filter id="하">
+      <feOffset dx="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.161" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="img_rank03" transform="translate(0 0)">
+    <path id="패스_11718" data-name="패스 11718" d="M44.5,0,0,44.5H13.547L44.5,13.547Z" transform="translate(0)" fill="#ffefef"/>
+    <path id="패스_11719" data-name="패스 11719" d="M62,0V13.547L92.953,44.5H106.5Z" transform="translate(-17.5)" fill="#e33737"/>
+    <path id="패스_11720" data-name="패스 11720" d="M0,62l44.5,44.5V92.953L13.547,62Z" transform="translate(0 -17.5)" fill="#f29090"/>
+    <path id="패스_11721" data-name="패스 11721" d="M92.953,62,62,92.953V106.5L106.5,62Z" transform="translate(-17.5 -17.5)" fill="#db5f5f"/>
+    <path id="패스_11722" data-name="패스 11722" d="M62,49.827H92.953L62,18.874Z" transform="translate(-17.5 -5.327)" fill="#f65454"/>
+    <path id="패스_11723" data-name="패스 11723" d="M49.827,18.874,18.874,49.828H49.827Z" transform="translate(-5.327 -5.327)" fill="#fccdcd"/>
+    <path id="패스_11724" data-name="패스 11724" d="M18.874,62,49.827,92.953V62Z" transform="translate(-5.327 -17.5)" fill="#fa9d9d"/>
+    <path id="패스_11725" data-name="패스 11725" d="M62,92.953,92.953,62H62Z" transform="translate(-17.5 -17.5)" fill="#f27474"/>
+    <g data-type="innerShadowGroup">
+      <text id="하-2" data-name="하" transform="translate(36 110)" fill="#f65454" font-size="17" font-family="SpoqaHanSansNeo-Bold, Spoqa Han Sans Neo" font-weight="700"><tspan x="0" y="0">하</tspan></text>
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#하)">
+        <text id="하-3" data-name="하" transform="translate(36 110)" fill="#fff" font-size="17" font-family="SpoqaHanSansNeo-Bold, Spoqa Han Sans Neo" font-weight="700"><tspan x="0" y="0">하</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

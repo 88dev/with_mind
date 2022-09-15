@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        $green: #009e5f;
+
+#product-carousel-container {
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
+#product-carousel {
+  height: 45vw;
+  margin: 50px 0 0;
+  list-style: none;
+  position: relative;
+
+  li {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
+
+    &.item-1 {
+      z-index: 2;
+      transform: translateX(-50%) scale(1) translate3d(0, 0, 0);
+    }
+
+    &.item-2 {
+      z-index: 1;
+      transform: translateX(-50%) scale(0.7) translate3d(240%, -10%, 0);
+    }
+
+    &.item-3 {
+      z-index: 0;
+      transform: translateX(-50%) scale(0.5) translate3d(180%, -31%, 0);
+    }
+
+    &.item-4 {
+      z-index: 0;
+      transform: translateX(-50%) scale(0.5) translate3d(-180%, -31%, 0);
+    }
+
+    &.item-5 {
+      z-index: 1;
+      transform: translateX(-50%) scale(0.7) translate3d(-240%, -10%, 0);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(https://www.7up.com/images/bottle-shadow.png) no-repeat 50% 85%;
+      background-size: 100% auto;
+      transform: translateX(-50%);
+      transition: .25s;
+    }
+
+    &:hover {
+      img {
+        transform: translateY(-15px);
+      }
+
+      &:after {
+        width: 90%;
+      }
+    }
+
+    &:not(:hover) {
+      img {
+        transition: transform .075s ease-out;
+      }
+
+      &:after {
+        transittion: .075s;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-top: 50%;
+      transition: transform .25s ease-in;
+    }
+  }
+}
+
+#product-carousel-nav {
+  .carousel-nav {
+    position: absolute;
+    top: 45%;
+    width: 50px;
+    height: 50px;
+    border-top: 2px solid $green;
+    border-right: 2px solid $green;
+    border-bottom: none;
+    border-left: none;
+    background-color: transparent;
+    outline: 0;
+    cursor: pointer;
+
+    &.prev {
+      left: -35%;
+      transform: rotate(-135deg);
+    }
+
+    &.next {
+      right: -35%;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+#carousel-dots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    li {
+      display: inline-block;
+      margin: 0 15px;
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 100%;
+      cursor: pointer;
+
+      &.active {
+        background-color: $green;
+      }
+    }
+  }
+}
+    </style>
+</head>
+<body>
+
+    <div id="product-carousel-container">
+        <ul id="product-carousel">
+          <li class="item-1">
+            <img src="https://www.7up.com//images/catalog/products/2015/12/17/7up_diet.png">
+          </li>
+          <li class="item-2">
+            <img src="https://www.7up.com//images/catalog/products/2015/12/17/7up_ten.png">
+          </li>
+          <li class="item-3">
+            <img src="https://www.7up.com//images/catalog/products/2015/12/17/7up_diet_cherry.png">
+          </li>
+          <li class="item-4">
+            <img src="https://www.7up.com//images/catalog/products/2015/12/17/7up_cherry.png">
+          </li>
+          <li class="item-5">
+            <img src="https://www.7up.com//images/catalog/products/2015/12/17/7up.png">
+          </li>
+        </ul>
+      
+        <div id="product-carousel-nav">
+          <button class="carousel-nav prev"></button>
+          <button class="carousel-nav next"></button>
+        </div>
+        <div id="carousel-dots">
+          <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script>
+    const $carousel_cells = $('#product-carousel li');
+const $carousel_dots = $('#carousel-dots li');
+const $carousel_nav = $('.carousel-nav');
+let selected_product_index = 0;
+
+function selectProduct(index) {
+  selected_product_index = index % $carousel_cells.length;
+
+  if (selected_product_index < 0) selected_product_index = $carousel_cells.length + selected_product_index;
+
+  $carousel_cells.each(function(i) {
+    let offset = i - selected_product_index;
+    if (offset < 0) offset += $carousel_cells.length;
+
+    let index;
+    for (index = 0; index < $carousel_cells.length + 1; index++) {
+      $(this).removeClass('item-' + index).addClass('item-' + (offset + 1));
+    }
+  });
+
+  $carousel_dots.eq(index).addClass('active').siblings('li').removeClass('active');
+}
+
+/* Arrow clicks */
+$carousel_nav.click(function() {
+  const delta = $(this).hasClass('prev') ? -1 : 1;
+  const $delta_product = $(`#product-carousel li:eq(${(selected_product_index + delta) % $carousel_cells.length})`);
+  const delta_product_index = parseInt($delta_product.index());
+  selectProduct(delta_product_index);
+});
+
+/* Can clicks */
+$carousel_cells.click(function () {
+  selectProduct($(this).index());
+});
+
+/* Pagination */
+$carousel_dots.click(function (e) {
+  selectProduct($(this).index());
+  $(e.currentTarget).addClass('active').siblings('li').removeClass('active');
+});
+
+/* Left/Right key arrows */
+$(document).keydown(e => {
+  const delta = e.keyCode == 37 ? -1  : 1;
+  const $delta_product = $(`#product-carousel li:eq(${(selected_product_index + delta) % $carousel_cells.length})`);
+  const delta_product_index = parseInt($delta_product.index());
+
+  if ((e.keyCode == 37) || (e.keyCode == 39)) {
+    selectProduct(delta_product_index);
+    return false;
+  }
+});
+
+/*
+Inspired by:
+https://www.7up.com/en/products
+*/
+</script>
+</html>

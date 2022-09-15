@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel="stylesheet" href="plugin/selectric.css">
+<title></title>
+<style>
+    .wrap_select {
+        width: 260px;
+    }
+    .selectric-wrapper {
+        position: relative;
+        cursor: pointer;
+        border: 1px solid #111111;
+        border-radius: 4px;
+    }
+    .selectric {
+        background: #FFFFFF;
+        position: relative;
+        background-image: url('./icon_chevron_down.svg');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        border: none;
+        border-radius: 4px;
+    }
+    .selectric .label {
+        height: 50px;
+        line-height: 50px;
+        font-size: 15px;
+    }
+    .selectric-focus .selectric, .selectric-hover .selectric {
+        border: none;
+    }
+    .selectric-open .selectric {
+        background-color: #FFFFFF;
+        background-image: url('./icon_chevron_up.svg');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        border: none;
+        border-radius: 4px 4px 0 0;
+    }
+    .selectric .button:after {
+        border: none;
+    }
+    .selectric-items .selectric-scroll {
+        background: #FFFFFF;
+        height: 100%;
+        overflow: auto;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+    }
+    .selectric-items {
+        position: inherit;
+        border: none;
+        border-radius: 0 0 4px 4px;
+    }
+    .selectric-items ul {
+        border-top: 1px solid #DDDDDD;
+    }
+    .selectric-items li {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 16px;
+        border: none;
+        color: #333333;
+        font-size: 15px;
+    }
+    .selectric-items li.selected {
+        background-color: #FFF;
+    }
+    .selectric-items li.highlighted {
+        background: #FFFFFF;
+        color: #333333;
+    }
+    .selectric-items li:hover {
+        background: #F8F8F8;
+    }
+</style>
+</head>
+<body>
+    <div class="wrap_select">
+        <select>
+            <option>전체</option>
+            <option>진행중</option>
+            <option value="1">완료</option>
+        </select>
+    </div>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script src="plugin/jquery.selectric.js"></script>
+<script>
+    // 셀렉트 박스
+    $(function() {
+        $('select').selectric();
+    });
+</script>
+</html>

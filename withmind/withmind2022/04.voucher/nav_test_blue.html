@@ -6,21 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        html {width:100%; height:100%; margin:0; padding:0; overflow:hidden;} /* 기본 스크롤 제거 */
+body {width:100%; height:100%; margin:0; padding:0; overflow-y:scroll; position:relative;} /*대체 스크롤 생성 */
         html, body {
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         .main {
             position: relative;
             width: 100vw;
-            height: 100vh;
+            height: 110vh;
+        }
+        #nav {
+            position: absolute;
+            /* border: 3px solid red; */
+            width: 116px;
+            height: 100%;
+            right: 0;
         }
         input[id="btn_nav"] {
             display: none;
         }
         input[id="btn_nav"] + label {
             position: absolute;
-            background: url(images/img_nav.png);
+            background: url(images/img_nav.svg);
             width: 42px;
             height: 217px;
             right: 0;
@@ -40,7 +50,7 @@
         }
         input[id="btn_nav"]:checked + label {
             z-index: 2;
-            right: 74px;
+            right: 73.5px;
             /* transition: all .2s; */
         }
         input[id="btn_nav"]:checked + label span {
@@ -58,6 +68,7 @@
             right: -116px;
             z-index: 1;
             /* transition: all .2s; */
+            border-radius: 10px 0 0 10px;
         }
         input[id="btn_nav"]:checked + label + div{
             right: 0;
@@ -72,9 +83,9 @@
                 <span></span>
             </label>
             <div class="nav_bar">
-                
             </div>
         </section>
+        dasfafdsfds
     </section>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

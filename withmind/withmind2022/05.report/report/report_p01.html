@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB손해보험 결과리포트 p01</title>
+    <link rel="styleSheet" href="report.css" type="text/css"></link>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script type ="text/javascript" src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
+</head>
+<body>
+    <main id="db_report">
+        <article class="p_01">
+            <section class="head">
+                <section class="logo_area">
+                    <h1></h1>
+                    <div>
+                        <button type="button" id="btn_print" onclick="window.print()"></button>
+                    </div>
+                </section>
+                <section class="wrap_select">
+                    <select id="select_year">
+                        <option value="">2022년</option>
+                    </select>
+                    <select id="select_month">
+                        <option value="">7월</option>
+                        <option value="">8월</option>
+                    </select>
+                    <button type="button">종합리포트 조회</button>
+                </section>
+                <section class="user_info">
+                    <strong class="name">김친절</strong>
+                    <div class="period">2021. 10. 01 ~ 2022. 06. 22 학습 결과 리포트</div>
+                    <section class="wrap_grid">
+                        <div>기업명 입력란 / 지점명 입력란</div>
+                        <div>가입일</div>
+                        <div>교육 시작일</div>
+                        <div>교육 레벨</div>
+                        <div class="email"><span class="account kakao"></span><p>sokind07@naver.com( 아이디/sns이메일 적는란 )</p></div>
+                        <div class="date">2021. 10. 01</div>
+                        <div class="date">2021. 10. 02</div>
+                        <div class="level"><b>Lv.5</b> 카인더 <span>( 교육 <em>173</em> 일차)</span></div>
+                    </section>
+                </section>
+            </section>
+            <section class="body">
+                <section class="title">
+                    <h2>종합리포트</h2>
+                    <div class="total_stats">
+                        <div>
+                            <img src="images/icon_date.png" alt="날짜 아이콘" />
+                            <p><em>173</em>일 <i>( 5개월 21일째 )</i></p>
+                            <span class="sub_title">쏘카인드 총 학습일</span>
+                        </div>
+                        <div>
+                            <img src="images/icon_hat.png" alt="학사모 아이콘" />
+                            <p><em>40</em>개 <i>( 총 62개 중 )</i></p>
+                            <span class="sub_title">총 이수한 교육</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="container">
+                    <section class="contents total_comment">
+                        <strong class="title">종합평가</strong>
+                        <p>김친절님은 우리 기업 상위 00%의 친절왕 입니다! 교육생 00중 0위이며, 현재까지 종합 점수는 00점 입니다. 기본응대 보다 상황응대가 더 우수한 편이며, <br>스크립트 구사 시 어벽(습관어)을 다소 개선하면 좋을 것으로 판단됩니다.</p>
+                    </section>
+                </section>
+                <section class="container">
+                    <section class="contents wrap_flex">
+                        <section class="score">
+                            <strong class="title">종합점수</strong>
+                            <p class="sub_txt">김친절 사원님의 고객 만족 서비스 점수입니다.</p>
+                            <div class="wrap_graph">
+                                <div class="label">
+                                    <label>내 점수</label>
+                                    <label>평균</label>
+                                </div>
+                                <div class="graph">
+                                    <span class="score_my" role="progressbar" style="width: 86%;" aria-valuemin="0" aria-valuemax="100">86점</span>
+                                    <span class="score_avg" role="progressbar" style="width: 76%;" aria-valuemin="0" aria-valuemax="100">76점</span>
+                                </div>
+                                <div class="say">
+                                    <img src="images/img_sokind_character.png" alt="쏘카인드 캐릭터" />
+                                    <p>다른 분들보다 고객 만족 서비스<br>평균 점수가 높아요 !</p>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="grade">
+                            <strong class="title">종합 등급 분포</strong>
+                            <div>
+                                <span class="txt">최근 한달 간 종합 등급 분포도 (2022년 5월 ~ 2022년 6월)</span>
+                                <div class="wrap_label"><span></span>전체평균<span></span>교육생</div>
+                            </div>
+                            <div class="wrap_prize">
+                                <div>
+                                    <img src="images/img_prize01.png" />
+                                    <strong>대상</strong>
+                                </div>
+                                <div>
+                                    <img src="images/icon_percent.png" />
+                                    <span>상위<em>4%</em></span>
+                                    <img src="images/icon_compare.png" />
+                                    <span><em>3위</em>(71명)</span>
+                                </div>
+                                <div class="graph_total_grade">
+                                    <div class="frame">
+                                        <div class="grade_value" role="progressbar" style="height: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <div class="grade_value" role="progressbar" style="height: 100%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <div class="grade_value" role="progressbar" style="height: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <span class="avg" style="bottom: 76%">평균 76점</span>
+                                        <hr style="height: calc(76% + 10px)">
+                                        <div class="grade_value" role="progressbar" style="height: 76%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <span class="student_txt" style="bottom: 20%">교육생</span>
+                                        <img src="images/icon_student.svg" class="student_img" style="bottom: 20%" />
+                                        <div class="grade_value student" role="progressbar" style="height: 20%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+                <section class="container wrap_grid">
+                    <section class="contents grid_01">
+                        <strong class="title">교육 역량 종합 분석도</strong>
+                        <div class="wrap_label"><span></span>전체평균<span></span>교육생</div>
+                        <div class="graph_radar">
+                            <canvas id="analysis_total" width="240" height="250"></canvas>
+                            <span>68</span> <!-- 스크립트 -->
+                            <span>60</span> <!-- 어꺠움직임 -->
+                            <span>80</span> <!-- 자세 -->
+                            <span>80</span> <!-- 시선분포 -->
+                            <span>75</span> <!-- 표정 -->
+                            <span>48</span> <!-- 억양 -->
+                        </div>
+                        <p class="txt">교육영상에서 스크립트, 억양, 표정, 시선분포, 자세, 어깨움직임의 평균을 그래프화 합니다. 각각의 분석항목들을 점수화하여 분포도가 넓은 면적을 나타낼수록 교육 중 안정적임을 나타냅니다. 항목 별 자세한 수치들은 [기본응대, 상황응대]에서 확인이 가능합니다.</p>
+                    </section>
+                    <section class="contents grid_02">
+                        <strong class="title">스크립트 일치율</strong>
+                        <div>
+                            <p class="txt">완료한 교육을 기반으로 도출된 결과</p>
+                            <div class="wrap_label"><span></span>전체평균<span></span>교육생</div>
+                        </div>
+                        <div class="wrap_script">
+                            <div>
+                                <strong class="sub_title">내용 인지도</strong>
+                                <div class="wrap_graph">
+                                    <div class="frame">
+                                        <div class="value student" role="progressbar" style="width: 75%;" aria-valuemin="0" aria-valuemax="100">상위25%</div>
+                                    </div>
+                                    <div class="frame">
+                                        <div class="value" role="progressbar" style="width: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="sub_title">어벽 멀리하기</strong>
+                                <div class="wrap_graph">
+                                    <div class="frame">
+                                        <div class="value student" role="progressbar" style="width: 80%;" aria-valuemin="0" aria-valuemax="100">상위20%</div>
+                                    </div>
+                                    <div class="frame">
+                                        <div class="value" role="progressbar" style="width: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="contents grid_03">
+                        <strong class="title">고객응대 퀄리티</strong>
+                        <img src="images/img_quality.png" />
+                        <p class="scroll">대체로 직원을 응대하는 태도가 아주 친절한 편으로 편안한 표정과 안정적인 음성으로 고객을 응대하고 있습니다. ‘긍정 에너지를 전파하는 입점인사’ 교육에서 기업의 고객 응대 매뉴얼과 100% 일치하는 문장을 구사하였으며 친절한 표정과 긍정적인 목소리를 보여주었습니다. 다른 직원의 평균 점수와 비교하였을 때 약 20% 높은 점수를 얻었습니다. 김친절 직원은 기업의 서비스직에서 필요로 하는 역량 중 친절함의 태도를 지녔다고 판단할 수 있습니다.</p>
+                    </section>
+                </section>
+                <section class="container wrap_flex">
+                    <section class="contents score">
+                        <strong class="title">교육별 평균 점수</strong>
+                        <div>
+                            <span class="txt">최근 한달 간 교육별 평균 점수 (2022년 5월 ~ 2022년 6월)</span>
+                            <div class="wrap_label"><span></span>전체평균<span></span>기본응대<span></span>상황응대</div>
+                        </div>
+                        <div>
+                            <div class="wrap_graph">
+                                <div class="respond_default respond">
+                                    <div class="frame">
+                                        <div class="value" role="progressbar" style="height: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <span style="bottom: 90%">90점</span>
+                                        <div class="value student" role="progressbar" style="height: 90%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="respond_situation respond">
+                                    <div class="frame">
+                                        <div class="value" role="progressbar" style="height: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="frame">
+                                        <span style="bottom: 100%">100점</span>
+                                        <div class="value student" role="progressbar" style="height: 100%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div><span class="label">기본응대</span><span class="label">상황응대</span></div>
+                            <p>
+                                한달 간 김친절님의 교육별 평균 점수 중 <em>기본응대는 15%</em> 높고, <em>상황응대는 약43%</em> 높습니다.
+                            </p>
+                        </div>
+                    </section>
+                    <section class="contents certificate">
+                        <div>
+                            <strong class="title">이수증 발급</strong>
+                            <select>
+                                <option>2022</option>
+                            </select>
+                        </div>
+                        <ul class="scroll">
+                            <li>01. 2022년 6월 <span class="unissued">미발급</span></li>
+                            <li>02. 2022년 5월 <span class="issued">발급</span></li>
+                            <li>03. 2022년 4월 <span class="issued">발급</span></li>
+                            <li>04. 2022년 3월 <span class="issued">발급</span></li>
+                            <li>05. 2022년 3월 <span class="issued">발급</span></li>
+                        </ul>
+                    </section>
+                </section>
+            </section>
+            <section class="footer">
+                http://sokind.kr/
+            </section>
+        </article>
+    </main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+/*  교육 역량 종합 분석도  */
+var analysis_total_chart = document.getElementById("analysis_total");
+var atChart = new Chart(analysis_total_chart, {
+    type: "radar",
+    data: {
+        labels: [
+            "시선분포",
+            "어깨각도",
+            "얼굴각도",
+            "어깨움직임",
+            "목소리톤",
+            "목소리속도",
+        ],
+        datasets: [
+        {
+            label: "전체평균",
+            data: [15, 20, 0, 10, 15, 100],
+            pointRadius: 0,
+            borderColor: "#5F4EEE",
+            backgroundColor: "#6967F91A",
+            fill: true,
+        },
+        {
+            label: "교육생",
+            data: [100, 100, 25, 1, 5, 30],
+            pointRadius: 0,
+            borderColor: "#FFAA30",
+            backgroundColor: "#FABF481A",
+            fill: true,
+        },
+        ],
+    },
+    options: {
+        responsive: false,
+        elements: {
+        line: {
+            tension: 0,
+            borderWidth: 1,
+        },
+        },
+        legend: {
+            display: false,
+        },
+        tooltips: {
+            enabled: false,
+        },
+        scale: {
+            pointLabels: {
+                fontSize: 0,
+                display: false,
+            },
+            angleLines: {
+                display: false,
+            },
+            gridLines: {
+                display: false,
+            },
+            ticks: {
+                beginAtZero: true,
+                min: 0,
+                max: 100,
+                stepSize: 100,
+                display: false,
+            },
+        },
+    },
+});
+
+</script>
+</html>

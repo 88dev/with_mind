@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        *{
+            box-sizing: border-box; 
+        }            
+        .que{
+            position: relative;
+            height: 22px;
+            margin-top: 8px;
+            cursor: pointer;
+            font-size: 11px;
+            color: #999999;
+            background: url(./icon_comment_gr.svg) no-repeat;
+            background-position: left center;
+            padding-left: 30px;
+        }
+        .que.on {
+            background: url(./icon_comment_gr.svg) no-repeat;
+            background-position: left center;
+            padding-left: 30px;
+        }
+        .que span > em {
+            display: inline-block;
+            background: url(./btn_dropdown_gr.svg) no-repeat;
+            width: 10px;
+            height: 10px;
+        }
+        .que.on span em {
+            background: url(./btn_dropup_gr.svg) no-repeat;
+        }
+        .que.new {
+            background: url(./icon_comment.svg) no-repeat;
+            background-size: 22px 22px;
+        }
+        .que.new.on {
+            background: url(./icon_comment.svg) no-repeat;
+            background-position: left center;
+            padding-left: 30px;
+        }
+        .que.new.on > span,
+        .que.new > span {
+            color: #0068ED;	
+        }
+        .que.new span > em {
+            background: url(./btn_dropdown.svg) no-repeat;
+        }
+        .que.new.on span > em {
+            background: url(./btn_dropup.svg) no-repeat;
+        }
+
+        .anw {
+            display: none;
+            overflow: hidden;
+            font-size: 14px;
+            background-color: #f4f4f2;
+            padding: 27px 0;
+        }
+    
+    </style>
+    
+    </head>
+    <body>
+        
+        <div id="wrap_comment">
+            <div class="que new">
+                <span>댓글 n <em></em></span>
+            </div>
+            <div class="anw">
+                <div class="writer">알바생<span>2022.03.03. 10:34</span></div>
+                <span>This is first answer.</span>
+            </div>
+        </div>
+    
+        <div id="wrap_comment">
+            <div class="que">
+                <span>댓글 n <em></em></span>
+            </div>
+            <div class="anw">
+                <div class="writer">알바생<span>2022.03.03. 10:34</span></div>
+                <span>This is first answer.</span>
+            </div>
+        </div>
+    
+    </body>
+    <script>
+
+        $(".que").click(function() {
+            $(this).next(".anw").stop().slideToggle(300);
+            $(this).toggleClass('on').siblings().removeClass('on');
+            $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
+        });
+
+    </script>
+
+</html>
