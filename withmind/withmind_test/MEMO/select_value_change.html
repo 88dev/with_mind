@@ -1,0 +1,36 @@
+
+<html>
+    <head>
+     <title></title>
+     <script language="JavaScript">
+    <!--
+    function Show_hidden(e){
+     var menu = new Array("test_1","test_2","test_3","test_4","test_5"); // 객체 배열로 지정
+     for(var i=0;i < menu.length;i++){
+      if("test_"+e==menu[i]){
+       document.all[menu[i]].style.display="block";
+      }else{
+       document.all[menu[i]].style.display="none";
+      }
+     }
+    }  
+    //-->
+    </script>
+    </head>
+   
+    <body>
+    <SELECT onchange="Show_hidden(this.value);">
+     <option value="1">1번 선택</option>
+     <option value="2">2번 선택</option>
+     <option value="3">3번 선택</option>
+     <option value="4">4번 선택</option>
+     <option value="5">5번 선택</option>
+    </SELECT>
+    <br>
+    <div id="test_1" style="display:block;">1번 메뉴를 선택했습니다.</div>
+    <div id="test_2" style="display:none;">2번 메뉴를 선택했습니다.</div>
+    <div id="test_3" style="display:none;">3번 메뉴를 선택했습니다.</div>
+    <div id="test_4" style="display:none;">4번 메뉴를 선택했습니다.</div>
+    <div id="test_5" style="display:none;">5번 메뉴를 선택했습니다.</div>
+    </body>
+   </html>

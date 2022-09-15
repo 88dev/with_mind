@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+    </head>
+
+    <div>
+        <label class="contentlabel"> 사용자 이메일 </label>
+        <input class="" id="email1" type="text" class="box"> @ 
+        <input class="" id="email2" type="text" class="box">
+        <select id="emailSelection" name="emailSelection">
+            <option value="1" selected="selected">직접입력</option>
+            <option value="gmail.com">gmail.com</option>
+            <option value="naver.com">naver.com</option>
+            <option value="hanmail.net">hanmail.net</option>
+        </select>
+
+        <button type="button" class="btn btn-success" id="sendContact">완료</button>
+
+        <button type="button" class="btn btn-warning" id="cancelContact" onclick="javascript:history.back()">취소</button>
+
+    </div>
+</html>
+
+<script>
+
+    $(document).ready(function(){
+        
+        $('select[name=emailSelection]').change(function() {
+            if($(this).val()=="1"){
+                $('#email2').val("");
+            } else {
+                $('#email2').val($(this).val());
+                $("#email2").attr("readonly", true);
+            }
+        });
+
+    });
+
+
+
+</script>
+
+
+<!-- 출처: https://postitforhooney.tistory.com/entry/JavaScript옵션에서-값-가져오기-Select-Option-자바-스크립트이메일-입력시 [PostIT] -->

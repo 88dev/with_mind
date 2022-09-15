@@ -1,0 +1,37 @@
+
+/* 새 글 표시 */
+.new_point {
+	background-image: url('../images/ico/orange_circle.svg');
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+.my_im {
+	padding-right: 10px;
+}
+
+.hidden_mymenu p.new_point {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.new_post {
+    display: inline-block; 
+    padding-right: 25px;
+    background-image: url(../images/ico/orange_new_icon.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+label.new_point {
+	background-position: top 10px right;
+}
+
+.tab_lst .new_point {
+    display: inline-block;
+    padding: 0 10px;
+    background-position: top 10px right;
+}
+
+
+/* .tab_2 - >.inq_lst */

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="icon_chevron_down" transform="translate(22) rotate(90)">
+    <g id="chevron-right">
+      <rect id="사각형_24790" data-name="사각형 24790" width="22" height="22" transform="translate(0 22) rotate(-90)" fill="#333" opacity="0"/>
+      <path id="패스_8174" data-name="패스 8174" d="M10.5,17a1,1,0,0,1-.71-1.71L13.1,12,9.92,8.69a1,1,0,1,1,1.42-1.41l3.86,4a1,1,0,0,1,0,1.4l-4,4A1,1,0,0,1,10.5,17Z" transform="translate(-1.054 -0.999)" fill="#333"/>
+    </g>
+  </g>
+</svg>

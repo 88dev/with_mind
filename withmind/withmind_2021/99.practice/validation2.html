@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 20px;
+            }
+
+            .input-container{
+                margin-bottom: 15px;
+                max-width: 300px;
+            }
+
+            .input-container[data-error] .input {
+                border-color: #c92432;
+                color: #c92432;
+                background: #FFFAFA;
+            }
+
+            .input-container[data-error]::after {
+                content: attr(data-error);
+                font-size: 0.85em;
+                color: #c92432;
+                display: block;
+                margin: 10px 0;
+            }
+
+            .input {
+                display: block;
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: background 0.2s, border 0.2s;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <div class="input-container" data-error="Sorry">
+            <input type="text" class="input" placeholder="Username" value="">
+        </div>
+
+        <div class="input-container">
+            <input type="password" class="input" placeholder="Password">
+        </div>
+
+        <div class="input-container">
+            <input type="password" class="input" placeholder="Confirm Password">
+        </div>
+
+        <script> 
+
+            document.querySelectorAll('.input-container[data-error] .input').forEach(inpE1 => {
+                inpE1.addEventListener('input', () => inpE1.parentElement.removeAttribute('data-error'));
+            });
+
+        </script> 
+    </body>
+</html>

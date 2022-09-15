@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/survey.css">
+    </head>
+    <body>
+        <section class="survey_background">
+            <section class="survey1 survey">
+                <button class="survey_close" onclick="survey_close();"><img src="images/btn-close-white.svg"></button>
+                <div class="survey_header">
+                    첫번째 면접이 끝났습니다. <br>
+                    아래의 질문에 답변 후 두번째 면접을 진행해보세요.
+                </div>
+                <div class="survey_body">
+                    <div class="survey_question">
+                        <p class="survey_q">1. 최상의 컨디션으로 답변을 진행했다고 생각하나요?</p>
+                        <span class="survey_a">
+                            <button class="survey_answer1">예</button>
+                            <button class="survey_answer1">아니요</button>
+                        </span>
+                    </div>
+                    <div class="survey_question">
+                        <p class="survey_q">2. 면접 진행 중 60초의 답변시간이 짧다고 느껴졌었나요?</p>
+                        <span class="survey_a">
+                            <button class="survey_answer2">예</button>
+                            <button class="survey_answer2">아니요</button>
+                        </span>
+                    </div>
+                    <div class="survey_question">
+                        <p class="survey_q">3. 질문에 당황하지 않고 잘 답변했나요?</p>
+                        <span class="survey_a">
+                            <button class="survey_answer3">예</button>
+                            <button class="survey_answer3">아니요</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="survey_footer">
+                    <button class="submit">완료</button>
+                </div>
+            </section>
+        </section>
+    </body>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        $( document ).ready(function() {
+			$('.survey').show();	
+
+           
+		});
+		
+		function survey_close() {
+		 	$('.survey').hide();	
+        }
+
+        $('button.survey_answer1').on('click', function(){
+            $('button.survey_answer1').removeClass('selected');
+            $(this).addClass('selected');
+        });
+        $('button.survey_answer2').on('click', function(){
+            $('button.survey_answer2').removeClass('selected');
+            $(this).addClass('selected');
+        });
+        $('button.survey_answer3').on('click', function(){
+            $('button.survey_answer3').removeClass('selected');
+            $(this).addClass('selected');
+        });
+        
+    </script>
+</html>

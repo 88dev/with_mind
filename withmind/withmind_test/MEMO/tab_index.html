@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            /* .tab_box {
+                width: 500px;
+                margin: 20px auto;
+            } */
+
+            .tabs {
+                display: contents;
+            }
+
+            .tabs a {
+                list-style: none;
+                float: left;
+                width: calc(100%/3);
+                height: 45px;
+                line-height: 45px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 16px;
+                color: #999999;
+                border-bottom: 2px solid #DDDDDD;
+            }
+
+            .tabs a.block {
+                color: #5F4EEE;
+                font-weight: bold;
+                border-bottom: 2px solid #5F4EEE;
+                background: #FFF;
+            }
+
+            .tab_cont {
+                clear: both;
+                width: 387px;
+            }
+
+            .info-page {
+                display: none;
+                padding-top: 58px;
+            }
+
+            .info-page.block {
+                display: block;
+            }
+
+            
+
+           
+
+        </style>
+    </head>
+    <body>
+        <div class="tab_box">
+
+            <div class="tabs">
+                <a class="block">AI 모의면접</a>
+                <a>AI 기업면접</a>
+                <a>AI 화상면접 <s>N</s></a>
+            </div>
+
+            <!-- <div class="tab_cont"> -->
+                <div class="block info-page pri">
+                    pri
+                    <ul>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-conversation.svg" alt="">
+                            </div>
+                            <p class="tit">면접현황</p>
+                            <p class="txt">누적/당월/당일<s>(건)</s></p>
+                            <p class="count">999/999/999</p>
+                            <a href="" class="on">AI 모의면접<br><s>계약리스트</s></a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-handshake.svg" alt="">
+                            </div>
+                            <p class="tit">계약현황</p>
+                            <p class="txt">잔여/계약<s>(건)</s></p>
+                            <p class="count">999/999</p>
+                            <a href="">AI 모의면접<br><s>지원자관리</s></a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-coin.svg" alt="">
+                            </div>
+                            <p class="tit">결제내역</p>
+                            <p class="txt">PRI 프리미엄 12개월</p>
+                            <p class="count">99,999<s>(원)</s></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-page biz">
+                    biz
+                    <ul>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-conversation.svg" alt="">
+                            </div>
+                            <p class="tit">면접현황</p>
+                            <p class="txt">누적/당월/당일<s>(건)</s></p>
+                            <p class="count">999/999/999</p>
+                            <a href="" class="on">AI 기업면접<br><s>공고등록</s></a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-handshake.svg" alt="">
+                            </div>
+                            <p class="tit">계약현황</p>
+                            <p class="txt">잔여/계약<s>(건)</s></p>
+                            <p class="count">999/999</p>
+                            <a href="">AI 기업면접<br><s>공고리스트</s></a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-coin.svg" alt="">
+                            </div>
+                            <p class="tit">결제내역</p>
+                            <p class="txt">BIZ 스페셜 101 TO 1000</p>
+                            <p class="count">38,822,200<s>(원)</s></p>
+                            <a href="">AI 기업면접<br><s>지원자관리</s></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-page uni">
+                    uni
+                    <ul>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-conversation.svg" alt="">
+                            </div>
+                            <p class="tit">면접현황</p>
+                            <p class="txt">누적/당월/당일<s>(건)</s></p>
+                            <p class="count">999/999/999</p>
+                            <a href="" class="on">AI 화상면접<br><s>공고등록</s></a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-handshake.svg" alt="">
+                            </div>
+                            <p class="tit">계약현황</p>
+                            <p class="txt">잔여/계약<s>(건)</s></p>
+                            <p class="count">999/999</p>
+                            <a href="">AI 화상면접<br><s>공고리스트</s></a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="img/img-coin.svg" alt="">
+                            </div>
+                            <p class="tit">결제내역</p>
+                            <p class="txt">UIN 베이직 1 TO 100</p>
+                            <p class="count">98,000<s>(원)</s></p>
+                            <a href="">AI 화상면접<br><s>지원자관리</s></a>
+                        </li>
+                    </ul>
+                </div>
+            <!-- </div> -->
+        </div>
+
+        
+        <!-- <div class="tab_box">
+            <ul class="tab_title">
+                <li class="on">기본정보수정</li>
+                <li>담당자 정보 수정</li>
+                <li>회원탈퇴신청</li>
+            </ul>
+            <div class="tab_cont">
+                <div class="on">
+                    기본정보수정 111111
+                </div>
+                <div>
+                    담당자 정보 수정 2222
+                </div>
+                <div>
+                    회원탈퇴신청 3333
+                </div>
+            </div>
+        </div> -->
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".tabs a").click(function() {
+                var idx = $(this).index();
+                $(".tabs a").removeClass("block");
+                $(".tabs a").eq(idx).addClass("block");
+                $(".tab_cont > div").hide();
+                $(".tab_cont > div").eq(idx).show();
+            });
+        });
+    </script>
+</html>

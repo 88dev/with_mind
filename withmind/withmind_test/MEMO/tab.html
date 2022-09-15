@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style> 
+            
+            /* ##############comInterview_contents################## */
+
+            li {
+                list-style: none;
+            }
+
+            #tab .group {
+                border: 1px solid #DCDCDC;
+                padding: 20px 53px 110px;
+            }
+
+            #tab .tab_lst {
+                display: flex;
+                padding: 0;
+            }
+
+            #tab .tab_lst::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            #tab .tab_lst>li {
+                float: left;
+                flex: 1;
+            }
+
+            #tab .tab_lst>li>a {
+                display: block;
+                height: 45px;
+                line-height: 45px;
+                background: transparent;
+                font-size: 16px;
+                font-weight: normal;
+                color: #333333;
+                text-align: center;
+                border: 1px solid #D1D1D1;
+                border-bottom: 1px solid #0066FF;
+                text-decoration: none;
+            }
+
+            #tab .tab_lst>li.on>a {
+                background: transparent;
+                color: #0066FF;
+                opacity: 1;
+                border: 1px solid #0066FF;
+                border-bottom: none;
+            }
+
+            #tab .group>div {
+                width: 100%;
+                background: transparent;
+                color: #111;
+                text-align: left;
+                display: none;
+            }
+            
+            #tab .group>div.on {
+                display: block;
+            }
+
+            #tab .group .on section {
+                margin-bottom: 30px;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <section id="tab">
+            <ul class="tab_lst">
+                <li class="on"><a href="">전체</a></li>
+                <li><a href="">면접관리</a></li>
+                <li><a href="">통계</a></li>
+                <li><a href="">관리자관리</a></li>
+                <li><a href="">기타</a></li>
+            </ul>
+            <div class="group">
+                <div class="tab_1 on">
+                    <section>
+                        <table>
+                            <tr>
+                                <th>NO</th>
+                                <th>분류</th>
+                                <th>제목</th>
+                                <th>등록일</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>기타</td>
+                                <td><a href="#">[회원정보] 회원탈퇴는 어떻게 하나요?</a></td>
+                                <td>2020-05-01</td>
+                            </tr>
+                        </table>
+                    </section>
+                </div>
+                <div class="tab_2">					
+                    <section>
+                        tab2
+                    </section>
+                </div>
+                <div class="tab_3">	
+                    <section>
+                        tab3
+                    </section>	
+                </div>
+                <div class="tab_4">	
+                    <section>
+                        tab4
+                    </section>	
+                </div>
+                <div class="tab_5">	
+                    <section>
+                        tab5
+                    </section>	
+                </div>
+            </div>
+        </section>
+
+
+    </body>
+    <script>
+
+        /* 탭 변경 */
+		$(function() { 
+			 $(document).on("click", "#tab ul li", function() {
+				var $this=$(this).index();
+				/* console.log($this); */
+				$(".tab_lst").children("li").not($this).removeClass("on");
+				$(".tab_lst").children("li").eq($this).addClass("on");
+				
+				$(".group").children("div").not($this).removeClass("on");
+				$(".group").children("div").eq($this).addClass("on");
+			 });
+		}); 
+
+        //탭메뉴
+        (function($){
+
+            $.defaults = {
+                active_class : "active"
+            }
+
+            $.fn.myTab = function(opt){
+                option = $.extend({}, $.defaults, opt);
+                new Tab(this, option);
+                return this;
+            }
+
+            function Tab(selector, option){       
+                this.init(selector, option);
+                this.bindingEvent();
+            }
+
+            Tab.prototype.init= function(selector, option){
+                this.opt = option;
+                this.frame = selector;
+                this.btns = this.frame.find("ul>li");
+                this.boxs = this.frame.find("div>div");
+            }
+
+            Tab.prototype.bindingEvent = function(){   
+                var self = this;
+                
+                self.btns.on("click", function(e){
+                        e.preventDefault();    
+                        var i = $(this).index();
+                        self.activation(i);   
+                });
+            }
+
+            Tab.prototype.activation= function(index){
+                this.btns.removeClass(this.opt.active_class);
+                this.btns.eq(index).addClass(this.opt.active_class);
+
+                this.boxs.removeClass(this.opt.active_class);
+                this.boxs.eq(index).addClass(this.opt.active_class);
+            }
+        })(jQuery);
+
+        $(document).ready(function(){
+            $("#tab").myTab({
+                    active_class : "on"
+            });
+        });
+
+    </script>
+
+
+</html>

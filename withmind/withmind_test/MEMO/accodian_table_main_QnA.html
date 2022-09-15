@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            table.main_qna {
+                width: 645px;
+            }
+
+            table.main_qna section .div_wrapper {
+                position: relative;
+                padding: 10px 0;
+                box-sizing: border-box;
+            }
+
+            table.main_qna section .div_wrapper > div:nth-child(1) {
+                float: left;
+            }
+
+            table.main_qna section .div_wrapper > div:nth-child(2) {
+                float: right;
+            }
+
+            table.main_qna section .div_wrapper > div span p {
+                margin: 0;
+                color: #333333;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            table.main_qna section .slideToggle_p {
+                display: block;
+                border-top: 1px solid #DDDDDD;
+                width: 100%;
+                height: auto;
+                padding: 20px;
+                font-size: 16px;
+                box-sizing: border-box;
+                line-height: 25px;
+            }
+
+            table.main_qna section .slideToggle_p h4 {
+                font-weight: bold;
+                color: #000;
+            }
+
+            table.main_qna section .div_wrapper > div:nth-child(1) span {
+                cursor: pointer;
+            }
+
+            table.main_qna section .div_wrapper > div:nth-child(1) span:first-child {
+                display: inline-block;
+                color: #5F4EEE;
+                margin-right: 8px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            table.main_qna section .div_wrapper > div:nth-child(1) span:last-child {
+                display: inline-block;
+            }
+
+            table.main_qna section .div_wrapper > div:nth-child(2) button {
+                display: inline-block;
+                border: none;
+                background: transparent;
+            }
+
+            table.main_qna section .div_wrapper > div:nth-child(2) button::after {
+                content: "";
+                display: inline-block;
+                background: url("./images/icon_chevron_down.svg") no-repeat center;
+                width: 15px;
+                height: 10px;
+            }
+
+            table.main_qna section .div_wrapper > div:nth-child(2) button.up::after {
+                content: "";
+                display: inline-block;
+                background: url("./images/icon_chevron_up.svg") no-repeat center;
+                width: 15px;
+                height: 10px;
+            }
+
+
+            table.main_qna section .div_wrapper::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+    
+        </style>
+    
+    </head>
+    <body>
+        
+        <table class="main_qna">
+            <tr>
+                <td>
+                    <section>
+                        <section class="div_wrapper">
+                            <div data-read="Y" data-index='+data.inKey+'><span>Q.</span><span><p>이용방법이용방법</p></span></div>
+					        <div><button class="toggle_a"></button></div>
+                        </section>
+                        <div class="slideToggle_p none">
+                            <section>
+                                <div>
+                                    afsdadsf<br>
+                                    asdfadffad
+                                </div>
+                            </section>
+                        </div> 
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <section>
+                        <section class="div_wrapper">
+                            <div data-read="Y" data-index='+data.inKey+'><span>Q.</span><span><p>이용방법이용방법</p></span></div>
+					        <div><button class="toggle_a"></button></div>
+                        </section>
+                        <div class="slideToggle_p none">
+                            <section>
+                                <div>
+                                    afsdadsf<br>
+                                    asdfadffad
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+    <script>
+         $(document).ready(function(){
+            $('.slideToggle_p').hide();
+            $('.div_wrapper').on('click',function(){
+                $(this).parent().find('.slideToggle_p').stop().slideToggle("fast");
+                $(this).children().find('.toggle_a').toggleClass('up');
+            });
+        });
+
+
+    </script>
+
+</html>

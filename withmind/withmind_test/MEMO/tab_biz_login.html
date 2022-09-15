@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            /* .tab_box {
+                width: 500px;
+                margin: 20px auto;
+            } */
+
+            .tab_title {
+                display: contents;
+            }
+
+            .tab_title li {
+                list-style: none;
+                float: left;
+                width: 194px;
+                height: 45px;
+                line-height: 45px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 16px;
+                color: #999999;
+                border: 1px solid #DDDDDD;
+                border-bottom: 1px solid #5F4EEE;
+                background: #FAFAFA 0% 0% no-repeat padding-box;
+            }
+
+            .tab_title li.on {
+                color: #5F4EEE;
+                font-weight: bold;
+                border: 1px solid #5F4EEE;
+                border-bottom: none;
+                background: #FFF;
+            }
+
+            .tab_cont {
+                clear: both;
+                width: 387px;
+            }
+
+            .tab_cont > div {
+                display: none;
+                padding-top: 58px;
+            }
+
+            .tab_cont div .id_pw_title {
+                font-weight: 500;
+                font-size: 16px;
+                color: #333333;
+            }
+
+            .tab_cont > div.on {
+                display: block;
+            }
+
+            .tab_cont > div input {
+                width: 387px;
+                height: 50px;
+                box-sizing: border-box;
+                padding-left: 10px;
+            }
+
+            .tab_cont > div input:focus {
+                border: 1px solid #5F4EEE;
+                outline: 0 none;
+            }
+
+            .tab_cont > div div,
+            .tab_cont > div input {
+                margin: 5px 0;
+            }
+
+            .error_txt {
+                display: block;
+                font-size: 14px;
+                color: #EF3454;
+            }
+
+            .login_option {
+                padding-top: 25px;
+            }
+
+            .login_check,
+            .login_btn {
+                display: inline-block;
+            }
+
+            .login_check input {
+                display: none; 
+            }
+
+            input[type=checkbox] + label {
+                display: inline-block;
+                cursor: pointer;
+                padding-left: 25px;
+                height: 16px;
+                font-size: 14px;
+                line-height: 15px;
+                background: url(images/checkbox-none.svg) left/16px no-repeat;
+            }
+
+            input[type=checkbox]:checked + label {
+                background-image: url(images/checkbox.svg);
+                background-repeat: no-repeat;
+                background-size: 16px;
+            }
+
+            .login_option .login_btn {
+                float: right;
+            }
+
+            .login_option .login_btn a {
+                font-size: 14px;
+                color: #333333;
+                text-decoration: none;
+                margin-left: 10px;
+            }
+
+            .go_login {
+                background: #5F4EEE 0% 0% no-repeat padding-box;
+                width: 387px;
+                height: 50px;
+                color: #FFF;
+                font-size: 20px;
+                margin-top: 20px;
+                border: none;
+                outline: none;
+            }
+
+            .no_member {
+                color: #666666;
+                font-size: 14px;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .no_member a {
+                color: #5F4EEE;
+                margin-left: 5px;
+                text-decoration: underline;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="tab_box">
+            <ul class="tab_title">
+                <li class="on">개인회원</li>
+                <li>기업회원</li>
+            </ul>
+            <div class="tab_cont">
+                <div class="on">
+                    <div>(개인회원 구분용)</div>
+                    <div class="id_pw_title">아이디</div>
+                    <input type="text" class="id_input">
+                    <span class="error_txt">아이디를 입력해주세요.</span>
+                    <div class="id_pw_title">비밀번호</div>
+                    <input type="password" class="pw_input">
+                    <span class="error_txt">비밀번호를 입력해주세요.</span>
+                    <span class="error_txt">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</span>
+                    <div class="login_option">
+                        <div class="login_check">
+                            <input data-index="" type="checkbox" id="id_remember" name="" value="">
+                            <label for="id_remember">이메일 기억</label>
+                        </div>
+                        <div class="login_btn">
+                            <a href="#">아이디 찾기</a>
+                            <a href="#">비밀번호 찾기</a>
+                        </div>
+                    </div>
+                    <button class="go_login">로그인</button>
+                    <p class="no_member">아직 IM 회원이 아니세요?<a>회원가입</a></p>
+                </div>
+                <div>
+                    <div>(기업회원 구분용)</div>
+                    <div class="id_pw_title">아이디</div>
+                    <input type="text" class="id_input">
+                    <span class="error_txt">아이디를 입력해주세요.</span>
+                    <div class="id_pw_title">비밀번호</div>
+                    <input type="password" class="pw_input">
+                    <span class="error_txt">비밀번호를 입력해주세요.</span>
+                    <span class="error_txt">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</span>
+                    <div class="login_option">
+                        <div class="login_check">
+                            <input data-index="" type="checkbox" id="id_remember" name="" value="">
+                            <label for="id_remember">이메일 기억</label>
+                        </div>
+                        <div class="login_btn">
+                            <a href="#">아이디 찾기</a>
+                            <a href="#">비밀번호 찾기</a>
+                        </div>
+                    </div>
+                    <button class="go_login">로그인</button>
+                    <p class="no_member">아직 IM 회원이 아니세요?<a>회원가입</a></p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".tab_title li").removeClass("on");
+                $(".tab_title li").eq(idx).addClass("on");
+                $(".tab_cont > div").hide();
+                $(".tab_cont > div").eq(idx).show();
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            .wrap_tab {
+                
+            }
+            .tab_title {
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+            .tab_title li {
+                list-style: none;
+                float: left;
+                flex: 1;
+                padding: 10px 15px;
+                cursor: pointer;
+                text-align: center;
+                border: 1px solid #bebebe;
+            }
+            .tab_title li.on {
+                background-color: #ffb715;
+            }
+            .tab_cont {
+                clear: both;
+                border: 1px solid #dedede;
+                height: 130px;
+                background-color: #cecece;
+            }
+            .tab_cont section {
+                display: none;
+            }
+            .tab_cont section.on {
+                display: block;
+            }
+            .tab_select {
+                display: none;
+            }
+            @media (max-width: 500px) {
+                .tab_title {
+                    display: none;
+                }
+                .tab_select {
+                    display: block;
+                    width: 100%;
+                    height: 60px;
+                    padding-left: 20px;
+                    font-size: 18px;
+                    border-radius: 4px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="wrap_tab tab_name">
+            <ul class="tab_title">
+                <li class="on">tab1</li>
+                <li>tab2</li>
+                <li>tab3</li>
+            </ul>
+            <select class="tab_select" id="tab_select" onchange="changeSelect()">
+                <option value="0">#자기소개</option>
+                <option value="1">#인생의 목표</option>
+                <option value="2">#직무관련 경험</option>
+            </select>
+            <section class="tab_cont">
+                <section class="on">
+                    tab1_content
+                </section>
+                <section>
+                    tab2_content
+                </section>
+                <section>
+                    tab3_content
+                </section>
+            </section>
+        </section>
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".tab_title li").click(function() {
+                const idx = $(this).index();
+                
+                $(".tab_title li").removeClass("on");
+                $(".tab_title li").eq(idx).addClass("on");
+                $(".tab_cont > section").hide();
+                $(".tab_cont > section").eq(idx).show();
+            });
+        });
+        function changeSelect(){  
+            const tabSelect = document.getElementById("tab_select");  
+            const idx = tabSelect.options[tabSelect.selectedIndex].value;  
+            
+            $(".tab_title li").removeClass("on");
+            $(".tab_title li").eq(idx).addClass("on");
+            $(".tab_cont > section").hide();
+            $(".tab_cont > section").eq(idx).show();
+        }
+
+    </script>
+</html>

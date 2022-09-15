@@ -1,0 +1,211 @@
+<script src="js/jquery-3.4.1.min.js"></script>
+
+
+<style>
+    
+        /*card input file images url css*/
+        /* .filebox_cr input[type="file"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        border: 1px solid #E8EAEF;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        }
+
+        .filebox_cr label {
+        width: 70px;
+        text-align: center;
+        display: inline-block;
+        padding: .5em .75em;
+        font: normal 14px/19px 'Noto Sans';
+        color: #fff;
+        line-height: normal;
+        vertical-align: middle;
+        cursor: pointer;
+        background: #2644C5 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        }
+
+        .filebox_cr label:hover {
+        width: 70px;
+        text-align: center;
+        display: inline-block;
+        padding: .5em .75em;
+        font: normal 14px/19px 'Noto Sans';
+        color: #fff;
+        line-height: normal;
+        vertical-align: middle;
+        cursor: pointer;
+        background: #193095 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        } */
+
+        /* named upload */
+        .filebox_cr .upload-name_cr {
+        margin-right: 5px;
+        width: 208px;
+        display: inline-block;
+        padding: .5em .75em;
+        margin-bottom: 3px;
+        /* label의 패딩값과 일치 */
+        font-size: inherit;
+        font-family: inherit;
+        line-height: normal;
+        vertical-align: middle;
+        background-color: #fff;
+        border: 1px solid #E8EAEF;
+        -webkit-appearance: none;
+        /* 네이티브 외형 감추기 */
+        -moz-appearance: none;
+        appearance: none;
+        }
+
+        /*card input file images url css*/
+        .filebox input[type="file"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        border: 1px solid #E8EAEF;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        }
+
+        .filebox label {
+        width: 70px;
+        text-align: center;
+        display: inline-block;
+        /* padding: .5em .75em; */
+        padding: 7.5xp 20px;
+        font: normal 14px/19px 'Noto Sans';
+        color: #fff;
+        line-height: normal;
+        vertical-align: middle;
+        cursor: pointer;
+        background: #F4A100 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        }
+
+        .filebox label:hover {
+        width: 70px;
+        text-align: center;
+        display: inline-block;
+        /* padding: .5em .75em; */
+        padding: 7.5xp 20px;
+        font: normal 14px/19px 'Noto Sans';
+        color: #fff;
+        line-height: normal;
+        vertical-align: middle;
+        cursor: pointer;
+        background: #ce8c0c 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        }
+
+        /* named upload */
+        .filebox .upload-name {
+        margin: 3px 5px;
+        width: 290px;
+        display: inline-block;
+        padding: .4em .75em;
+        /* label의 패딩값과 일치 */
+        font-size: inherit;
+        font-family: inherit;
+        line-height: normal;
+        vertical-align: middle;
+        background-color: #fff;
+        border: 1px solid #E8EAEF;
+        -webkit-appearance: none;
+        /* 네이티브 외형 감추기 */
+        -moz-appearance: none;
+        appearance: none;
+        }
+
+
+        .btn-wrapper {
+            font-family: 'Veranda', sans-serif;
+        }
+
+        .btn-file {
+            padding: 7.5px 15px;
+            background-color: #fd8907;
+            border-radius: 3px;
+            color: #fff;
+            margin-right: 8px;
+            margin-top: -2px;
+        }
+
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+
+        .btn-file span {
+            display: block;
+            color: #777;
+        }
+
+        .delete-btn {
+            background: #d9dee5 0% 0% no-repeat padding-box;
+            color: #333;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 8px 24px;
+        }
+
+        .delete-btn:hover {
+            background: #b4c0d1;
+        }
+
+</style>
+
+
+<!-- <div class="fileContainer"> -->
+    <div class="fileContainer" data-activity-template="true" data-activity="1">
+         <div class="filebox fileUpload-padding"> 
+             <label class="btn-file">파일선택
+                 <input type="file" name="file" id="customFile" class="file-input-custom">
+             </label>
+             <input class="upload-name file-label-wrapper" disabled="disabled"> 
+         <button type="button" value="삭제" class="delete-btn file-delete-btn display-inlineblock">삭제</button>
+         </div>
+     </div>
+<!-- </div> -->
+
+<script>
+
+    $(document).on('change', '#customFile', function () {
+        var $this = $(this);
+        var fileName = this.files[0] ? this.files[0].name : '';
+        var fileSize = this.files[0].size;
+        var fileLabelWrapper = $('.file-label-wrapper');	
+        if ((file = this.files[0])) {
+            var ext = fileName.slice(fileName.lastIndexOf(".") + 1).toLowerCase();	   
+            if (!(ext == "gif" || ext == "jpg" || ext == "png" || ext == "jpeg")) {
+                $this.val("");
+                alert("이미지파일 (.jpg, .jpeg, .png, .gif ) 만 업로드 가능합니다.");		  
+            }else if(fileSize > maxSize){		
+                $this.val("");
+                alert("첨부파일 사이즈는 700kbyte 이내로 등록 가능합니다. ");
+            }else{
+                fileLabelWrapper.val(fileName);
+            }
+        }
+    })
+</script>

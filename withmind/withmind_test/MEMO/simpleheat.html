@@ -1,0 +1,65 @@
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/simpleheat.js"></script>
+<script src="js/data.js"></script>
+
+<style>
+    body { text-align: center; font: 16px/1.4 "Helvetica Neue", Arial, sans-serif; }
+    a { color: #0077ff; }
+    .container { width: 320px; height: 240px; margin: 0 auto; position: relative; border: 1px solid #ccc; }
+    .options { position: absolute; top: 0; right: 0; padding: 10px; background: rgba(255,255,255,0.6);
+        border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; line-height: 1; }
+    .options input { width: 200px; }
+    .options label { width: 60px; float: left; text-align: right; margin-right: 10px; color: #555; }
+    .ghbtns { position: relative; top: 4px; margin-left: 5px; }
+</style>
+
+<div class="container">
+    <!-- <div class="options">
+        <label>Radius </label><input type="range" id="radius" value="10" min="10" max="50"><br>
+        <label>Blur </label><input type="range" id="blur" value="50" min="10" max="50">
+    </div> -->
+    <canvas id="canvas" width="202" height="186"></canvas>
+</div>
+
+
+<script>
+
+    window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                                   window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    
+    function get(id) {
+        return document.getElementById(id);
+    }
+    
+    var heat = simpleheat('canvas').data(data).max(18),
+        frame;
+    
+    function draw() {
+        // console.time('draw');
+        heat.draw();
+        // console.timeEnd('draw');
+        frame = null;
+    }
+
+    heat.radius(10, 25);
+    // heat.gradient({0: '#D1E6F9', 0.5: '#82BAEE', 1: '#1980DE'});
+    
+    draw();
+    
+    // get('canvas').onmousemove = function (e) {
+    //     heat.add([e.layerX, e.layerY, 1]);
+    //     frame = frame || window.requestAnimationFrame(draw);
+    // };
+    
+    // var radius = get('radius'),
+    //     blur = get('blur'),
+    //     changeType = 'oninput' in radius ? 'oninput' : 'onchange';
+    
+    // radius[changeType] = blur[changeType] = function (e) {
+        //heat.radius(10, 50);
+        // frame = frame || window.requestAnimationFrame(draw);
+    // };
+
+    // heat.gradient({0: '#0000ff', 0.5: '#00ff00', 1: '#ff0000'});
+    
+    </script>

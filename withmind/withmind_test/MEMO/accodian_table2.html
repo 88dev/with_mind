@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+    
+            section .div_wrapper {
+                position: relative;
+                border-bottom: 1px solid #DDDDDD;
+                font-size: 14px;
+            }
+
+            table tr:first-child td section .div_wrapper { 
+                border-top: 1px solid #DDDDDD;
+            }
+
+            section .div_wrapper > div:nth-child(1) {
+                float: left;
+                padding-left: 20px;
+            }
+
+            section .div_wrapper > div:nth-child(2) {
+                float: right;
+                padding-right: 20px;
+            }
+
+            section .slideToggle_p {
+                display: block;
+                background-color: #FAFAFA;
+                width: 100%;
+                height: auto;
+                /* min-height: 300px; */
+                padding: 20px;
+                font-size: 14px;
+                box-sizing: border-box;
+                line-height: 25px;
+            }
+
+            section .slideToggle_p h4 {
+                /* font-size: 16px; */
+                font-size: 14px;
+                /* line-height: 22px; */
+                font-weight: bold;
+                color: #000;
+                /* margin-bottom: 20px; */
+            }
+
+            section .div_wrapper > div:nth-child(1) span {
+                cursor: pointer;
+            }
+
+            section .div_wrapper > div:nth-child(1) span:first-child {
+                display: inline-block;
+                /* color: #3B61D5; */
+                margin-right: 8px;
+                /* font-size: 17px; */
+                /* line-height: 22px; */
+                /* width: 100px; */
+            }
+
+            section .div_wrapper > div:nth-child(1) span:last-child {
+                display: inline-block;
+                /* font-size: 17px; */
+                /* line-height: 22px; */
+            }
+
+            section .div_wrapper > div:nth-child(2) span {
+                /* font-size: 17px; */
+                /* line-height: 22px; */
+                color: #707070;
+            }
+
+            section .div_wrapper > div:nth-child(2) button {
+                display: inline-block;
+                margin: -7px 0 0 20px;
+                padding: 5px;
+            }
+
+            section .div_wrapper > div:nth-child(2) button::after {
+                content: "";
+                display: inline-block;
+                background: url("../images/ico/icon-dropdown\ \(1\).svg") no-repeat right center;
+                width: 12px;
+                height: 7px;
+            }
+
+            section .div_wrapper > div:nth-child(2) button.up::after {
+                content: "";
+                display: inline-block;
+                background: url("../images/ico/icon-dropdown-more\ \(1\).svg") no-repeat right center;
+                width: 12px;
+                height: 7px;
+            }
+
+
+            section .div_wrapper::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+    
+        </style>
+    
+    </head>
+    <body>
+        
+        <table>
+            <tr>
+                <td>
+                    <section>
+                        <section class="div_wrapper">
+                            <div data-read="Y" data-index='+data.inKey+'><span>[이용방법]</span><span><p>이용방법이용방법</p></span></div>
+                        </section>
+                        <div class="slideToggle_p none">
+                            <section>
+                                <div>
+                                    afsdadsf<br>
+                                    asdfadffad
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <section>
+                        <section class="div_wrapper">
+                            <div data-read="Y" data-index='+data.inKey+'><span>[이용방법]</span><span><p>이용방법이용방법</p></span></div>
+                        </section>
+                        <div class="slideToggle_p none">
+                            <section>
+                                <!-- <div>
+                                    <h4>Q.<span>'+data.inSubject+'</span></h4>
+                                    <p><span>'+data.inContent+'</span></p>
+                                </div>
+                                <div>
+                                    <h4>A.<span>'+data.reSubject+'</span></h4>
+                                    <p><span>'+data.reContent+'</span></p>
+                                </div> -->
+                                <div>
+                                    afsdadsf<br>
+                                    asdfadffad
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+    <script>
+         $(document).ready(function(){
+            $('.slideToggle_p').hide();
+            $('.div_wrapper').on('click',function(){
+                $(this).parent().find('.slideToggle_p').stop().slideToggle("fast");
+                $(this).children().find('.toggle_a').toggleClass('up')
+                $(this).toggleClass('addBorder')
+            });
+        });
+
+
+    </script>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            .container {
+                width: 500px;
+                margin: 20px auto;
+            }
+
+            .tab_title li {
+                list-style: none;
+                float: left;
+                width: 100px;
+                padding: 10px 15px;
+                cursor: pointer;
+                text-align: center;
+                border: 1px solid #bebebe;
+            }
+
+            .tab_title li.on {
+                background-color: #ffb715;
+                font-weight: bold;
+            }
+
+            .tab_cont {
+                clear: both;
+                border: 1px solid #dedede;
+                height: 130px;
+                background-color: #cecece;
+            }
+
+            .tab_cont div {
+                display: none;
+                text-align: center;
+            }
+
+            .tab_cont div.on {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <ul class="tab_title">
+                <li class="on">tab1</li>
+                <li>tab2</li>
+                <li>tab3</li>
+            </ul>
+            <div class="tab_cont">
+                <div class="on">
+                    tab1_content
+                </div>
+                <div>
+                    tab2_content
+                </div>
+                <div>
+                    tab3_content
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".tab_title li").removeClass("on");
+                $(".tab_title li").eq(idx).addClass("on");
+                $(".tab_cont > div").hide();
+                $(".tab_cont > div").eq(idx).show();
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ul li를 select 처럼 만들기</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body{
+            padding:30px;
+            width: 500px;
+        }
+
+        ul { 
+            background: #FFFFFF;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            border: 1px #333333 solid;
+            padding: 0;
+            border-radius: 4px;
+        }
+        ul li { 
+            padding: 0 20px; 
+            z-index: 2; 
+            list-style: none; 
+        }
+        ul li:not(.init) { 
+            float: left; 
+            width: 100%; 
+            display: none; 
+            background: #FFFFFF; 
+        }
+        /* ul li:not(.init):hover, ul li.on:not(.init) { background: #09f; } */
+
+        li.init { cursor: pointer; }
+
+        a#submit { z-index: 1; }
+    </style>
+</head>
+<body>
+    <ul class="list-unstyled">
+        <li class="init">#자기소개</li>
+        <li data-value="value 1" class="on">#자기소개</li>
+        <li data-value="value 2">#인생의 목표</li>
+        <li data-value="value 3">#직무관련 경험</li>
+    </ul>
+    
+</body>
+<script>
+    $("ul").on("click", ".init", function() {
+        $(this).closest("ul").children('li:not(.init)').toggle();
+    });
+
+    var allOptions = $("ul").children('li:not(.init)');
+
+    $("ul").on("click", "li:not(.init)", function() {
+        allOptions.removeClass('on');
+        $(this).addClass('on');
+        $("ul").children('.init').html($(this).html());
+
+        allOptions.toggle();
+
+    });
+</script>
+</html>

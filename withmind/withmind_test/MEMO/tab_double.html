@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            
+            .main_tab_box {
+                margin-top: 30px;	
+            }
+
+            .main_tab_title {
+                display: contents;
+            }
+
+            .main_tab_title li {
+                list-style: none;
+                float: left;
+                width: calc(100%/2);
+                height: 45px;
+                line-height: 45px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 16px;
+                color: #999999;
+                border-bottom: 2px solid #DDDDDD;
+            }
+
+            .main_tab_title li.on {
+                color: #5F4EEE;
+                font-weight: bold;
+                border-bottom: 2px solid #5F4EEE;
+                background: #FFF;
+            }
+
+            .main_tab_cont {
+                clear: both;
+                /* width: 387px; */
+            }
+
+            .main_tab_cont > div {
+                display: none;
+                padding-top: 30px;
+                font-size: 14px;
+                text-align: left;
+            }
+
+            .main_tab_cont > div.on {
+                display: block;
+            }
+
+
+            .sub_tab_title {
+                display: contents;
+            }
+
+            .sub_tab_title li {
+                list-style: none;
+                float: left;
+                /* width: calc(100%/2); */
+                height: 45px;
+                line-height: 45px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 16px;
+                color: #999999;
+                border: 1px solid #DDDDDD;
+                box-sizing: border-box;
+            }
+
+            .sub_tab_title li:not(:first-child) {
+                margin-left: -1px;
+            }
+
+            .sub_tab_title li.on {
+                color: #FFFFFF;
+                border: 1px solid #5F4EEE;
+                background: #5F4EEE;
+            }
+
+            .sub_tab_cont {
+                clear: both;
+                /* width: 387px; */
+            }
+
+            .sub_tab_cont > div {
+                display: none;
+                padding-top: 30px;
+                font-size: 14px;
+                text-align: left;
+            }
+
+            .sub_tab_cont > div.on {
+                display: block;
+            }
+            .faq_tab_title li {
+                width: calc(100%/5);
+            }
+
+            .inq_tab_title li {
+                width: calc(100%/2);
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="main_tab_box">
+            <ul class="main_tab_title">
+                <li class="on">FAQ</li>
+                <li>1:1문의</li>
+            </ul>
+            <div class="main_tab_cont">
+                <div class="on">
+                    <!-- FAQ -->
+
+                    <div class="faq_tab_box sub_tab_box">
+                        <ul class="faq_tab_title sub_tab_title">
+                            <li class="on">베스트</li>
+                            <li>이용방법</li>
+                            <li>회원정보</li>
+                            <li>계약 • 결제서비스</li>
+                            <li>기타</li>
+                        </ul>
+                        <div class="faq_tab_cont sub_tab_cont">
+                            <div class="on">
+                                <!-- 베스트 -->
+                                베스트
+                                
+                            </div>
+                            <div>
+                                <!-- 이용방법 -->
+                                이용방법
+                            </div>
+                            <div>
+                                <!-- 회원정보 -->
+                                회원정보
+                            </div>
+                            <div>
+                                <!-- 계약 • 결제서비스 -->
+                                계약 • 결제서비스
+                            </div>
+                            <div>
+                                <!-- 기타 -->
+                                기타
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div>
+                    <!-- 1:1문의 -->
+                    <div class="inq_tab_box sub_tab_box">
+                        <ul class="inq_tab_title sub_tab_title">
+                            <li class="on">1:1문의하기</li>
+                            <li>1:1문의내역</li>
+                        </ul>
+                        <div class="inq_tab_cont sub_tab_cont">
+                            <div class="on">
+                                <!-- 1:1문의하기 -->
+                                            
+                                1:1문의하기
+                                
+                            </div>
+                            <div>
+                                <!-- 1:1문의내역 -->
+
+                                1:1문의내역
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".main_tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".main_tab_title li").removeClass("on");
+                $(".main_tab_title li").eq(idx).addClass("on");
+                $(".main_tab_cont > div").hide();
+                $(".main_tab_cont > div").eq(idx).show();
+            });
+            $(".faq_tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".faq_tab_title li").removeClass("on");
+                $(".faq_tab_title li").eq(idx).addClass("on");
+                $(".faq_tab_cont > div").hide();
+                $(".faq_tab_cont > div").eq(idx).show();
+            });
+            $(".inq_tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".inq_tab_title li").removeClass("on");
+                $(".inq_tab_title li").eq(idx).addClass("on");
+                $(".inq_tab_cont > div").hide();
+                $(".inq_tab_cont > div").eq(idx).show();
+            });
+        });
+    </script>
+</html>

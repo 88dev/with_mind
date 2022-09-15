@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            /* .tab_box {
+                width: 500px;
+                margin: 20px auto;
+            } */
+
+            .tab_title {
+                display: contents;
+            }
+
+            .tab_title li {
+                list-style: none;
+                float: left;
+                width: calc(100%/3);
+                height: 45px;
+                line-height: 45px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 16px;
+                color: #999999;
+                border-bottom: 2px solid #DDDDDD;
+            }
+
+            .tab_title li.on {
+                color: #5F4EEE;
+                font-weight: bold;
+                border-bottom: 2px solid #5F4EEE;
+                background: #FFF;
+            }
+
+            .tab_cont {
+                clear: both;
+                width: 387px;
+            }
+
+            .tab_cont > div {
+                display: none;
+                padding-top: 58px;
+            }
+
+            .tab_cont div .id_pw_title {
+                font-weight: 500;
+                font-size: 16px;
+                color: #333333;
+            }
+
+            .tab_cont > div.on {
+                display: block;
+            }
+
+            
+
+           
+
+        </style>
+    </head>
+    <body>
+        <div class="tab_box">
+            <ul class="tab_title">
+                <li class="on">기본정보수정</li>
+                <li>담당자 정보 수정</li>
+                <li>회원탈퇴신청</li>
+            </ul>
+            <div class="tab_cont">
+                <div class="on">
+                    기본정보수정 111111
+                </div>
+                <div>
+                    담당자 정보 수정 2222
+                </div>
+                <div>
+                    회원탈퇴신청 3333
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".tab_title li").removeClass("on");
+                $(".tab_title li").eq(idx).addClass("on");
+                $(".tab_cont > div").hide();
+                $(".tab_cont > div").eq(idx).show();
+            });
+        });
+    </script>
+</html>

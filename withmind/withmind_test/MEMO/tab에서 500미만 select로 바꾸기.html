@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            .im_tab_title {
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+            .im_tab_title li {
+                list-style: none;
+                float: left;
+                flex: 1;
+                padding: 10px 15px;
+                cursor: pointer;
+                text-align: center;
+                border: 1px solid #bebebe;
+            }
+            .im_tab_title li.on {
+                background-color: #ffb715;
+            }
+            .tab_cont {
+                clear: both;
+                border: 1px solid #dedede;
+                height: 130px;
+                background-color: #cecece;
+            }
+            .tab_cont section {
+                display: none;
+            }
+            .tab_cont section.on {
+                display: block;
+            }
+            .tab_select {
+                display: none;
+            }
+            @media (max-width: 500px) {
+                .im_tab_title {
+                    display: none;
+                }
+                .tab_select {
+                    display: block;
+                    width: 100%;
+                    height: 60px;
+                    padding-left: 20px;
+                    font-size: 18px;
+                    border-radius: 4px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="wrap_im_tab">
+            <ul class="im_tab_title">
+                <li class="on">tab1</li>
+                <li>tab2</li>
+                <li>tab3</li>
+            </ul>
+            <select class="tab_select" id="tab_select" onchange="changeSelect()">
+                <option value="0">#자기소개</option>
+                <option value="1">#인생의 목표</option>
+                <option value="2">#직무관련 경험</option>
+            </select>
+            <section class="tab_cont">
+                <section class="on im_cont im_introduce">
+                    <!-- 자기소개 -->
+                    자기소개 1
+                </section>
+                <section class="im_cont im_goals">
+                    <!-- 인생의 목표 -->
+                    인생의 목표2
+                </section>
+                <section class="im_cont im_job">
+                    <!-- 직무관련 경험 -->
+                    직무관련 경험 3
+                </section>
+            </section>
+        </section>
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".im_tab_title li").click(function() {
+                const idx = $(this).index();
+                
+                $(".im_tab_title li").removeClass("on");
+                $(".im_tab_title li").eq(idx).addClass("on");
+                $(".tab_cont .im_cont").hide();
+                $(".tab_cont .im_cont").eq(idx).show();
+            });
+        });
+        function changeSelect(){  
+            const tabSelect = document.getElementById("tab_select");  
+            const idx = tabSelect.options[tabSelect.selectedIndex].value;  
+            
+            $(".im_tab_title li").removeClass("on");
+            $(".im_tab_title li").eq(idx).addClass("on");
+            $(".tab_cont .im_cont").hide();
+            $(".tab_cont .im_cont").eq(idx).show();
+        }
+
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<head>
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+
+<div class="menu_box">
+    <ul class="off">
+        <li>
+            <span class="one_dapps dash_user" href="">
+                회원관리
+            </span>
+        </li>
+        <li><a class="two_dapps" href="${pageContext.request.contextPath}/member/general_list">일반회원관리</a></li>
+        <li><a class="two_dapps">휴면계정관리(X)</a></li>
+    </ul>
+    <ul class="off">
+        <li>
+            <span class="one_dapps dash_interview" href="">
+                면접관리
+            </span>
+        </li>
+        <li><a class="two_dapps" href="${pageContext.request.contextPath}/interview/im_list">IM 면접</a></li>
+    </ul>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $('.menu_box ul').on("click", function() {
+
+        
+        $('.menu_box ul .one_dapps').removeClass("on");
+        $('.menu_box ul').addClass("off");
+
+        $(this).find(".one_dapps").addClass("on");
+        $(this).removeClass("off");
+
+    });
+
+</script>

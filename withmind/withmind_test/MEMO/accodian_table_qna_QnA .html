@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <style>
+            table.qna_table {
+                width: 100%;
+            }
+
+            table.qna_table section .div_wrapper {
+                position: relative;
+                border-bottom: 1px solid #DDDDDD;
+                font-size: 14px;
+                padding: 10px 0;
+                box-sizing: border-box;
+            }
+
+            table.qna_table tr:first-child td section .div_wrapper { 
+                border-top: 1px solid #DDDDDD;
+            }
+
+            table.qna_table section .div_wrapper > div:nth-child(1) {
+                float: left;
+                padding-left: 20px;
+            }
+
+            table.qna_table section .div_wrapper > div:nth-child(2) {
+                float: right;
+                padding-right: 20px;
+            }
+
+            table.qna_table section .div_wrapper > div span p {
+                margin: 0;
+            }
+
+            table.qna_table section .slideToggle_p {
+                display: block;
+                background-color: #FAFAFA;
+                width: 100%;
+                height: auto;
+                padding: 20px;
+                font-size: 14px;
+                box-sizing: border-box;
+                line-height: 25px;
+            }
+
+            table.qna_table section .slideToggle_p h4 {
+                font-size: 14px;
+                font-weight: bold;
+                color: #000;
+            }
+
+            table.qna_table section .div_wrapper > div:nth-child(1) span {
+                cursor: pointer;
+            }
+
+            table.qna_table section .div_wrapper > div:nth-child(1) span:first-child {
+                display: inline-block;
+                margin-right: 8px;
+            }
+
+            table.qna_table section .div_wrapper > div:nth-child(1) span:last-child {
+                display: inline-block;
+            }
+
+            table.qna_table section .div_wrapper > div:nth-child(2) button {
+                display: inline-block;
+                border: none;
+                background: transparent;
+            }
+
+            table.qna_table section .div_wrapper > div:nth-child(2) button::after {
+                content: "";
+                display: inline-block;
+                background: url("./images/icon_chevron_down.svg") no-repeat center;
+                width: 15px;
+                height: 10px;
+            }
+
+            table.qna_table section .div_wrapper > div:nth-child(2) button.up::after {
+                content: "";
+                display: inline-block;
+                background: url("./images/icon_chevron_up.svg") no-repeat center;
+                width: 15px;
+                height: 10px;
+            }
+
+            table.qna_table section .div_wrapper::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+    
+        </style>
+    
+    </head>
+    <body>
+        
+        <table class="qna_table">
+            <tr>
+                <td>
+                    <section>
+                        <section class="div_wrapper">
+                            <div data-read="Y" data-index='+data.inKey+'><span>[이용방법]</span><span><p>이용방법이용방법</p></span></div>
+					        <div><button class="toggle_a"></button></div>
+                        </section>
+                        <div class="slideToggle_p none">
+                            <section>
+                                <div>
+                                    <!-- 내용 -->
+                                    afsdadsf<br>
+                                    asdfadffad
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <section>
+                        <section class="div_wrapper">
+                            <div data-read="Y" data-index='+data.inKey+'><span>[이용방법]</span><span><p>이용방법이용방법</p></span></div>
+					        <div><button class="toggle_a"></button></div>
+                        </section>
+                        <div class="slideToggle_p none">
+                            <section>
+                                <div>
+                                    <!-- 내용 -->
+                                    afsdadsf<br>
+                                    asdfadffad
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+    <script>
+         $(document).ready(function(){
+            $('.slideToggle_p').hide();
+            $('.div_wrapper').on('click',function(){
+                $(this).parent().find('.slideToggle_p').stop().slideToggle("fast");
+                $(this).children().find('.toggle_a').toggleClass('up');
+                // $(this).toggleClass('addBorder');
+            });
+        });
+
+
+    </script>
+
+</html>
