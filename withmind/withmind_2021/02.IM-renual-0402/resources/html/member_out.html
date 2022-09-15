@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="all" />
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+		<link rel="stylesheet" type="text/css" href="/resources/css/style.css"/>
+		<link rel="stylesheet" href="/resources/css/member_out.css">
+		<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="/resources/js/slick.min.js"></script>
+	<script src="/resources/js/common.js"></script>
+	<script src="/resources/js/front.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>IM</title>
+</head>
+<body>
+		<header id="header"></header>
+		<div id="container">
+			<div class="member_out_zone">
+				<div class="out_top clear">
+					<h2>회원탈퇴</h2>
+					<p>
+						<span>홈 > MY IM ></span>
+						<em>내정보관리</em>
+					</p>
+				</div>
+				<div class="out_area">
+					<div class="out_wrap">				
+						<section>
+							<span>회원탈퇴 시 유의사항</span>
+						</section>
+						<section>
+							<span>1. 회원탈퇴 시 사용하신 아이디와 이메일은 재사용 및 복구가 불가능합니다.</span>
+							<span>2. 회원탈퇴 시 모든 개인서비스 이용기록은 삭제되며 복구가 불가능합니다.</span>
+							<span>3. 문의 글 등 게시판 형태의 기록은 자동삭제가 되지 않으며, 탈퇴 후 삭제할 수 없습니다.</span>
+							<span>4. 회원탈퇴 시 면접영상 / 분석결과를 포함한 모든 서비스 기록을 삭제합니다.</span>
+						</section>
+					</div>
+					<div class="out_agree">
+						<label for=""><input type="checkbox">위 내용을 모두 숙지하였으며, 이에 동의합니다.</label>
+						<span>* 탈퇴 안내를 확인하고 동의해주세요.</span>
+					</div>
+					<div class="out_btn">
+						<a href="">취소</a>
+						<a href="#none" onclick="crayBtn2();">탈퇴하기</a>
+					</div>
+					<div id="dialog_start_1" style="display: none; width: 569px !important;">
+							
+						<h2>정말 탈퇴하시겠습니까?</h2>
+						<form id="pwUpdatefrm">
+						<div class="dialog_box_1">
+							<a href="">아니오</a>
+							<a href="">예</a>
+						</div>
+					
+					
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	<footer id="footer"></footer>
+	<script src="/resources/js/dialog.js"></script>
+	<link rel="stylesheet" href="/resources/css/dialog.css">
+	<script>
+			function crayBtn2() {
+				$('#dialog_start_1').dialog({
+					modal : true,
+					buttons : {
+
+					},
+					width : 481,
+					height : 241
+				});
+			}
+			$('.dialog_close').on('click', function() {
+				$('#dialog_start_1').dialog('close');
+			})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="all" />
+<meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" type="text/css" href="../css/regist.css"/>
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/slick.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/front.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+	<div id="container">
+		<section class="regist_zone">
+			<div class="regist_area clear">
+				<div class="regit_lt">
+					<p>
+						<span>면접을 위한 <em>가장 나다운 면접.</em></span>
+						<img src="../images/ico/logo_header.svg" alt="IM 로고">
+					</p>
+					<!-- <img src="../images/bg/img-back-login.jpg" alt=""> -->
+				</div>
+				<div class="regit_rt">
+					<div class="regist_rt_wrap">  
+						<div class="regist_rt_top">
+							<h2>아이엠 가입하기</h2>
+							<span>회원이 되시면 AI 면접 서비스를 간편하게 이용하실 수 있습니다.</span>
+						</div>
+						<div class="agree_zone">
+							<label for="all_agree" class="all_agree_lb"><input type="checkbox" onclick="allAgree();" id="all_agree">아래 내용에 모두 동의합니다.</label>
+							<table>
+								<tr>
+									<td>
+										<label for=""><input type="checkbox" id="">만 14세 이상입니다 <em>(*필수)</em></label>
+									</td>
+									<td>
+										<label for=""><input type="checkbox" id="">이용약관 <em>(*필수)</em></label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label for=""><input type="checkbox" id="">유료 서비스 이용약관 <em>(*필수)</em></label>
+									</td>
+									<td>
+										<label for=""><input type="checkbox" id="">개인정보 취급방침 <em>(*필수)</em></label>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<label for=""><input type="checkbox" id="">이벤트 및 서비스 안내 수신 동의 (선택)</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label for=""><input type="checkbox" id="">이메일</label>
+									</td>
+									<td>
+										<label for=""><input type="checkbox" id="">APP알림</label>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="regist_form">
+							<form action="">
+								<fieldset>
+									<div class="email_form">
+										<section class="e_input">
+											<label for="">이메일 <em>*</em></label>
+											<input type="email" id="textEmail">
+											<b>@</b>
+											<select name="" id="email">
+												<option value="">선택</option>
+												<option value="">gmail.com</option>
+												<option value="">naver.com</option>
+												<option value="">hanmail.net</option>
+												<option value="custom">직접 입력하기</option>
+											</select>
+											<button type="submit">인증하기</button>
+											<span style="font-size: 12px;">FACEBOOK을 통해 이미 가입된 이메일입니다. 해당 SNS로 로그인해주세요.</span>
+										</section>
+										<section class="e_certi">
+											<div>
+												<label for="">인증번호 <em>*</em></label>
+												<input type="text">
+												<button type="submit">인증확인</button>    
+											</div>
+											<div>
+												<a href="">인증메일을 받지 못하셨나요?</a>
+											</div>
+										</section>
+										<section class="pw_zone">
+											<div>
+												<label for="">비밀번호 <em>*</em></label>
+												<input type="password" placeholder="영문 대소문자,숫자,특수문자 모두 포함한 8-16자">
+												<img src="../images/ico/icon_notice.svg" alt="아이디 또는 비밀번호 불일치 아이콘">
+												<span>특수문자는 ‘! @ # $ % ^ & *’만 사용 가능합니다.</span>
+											</div>
+											<div>
+												<label for="">비밀번호 재입력 <em>*</em></label>
+												<input type="password" placeholder="비밀번호를 다시 입력해주세요.">
+												<img src="../images/ico/icon_notice.svg" alt="아이디 또는 비밀번호 불일치 아이콘">
+												<span>입력한 비밀번호를 확인해주세요.</span>
+											</div>
+										</section>
+										<section class="etc_info">
+											<div class="name_info">
+												<label for="">이름 <em>*</em></label>
+												<input type="text" placeholder="한글2~5자 이내 / 띄어쓰기 불가">
+											</div>
+											<div class="birth_info">
+												<label for="">생년월일 <em>*</em></label>
+												<input type="text" placeholder="년도 (4자)">
+												<select name="" id="zz">
+													<option value="" selected disabled hidden>월</option>
+													<option value="">1월</option>
+													<option value="">2월</option>
+													<option value="">3월</option>
+													<option value="">4월</option>
+												</select>
+												<select name="" id="">
+													<option value="" selected disabled hidden>일</option>
+													<option value="">1월</option>
+													<option value="">2월</option>
+													<option value="">3월</option>
+													<option value="">4월</option>
+												</select>
+											</div>
+											<div class="gender_info">
+												<label>성별 <em>*</em></label>
+												<label for="male"><input type="radio" name="gender" id="male">남자</label>
+												<label for="female"><input type="radio" name="gender" id="female">여자</label>
+											</div>  
+											<div class="attention_info">
+												<label for="">관심직종 <em>*</em></label>
+												<select name="" id="occupation">
+													<option value="" selected disabled hidden>관심직군</option>
+													<option value=""></option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+												<select name="" id="duty">
+													<option value="" selected disabled hidden>관심직무</option>
+													<option value=""></option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+											</div>
+											<div class="recommand_id">
+												<label for="">추천인 아이디</label>
+												<input type="text" placeholder="추천인 아이디를 입력하세요.">
+											</div>
+										</section>
+									</div> 
+									<div class="regist_btn">
+										<a href="">가입하기</a>         
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+</body>
+<script>
+
+
+  function allAgree() {
+            if ($("#all_agree").is(':checked')) {
+                $("input[type=checkbox]").prop("checked", true);
+            } else {
+                $("input[type=checkbox]").prop("checked", false);
+            }
+        }
+
+		$(document).ready(function(){
+        $('#email').change(function(){
+            var email = $('#email').val(); //id선택자로 email select box값 추출하여 저장
+            if(email == 'custom'){ //selectbox value가 custom이면
+                $("#email").replaceWith("<input type = 'text' id='email' placeholder='직접입력'>");
+                //selectbox 태그를 input 태그로 변경
+            }
+        });
+    });
+	
+</script>
+</html>

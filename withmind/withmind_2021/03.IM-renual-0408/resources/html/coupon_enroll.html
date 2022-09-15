@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="all" />
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+		<link rel="stylesheet" type="text/css" href="/resources/css/style.css"/>
+		<link rel="stylesheet" href="/resources/css/coupon_enroll.css">
+		<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="/resources/js/slick.min.js"></script>
+	<script src="/resources/js/common.js"></script>
+	<script src="/resources/js/front.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>IM</title>
+</head>
+<body>
+		<header id="header"></header>
+		<div id="container"> 
+			<div class="common_zone">
+				<div class="common_top clear">
+					<h2>쿠폰 등록</h2>
+					<p>
+						<span>홈 > 이용권 ></span>
+						<em>쿠폰등록</em>
+					</p>
+					<div class="common_search">
+						<div>
+							<img src="/resources/images/ico/icon-ticket.svg" alt="이용권구매아이콘">
+							<h3>보유하신 IM 쿠폰 번호를 등록해주세요.</h3>
+						</div>
+					</div>
+				</div>
+				<div class="ticket_zone">
+					<div class="ticket_wrap">
+						<div class="buy_top_txt">
+							<span>쿠폰 번호를 입력해주세요.</span>
+						</div>
+						<div class="coupon_input">
+							<input type="text" name="" id="" placeholder="쿠폰 번호를 입력해주세요.">
+						</div>
+						<div class="buy_bottom_txt">
+							<em>* 대소문자 구분없이 등록 가능합니다.</em>
+							<em>* 알파벳 O 과 숫자 0을 구분하여 입력하세요.</em>
+						</div>
+					</div>
+					<div class="coupon_caution">
+						<em>유의사항 꼭 확인하세요.</em>
+						<span>1. 등록기간이 정해진 쿠폰은 기간 내에 사용하셔야 합니다.</span>
+						<span>2. 쿠폰을 등록하면 즉시 자동적용됩니다.</span>
+						<span>3. 동일쿠폰의 경우 ID 당 1회를 한해 등록이 가능합니다.</span>
+						<span>4. 등록된 쿠폰은 등록 취소되지 않습니다.</span>
+						<span>5. 등록된 쿠폰 내역은 PC웹 MY IM > 이용권 내역 > 쿠폰내역에서 확인하실 수 있습니다.</span>
+					</div>
+					<div class="buy_btn">
+						<a href="">등록하기</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<footer id="footer"></footer>
+</body>
+<script>
+$('.ticket_goods').on('click',function(){
+	console.log('dd')
+	$(this).toggleClass('checked');
+});
+
+$('.ticket_goods').hover(function() {
+	//alert('들어옴');
+	$(this).addClass('hover');
+}, function(){
+	$(this).removeClass('hover');
+});
+// $('.ticket_goods').on('mouseover',function(){
+	
+// 	if($(this).hasClass('checked')) {
+// 		// alert('has clicked')
+// 	} else {
+// 		$(this).toggleClass('hover');
+// 	}
+// })
+
+// $('.ticket_goods').on('mouseout',function(){
+// 	$(this).removeClass('hover');
+// })
+
+
+
+</script>
+</html>

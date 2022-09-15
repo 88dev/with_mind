@@ -1,0 +1,237 @@
+.login_zone {
+  width: 100%;
+  text-align: center;
+
+}
+
+.login_zone .login_area {
+}
+
+.login_zone .login_area .login_lt,
+.login_zone .login_area .login_rt {
+  float: left;
+  height: 100vh;
+}
+
+.login_zone .login_area .login_lt {
+  position: relative;
+  width: 40%;
+  background: url(/resources/images/bg/img-back-login.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.login_zone .login_area .login_lt::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+
+
+.login_zone .login_area .login_lt p {
+  position: relative;
+  z-index: 10;
+  padding-top: 351px;
+}
+
+.login_zone .login_area .login_lt p span {
+  display: block;
+  font-size: 30px;
+  color: #fff;
+  padding-bottom: 118px;
+}
+
+.login_zone .login_area .login_lt p img {
+  padding-bottom: 393px;
+}
+
+.login_zone .login_area .login_lt p span em {
+  font-weight: bold;
+}
+
+.login_zone .login_area .login_rt {
+  position: relative;
+  text-align: left;
+  width: 60%;
+}
+
+.login_zone .login_area .log_rt_wrap {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 100px 0 0px;
+}
+
+.login_zone .login_area .login_rt .log_rt_top h2 {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 45px;
+  padding-bottom: 6px;
+}
+
+.login_zone .login_area .login_rt .log_rt_top span {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 60px;
+}
+
+.login_zone .login_area .login_rt form .email_form label,
+.login_zone .login_area .login_rt form .pw_form label {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.login_zone .login_area .login_rt form .email_form input,
+.login_zone .login_area .login_rt form .pw_form input {
+  width: 380px;
+  height: 30px;
+  border: none;
+  padding: 0;
+  border-bottom: 2px solid;
+}
+
+.login_zone .login_area .login_rt form .pw_form {
+  position: relative;
+}
+
+.login_zone .login_area .login_rt form .pw_form img {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.login_zone .login_area .login_rt form .pw_form span {
+  display: block;
+}
+
+.login_zone .login_area .login_rt form div:first-child input{
+  margin-bottom: 25px;
+}
+
+.login_zone .login_area .login_rt form .log_btn {
+  padding-top: 86px;
+}
+
+.login_zone .login_area .login_rt form .log_btn > a {
+  display: block;
+  width: 380px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: #000000 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.login_zone .login_area .login_rt form .log_btn p {
+  text-align: left;
+  font-size: 14px;
+}
+
+.login_zone .login_area .login_rt form .log_btn p input {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+
+.login_zone .login_area .login_rt form .log_btn p a {
+  float: right;
+}
+
+.login_zone .login_area .login_rt form .log_sns {
+  width: 100%;
+  position: relative;
+  padding-top: 40px;
+  text-align: center;
+}
+.login_zone .login_area .login_rt form .log_sns::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ddd;
+}
+
+.login_zone .login_area .login_rt form .log_sns span {
+  display: block;
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+}
+
+.login_zone .login_area .login_rt form .log_sns ul {
+  display: inline-block;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+.login_zone .login_area .login_rt form .log_sns ul li {
+  float: left;
+  width: 58px;
+  height: 58px;
+  line-height: 46px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+
+.login_zone .login_area .login_rt form .log_sns ul li:nth-child(1) {
+  background-color: #03CF5D;
+}
+
+.login_zone .login_area .login_rt form .log_sns ul li:nth-child(2) {
+  background-color: #FFE400;
+}
+
+.login_zone .login_area .login_rt form .log_sns ul li:nth-child(3) {
+  background-color: #1E4BA0;
+}
+
+.login_zone .login_area .login_rt form .log_sns ul li:nth-child(4) {
+  background-color: #000000;
+  margin-right: 0;
+}
+
+.log_rt_wrap .regist_btn {
+  width: 100%;
+  margin-top: 13px;
+  text-align: center;
+}
+
+.log_rt_wrap .regist_btn span {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  background: #F8F9FD 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  padding: 9px 0;
+}
+
+.log_rt_wrap .regist_btn span a {
+  font-weight: 600;
+  vertical-align: baseline;
+  text-decoration: underline;
+  text-underline-position: under;
+  margin-left: 5px;
+}
+
+.log_rt_wrap .regist_btn img {
+  display: block;
+  margin-top: 45px;
+  background: #F8F9FD 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  padding: 9px 0;
+}
+
