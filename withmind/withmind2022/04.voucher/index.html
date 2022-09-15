@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바우처</title>
+    <link rel="styleSheet" href="voucher.css" type="text/css"></link>
+</head>
+<body>
+    <section class="vocher">
+        <section class="wrap_nav">
+            <input type="checkbox" id="btn_nav" checked />
+            <label for="btn_nav">
+                <span></span>
+            </label>
+            <div class="nav_bar">
+                <section class="top">
+                    <button class="home"></button>
+                    <span class="tooltip_main">메인화면</span>
+                    <button class="user"></button>
+                    <span class="tooltip_user">로그인</span>
+                </section>
+                <section class="bottom">
+                    <button class="logout"></button>
+                </section>
+            </div>
+        </section>
+        <section class="wrap_btn">
+            <div class="wrap_link">
+                <a class="individual" href="main.html">
+                    <img src="images/img_individual_member.png" alt="개인회원 이미지" />
+                    <p>
+                        <span>개인회원</span>
+                        <span>AI면접/AI화상면접 이용하기</span>
+                    </p>
+                    <span class="click">Click</span>
+                </a>
+                <a class="corporate" href="main.html">
+                    <img src="images/img_corporate_member.png" alt="개인회원 이미지" />
+                    <p>
+                        <span>개인회원</span>
+                        <span>AI면접/AI화상면접 이용하기</span>
+                    </p>
+                    <span class="click">Click</span>
+                </a>
+            </div>
+        </section>
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        setTimeout(function(){
+            $("input:checkbox[id='btn_nav']").prop("checked", false);
+        }, 5000);
+
+        $('.home').on('mouseover', function(){
+            $('.tooltip_main').css('display', 'block');
+        });
+        $('.home').on('mouseout', function(){
+            $('.tooltip_main').css('display', 'none');
+        });
+        $('.user').on('mouseover', function(){
+            $('.tooltip_user').css('display', 'block');
+        });
+        $('.user').on('mouseout', function(){
+            $('.tooltip_user').css('display', 'none');
+        });
+    });
+
+    // nav 이외 클릭시 닫힘
+    $(document).mouseup(function (e){
+        var LayerPopup = $(".wrap_nav");
+        if(LayerPopup.has(e.target).length === 0){
+            $("input:checkbox[id='btn_nav']").prop("checked", false);
+        }
+    });
+
+
+</script>
+</html>
