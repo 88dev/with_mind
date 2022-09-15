@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .section_main {
+                background: #F0F5FA;
+                padding: 20px;
+            }
+            .main_tab_wrap {
+                margin-top: 30px;	
+            }
+
+            .main_tab_title {
+                display: contents;
+            }
+
+            .main_tab_title li {
+                list-style: none;
+                float: left;
+                width: 120px;
+                height: 40px;
+                line-height: 40px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 16px;
+                color: #80b8d9;
+                background: #d9eaf4;
+                margin-right: 10px;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .main_tab_title li.on {
+                color: #0068ed;
+                font-weight: bold;
+                background: #FFF;
+            }
+
+            .main_tab_cont {
+                clear: both;
+                /* width: 387px; */
+            }
+
+            .main_tab_cont > .wrap_contents {
+                display: none;
+                padding: 30px;
+                font-size: 14px;
+                text-align: left;
+                background: #FFF;
+            }
+
+            .main_tab_cont > section.on {
+                display: block;
+            }
+
+            .sub_tab_title {
+                display: contents;
+            }
+
+            .sub_tab_title li {
+                background: #FFFFFF;
+                width: 100px;
+                list-style: none;
+                float: left;
+                height: 45px;
+                line-height: 45px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 16px;
+                color: #0068ed;
+                border: 1px solid #0068ed;
+                box-sizing: border-wrap;
+            }
+
+            .sub_tab_title li:not(:first-child) {
+                margin-left: -1px;
+            }
+
+            .sub_tab_title li.on {
+                color: #FFFFFF;
+                border: 1px solid #0068ed;
+                background: #0068ed;
+            }
+
+            .sub_tab_title li:first-child {
+                border-radius: 5px 0 0 5px;
+            }
+
+            .sub_tab_title li:last-child {
+                border-radius: 0 5px 5px 0;
+            }
+
+            .sub_tab_cont {
+                clear: both;
+                /* width: 387px; */
+            }
+
+            .sub_tab_cont > div.wrap_video {
+                display: none;
+                padding-top: 30px;
+                font-size: 14px;
+                text-align: left;
+            }
+
+            .sub_tab_cont > div.on.wrap_video {
+                display: block;
+            }
+
+
+
+            .action_tab_title, .ability_tab_title {
+                display: contents;
+            }
+
+            .action_tab_title li, .ability_tab_title li {
+                list-style: none;
+                float: left;
+                width: 80px;
+                height: 30px;
+                line-height: 30px;
+                margin-bottom: -2px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 14px;
+                color: #999999;
+                box-sizing: border-box;
+            }
+
+            .action_tab_title li:not(:first-child), .ability_tab_title li:not(:first-child) {
+                margin-left: -1px;
+            }
+
+            .action_tab_title li.on, .ability_tab_title li.on {
+                color: #0068ed;
+                border-bottom: 2px solid #0068ed;
+            }
+
+            .action_tab_cont, .ability_tab_cont {
+                clear: both;
+                /* width: 387px; */
+            }
+
+            .action_tab_cont > .wrap_action, .ability_tab_cont > .wrap_ability {
+                display: none;
+                background: #E6EFFA;
+                width: 500px;
+                padding: 20px;
+                border-top: 2px solid #DDDDDD;
+                font-size: 14px;
+                text-align: left;
+            }
+
+            .action_tab_cont > .wrap_action.on, .ability_tab_cont > .wrap_ability.on {
+                display: block;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <article class="section_main">
+            <div class="main_tab_wrap">
+                <ul class="main_tab_title">
+                    <li class="on">종합분석</li>
+                    <li>영상분석</li>
+                    <li>역량분석</li>
+                    <li>성향분석</li>
+                </ul>
+                <div class="main_tab_cont">
+                    <section class="on wrap_contents">
+                        종합분석                        
+                    </section>
+                    <section class="wrap_contents">
+                        <div class="sub_tab_wrap">
+                            <ul class="sub_tab_title">
+                                <li class="on">행동분석</li>
+                                <li>음성분석</li>
+                                <li>심박분석</li>
+                            </ul>
+                            <div class="sub_tab_cont">
+                                <section class="on wrap_video">
+                                    <!-- 행동분석 -->행동분석
+
+                                    <section class="action_tab_box">
+                                        <ul class="action_tab_title">
+                                            <li class="on">면접1</li>
+                                            <li>면접2</li>
+                                            <li>면접3</li>
+                                            <li>면접4</li>
+                                        </ul>
+                                        <div class="action_tab_cont">
+                                            <section class="on wrap_action">
+                                                <!-- 면접1 -->
+                                                면접1
+                                            </section>
+                                            <section class="wrap_action">
+                                                <!-- 면접2 -->
+                                                면접2
+                                            </section>
+                                            <section class="wrap_action">
+                                                <!-- 면접3 -->
+                                                면접3
+                                            </section>
+                                            <section class="wrap_action">
+                                                <!-- 면접4 -->
+                                                면접4
+                                            </section>
+                                        </div>
+                                    </section>
+
+
+                                </section>
+                                <section class="wrap_video">
+                                    <!-- 음성분석 -->음성분석
+                                </section>
+                                <section class="wrap_video">
+                                    <!-- 심박분석 -->심박분석
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="wrap_contents">
+                        역량분석
+
+                        <section class="ability_tab_box">
+                            <ul class="ability_tab_title">
+                                <li class="on">면접5</li>
+                                <li>면접6</li>
+                            </ul>
+                            <div class="ability_tab_cont">
+                                <section class="on wrap_ability">
+                                    <!-- 면접5 -->
+                                    면접5
+                                </section>
+                                <section class="wrap_ability">
+                                    <!-- 면접5 -->
+                                    면접6
+                                </section>
+                            </div>
+                        </section>
+
+                    </section>
+                    <section class="wrap_contents">성향분석</section>
+                </div>
+            </div>
+        </article>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".main_tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".main_tab_title li").removeClass("on");
+                $(".main_tab_title li").eq(idx).addClass("on");
+                $(".main_tab_cont > section").hide();
+                $(".main_tab_cont > section").eq(idx).show();
+            });
+            $(".sub_tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".sub_tab_title li").removeClass("on");
+                $(".sub_tab_title li").eq(idx).addClass("on");
+                $(".sub_tab_cont > section").hide();
+                $(".sub_tab_cont > section").eq(idx).show();
+            });
+            $(".action_tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".action_tab_title li").removeClass("on");
+                $(".action_tab_title li").eq(idx).addClass("on");
+                $(".action_tab_cont > section").hide();
+                $(".action_tab_cont > section").eq(idx).show();
+            });
+            $(".ability_tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".ability_tab_title li").removeClass("on");
+                $(".ability_tab_title li").eq(idx).addClass("on");
+                $(".ability_tab_cont > section").hide();
+                $(".ability_tab_cont > section").eq(idx).show();
+            });
+        });
+    </script>
+</html>
