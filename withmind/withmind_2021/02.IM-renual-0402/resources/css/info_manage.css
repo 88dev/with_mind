@@ -1,0 +1,137 @@
+
+.member_out {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.member_out a {
+  font-size: 16px;
+  line-height: 20px;
+  color: #4A4A4A;
+}
+
+.info_area {
+  width: 100%;
+}
+
+.info_area .info_wrap {
+  width: 780px;
+  margin: auto;
+}
+
+.info_area .info_wrap section {
+  margin-bottom: 30px;
+}
+
+.info_area .info_wrap section > input {
+  width: 410px;
+  height: 48px;
+  border-color: #CFCFCF;
+  padding-left: 20px;
+  transition: all .5s;
+}
+
+.info_area .info_wrap section > input:focus {
+  border-color: transparent;
+  outline: 1px solid #3B61D5;
+}
+
+.info_area .info_wrap section > label {
+  font-size: 16px;
+  color: #111;
+  text-align: left;
+  display: inline-block;
+  width: 166px;
+  vertical-align: top;
+}
+
+.info_area .info_wrap section select {
+  height: 48px;
+  margin-right: 10px;
+  border-color: #CFCFCF;
+}
+
+.info_area .info_wrap section:nth-child(5) select:nth-child(2) {
+  width: 144px;
+  background: url(/resources/images/ico/icon-dropdown.svg) no-repeat right center;
+  background-position: 120px;
+}
+
+.info_area .info_wrap section:nth-child(5) select:nth-child(3),
+.info_area .info_wrap section:nth-child(5) select:nth-child(4) {
+  width: 88px;
+  background: url(/resources/images/ico/icon-dropdown.svg) no-repeat right center;
+  background-position: 65px;
+}
+
+.info_area .info_wrap section:nth-child(6) button {
+  display: inline-block;
+  width: 205px;
+  height: 48px;
+  line-height: 48px;
+  border: 1px solid #CFCFCF;
+  text-align: center;
+  margin-right: -3px;
+}
+
+.info_area .info_wrap section:nth-child(6) button.genderChk {
+  color: #3B61D5;
+  border: 1px solid #3B61D5;
+}
+
+.info_area .info_wrap section:nth-child(7) select {
+  width: 200px;
+  margin-right: 7px;
+  background: url(/resources/images/ico/icon-dropdown.svg) no-repeat right center;
+  background-position: 175px;
+  text-align-last: center;
+}
+
+.info_area .info_wrap section:nth-child(8) > div {
+  display: inline-block;
+}
+
+.info_area .info_wrap section:nth-child(8) > div input {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: sub;
+}
+
+.info_area .info_wrap section:nth-child(8) > div label {
+  margin-right: 20px;
+  font-size: 15px;
+  color: #4A4A4A;
+}
+
+.info_area .info_wrap section:nth-child(8) > div label:nth-child(1) {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.info_manage_btn {
+  margin: 92px 0 100px -80px;
+}
+
+.info_manage_btn a {
+  display: block;
+  width: 380px;
+  margin: auto;
+  height: 74px;
+  line-height: 74px;
+  background-color: #3B61D5;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.info_manage_btn a.member_out {
+  width: 70px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 15px;
+  color: #777777;
+  background: transparent;
+  margin-top: 12px;
+}

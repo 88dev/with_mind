@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .totalGrade {
+                width: 230px;
+                height: 120px;
+            }
+
+            .graph {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .graph li {
+                display: inline-block;
+            }
+
+            .graph li:not(:last-child) {
+                margin-right: 2.5px;
+            }
+
+            .graph li div{
+                position: relative;
+                width: 15px;
+                height: 100px;
+            }
+
+            .graph li div span {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                background: #EBEFFB;
+            }
+
+            .graph li div span.grade-on {
+                background: #3B61D5;
+            }
+
+            .graph li p {
+                font-size: 14px;
+                font-weight: 600;
+                text-align: center;
+                margin: 5px 0;
+            }
+
+            .graph li div i {
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="totalGrade">
+            <ul class="graph">
+                <li class="grade-A+">
+                    <div>
+                        <span class="grade-on" style="height: 70%;"></span>
+                    </div>
+                    <p>A+</p>
+                </li>
+                <li class="grade-A0">
+                    <div>
+                        <span style="height: 65%;"></span>
+                    </div>
+                    <p>A0</p>
+                </li>
+                <li class="grade-B+">
+                    <div>
+                        <span style="height: 75%;"></span>
+                    </div>
+                    <p>B+</p>
+                </li>
+                <li class="grade-B0">
+                    <div>
+                        <span style="height: 100%;"></span>
+                    </div>
+                    <p>B0</p>
+                </li>
+                <li class="grade-C+">
+                    <div>
+                        <span style="height: 70%;"></span>
+                    </div>
+                    <p>C+</p>
+                </li>
+                <li class="grade-C0">
+                    <div>
+                        <span style="height: 60%;"></span>
+                    </div>
+                    <p>C0</p>
+                </li>
+                <li class="grade-D+">
+                    <div>
+                        <span style="height: 55%;">
+                            <i>20%</i>
+                        </span>
+                    </div>
+                    <p>D+</p>
+                </li>
+                <li class="grade-D0">
+                    <div>
+                        <span style="height: 70%;"></span>
+                    </div>
+                    <p>D0</p>
+                </li>
+                <li class="grade-F">
+                    <div>
+                        <span style="height: 65%;"></span>
+                    </div>
+                    <p>F</p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

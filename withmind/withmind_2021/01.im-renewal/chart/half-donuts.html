@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <style>
+            .pie-chart {
+                position: relative;
+                display: inline-block;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                transition: 0.3s;
+            }
+
+            span.center{
+                background: #fff;
+                display : block;
+                position: absolute;
+                top: 50%; 
+                left: 50%;
+                width: 200px; 
+                height: 200px;
+                border-radius: 50%;
+                text-align: center; 
+                line-height: 200px;
+                font-size: 30px;
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+        </style>
+
+    </head>
+    <body>
+       
+
+        <div class="pie-chart pie-chart1"><span class="center">80%</span></div>
+
+        <div class="pie-chart pie-chart2"><span class="center">50%</span></div>
+
+        <div class="pie-chart pie-chart3"><span class="center">30%</span></div>
+
+        <a href="javascript:replay()">다시그리기</a>
+
+        <script>
+
+            $(window).ready(function(){
+                draw(80, '.pie-chart1', '#ccc');
+                draw(50, '.pie-chart2', '#8b22ff');
+                draw(30, '.pie-chart3', '#ff0');
+            });
+
+            function draw(max, classname, colorname){
+            var i=1;
+                var func1 = setInterval( function() {
+                    if(i<max){
+                        color1(i, classname, colorname);
+                        i++;
+                    } else{
+                        clearInterval(func1);
+                    }
+                }, 10);
+            }
+
+            function color1(i, classname,colorname){
+                $(classname).css({
+                    "background" : "conic-gradient(" + colorname + " 0% "+ (i + 1) +"%, #ffffff " + ( i + 1 ) + "% 100%)",
+                    "transform" : "rotate(-90deg)"
+                });
+            }
+
+
+            function replay(){
+                draw(80, '.pie-chart1', '#ccc');
+                draw(50, '.pie-chart2', '#8b22ff');
+                draw(30, '.pie-chart3', '#ff0');
+            }
+        </script>
+
+    </body>
+</html>

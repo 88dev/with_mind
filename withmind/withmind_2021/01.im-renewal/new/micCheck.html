@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <style>
+            body {
+                background: transparent linear-gradient(90deg, #694FDC 0%, #799EFD 100%) 0% 0% no-repeat padding-box;
+            }
+
+            .mic-background {
+                background: white;
+                height: auto;
+                display: block;
+                border-radius: 50px 50px 50px 0;
+                /* margin: 20px; */
+                margin: 0 20px 30px -15px;
+                padding: 0px 30px;
+                word-break: keep-all;
+
+                width: 260px;
+                height: 170px;
+                padding-top: 20px;
+            }
+
+            .progress{
+                position: relative;
+                margin: 8px;
+                float:left;
+                text-align: center;
+            }
+
+            .progress .bar-figure {
+                display: none;
+            }
+
+            .barOverflow{ /* Wraps the rotating .bar */
+                position: relative;
+                overflow: hidden; /* Comment this line to understand the trick */
+                width: 250px; height: 120px; /* Half circle (overflow) */
+                margin-bottom: -14px; /* bring the numbers up */
+            }
+
+            .bar{
+                position: absolute;
+                top: 0; left: 0;
+                width: 250px; height: 250px; /* full circle! */
+                border-radius: 50%;
+                box-sizing: border-box;
+                border: 15px solid #eee;     /* half gray, */
+            }
+
+            .progress img {
+                position: absolute;
+                top: 45px;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+
+            .greenbar {
+                border-bottom-color: #23B027;  /* half azure */
+                border-right-color: #23B027;
+            }
+
+            .redbar {
+                border-bottom-color: #F50000;  /* half azure */
+                border-right-color: #F50000;
+            }
+
+            .color-text {
+                margin-top: -35px;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mic-background">
+            <div class="progress">
+                <div class="barOverflow">
+                    <div class="bar greenbar"></div>
+                </div>
+                <span class="bar-figure">50</span>
+                <img src="../img/mic/img-micok-check.svg" />
+                <div class="green-text color-text">
+                    마이크 음성이 <br>
+                    정상입니다.
+                </div>
+            </div>
+        </div>
+          
+        <div class="mic-background">
+            <div class="progress">
+                <div class="barOverflow">
+                    <div class="bar redbar"></div>
+                </div>
+                <span class="bar-figure">100</span>
+                <img src="../img/mic/img-micno-check.svg" />
+                <div class="red-text color-text">
+                    마이크 음성이 <br>
+                    감지되지 않습니다.
+                </div>
+            </div>
+        </div>
+
+        <script>
+              $(".progress").each(function(){
+  
+                var $bar = $(this).find(".bar");
+                var $val = $(this).find("span");
+                var perc = parseInt( $val.text(), 10);
+
+                $({p:0}).animate({p:perc}, {
+                    duration: 3000,
+                    easing: "swing",
+                    step: function(p) {
+                    $bar.css({
+                        transform: "rotate("+ (45+(p*1.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+                        // 45 is to add the needed rotation to have the green borders at the bottom
+                    });
+                    $val.text(p|0);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../js/jquery-3.4.1.min.js"></script>
+
+        <style>
+
+            .inquiry-interview .container {
+                margin: 10px;
+            }
+
+            .inquiry-interview .dropdown-menu {    
+                width: 540px;
+                max-height: 146px;
+                overflow: scroll;
+                overflow-x: hidden;
+                margin-top: 0px;
+            }
+
+            .inquiry-interview .caret {
+                float: right;
+                margin-top: 1.5%;
+            }
+
+            .inquiry-interview .select-inquiry {
+                width: 540px; 
+                text-align: left;
+            }
+
+            .inquiry-interview .inquiry-btn {
+                padding: 6.5px 12px;
+                border-radius: 0;
+            }
+
+            .inquiry-interview .btn-default.active.focus, 
+            .inquiry-interview .btn-default.active:focus, 
+            .inquiry-interview .btn-default.active:hover, 
+            .inquiry-interview .btn-default:active.focus, 
+            .inquiry-interview .btn-default:active:focus, 
+            .inquiry-interview .btn-default:active:hover, 
+            .inquiry-interview .open>.dropdown-toggle.btn-default.focus, 
+            .inquiry-interview .open>.dropdown-toggle.btn-default:focus, 
+            .inquiry-interview .open>.dropdown-toggle.btn-default:hover,
+            .inquiry-interview .btn-default:hover {
+                background-color: #EDF0F5 !important;
+                border-color: #AEAEAE;
+            }
+
+            .inquiry-interview .dropdown-menu>li>a:hover {
+                background-color: #EDF0F5;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="inquiry-interview">
+            <div class="container">
+                <div class="dropdown">
+                    <button class="inquiry-btn btn btn-default dropdown-toggle select-inquiry" type="button" id="menu1" data-toggle="dropdown">
+                        조회할 면접을 선택해주세요.
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="select-inquiry">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">HTML</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script>
+            $('.dropdown-menu').on( 'click', 'a', function() {
+                var text = $(this).html();
+                var htmlText = text + ' <span class="caret"></span>';
+                $(this).closest('.dropdown').find('.dropdown-toggle').html(htmlText);
+            });
+
+        </script>
+    </body>
+</html>

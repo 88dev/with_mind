@@ -1,0 +1,53 @@
+.error-page {
+    margin-top: 100px;
+}
+
+.error-img,
+.error-text,
+.error-btn {
+    text-align: center;
+}
+
+.error-text {
+    margin-top: 40px;
+    margin-bottom: 150px;
+}
+
+.no-page {
+    color: #111111;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.no-page-detail {
+    display: block;
+    color: #757575;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.error-btn button {
+    width: 380px;
+    height: 74px;
+    font-size: 24px;
+    font-weight: 600;
+    
+    box-shadow: 3px 6px 6px #B4B4B429;
+    border: 2px solid #3B61D5;
+    border-radius: 4px;
+}
+
+.error-btn button:focus {
+    outline: none;
+}
+
+.goToPrev {
+    color: #3B61D5;
+    background: #fff;
+    margin-right: 20px;
+}
+
+.goToMain {
+    background: #3B61D5;
+    color: #FFF;
+}

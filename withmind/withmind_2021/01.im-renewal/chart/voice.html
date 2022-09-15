@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           
+            .soundmotion {
+                width: 177px;
+                height: 24px;
+                background: #6672C1;
+                padding: 10px;
+            }
+
+            .soundmotion>span {
+                display: inline-block;
+                margin: 0;
+            }
+
+            .soundmotion>span:not(:first-child) {
+                margin-left: -5px;;
+            }
+
+            .soundmotion>span>span {
+                display: block;
+                width: 5px;
+                height: 5px;
+                background: #FFF;
+                border-radius: 50%;
+                margin: 2px;
+            }
+
+            .soundmotion>span>span.no-wave {
+                background: transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="soundmotion">
+            <a download=""></a>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>
+                <span class="no-wave"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </section>
+
+    </body>
+</html>
+
+
+<script>
+$('#savePdfBtn').click(function() { 
+    html2canvas($('#pdfDiv')[0]).then(function(canvas) { 
+        
+        // 캔버스를 이미지로 변환 
+        let imgData = canvas.toDataURL('image/png'); 
+        let margin = 10; // 출력 페이지 여백설정 
+        let imgWidth = 210 - (10 * 2); // 이미지 가로 길이(mm) A4 기준 
+        let pageHeight = imgWidth * 1.414; // 출력 페이지 세로 길이 계산 A4 기준 
+        let imgHeight = canvas.height * imgWidth / canvas.width; 
+        let heightLeft = imgHeight; 
+        let doc = new jsPDF('p', 'mm'); 
+        let position = margin; 
+        
+        // 첫 페이지 출력 
+        doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight); 
+        heightLeft -= pageHeight; 
+        
+        // 한 페이지 이상일 경우 루프 돌면서 출력
+        while (heightLeft >= 20) { 
+            position = heightLeft - imgHeight; 
+            doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight); 
+            doc.addPage(); 
+            heightLeft -= pageHeight; 
+        } 
+        
+        // 파일 저장 
+        
+        doc.save('sample.pdf'); 
+    }); 
+});
+</script>

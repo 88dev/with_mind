@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            .propensity {
+                width: 532px;
+                height: 343px;
+                border-top: 2px solid #000000;
+                border-bottom: 2px solid #000000;
+                box-sizing: border-box;
+                user-select: none;
+            }
+
+            .analysis-left {
+                width: 265px;
+                height: 100%;
+                border-right: 1px solid #13242A;
+                float: left;
+            }
+
+            .analysis-left>div:not(:last-child), .analysis-right>div:not(:last-child) {
+                border-bottom: 1px solid #D5D5D5;
+            }
+
+            .analysis-left>div>div>div, .analysis-right>div>div>div {
+                display: inline-block;
+            }
+
+            .analysis-left>div>div, .analysis-right>div>div {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .analysis-left .analysis-text {
+                text-align: left;
+            }
+
+            .analysis-right .analysis-text {
+                text-align: right;
+            }
+
+            .analysis-left .analysis-bar {
+                float: right;
+            }
+            
+            .analysis-right .analysis-bar {
+                float: left;
+            }
+
+            .analysis-right {
+                width: 265px;
+                height: 100%;
+                border-left: 1px solid #13242A;
+                float: right;
+            }
+
+            .point-00E894 {
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: #00E894;
+                vertical-align: middle;
+            }
+
+            .point-none {
+                background-color: transparent;
+            }
+
+            .analysis-text {
+                width: 95px;
+                font-size: 16px;
+                font-weight: 600;
+                color: #050505;
+            }
+
+            .analysis-text-none {
+                color: #BABABA !important;
+            }
+
+            .analysis-bar {
+                width: 159px;
+                height: 10px;
+                background-color: #3B61D5;
+                margin-top: 5px;
+            }
+
+            .analysis-bar-none {
+                background-color: transparent;
+            }
+
+            .gray-bar {
+                position: absolute;
+                background-color: #F1F1F1;
+                width: 60px;
+                height: 343px;
+                left: 244px;
+                z-index: -1;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="propensity">
+            <div class="analysis-left">
+                <div>
+                    <div>
+                        <div class="point-00E894 point-none"></div>
+                        <div class="analysis-text analysis-text-none">표현적</div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                    </div>
+                    <div>
+                        <div class="point-00E894"></div>
+                        <div class="analysis-text">열성적</div>
+                        <div class="analysis-bar"></div>
+                    </div>
+                    <div>
+                        <div class="point-00E894"></div>
+                        <div class="analysis-text">능동적</div>
+                        <div class="analysis-bar"></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="point-00E894 point-none"></div>
+                        <div class="analysis-text analysis-text-none">구체적</div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                    </div>
+                    <div>
+                        <div class="point-00E894 point-none"></div>
+                        <div class="analysis-text analysis-text-none">현실적</div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                    </div>
+                    <div>
+                        <div class="point-00E894"></div>
+                        <div class="analysis-text">경험적</div>
+                        <div class="analysis-bar"></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="point-00E894 point-none"></div>
+                        <div class="analysis-text analysis-text-none">이성적</div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                    </div>
+                    <div>
+                        <div class="point-00E894 point-none"></div>
+                        <div class="analysis-text analysis-text-none">논리적</div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                    </div>
+                    <div>
+                        <div class="point-00E894 point-none"></div>
+                        <div class="analysis-text analysis-text-none">비평적</div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="point-00E894 point-none"></div>
+                        <div class="analysis-text analysis-text-none">체계적</div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                    </div>
+                    <div>
+                        <div class="point-00E894"></div>
+                        <div class="analysis-text">목표지향성</div>
+                        <div class="analysis-bar"></div>
+                    </div>
+                    <div>
+                        <div class="point-00E894"></div>
+                        <div class="analysis-text">계획적</div>
+                        <div class="analysis-bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="analysis-right">
+                <div>
+                    <div>
+                        <div class="analysis-bar"></div>
+                        <div class="analysis-text">행동안정성</div>
+                        <div class="point-00E894"></div>
+                    </div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">보유적</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">정적</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">추상적</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">창의적</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">이상적</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="analysis-bar"></div>
+                        <div class="analysis-text">정서적</div>
+                        <div class="point-00E894"></div>
+                    </div>
+                    <div>
+                        <div class="analysis-bar"></div>
+                        <div class="analysis-text">허용적</div>
+                        <div class="point-00E894"></div>
+                    </div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">감성적</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">유연성</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">개방성</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                    <div>
+                        <div class="analysis-bar analysis-bar-none"></div>
+                        <div class="analysis-text analysis-text-none">자발성</div>
+                        <div class="point-00E894 point-none"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gray-bar"></div>
+        </div>
+    </body>
+
+</html>

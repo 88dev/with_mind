@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="all" />
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+		<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/slick.min.js"></script>
+	<script src="./js/common.js"></script>
+	<script src="./js/front.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>IM</title>
+</head>
+<body>
+			<div class="wrapper">
+				<h1><a href="../index.html">IM</a></h1>
+				<nav>
+					<h2>대메뉴</h2>
+					<ul class="main mb_hidden">
+						<li><a href="#;"><span>IM 시작</span></a>
+							<ul class="submenu">
+								<li><a href="#;">모의면접</a></li>
+								<li><a href="./demo_interview.html">모의면접 분석</a></li>
+							</ul>
+						</li>
+						<li><a href="#;"><span>기업면접</span></a>
+							<ul class="submenu">
+								<li><a href="./com_interview.html">전체기업면접</a></li>
+								<li><a href="./mycompany_interview.html">MY기업면접</a></li>
+							</ul>
+						</li>
+						<li><a href="#;"><span>이용권</span></a>
+							<ul class="submenu">
+								<li><a href="./ticket_buy.html">이용권구매</a></li>
+								<li><a href="./coupon_enroll.html">쿠폰등록</a></li>
+							</ul>
+						</li>
+					</ul>
+					<div>
+						<ul class="util mb_hidden">
+							<li><a href="#;"><img src="../images/ico/icon-profile.png" alt="IM아이콘"><span>MY IM</span><img src="../images/ico/icon-tri.svg" alt="더보기"></a>
+								<ul class="hidden_mymenu">
+									<!-- <img src="../images/dummy/img-bubble.svg" alt="MY IM "> -->
+									<li><a href="./info_manage.html">내정보</a></li>
+									<li><a href="./usage_history.html">이용권내역</a></li>
+									<li><a href="./notice_board.html">공지사항</a></li>
+									<li><a href="./customer_serv.html">고객지원</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				</div>
+      <div class="menu_bg"></div>
+</body>
+
+<script>
+$(function(){
+
+AOS.init();
+
+//메뉴
+$('nav h2').on('click', function(){
+  $('nav > ul, .util').toggleClass('mb_hidden');
+  $(this).parents('nav').toggleClass('open');
+});
+
+//메뉴
+var $win = $(window),
+  menuLi = $('header .main > li'),
+  menuBg = $('.menu_bg'),
+  subMenu = $('.submenu');
+var hide = $('.hidden_mymenu');
+
+menuLi.on({
+  'mouseenter':function(){
+    if ($win.width() > 890){
+      subMenu.stop().slideDown();
+      menuBg.stop().slideDown();
+      hide.hide();
+    }
+
+    
+  },
+  'mouseleave':function(){
+    if ($win.width() > 890){
+      subMenu.stop().slideUp();
+      menuBg.stop().slideUp();
+    }
+  }
+});
+
+menuLi.on('click', function(){
+  if ($win.width() < 891){ 
+    var thisSub = $(this).find(subMenu);
+
+    if ($(this).is('.open')){
+      $(this).removeClass('open');
+      thisSub.stop().slideUp();
+      return false;
+    }else{
+      menuLi.removeClass('open');
+      $(this).addClass('open');
+      subMenu.stop().slideUp();
+      thisSub.stop().slideDown();
+    }
+  }
+});
+
+$win.on('resize', function(){
+  if ($win.width() > 890){
+    menuLi.removeClass('open');
+    subMenu.stop().slideUp();
+  }
+});
+
+
+
+
+//MY IM 
+var hide = $('.hidden_mymenu').hide();
+$('.util').on('click',function(){
+  $(hide).stop().slideToggle(100);
+})
+
+
+
+
+});
+</script>
+</html>
