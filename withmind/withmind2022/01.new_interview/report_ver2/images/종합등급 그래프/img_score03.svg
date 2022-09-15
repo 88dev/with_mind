@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="218" height="110.001" viewBox="0 0 218 110.001">
+  <defs>
+    <filter id="빼기_15" x="15.984" y="11.73" width="179.029" height="98.27" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="빼기_15-2" x="15.984" y="11.73" width="179.029" height="98.27" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-2"/>
+      <feFlood flood-opacity="0.102" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="빼기_19">
+      <feOffset dx="3" dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.102" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-3"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="img_score03" transform="translate(18680.5 16904)">
+    <text id="미흡" transform="translate(-18680.5 -16814.299)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em" opacity="0.999"><tspan x="0" y="0">미흡</tspan></text>
+    <text id="보통" transform="translate(-18593.686 -16894)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Bold, Spoqa Han Sans Neo" font-weight="700" letter-spacing="-0.02em" opacity="0.999"><tspan x="0" y="0">보통</tspan></text>
+    <text id="다소_미흡" data-name="다소
+미흡" transform="translate(-18664.516 -16869.174)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em" opacity="0.999"><tspan x="0" y="0">다소</tspan><tspan x="0" y="14">미흡</tspan></text>
+    <text id="양호" transform="translate(-18521.855 -16876.27)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em" opacity="0.999"><tspan x="0" y="0">양호</tspan></text>
+    <text id="우수" transform="translate(-18490.5 -16840.135)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em" opacity="0.999"><tspan x="0" y="0">우수</tspan></text>
+    <text id="최우수" transform="translate(-18490.5 -16814.299)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em" opacity="0.999"><tspan x="0" y="0">최우수</tspan></text>
+    <line id="선_251" data-name="선 251" y2="4.127" transform="matrix(0.966, 0.259, -0.259, 0.966, -18553.154, -16890.256)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_253" data-name="선 253" x2="2.064" y2="3.575" transform="translate(-18619.402 -16882.748)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_254" data-name="선 254" x2="4" transform="matrix(0.966, 0.259, -0.259, 0.966, -18661, -16828.799)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_255" data-name="선 255" x2="4" transform="translate(-18664 -16806)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_252" data-name="선 252" x1="4" transform="translate(-18491 -16806)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_249" data-name="선 249" x1="3.575" y2="2.064" transform="translate(-18502.07 -16850.4)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_250" data-name="선 250" x1="4" y2="0.977" transform="translate(-18494.063 -16827.799)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <g data-type="innerShadowGroup">
+      <g transform="matrix(1, 0, 0, 1, -18680.5, -16904)" filter="url(#빼기_15)">
+        <path id="빼기_15-3" data-name="빼기 15" d="M30.52,80.27H0A80.478,80.478,0,0,1,40.367,10.734a80.521,80.521,0,0,1,60.926-8.013L92.955,33.837a48.985,48.985,0,0,0-36.884,4.1l-15.7-27.2,15.7,27.2a49.229,49.229,0,0,0-14.715,12.3,48.611,48.611,0,0,0-8.932,17.156L2.8,59.447l29.623,7.94a49.064,49.064,0,0,0-1.9,12.883Zm130.509,0H128.511a49.086,49.086,0,0,0-1.763-12.389l31.482-8.434a80.7,80.7,0,0,1,2.8,20.821ZM126.747,67.88v0h0A49.1,49.1,0,0,0,92.957,33.837l8.338-31.116a80.021,80.021,0,0,1,19.367,8.01,80.374,80.374,0,0,1,29.47,29.344,79.962,79.962,0,0,1,8.1,19.367Z" transform="translate(24.98 17.73)" fill="#edebec"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -18680.5, -16904)" filter="url(#빼기_15-2)">
+        <path id="빼기_15-4" data-name="빼기 15" d="M30.52,80.27H0A80.478,80.478,0,0,1,40.367,10.734a80.521,80.521,0,0,1,60.926-8.013L92.955,33.837a48.985,48.985,0,0,0-36.884,4.1l-15.7-27.2,15.7,27.2a49.229,49.229,0,0,0-14.715,12.3,48.611,48.611,0,0,0-8.932,17.156L2.8,59.447l29.623,7.94a49.064,49.064,0,0,0-1.9,12.883Zm130.509,0H128.511a49.086,49.086,0,0,0-1.763-12.389l31.482-8.434a80.7,80.7,0,0,1,2.8,20.821ZM126.747,67.88v0h0A49.1,49.1,0,0,0,92.957,33.837l8.338-31.116a80.021,80.021,0,0,1,19.367,8.01,80.374,80.374,0,0,1,29.47,29.344,79.962,79.962,0,0,1,8.1,19.367Z" transform="translate(24.98 17.73)" fill="#fff"/>
+      </g>
+    </g>
+    <g data-type="innerShadowGroup">
+      <path id="빼기_19-2" data-name="빼기 19" d="M25.556,37.933h0l-15.7-27.2A80.517,80.517,0,0,1,70.777,2.722L62.44,33.837a48.983,48.983,0,0,0-36.883,4.1Z" transform="translate(-18625 -16886.27)" fill="#a8d710"/>
+      <g transform="matrix(1, 0, 0, 1, -18680.5, -16904)" filter="url(#빼기_19)">
+        <path id="빼기_19-3" data-name="빼기 19" d="M25.556,37.933h0l-15.7-27.2A80.517,80.517,0,0,1,70.777,2.722L62.44,33.837a48.983,48.983,0,0,0-36.883,4.1Z" transform="translate(55.5 17.73)" fill="#fff"/>
+      </g>
+      <path id="빼기_19-4" data-name="빼기 19" d="M25.556,37.933h0l-15.7-27.2A80.517,80.517,0,0,1,70.777,2.722L62.44,33.837a48.983,48.983,0,0,0-36.883,4.1Z" transform="translate(-18625 -16886.27)" fill="none" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

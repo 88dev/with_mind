@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="styleSheet" href="my_mock_grade.css" type="text/css"></link>
+</head>
+<body>
+    <section class="wrap_page page_3">
+        <div class="background">
+            <img src="images/ellipse1.svg" />
+            <img src="images/ellipse2.svg" />
+            <img src="images/ellipse3.svg" />
+            <img src="images/ellipse4.svg" />
+        </div>
+        <div class="wrap_flex">
+            <div class="wrap_contents">
+                <div class="result wrap_grade">
+                    <h3>나의 모의면접 점수 추이는</h3>
+                    <p>최근 10건의 모의면접 진행 결과</p>
+                    <div class="wrap_graph">
+                        <div class="wrap_bar">
+                            <div class="bar">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="font">
+                                2022. 01. 19<br>
+                                09:56 AM
+                            </div>
+                        </div>
+                        <div class="wrap_bar">
+                            <div class="wrap_max">
+                                <div class="max" style="bottom: 100%">최고점수<br><b>100점</b></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress hit" style="height: 100%;"></div>
+                            </div>
+                            <div class="font">
+                                2022. 01. 19<br>
+                                09:56 AM
+                            </div>
+                        </div>
+                        <div class="wrap_bar">
+                            <div class="bar">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="font">
+                                2022. 01. 19<br>
+                                09:56 AM
+                            </div>
+                        </div>
+                        <div class="wrap_card">
+                            <div class = "card1 card">
+                                <div class = "front">
+                                    다음 모의면접 <br>
+                                    결과는 <br>
+                                    어떻게 나올까?
+                                </div>
+                                <div class= "back">
+                                    <a href="https://interviewmaster.kr/ai/"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result wrap_rank">
+                    <h3>나의 모의면접 랭킹 지수는</h3>
+                    <p>최근 10건의 모의면접 진행 결과</p>
+                    <div class="wrap_graph">
+                        <div class="wrap_bar">
+                            <div class="wrap_max">
+                                <div class="max" style="bottom: 10%">최고순위<br><b>1위</b></div>
+                            </div>
+                            <div class="bar">
+                                <div class="progress hit" style="height: 10%;"></div>
+                            </div>
+                            <div class="font">
+                                2022. 01. 19<br>
+                                09:56 AM
+                            </div>
+                        </div>
+                        <div class="wrap_card">
+                            <div class = "card2 card">
+                                <div class = "front">
+                                    다음 모의면접 <br>
+                                    결과는 <br>
+                                    어떻게 나올까?
+                                </div>
+                                <div class= "back">
+                                    <a href="https://interviewmaster.kr/ai/"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    let card1 = document.querySelector('.card1');
+    card1.addEventListener('click', click);
+    let card2 = document.querySelector('.card2');
+    card2.addEventListener('click', click);
+
+    function click(event) {
+    let elem = event.currentTarget;
+    if (elem.style.transform == "rotateY(180deg)") {
+            elem.style.transform = "rotateY(0deg)";
+        } else {
+            elem.style.transform = "rotateY(180deg)";
+        }
+    }
+</script>
+</html>

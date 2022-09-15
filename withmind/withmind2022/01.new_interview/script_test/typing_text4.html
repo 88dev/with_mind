@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text typing</title>
+    <style>
+        .text_box{
+            height: 250px;
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="text_box">
+        <p class="text"></p>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var content = "홍길동님, 반가워요. \n 인터뷰마스터 IM 입니다." ;
+    var text = document.querySelector(".text");
+    var i = 0;
+
+    function typing(){
+        var txt = content[i++];
+        text.innerHTML += txt=== "\n" ? "<br/>": txt;
+        if (i > content.length) {
+            text.textContent = "";
+            i = 0;
+        }
+    }
+    setInterval(typing, 100);
+</script>
+</html>
+
+<!-- https://codepen.io/somi-hwang/pen/vYxKwyo -->
