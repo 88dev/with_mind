@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>셀렉트 박스 안에 체크박스</title>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <script>
+            function multiSelect(value){
+                if(value=="OPEN") Div.style.visibility="visible";
+                else Div.style.visibility="hidden";
+            }
+
+            // $('html').click(function(e) { 
+            //     if(!$(e.target).hasClass("area")) {
+            //         alert('영역 밖입니다.'); 
+            //         multiSelect('CLOSE');
+            //     } 
+            // });
+
+        </script>
+        <style type="text/css">
+            select, ul { height: 100px; overflow: auto; width: 200px; border: 1px solid #000; }
+            ul { list-style-type: none; margin: 0; padding: 0; overflow-x: hidden; }
+            li { margin: 0; padding: 0; }
+            label { display: block; color: WindowText; background-color: Window; margin: 0; padding: 0; width: 100%; }
+            label:hover { background-color: Highlight; color: HighlightText; }
+            .area {border:1px solid red;}
+        </style>
+    </head>
+    <body>
+        <form name="form1">
+            <table cellpadding="0" cellspacing="0" style="cursor:pointer" onClick="multiSelect('OPEN')" class="area">
+                <tr>
+                    <td align="center" width="200" height="40" style="border:1px solid;font-size:12px;">다중선택 리스트</td>
+                    <!-- <td><input type="button" value="▼" onclick=""></td> -->
+                </tr>
+            </table>
+            
+            <div id="Div" style="position:absolute;visibility:hidden;font-size:12px;" class="area">
+                <ul>
+                    <li><input type="checkbox" name="chk1" id="chk1">체크리스트1</li>
+                    <li><input type="checkbox" name="chk2" id="chk2">체크리스트2</li>
+                    <li><input type="checkbox" name="chk3" id="chk3">체크리스트3</li>
+                    <li><input type="checkbox" name="chk4" id="chk4">체크리스트4</li>
+                    <li><input type="checkbox" name="chk5" id="chk5">체크리스트5</li>
+                    <li><input type="checkbox" name="chk6" id="chk6">체크리스트6</li>
+                    <li><input type="checkbox" name="chk7" id="chk7">체크리스트7</li>
+                </ul>
+                <div style="padding-top:3px;text-align:right"><input type="button" value="확인" onClick="multiSelect('CLOSE')"></div>
+            </div>
+        </form>
+
+
+        <script>
+            var jsondata = [
+                {text : 'input', value : 'iValue'},
+                {text : 'picker', value : 'pValue'},
+                {text : 'radio', value : 'rValue'},
+                {text : 'select', value : 'sValue'}
+            ];
+        </script>
+        <sbux-select id="sbIdx1" name="sbName1" uitype="checkbox" jsondata-ref="jsondata" class="area"></sbux-select>
+
+        <select class="jobGroup" style="margin-top: 300px; height: 40px;">
+            <option value="" disabled selected hidden>직군</option>
+            <option value="">전체</option>
+            <option value="">경영/회계</option>
+            <option value="">사무/기획</option>
+            <option value="">공무원</option>
+            <option value="">보건/의료/복지</option>
+            <option value="">영업판매</option>
+            <option value="">마케팅</option>
+            <option value="">디자인</option>
+            <option value="">섬유/의류</option>
+            <option value="">서비스</option>
+            <option value="">엔지니어</option>
+            <option value="">물류/재고/유통</option>
+        </select>
+    </body>
+
+</html>

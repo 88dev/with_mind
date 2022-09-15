@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+	<title>header/nav</title>
+	<link rel="stylesheet" type="text/css" href="../css/common/header_nav.css">
+	<link rel="stylesheet" type="text/css" href="../jquery-ui/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/user_setting/meneger_setting.css">
+	<script type="text/javascript" src="../js/jquery-3.5.0.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../jquery-ui/common.js"></script>
+
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//메뉴 높이 조절 - 자바스크립트 인하여 페이지의 높이가 달라진다면 사용
+			heightAction();
+		});
+		//로드가 된 후 메뉴바 높이 조절
+		window.onload = function() {
+			heightAction();
+		}
+	</script>
+
+</head>
+
+<body>
+	<!-- //-----------------------------상단 영역 -->
+	<header>
+		<div class="header_box width_box">
+			<!-- 상단 logo -->
+			<div class="top_logo header_left">
+				<img alt="icon" class="logo_img" src="../images/im/im-logo-header.svg">
+			</div>
+			<!-- 상단 logo -->
+
+			<div class="header_right">
+				<div><a href="#">관리자설정</a></div>
+				<div class="user_btn">
+					<span>abc admin123 님</span>
+					<ul class="setting_box">
+						<li class="on"><a href="#">정보관리</a></li>
+						<li><a href="#">로그아웃</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<!-- //-----------------------------상단 영역 -->
+	<div class="body_box width_box">
+
+		<!-- //------------------------ 메뉴 영역 -->
+		<!--
+			one_dapps 옆에 on 클래스 넣어주면 활성화
+			그룹 타입은 A 테그가 아닌 네무 테그 사용
+			ul off : 닫힘 표시
+			-->
+		<div class="menu_box">
+			<ul class="off">
+				<!-- <li><a class="one_dapps dashboard on" href="">Dashboard</a></li> -->
+				<li>
+					<span class="one_dapps dash_user" href="">
+						회원관리
+					</span>
+				</li>
+				<li><a class="two_dapps" href="#">일반회원관리</a></li>
+				<li><a class="two_dapps" href="#">휴면계정관리</a></li>
+			</ul>
+			<ul class="off">
+				<li>
+					<span class="one_dapps dash_interview" href="">
+						면접관리
+					</span>
+				</li>
+				<li><a class="two_dapps" href="#">IM 면접</a></li>
+			</ul>
+
+			<!-- two_dapps 옆에 on 클래스 넣어주면 활성화 -->
+			<ul class="off">
+				<li>
+					<span class="one_dapps dash_ticket" href="">
+						이용권관리
+					</span>
+				</li>
+				<li><a class="two_dapps" href="#">이용권 / 쿠폰 내역</a></li>
+				<li><a class="two_dapps" href="#">결제내역</a></li>
+				<li><a class="two_dapps" href="#">쿠폰관리</a></li>
+			</ul>
+
+			<ul class="off">
+				<li>
+					<span class="one_dapps dash_manage" href="">
+						운영관리
+					</span>
+				</li>
+				<li><a class="two_dapps" href="#">이벤트</a></li>
+				<li><a class="two_dapps" href="#">배너관리</a></li>
+				<li><a class="two_dapps" href="#">앱푸시관리</a></li>
+			</ul>
+
+			<ul class="off">
+				<li>
+					<span class="one_dapps dash_support" href="">
+						고객지원
+					</span>
+				</li>
+				<li><a class="two_dapps" href="#">공지사항</a></li>
+				<li><a class="two_dapps" href="#">FAQ</a></li>
+				<li><a class="two_dapps" href="#">1:1 문의</a></li>
+			</ul>
+
+			<ul class="off">
+				<li>
+					<span class="one_dapps dash_statistics" href="">
+						통계
+					</span>
+				</li>
+				<li><a class="two_dapps" href="#">인터뷰 통계</a></li>
+				<li><a class="two_dapps" href="#">회원별 통계</a></li>
+			</ul>
+
+			<ul class="off">
+				<li>
+					<span class="one_dapps dash_B2B" href="">
+						기업관리(B2B)
+					</span>
+				</li>
+				<li><a class="two_dapps" href="#">기업정보관리</a></li>
+				<li><a class="two_dapps" href="#">Pri 등록관리</a></li>
+				<li><a class="two_dapps" href="#">Biz 등록관리</a></li>
+			</ul>
+
+			<ul class="off">
+				<li>
+					<span class="one_dapps dash_B2B_board" href="">
+						기업 게시판관리
+					</span>
+				</li>
+				<li><a class="two_dapps" href="#">기업 공지사항</a></li>
+				<li><a class="two_dapps" href="#">기업 업계소식</a></li>
+			</ul>
+		</div>
+
+
+		<!-- //------------------------ 메뉴 영역 -->
+
+		<div class="contents_box width_box" style="height: 1000px; width: 100%; border: 1px solid red;">
+			<main class="manager_setting_page">
+				<section class="page_top">
+					<h3>관리자 설정</h3>
+					<div class="site_map">
+						홈 > 관리자 설정
+					</div>
+				</section>
+				<section class="page_contents">
+					<table>
+						<tr>
+							<th>순서</th>
+							<th>ID</th>
+							<th>이름</th>
+							<th>유형</th>
+							<th>휴대폰번호</th>
+							<th>이메일</th>
+							<th>상태</th>
+							<th>가입일</th>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td><a>admin1</a></td>
+							<td>다이름</td>
+							<td>일반관리자</td>
+							<td>010-****-1234</td>
+							<td>ad***10@withim.net</td>
+							<td>정상</td>
+							<td>2020-05-01</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>admin1</td>
+							<td>다이름</td>
+							<td>일반관리자</td>
+							<td>010-****-1234</td>
+							<td>ad***10@withim.net</td>
+							<td>정상</td>
+							<td>2020-05-01</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>admin1</td>
+							<td>다이름</td>
+							<td>일반관리자</td>
+							<td>010-****-1234</td>
+							<td>ad***10@withim.net</td>
+							<td>정상</td>
+							<td>2020-05-01</td>
+						</tr>
+	
+					</table>
+				</section>
+				<section>
+					<a href="#">등록</a>
+				</section>
+	
+			</main>
+
+		</div>
+
+
+		<div class="modal fade" id="products-modal">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="products-modal-title">
+						<p>이용에 불편을 드려 죄송합니다.</p>
+					</div>
+					<div class="products-modal-content">
+						현재 결제 서비스가 제한되어 PC웹에서는 이용권 결제를 지원하지 않습니다. <br>
+						최대한 빠른 시일 내에 원활한 서비스를 제공할 수 있도록 노력하겠습니다. <br>
+						이용권 결제를 원하시는 경우 IM앱을 통해 이용해주시기 바랍니다.
+					</div>
+					<div class="products-modal-btn">
+						<button class="im-primary-button im-modal-button-products" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+
+		<footer></footer>
+	</div>
+</body>
+
+</html>

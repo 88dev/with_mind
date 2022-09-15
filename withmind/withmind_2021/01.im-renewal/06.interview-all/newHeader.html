@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+html, body {
+    background-color: beige; margin: 0; padding: 0;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    cursor: pointer;
+}
+p {
+    margin: 0;
+}
+h1 {
+    margin: 0 210px 0 0; 
+    float: left;
+}
+header {
+    /* border:1px solid black; */
+    width: 100%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-color: #fff;
+    z-index: 10;
+    min-width: 71.11111111rem;
+    color: #333333;
+    box-sizing: border-box;
+}
+header>div.new-gnb {
+  background-color: #FFF;
+}
+.gnb {
+    /* border:1px solid black; */
+  overflow: hidden;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 30px 0 25px;
+}
+.gnb a {
+  float: left;
+  width: 100%;
+}
+.gnb-list {
+  float: left;
+  overflow: hidden;
+}
+.gnb1depth>li {
+    display: inline-block;
+    width: 150px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+.gnb1depth>li>a {
+    
+}
+.gnb-list a:hover {
+    color: #5F4EEE;
+}
+.gnb2depth {
+    display: none;
+    float: right;
+    text-align: center;
+}
+.gnb2depth>li {
+    display: inline-block;
+    width: 150px;
+    vertical-align: top;
+    font-size: 0.88888889rem;
+    font-size: 16px;
+}
+.gnb2depth>li>a {
+    display: block;
+    margin: 12px 0;
+    color: #666666;
+}
+.gnb2depth>li>p>span {
+    font-size: 13px;
+    color: #FFB529;
+    margin-left: 5px;
+}
+.gnb2depth li p {
+    font-weight: bold;
+    margin: 22px 0 12px;
+}
+.gnb2depth a {
+  float: none;
+  margin-top: 0.55555556rem;
+}
+.gnb-list:hover .gnb2depth {
+  display: block;
+}
+.gnbMenu {
+    float: right;
+}
+.gnbMenu > a {
+    height: 38px;
+    line-height: 38px;
+    padding-right: 15px;
+    background-image: url(img/icon_arrow_down.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+.gnbMenu.on > a {
+    background-image: url(img/icon_arrow_up_violet.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+.gnbMenu.on > a > img {
+    border: 1px solid #5F4EEE;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.gnbMenu > a > span {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    vertical-align: top;
+    font-size: 16px;
+    margin: 0 10px;
+}
+.loginMenu {
+    display: none;
+    position: absolute;
+    background-image: url('img/img_mypage.png');
+    background-repeat: no-repeat;
+    width: 215px;
+    height: 235px;
+    margin-top: 30px;
+    transform: translate(-8%, 0);
+}
+.gnbMenu:hover .loginMenu {
+  display: block;
+}
+.loginMenu ul {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+.loginMenu ul li {
+    height: 15px;
+    margin-top: 18px;
+    color: #999999;
+}
+.loginMenu ul li a:hover {
+    color: #333333;
+    text-decoration: underline;
+}
+.dim {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0rem;
+  top: 0rem;
+  right: auto;
+  bottom: auto;
+  background-color: #000;
+  opacity: 0.4;
+  display: none;
+  z-index: 5;
+}
+.dim.on {
+  display: block;
+}
+
+</style>
+</head>
+<header>
+    <div class="new-gnb">
+        <nav class="gnb">
+            <h1><a href="#home"><img src="img/img-im-logo.svg"></a></h1>
+            
+            <div class="gnb-list">
+                <ul class="gnb1depth">
+                    <li><a>IM기업홈</a></li>
+                    <li><a>면접관리</a></li>
+                    <li><a>통계분석</a></li>
+                    <li><a>기업상품안내</a></li>
+                </ul>
+                <ul class="gnb2depth">
+                    <li>
+                        <p>AI 모의면접</p>
+                        <a>계약리스트</a>
+                        <a>지원자관리</a>
+
+                        <p>AI 기업면접</p>
+                        <a>공고등록</a>
+                        <a>공고리스트</a>
+                        <a>지원자관리</a>
+
+                        <p>AI 화상면접<span>N</span></p>
+                        <a>공고등록</a>
+                        <a>공고리스트</a>
+                        <a>지원자관리</a>
+                    </li>
+                    <li>
+                        <p>AI 모의면접</p>
+                        <a>면접통계 • 분석</a>
+                        <a>지원자통계 • 분석</a>
+                        
+                        <p>AI 기업면접</p>
+                        <a>면접통계 • 분석</a>
+                        <a>지원자통계 • 분석</a>
+
+                        <p>AI 화상면접</p>
+                        <a>면접통계 • 분석</a>
+                        <a>지원자통계 • 분석</a>
+                    </li>
+                    <li>
+                        <p><a>전체서비스안내</a></p>
+                        <p><a>서비스신청</a></p>
+                        <p><a>제휴문의</a></p>
+                    </li>
+                </ul>
+            </div> 
+            <div class="gnbMenu">
+                <a class=""><img src="img/img_profile.svg"><span>위드마인드</span></a>
+                <div class="loginMenu ">
+                    <ul>
+                        <li><a>기업정보관리</a></li>
+                        <li><a>이용내역</a></li>
+                        <li><a>공지사항</a></li>
+                        <li><a>고객지원</a></li>
+                        <li><a>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="dim"></div>
+
+<body>
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+        
+        $(" .gnb-list > ul ").bind("mouseover",function(){ 
+            $(".dim").addClass("on");
+        }); 
+        $(" .gnb-list > ul ").bind("mouseout",function(){ 
+            $(".dim").removeClass("on");
+        });
+
+        $(" .gnbMenu > * ").bind("mouseover",function(){ 
+            $(".gnbMenu").addClass("on");
+        }); 
+        $(" .gnbMenu > * ").bind("mouseout",function(){ 
+            $(".gnbMenu").removeClass("on");
+        });
+    });
+
+</script>
+</html>
+

@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.interview-main {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(90deg, #694FDC 0%, #799EFD 100%) 0% 0% no-repeat padding-box;
+}
+
+.interview-background {
+    width: 100vw;
+    height: 100vh;
+    background: transparent url('images/img_back_deco.png') 0% 0% no-repeat padding-box;
+    background-size: cover;
+}
+
+.max-width-1000 {
+    /* border: 1px solid #FFF; */
+    border: none;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+ 
+.btn-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    float: right;
+    margin-top: 50px;;
+}
+.btn-close img {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+.interview-contents {
+    /* border: 3px solid #FFF; */
+    height: 70%;
+    padding-top: 80px;
+}
+
+.interview-contents div {
+}
+
+
+.interview-progress {
+    position: absolute;
+    bottom: 0;
+    /* margin-bottom: 20px; */
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.progress-set {
+    display: inline-block;
+}
+
+.progress-num {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    box-shadow: 3px 4px 6px #64646429;
+    border: 2px solid #4550A5;
+    opacity: 1;
+    text-align: center;
+    letter-spacing: 0.1px;
+    border-radius: 50%;
+    color: #4550A5;
+    /* font-size: 10px; */
+    margin: 0 auto;
+}
+
+.progress-num-on {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 3px 4px 6px #4B4B4B29;
+    border: none;
+    color: #000;
+}
+
+.progress-txt {
+    color: #4550A5;
+    letter-spacing: -0.4px;
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.progress-txt-on {
+    color: #FFF;
+}
+
+.progress-bar {
+    display: inline-block;
+    width: 20px;
+    height: 47px;
+    vertical-align: bottom;
+    box-sizing: border-box;
+}
+
+.progress-bar hr {
+    border: 1px solid;
+    border-color: #4550A5;
+    margin: 0 -20px;
+}
+
+
+button {
+    background: transparent; 
+    border: none;
+    outline: none; 
+    cursor: pointer;
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .interview-progress {
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (min-width: 1281px) {
+
+    .interview-progress {
+        margin-bottom: 50px;
+    }
+
+}

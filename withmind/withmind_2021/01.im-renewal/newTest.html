@@ -1,0 +1,26 @@
+<a href="javascript:;" class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+<div class="share-pop">
+    	<ul>
+    		<li><a href="javascript:;"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+    		<li><a href="javascript:;"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+    		<li><a href="javascript:;"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+    		<li><a href="javascript:;"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+    		<li><a href="javascript:;"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+    	</ul>
+</div>
+
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script>
+
+    //공유하기 클릭
+        $(".share").click(function(){
+            $(".share-pop").stop().fadeToggle(500);
+        return false; //중요
+    });
+    //공유하기 팝업 외에 영역 클릭
+        $(document).click(function(e){ //문서 body를 클릭했을때
+            if(e.target.className =="share-pop"){return false} //내가 클릭한 요소(target)를 기준으로 상위요소에 .share-pop이 없으면 (갯수가 0이라면)
+            $(".share-pop").stop().fadeOut(500);
+    });
+
+</script>

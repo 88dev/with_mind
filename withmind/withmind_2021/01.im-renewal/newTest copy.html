@@ -1,0 +1,174 @@
+<style>
+    .multiSelect {width: 29%; list-style:none; position: fixed;}
+    
+    .select-ul>li:nth-child(1)>ul {
+        height: 120px;
+    }
+
+    .select-ul>li:nth-child(2){
+        margin-left: 30%;
+    }
+    .select-ul>li:nth-child(2)>ul, .select-ul>li:nth-child(3)>ul {
+        height: 150px;
+    }
+
+    .select-ul>li:last-child{
+        margin-left: 60%;
+    }
+
+    .multiSelect div{cursor:pointer;border: 1px solid #AEAEAE; width: 100%; height: 40px; line-height: 40px;}
+    .multiSelect .hide{display:none; padding-left: 0;}
+    .multiSelect ul {width: 100%;  border: 1px solid #AEAEAE; overflow-y: scroll; overflow-x: hidden;}
+
+
+    .multiSelect li { list-style:none; height: 40px; line-height: 40px;}
+
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .selectTitle {
+        background: url(../img/btn-dropdown-age.svg) no-repeat;
+        background-position: center right 20px ;
+    }
+
+    .checks {
+        width: 100%;
+    }
+
+    .checks input[type="checkbox"] {
+        display: none;
+    }
+
+    .checks:hover {
+        background-color: #EDF0F5;
+    }
+
+    .checks label {
+        color: #272D48;
+        position: relative;
+    }
+
+    .checks input[type="checkbox"]+label {
+        width: 75%;
+        display: inline-block;
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .checks input[type="checkbox"]+label:before {
+        content: '';
+        position: absolute;
+        right: -35px;
+        top: 10px;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        border-radius: 100%;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+
+        background-image: url("image/img-selectbox-none.svg");
+    }
+
+    .checks input[type="checkbox"]+label:active:before,
+    .checks input[type="checkbox"]:checked+label:active:before {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .checks input[type="checkbox"]:checked+label:before {
+        background-image: url("image/img-selectbox-check.svg");
+        background-position-y: center;
+    }
+
+    .checks input[type="checkbox"]:checked+label:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: -17px;
+        background-image: url("image/img-selectbox-check.svg");
+    }
+</style>
+
+
+
+<div class="selectBox">
+    <ul class="select-ul">
+        <li class="multiSelect">
+            <div class="selectTitle">&emsp;성별</div>
+            <ul class="hide">
+                <li class="checks"><input type="checkbox" id="gender-all"><label for="gender-all">전체</label></li>
+                <li class="checks"><input type="checkbox" id="gender-men"><label for="gender-men">남자</label></li>
+                <li class="checks"><input type="checkbox" id="gender-women"><label for="gender-women">여자</label></li>
+            </ul>
+        </li>
+ 
+        <li class="multiSelect">
+            <div class="selectTitle">&emsp;연령</div>
+            <ul class="hide">
+                <li class="checks"><input type="checkbox" id="ages-all"><label for="ages-all">전체</label></li>
+                <li class="checks"><input type="checkbox" id="ages-under19"><label for="ages-under19">19세이하</label></li>
+                <li class="checks"><input type="checkbox" id="ages-20-25"><label for="ages-20-25">20~25세</label></li>
+                <li class="checks"><input type="checkbox" id="ages-26-30"><label for="ages-26-30">26~30세</label></li>
+                <li class="checks"><input type="checkbox" id="ages-31-35"><label for="ages-31-35">31~35세</label></li>
+                <li class="checks"><input type="checkbox" id="ages-36-40"><label for="ages-36-40">36~40세</label></li>
+                <li class="checks"><input type="checkbox" id="ages-41-45"><label for="ages-41-45">41~45세</label></li>
+                <li class="checks"><input type="checkbox" id="ages-46-50"><label for="ages-46-50">46~50세</label></li>
+                <li class="checks"><input type="checkbox" id="ages-over50"><label for="ages-over50">50세이상</label></li>
+            </ul>
+        </li>
+ 
+        <li class="multiSelect">
+            <div class="selectTitle">&emsp;직군</div>
+            <ul class="hide">
+                <li class="checks"><input type="checkbox" id="job-all"><label for="job-all">전체</label></li>
+                <li class="checks"><input type="checkbox" id="manage"><label for="manage">경영/회계</label></li>
+                <li class="checks"><input type="checkbox" id="office"><label for="office">사무/기획</label></li>
+                <li class="checks"><input type="checkbox" id="public-officer"><label for="public-officer">공무원</label></li>
+                <li class="checks"><input type="checkbox" id="office"><label for="office">사무/기획</label></li>
+                <li class="checks"><input type="checkbox" id="health"><label for="health">보건/의료/복지</label></li>
+                <li class="checks"><input type="checkbox" id="sales"><label for="sales">영업판매</label></li>
+                <li class="checks"><input type="checkbox" id="marketing"><label for="marketing">마케팅</label></li>
+                <li class="checks"><input type="checkbox" id="design"><label for="design">디자인</label></li>
+                <li class="checks"><input type="checkbox" id="clothes"><label for="clothes">섬유/의류</label></li>
+                <li class="checks"><input type="checkbox" id="service"><label for="service">서비스</label></li>
+                <li class="checks"><input type="checkbox" id="engineer "><label for="engineer ">엔지니어</label></li>
+                <li class="checks"><input type="checkbox" id="stock"><label for="stock">물류/재고/유통</label></li>
+            </ul>
+        </li>
+    </ul>
+    <button type="submit" class="search-btn">검색</button>
+</div>
+<div>afsdkj</div>
+<img src="images/img-timecirclegroup.svg" style="height: 1000px;" >
+
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script>
+    // html dom 이 다 로딩된 후 실행된다.
+    $(document).ready(function(){
+        // multiSelect 클래스 바로 하위에 있는 a 태그를 클릭했을때
+        $(".multiSelect>div").click(function(){
+            var subSelect = $(this).next("ul");
+ 
+            // subSelect 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+            if( subSelect.is(":visible") ){
+                subSelect.slideUp();
+
+            }else{
+                subSelect.slideDown();
+            }
+        });
+    });
+
+    // $("body").click(function(e) { 
+    //     if($("#autoKeyword").css("display") == "block") {
+    //         if(!$('#autoKeyword, #input_search').has(e.target).length) { 
+    //             $("#autoKeyword").hide();
+    //         } 
+    //     }
+    // });
+</script>
+

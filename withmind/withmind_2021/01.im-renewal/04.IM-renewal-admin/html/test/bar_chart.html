@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <style>
+
+            section {
+                display: flex;
+            }
+
+            section > div {
+                flex: 1;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <section>
+            <div>
+                <canvas id="exprs_chart"></canvas>
+            </div>
+            <div>
+                <canvas id="vc_chart"></canvas>
+            </div>
+        </section>
+
+    </body>
+    <script>
+
+        // 우선 컨텍스트를 가져옵니다. 
+        var exprs_chart = document.getElementById("exprs_chart").getContext('2d');
+        /*
+        - Chart를 생성하면서, 
+        - ctx를 첫번째 argument로 넘겨주고, 
+        - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+        */
+        var expChart = new Chart(exprs_chart, {
+            type: 'bar',
+            data: {
+                labels: ["시선변화", "상체 움직임", "얼굴 손가림", "표정"],
+                datasets: [
+                    {
+                        label: '산만한',
+                        data: [12, 1, 3, 5, 2, 3],
+                        backgroundColor: '#51A3FF',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '안정이 필요한',
+                        data: [20, 11, 13, 15, 12, 23],
+                        backgroundColor: '#FF8484',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '표현력이 풍부',
+                        data: [15, 17, 23, 10, 32, 13],
+                        backgroundColor: '#F2CE59',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '인내심있는',
+                        data: [5, 8, 7, 15, 22, 7],
+                        backgroundColor: '#8BD6C2',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '집중력 높은',
+                        data: [20, 19, 3, 5, 2, 3],
+                        backgroundColor: '#A2A0E2',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+        // 목소리, 단어 차트
+        var vc_chart = document.getElementById("vc_chart").getContext('2d');
+
+        var vcChart = new Chart(vc_chart, {
+            type: 'bar',
+            data: {
+                labels: ["목소리 크기", "목소리 변화", "말 빠르기"],
+                datasets: [
+                    {
+                        label: '회피하는',
+                        data: [12, 1, 3],
+                        backgroundColor: '#51A3FF',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '내향적인',
+                        data: [20, 11, 13],
+                        backgroundColor: '#FF8484',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '평화로운',
+                        data: [15, 17, 23],
+                        backgroundColor: '#F2CE59',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '호감을 주는',
+                        data: [5, 8, 7],
+                        backgroundColor: '#8BD6C2',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '패기 있는',
+                        data: [20, 19, 3],
+                        backgroundColor: '#A2A0E2',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+
+    </script>
+</html>

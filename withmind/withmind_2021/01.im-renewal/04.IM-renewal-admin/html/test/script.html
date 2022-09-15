@@ -1,0 +1,68 @@
+<script>
+    columns: [
+        {"data": function (data, type, dataToSet) {return '<td>' + data.wrKey + '</td>';}},
+        {"data": function (data, type, dataToSet) {return '<td><a href="${pageContext.request.contextPath}/customer/notice_update">'+data.wrSubject+'</a></td>';}},
+        {"data": function (data, type, dataToSet) {
+                var list = "";	
+                if(data.wrState == 'Y'){
+                        list += '<td>게시</td>';
+                    } else {
+                        list += '<td>미게시</td>';
+                    }
+                return list; 
+            }
+        },
+        {"data": function (data, type, dataToSet) {return '<td>' + data.wrDatetime + '</td>';}},
+        {"data": function (data, type, dataToSet) {return '<td>999</td>';}},
+        {"data": function (data, type, dataToSet) {return '<td>superadmin</td>';}}
+    ]
+
+
+// -----------------------------------------------------------------------------------------------------------------------------------------
+
+columns: [
+    {"data": function (data, type, dataToSet) {return '<td>' + data.faKey + '</td>';}},
+    {"data": function (data, type, dataToSet) {
+            var list = "";	
+            if(data.faType == '2'){
+                    list += '<td>v</td>';
+                } else {
+                    list += '<td>-</td>';
+                }
+            return list; 
+        }
+    },
+    {"data": function (data, type, dataToSet) {
+            var list = "";	
+            if(data.fsCode == '1'){
+                    list += '<td>이용방법</td>';
+                } else if(data.fsCode == '2') {
+                    list += '<td>회원정보</td>';
+                } else if(data.fsCode == '3') {
+                    list += '<td>결제</td>';
+                } else if(data.fsCode == '3') {
+                    list += '<td>기타</td>';
+                }
+            return list; 
+        }
+    },
+    {"data": function (data, type, dataToSet) {return '<td><a href="${pageContext.request.contextPath}/customer/faq_update">' + data.faSubject + '</a></td>';}},
+    {"data": function (data, type, dataToSet) {
+            var list = "";	
+            if(data.faState == 'Y'){
+                    list += '<td>게시</td>';
+                } else {
+                    list += '<td>미게시</td>';
+                }
+            return list; 
+        }
+    },
+    {"data": function (data, type, dataToSet) {return '<td>superadmin</td>';}},
+    {"data": function (data, type, dataToSet) {return '<td>' + data.faDatetime + '</td>';}}
+
+
+   
+    
+]
+
+</script>

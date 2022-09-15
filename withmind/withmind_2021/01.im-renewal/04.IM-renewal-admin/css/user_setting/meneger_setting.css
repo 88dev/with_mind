@@ -1,0 +1,74 @@
+main.manager_setting_page {
+    /* border: 1px solid red; */
+}
+
+.manager_setting_page .page_top {
+    border-bottom: 1px solid #D1D1D1;
+    height: 50px;
+    line-height: 50px;
+}
+
+.manager_setting_page .page_top h3, 
+.manager_setting_page .page_top div {
+    display: inline-block;
+}
+
+.manager_setting_page h3 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.manager_setting_page .site_map {
+    color: #434343;
+    font-size: 14px;
+    float: right;
+    line-height: 70px;
+}
+
+.manager_setting_page section.page_contents {
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.manager_setting_page section.page_contents table {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    border-spacing: 0;
+}
+
+.manager_setting_page section.page_contents table th,
+.manager_setting_page section.page_contents table td {
+    height: 38px;
+}
+
+.manager_setting_page section.page_contents table th:not(:last-child),
+.manager_setting_page section.page_contents table td:not(:last-child) {
+    border-right: 1px solid #C4C4C4;
+}
+
+.manager_setting_page section.page_contents table th {
+    background: #E3E3E3;
+    font-weight: bold;
+}
+
+.manager_setting_page section.page_contents table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+.manager_setting_page section.page_contents table tr:nth-child(odd) {
+    background: #F1F1F1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

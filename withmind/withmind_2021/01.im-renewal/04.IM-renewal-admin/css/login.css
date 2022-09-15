@@ -1,0 +1,90 @@
+main.login_page{
+	position: relative;
+	background: #2C2C2C 0% 0% no-repeat padding-box;
+	height: 100vh;
+}
+
+.login_page>section {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+}
+
+.login_title {
+	margin-bottom: 40px;
+}
+
+.login_title .logo{
+	width: 120px;
+	height: 40px;
+	margin: 0 auto 20px;
+	background-image:url("../images/im/logo_header.svg");
+	background-size: contain;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.login_title h2{
+	color:#ffffff;
+	text-align:center;
+	font-size:35px;
+	width:100%;
+	display:inline-block;
+	
+}
+
+.login_form {
+	width: 500px;
+	height: 380px;
+	background: #FFFFFF;
+	margin: 0 auto;
+	padding: 45px 35px;
+	box-sizing: border-box;
+}
+
+.login_form div div {
+	font-size: 15px;
+	font-weight: bold;
+	color: #0E0E0E;
+	margin-bottom: 10px;
+}
+
+.login_form .pw_box div {
+	margin-top: 25px;
+}
+
+.login_form input{
+	border: 1px solid #AEAEAE;
+	background-color: transparent;
+	font-size: 15px;
+	font-weight: normal;
+	width: 430px;
+	height: 50px;
+	margin: 0;
+	padding: 0 15px;
+	outline: none;
+	box-sizing: border-box;
+}
+
+.login_form input::placeholder{
+	color: #B1B1B1;
+}
+
+.login_form button{
+	width: 430px;
+	height: 50px;
+	font-size: 16px;
+	margin-top: 40px;
+	font-weight:normal;
+	background: #3F97FC;
+	border: 1px solid #5D91F7;
+	color: #FFFFFF;
+}
+
+.login_notice {
+	margin-top: 20px;
+	color: #CBCBCB;
+	font-size: 14px;
+}

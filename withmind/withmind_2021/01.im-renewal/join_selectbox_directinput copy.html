@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        
+        <style>
+            .layer { display: none; }
+        </style>
+    </head>
+    <body>
+        <select id="selectBox" name="selectBox">
+            <option value="" selected="selected">전체</option>
+            <option value="option1">옵션1</option>
+            <option value="option2">옵션2</option>
+            <option value="option3">옵션3</option>
+        </select>
+        
+        <div class="layer">내용</div>
+
+        <script>
+
+            jQuery('#selectBox').change(function() {
+                var state = jQuery('#selectBox option:selected').val();
+                if ( state == 'option2' ) {
+                    jQuery('.layer').show();
+                } else {
+                    jQuery('.layer').hide();
+                }
+            });
+        </script>
+    </body>
+</html>

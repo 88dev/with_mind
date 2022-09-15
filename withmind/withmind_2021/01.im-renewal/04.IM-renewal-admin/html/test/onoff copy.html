@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3 Toggle Switch Button</title>
+<style>
+
+    .status_switch {
+        position: relative;
+        display: block;
+        width: 52px;
+        height: 24px;
+        border-radius: 18px;
+        cursor: pointer;
+    }
+
+    .status_switch_input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .status_switch_label {
+        position: relative;
+        display: block;
+        height: inherit;
+        font-size: 10px;
+        text-transform: uppercase;
+        background: #DF2638;
+        border-radius: inherit;
+    }
+
+    .status_switch_label:before, .status_switch_label:after {
+        position: absolute;
+        top: 50%;
+        margin-top: -.5em;
+        line-height: 1;
+        -webkit-transition: inherit;
+        -moz-transition: inherit;
+        -o-transition: inherit;
+        transition: inherit;
+    }
+
+    .status_switch_label:before {
+        content: attr(data-off);
+        right: 6px;
+        color: #FFF;
+    }
+
+    .status_switch_label:after {
+        content: attr(data-on);
+        left: 6px;
+        color: #FFFFFF;
+        opacity: 0;
+    }
+    .status_switch_input:checked ~ .status_switch_label {
+        background: #51A3FF;
+    }
+
+    .status_switch_input:checked ~ .status_switch_label:before {
+        opacity: 0;
+    }
+
+    .status_switch_input:checked ~ .status_switch_label:after {
+        opacity: 1;
+    }
+
+    .status_switch_handle {
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        background: #FFF;
+        border-radius: 100%;
+    }
+
+    .status_switch_input:checked ~ .status_switch_handle {
+        left: 30px;
+    }
+
+    /* Transition ========================== */
+    .status_switch_label, .status_switch_handle {
+        transition: All 0.3s ease;
+        -webkit-transition: All 0.3s ease;
+        -moz-transition: All 0.3s ease;
+        -o-transition: All 0.3s ease;
+    }
+    
+</style>
+    </head>
+
+    <body>
+
+    <label class="status_switch">
+        <input class="status_switch_input" type="checkbox" />
+        <span class="status_switch_label" data-on="정상" data-off="차단"></span> <span class="status_switch_handle"></span> 
+    </label>
+    
+    <label class="status_switch">
+        <input class="status_switch_input" type="checkbox" />
+        <span class="status_switch_label" data-on="정상" data-off="차단"></span> <span class="status_switch_handle"></span> 
+    </label>
+
+</body>
+</html>

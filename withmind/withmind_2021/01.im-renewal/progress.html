@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .interview-main {
+                width: 100vw;
+                height: 100vh;
+                background: transparent linear-gradient(90deg, #694FDC 0%, #799EFD 100%) 0% 0% no-repeat padding-box;
+            }
+
+            .interview-background {
+                width: 100vw;
+                height: 100vh;
+                background: transparent url('images/img_back_deco.png') 0% 0% no-repeat padding-box;
+                background-size: cover;
+            }
+
+            .interview-progress {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+
+                width: 320px;
+                height: 50px;
+                margin-bottom: 50px;
+                font-size: 14px;
+                color: #FFF;
+            }
+
+
+            .interview-progress hr {
+                position: absolute; 
+                border: 1px solid #C3C3F1;
+                width: 80px;
+                top: 6.5px;
+                z-index: -1;
+            }
+
+            .check-hr-on {
+                border: 1px solid #FFF !important;
+            }
+
+            .check-hr1 {
+                left: 32px;
+            }
+
+            .check-hr2 {
+                left: 115px;
+            }
+             
+            .check-hr3 {
+                left: 200px;
+            }
+
+            .check-common {
+                display: inline-block;
+                width: 60px;
+                text-align: center;
+            }
+
+            .check-common:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            .nodot {
+                height: 35px;
+            }
+
+            @media (min-width: 1025px) and (max-width: 1280px) {
+                .interview-progress {
+                    margin-bottom: 20px;
+                }
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <main class="interview-main">
+            <section class="interview-background">
+
+            </section>
+            <section class="interview-progress">
+                <section class="check-pre check-common">
+                    <!-- <img src="images/check-dot.png"> -->
+                    <img src="images/check-check.png">
+                    <div>사전체크</div>
+                </section>
+                <hr class="check-hr1 check-hr-on">
+                <section class="check-ai check-common">
+                    <!-- <img class="nodot" src="images/check-nodot.png"> -->
+                    <img src="images/check-dot.png">
+                    <div>AI 인터뷰</div>
+                </section>
+                <hr class="check-hr2">
+                <section class="check-ai check-common">
+                    <img class="nodot" src="images/check-nodot.png">
+                    <div>인성검사</div>
+                </section>
+                <hr class="check-hr3">
+                <section class="check-ai check-common">
+                    <img class="nodot" src="images/check-nodot.png">
+                    <div>응시완료</div>
+                </section>
+            </section>
+        </main>
+
+    </body>
+</html>

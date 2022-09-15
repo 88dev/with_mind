@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Interview Master</title>
+</head>
+<body>
+  <div class="container">
+    <div class="wrap interview manage">
+
+      <!-- 네비게이션 -->
+      <header>
+        <h1><a href="/"><img src="img/img-im-logo.svg" alt=""></a></h1>
+        <nav>
+          <a href="" class="m-list">IM기업홈</a>
+          <a href="" class="m-list">면접관리</a>
+          <a href="" class="m-list">통계분석</a>
+          <a href="" class="m-list">기업상품안내</a>
+          <div class="log-box">
+            <a class="login">로그인</a>
+            <a class="logout"><img src="img/img-person.svg" alt="">(주)무한상사IM</a>
+          </div>
+        </nav>
+        <div class="nav-list">
+          <ul>
+            <li>
+              <p>AI 모의면접</p>
+              <a href="">계약리스트</a>
+              <a href="">지원자관리</a>
+              <p>AI 기업면접</p>
+              <a href="">공고등록</a>
+              <a href="">공고리스트</a>
+              <a href="">지원자관리</a>
+              <p>AI 화상면접 <s>N</s></p>
+              <a href="">공고등록</a>
+              <a href="">공고리스트</a>
+              <a href="">지원자관리</a>
+            </li>
+            <li>
+              <p>AI 모의면접</p>
+              <a href="">면접통계 • 분석</a>
+              <a href="">지원자통계 • 분석</a>
+              <p>AI 기업면접</p>
+              <a href="">면접통계 • 분석</a>
+              <a href="">지원자통계 • 분석</a>
+              <p>AI 화상면접</p>
+              <a href="">면접통계 • 분석</a>
+              <a href="">지원자통계 • 분석</a>
+            </li>
+            <li>
+              <p><a href="">전체서비스안내</a></p>
+              <p><a href="">서비스신청</a></p>
+            </li>
+          </ul>
+        </div>
+        <div class="my-page">
+          <a href="">기업정보관리</a>
+          <a href="">이용내역</a>
+          <a href="">공지사항</a>
+          <a href="">고객지원</a>
+          <a href="">로그아웃</a>
+        </div>
+      </header>
+      <div class="dim"></div>
+      <!-- 끝 -->
+
+      <article>
+        <div class="top uni">
+          <h2> UNI (AI 화상면접)</h2>
+          <p class="txt"><span>별도의 화상 프로그램 설치 없이 면접자와 인사담당자간의 화상면접을 진행할 수 있는 서비스입니다.</span> 인터뷰마스터의 AI화상면접은 <s>실시간 AI 분석결과를 인사담당자 화면에 제공</s>하여<br> 누구나 쉽게 <s>전문적인 면접</s>을 진행할 수 있도록 합니다.</p>
+        </div>
+
+        <!-- 사이드 메뉴 -->
+        <aside>
+          <p>면접관리</p>
+          <ul>
+            <li>
+              <a href="">AI 모의면접</a>
+              <div class="sub">
+                <ul>
+                  <li><a href="">계약리스트</a></li>
+                  <li><a href="">지원자관리</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="">AI 기업면접</a>
+              <div class="sub">
+                <ul>
+                  <li><a href="">공고등록</a></li>
+                  <li><a href="">공고리스트</a></li>
+                  <li><a href="">지원자관리</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="">AI 화상면접</a>
+              <div class="sub">
+                <ul>
+                  <li><a href="">공고등록</a></li>
+                  <li class="on"><a href="">공고리스트</a></li>
+                  <li><a href="">지원자관리</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </aside>
+        <!-- 끝 -->
+
+        <section class="biz-sec">
+          <div class="sec-inner">
+            <div class="tit-wrap">
+              <h3>공고리스트</h3>
+              <div class="crumb">
+                <span>홈 &nbsp; ></span>
+                <span>면접관리 &nbsp; ></span>
+                <span>UNI 공고리스트</span>
+              </div>
+            </div>
+            <div class="visual">
+              <div class="regi-box">
+                <a class="regi">공고 추가 등록</a>
+              </div>
+              <div class="v-wrap">
+                <div class="calendar">시작일 / 종료일 <img src="img/icon-calendar-bk.svg" alt=""></div>
+                <div class="biz-se">
+                  <div class="select sel-all">
+                    <a onclick="selList('sel-all')">전체</a>
+                    <div class="select-list">
+                      <a>채용공고</a>
+                      <a>채용분야</a>
+                      <a>담당자</a>
+                    </div>
+                  </div>
+                  <div class="search">
+                    <input type="text">
+                    <a class="btn">검색</a>
+                  </div>
+                </div>
+              </div>
+              <div class="status">
+                <p class="user-rate">면접 가능 인원수(남은 이용수량) : <span>N</span>건</p>
+              </div>
+            </div>
+
+            <div class="table">
+              <table cellspacing="0" cellpadding="0" border="0">
+                <colgroup>
+                  <col width="80px">
+                  <col width="330px">
+                  <col width="100px">
+                  <col width="100px">
+                  <col width="130px">
+                  <col width="130px">
+                  <col width="75px">
+                  <col width="135px">
+                </colgroup>
+                <tr>
+                  <th>NO.</th>
+                  <th>채용공고</th>
+                  <th>채용분야</th>
+                  <th>담당자</th>
+                  <th>시작일시</th>
+                  <th>마감일시</th>
+                  <th>지원자수</th>
+                  <th>지원자 등록</th>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi app-more">지원자 추가등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi">지원자 등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi">지원자 등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi">지원자 등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi app-more">지원자 추가등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi">지원자 등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi">지원자 등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi app-more">지원자 추가등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi">지원자 등록</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2022년 하반기 디자인/퍼블리셔 직군 채용</td>
+                  <td>서비스</td>
+                  <td>홍길동</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>2021.09.02 11:01</td>
+                  <td>00</td>
+                  <td>
+                    <a class="app-regi app-more">지원자 추가등록</a>
+                  </td>
+                </tr>
+              </table>
+              <div class="page-nation">
+                <ul>
+                  <li><a class="prev-dir"></a></li>
+                  <li><a class="prev"></a></li>
+                  <li class="active"><a>1</a></li>
+                  <li><a>2</a></li>
+                  <li><a>3</a></li>
+                  <li><a>4</a></li>
+                  <li><a>5</a></li>
+                  <li><a>6</a></li>
+                  <li><a>7</a></li>
+                  <li><a>8</a></li>
+                  <li><a>9</a></li>
+                  <li><a>10</a></li>
+                  <li><a class="next"></a></li>
+                  <li><a class="next-dir"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </div>
+</body>
+<script src="js/main.js"></script>
+<script>
+  function selList(v) {
+    let child = document.querySelector(`.${v}`);
+    child.classList.toggle('on');
+  }
+</script>
+</html>

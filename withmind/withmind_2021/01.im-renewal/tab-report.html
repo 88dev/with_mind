@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .inline-block {
+                display: inline-block;
+            }
+
+            .FL-fir-2 {
+                /* flex: 3; */
+                border: 1px solid red;
+                flex: 768px;
+                width: 768px;
+                height: 404px;
+                background: #FFFFFF;
+            }
+
+            .play-interview {
+                border: 1px solid #000;
+                width: 416px;
+                height: 262px;
+                margin: 60px 20px 0 35px;
+            }
+
+            .interview-questions {
+                width: 260px;
+                height: 230px;
+                margin-top: 60px;
+                vertical-align: top;
+                border: 1px solid black;
+            }
+
+            .question-num {
+                width: 26px;
+                height: 26px;
+                background: #3B61D5;
+                border: 1px solid #3B61D5;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 12px;
+                color: #FFF;
+                line-height: 26px;
+            }
+
+            .question-text {
+                height: 195px;
+                font-size: 15px;
+                color: #686868;
+                word-break: keep-all;
+                line-height: 20px;
+                margin-top: 10px;
+            }
+
+            .interview-numBtn {
+                border: 1px solid blue;
+                position: absolute;
+                /* width: 100px; */
+                top: 300px;
+                left: 488px;
+            }
+
+            .interview-numBtn button {
+                border: none;
+                outline: none;
+                background: transparent;
+            }
+
+            .record-tab-item {
+                display: inline-block;
+                transition: all 0.2s ease;
+            }
+
+            /* 탭 컨텐츠 스타일 */
+            .record-tab-content {
+                display: none;
+                clear: both;
+                overflow: hidden;
+            }
+
+            /* 라디오 버튼 UI삭제*/
+            input[name="record-tab-item"] {
+                display: none;
+            }
+
+            /* 선택 된 탭 콘텐츠를 표시 */
+            #interviewRecord-1:checked ~ #interviewRecord-content-1,
+            #interviewRecord-2:checked ~ #interviewRecord-content-2,
+            #interviewRecord-3:checked ~ #interviewRecord-content-3 {
+                display: block;
+                border: 1px solid purple;
+            }
+
+            /* #interviewRecord-1:checked ~ #interviewRecord-content-1 {
+                display: block !important;
+            } */
+
+            input[id="interviewRecord-1"]:checked ~ #interviewRecord-content-1 {
+                display: block !important;
+            }
+
+            /* #interviewRecord-2:checked ~ #interviewRecord-content-2 {
+                display: block !important;
+            } */
+
+            /* 선택된 탭 스타일 */
+            .interview-numBtn input:checked + .record-tab-item {
+                background-color: #333333;
+                color: #fff;
+            }
+
+            .record-tab-item {
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="FL-fir-2 FL-common">
+                <!-- <div>
+                    <div class="play-interview inline-block">
+                        면접 영상
+                    </div>
+                    <div class="interview-questions inline-block">
+                        <div class="question-num">Q1</div>
+                        <div class="question-text">
+                            6개월 이상 장기적으로 몰두한 개발 프로젝트가 있습니까? 프로젝트에서 홍길동님의 업무 포지션은 무엇이었습니까? 담당하셨던 프로젝트에 대해 구체적으로 설명해주세요.
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="record-tab-content" id="interviewRecord-content-1">
+                    <div class="play-interview inline-block">
+                        면접 영상
+                    </div>
+                    <div class="interview-questions inline-block">
+                        <div class="question-num">Q1</div>
+                        <div class="question-text">
+                            6개월 이상 장기적으로 몰두한 개발 프로젝트가 있습니까? 프로젝트에서 홍길동님의 업무 포지션은 무엇이었습니까? 담당하셨던 프로젝트에 대해 구체적으로 설명해주세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="record-tab-content" id="interviewRecord-content-2">
+                    <div class="play-interview inline-block">
+                        면접 영상
+                    </div>
+                    <div class="interview-questions inline-block">
+                        <div class="question-num">Q2</div>
+                        <div class="question-text">
+                            '생산관리에 있어서 BOM은 제품의 해부도라고 생각하면 됩니다. 이는 수립된 생산계획에 필요한 자재입고, 해당 자재의 라인 투입, 제품과 관련된 ERP 내 정보들 모두 BOM과 연동되는 경우가 많습니다. BOM에 대해 설명해주세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="record-tab-content" id="interviewRecord-content-3">
+                    <div class="play-interview inline-block">
+                        면접 영상
+                    </div>
+                    <div class="interview-questions inline-block">
+                        <div class="question-num">Q3</div>
+                        <div class="question-text">
+                            시장에서 연착륙할 잠재력이 있으면서도 고객의 니즈를 충족할 수 있는 제품을 생산하는 것의 중요성이 높아지고 있습니다. 이는 소비자의 선호도가 급변하는 시대적 맥락과 일맥상통하는데요. 이러한 시대를 맞이하여 생산관리단에서 이루어져야 하는 변화는 무엇이 있을지 설명해주세요'
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="interview-numBtn inline-block"> -->
+                    <!-- <button><img src="./images/stroke-numbering1.svg"></button> -->
+                    <input id="interviewRecord-1"  type="radio" name="record-tab-item" checked />
+                    <label class="record-tab-item" for="interviewRecord-1"><img src="./images/stroke-numbering1.svg"></label>
+
+                    <!-- <button><img src="./images/stroke-numbering2.svg"></button> -->
+                    <input id="interviewRecord-2"  type="radio" name="record-tab-item" />
+                    <label class="record-tab-item" for="interviewRecord-2"><img src="./images/stroke-numbering2.svg"></label>
+
+                    <!-- <button><img src="./images/stroke-numbering3.svg"></button> -->
+                    <input id="interviewRecord-3"  type="radio" name="record-tab-item" />
+                    <label class="record-tab-item" for="interviewRecord-3"><img src="./images/stroke-numbering3.svg"></label>
+
+                    <!-- <style>
+                        #interviewRecord-1:checked ~ #interviewRecord-1-content,
+                        #interviewRecord-2:checked ~ #interviewRecord-2-content,
+                        #interviewRecord-3:checked ~ #interviewRecord-3-content {
+                            display: block;
+                        }
+                    </style> -->
+
+                <!-- </div> -->
+                
+           </div>
+        </main>
+    </body>
+</html>

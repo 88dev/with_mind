@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .view {
+            display: none;
+        }
+
+        #view_btn {
+            width: 65px;
+            background-color: transparent;
+            background-image: url('img/icon_arrow_down_purple.png');
+            background-repeat: no-repeat;
+            background-position: right center;
+            outline: none;
+            border: none;
+            text-align: left;
+            color: #854DFF;
+            font-size: 12px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        #view_btn.off {
+            background-image: url('img/icon_arrow_up_purple.png');
+        }
+
+    </style>
+</head>
+<body>
+    
+    <button id='view_btn'>자세히</button><br>
+    <div class="view">
+        1<br>
+        12<br>
+    </div>
+    <input type="checkbox" />sdf
+</body>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+    $(function() {
+        $('#view_btn').click( function() {
+            if( $(this).html() == '자세히' ) {
+                $(this).html('닫기');
+                $(".view").css("display","block");
+                $('#view_btn').addClass("off");
+            }
+            else {
+                $(this).html('자세히');
+                $(".view").css("display","none");
+                $('#view_btn').removeClass("off");
+            }
+        });
+    });
+</script>
+</html>

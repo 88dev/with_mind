@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .inline-block {
+                display: inline-block;
+            }
+
+            .FL-fir-2 {
+                /* flex: 3; */
+                border: 1px solid red;
+                flex: 768px;
+                width: 768px;
+                height: 404px;
+                background: #FFFFFF;
+            }
+
+            .play-interview {
+                border: 1px solid #000;
+                width: 416px;
+                height: 262px;
+                margin: 60px 20px 0 35px;
+            }
+
+            .interview-questions {
+                width: 260px;
+                height: 230px;
+                margin-top: 60px;
+                vertical-align: top;
+                border: 1px solid black;
+            }
+
+            .question-num {
+                width: 26px;
+                height: 26px;
+                background: #3B61D5;
+                border: 1px solid #3B61D5;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 12px;
+                color: #FFF;
+                line-height: 26px;
+            }
+
+            .question-text {
+                height: 195px;
+                font-size: 15px;
+                color: #686868;
+                word-break: keep-all;
+                line-height: 20px;
+                margin-top: 10px;
+            }
+
+            .interview-numBtn {
+                border: 1px solid blue;
+                margin-top: 10px;
+                margin-left: 35px;
+                /* position: absolute;
+                top: 300px;
+                left: 488px; */
+            }
+
+            .interview-numBtn button {
+                border: none;
+                outline: none;
+                background: transparent;
+            }
+
+            /* 라디오 버튼 UI삭제*/
+            input[name="record-tab-item"] {
+                display: none;
+            }
+
+            .record-tab-item {
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="FL-fir-2 FL-common">
+                <!-- <div>
+                    <div class="play-interview inline-block">
+                        면접 영상
+                    </div>
+                    <div class="interview-questions inline-block">
+                        <div class="question-num">Q1</div>
+                        <div class="question-text">
+                            6개월 이상 장기적으로 몰두한 개발 프로젝트가 있습니까? 프로젝트에서 홍길동님의 업무 포지션은 무엇이었습니까? 담당하셨던 프로젝트에 대해 구체적으로 설명해주세요.
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="record-tab-content" id="interviewRecord-1-content">
+                    <div class="play-interview inline-block">
+                        면접 영상
+                    </div>
+                    <div class="interview-questions inline-block">
+                        <div class="question-num">Q1</div>
+                        <div class="question-text">
+                            6개월 이상 장기적으로 몰두한 개발 프로젝트가 있습니까? 프로젝트에서 홍길동님의 업무 포지션은 무엇이었습니까? 담당하셨던 프로젝트에 대해 구체적으로 설명해주세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interview-numBtn inline-block">
+                    <!-- <button><img src="./images/stroke-numbering1.svg"></button> -->
+                    <input id="interviewRecord-1"  type="radio" name="record-tab-item" checked />
+                    <label class="record-tab-item" for="interviewRecord-1"><img src="./images/stroke-numbering1.svg"></label>
+
+                    <button><img src="./images/stroke-numbering2.svg"></button>
+                    <button><img src="./images/stroke-numbering3.svg"></button>
+                </div>
+           </div>
+        </main>
+    </body>
+</html>
