@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .wrap_grading {
+                background-color: #F0F5FA;
+                padding: 30px;
+                border-radius: 15px;
+            }
+            .wrap_grading ul {
+                margin: 0;
+                padding: 0;
+            }
+            .tab_title {
+                /* display: contents; */
+                margin-left: 30px;
+            }
+
+            .tab_title li {
+                float: left;
+                width: 110px;
+                height: 0;    
+                padding-left: 15px;
+                border-bottom: 35px solid #d9eaf4;
+                border-right: 20px solid transparent;
+                line-height: 35px;
+                border-radius: 5px 0 0 0;
+                color: #80B8D9;
+                font-size: 13px;
+                text-align: center;
+                cursor: pointer;
+                list-style: none;
+            }
+
+            .tab_title li.on {
+                color: #0068ED;
+                font-weight: bold;
+                border-bottom: 35px solid #FFFFFF;
+            }
+
+            .wrap_tab_cont {
+                clear: both;
+            }
+
+            .wrap_tab_cont > section {
+                display: none;
+            }
+            .wrap_tab_cont > section > section.wrap_grid {
+                display: grid;
+                grid-template-columns: 1fr 1.3fr;
+                gap: 10px;
+            }
+            section.wrap_grid section {
+                background: #FFFFFF;
+                border-radius: 5px;
+                padding: 20px;
+            }
+
+            .wrap_tab_cont > section.on {
+                display: block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <article class="wrap_grading">
+            <section class="wrap_tab">
+                <ul class="tab_title">
+                    <li class="on">역량(1)</li>
+                    <li>역량(2)</li>
+                </ul>
+                <div class="wrap_tab_cont">
+                    <section class="on">
+                        <section class="wrap_grid">
+                            <section class="cont1">1</section>
+                            <section class="cont2">2</section>
+                        </section>
+                    </section>
+                    <section>
+                        <section class="wrap_grid">
+                            <section class="cont1">3</section>
+                            <section class="cont2">4</section>
+                        </section>
+                    </section>
+                </div>
+            </section>
+        </article>
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $(".tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".tab_title li").removeClass("on");
+                $(".tab_title li").eq(idx).addClass("on");
+                $(".wrap_tab_cont > section").hide();
+                $(".wrap_tab_cont > section").eq(idx).show();
+            });
+        });
+    </script>
+</html>
