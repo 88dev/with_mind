@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="13.864" viewBox="0 0 17 13.864">
+  <g id="img_heartrate" transform="translate(0 -47.037)">
+    <path id="패스_9266" data-name="패스 9266" d="M0,229.769v1H1.82a4.452,4.452,0,0,1-.531-1Z" transform="translate(0 -176.641)" fill="#e63232"/>
+    <path id="패스_9267" data-name="패스 9267" d="M466.115,214.769h-1.133a4.444,4.444,0,0,1-.381,1h1.513Z" transform="translate(-449.115 -162.141)" fill="#e63232"/>
+    <path id="패스_9268" data-name="패스 9268" d="M63.766,223.483l-2.5-2.5-1.293,1.293H54.586a4.555,4.555,0,0,0,.5.591l6.182,6.182,6.182-6.182a4.512,4.512,0,0,0,.8-1.091h-2.78Z" transform="translate(-52.766 -168.148)" fill="#e63232"/>
+    <path id="패스_9269" data-name="패스 9269" d="M37.5,51.421l2.5,2.5,1.293-1.293h3.575A4.5,4.5,0,0,0,37.5,48.183a4.5,4.5,0,0,0-7.212,4.945h5.5Z" transform="translate(-28.997 0)" fill="#e63232"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="17.129" viewBox="0 0 16 17.129">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_25607" data-name="사각형 25607" width="16" height="16" transform="translate(-3683 -2215)" fill="#333"/>
+    </clipPath>
+  </defs>
+  <g id="icon_cam_error" transform="translate(-390.75 -20.561)">
+    <g id="icon_cam" transform="translate(4073.75 2236)" clip-path="url(#clip-path)">
+      <g id="video-camera_2_" data-name="video-camera (2)" transform="translate(-3683 -2211.7)">
+        <g id="그룹_252" data-name="그룹 252">
+          <g id="그룹_251" data-name="그룹 251">
+            <path id="패스_332" data-name="패스 332" d="M9.05,4.125h-7.3A1.756,1.756,0,0,0,0,5.875v5.9a1.756,1.756,0,0,0,1.751,1.751h7.3A1.756,1.756,0,0,0,10.8,11.775v-5.9A1.744,1.744,0,0,0,9.05,4.125Z" transform="translate(0 -4.125)" fill="#333"/>
+          </g>
+        </g>
+        <g id="그룹_254" data-name="그룹 254" transform="translate(11.676 0.935)">
+          <g id="그룹_253" data-name="그룹 253">
+            <path id="패스_333" data-name="패스 333" d="M17.624,5.321a.892.892,0,0,0-.3.123L14.6,7.019V11.08l2.748,1.575a1.041,1.041,0,0,0,1.435-.385,1.069,1.069,0,0,0,.14-.525V6.336A1.054,1.054,0,0,0,17.624,5.321Z" transform="translate(-14.595 -5.293)" fill="#333"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <line id="선_371" data-name="선 371" x1="11.75" y2="16.25" transform="translate(392.875 21)" fill="none" stroke="#e63232" stroke-width="1.5"/>
+  </g>
+</svg>

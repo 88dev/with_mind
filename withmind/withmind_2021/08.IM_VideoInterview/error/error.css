@@ -1,0 +1,90 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.error_page {
+	width: 1280px;
+	margin: 30px auto 0;
+}
+
+.center {
+	display: inline-block;
+    width: 100%;
+	text-align: center;
+	padding-top: 100px;
+}
+
+.center .text .title {
+	color: #111111;
+	font-size: 26px;
+	font-weight: bold;
+	margin: 70px 0 24px;
+}
+
+.center .text .title span {
+	color: #EB3838;
+}
+
+.center .text .explain {
+	color: #757575;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 30px;
+}
+
+.center .btn {
+	margin-top: 130px;
+}
+
+.center .btn button {
+	width: 300px;
+	height: 50px;
+	font-size: 16px;
+}
+
+.center .btn button.white_btn {
+	border: 1px solid #5F4EEE;
+	background: #FFFFFF;
+	color: #5F4EEE;
+}
+
+.center .btn button.purple_btn {
+	border: 1px solid #5f4EEE;
+	background: #5F4EEE;
+	color: #FFFFFF;
+}
+
+
+@media (min-width: 1025px) and (max-width: 1599px) {
+	.center{
+	    padding-top: 50px;
+	}
+	
+	.center .text .title {
+		margin-top: 50px;
+	}
+	
+	.center .btn {
+		margin-top: 50px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

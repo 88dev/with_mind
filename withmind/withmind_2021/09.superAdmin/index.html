@@ -1,0 +1,515 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/dashboard.css">
+        <script src="js/jquery-3.1.1.js"></script>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            ul, li {
+                list-style: none;
+                margin: 0;
+                padding-left: 20px;
+            }
+            ul {
+                padding: 0;
+            }
+            .navigation {
+                display: inline-block;
+                width: 210px;
+                background: #3C3C3C;
+                user-select: none;
+            }
+            .navigation a, .navigation a:visited,.navigation span {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+            .nav_title .nav_list {
+                display: none;
+                background: #2C2C2C;
+            }
+            .nav_title>li {
+                background: #3C3C3C;
+                padding: 0;
+            }
+            .nav_title>li>a {
+                padding: 8px 20px;
+                width: 210px;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: bold;
+                box-sizing: border-box;
+                background-image: url(images/icon_sidemenu_dropdown.svg);
+                background-position: right 10px center;
+                background-repeat: no-repeat;
+            }
+            .nav_title>li.active>a {
+                background-image: url(images/icon_sidemenu_dropup.svg);
+                background-position: right 10px center;
+                background-repeat: no-repeat;
+            }
+            .nav_title>li>div>ol{
+                padding-bottom: 10px;
+                padding-left: 0;
+            }
+            .nav_title>li>div>ol>li>a,
+            .nav_title>li>div>ol>li>span {
+                display: inline-block;
+                width: 100%;
+                padding: 10px 0 3px;
+                font-size: 14px;
+                background-image: url(images/icon_sidemenu_dropup.svg);
+                background-position: right 10px center;
+                background-repeat: no-repeat;
+                cursor: default;
+            }
+            .nav_title>li>div>ol>li>div>ul>li>a,
+            .nav_title>li>div>ol>li>div>ul>li>span {
+                font-size: 13px;
+            }
+            .nav_title>li>div>ol>li>div>ul>li>span {
+                display: inline-block;
+                margin: 3px 0;
+            }
+            .nav_title>li>div>ol>li>div>ul>li>div>ul>li>a {
+                font-size: 13px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navigation">
+            <ul class="nav_title">
+                <li><a href="#" id="">B2C</a>
+                    <div class="nav_list">
+                        <ol>
+                            <li><span>회원관리</span>
+	                            <div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/member/general_list">일반회원관리</a></li>
+			                            <li><a href="">휴면계정관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>면접관리</span>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/interview/im_new_list">IM 면접</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>이용권관리</span>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/ticket/ticket_list">이용권/쿠폰내역</a></li>
+			                            <li><a href="${pageContext.request.contextPath}/ticket/pay_list">결제내역</a></li>
+			                            <li><a href="${pageContext.request.contextPath}/ticket/coupon_list">쿠폰관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>운영관리</span>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/manage/event_list">이벤트</a></li>
+			                            <li><a href="">배너관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>고객지원</span>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/customer/notice_list">공지사항</a></li>
+			                            <li><a href="${pageContext.request.contextPath}/customer/faq_list">FAQ</a></li>
+			                            <li><a href="${pageContext.request.contextPath}/customer/inquiry_list">1:1문의</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>통계</span>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/statistic/interview">인터뷰 통계</a></li>
+			                            <li><a href="${pageContext.request.contextPath}/statistic/memberStatus">회원별 통계</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>앱관리</span>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/app/appMa_list">앱등록관리</a></li>
+			                            <li><a href="">앱푸시관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li><a href="#" id="icon_statistics">B2B</a>
+                    <div class="nav_list">
+                        <ol>
+                            <li><span>기업관리</span>
+	                            <div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/company/company_list">기업회원관리</a></li>
+			                            <li><a href="">휴면계정관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>면접관리</span>
+                            	<div>
+			                        <ul>  
+			                            <li><span>AI 모의면접</span>
+                                            <div>
+                                                <ul>  
+                                                    <li><a href="">PRI 계약관리</a></li>
+                                                    <li><a href="">PRI 지원자 관리</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+			                            <li><span>AI 기업면접</span>
+                                            <div>
+                                                <ul>  
+                                                    <li><a href="">BIZ 공고관리</a></li>
+                                                    <li><a href="">BIZ 지원자 관리</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+			                            <li><span>AI 화상면접</span>
+                                            <div>
+                                                <ul>  
+                                                    <li><a href="">UNI 공고관리</a></li>
+                                                    <li><a href="">UNI 지원자 관리</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>계약•결제 관리</span>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="">계약•결제 내역</a></li>
+			                            <li><a href="">세금계산서 관리</a></li>
+			                            <li><a href="">사용내역</a></li>
+			                            <li><a href="">쿠폰관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><span>기업 고객지원</span>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="${pageContext.request.contextPath}/business/bizNotice_list">기업 공지사항</a></li>
+			                            <li><a href="${pageContext.request.contextPath}/business/news_list">기업 업계소식</a></li>
+			                            <li><a href="">FAQ</a></li>
+			                            <li><a href="">1:1문의</a></li>
+			                            <li><a href="">제휴/상품구매문의</a></li>
+			                            <li><a href="">견적서관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <article class="container">
+            <section class="main_top">
+                <h3>NOW IM</h3>
+            </section>
+            <section class="main_body">
+                <section class="flex_box flex_left">
+                    <section class="flex_cont member_num">
+                        <span class="color"></span>
+                        <h4>회원수</h4>
+                        <div class="tab_box">
+                            <ul class="tab_title title_mem">
+                                <li class="on">IM</li>
+                                <li>기업</li>
+                            </ul>
+                            <div class="tab_cont cont_mem">
+                                <div class="on">
+                                    <dl class="main_num">
+                                        <dt>누적가입/탈퇴</dt>
+                                        <dt>당월가입</dt>
+                                        <dt>당일가입</dt>
+                                        <dt>당일 방문자수</dt>
+
+                                        <dd>9999/999</dd>
+                                        <dd>9999</dd>
+                                        <dd>9999</dd>
+                                        <dd>9999</dd>
+                                    </dl>
+                                </div>
+                                <div>
+                                    <dl class="main_num">
+                                        <dt>누적가입/탈퇴</dt>
+                                        <dt>당월가입</dt>
+                                        <dt>당일가입</dt>
+                                        <dt>당일 방문자수</dt>
+
+                                        <dd>9999/999</dd>
+                                        <dd>9999</dd>
+                                        <dd>9999</dd>
+                                        <dd>9999</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="flex_cont interview_num">
+                        <span class="color"></span>
+                        <h4>면접현황</h4>
+                        <div class="tab_box">
+                            <ul class="tab_title title_int">
+                                <li class="on">전체</li>
+                                <li>모의</li>
+                                <li>BIZ</li>
+                                <li>UNI</li>
+                            </ul>
+                            <div class="tab_cont cont_int">
+                                <div class="on">
+                                    <dl class="main_num">
+                                        <dt>누적면접건</dt>
+                                        <dt>당월면접건</dt>
+                                        <dt>당일면접건</dt>
+
+                                        <dd>9999/999</dd>
+                                        <dd>9999</dd>
+                                        <dd>9999</dd>
+                                    </dl>
+                                </div>
+                                <div>
+                                    <dl class="main_num">
+                                        <dt>누적면접건</dt>
+                                        <dt>당월면접건</dt>
+                                        <dt>당일면접건</dt>
+
+                                        <dd>9999/999</dd>
+                                        <dd>9999</dd>
+                                        <dd>9999</dd>
+                                    </dl>
+                                </div>
+                                <div>
+                                    <dl class="main_num">
+                                        <dt>누적면접건</dt>
+                                        <dt>당월면접건</dt>
+                                        <dt>당일면접건</dt>
+
+                                        <dd>9999/999</dd>
+                                        <dd>9999</dd>
+                                        <dd>9999</dd>
+                                    </dl>
+                                </div>
+                                <div>
+                                    <dl class="main_num">
+                                        <dt>누적면접건</dt>
+                                        <dt>당월면접건</dt>
+                                        <dt>당일면접건</dt>
+
+                                        <dd>9999/999</dd>
+                                        <dd>9999</dd>
+                                        <dd>9999</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="flex_cont">
+                        <span class="color"></span>
+                        <h4>회원수</h4>
+                        <div class="tab_box">
+                            <ul class="tab_title title_sale">
+                                <li class="on">IM</li>
+                                <li>기업</li>
+                            </ul>
+                            <div class="tab_cont cont_sale">
+                                <div class="on">
+                                    <dl class="main_num">
+                                        <dt>당일판매/취소</dt>
+                                        <dt>당월판매</dt>
+                                        <dt>전월판매</dt>
+
+                                        <dd>9,999/9,999</dd>
+                                        <dd>9,999</dd>
+                                        <dd>9,999</dd>
+                                    </dl>
+                                </div>
+                                <div>
+                                    <dl class="main_num">
+                                        <dt>당일판매/취소</dt>
+                                        <dt>당월판매</dt>
+                                        <dt>전월판매</dt>
+
+                                        <dd>9,999/9,999</dd>
+                                        <dd>9,999</dd>
+                                        <dd>9,999</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section class="flex_box flex_right">
+                    <section class="flex_cont">
+                        <div class="board_title">
+                            <h4>공지사항</h4>
+                            <a>더보기<span></span></a>
+                        </div>
+                        <div class="tab_box">
+                            <ul class="tab_title title_noti">
+                                <li class="on">IM</li>
+                                <li>Pri</li>
+                                <li>Biz</li>
+                            </ul>
+                            <div class="tab_cont cont_noti">
+                                <div class="on">
+                                    <ul>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                        <li><a>공지사항1</a><span>2020.01.01</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="flex_cont">
+                        <div class="board_title">
+                            <h4>1:1 문의</h4>
+                            <a>더보기<span></span></a>
+                        </div>
+                        <div class="tab_box">
+                            <ul class="tab_title title_inq">
+                                <li class="on">IM</li>
+                                <li>기업</li>
+                            </ul>
+                            <div class="tab_cont cont_inq">
+                                <div class="on">
+                                    <ul>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                        <li><a>[문의유형] 문의제목</a><span>2020.01.01</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </article>
+
+    </body>
+    <script>
+
+        $(document).ready(function(){
+            nav();
+            openB2C();
+            // openB2B();
+        });
+
+        // nav 기본
+        function nav(){
+            $('.nav_title>li>a').click(function(){
+                $(this).parent('li').toggleClass('active');
+                $(this).next().slideToggle(150);
+            });
+            // html height 자동 계산
+            var scHeight = $('html').prop('scrollHeight');
+			$(".navigation").css('height', ''+ (scHeight-65)+'px');
+        }
+
+        // nav B2C open
+        function openB2C(){
+            $('.nav_title>li').eq(0).addClass("active");
+            $('.nav_title>li').eq(0).find("div.nav_list").css("display", "block");
+        }
+
+        // nav B2B open
+        function openB2B(){
+            $('.nav_title>li').eq(1).addClass("active");
+            $('.nav_title>li').eq(1).find("div.nav_list").css("display", "block");
+        }
+
+        // 메인 > 회원수 tab
+        $(".title_mem li").click(function() {
+            var idx = $(this).index();
+            $(".title_mem li").removeClass("on");
+            $(".title_mem li").eq(idx).addClass("on");
+            $(".cont_mem > div").hide();
+            $(".cont_mem > div").eq(idx).show();
+        });
+
+        // 메인 > 면접현황 tab
+        $(".title_int li").click(function() {
+            var idx = $(this).index();
+            $(".title_int li").removeClass("on");
+            $(".title_int li").eq(idx).addClass("on");
+            $(".cont_int > div").hide();
+            $(".cont_int > div").eq(idx).show();
+        });
+
+        // 메인 > 회원수 tab
+        $(".title_sale li").click(function() {
+            var idx = $(this).index();
+            $(".title_sale li").removeClass("on");
+            $(".title_sale li").eq(idx).addClass("on");
+            $(".cont_sale > div").hide();
+            $(".cont_sale > div").eq(idx).show();
+        });
+
+        // 메인 > 공지사항 tab
+        $(".title_noti li").click(function() {
+            var idx = $(this).index();
+            $(".title_noti li").removeClass("on");
+            $(".title_noti li").eq(idx).addClass("on");
+            $(".cont_noti > div").hide();
+            $(".cont_noti > div").eq(idx).show();
+        });
+
+        // 메인 > 1:1 문의 tab
+        $(".title_inq li").click(function() {
+            var idx = $(this).index();
+            $(".title_inq li").removeClass("on");
+            $(".title_inq li").eq(idx).addClass("on");
+            $(".cont_inq > div").hide();
+            $(".cont_inq > div").eq(idx).show();
+        });
+
+
+    </script>
+</html>

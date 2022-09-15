@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/video.css">
+	<link rel="stylesheet" href="../css/video_popup.css">
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script src="../js/video.js"></script>
+</head>
+<body id="interviewee">
+	<section class="video_header">
+		<div class="logo"> 
+			<img class="im_logo" src="../images/video/logo_im.svg" />
+			<span class="biz_name">(주)위드마인드</span>
+			<span>면접실</span>
+		</div>
+		<div class="top_btn">
+			<!-- " " / "off" -->
+			<button class="cam"></button>
+			<button class="mic off"></button>
+			<button class="sound"></button>
+			<!-- " " / "on" -->
+			<button class="setting" onclick="setting()"></button>
+			<!-- " " / "full" -->
+			<button class="screen full"></button>
+		</div>
+		<div class="top_info">
+			<button class=""><img src="../images/video/icon_playbtn.svg" />진행요청</button>
+			<div>
+				<!-- " " / "yellow" / "red" -->
+				<p class="top_time yellow">
+					<span class="time_img"></span>
+					<span>00 : 48 : 12</span>
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="video_nav">
+		<div class="nav_btn">
+			<!-- 버튼 클릭시 "active" class 추가	   -->
+			<button class="btn_home" onclick="location.href='./interviewee.html'"></button>
+			<button class="btn_schedule" disabled></button>
+			<button class="btn_screenshare" disabled></button>
+			<button class="btn_memo" disabled></button>
+			<button class="btn_waiting" disabled></button>
+		</div>		
+		<div class="nav_exit">
+			<button class="btn_exit" onclick="exit()"><img src="../images/video/icon_logout.svg" /></button>
+		</div>	
+	</section>
+	
+	<!-- 본문 -->
+	<section class="video_contents">
+		<section>
+			<section class="part1 contents_part scroll scroll_hor interviewee_page">
+				<!-- 비디오 끌 때 biz_people "off" 추가 -->
+				<!-- biz_mic " " / "off" -->
+				<!-- say " " / "on" -->
+				<div class="biz_people king"><span class="king_img"></span><span class="king_label">(주)위드마인드</span><span class="biz_mic"></span><div class="say"></div><video></video></video></div>
+				<div class="biz_people off"><span class="biz_mic"></span><div class="say"></div><video></video></div>
+				<div class="biz_people"><span class="biz_mic"></span><div class="say"></div><video></video></div>
+				<div class="biz_people"><span class="biz_mic"></span><div class="say"></div><video></video></div>
+				<div class="biz_people"><span class="biz_mic"></span><div class="say"></div><video></video></div>
+			</section>
+		</section>
+		<section>
+			<section class="part3 contents_part">
+				<!-- 화면 공유시 video 태그에 small class 추가 / share - display:block; -->
+				<video>
+					
+				</video>
+				<img class="default_profile" src="../images/video/img_profile.svg">
+				<div class="share"></div>
+			</section>
+		</section>
+	</section>
+	
+<!-- popup window -->
+
+
+	<!-- 면접방 입장 전 체크 페이지(xd32/P46) -->
+	<div id="interviewee_code" class="interview_common_code background_black">
+		<div class="input_info">
+			<div class="code">
+				<span class="title">참여를 위해 부여 받은 면접 코드를 입력해 주세요.</span>
+				<input class="name" placeholder="면접코드를 입력하세요." />
+			</div>
+			<div class="footer_btn">
+				<button class="btn_cancel">취소</button>
+				<button class="btn_enter" onclick="pre_check()">참여</button>
+			</div>
+		</div>
+		<div class="btn_codePage">
+			<span class="explain">‘환경 테스트 하기 버튼’을 통해 <em class="red">면접 전<br> 미리 장비 테스트</em>를 진행하실 수 있습니다.</span>
+			<button class="btn_test" id="btn_test" onclick="btn_test()">환경 테스트 하기</button>
+			<button class="btn_guide" onclick="use_guide()">화상면접 이용 가이드</button>
+		</div>
+	</div>
+
+	<!-- 2021-12-22 수정 장치 테스트 미리보기 추가 -->
+	<div id="check_device">
+		<div class="black_box"></div>
+		<div id="no_device_guide" class="no_device_guide">
+			<span class="title">장치 반영이 안될 시 진행 방법 순서</span>
+			<span class="explain">
+				1. 브라우저가 크롬인지 확인<br>
+				2. 왼쪽 브라우저 상단 자물쇠(<img src="../images/video/img_lock.svg">)클릭 후 장치 승인<br>
+				3. 윈도우에서 카메라 또는 마이크 작동 확인<br>
+				4. 인터뷰마스터 고객센터로 기술문의
+			</span>
+		</div>
+		<div id="check_device_test" class="device_test" style="display: block;">
+			<div class="title">
+				<span>장치 테스트</span>
+				<p>카메라, 마이크, 스피커 상태를 확인해주세요.</p>
+			</div>
+			<div class="device">
+				<span><img src="../images/video/icon_cam.svg">카메라</span>
+				<select></select>
+				<p class="device_yes"><img src="../images/video/icon_summit_device.svg">카메라 영상이 정상적으로 작동하고 있습니다.</p>
+				<p class="device_no"><img src="../images/video/icon_error_device.svg">카메라 영상이 정상적이지 않습니다.</p>
+				<div class="preview pre_not_checked"><video></video></div>
+			</div>
+			<div class="device pre_check_mic">
+				<span><img src="../images/video/icon_mic.svg">마이크</span>
+				<select></select>
+				<p class="device_yes"><img src="../images/video/icon_summit_device.svg">마이크 소리가 정상적으로 감지되고 있습니다.</p>
+				<p class="device_no"><img src="../images/icon_error_device.svg">마이크 소리가 감지되지 않습니다.</p>
+				<div class="preview"></div>
+			</div>
+			<div class="device">
+				<span><img src="../images/video/icon_sound.svg">스피커</span>
+				<select></select>
+				<p class="device_yes"><img src="../images/video/icon_summit_device.svg">스피커 소리가 정상적으로 감지되고 있습니다.</p>
+				<p class="device_no"><img src="../images/video/icon_error_device.svg">스피커 소리가 감지되지 않습니다.</p>
+			</div>
+			<div class="footer_btn">
+				<button class="btn_cancel" onclick="device_error()">취소</button>
+				<button class="btn_enter" onclick="loading()">참여</button>
+			</div>
+		</div>
+		<div id="device_error">
+			<img src="../images/video/icon_alert_modal.svg">
+			<span>장치 테스트를 재 설정한 후 참여해 주세요.</span>
+			<button>확인</button>
+		</div>
+	</div>
+	
+	<!-- 지원자 면접 전 이용 가이드 페이지 (xd34/p48) -->
+	<div id="interview_guide_page" class="interview_guide_page interviewee_guide_page">
+		<section class="video_header" id="interview_guide_header">
+			<div class="logo"> 
+				<img class="im_logo" src="../images/video/logo_im.svg" />
+				<span class="biz_name">(주)위드마인드</span>
+				<span>면접실</span>
+			</div>
+			<div class="top_btn">
+				<!-- " " / "off" -->
+				<div class="dashed_border">
+					<button class="cam" disabled></button>
+					<button class="mic"></button>
+					<!-- <button class="sound"></button> -->
+					<img class="line_img_1 line_img" src="../images/video/img_line_1.svg" />
+					<span class="line_text_1 line_text">기본적인 장비 사용유무를 결정합니다.</span>
+				</div>
+				<!-- " " / "on" -->
+				<div class="dashed_border">
+					<button class="setting"></button>
+					<img class="line_img_2 line_img" src="../images/video/img_line_2.svg" />
+					<span class="line_text_2 line_text">화면이나 소리가 나오지 않을 시 체크 및 설정 하세요.</span>
+				</div>
+				<!-- " " / "full" -->
+				<button class="screen full"></button>
+			</div>
+			<div class="top_info">
+				<div class="dashed_border">
+					<button class=""><img src="../images/video/icon_playbtn.svg" />진행요청</button>
+					<img class="line_img_3 line_img" src="../images/video/img_line_3.svg" />
+					<span class="line_text_3 line_text">면접 준비를 마치고 면접관에게 진행을 요청하는 기능입니다.</span>
+				</div>
+				<div class="dashed_border">
+					<p class="top_time">
+						<span class="time_img"></span>
+						<span>00 : 48 : 12</span>
+					</p>
+					<img class="line_img_4 line_img" src="../images/video/img_line_4.svg" />
+					<span class="line_text_4 line_text">설정된 면접시간 중 남은 시간을 표시 합니다.</span>
+				</div>
+			</div>
+		</section>
+			<div class="video_nav" id="interviewee_nav">
+				<div class="nav_btn">
+					<!-- 버튼 클릭시 "active" class 추가	   -->
+					<button class="btn_home dashed_border"></button>
+					<img class="line_img_9 line_img" src="../images/video/img_line_9.svg" />
+					<span class="line_text_9 line_text">기본화면으로 되돌아 가는 기능입니다.</span>
+					<button id="btn_schedule" class="btn_schedule" disabled></button>
+					<button class="btn_screenshare dashed_border"></button>
+					<img class="line_img_11 line_img" src="../images/video/img_line_9.svg" />
+					<span class="line_text_11 line_text">화면을 공유할 수 있는 기능입니다.</span>
+					<button class="btn_memo" disabled></button>
+					<button class="btn_waiting" disabled></button>
+				</div>
+			</div>
+		<section id="interview_guide_body">
+			<div class="guide_page_footer">
+				<p>
+					<img src="../images/video/img_bubble_deco.svg">
+					<span>인터뷰 마스터IM 화상면접 서비스의 자세한 기능을 설명 드립니다.</span>
+				</p>
+				<span>
+					<button class="dont_watch" onclick="next_page_guide()">다시 보지 않기</button>
+					<button class="next_page" onclick="next_page_guide()">다음 화면</button>
+				</span>
+			</div>
+		</section>
+	</div>
+	
+	<!-- 지원자 진행 전 세팅 가이드 페이지(xd35/p49) -->
+	<div id="setting_guide" class="background_black">
+		<section class="video_header interview_guide_header">
+			<div class="logo"> 
+				<img class="im_logo" src="../images/video/logo_im.svg" />
+				<span class="biz_name">(주)위드마인드</span>
+				<span>면접실</span>
+			</div>
+			<div class="top_btn">
+				<!-- " " / "off" -->
+				<button class="cam" disabled></button>
+				<button class="mic"></button>
+				<button class="sound"></button>
+				<button class="setting"></button>
+				<span class="blue_circle_1 blue_circle"><img src="../images/video/bg_circle_blue.svg" /><em>1</em></span>
+				<button class="screen full"></button>
+				<span class="blue_circle_2 blue_circle"><img src="../images/video/bg_circle_blue.svg" /><em>2</em></span>
+			</div>
+			<div class="top_info">
+				<div class="">
+					<button class=""><img src="../images/video/icon_playbtn.svg" />진행요청</button>
+					<span class="blue_circle_4 blue_circle"><img src="../images/video/bg_circle_blue.svg" /><em>4</em></span>
+				</div>
+				<div class="">
+					<p class="top_time">
+						<span class="time_img"></span>
+						<span>00 : 48 : 12</span>
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="setting_guide_body">
+			<div id="no_device_guide" class="no_device_guide">
+				<span class="title">장치 반영이 안될 시 진행 방법 순서</span>
+				<span class="explain">
+					1. <em>마이크, 카메라 테스트</em> 및 <em>설정 확인</em> 하세요.<br>
+					2. 전체화면 전환<br> 
+					3. 상체 및 눈 위치 체크<br> 
+					4. <em>진행요청버튼</em>을 통한 <em>면접 진행 요청</em><br> 
+					5. 면접 진행
+				</span>
+			</div>
+			<img src="../images/video/img_guideline.svg" />
+			<span class="blue_circle_3 blue_circle"><img src="../images/video/bg_circle_blue.svg" /><em>3</em></span>
+		</section>
+		<div class="guide_page_footer">
+			<p>
+				<img src="../images/video/img_bubble_deco.svg">
+				<span>인터뷰 마스터IM 화상면접 서비스의 자세한 기능을 설명 드립니다.</span>
+			</p>
+			<span>
+				<button class="dont_watch" onclick="setting_guide_check()">다시 보지 않기</button>
+				<button class="next_page" class="setting_guide_check" onclick="setting_guide_check()">확인</button>
+			</span>
+		</div>
+		
+		<div id="setting_guide_check" class="setting_guide_check">
+			<div class="setting_text">
+				<img src="../images/video/icon_checking_modal.svg">
+				<span>면접을 진행합니다.</span>
+			</div>
+			<div class="setting_button">
+				<button class="setting_no">아니요</button>
+				<button class="setting_yes" class="interviewee_yes()">예</button>
+			</div>
+			<span class="blue_circle_5 blue_circle"><img src="../images/video/bg_circle_blue.svg" /><em>5</em></span>
+		</div>
+	</div>
+	
+	<!-- 세팅 장치 확인 팝업 -->
+	<div id="setting" class="device_test toggle_contents">
+		<div class="transparent">
+			<div class="title">
+				<span>장치 테스트</span>
+				<p>카메라, 마이크, 스피커 상태를 확인해주세요.</p>
+			</div>
+			<div class="device">
+				<span><img src="../images/video/icon_cam.svg">카메라</span>
+				<select></select>
+				<p class="device_yes"><img src="../images/video/icon_summit_device.svg">카메라 영상이 정상적으로 작동하고 있습니다.</p>
+				<p class="device_no"><img src="../images/video/icon_error_device.svg">카메라 영상이 정상적이지 않습니다.</p>
+			</div>
+			<div class="device">
+				<span><img src="../images/video/icon_mic.svg">마이크</span>
+				<select></select>
+				<p class="device_yes"><img src="../images/video/icon_summit_device.svg">마이크 소리가 정상적으로 감지되고 있습니다.</p>
+				<p class="device_no"><img src="../video/icon_error_device.svg">마이크 소리가 감지되지 않습니다.</p>
+			</div>
+			<div class="device">
+				<span><img src="../images/video/icon_sound.svg">스피커</span>
+				<select></select>
+				<p class="device_yes"><img src="../images/video/icon_summit_device.svg">스피커 소리가 정상적으로 감지되고 있습니다.</p>
+				<p class="device_no"><img src="../images/video/icon_error_device.svg">스피커 소리가 감지되지 않습니다.</p>
+			</div>
+			<div class="footer_btn">
+				<button class="btn_blue">확인</button>
+			</div>
+			<div class="footer_btn display_none">
+				<button class="btn_cancel">취소</button>
+				<button class="btn_enter">참여</button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 지원자 진행 전 세팅 가이드 페이지2(xd36/p50) -->
+	<div id="interviewee_final_check" class="background_black">
+		<div id="no_device_guide" class="no_device_guide">
+			<span class="title">장치 반영이 안될 시 진행 방법 순서</span>
+			<span class="explain">
+				1. <em>마이크, 카메라 테스트</em> 및 <em>설정 확인</em> 하세요.<br>
+				2. 전체화면 전환<br> 
+				3. 상체 및 눈 위치 체크<br> 
+				4. <em>진행요청버튼</em>을 통한 <em>면접 진행 요청</em><br> 
+				5. 면접 진행
+			</span>
+		</div>
+		<div id="setting_guide_check" class="setting_guide_check">
+			<div class="setting_text">
+				<img src="../images/video/icon_checking_modal.svg">
+				<span>면접을 진행합니다.</span>
+			</div>
+			<div class="setting_button">
+				<button class="setting_no">아니요</button>
+				<button class="setting_yes" onclick="interviewee_yes()">예</button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 면접 종료 화면 페이지(xd38/p52) -->
+	<div id="interviewee_end" class="background_black">
+		<div class="end_message">
+			<span class="blue_end_circle"><img src="../images/video/icon_speechbubble_modal.svg"></span>
+			<p>인터뷰 마스터 IM 화상면접이 종료되었습니다. 수고하셨습니다.</p>
+			<button class="btn_end_message">확인</button>
+		</div>
+	</div>
+	
+	<!-- side nav exit -->
+	<div id="exit">
+		<div>
+			<button class="btn_exit_red">예, 방을 종료하겠습니다.</button>
+			<button class="btn_exit_blue" onclick="exit()">아니요, 좀 더 참여하겠습니다.</button>
+		</div>
+	</div>
+	
+
+	<script>
+		$(document).ready(function() {
+			$('#interviewee_code').show();
+		});
+
+		// 2021-12-22 수정 장치 테스트 미리보기 추가
+		function pre_check(){
+			$('#check_device').show();
+			$('#interview_code').hide();
+		}
+		
+		function next_page_guide(){
+			$('#interview_guide_page').hide();
+			if($('#setting_guide').css('display') == 'none'){
+				$('#setting_guide').show();
+		    }
+	    }
+		
+		function setting_guide_check(){
+			$('#setting_guide').hide();
+			/* $('#interviewee .part1').show();
+			$('#interviewee .part3').css('height','calc(100vh - 280px)'); */
+			
+			/* 최종 확인 체크 페이지 이동 */
+			$('#interviewee_final_check').show();
+		}
+		
+		/* 인터뷰 시작 시 화면 변환 */
+		function setting_yes(){
+			$('#interviewee_final_check').hide();
+			$('#interviewee .part1').show();
+			$('#interviewee .part3').css('height','calc(100vh - 280px)');
+
+			// setTimeout(end_message, 2000);
+		}
+		function interviewee_yes(){
+			$('#interviewee_code').hide();
+			$('#interviewee_final_check').hide();
+			$('#interviewee .part1').show();
+			$('#interviewee .part3').css('height','calc(100vh - 280px)');
+
+			// setTimeout(end_message, 2000);
+		}
+		
+		function end_message(){
+			$('#interviewee_end').show();
+		}
+		
+		
+		
+		
+	</script>
+</body>
+</html>

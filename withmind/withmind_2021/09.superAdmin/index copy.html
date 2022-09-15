@@ -1,0 +1,221 @@
+<html>
+    <head>
+        <script src="js/jquery-3.1.1.js"></script>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            ul, li {
+                list-style: none;
+                margin: 0;
+                padding-left: 20px;
+            }
+            ul {
+                padding: 0;
+            }
+            .navigation {
+                width: 210px;
+                background: #3C3C3C;
+            }
+            .navigation a, .navigation a:visited {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+            .noti-board .reply {
+                display: none;
+                background: #2C2C2C;
+            }
+
+            .noti-board>li {
+                background: #3C3C3C;
+                padding: 0;
+            }
+            .noti-board>li>a {
+                padding: 8px 20px;
+                width: 210px;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: bold;
+                box-sizing: border-box;
+            }
+            .noti-board>li>div>ul>li>a {
+                display: inline-block;
+                font-size: 14px;
+                padding: 10px 0 3px;
+            }
+            .noti-board>li>div>ul>li>div>ul>li>a {
+                font-size: 13px;
+            }
+            .noti-board>li>div>ul>li>div>ul>li>div>ul>li>a {
+                font-size: 13px;
+            }
+            .noti-board>li>div>ul{
+                padding-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navigation">
+            <ul class="noti-board list-toggle">
+                <li><a href="#" id="">B2C</a>
+                    <div class="reply">
+                        <ul>
+                            <li><a href="" id="">회원관리</a>
+	                            <div>
+			                        <ul>  
+			                            <li><a href="" id="">일반회원관리</a></li>
+			                            <li><a href="" id="">휴면계정관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">면접관리</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">IM 면접</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">이용권관리</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">이용권/쿠폰내역</a></li>
+			                            <li><a href="" id="">결제내역</a></li>
+			                            <li><a href="" id="">쿠폰관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">운영관리</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">이벤트</a></li>
+			                            <li><a href="" id="">배너관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">고객지원</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">공지사항</a></li>
+			                            <li><a href="" id="">FAQ</a></li>
+			                            <li><a href="" id="">1:1문의</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">통계</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">인터뷰 통계</a></li>
+			                            <li><a href="" id="">회원별 통계</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">앱관리</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">앱등록관리</a></li>
+			                            <li><a href="" id="">앱푸시관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#" id="icon_statistics">B2B</a>
+                    <div class="reply">
+                        <ul>
+                            <li><a href="" id="">기업관리</a>
+	                            <div>
+			                        <ul>  
+			                            <li><a href="" id="">기업회원관리</a></li>
+			                            <li><a href="" id="">휴면계정관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">면접관리</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">AI 모의면접</a>
+                                            <div>
+                                                <ul>  
+                                                    <li><a href="" id="">PRI 계약관리</a></li>
+                                                    <li><a href="" id="">PRI 지원자 관리</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+			                            <li><a href="" id="">AI 기업면접</a>
+                                            <div>
+                                                <ul>  
+                                                    <li><a href="" id="">BIZ 공고관리</a></li>
+                                                    <li><a href="" id="">BIZ 지원자 관리</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+			                            <li><a href="" id="">AI 화상면접</a>
+                                            <div>
+                                                <ul>  
+                                                    <li><a href="" id="">UNI 공고관리</a></li>
+                                                    <li><a href="" id="">UNI 지원자 관리</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">계약•결제 관리</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">계약•결제 내역</a></li>
+			                            <li><a href="" id="">세금계산서 관리</a></li>
+			                            <li><a href="" id="">사용내역</a></li>
+			                            <li><a href="" id="">쿠폰관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                            <li><a href="" id="">기업 고객지원</a>
+                            	<div>
+			                        <ul>  
+			                            <li><a href="" id="">기업 공지사항</a></li>
+			                            <li><a href="" id="">기업 업계소식</a></li>
+			                            <li><a href="" id="">FAQ</a></li>
+			                            <li><a href="" id="">1:1문의</a></li>
+			                            <li><a href="" id="">제휴/상품구매문의</a></li>
+			                            <li><a href="" id="">견적서관리</a></li>
+			                        </ul>
+			                    </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </body>
+    <script>
+        $('.list-toggle>li>a').click(function(){
+	        $(this).parent('li').toggleClass('active');
+	        $(this).parent('li').toggleClass('is-open-noti');
+	        $(this).next().slideToggle(150);
+	    });
+
+        $(document).ready(function(){
+            openB2C();
+            // openB2B();
+
+            var scHeight = $('html').prop('scrollHeight');
+			$(".navigation").css('height', ''+ (scHeight-65)+'px');
+            console.log(scHeight);
+        });
+
+        function openB2C(){
+            $('.noti-board>li').eq(0).addClass("active");
+            $('.noti-board>li').eq(0).find("div.reply").css("display", "block");
+        }
+
+        function openB2B(){
+            $('.noti-board>li').eq(1).addClass("active");
+            $('.noti-board>li').eq(1).find("div.reply").css("display", "block");
+        }
+
+    </script>
+</html>

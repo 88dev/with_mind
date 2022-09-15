@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_25606" data-name="사각형 25606" width="16" height="16" transform="translate(-3647 -2215)" fill="#333"/>
+    </clipPath>
+  </defs>
+  <g id="icon_sound" transform="translate(3647 2215)" clip-path="url(#clip-path)">
+    <g id="audio_1_" data-name="audio (1)" transform="translate(-3647 -2213.094)">
+      <path id="패스_334" data-name="패스 334" d="M14.57,5.313a.469.469,0,0,0-.469.469v6.562a.469.469,0,0,0,.938,0V5.782a.469.469,0,0,0-.469-.469Z" transform="translate(-2.82 -2.968)" fill="#333"/>
+      <path id="패스_335" data-name="패스 335" d="M12.227,8.243a.469.469,0,0,0-.469.469v1.875a.469.469,0,0,0,.938,0V8.711a.469.469,0,0,0-.469-.469Z" transform="translate(-2.352 -3.554)" fill="#333"/>
+      <path id="패스_336" data-name="패스 336" d="M16.914,7.657a.469.469,0,0,0-.469.469v2.812a.469.469,0,0,0,.938,0V8.125a.469.469,0,0,0-.469-.469Z" transform="translate(-3.289 -3.437)" fill="#333"/>
+      <path id="패스_337" data-name="패스 337" d="M19.3,6.485a.469.469,0,0,0-.469.469v4.687a.469.469,0,0,0,.938,0V6.954a.469.469,0,0,0-.469-.469Z" transform="translate(-3.766 -3.203)" fill="#333"/>
+      <path id="패스_338" data-name="패스 338" d="M0,6.954v4.687a.469.469,0,0,0,.469.469H2.375V6.485H.469A.469.469,0,0,0,0,6.954Z" transform="translate(0 -3.203)" fill="#333"/>
+      <path id="패스_339" data-name="패스 339" d="M8.559,2.468,4.141,5.561v5.832l4.419,3.093A.469.469,0,0,0,9.3,14.1V2.852a.469.469,0,0,0-.738-.384Z" transform="translate(-0.828 -2.382)" fill="#333"/>
+    </g>
+  </g>
+</svg>

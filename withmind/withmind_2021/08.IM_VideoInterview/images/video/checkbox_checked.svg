@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="checkbox_checked" transform="translate(-30 -339)">
+    <g id="사각형_25800" data-name="사각형 25800" transform="translate(30 339)" fill="#009ae8" stroke="#009ae8" stroke-width="1.2">
+      <rect width="16" height="16" rx="8" stroke="none"/>
+      <rect x="0.6" y="0.6" width="14.8" height="14.8" rx="7.4" fill="none"/>
+    </g>
+    <rect id="사각형_26610" data-name="사각형 26610" width="10" height="10" rx="5" transform="translate(33 342)" fill="#fff"/>
+  </g>
+</svg>

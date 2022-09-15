@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198" height="198" viewBox="0 0 198 198">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_25975" data-name="사각형 25975" width="198" height="198" transform="translate(1189 2442)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="img_silhouette" transform="translate(-1189 -2442)" clip-path="url(#clip-path)">
+    <g id="path" transform="translate(1197 2466.904)">
+      <ellipse id="타원_552" data-name="타원 552" cx="46.268" cy="56.339" rx="46.268" ry="56.339" transform="translate(45.058)" fill="#ddd"/>
+      <g id="그룹_19747" data-name="그룹 19747" transform="translate(0 112.678)">
+        <path id="패스_8963" data-name="패스 8963" d="M173.931-357.609a13.9,13.9,0,0,0-11.887,2.409,37.429,37.429,0,0,1-22.956,7.93,37.429,37.429,0,0,1-22.956-7.93,13.9,13.9,0,0,0-11.887-2.409L76.527-350.62c-16.912,4.264-28.765,11.323-28.765,28.765H230.413c0-17.442-11.852-24.5-28.765-28.765Z" transform="translate(-47.762 358.041)" fill="#ddd"/>
+      </g>
+    </g>
+  </g>
+</svg>

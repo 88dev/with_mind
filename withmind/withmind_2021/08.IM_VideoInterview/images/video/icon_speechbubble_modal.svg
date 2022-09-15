@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_26604" data-name="사각형 26604" width="20" height="20" transform="translate(791 346.032)" fill="#009ae8" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_speechbubble_modal" transform="translate(-791 -346.032)" clip-path="url(#clip-path)">
+    <g id="speech-bubbles" transform="translate(791 346)">
+      <path id="패스_9235" data-name="패스 9235" d="M6.483,0A6.46,6.46,0,0,0,1.439,10.525L.229,12.966H6.483A6.483,6.483,0,0,0,6.483,0ZM4.715,7.072H3.536V5.893H4.715Zm2.357,0H5.893V5.893H7.072Zm2.357,0H8.251V5.893H9.429Z" fill="#009ae8"/>
+      <path id="패스_9236" data-name="패스 9236" d="M22.213,15.73a6.491,6.491,0,0,0-6-6.465,7.676,7.676,0,0,1-6.946,6.946,6.491,6.491,0,0,0,6.465,6h6.254l-1.211-2.441A6.44,6.44,0,0,0,22.213,15.73Zm-8.251.589H12.783V15.141h1.179Zm2.357,0H15.141V15.141h1.179Zm2.357,0H17.5V15.141h1.179Z" transform="translate(-2.097 -2.097)" fill="#009ae8"/>
+    </g>
+  </g>
+</svg>

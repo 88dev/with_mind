@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/video.css">
+	<link rel="stylesheet" href="css/video_popup.css">
+	<script src="./js/jquery-3.1.1.js"></script>
+	<script src="./js/video.js"></script>
+	<!--  summernote 에디터  -->
+	<link rel="stylesheet" href="./summernote/summernote-lite.css">
+	<!-- summernote 에디터  -->
+	<script src="./summernote/summernote-lite.js"></script>
+	<script src="./summernote/lang/summernote-ko-KR.js"></script>
+</head>
+<em class="blinking">점멸!</em>
+<body id="interviewer">
+	<section class="video_header">
+		<div class="logo"> 
+			<img class="im_logo" src="./images/video/logo_im.svg" />
+			<span class="biz_name">(주)위드마인드</span>
+			<span>면접실</span>
+		</div>
+		<div class="top_btn">
+			<!-- " " / "off" -->
+			<button class="cam"></button>
+			<button class="mic off"></button>
+			<!-- <button class="sound"></button> -->
+			<!-- " " / "on" -->
+			<button class="setting btn_toggle_contents" onclick="setting()"></button>
+			<!-- " " / "full" -->
+			<button class="screen full"></button>
+		</div>
+		<div class="top_info btn_toggle_contents">
+			<button class=""><img src="./images/video/icon_handup_topbar.svg" />우선 발언권</button>
+			<div>
+				<button class="top_rec">
+					<!-- " " / "on" -->
+					<span class="rec_img on"></span>
+					<span>Rec</span>
+				</button>
+				<!-- " " / "yellow" / "red" -->
+				<p class="top_time red">
+					<span class="time_img"></span>
+					<span>00 : 48 : 12</span>
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="video_nav">
+		<button id="btn_info" class="btn_toggle_contents" onclick="info()"><img src="./images/video/btn_toggle_open.svg" /></button>
+		<div class="nav_btn">
+			<!-- 버튼 클릭시 "active" class 추가	   -->
+			<!-- <button class="btn_home" class="btn_toggle_contents" onclick="location.href='./index.html'"></button> -->
+			<button id="btn_schedule" class="btn_schedule btn_toggle_contents" onclick="schedule()"></button>
+			<button class="btn_screenshare"></button> 
+			<button class="btn_memo btn_toggle_contents" onclick="memo()"></button>
+			<!-- warning -->
+			<button class="btn_waiting btn_toggle_contents blinking" onclick="waiting()"></button>
+		</div>	
+		<div class="nav_exit">
+			<button class="btn_exit" onclick="exit()"><img src="./images/video/icon_logout.svg" /></button>
+		</div>	
+	</section>
+	
+	<!-- 본문 -->
+	<section class="video_contents">
+		<section>
+			<section class="part1 contents_part scroll scroll_hor">
+				<!-- 비디오 끌 때 biz_people "off" 추가 -->
+				<!-- biz_mic " " / "off" -->
+				<!-- say " " / "on" -->
+				<div class="biz_people king"><span class="king_img"></span><span class="king_label">(주)위드마인드</span><span class="biz_mic"></span><div class="say"></div><video></video></div>
+				<div class="biz_people"><span class="label">(주)위드마인드</span><span class="biz_mic off"></span><div class="say on"></div><video></video></div>
+				<div class="biz_people"><span class="label">(주)위드마인드</span><span class="biz_mic"></span><div class="say"></div><video></video></div>
+				<div class="biz_people"><span class="biz_mic"></span><div class="say"></div><video></video></div>
+				<div class="biz_people"><span class="biz_mic"></span><div class="say"></div><video></video></div>
+			</section>
+			<section class="part2 contents_part">
+				<span>참여자</span>
+				<div class="background scroll scroll_ver">
+					<div class="member">
+						<span>대표자</span>
+						<!-- " " / "off" -->
+						<button class="cam"></button>
+						<button class="mic off"></button>
+						<button class="sound"></button>
+						
+						<button class="leave" onclick="leave()"></button>
+						<button class="key"></button>
+					</div>
+					<div class="member">
+						<span>면접관 1</span>
+						<!-- " " / "off" -->
+						<button class="cam"></button>
+						<button class="mic off"></button>
+						<button class="sound"></button>
+						
+						<button class="leave" onclick="leave()"></button>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section>
+			<section class="part3 contents_part">
+			    <video></video>
+				<img class="default_profile" src="./images/video/img_profile.svg">
+				<span class="enter">지원자가 입장했습니다.</span>
+				<div id="word_bubble">
+					<span class="word_1"><em>단어</em></span>
+					<span class="word_2"><em>단어</em></span>
+					<span class="word_3"><em>단어</em></span>
+					<span class="word_4"><em>단어</em></span>
+					<span class="word_5"><em>단어</em></span>
+					<span class="word_6"><em>단어</em></span>
+					<span class="word_7"><em>단어</em></span>
+				</div>
+				<div id="heart">
+					<span><img src="./images/video/img_heartrate.svg">조금 높은 긴장도</span>
+					<span class="rate"><em>130</em>bpm</span>
+				</div>
+			</section>
+			<section class="part4 contents_part">
+				<!-- 질문 -->
+				<section class="part4_1">
+					
+					<section id="tab">
+			            <ul class="tab_lst">
+			                <li class="on"><a href="">기본질문</a></li>
+			                <li><a href="">AI 추천질문</a></li>
+			            </ul>
+			            <div class="group">
+			                <div class="question_basic question tab_1 on">
+			                    <section class="scroll scroll_ver">
+			                   		<!-- 기본질문 -->
+			                   		<div class="no_data" style="display: none">분석된 정보 없음</div>
+			                   		<div class="ques_lst">
+			                   			<span>직무관련 질문 리스트</span>
+			                   			<div>1. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+			                   			<div>2. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+			                   		</div>
+			                    </section>
+			                </div>
+			                <div class="question_ai question tab_2">					
+			                    <section class="scroll scroll_ver">
+			                    	<button class="reset"><img src="./images/video/btn_reset.svg" /></button>
+			                    	<!-- AI 추천질문 -->
+			                        <div class="no_data">(ai)분석된 정보 없음</div>
+			                   		<div class="ques_lst" style="display: none">
+			                   			<span>(ai)직무관련 질문 리스트</span>
+			                   			<div>1. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+			                   			<div>2. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+			                   		</div>
+			                    </section>
+			                </div>
+						</div>
+					</section>
+				
+				</section>
+				<!-- 채팅 -->
+				<section class="part4_2">
+					<span>채팅</span>
+					<div class="background">
+						<section id="chatting" class="chatting scroll scroll_ver">
+						
+							<div class="chat_box left">
+							    <div class="message">
+							    	<span class="nickname">대표자</span>
+							        <p>안녕하세요. 면접관님.</p>
+							        <span class="time-right">오전 11:01</span>
+							    </div>
+							</div>
+							
+							<div class="chat_box right">
+							    <div class="message">
+							        <p>안녕하십니까.</p>
+							        <span class="time-left">오전 11:02</span>
+							    </div>
+							</div>
+							
+							<div class="chat_box right">
+							    <div class="message">
+							        <p>이번 면접자는 홍길동 입니다. 장비 테스트 정상이며, 면접을 시작하겠습니다.</p>
+							        <span class="time-left">오전 11:02</span>
+							    </div>
+							</div>
+							
+							<div class="chat_box right">
+							    <div class="message">
+							    <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+							    <span class="time-left">오전 11:05</span>
+							    </div>
+							</div>
+							
+							<!-- 파일첨부 -->
+							<div class="chat_box left">
+							    <div class="message">
+							    	<span class="nickname">대표자</span>
+							        <p>
+							        	<span class="file_name">IM 화상면접 서비스_web</span>
+							        	<!-- 저장 안한 파일 다운로드 버튼 -->
+							        	<!-- 저장 X "file_btn" / 저장 O "file_btn saved" 둘 다 있어야 함  -->
+							        	<button class="file_btn saved"></button>
+							        	<span class="file_size">24.32 MB</span>
+							        	<span class="file_down_box">
+							        		<button class="file_download">저장</button>
+							        		<span>&#183;</span>
+							        		<button class="file_download_other">다른 이름으로 저장</button>
+							        	</span>
+						        	</p>
+							        <span class="time-right">오전 11:01</span>
+							    </div>
+							</div>
+							<div class="chat_box right">
+							    <div class="message">
+							    <p>
+						        	<span class="file_name">IM 화상면접 서비스_web</span>
+						        	<button class="file_btn"></button>
+						        	<span class="file_size">24.32 MB</span>
+						        	<span class="file_down_box">
+						        		<button class="file_download">저장</button>
+						        		<span>&#183;</span>
+						        		<button class="file_download_other">다른 이름으로 저장</button>
+						        	</span>
+					        	</p>
+							    <span class="time-left">오전 11:05</span>
+							    </div>
+							</div>
+							
+						</section>
+						<section class="chat_input">
+							<textarea class="scroll scroll_ver" placeholder="메세지를 입력하세요."></textarea>
+							<div class="chat_btn">
+								<button><img src="./images/video/icon_link.svg" /></button>
+								<span></span>
+								<button><img src="./images/video/btn_send.svg" /></button>
+							</div>
+						</section>
+					</div>
+				</section>
+			</section>
+		</section>
+	</section>
+	
+	<!-- popup -->
+	
+	<!-- 면접방 입장 전 체크 페이지(xd2/p18) -->
+	<div id="interview_code" class="interview_common_code background_black">
+		<div class="black_box"></div>
+		<div class="input_info">
+			<span class="title">
+				참여 전 원하는 닉네임과 참여를 위해 부여 받은 <br>면접 코드를 입력해 주세요.
+			</span>
+			<div class="nickname">
+				<span>닉네임<em class="red">*</em></span>
+				<input class="name" placeholder="면접에 맞는 기업 아이디를 입력하세요." />
+			</div>
+			<div class="code">
+				<span>면접코드<em class="red">*</em></span>
+				<input class="name" placeholder="면접코드를 입력하세요." />
+			</div>
+			<div class="footer_btn">
+				<button class="btn_cancel">취소</button>
+				<button class="btn_enter" onclick="pre_check()">참여</button>
+			</div>
+		</div>
+		<div class="btn_codePage">
+			<span class="explain">‘환경 테스트 하기 버튼’을 통해 <em class="red">면접 전<br> 미리 장비 테스트</em>를 진행하실 수 있습니다.</span>
+			<button class="btn_test" id="btn_test" onclick="location.href='./html/video_test.html'">환경 테스트 하기</button>
+			<button class="btn_guide" onclick="use_guide()">화상면접 이용 가이드</button>
+		</div>
+	</div>
+
+	<!-- 2021-12-22 수정 장치 테스트 미리보기 추가 -->
+	<div id="check_device">
+		<div class="black_box"></div>
+		<div id="no_device_guide" class="no_device_guide">
+			<span class="title">장치 반영이 안될 시 진행 방법 순서</span>
+			<span class="explain">
+				1. 브라우저가 크롬인지 확인<br>
+				2. 왼쪽 브라우저 상단 자물쇠(<img src="images/video/img_lock.svg">)클릭 후 장치 승인<br>
+				3. 윈도우에서 카메라 또는 마이크 작동 확인<br>
+				4. 인터뷰마스터 고객센터로 기술문의
+			</span>
+		</div>
+		<div id="check_device_test" class="device_test" style="display: block;">
+			<div class="title">
+				<span>장치 테스트</span>
+				<p>카메라, 마이크, 스피커 상태를 확인해주세요.</p>
+			</div>
+			<div class="device">
+				<span><img src="images/video/icon_cam.svg">카메라</span>
+				<select></select>
+				<p class="device_yes"><img src="images/video/icon_summit_device.svg">카메라 영상이 정상적으로 작동하고 있습니다.</p>
+				<p class="device_no"><img src="images/video/icon_error_device.svg">카메라 영상이 정상적이지 않습니다.</p>
+				<div class="preview pre_not_checked"><video></video></div>
+			</div>
+			<div class="device pre_check_mic">
+				<span><img src="images/video/icon_mic.svg">마이크</span>
+				<select></select>
+				<p class="device_yes"><img src="images/video/icon_summit_device.svg">마이크 소리가 정상적으로 감지되고 있습니다.</p>
+				<p class="device_no"><img src="images/icon_error_device.svg">마이크 소리가 감지되지 않습니다.</p>
+				<div class="preview"></div>
+			</div>
+			<!-- <div class="device">
+				<span><img src="images/video/icon_sound.svg">스피커</span>
+				<select></select>
+				<p class="device_yes"><img src="images/video/icon_summit_device.svg">스피커 소리가 정상적으로 감지되고 있습니다.</p>
+				<p class="device_no"><img src="images/video/icon_error_device.svg">스피커 소리가 감지되지 않습니다.</p>
+			</div> -->
+			<div class="footer_btn">
+				<button class="btn_cancel" onclick="device_error()">취소</button>
+				<button class="btn_enter" onclick="loading()">참여</button>
+			</div>
+		</div>
+		<div id="device_error">
+			<img src="images/video/icon_alert_modal.svg">
+			<span>장치 테스트를 재 설정한 후 참여해 주세요.</span>
+			<button>확인</button>
+		</div>
+	</div>
+	
+	<!-- 면접관 면접 이용 전 기능설명 화면 1 -->
+	<div id="interview_guide_page" class="interview_guide_page">
+		<section class="video_header interview_guide_header">
+			<div class="logo"> 
+				<img class="im_logo" src="./images/video/logo_im.svg" />
+				<span class="biz_name">(주)위드마인드</span>
+				<span>면접실</span>
+			</div>
+			<div class="top_btn">
+				<!-- " " / "off" -->
+				<div class="dashed_border">
+					<button class="cam" disabled></button>
+					<button class="mic"></button>
+					<button class="sound"></button>
+					<img class="line_img_1 line_img" src="./images/video/img_line_1.svg" />
+					<span class="line_text_1 line_text">기본적인 장비 사용유무를 결정합니다.</span>
+				</div>
+				<!-- " " / "on" -->
+				<div class="dashed_border">
+					<button class="setting"></button>
+					<img class="line_img_2 line_img" src="./images/video/img_line_2.svg" />
+					<span class="line_text_2 line_text">화면이나 소리가 나오지 않을 시 체크 및 설정 하세요.</span>
+				</div>
+				<!-- " " / "full" -->
+				<button class="screen full"></button>
+			</div>
+			<div class="top_info">
+				<div class="dashed_border">
+					<button class=""><img src="./images/video/icon_handup_topbar.svg" />우선 발언권</button>
+					<img class="line_img_3 line_img" src="./images/video/img_line_3.svg" />
+					<span class="line_text_3 line_text">면접관 또는 지원자에게 우선질문하기 위한 요청이 가능합니다.</span>
+				</div>
+				<div class="dashed_border">
+					<button class="top_rec">
+						<!-- " " / "on" -->
+						<span class="rec_img"></span>
+						<span>Rec</span>
+					</button>
+					<!-- " " / "yellow" / "red" -->
+					<p class="top_time">
+						<span class="time_img"></span>
+						<span>00 : 48 : 12</span>
+					</p>
+					<img class="line_img_4 line_img" src="./images/video/img_line_4.svg" />
+					<span class="line_text_4 line_text">녹화하기 및 시간을 확인하실 수 있습니다.</span>
+				</div>
+			</div>
+		</section>
+		<section id="interview_guide_body">
+			<div class="screen_contents">
+				<div id="word_bubble" class="dashed_border">
+					<span class="word_1"><em>단어</em></span>
+					<span class="word_2"><em>단어</em></span>
+					<span class="word_3"><em>단어</em></span>
+					<span class="word_4"><em>단어</em></span>
+					<span class="word_5"><em>단어</em></span>
+					<span class="word_6"><em>단어</em></span>
+					<span class="word_7"><em>단어</em></span>
+					<img class="line_img_5 line_img" src="./images/video/img_line_5.svg" />
+					<span class="line_text_5 line_text">지원자의 빈도 높은 사용 단어를 분석합니다.</span>
+				</div>
+				<div id="heart" class="dashed_border">
+					<span><img src="./images/video/img_heartrate.svg">조금 높은 긴장도</span>
+					<span class="rate"><em>130</em>bpm</span>
+					<img class="line_img_6 line_img" src="./images/video/img_line_6.svg" />
+					<span class="line_text_6 line_text">지원자의 긴장도를 참고하실 수 있습니다.</span>
+				</div>
+			</div>
+			<div>
+				<div class="guide_question dashed_border">
+					<div class="guide_tab">
+						<span>기본질문</span>
+						<span>AI 추천질문</span>
+					</div>
+					<div class="guide_question_list">
+						<span>직무관련 질문 리스트</span>
+	           			<div>1. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+	           			<div>2. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+	           			<div>3. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+	           			<div>4. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+	           			<div>5. Ai 서비스를 설명해보세요.<em class="red">New</em></div>
+					</div>
+					<img class="line_img_7 line_img" src="./images/video/img_line_7.svg" />
+					<span class="line_text_7 line_text">
+						기본 또는 AI분석 질문 리스트를 통해 손쉬운 면접 진행이 가능합니다. <br>
+						새로 고침 버튼을 통해 분석된 AI 추천 질문을 확인할 수 있습니다.
+					</span>
+				</div>
+			</div>
+			<div class="guide_page_footer">
+				<p>
+					<img src="./images/video/img_bubble_deco.svg">
+					<span>인터뷰 마스터IM 화상면접 서비스의 자세한 기능을 설명 드립니다.</span>
+				</p>
+				<span>
+					<button class="dont_watch">다시 보지 않기</button>
+					<button class="next_page" onclick="next_page()">다음 화면</button>
+				</span>
+			</div>
+		</section>
+	</div>
+
+	<!-- 면접관 면접 이용 전 기능설명 화면 2 -->
+	<div id="nav_guide_page" class="background_black">
+		<section class="video_nav">
+			<div class="btn_info_box dashed_border">
+				<img class="line_img_8 line_img" src="./images/video/img_line_8.svg" />
+				<span class="line_text_8 line_text">공고 내용을 확인 하는 기능입니다.</span>
+				<button id="btn_info"><img src="./images/video/btn_toggle_open.svg" /></button>
+			</div>
+			<div class="nav_btn dashed_border">
+				<!-- 버튼 클릭시 "active" class 추가	   -->
+				<!-- <button class="btn_home"></button>
+				<img class="line_img_9 line_img" src="./images/video/img_line_9.svg" />
+				<span class="line_text_9 line_text">기본화면으로 되돌아 가는 기능입니다.</span> -->
+				<button id="btn_schedule" class="btn_schedule"></button>
+				<img class="line_img_10 line_img" src="./images/video/img_line_9.svg" />
+				<span class="line_text_10 line_text">면접 전체 일정을 확인하는 기능입니다.</span>
+				<button class="btn_screenshare"></button>
+				<img class="line_img_11 line_img" src="./images/video/img_line_9.svg" />
+				<span class="line_text_11 line_text">화면을 공유할 수 있는 기능입니다.</span>
+				<button class="btn_memo"></button>
+				<img class="line_img_12 line_img" src="./images/video/img_line_9.svg" />
+				<span class="line_text_12 line_text">면접 중 워드 필기가 가능합니다.</span>
+				<button class="btn_waiting"></button>
+				<img class="line_img_13 line_img" src="./images/video/img_line_9.svg" />
+				<span class="line_text_13 line_text">
+					권한 승인 전 대기 현황을 표시하는 기능입니다. <br>
+					(대표자 고유권한)
+				</span>
+			</div>	
+			<div class="nav_exit">
+				<button class="btn_exit"><img src="./images/video/icon_logout.svg" /></button>
+			</div>	
+		</section>
+		<div class="guide_page_footer">
+			<p>
+				<img src="./images/video/img_bubble_deco.svg">
+				<span>인터뷰 마스터IM 화상면접 서비스의 자세한 기능을 설명 드립니다.</span>
+			</p>
+			<span>
+				<button class="dont_watch">다시 보지 않기</button>
+				<button class="next_page" onclick="close_page()">닫기</button>
+			</span>
+		</div>
+	</div>
+
+
+	<!-- 세팅 장치 확인 팝업 -->
+	<div id="setting" class="device_test toggle_contents">
+		<div class="transparent">
+			<div class="title">
+				<span>장치 테스트</span>
+				<p>카메라, 마이크, 스피커 상태를 확인해주세요.</p>
+			</div>
+			<div class="device">
+				<span><img src="./images/video/icon_cam.svg">카메라</span>
+				<select></select>
+				<p class="device_yes"><img src="./images/video/icon_summit_device.svg">카메라 영상이 정상적으로 작동하고 있습니다.</p>
+				<p class="device_no"><img src="./images/video/icon_error_device.svg">카메라 영상이 정상적이지 않습니다.</p>
+			</div>
+			<div class="device">
+				<span><img src="./images/video/icon_mic.svg">마이크</span>
+				<select></select>
+				<p class="device_yes"><img src="./images/video/icon_summit_device.svg">마이크 소리가 정상적으로 감지되고 있습니다.</p>
+				<p class="device_no"><img src="./video/icon_error_device.svg">마이크 소리가 감지되지 않습니다.</p>
+			</div>
+			<div class="device">
+				<span><img src="./images/video/icon_sound.svg">스피커</span>
+				<select></select>
+				<p class="device_yes"><img src="./images/video/icon_summit_device.svg">스피커 소리가 정상적으로 감지되고 있습니다.</p>
+				<p class="device_no"><img src="./images/video/icon_error_device.svg">스피커 소리가 감지되지 않습니다.</p>
+			</div>
+			<div class="footer_btn">
+				<button class="btn_blue">확인</button>
+			</div>
+			<div class="footer_btn display_none">
+				<button class="btn_cancel">취소</button>
+				<button class="btn_enter">참여</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 현 진행하고 있는 면접에 대한 정보 -->
+	<div id="interview_info" class="interview_info toggle_contents">
+		<div class="transparent">
+			<div><span>&#183; 면접순서</span><span>1번 면접 (대기)</span></div>
+			<div><span>&#183; 면접일정</span><span>2021-08-23 09:00</span></div>
+			<div><span>&#183; 이름</span><span>홍길동</span></div>
+			<div><span>&#183; 이메일</span><span>aaa@withmind.net</span></div>
+			<div><span>&#183; 면접코드</span><span>123456</span></div>
+			<div class="employ_name"><span>&#183; 채용명</span><span>㈜ 위드마인드 서비스 기획 채용 면접</span></div>
+			<div><span>&#183; 응시분야</span><span>사무/기획</span></div>
+			<button class="btn_info" onclick="info()"><img src="./images/video/btn_toggle_close.svg" /></button>
+		</div>
+	</div>
+
+	<!-- 현재까지 면접을 본 지원자의 리스트 -->
+	<div id="schedule" class="toggle_contents">
+		<div class="transparent">
+			<span class="toggle_title">현재까지 면접을 본 지원자의 리스트입니다.</span>
+			<button class="btn_close" onclick="schedule()"><img src="./images/video/btn_close.svg" /></button>
+			<section class="table_section scroll scroll_ver">
+				<table>
+					<tr>
+						<th>번호</th>
+						<th>아이디(이메일)</th>
+						<th>이름</th>
+						<th>면접일정</th>
+						<th>면접시간</th>
+						<th>입장시간</th>
+						<th>총 면접시간</th>
+						<th>면접여부</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>aaa@withmind.net</td>
+						<td>홍길동</td>
+						<td>09:30</td>
+						<td>60분</td>
+						<td>09:30</td>
+						<td>45분</td>
+						<td class="red">진행완료</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>aaa@withmind.net</td>
+						<td>홍길동</td>
+						<td>09:30</td>
+						<td>60분</td>
+						<td>09:30</td>
+						<td>45분</td>
+						<td class="red">진행완료</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td class="blue">진행대기</td>
+					</tr>
+				</table>
+			</section>
+			<button class="btn_blue">엑셀 다운로드</button>
+		</div>
+	</div>
+
+	<!-- 필기를 할 수 있는 기능 -->
+	<div id="memo" class="toggle_contents">
+		<div class="transparent">
+			<button class="btn_close" onclick="memo()"><img src="./images/video/btn_close.svg" /></button>
+			<textarea id="summernote" style="margin-top: 10px;"></textarea>
+			<button class="memo_save btn_blue">저장</button>
+		</div>
+	</div>
+	
+	<!-- 면접실 접속 요청 대기자 목록 -->
+	<div id="waiting" class="toggle_contents">
+		<div class="transparent">
+			<button class="btn_close" onclick="waiting()"><img src="./images/video/btn_close.svg" /></button>
+			<span class="toggle_title">면접실 접속 요청 대기자 목록</span>
+			<section class="table_section scroll scroll_ver">
+				<table>
+					<tr>
+						<th>번호</th>
+						<th>이름</th>
+						<th>요청시간</th>
+						<th>카메라</th>
+						<th>마이크</th>
+						<th>입장요청</th>
+						<th>상태</th>
+						<th>승인</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>홍길동</td>
+						<td>09:30</td>
+						<td>O</td>
+						<td>O</td>
+						<td>O</td>
+						<td>완료</td>
+						<td class="green">승인</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>홍길동</td>
+						<td>11:30</td>
+						<td>O</td>
+						<td>O</td>
+						<td>O</td>
+						<td>대기</td>
+						<td class=""><button class="btn_ok">승인</button></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>홍길동</td>
+						<td>12:30</td>
+						<td>O</td>
+						<td>O</td>
+						<td>O</td>
+						<td>취소</td>
+						<td>-</td>
+					</tr>
+					
+				</table>
+			</section>
+			<section class="toggle_radio">
+				<input type="radio" id="enter_after" class="enter" name="enter" value="Y">
+				<label for="enter_after">승인 후 입장</label>
+				<input type="radio" id="enter_now" class="enter" name="enter" value="N">
+				<label for="enter_now">바로 입장</label>
+			</section>
+			<section class="toggle_fotter">
+				<button class="btn_blue">확인</button>
+			</section>
+		</div>
+	</div>
+	
+	<!-- 퇴장 -->
+	<div id="let_leave" class="background_black">
+		<div id="leave_check">
+			<span></span>
+			<p>정말 퇴장 시키겠습니까?</p>
+			<div class="btn_box">
+				<button class="btn_no" onclick="close_page()">아니요</button>
+				<button class="btn_yes" onclick="close_page()">예</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- side nav exit -->
+	<div id="exit">
+		<div>
+			<button class="btn_exit_red">예, 방을 종료하겠습니다.</button>
+			<button class="btn_exit_blue" onclick="exit()">아니요, 좀 더 참여하겠습니다.</button>
+		</div>
+	</div>
+		
+	
+	<script src="./js/tab.js"></script> 
+	<script>
+		$('#chatting').scrollTop($('#chatting')[0].scrollHeight);
+		
+		$(document).ready(function() {
+			$('#interview_code').show();
+		});
+		
+		function leave(){
+			$('#let_leave').show();
+		}
+		
+		// 2021-12-22 수정 장치 테스트 미리보기 추가
+		function pre_check(){
+			$('#check_device').show();
+			$('#interview_code').hide();
+		}
+	
+		function setting(){
+			if($('#setting').css('display') == 'none'){
+				$(".setting").addClass("on");
+				$('#setting').show();
+			}else{
+				$(".setting").removeClass("on");
+				$('#setting').hide();
+			}
+		}
+
+		function info(){
+			if($('#interview_info').css('display') == 'none'){
+				$('#interview_info').show();
+			}else{
+				$('#interview_info').hide();
+			}
+		}
+
+		function schedule(){
+			if($('#schedule').css('display') == 'none' && $('#schedule').hasClass('active') == false ){
+				console.log("schedule open click");
+				$(".btn_schedule").addClass("active");
+				/* $('#schedule').show(); */
+				$('#schedule').css('display', 'block');
+			} else if($('#schedule.toggle_contents').css('display') == 'block') {
+				console.log("schedule close click");
+				$(".btn_schedule").removeClass("active");
+				/* $('#schedule').hide(); */
+				$('#schedule').css('display', 'none');
+			} else if($('.btn_schedule').hasClass('active')){
+				$('.toggle_contents').css('display', 'none');
+				$(".btn_schedule").removeClass("active");
+			}
+		}
+
+		function memo(){
+			if($('#memo').css('display') == 'none'){
+				$(".btn_memo").addClass("active");
+				$('#memo').show();
+			}else{
+				$(".btn_memo").removeClass("active");
+				$('#memo').hide();
+			}
+		}
+
+		function waiting(){
+			if($('#waiting').css('display') == 'none'){
+				$(".btn_waiting").addClass("active");
+				$('#waiting').show();
+			}else{
+				$(".btn_waiting").removeClass("active");
+				$('#waiting').hide();
+			}
+		}
+
+		
+
+		function close_page(){
+			$('#nav_guide_page').hide();
+			$('#check_device').hide();
+			$('#let_leave').hide();
+		}
+
+		// 팝업 내용 밖 클릭시 닫기
+		$(document).mouseup(function (e){
+			var LayerPopup = $(".toggle_contents");
+			if(LayerPopup.has(e.target).length === 0){
+				LayerPopup.css('display', 'none');
+				$('.btn_toggle_contents').removeClass("active");
+				$('.btn_toggle_contents').removeClass("on");
+			}
+		});
+
+	</script>
+
+
+<div id="setting" class="device_test toggle_contents" style="display: none;">
+	<div class="transparent">
+		<div class="title">
+			<span>장치 테스트</span>
+			<p>카메라, 마이크, 스피커 상태를 확인해주세요.</p>
+		</div>
+		<div class="device select">
+			<span><img src="/resources/images/video/icon_cam.svg">카메라</span>
+			<select id="videoSource" class="device_selector" name="videoInput"></select>
+			<p class="device_yes"><img src="/resources/images/video/icon_summit_device.svg">카메라 영상이 정상적으로 작동하고 있습니다.</p>
+			<p class="device_no"><img src="/resources/images/video/icon_error_device.svg">카메라 영상이 정상적이지 않습니다.</p>
+		</div>
+		<div class="device select">
+			<span><img src="/resources/images/video/icon_mic.svg">마이크</span>
+			<select id="audioSource" class="device_selector" name="audioInput"></select>
+			<p class="device_yes"><img src="/resources/images/video/icon_summit_device.svg">마이크 소리가 정상적으로 감지되고 있습니다.</p>
+			<p class="device_no"><img src="/resources/video/icon_error_device.svg">마이크 소리가 감지되지 않습니다.</p>
+		</div>
+		<div class="device select">
+			<span><img src="/resources/images/video/icon_sound.svg">스피커</span>
+			<select id="audioOutput" class="device_selector" name="audioOutput"></select>
+			<p class="device_yes"><img src="/resources/images/video/icon_summit_device.svg">스피커 소리가 정상적으로 감지되고 있습니다.</p>
+			<p class="device_no"><img src="/resources/images/video/icon_error_device.svg">스피커 소리가 감지되지 않습니다.</p>
+		</div>
+		<div class="footer_btn display_none">
+			<button class="btn_blue btn_join_interview">확인</button>
+		</div>
+		<div class="footer_btn">
+			<button type="button" class="btn_cancel" onclick="setting()">취소</button>
+			<button type="button" class="btn_enter btn_join_interview"  onclick="JoinInterView()">참여</button>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

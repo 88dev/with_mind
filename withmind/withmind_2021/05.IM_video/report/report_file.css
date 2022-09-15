@@ -1,0 +1,125 @@
+.print_break {
+	page-break-before:always;
+}
+
+p {
+    line-height: 17px;
+}
+
+ul, li {
+    user-select: none;
+    cursor: default !important;
+}
+
+#file article {
+    width: 1080px;
+    padding: 70px 85px;
+    box-shadow: none;
+}
+
+.report_body {
+    background: none;
+    padding: 0;
+}
+
+.report_info {
+    padding: 30px;
+}
+
+.report_info table td {
+    font-weight: bold;
+}
+
+#file .main_tab_box {
+    margin-top: 10px;
+}
+
+#file .main_tab_cont {
+    margin-top: -8px;
+}
+
+.gray_border {
+    padding: 20px;
+}
+
+.analysis_table .blue_table {
+    width: 380px;
+}
+
+.analysis_table:nth-of-type(2) {
+    margin-top: 30px;
+}
+
+p.blue > span {
+    width: 760px;
+}
+
+.explain_table > div {
+    margin-top: 0;
+}
+
+.explain_table table th, .explain_table table td {
+    padding: 10px 0;
+}
+
+.p2 .main_tab_cont, .p4 .main_tab_cont {
+    border-radius: 15px;
+}
+
+.heatmap_box {
+    padding: 0;
+}
+
+.heatmap_box > div {
+    padding: 20px;
+}
+
+.heatmap_box > div:last-of-type > div canvas {
+    left: 55%;
+}
+
+.action_box img.face {
+    left: 135px;
+}
+
+.action_box img.body {
+    left: 90px;
+}
+
+.gray_border div.half:first-of-type {
+    padding-right: 20px;
+}
+
+.gray_border div.half:last-of-type {
+    padding-left: 20px;
+}
+
+.voice_cont canvas {
+    width: 370px;
+}
+
+
+.video_language_graph .lang_my {
+    margin-left: 33px;
+    width: 500px;
+}
+
+.video_language_graph .lang_my > div {
+    top: -17px;
+    margin-left: -5px;
+}
+
+.video_language_graph > div.arrow_cont {
+    margin-left: 100px;
+}
+
+.video_language_graph > div > img {
+    margin-left: 0;
+}
+
+.lang_txt {
+    margin-top: 25px;
+    width: 570px;
+    margin-left: 0;
+    padding-left: 35px;
+}

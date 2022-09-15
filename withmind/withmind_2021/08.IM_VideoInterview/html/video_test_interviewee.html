@@ -1,0 +1,113 @@
+<head>
+	<link rel="stylesheet" href="../css/video.css">
+	<link rel="stylesheet" href="../css/video_popup.css">
+	<link rel="stylesheet" href="../css/video_test.css">
+	<script src="../js/jquery-3.1.1.js"></script>
+</head>
+
+<div id="video_test">
+	<section class="video_header">
+		<div class="logo"> 
+			<img class="im_logo" src="../images/video/logo_im.svg" />
+			<span class="biz_name">(주)위드마인드</span>
+			<span>면접실</span>
+		</div>
+		<div class="top_btn">
+			<!-- " " / "off" -->
+			<button class="cam"></button>
+			<button class="mic"></button>
+			<button class="sound"></button>
+			<!-- " " / "on" -->
+			<button class="setting btn_toggle_contents" onclick="setting()"></button>
+			<!-- " " / "full" -->
+			<button class="screen full"></button>
+		</div>
+	</section>
+	<section class="video_nav">
+		<button id="btn_info" class="btn_toggle_contents" onclick="info()"><img src="./images/video/btn_toggle_open.svg" /></button>
+		<div class="nav_btn">
+			<!-- 버튼 클릭시 "active" class 추가	   -->
+			<button class="btn_home" class="btn_toggle_contents" onclick="location.href='./interviewee.html'" disabled></button>
+			<button id="btn_schedule" class="btn_schedule btn_toggle_contents" onclick="schedule()" disabled></button></button>
+			<button class="btn_screenshare" disabled></button></button> 
+			<button class="btn_memo btn_toggle_contents" onclick="memo()" disabled></button></button>
+			<button class="btn_waiting btn_toggle_contents" onclick="waiting()" disabled></button></button>
+		</div>	
+		<div class="nav_exit">
+			<button class="btn_exit" onclick="location.href='./interviewee.html'"><img src="../images/video/icon_logout.svg" /></button>
+		</div>	
+	</section>
+	<video>
+		
+	</video>
+</div>
+
+
+<div id="setting" class="device_test toggle_contents">
+	<div class="transparent">
+		<div class="title">
+			<span>장치 테스트</span>
+			<p>카메라, 마이크, 스피커 상태를 확인해주세요.</p>
+		</div>
+		<div class="device">
+			<span><img src="../images/video/icon_cam.svg">카메라</span>
+			<select></select>
+			<p class="device_yes"><img src="../images/video/icon_summit_device.svg">카메라 영상이 정상적으로 작동하고 있습니다.</p>
+			<p class="device_no"><img src="../images/video/icon_error_device.svg">카메라 영상이 정상적이지 않습니다.</p>
+		</div>
+		<div class="device">
+			<span><img src="../images/video/icon_mic.svg">마이크</span>
+			<select></select>
+			<p class="device_yes"><img src="../images/video/icon_summit_device.svg">마이크 소리가 정상적으로 감지되고 있습니다.</p>
+			<p class="device_no"><img src="../images/video/icon_error_device.svg">마이크 소리가 감지되지 않습니다.</p>
+		</div>
+		<div class="device">
+			<span><img src="../images/video/icon_sound.svg">스피커</span>
+			<select></select>
+			<p class="device_yes"><img src="../images/video/icon_summit_device.svg">스피커 소리가 정상적으로 감지되고 있습니다.</p>
+			<p class="device_no"><img src="../images/video/icon_error_device.svg">스피커 소리가 감지되지 않습니다.</p>
+		</div>
+		<div class="footer_btn">
+			<button class="btn_blue">확인</button>
+		</div>
+		<div class="footer_btn display_none">
+			<button class="btn_cancel">취소</button>
+			<button class="btn_enter">참여</button>
+		</div>
+	</div>
+</div>
+
+<!-- 현 진행하고 있는 면접에 대한 정보 -->
+<div id="interview_info" class="interview_info toggle_contents">
+	<div class="transparent">
+		<div><span>&#183; 면접순서</span><span>1번 면접 (대기)</span></div>
+		<div><span>&#183; 면접일정</span><span>2021-08-23 09:00</span></div>
+		<div><span>&#183; 이름</span><span>홍길동</span></div>
+		<div><span>&#183; 이메일</span><span>aaa@withmind.net</span></div>
+		<div><span>&#183; 면접코드</span><span>123456</span></div>
+		<div class="employ_name"><span>&#183; 채용명</span><span>㈜ 위드마인드 서비스 기획 채용 면접</span></div>
+		<div><span>&#183; 응시분야</span><span>사무/기획</span></div>
+		<button class="btn_info" onclick="info()"><img src="./images/video/btn_toggle_close.svg" /></button>
+	</div>
+</div>
+
+
+<script>
+function setting(){
+	if($('#setting').css('display') == 'none'){
+		$(".setting").addClass("on");
+		$('#setting').show();
+    }else{
+		$(".setting").removeClass("on");
+		$('#setting').hide();
+    }
+}
+
+function info(){
+	if($('#interview_info').css('display') == 'none'){
+		$('#interview_info').show();
+	}else{
+		$('#interview_info').hide();
+	}
+}
+</script>
