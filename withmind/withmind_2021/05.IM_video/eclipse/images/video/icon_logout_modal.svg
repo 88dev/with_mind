@@ -1,0 +1,15 @@
+<svg id="icon_logout_modal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_90" data-name="사각형 90" width="16" height="16" fill="#e63232" stroke="#fff" stroke-width="2"/>
+    </clipPath>
+  </defs>
+  <g id="icon_logout" clip-path="url(#clip-path)">
+    <g id="logout" transform="translate(0 0)">
+      <g id="Sign_Out">
+        <path id="패스_199" data-name="패스 199" d="M7.5,15H1V1H7.5a.5.5,0,1,0,0-1H.5A.5.5,0,0,0,0,.5v15a.5.5,0,0,0,.5.5h7a.5.5,0,0,0,0-1Z" transform="translate(0 0)" fill="#e63232"/>
+        <path id="패스_200" data-name="패스 200" d="M15.855,7.651l-3.45-3.5a.5.5,0,0,0-.707,0,.508.508,0,0,0,0,.714L14.3,7.5H4a.505.505,0,0,0,0,1.01H14.3l-2.6,2.637a.508.508,0,0,0,0,.714.5.5,0,0,0,.707,0l3.449-3.5A.511.511,0,0,0,15.855,7.651Z" transform="translate(0 0)" fill="#e63232"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 52 52">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_26722" data-name="사각형 26722" width="16" height="16" transform="translate(-3539 -2215)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="img_handup" transform="translate(-561 -426)">
+    <circle id="타원_664" data-name="타원 664" cx="26" cy="26" r="26" transform="translate(561 426)" fill="#009ae8" opacity="0.29"/>
+    <circle id="타원_663" data-name="타원 663" cx="19" cy="19" r="19" transform="translate(568 433)" fill="#009ae8" opacity="0.83"/>
+    <g id="icon_hand" transform="translate(4119 2659)" clip-path="url(#clip-path)">
+      <path id="hold" d="M13.169,6.46a.545.545,0,0,0-.489-.267,2.383,2.383,0,0,0-1.247.411A4.161,4.161,0,0,0,10.173,8a.5.5,0,0,1-.347.253c0-.032,0-.068,0-.1,0-.074,0-.162,0-.258V2.62a.953.953,0,0,0-1.906,0V6.313a.119.119,0,1,1-.238,0V.953a.953.953,0,0,0-1.906,0v5.36a.119.119,0,0,1-.238,0V2.025a.834.834,0,1,0-1.667,0V6.789a.119.119,0,1,1-.238,0V3.811a.835.835,0,0,0-1.67,0V10.29c.231,3.331,2.274,3.78,4.242,3.78a4.322,4.322,0,0,0,3.818-2.1c.093-.15.344-.545.642-1.013.745-1.17,1.369-2.154,1.461-2.329a2.882,2.882,0,0,1,.663-.88,1.831,1.831,0,0,0,.435-.573A.9.9,0,0,0,13.169,6.46Z" transform="translate(-3538.615 -2214.035)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

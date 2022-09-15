@@ -1,0 +1,91 @@
+<html>
+<head>
+	<link rel="stylesheet" href="../css/video.css">
+	<link rel="stylesheet" href="../css/video_popup.css">
+	<link rel="stylesheet" href="../css/video_test.css">
+	<script src="../js/jquery-3.1.1.js"></script>
+</head>
+
+<div id="video_test">
+	<section class="video_header">
+		<div class="logo"> 
+			<img class="im_logo" src="../images/video/logo_im.svg" />
+			<span class="biz_name">(주)위드마인드</span>
+			<span>면접실</span>
+		</div>
+		<div class="top_btn">
+			<!-- " " / "off" -->
+			<button class="cam"></button>
+			<button class="mic off"></button>
+			<button class="sound"></button>
+			<!-- " " / "on" -->
+			<button class="setting btn_toggle_contents" onclick="setting()"></button>
+			<!-- " " / "full" -->
+			<button class="screen full"></button>
+		</div>
+	</section>
+	<section class="video_nav">
+		<div class="nav_btn">
+			<!-- 버튼 클릭시 "active" class 추가	   -->
+			<button class="btn_home" class="btn_toggle_contents" onclick="location.href='${pageContext.request.contextPath}/video/interviewer'"></button>
+			<button id="btn_schedule" class="btn_schedule btn_toggle_contents" onclick="schedule()"></button>
+			<button class="btn_screenshare"></button> 
+			<button class="btn_memo btn_toggle_contents" onclick="memo()"></button>
+			<button class="btn_waiting btn_toggle_contents" onclick="waiting()"></button>
+		</div>	
+		<div class="nav_exit">
+			<button class="btn_exit" onclick="location.href='${pageContext.request.contextPath}/video/interviewer'"><img src="../images/video/icon_logout.svg" /></button>
+		</div>	
+	</section>
+	<video>
+		
+	</video>
+</div>
+
+
+<div id="setting" class="device_test toggle_contents">
+	<div class="transparent">
+		<div class="title">
+			<span>장치 테스트</span>
+			<p>카메라, 마이크, 스피커 상태를 확인해주세요.</p>
+		</div>
+		<div class="device">
+			<span><img src="../images/video/icon_cam.svg">카메라</span>
+			<select></select>
+			<p class="device_yes"><img src="../images/video/icon_summit_device.svg">카메라 영상이 정상적으로 작동하고 있습니다.</p>
+			<p class="device_no"><img src="../images/video/icon_error_device.svg">카메라 영상이 정상적이지 않습니다.</p>
+		</div>
+		<div class="device">
+			<span><img src="../images/video/icon_mic.svg">마이크</span>
+			<select></select>
+			<p class="device_yes"><img src="../images/video/icon_summit_device.svg">마이크 소리가 정상적으로 감지되고 있습니다.</p>
+			<p class="device_no"><img src="../images/video/icon_error_device.svg">마이크 소리가 감지되지 않습니다.</p>
+		</div>
+		<div class="device">
+			<span><img src="../images/video/icon_sound.svg">스피커</span>
+			<select></select>
+			<p class="device_yes"><img src="../images/video/icon_summit_device.svg">스피커 소리가 정상적으로 감지되고 있습니다.</p>
+			<p class="device_no"><img src="../images/video/icon_error_device.svg">스피커 소리가 감지되지 않습니다.</p>
+		</div>
+		<div class="footer_btn">
+			<button class="btn_blue">확인</button>
+		</div>
+		<div class="footer_btn display_none">
+			<button class="btn_cancel">취소</button>
+			<button class="btn_enter">참여</button>
+		</div>
+	</div>
+</div>
+
+<script>
+function setting(){
+	if($('#setting').css('display') == 'none'){
+		$(".setting").addClass("on");
+		$('#setting').show();
+    }else{
+		$(".setting").removeClass("on");
+		$('#setting').hide();
+    }
+}
+</script>
+</html>

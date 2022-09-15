@@ -1,0 +1,1412 @@
+/* 공통 */
+.display_none {
+	display: none;	
+}
+
+.background_black {
+    position: relative;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6) 0% 0% no-repeat padding-box;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.transparent {
+	display: inline-block;
+	background: transparent;
+	width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.btn_close {
+	position: absolute;
+    top: 25px;
+	right: 30px;
+}
+
+span.toggle_title {
+	color: #111111;
+	font-size: 16px;
+	font-weight: bold;
+} 
+
+.toggle_contents .table_section {
+	border: 1px solid #EEEEEE;
+	margin-top: 10px;
+	border-radius: 3px;
+}
+
+.toggle_contents table {
+	width: 100%;
+	border-radius: 3px;
+	text-align: center;
+	color: #444444;
+	font-size: 14px;
+	font-weight: 600;
+    border-collapse: collapse;
+    border-style: hidden;
+}
+
+.toggle_contents table tr th {
+	background: #F5F5F5 0% 0% no-repeat padding-box;
+}
+
+.toggle_contents table tr:first-of-type th:first-of-type {
+	border-radius: 3px 0 0 0;
+}
+
+.toggle_contents table tr:first-of-type th:last-of-type {
+	border-radius: 0 3px 0 0;
+}
+
+.toggle_contents table tr:last-of-type td:first-of-type {
+	border-radius: 0 0 0 3px;
+}
+
+.toggle_contents table tr:last-of-type td:last-of-type {
+	border-radius: 0 0 3px 0;
+}
+
+.toggle_contents table tr th,
+.toggle_contents table tr td {
+	padding: 10px 5px;
+}
+
+.toggle_contents table tr:nth-child(even) {
+    background: #FFFFFF;
+}
+
+.toggle_contents table tr:nth-child(odd) {
+    background: #F7F7F7;
+}
+
+.toggle_contents .red {
+	color: #E63232;
+}
+
+.toggle_contents .blue {
+	color: #009AE8;
+}
+
+.toggle_contents .green {
+	color: #00A83D;
+}
+
+.toggle_contents .btn_ok {
+	width: 90px;
+	height: 30px;
+	background: #009AE8 0% 0% no-repeat padding-box;
+	border-radius: 2px;
+	color: #FFFFFF;
+	font-size: 14px;
+} 
+
+.toggle_fotter,
+.footer_btn {
+	position: absolute;
+	width: 100%;
+	height: 84px;
+	background: rgba(222, 222, 222, 0.3) 0% 0% no-repeat padding-box;
+	border-radius: 0px 0px 8px 8px;
+	left: 0;
+	bottom: 0;
+}
+
+.btn_blue {
+	position: absolute;
+	width: 210px;
+	height: 44px;
+	background: #009AE8 0% 0% no-repeat padding-box;
+	border-radius: 4px;
+	color: #FFFFFF;
+	font-size: 15px;
+	font-weight: 600;
+	bottom: 30px;
+	right: 30px;
+}
+
+button.btn_cancel,
+button.btn_enter {
+	display: inline-block;
+	width: 160px;
+	height: 44px;
+	margin-top: 20px;
+	border-radius: 4px;
+	font-size: 15px;
+	font-weight: 600;
+	text-align: center;
+}
+
+button.btn_cancel {
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #DDDDDD;
+	color: #444444;
+	margin-right: 10px;
+}
+
+button.btn_enter {
+	background: #009AE8 0% 0% no-repeat padding-box;
+	color: #FFFFFF;
+}
+
+
+
+/* 라디오버튼 */
+.toggle_radio {
+	margin-top: 12px;
+}
+
+input[type=checkbox], input[type=radio] {
+    display: none;
+}
+
+input[type=checkbox] + label, input[type=radio] + label {
+    display: inline-block;
+    cursor: pointer;
+    background: url(../images/video/checkbox_none.svg) left/22px no-repeat;
+    background-position-y: 3px;
+    padding-left: 20px;
+    background-size: 16px 16px;
+    width: 110px;
+    height: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+input[type=radio]:checked + label {
+    background-image: url(../images/video/checkbox_checked.svg);
+}
+
+
+
+
+/* #interview_code {
+	position: relative;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6) 0% 0% no-repeat padding-box;
+	top: 0;
+	left: 0;
+	z-index: 100;
+} */
+
+.black_box {
+    position: absolute;
+    width: calc(100vw - 70px);
+    height: calc(100vh - 80px);
+    background: #333333;
+    border-radius: 8px;
+    top: 70px;
+    left: 58px;
+    user-select: none;
+}
+
+#interview_code .input_info {
+	position: relative;
+	position: absolute;
+	width: 390px;
+	height: 373px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 25px #00000029;
+	border-radius: 8px;
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+#interview_code .input_info .title,
+#interviewee_code .input_info .title {
+	color: #333333;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+#interview_code .input_info div {
+	margin-top: 25px;	
+}
+
+#interview_code .input_info div span {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: #333333;
+}
+
+#interview_code .input_info div input,
+#interviewee_code .input_info div input {
+	width: 330px;
+	height: 38px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px;
+	margin-top: 8px;
+}
+
+#interview_code .input_info .footer_btn ,
+#interviewee_code .input_info .footer_btn {
+	text-align: center;
+}
+
+#interview_code .btn_codePage,
+#interviewee_code .btn_codePage {
+	position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);	
+}
+
+#interview_code .btn_codePage .explain,
+#interviewee_code .btn_codePage .explain {
+    display: block;
+    width: 300px;
+	height: 75px;
+	background-image: url('../images/video/bg_speechbubble_white.svg');
+	background-size: cover;
+	border-radius: 3px;
+	color: #333333;
+	font-size: 14px;
+    font-weight: 600;
+	text-align: center;
+	margin-left: -50px;
+	margin-bottom: 10px;
+	padding: 15px;
+    box-sizing: border-box;
+}
+
+#interview_code .btn_codePage button ,
+#interviewee_code .btn_codePage button {
+	display: inline-block;
+	width: 190px;
+	height: 44px;
+	font-size: 15px;
+	font-weight: 600;
+	text-align: center;
+	border-radius: 4px;
+}
+
+#interview_code .btn_codePage button.btn_test,
+#interviewee_code .btn_codePage button.btn_test {
+	background: #009AE8 0% 0% no-repeat padding-box;
+	color: #FFFFFF;
+	margin-right: 10px;
+}
+
+#interview_code .btn_codePage button.btn_guide ,
+#interviewee_code .btn_codePage button.btn_guide {
+	background: #FF9D1D 0% 0% no-repeat padding-box;
+	color: #111111;
+}
+
+/* interviewee page */
+#interviewee_code .input_info {
+	position: relative;
+	position: absolute;
+	width: 410px;
+	height: 220px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 25px #00000029;
+	border-radius: 8px;
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+
+
+#check_device {
+	display: none;
+	position: relative;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6) 0% 0% no-repeat padding-box;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.no_device_guide {
+	position: absolute;
+	width: 365px;
+	height: 170px;
+	background-image: url('../images/video/bg_speechbubble_blue.svg');
+    background-size: cover;
+	border-radius: 4px;
+	top: 120px;
+	left: 120px;
+	color: #FFFFFF;
+	padding: 22px 17px 22px 30px;
+	box-sizing: border-box;
+	line-height: 25px;
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	.no_device_guide {
+		left: 60px;
+	}
+}
+
+.no_device_guide .title {
+	display: block;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.no_device_guide .explain {
+	font-size: 14px;
+}
+
+#check_device #check_device_test {
+	display: none;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+#loading_page {
+	display: none;
+}
+
+#loading_page div {
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#loading_page div img {
+	width: 90px;
+	height: 90px;
+}
+
+#loading_page div span {
+	display: block;
+	font-size: 16px;
+	font-weight: 600;
+	color: #FFFFFF;
+	margin-top: 10px;
+}
+
+
+/* 면접관 면접 이용 전 기능설명 화면 1 */
+#interview_guide_page {
+	display: none;
+	position: relative;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+    user-select: none;
+}
+
+#interview_guide_page .dashed_border button {
+	cursor: default;
+}
+
+#interview_guide_page .interview_guide_header {
+	position: relative;
+	width: 100vw;
+	height: 58px;
+	box-sizing: border-box;
+	top: 0;
+    left: 0;
+}
+
+#interview_guide_page .interview_guide_header .top_btn {
+	line-height: 44px;
+    padding: 5px 0;
+}
+
+
+.dashed_border {
+	position: relative;
+    display: inline-block;
+    height: 44px;
+	border: 2px dashed #009AE8;
+	border-radius: 24px;
+	box-sizing: border-box;
+}
+
+img.line_img {
+	position: absolute;
+    z-index: 10;
+}
+
+span.line_text {
+	position: absolute;
+	font-size: 14px;
+	font-weight: 600;
+	color: #FFFFFF;
+    z-index: 10;
+}
+
+img.line_img_1 {
+    top: 40px;
+    left: 20px;
+}
+
+span.line_text_1 {
+	width: 280px;
+	top: 70px;
+    left: -250px;
+}
+
+img.line_img_2 {
+    top: 40px;
+    left: -145px;
+}
+
+span.line_text_2 {
+	width: 350px;
+    top: 110px;
+    left: -495px;
+}
+
+img.line_img_3 {
+    top: 40px;
+    left: -35px;
+}
+
+span.line_text_3 {
+	width: 400px;
+    top: 172px;
+    left: -440px;
+}
+
+img.line_img_4 {
+    top: 40px;
+    left: -170px;
+}
+
+span.line_text_4 {
+    width: 270px;
+    top: 213px;
+    left: -445px;
+}
+
+.interviewee_guide_page img.line_img_3 {
+    left: -45px;
+}
+
+.interviewee_guide_page span.line_text_3 {
+    left: -443px;
+}
+
+.interviewee_guide_page img.line_img_4 {
+    left: -220px;
+}
+
+.interviewee_guide_page span.line_text_4 {
+	width: 290px;
+    left: -515px;
+}
+
+img.line_img_5 {
+    bottom: -58px;
+    left: 130px;
+}
+
+span.line_text_5 {
+    width: 290px;
+    bottom: -80px;
+    left: 0;
+}
+
+img.line_img_6 {
+    bottom: -82px;
+    left: 5px;
+
+}
+
+span.line_text_6 {
+	width: 290px;
+    bottom: -83px;
+    left: -275px;
+}
+
+img.line_img_7 {
+    bottom: -125px;
+    left: 70px;
+}
+
+span.line_text_7 {
+    width: 445px;
+    bottom: -135px;
+    left: -375px;
+}
+
+img.line_img_8 {
+    top: -50px;
+    left: 20px;
+}
+
+span.line_text_8 {
+    width: 240px;
+    top: -55px;
+    left: 90px;
+}
+
+img.line_img_9 {
+    top: 16px;
+    left: 42px;
+    z-index: 0;
+}
+
+span.line_text_9 {
+    width: 245px;
+    top: 13px;
+    left: 135px;
+}
+
+img.line_img_10 {
+    top: 73px;
+    left: 42px;
+    z-index: 0;
+}
+
+span.line_text_10 {
+    width: 250px;
+    top: 68px;
+    left: 135px;
+}
+
+img.line_img_11 {
+    top: 130px;
+    left: 42px;
+    z-index: 0;
+}
+
+span.line_text_11 {
+       width: 250px;
+    top: 127px;
+    left: 135px;
+}
+
+img.line_img_12 {
+    top: 185px;
+    left: 42px;
+    z-index: 0;
+}
+
+span.line_text_12 {
+	width: 250px;
+    top: 180px;
+    left: 135px;
+}
+
+img.line_img_13 {
+    top: 243px;
+    left: 42px;
+    z-index: 0;
+}
+
+span.line_text_13 {
+	width: 300px;
+    top: 238px;
+    left: 135px;
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	img.line_img_7 {
+	    bottom: -125px;
+	    left: -20px;
+	}
+
+	span.line_text_7 {
+	    bottom: -135px;
+	    left: -460px;
+	}
+}
+
+#interview_guide_page .interview_guide_header .top_info {
+	vertical-align: top;
+}
+
+#interview_guide_page .interview_guide_header .top_info .dashed_border:first-child {
+    vertical-align: top;
+	margin-top: 5px;
+	padding: 0 10px;
+}
+
+#interview_guide_page .interview_guide_header .top_info .dashed_border:first-child button {
+	margin-right: 0;
+    padding-top: 12px;
+}
+
+#interview_guide_page .interview_guide_header .top_info .dashed_border:last-child {
+	margin-top: 5px;
+	padding: 0 10px;
+}
+
+#interview_guide_page .interview_guide_header .top_info .dashed_border:last-child p { 
+	margin-top: 10px;
+}
+
+
+
+
+
+#interview_guide_page #interview_guide_body {
+	position: relative;
+	display: flex;
+    background: rgba(0, 0, 0, 0.7) 0% 0% no-repeat padding-box;
+	width: 100vw;
+	height: calc(100vh - 58px);
+	box-sizing: border-box;
+    left: 0;
+	bottom: 0;
+}
+
+#interview_guide_page #interview_guide_body div.screen_contents {
+	position: relative;
+	flex: 2.3;
+}
+
+#interview_guide_page #interview_guide_body #word_bubble {
+	position: relative;
+	position: absolute;
+	background: #363638;
+	top: 191px;
+    left: 80px;
+    box-sizing: border-box;
+}
+
+#interview_guide_page #interview_guide_body #heart {
+	position: relative;
+	position: absolute;
+	background: #363638;
+    top: 220px;
+	right: 25px;
+	height: 140px;
+    box-sizing: border-box;
+}
+
+#interview_guide_page #interview_guide_body > div:nth-child(2) {
+	position: relative;
+	flex: 1;
+}
+
+.guide_question.dashed_border {
+	border-radius: 10px;
+}
+
+.guide_question {
+	position: relative;
+	position: absolute;
+	background: #FFF;
+	width: 93.5%;
+    height: 30%;
+	top: 193px;
+	left: 22px;
+	border-radius: 10px;
+	/* overflow: hidden; */
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	.guide_question {
+		width: 90%;
+		height: 27%;
+	}
+}
+
+.guide_question .guide_tab {
+	display: flex;
+	height: 40px;
+}
+
+.guide_question .guide_tab span {
+	flex: 1;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 40px;
+}
+
+.guide_question .guide_tab span:first-child {
+	background: #FFF;
+	color: #111111;
+    border-radius: 10px 0 0 0;
+}
+
+.guide_question .guide_tab span:last-child {
+	background: #009AE8;
+	color: #FFF;    
+	border-radius: 0 10px 0 0;
+}
+
+.guide_question .guide_question_list {
+    padding: 10px;	
+}
+
+.guide_question .guide_question_list span {
+    display: block;
+	color: #333333;
+	font-size: 15px;
+	font-weight: 600;
+	margin-bottom: 5px;
+} 
+
+.guide_question .guide_question_list div {
+	color: #444444;
+	font-size: 14px;
+	padding: 5px 0;
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	.guide_question .guide_question_list div:last-child {
+		display: none;
+	}
+}
+
+.guide_question .guide_question_list div .red {
+	margin-left: 5px;
+}
+
+.guide_page_footer {
+	position: absolute;
+	width: 100%;
+    bottom: 50px;
+    color: #FFF;
+}
+
+.guide_page_footer > p,
+.guide_page_footer > span {
+	display: inline-block;
+}
+
+.guide_page_footer > p {
+    margin: 0 0 0 100px;
+}
+
+.guide_page_footer > p img {
+	vertical-align: middle;
+	margin-right: 14px;
+}
+
+.guide_page_footer > span {
+	float: right;
+	margin-right: 100px;
+}
+
+.guide_page_footer > span button {
+	width: 210px;
+	height: 44px;
+	font-size: 15px;
+	text-align: center;
+	border-radius: 4px;
+	vertical-align: baseline;
+	cursor: pointer;
+}
+
+.guide_page_footer > span button.dont_watch {
+	border: 1px solid #9A9A9A;
+	color: #EEEEEE;
+}
+
+.guide_page_footer > span button.next_page {
+	background: #009AE8 0% 0% no-repeat padding-box;
+	color: #FFFFFF;
+}
+
+/* 면접관 면접 이용 전 기능설명 화면 2 */
+
+#nav_guide_page {
+	display: none;
+}
+
+#nav_guide_page .dashed_border button {
+	cursor: default;
+}
+
+#nav_guide_page .video_nav {
+	position: absolute;
+	bottom: 0;
+	user-select: none;
+}
+
+#nav_guide_page .video_nav .btn_info_box {
+    position: relative;
+    position: absolute;
+    left: 55px;
+    top: 172px;
+    width: 45px;
+    height: 70px;
+    border-radius: 0px 6px 6px 0px;
+    padding: 3px;
+}
+
+#nav_guide_page .video_nav .btn_info_box #btn_info {
+	left: 2px;
+    top: 3px;
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	#nav_guide_page .video_nav .btn_info_box {
+		top: 97px;
+	}
+}
+
+.video_nav .nav_btn {
+	height: 275px;
+    margin-left: 7px;
+    z-index: 1;
+}
+
+.video_nav .btn_home {
+	margin-top: 0 !important;
+}
+
+.video_nav .btn_waiting {
+	margin-bottom: 0 !important;
+}
+
+/* 지원자 페이지 nav */
+.interviewee_guide_page #interview_guide_body {
+	position: absolute;
+    width: calc(100vw - 58px) !important;
+    left: 58px !important;
+}
+
+.interviewee_guide_page .video_header .top_btn {
+    margin-top: 8px;
+    line-height: 44px;
+}
+
+.interviewee_guide_page .video_header .top_info .dashed_border {
+    vertical-align: middle;
+    top: -5px;
+}
+
+.interviewee_guide_page .top_info .dashed_border button {
+	padding-top: 10px;
+    margin-left: 5px;
+	margin-right: 10px;
+}
+
+.interviewee_guide_page .top_info .top_time {
+	margin: 8px;
+}
+
+#interviewee_nav {
+	position: absolute;
+}
+
+#interviewee_nav .nav_btn {
+	position: relative;
+}
+
+#interviewee_nav .nav_btn .line_img {
+	left: 45px;
+}
+
+#interviewee_nav .nav_btn .line_text {
+    left: 140px;
+}
+
+
+/* 지원자 진행 전 세팅 가이드 페이지 */
+#setting_guide {
+	display: none;
+}
+
+#setting_guide .interview_guide_header button {
+	user-select: none;
+	cursor: default;
+}
+
+.setting_guide_body {
+	position: relative;
+	height: calc(100vh - 58px);
+}
+
+.no_device_guide .explain em {
+	font-style: normal;
+	color: #FFF600;
+}
+
+#setting_guide .no_device_guide,
+#interviewee_final_check .no_device_guide {
+	padding: 22px 17px 22px 30px;
+	height: 195px;
+}
+
+#setting_guide .setting_guide_body img {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* @media (min-width: 1025px) and (max-width: 1599px) { 
+	#setting_guide .setting_guide_body img {
+		width: 800px;
+	}
+} */
+
+#setting_guide .top_btn, 
+#setting_guide .top_info {
+	position: relative;
+}
+
+span.blue_circle {
+	position: absolute;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+span.blue_circle img {
+	position: absolute;
+}
+span.blue_circle em {
+    position: absolute;
+    width: 40px;
+    line-height: 40px;
+    font-style: normal;
+}
+
+span.blue_circle_1 {
+	left: 157px;
+    top: 45px;
+}
+
+span.blue_circle_2 {
+	left: 210px;
+    top: 45px;
+}
+
+span.blue_circle_3 {
+    left: 50%;
+    top: 50%;
+    transform: translate(160px, -120px);
+}
+
+span.blue_circle_3 em {
+    top: -20px;
+    left: -4px;
+}
+
+span.blue_circle_4 {
+	left: 35px;
+    top: 45px;
+}
+
+span.blue_circle_5 {
+	left: 250px;
+    top: 115px;
+}
+
+span.blue_circle_5 em {
+    left: 16px;
+}
+
+.setting_guide_check {
+	position: absolute;
+	width: 320px;
+	height: 180px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 30px #00000029;
+	border-radius: 8px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+#setting_guide .setting_guide_check {
+	right: 100px;
+	bottom: 160px;
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	.setting_guide_check {
+		right: 100px;
+		bottom: 160px;
+	}
+}
+
+.setting_guide_check .setting_text {
+	height: 136px
+}
+
+.setting_guide_check .setting_text img {
+	display: block;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.setting_guide_check .setting_text span {
+	display: block;
+	padding-top: 12px;
+	text-align: center;
+}
+
+.setting_guide_check .setting_button {
+	display: flex;
+	height: 44px;
+	border-top: 1px solid #DDDDDD;
+}
+
+.setting_guide_check .setting_button button {
+	flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.setting_guide_check .setting_button button.setting_no {
+	border-right: 1px solid #DDDDDD;
+	color: #333333;
+}
+
+.setting_guide_check .setting_button button.setting_yes {
+	color: #009AE8;
+}
+
+#device_error {
+	display: none;
+	position: absolute;
+	width: 320px;
+	height: 180px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 22px #00000045;
+	border-radius: 8px;
+}
+
+#device_error img {
+    display: block;
+    margin: 38px auto 12px;
+}
+
+#device_error span {
+    display: block;
+    margin-bottom: 40px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #333333;
+    text-align: center;
+}
+
+#device_error button {
+	width: 100%;
+	height: 44px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #FFFFFF;
+	background: #009AE8 0% 0% no-repeat padding-box;
+	border-radius: 0px 0px 8px 8px;
+}
+
+
+
+
+
+/* 최종 면접 확인 창 */
+#interviewee_final_check .setting_guide_check {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+
+/* 현 진행하고 있는 면접에 대한 정보 */
+#interview_info {
+	display: none;
+	position: absolute;
+	width: 400px;
+	height: auto;
+	min-height: 220px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border-radius: 0px 0px 6px 0px;
+	z-index: 200;
+	top: 230px;
+	left: 58px;    
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	#interview_info {
+		top: 160px;
+	}
+}
+
+#interview_info .transparent {
+	padding: 18px;
+}
+
+#interview_info .employ_name span:first-child {
+	vertical-align: top;
+}
+
+#interview_info .employ_name span:last-child {
+    width: 265px;
+    display: inline-block;
+}
+
+
+#interview_info .btn_info {
+	width: 36px;
+	height: 60px;
+	background: #009AE8 0% 0% no-repeat padding-box;
+	border-radius: 0px 6px 6px 0px;
+	top: 0;
+    left: 400px;
+    position: absolute;
+}
+
+#interview_info > div > div {
+	margin: 8px 0;
+}
+
+#interview_info > div > div span:first-child {
+	display: inline-block;
+	width: 80px;
+    margin-right: 15px;
+}
+
+#schedule {
+	display: none;
+	position: relative;
+	position: absolute;
+	width: 760px;
+	height: 408px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 2px 9px 25px #00000028;
+	border-radius: 8px;
+	top: 250px;
+	left: 58px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+
+#schedule section {
+    max-height: 270px;
+}
+
+
+
+#waiting {
+	display: none;
+	position: relative;
+	position: absolute;
+	width: 810px;
+	height: 472px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 2px 9px 25px #00000028;
+	border-radius: 8px;
+	top: 300px;
+	left: 58px;
+	box-sizing: border-box;
+	z-index: 5;
+}
+
+
+#memo {
+	display: none;
+	position: relative;
+	position: absolute;
+	width: 680px;
+	height: 400px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 2px 9px 25px #00000028;
+	border-radius: 8px;
+	top: 360px;
+	left: 58px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+#memo .note-editor.note-frame .note-statusbar .note-resizebar, .note-editor.note-airframe .note-statusbar .note-resizebar {
+	display: none;
+} 
+
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	#memo {
+		top: 250px;
+	}
+}
+
+.device_test {
+	display: none;
+	position: relative;
+	position: absolute;
+	width: 390px;
+	height: 541px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 2px 9px 25px #00000028;
+	border-radius: 8px;
+	top: 50px;
+	left: 38%;
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) { 
+	.device_test {
+		left: 35%;
+	}
+}
+
+.device_test .title {
+	margin-bottom: 30px;
+}
+
+.device_test .title span {
+	font-size: 18px;
+	font-weight: 600;
+	color: #111111;
+}
+
+.device_test .title p {
+	color: #555555;
+	font-size: 14px;
+	font-weight: 600;
+    margin-top: 4px;
+}
+
+.device_test .device {
+	font-size: 14px;
+	font-weight: 600;
+	margin-top: 20px;
+}
+
+.device_test:first-of-type .device {
+	margin-top: 30px;
+}
+
+.device_test .device span {
+	display: block;
+	color: #111111;
+}
+
+.device_test .device span img {
+	margin-right: 7px;
+	vertical-align: top;
+}
+
+.device_test .device select {
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	width: 330px;
+	height: 38px;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px;
+	margin-top: 8px;
+}
+
+.device_test .device p {
+	margin-top: 7px;
+}
+
+.device_test .device p.device_yes {
+	color: #00A83D;
+}
+
+.device_test .device p.device_no {
+	display: none;
+	color: #E63232;
+}
+
+.device_test .device p img {
+	margin-right: 5px;
+    vertical-align: text-bottom;
+}
+
+.device_test .footer_btn {
+	text-align: center;
+} 
+
+.device_test .btn_blue {
+	top: 20px;
+	width: 330px;
+}
+
+#exit {
+	display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7) 0% 0% no-repeat padding-box;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#exit div {
+	position: relative;
+	width: 100vw;
+    height: 100vh;
+}
+
+#exit div > button {
+	position: absolute;
+	width: 320px;
+	height: 44px;
+	margin: 0 auto;
+	box-shadow: 0px 3px 6px #00000029;
+	border-radius: 4px;
+	color: #FFFFFF;
+	font-size: 15px;
+	font-weight: 600;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#exit div > button.btn_exit_red {
+	background: #E63232 0% 0% no-repeat padding-box;
+    bottom: 115px;
+}
+
+#exit div > button.btn_exit_blue {
+	background: #009AE8 0% 0% no-repeat padding-box;
+	bottom: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

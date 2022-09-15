@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="all" />
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" href="../css/notice_board.css">
+		<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/slick.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/front.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>IM</title>
+</head>
+<body>
+		<div id="container">
+			<div class="common_zone">
+				<div class="common_top clear">
+					<h2>공지사항</h2>
+					<p>
+						<span>홈 > MY IM ></span>
+						<em>공지사항</em>
+					</p>
+				
+				</div>
+				<div class="comInterview_contents">
+					<div id="tab1" class="demoTab">
+						<ul class="tab_lst">
+							<li class="on" onClick="location.href='./tab2.html'"><a href="">공지</a></li>
+							<li class="" onClick="location.href='./tab3.html'"><a href="">이벤트</a></li>
+						</ul>
+						<div class="group">
+							<div class="on">
+								<div>
+									<canvas id="member_daily_chart"></canvas>
+								</div>
+							</div>
+							<div class="tab_2">					
+								<div>
+									ㅁㅇㄴㅇㄹ
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			Chart.defaults.font.family = 'Noto Sans KR';
+			const ctx = document.getElementById('member_daily_chart');
+
+			const config = {
+				type: 'doughnut',
+				data: {
+					labels: ['신규 회원', '탈퇴 회원', '휴면 회원'],
+					datasets: [
+						{
+							label: '변곡점1',
+							data: [60, 30, 10],
+							backgroundColor: ['#51A3FF', '#5FDFC9', '#D8D8D8'],
+							borderWidth: 1
+						}
+					]
+				},
+				options: {
+					maintainAspectRatio: false,
+					plugins: {
+						title: {
+							display: false,
+							text: '차트, 그것이 알고 싶다.'
+						}
+					}
+				}
+			}
+
+			const chart = new Chart(ctx, config);
+
+		</script>
+</body>
+</html>

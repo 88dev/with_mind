@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 0 20px;
+    background: #F5F7FA 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #DAEFF929;
+    border-radius: 10px;
+}
+
+.chat_box {
+    margin: 12px 0;
+}
+
+.chat_box .chatting p {
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #333333;
+    margin: 2px 0;
+}
+
+.chat_box.left .chatting p {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 8px 8px 8px 0px;
+}
+
+.chat_box.right .chatting p {
+    background: #DAECF8 0% 0% no-repeat padding-box;
+    border-radius: 8px 8px 0px 8px;
+    text-align: left;
+}
+
+.chat_box.right {
+    text-align: right;
+}
+
+.chatting {
+    display: inline-block;
+}
+
+.chatting::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.time-right {
+    float: right;
+    color:#999999;
+    font-size: 11px;
+}
+
+.time-left {
+    float: left;
+    color: #999999;
+    font-size: 11px;
+}
+</style>
+</head>
+<body>
+
+<h2>Chat Messages</h2>
+<div class="chat_box left">
+    <div class="chatting">
+        <p>안녕하세요. 면접관님.</p>
+        <span class="time-right">오전 11:01</span>
+    </div>
+</div>
+
+<div class="chat_box right">
+    <div class="chatting">
+        <p>안녕하십니까.</p>
+        <span class="time-right">오전 11:02</span>
+    </div>
+</div>
+
+<div class="chat_box right">
+    <div class="chatting">
+        <p>이번 면접자는 홍길동 입니다. 장비 테스트 정상이며, 면접을 시작하겠습니다.</p>
+        <span class="time-right">오전 11:02</span>
+    </div>
+</div>
+
+<div class="chat_box right">
+    <div class="chatting">
+    <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+    <span class="time-left">11:05</span>
+    </div>
+</div>
+
+</body>
+</html>

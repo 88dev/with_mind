@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="all" />
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+		<link rel="stylesheet" type="text/css" href="/resources/css/style.css"/>
+		<link rel="stylesheet" href="/resources/css/info_manage.css">
+		<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="/resources/js/slick.min.js"></script>
+	<script src="/resources/js/common.js"></script>
+	<script src="/resources/js/front.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>IM</title>
+</head>
+<body>
+		<header id="header"></header>
+		<div id="container">
+			<div class="common_zone">
+				<div class="common_top clear">
+					<h2>내 정보 관리</h2>
+					<p>
+						<span>홈 > MY IM ></span>
+						<em>내정보관리</em>
+					</p>
+				</div>
+				<div class="info_area">
+					<div class="info_wrap">				
+						<section>
+							<label for="">이메일</label>
+								<input type="text">			
+						</section>
+						<section>
+							<label for="">새 비밀번호</label>
+								<input type="text" placeholder="영문 대소문자, 숫자, 특수문자 모두 포함한 8~16자">				
+						</section>
+						<section>
+							<label for="">새 비밀번호 재확인</label>
+								<input type="text" placeholder="새 비밀번호를 다시 입력해주세요.">
+						</section>
+						<section>
+							<label for="">이름</label>
+							<input type="text" placeholder="이름을 입력해주세요.">
+						</section>
+						<section>
+							<label for="">생년월일</label>
+							<select name="" id="">
+								<option value="">2020년</option>
+								<option value=""></option>
+							</select>
+							<select name="" id="">
+								<option value=""></option>
+							</select>
+							<select name="" id="">
+								<option value=""></option>
+							</select>
+						</section>
+						<section>
+							<label for="">성별</label>
+								<button>남자</button>
+								<button>여자</button>
+						</section>
+						<section>
+							<label for="">관심직종</label>
+							<select name="" id="">
+								<option value="">ㅎㅇㅎㅇㅎ</option>
+							</select>
+							<select name="" id="">
+								<option value="">ㅎㅇㅎㅇㅎ</option>
+							</select>
+						</section>
+						<section>
+							<label for="">부가정보</label>
+								<div>
+									<label for=""><input type="checkbox">이벤트 및 서비스 안내 수신</label>
+									<label for=""><input type="checkbox">이메일</label>
+									<label for=""><input type="checkbox">APP 알림</label>
+								</div>
+						</section>
+						<div class="info_manage_btn">
+							<a href="">수정완료</a>
+							<a class="member_out" href="/resources/html/member_out.html">회원탈퇴 ></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<footer id="footer"></footer>
+</body>
+<script>
+	$('button').on('click',function(){
+		$('button').removeClass('genderChk');
+		$(this).addClass('genderChk');
+	})
+</script>
+</html>

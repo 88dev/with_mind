@@ -1,0 +1,242 @@
+.cameraTest-main {
+	width: 100vw;
+    height: 100vh;
+    background: #000000 0% 0% no-repeat padding-box;
+    overflow: hidden;
+}
+
+.cameraTest-background {
+	margin: 0 auto;
+	width: 1080px;
+	height: 100vh;
+    background: transparent linear-gradient(90deg, #694FDC 0%, #799EFD 100%) 0% 0% no-repeat padding-box;
+	opacity: 1;
+}
+
+.btn-close {
+	margin-right: 50px;
+	position: absolute;
+	z-index: 200;
+	float: right;
+    right: 10px;
+    margin-top: 50px !important;
+}
+
+.cameraTest-robot {
+	left: 50%;
+    top: 20%;
+    width: 105px;
+    transform: translate(-50%, 15%);
+    z-index: 150;
+}
+
+.guideLine-set {
+	position: relative;
+	height: 100%;
+}
+
+.guideLine {
+	position: absolute;
+	width: 750px;
+	height: 240px;
+	background: #000000 0% 0% no-repeat padding-box;
+	border-radius: 23px;
+	opacity: 0.35;
+/* 	opacity: 0.14; */
+	
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.guideLine-set p {
+	position: absolute;
+	width: 580px;
+	color: #FFFFFF;
+	text-align: center;
+	opacity: 1;
+	letter-spacing: -0.4px;
+	z-index: 100;
+	
+	top: 39%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	word-break: keep-all;
+}
+
+
+
+
+/* 카메라 라인, 사람 */
+
+.cam-guide {
+	z-index: 1;
+	position: absolute;
+	width: 1080px;
+	height: 100vh;
+	box-sizing: border-box;
+	background-size: 80%;
+}
+
+.redLight-bg {
+	background: url("../img/img-cam-redlight.png") no-repeat;
+    background-size: 75%;
+    background-position: center;
+}
+
+.camLine-bg {
+	background: url("../img/img-camline.png") no-repeat;
+    background-size: 75%;
+    background-position: center;
+}
+
+.redLight-bg43 {
+	background: url("../img/img-cam-redlight43-2.png") no-repeat;
+    background-size: 95%;
+    background-position: center;
+}
+
+.camLine-bg43 {
+	background: url("../img/img-camline43.svg") no-repeat;
+    background-size: 95%;
+    background-position: center;
+}
+
+.camPeople-bg {
+	background: url("../img/img-people-guideline.png") no-repeat;
+    background-position: top;
+    background-size: 65%;
+    margin-top: 150px;
+    opacity: .5;
+}
+
+/* 카메라 */ 
+.cameraTest-background {
+	background: transparent;
+}
+    	
+#videoContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0px auto;
+	width: 120%;
+	height: 100%;
+	/*	 width: 500px;
+		height: 375px; */
+	/* border: 10px #333 solid; */
+}
+       
+#videoElement {
+	/* width: 500px;
+	height: 375px; */
+	width: 100%;
+	height: 100%;
+	/* background-color: #666; */
+}
+
+/* 카메라 */ 
+
+.iv-userName {
+    font-size: 29px;
+    letter-spacing: 1.45px;
+    z-index: 10;
+    background: url("../img/img-txt-underbar-deco-2.svg") no-repeat;
+    background-position: bottom;    
+    background-repeat-x: repeat;
+    background-size: contain;
+}
+
+
+
+
+/* media (min-width: 1024px) and (max-width: 1200px) {
+	#videoContainer {
+		width: 100vw !important;
+	}
+} */
+
+.video-background {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, 0);
+	height: 200px;
+	background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
+	opacity: 0.72;
+}
+
+
+@media all and (max-width: 1800px) {
+	
+	.btn-close {
+		right: 50px;
+	}
+	
+	.cam-guide, .camLine-bg43 {
+		background-size: 70%;
+	}
+	
+	.camPeople-bg{
+		/* background-size: 50%; */
+		background-size: 44%;
+		 margin-top: 120px;
+	}
+	
+	.cameraTest-robot {
+		top: 14%;
+	}
+
+	.guideLine {
+		width: 650px;
+		top: 38% !important;
+	}
+	
+	#videoContainer {
+		width: 100vw;
+	}
+	
+	.soundmotion {
+		top: 81.5%;
+	}
+	
+	.video-background {
+		width: 1080px;
+	}
+
+}
+
+@media (min-width: 1600px) {
+	
+	.btn-close {
+		right: -22px;
+	}
+	
+	.video-background {
+		width: 1300px;
+	}
+	
+}
+
+
+/* step3 img 오류 수정 */
+
+.no-js { display:none; }
+
+.dura-3s {
+	animation: fadein 2s;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>보드판</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.js" integrity="sha256-P8jY+MCe6X2cjNSmF4rQvZIanL5VwUUT4MBnOMncjRU=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+<link rel="styleSheet" href="./resources/css/style_copy.css" type="text/css" media="screen"></link>
+<link rel="styleSheet" href="./resources/css/sidetogglemenu.css" type="text/css"></link>
+
+
+<script src="./resources/js/openvidu-browser-2.19.0.js"></script>
+
+<style>
+
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+</head>
+<body style="height:100%" oncontextmenu="return false">
+
+<!--  전체영역 커버 :: 레이아웃 구조에 영향없이 동작하는 ( ex. popup popover .. ) 
+요소들이 이 영역안에 들어가있는 경우가 있음 .. 헷갈리지말자 -->
+<div id="wrapper_root" class="" style="height: 100%;">
+
+	<!-- 루트 요소 안에 하나를 더 배치한 구조인데 왜 했는진 잘모르겠음.. 아마 디자인 바뀌면서 필요하다고 판단했는지 배치했으나
+	큰 의미는 없는것으로 보임 조정해도 문제 없음 -->
+	<div id="wrapper_conf" class="row" style="height: 100%;">
+	
+		<!-- 서버에서 기록하는 세션과 별개로 자체적인 녹화시간, 
+				면접의 실제 진행시간 체크를 위해 마련한버튼과 동작하는 최상단 팝업 alert 창 -->
+		<div id="session-start-alert" class="alert alert-info alert-dismissible" role="alert" >
+			<strong>알림 : </strong> <span id="session-alert-contents"></span>
+		</div>	
+		
+		<!-- Interview Room 최상단 인터뷰룸 정보 및 개인기능 버튼 영역 
+			:: 이 요소는 현재까진 모두가 사용하는 기능이지만 바뀌게 될 경우 child-top class를 가진 요소를 일부
+			조정하여 권한에따라 분기하도록 하면 될듯. -->
+		<div class="area-top">
+			<div class="cover-top-area row">
+				<div class="child-top area-logo col-md-1">
+					<img id="logo-withmind" src="./resources/images/logo_im.svg">
+				</div>
+				
+				<div class="child-top area-sessioninfo col-md-2">
+					<span id="span-session-name">(주)위드마인드 면접실</span>
+				</div>
+				
+				<!-- 상단 영역 중앙 개인기능을 가지는 버튼들 -->
+				<!-- on/off 요소는 두개의 svg를 배치해서 on off 에 따라 다르게 보이도록 했음 -->
+				<div class="child-top area-funcbtn  col-md-offset-1 col-md-4">
+					<!-- 화면 송출 on/off -->
+					<button type="button" class="btn btn-default btn-top-func controll-video on" aria-label="Left Align">
+						<svg id="video-on" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
+						  <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
+						</svg>
+					
+						<svg id="video-off" style="display: none;"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-off-fill" viewBox="0 0 16 16">
+						  <path fill-rule="evenodd" d="M10.961 12.365a1.99 1.99 0 0 0 .522-1.103l3.11 1.382A1 1 0 0 0 16 11.731V4.269a1 1 0 0 0-1.406-.913l-3.111 1.382A2 2 0 0 0 9.5 3H4.272l6.69 9.365zm-10.114-9A2.001 2.001 0 0 0 0 5v6a2 2 0 0 0 2 2h5.728L.847 3.366zm9.746 11.925-10-14 .814-.58 10 14-.814.58z"/>
+						</svg>
+					</button>
+					<!-- 화면 송출 중지 -->
+					<button type="button" class="btn btn-default btn-top-func controll-mic on" aria-label="Left Align">
+						<svg id="mic-on" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+						  <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+						  <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+						</svg>
+						
+						<svg id="mic-off" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic-mute" viewBox="0 0 16 16">
+						  <path d="M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4.02 4.02 0 0 0 12 8V7a.5.5 0 0 1 1 0v1zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a4.973 4.973 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4zm3-9v4.879l-1-1V3a2 2 0 0 0-3.997-.118l-.845-.845A3.001 3.001 0 0 1 11 3z"/>
+						  <path d="m9.486 10.607-.748-.748A2 2 0 0 1 6 8v-.878l-1-1V8a3 3 0 0 0 4.486 2.607zm-7.84-9.253 12 12 .708-.708-12-12-.708.708z"/>
+						</svg>
+					</button>
+					
+					<button  type="button" class="btn btn-default btn-top-func" aria-label="Left Align">
+						<span class="glyphicon glyphicon-volume-up" aria-hidden="true" ></span>
+					</button>
+					<button type="button" class="btn btn-default btn-top-func" aria-label="Left Align">
+						<span class="glyphicon glyphicon-cog" aria-hidden="true" ></span>
+					</button>
+					<button type="button" class="btn btn-default btn-top-func" aria-label="Left Align">
+						<span class="glyphicon glyphicon-resize-full" aria-hidden="true" ></span>
+					</button>
+					<button type="button" class="btn btn-default btn-top-func" aria-label="Left Align">
+						<span class="glyphicon glyphicon-record" aria-hidden="true" ></span>
+					</button>
+				</div> <!-- child-top end -->
+			</div> <!-- cover-top-area end -->
+		</div> <!-- area-top end -->
+			
+			
+		<!--  #########  not use but necessary #########  :: 추후 js 조정에 따라 처리 될 예정 -->
+		<div id="main-video" class="" style="display: none;">
+			<p class="nickName"></p>
+			<p class="userName"></p>
+			<video autoplay="autoplay" playsinline="true"></video>
+		</div>
+		<!-- #########  not use but necessary #########  :: 추후 js 조정에 따라 처리 될 예정 -->
+		
+		<div id="inner-wrapper-video">
+			<div id="leftside-btns-cover" class="col-xs-1">
+				
+				<!-- 나가기 버튼 :: 나눈 이유는 세션 종료는 권한이 불필요한 버튼이기때문에 
+						상단 left-side-menu element 를 권한으로 분기하고 하단 나가기버튼 div는 상시 배치요소임 -->
+				<div id="btn-out-cover" class="btn-out-cover">
+					<div class="btn-out-inner">
+						<form name="frm_leaveSession"  method="post">
+							<input type="hidden" name="session-name"></input>
+							<input type="hidden" name="token"></input>
+							<button id="buttonLeaveSession" class="btn btn-danger"type="button" onclick="confirm_leaveSession()" aria-label="Left Align">
+								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+								  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+								  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+								</svg>
+							</button>
+						</form>
+					</div><!-- btn-out-inner end -->
+				</div><!-- btn-out-cover -->
+			</div> <!-- #leftside-btns-cover close -->
+		
+			<!-- 상단 top 영역 제외한 면접관,면접자 비디오가 배치될 영역 -->
+			<div class="col-xs-11 wrapper-video row">
+				<!-- 면접자 배치 :: sub-wrapper-video 의 class 값이 12이며 for-interviewee class가 추가됨 -> 우측 영역을 꽉채움 
+				:: 추가로 좌,우측 사이드 메뉴 없음. ( 좌측 나가기버튼만..)-->
+				<div class="col-md-12 sub-wrapper-video for-interviewee"  th:if="!${isInterviewee}">
+					<!-- 면접관 영상이 배치-->
+					<div id="video-container_2" class="area-mgr">
+						<div class="col-xs-1 blank_unit"></div>
+						<div class="video_cover col-xs-2"><video autoplay="autoplay"></video></div>
+						<div class="video_cover col-xs-2"><video autoplay="autoplay"></video></div>
+						<div class="video_cover col-xs-2"><video autoplay="autoplay"></video></div>
+						<div class="video_cover col-xs-2"><video autoplay="autoplay"></video></div>
+						<div class="video_cover col-xs-2"><video autoplay="autoplay"></video></div>
+					</div>
+					<!-- 면접자 영상이 배치-->
+					<div id="video-cover-interviwee">
+						<div id="video-container" class="col-xs-12 area-video-interviewee">
+							<div class="video_cover"><video autoplay="autoplay"></video></div>
+						</div>
+					</div>
+				</div><!-- sub-wrapper-video end -->
+			</div><!-- .wrapper-video end -->
+		</div><!-- #inner-wrapper-video close -->
+	</div> <!-- wrapper_conf end -->
+			
+			
+			
+	<!-- 화면공유 영역 :: 미작성 되었음, 기획이 아직 애매해 -->			
+	<div id="screenshare" class="container" style="display: none;">
+		<h1 id="screenshare-title">Screen Share</h1>
+		<div id="container-screenshare"></div>
+	</div>
+			
+	<!-- 좌측 사이드메뉴에서 팝업으로 나타나는 popover 메뉴 :: 면접자는 필요없음. -->
+	<div id="wrapper-popover" class="row" style="display: none;">
+		<div class="cover-contents col-md-11">
+			<div class="contents">
+				좌측 관리자 사이드메뉴 입니다.
+			</div>
+		</div>
+				
+		<div class="cover-btn-close col-md-1">
+			<button id="btn-close-popover" class="btn btn-default btn-popover-close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"/>
+				</svg>
+			</button>
+		</div>
+	</div>
+</div>
+
+	<!-- 회의실 나가기 확인 모달 -->
+	<div class="modal fade" id="alertModal">
+		<div class="modal-dialog" style="width: 20%;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">회의실 나가기</h4>
+				</div>
+				<div class="modal-body">
+					<p id="msg-box"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">머무르기</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="leaveSession();" >나가기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 회의세션 시작/정지 확인 모달 -->
+	<div class="modal fade" id="session-modal">
+		<div class="modal-dialog" style="width: 20%;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="session-modal-title"></h4>
+				</div>
+				<div class="modal-body">
+					<p id="session-modal-contents"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default session-modal-dismiss" data-dismiss="modal">창 닫기</button>
+					<button id="session-modal-confirm" type="button" class="btn btn-info session-modal-confirm" data-dismiss="modal">예</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- 팝오버 메뉴 js -->
+<script src="./resources/js/sub/session_popover.js"></script>
+<!-- 버튼동작 메뉴 js -->
+<script src="./resources/js/sub/session_buttons.js"></script>
+<!-- 채팅 동작 js -->
+<script src="./resources/js/sub/session_chat.js"></script>
+<!-- 기본이 되는 세션 js -->
+<script src="./resources/js/session.js"></script>
+<!-- 연결용 토큰 js 메뉴 js -->
+<script src="./resources/js/sub/session_setToken.js"></script>
+</html>

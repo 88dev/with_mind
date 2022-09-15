@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_25618" data-name="사각형 25618" width="16" height="16" transform="translate(39 260)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="icon_home" transform="translate(-39 -260)" clip-path="url(#clip-path)">
+    <path id="빼기_10" data-name="빼기 10" d="M4138.625,2194.816H4135.5a.425.425,0,0,1-.426-.424v-6.472h-1.646a.425.425,0,0,1-.3-.726l7.075-7.068a.425.425,0,0,1,.6,0l7.074,7.068a.426.426,0,0,1-.3.726h-1.646v6.472a.425.425,0,0,1-.426.424h-3.128v-5.533h-3.75v5.533Z" transform="translate(-4093.5 -1919.408)" fill="#fff"/>
+  </g>
+</svg>
