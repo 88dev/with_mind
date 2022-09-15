@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div.box {
+            position: relative;
+            width: 425.6px;
+            height: 425.6px;
+            border: 1px solid red;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        div.in {
+            position: relative;
+            position: absolute;
+            /* border: 1px solid blue; */
+            width: 300px;
+            height: 300px;
+            left: 61.5px;
+            top: 61.5px;
+        }
+
+        div.pupil {
+            position:absolute;
+            left:0;
+            width:50px;
+            height:50px;
+            background: url(images//hand.png);
+            background-size: contain;
+        }
+
+        div.one{
+            /* 애니메이션 이름 */
+            animation-name: one;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: 3;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+            transform-origin: bottom;
+        }
+
+        /* 키프레임 이름 = 애니메이션 이름 */
+        @-webkit-keyframes one {
+            0% {
+                transform:rotate(15deg) 
+            }
+            100% {
+                transform:rotate(-15deg) 
+            }
+        }
+
+    </style>
+</head> 
+<body>
+    <ul>
+        <li><button>one</button></li>
+
+    </ul>
+
+    <div class="box">
+        <div class="in">
+            <div class="pupil"></div>
+        </div>
+    </div>  
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $( document ).ready(function(){
+        $(".pupil").addClass("one");
+    });
+
+</script>
+</html>

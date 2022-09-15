@@ -1,0 +1,84 @@
+<style>
+    promptbox3{line-height:1.1em; position:relative; display:block;}
+    prompticon3{
+        display: inline-block;
+        border-radius: 50%;
+        position: fixed;
+        /* bottom: 15px;     */
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        text-align: center;
+        filter: drop-shadow(0 2px 4px rgba(34,36,38,0.35));
+        z-index: 2147483647;
+        cursor: pointer;
+        box-sizing: border-box;
+        padding: 7px;
+        transform:scale(0.9)
+    }   
+
+
+    promptglowingcircle{
+        display: inline-block;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        text-align: center;
+        z-index: 1;
+        box-sizing: border-box;
+        padding: .45rem;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: #0078ff 1px solid;    
+        animation: circle 1s infinite;
+    }
+
+    .webpushr-bell-theme-dark prompticon3{background:#0078ff}
+    .webpushr-bell-theme-light prompticon3{ background:#fff;}
+
+    prompticon3 svg{
+        border-radius: 100%;
+        padding: 0;
+        box-sizing:border-box;
+    }   
+    .webpushr-bell-theme-dark prompticon3 svg{fill:#fff}
+    .webpushr-bell-theme-light prompticon3 svg{fill:#0078ff}
+
+    prompticonimage{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid #fff;    
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+    }
+    .webpushr-bell-theme-dark prompticon3 prompticonimage{border-color:transparent;}
+    .webpushr-bell-theme-light prompticon3 prompticonimage{border-color:transparent}
+
+    prompticon3._Bell.Bottom.Left_bell{left:15px;right:unset;transform-origin: left bottom}
+    
+    @keyframes circle{
+        from{transform:scale(1); opacity:1}
+        to{transform:scale(1.5); opacity:0}
+    }
+
+</style>
+
+<div id="webpushr-prompt-wrapper">
+    <div id="webpushr-bell-optin">
+        <promptbox3 class="webpushr-bell-theme-dark Bottom">
+            <prompticon3 class="_Bell Bottom Left_bell">
+                <promptglowingcircle></promptglowingcircle>
+                <prompticonimage>
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 440.832 440.832" style="width:25px; height:35px;" xml:space="preserve"><g><g><path d="M381.44,265.728V161.792C381.44,72.192,309.248,0,219.648,0S58.368,72.192,58.368,161.792v103.936l-41.984,82.944h408.064 L381.44,265.728z"></path></g></g><g><g><path d="M151.552,372.736c0,37.376,30.72,68.096,68.096,68.096c37.376,0,68.096-30.72,68.096-68.096H151.552z"></path></g></g></svg>
+                </prompticonimage>  
+            </prompticon3>
+        </promptbox3>
+    </div>
+</div>
+
+<!-- 출처 : https://codingshiksha.com/javascript/build-jquery-webrtc-microphone-audio-test-visualizer-or-waveform-using-web-audio-api-in-html5-and-javascript-full-project-for-beginners/ -->

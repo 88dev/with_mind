@@ -1,0 +1,1510 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<link rel="stylesheet" href="common.css">
+	<link rel="stylesheet" href="report2.css">
+	
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+		<script type ="text/javascript" src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
+		<style>
+			@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+		</style>
+		<title>renewal report ver1</title>
+	</head>
+	<body>
+		<main>
+			<div class="report_header">
+				<div>
+					<img src="images_ver1/img_logo.png" />
+					<h3>REPORT</h3>
+				</div>
+				<div>
+					<button onclick="window.print()" type="button"><img src="images_ver1/icon_print.svg" /></button>
+					<button id="savePdfBtn" type="button"><img src="images_ver1/icon_pdf.svg" /></button>
+				</div> 
+			</div>
+			<div class="report_info">
+				<table>
+					<colgroup>
+						<col width="7%">
+						<col width="23%">
+						<col width="7%">
+						<col width="23%">
+						<col width="7%">
+						<col width="23%">
+					</colgroup>
+					<tr>
+						<td>이름</td>
+						<td colspan="5">홍길동</td>
+					</tr>
+					<tr>
+						<td>ID</td>
+						<td>abcd1234@withmind.net</td>
+						<td>발급일시</td>
+						<td>2021년 6월 22일</td>
+						<td>면접그룹</td>
+						<td>인터뷰마스터</td>
+					</tr>
+					<tr>
+						<td>전형명</td>
+						<td>2021년 위드마인드개발자 채용공고</td>
+						<td>지원직군</td>
+						<td>연구개발</td>
+						<td>면접코드</td>
+						<td>862850</td> 
+					</tr>
+				</table>
+			</div>
+			<div class="report_contents">
+				<div class="tab_box">
+					<!-- on -->
+				<button class="tab_title on" id="explanation_block_fir" onclick="openTab('analysis_total')">종합분석</button>
+				<button class="tab_title" onclick="openTab('analysis_video')">영상분석</button>
+				</div>
+				<div id="analysis_total" class="tab_total_container tab_container">
+					<div class="tab_total_contents">
+						<div>
+							<button class="totalTab_detail tab_name mr60 explanation_block on" onclick="openTab_total('analysis_ai')">AI종합평가</button>
+							<button class="totalTab_detail tab_name explanation_none" onclick="openTab_total('analysis_hr')">HR전문가 역량평가</button> 
+						</div>
+						<div id="analysis_ai" class="totalDetail_contents">
+							<div class="tab_contents">
+								<h4>AI 종합평가</h4>
+								<p>
+									면접그룹 응시자 <b>00명</b>의 평균 점수는 <b>00점</b>이며, 전체 응시자 중 홍길동님은 <b>000점</b>으로 <b>상위 00%</b>입니다.<br> 
+									전체 응시자 중 <b>00명</b>이 홍길동님과 동일한 <b>A+</b> 등급입니다.
+								</p>
+								<div class="total_grade">
+									<div class="total_grade_contents gray_border">
+										<h5>종합등급</h5>
+										<div class="mr5 w180">
+											<p>
+												면접 분석의 점수 산정 결과 <br>
+												<b>90점</b>으로 <b>A+</b> 등급입니다.
+											</p>
+											<span class="mt20"><em>최우수</em></span>
+											<span><em>90</em>점</span>
+										</div>
+										<div>
+											<img class="gradeMark" src="images_ver1/img_grade_mark.svg" />
+											<span id="myGrade">A+</span>
+											<div class="mt50"> 
+												<img src="images_ver1/img_grade_bar.svg" />
+												<span>
+													<img src="images_ver1/img_grade_bar_none.svg" />
+													<img src="images_ver1/img_grade_bar_none.svg" />
+													<img src="images_ver1/img_grade_bar_none.svg" />
+													<img src="images_ver1/img_grade_bar_none.svg" />
+													<img src="images_ver1/img_grade_bar_none.svg" />
+													<img src="images_ver1/img_grade_bar_none.svg" />
+													<img src="images_ver1/img_grade_bar_none.svg" />
+													<img src="images_ver1/img_grade_bar_none.svg" />
+													<img src="images_ver1/img_grade_bar_checked.svg" />
+												</span>
+												<div class="allGrade">
+													<span>F</span>
+													<span>D0</span>
+													<span>D+</span>
+													<span>C0</span>
+													<span>C+</span>
+													<span>B0</span>
+													<span>B+</span>
+													<span>A0</span>
+													<span>A+</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="total_rank_contents gray_border">
+										<h5>종합랭킹</h5>
+										<div class="mr20">
+											<p>면접 그룹 지원자 <b>11,250명</b> 중</p>
+											<span><em>340</em>위</span>
+											<span>상위<span>3%</span></span>
+										</div>
+										<div>
+											<p>면접 전형 지원분야 <b>3,500명</b> 중</p>
+											<span><em>1500</em>위</span>
+											<span>상위<span>35%</span></span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="total_graph_contents mt20">
+									<div class="mr20 gray_border">
+										<h5>종합 등급 분포도</h5>
+										<div class="total_grade_spread">
+											<div class="spread_y">
+												<span>200</span>
+												<span>175</span>
+												<span>150</span>
+												<span>125</span>
+												<span>100</span>
+												<span>75</span>
+												<span>50</span>
+												<span>25</span>
+												<span>0</span> 
+											</div>
+											<div class="spread_graph">
+												<div class="spread_graph_F">
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+												<div class="spread_graph_D0">
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+												<div class="spread_graph_D+">
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+												<div class="spread_graph_C0">
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+												<div class="spread_graph_C+ spread_avg">
+													<span class="spread_avg_txt" style="bottom: 0%;">평균 00점</span>
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+												<div class="spread_graph_B0">
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+												<div class="spread_graph_B+">
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+												<div class="spread_graph_A0">
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+
+												<div class="spread_graph_A+ spread_mine">
+													<span class="spread_mine_num" style="bottom: 0%;">
+														<em><b>99</b>점</em>
+														<span>(상위 3%)</span>
+														<img class="" src="images_ver1/img_robot-comment.svg" />
+													</span>
+													<div class="progress_bar" role="progressbar" style="height: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="200"></div>
+												</div>
+											</div>
+											<div class="spread_x">
+												<div>
+													<span>0~49</span>
+													<span>F</span>
+												</div>
+												<div>
+													<span>50~59</span>
+													<span>D0</span>
+												</div>
+												<div>
+													<span>60~64</span>
+													<span>D+</span>
+												</div>
+												<div>
+													<span>65~73</span>
+													<span>C0</span>
+												</div>
+												<div>
+													<span>74~79</span>
+													<span>C+</span>
+												</div>
+												<div>
+													<span>80~85</span>
+													<span>B0</span>
+												</div>
+												<div>
+													<span>86~91</span>
+													<span>B+</span>
+												</div>
+												<div>
+													<span>92~97</span>
+													<span>A0</span>
+												</div>
+												<div>
+													<span>98~100</span>
+													<span>A+</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="gray_border">
+										<h5>직군적합성</h5>
+										<div class="jobFit">
+											<h6>지원분야의 직군적합성</h6>
+											<div class="jobApply">
+												<span>물류•재고•유통</span>
+												<em>42%</em>
+												<!-- <canvas>
+												</canvas> -->
+												<div class="jobApply_value">
+													<span class="job_bar on"></span> 
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span> 
+												</div>
+											</div>
+											<h6 class="mt30">성향분석 추천 적합직군</h6>
+											<div class="jobGroup">
+												<div>
+													<span>1st</span>
+													<span>공무원</span>
+													<em>80%</em>
+													<!-- <canvas></canvas> -->
+													<div class="jobApply_value">
+													<span class="job_bar on"></span> 
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span> 
+												</div>
+												</div>
+												<div class="mt15">
+													<span>2nd</span>
+													<span>엔지니어</span>
+													<em>60%</em>
+													<!-- <canvas></canvas> -->
+													<div class="jobApply_value">
+													<span class="job_bar on"></span> 
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span>
+													<span class="job_bar"></span> 
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="propensity gray_border">
+									<h5>성향분석</h5>
+									<p>
+										<b>홍길동</b>님은 <b>외향적, 감각적, 감정적, 인식적</b> 성향이 높은 반면, <b>직관적</b> 성향은 상대적으로 낮은 것으로 나왔습니다.
+									</p>
+									<table class="table_propensity">
+										<colgroup>
+											<col width="140px"/>
+											<col width="10px"/>
+											<col width="130px"/>
+											<col width="510px"/>
+											<col width="130px"/>
+										</colgroup>
+										<tr>
+											<th>도출성향</th>
+											<th></th>
+											<th colspan="3">심층성향</th>
+										</tr>
+										<tr>
+											<td>능동적, 창의적</td>
+											<td></td>
+											<td class="select_left on">외향적</td>
+											<td class="average_arrow">
+												<div class="arrow_point">
+													<span style="left: 0%">
+														<img src="images_ver1/img_group_right_navy.svg" />
+														<span>전체평균</span> 
+													</span>
+												</div>
+												<img src="images_ver1/img_arrow_left.svg" />
+												<div class="arrow_point">
+													<span style="left: 0%">
+														<img src="images_ver1/img_group_left_yellow.svg" />
+														<span>그룹평균</span> 
+													</span>
+												</div>
+											</td>
+											<td class="select_right">내향적</td>
+										</tr>
+										<tr>
+											<td>목표지향적, 개방적</td>
+											<td></td>
+											<td class="select_left">감각적</td>
+											<td class="average_arrow">
+												<div class="arrow_point">
+													<span style="left: 0%">
+														<img src="images_ver1/img_group_right_navy.svg" />
+														<span>전체평균</span> 
+													</span>
+												</div>
+												<img src="images_ver1/img_arrow_right.svg" />
+												<div class="arrow_point">
+													<span style="left: 0%">
+														<img src="images_ver1/img_group_left_yellow.svg" />
+														<span>그룹평균</span> 
+													</span>
+												</div>
+											</td>
+											<td class="select_right on">직관적</td>
+										</tr>
+										<tr>
+											<td>논리적, 허용적</td>
+											<td></td>
+											<td class="select_left on">감정적</td>
+											<td class="average_arrow">
+												<div class="arrow_point">
+													<span style="left: 0%">
+														<img src="images_ver1/img_group_right_navy.svg" />
+														<span>전체평균</span> 
+													</span>
+												</div>
+												<img src="images_ver1/img_arrow_left.svg" />
+												<div class="arrow_point">
+													<span style="left: 0%">
+														<img src="images_ver1/img_group_left_yellow.svg" />
+														<span>그룹평균</span> 
+													</span>
+												</div>
+											</td>
+											<td class="select_right">사고적</td>
+										</tr>
+										<tr>
+											<td>열정적, 자발성</td>
+											<td></td>
+											<td class="select_left on">인식적</td>
+											<td class="average_arrow">
+												<div class="arrow_point">
+													<span style="left: 0%">
+														<img src="images_ver1/img_group_right_navy.svg" />
+														<span>전체평균</span> 
+													</span>
+												</div>
+												<img src="images_ver1/img_arrow_left.svg" />
+												<div class="arrow_point">
+													<span style="left: 0%">
+														<img src="images_ver1/img_group_left_yellow.svg" />
+														<span>그룹평균</span> 
+													</span>
+												</div>
+											</td>
+											<td class="select_right">판단적</td>
+										</tr>
+									</table>
+									<span>
+										<img src="images_ver1/icon_alert.svg" />
+										점수는 선호의 정도를 나타내며, 능력이나 발달 정도의 척도는 아닙니다.
+									</span> 
+									
+									<div class="term mt30">
+										<h6>용어설명</h6>					
+										<img src="images_ver1/img_highlight_marker.svg" />
+										
+										<table class="table_term">
+											<tr>
+												<th>외향적</th>
+												<td>폭넓은 대인관계를 유지하고 사교적이며 정열적이고 활동적인 성향</td>
+											</tr>
+											<tr>
+												<th>내향적</th>
+												<td>깊이있는 대인관계를 유지하며 조용하고 신중하며 이해한 다음 행동하는 성향</td>
+											</tr>
+											<tr>
+												<th>감각적</th>
+												<td>오감에 의존하며 실제의 경험을 중시하고 지금, 현실에 초점을 맞추어 정확하고 철저한 성향</td>
+											</tr>
+											<tr>
+												<th>직관적</th>
+												<td>육감 내지 영감에 의존하며 미래 지향적이고 가능성과 의미를 추구하며 신속, 비약적인 성향</td>
+											</tr>
+											<tr>
+												<th>사고적</th>
+												<td>진실과 사실에 주로 관심을 갖고 논리적이고 분석적이며 객관적으로 사실을 판단하는 성향</td>
+											</tr>
+											<tr>
+												<th>감정적</th>
+												<td>사람과의 관계에 주로 관심을 갖고 주변 상황을 고려하여 판단하는 성향</td>
+											</tr>
+											<tr>
+												<th>판단적</th>
+												<td>분명한 목적과 방향이 있으며 기한을 엄수하고 철저히 사전에 계획하고 체계적인 성향</td>
+											</tr>
+											<tr>
+												<th>인식적</th>
+												<td>목적과 방향은 변화 가능하고 상황에 따라 일정을 변경 할 수 있으며 자율적이고 융통성 있는 성향</td>
+											</tr>
+										</table>
+									</div> 
+									
+								</div>
+								
+							</div>
+							
+						</div>
+							
+						<div id="analysis_hr" class="totalDetail_contents tab_contents" style="display:none">
+							<p>
+								우선 순위에서 제외 <br>
+								- 기업면접의 경우에만 표출 <br>
+								- TBD 영역 : 차후 HR전문가 컨설팅 완료 후 적용 예정.
+							</p>
+							<div></div>
+						</div>
+					</div>
+					<div class="explanation" id="explanation">
+						<div class="ai_comment">
+							<div class="ai_comment_header">
+								<img class="mr15" src="images_ver1/img_robot-comment.svg" />
+								<div>
+									<h4>AI 종합평가 코멘트</h4>
+								</div>
+							</div>
+							<p class="mt20">
+								<span>
+									<img class="mr15" src="images_ver1/img_tag.svg" />
+									HR 빅데이터 검색결과 약 <em>970,342</em>개 기반으로 도출된 결과입니다.
+								</span>
+								<span>
+									인터뷰마스터의 면접을 토대로 분석한 <em>홍길동</em>님의 종합등급은 <em>A+</em>입니다. 면접그룹 지원자 <em>1,507명</em> 중에서는 <em>150위</em>, <br>
+									지원분야인 <em>물류/재고/유통</em> 지원자 <em>70명</em> 중에서는 <em>6위</em>, 적합직군 1순위인 <em>공무원</em> 지원자 <em>330명</em> 중에서는 <em>15위</em> 입니다.
+								</span>
+								<span>
+									<em>홍길동</em>님은 <em>능동적, 보유적, 이상적, 정서적, 허용적, 체계적, 목표지향성, 계획적</em> 성향이 순서대로 높습니다. 이것은 <em>물류/재고/유통</em>과 <br>
+									<em>공무원</em> 직군에서 요구하는 상위 역량이나, 종합분석 결과에 따른 직군 적합성은 <em>사무/기획 직군</em>이 <em>71%</em>, <em>보건/의료/복지 직군</em>이 <em>30%</em>로 확인됩니다.
+								</span>
+							</p>
+						</div>
+						<div class="reply_comment">
+							<span>응답신중성</span>
+							<span>
+								<em>홍길동님은 응답신중성 ' <em>상</em> ' 으로 면접 응시 결과를 신뢰할 수 있습니다.</em><br>
+								면접에 응하는 답변과 과정을 신중하게 한 것으로 나왔습니다.
+							</span>
+						</div>
+					</div>
+					
+				</div>
+				
+				<!-- <h2>영상분석</h2> -->
+				<div id="analysis_video" class="tab_total_contents tab_total_container tab_container" style="display:none;">
+					<div class="tab_video_button">
+						<button class="videoTab_detail tab_name mr60 on" onclick="openTab_video('analysis_action')">행동분석</button>
+						<button class="videoTab_detail tab_name mr60" onclick="openTab_video('analysis_voice')">음성분석</button>
+						<button class="videoTab_detail tab_name" onclick="openTab_video('analysis_body')">생체분석</button>
+					</div>
+					<div id="analysis_action" class="videoDetail_contents tab_contents"> 
+						<div class="gray_border mr20 action_fir">
+							<h5>면접영상</h5>
+							<span class="blue">
+								<img src="images_ver1/icon_alert.svg" />
+								면접 영상은 분석레포트 생성일로부터 90일간 제공됩니다.
+							</span>
+							<div class="question_sec">
+								<div class="question_btn">
+									<button class="que_btn on" onclick="openTab_interview('interview_one')">면접 1</button>
+									<button class="que_btn" onclick="openTab_interview('interview_two')">면접 2</button>
+									<button class="que_btn" onclick="openTab_interview('interview_three')">면접 3</button>
+								</div>
+								
+								<div id="interview_one" class="interview_contents"> 
+									<video src="#">
+									
+									</video>
+									<div class="question"> 
+										<h6>면접질문1</h6>
+										시장에서 연착륙할 잠재력이 있으면서도 고객의 니즈를 충족할 수 있는 
+										제품을 생산하는 것의 중요성이 높아지고 있습니다. 이는 소비자의 선호도가 
+										급변하는 시대적 맥락과 일맥상통하는데요. 이러한 시대를 맞이하여 
+										생산관리단에서 이루어져야 하는 변화는 무엇이 있을지 설명해주세요.
+									</div>
+								</div>
+								<div id="interview_two" class="interview_contents" style="display: none;"> 
+									<video src="#">
+									
+									</video>
+									<div class="question">
+										<h6>면접질문2</h6>
+										시장에서 연착륙할 잠재력이 있으면서도 고객의 니즈를 충족할 수 있는 
+										제품을 생산하는 것의 중요성이 높아지고 있습니다. 이는 소비자의 선호도가 
+										급변하는 시대적 맥락과 일맥상통하는데요. 이러한 시대를 맞이하여 
+										생산관리단에서 이루어져야 하는 변화는 무엇이 있을지 설명해주세요.
+									</div>
+								</div>
+								<div id="interview_three" class="interview_contents" style="display: none;"> 
+									<video src="#">
+									
+									</video>
+									<div class="question">
+										<h6>면접질문3</h6>
+										시장에서 연착륙할 잠재력이 있으면서도 고객의 니즈를 충족할 수 있는 
+										제품을 생산하는 것의 중요성이 높아지고 있습니다. 이는 소비자의 선호도가
+										급변하는 시대적 맥락과 일맥상통하는데요. 이러한 시대를 맞이하여 
+										생산관리단에서 이루어져야 하는 변화는 무엇이 있을지 설명해주세요. 
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="gray_border action_fir">
+							<h5>영상 종합분석도</h5>
+							<span class="black">
+								홍길동님은 <b>시선분포 64점</b>, <b>어깨각도 42점</b>, <b>얼굴각도 58점</b>,
+								<b>어깨움직임 47점</b>, <b>목소리톤 35점</b>, <b>목소리속도 15점</b>으로 나왔습니다.
+							</span>
+							<div class="video_total_graph">
+								<canvas id="video_total_chart"></canvas>
+								<div class="graph_label">
+									<span><span class="label_blue"></span>응시자</span>
+									<span><span class="label_navy"></span>전체평균</span>
+									<span><span class="label_yellow"></span>그룹평균</span>
+								</div>
+								<div class="no_graph" style="display: none;">
+									AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+								</div>
+							</div>
+							<div class="video_explain">
+								총 3번의 면접영상에서 시선변화, 어깨각도, 얼굴각도, 어깨움직임, 
+								목소리톤, 목소리속도 평균을 그래프화 합니다. 각각의 분석항목들을 
+								점수화하여 분포도가 넓은 면적을 나타낼수록 인터뷰 중 안정적임을 나타냅니다.
+							</div>
+						</div>
+						<div class="gray_border action_sec">
+							<h5>감정분석</h5>
+							<span class="black">
+								홍길동님이 보여준 가장 높은 비율의 감정상태는 <b>놀람(90%)</b>입니다.
+							</span>
+							<div class="graph_label">
+								<span><span class="label_blue"></span>응시자</span>
+								<span><span class="label_navy"></span>전체평균</span>
+								<span><span class="label_yellow"></span>그룹평균</span>
+							</div>
+							<div class="video_emotion_graph">
+								<!-- 감정분석 그래프 -->
+								<canvas id="emotion_chart"></canvas>
+								<div class="no_graph">
+									AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+								</div>
+							</div>
+							<div class="video_explain">
+								총 3번의 면접영상에서 놀람, 공포, 혐오, 행복, 슬픔, 화남, 중립 7가지 감정의 평균 비율입니다. 면접에서의 표정, 안면분석을 통해 호감도와 감정상태를 보여줍니다.
+							</div>
+						</div>
+						<div class="gray_border action_thi action_guide">
+							<h5>시선분포</h5>
+							<div class="action_guide_graph video_eyes_graph">
+								<div class="hitmap_my">
+									<img src="images_ver1/img_model_guideline_01.svg" />
+									<canvas id="eyes_my"></canvas>
+									<div class="gradation"></div>
+									<div class="guide">
+										<span>높음</span>
+										<span>낮음</span>
+									</div>
+									<div class="no_graph">
+										AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+									</div>
+								</div>
+								<div class="hitmap_all mr10">
+									<img src="images_ver1/img_model_guideline_01.svg" />
+									<canvas id="eyes_all"></canvas>
+									<span>전체평균</span>
+								</div>
+								<div class="hitmap_group">
+									<img src="images_ver1/img_model_guideline_01.svg" />
+									<canvas id="eyes_group"></canvas>
+									<span>그룹평균</span>
+								</div>
+							</div>
+							<div class="video_explain">
+								시선분포의 분포도가 중앙에 위치할수록 면접 중 안정적임을 나타냅니다. 
+								영역색이 진할 수록 시선이 오래 머무른 곳이며, 영역이 널리 흩어져 있다면 시선변화가 많음을 의미합니다. 
+								시선변화는 직무에 필요한 리더쉽, 업무추진 및 실행력, 도전정신, 열정, 원만성, 외향성 등과 연관된 항목입니다.
+							</div>
+						</div>
+						<div class="gray_border action_fou action_guide">
+							<h5>제스처</h5>
+							<span class="black">
+								홍길동님의 얼굴 주변 제스처를 취한 횟수는 <b>평균 00회</b>이며, 제스처를 유지한 시간은 <b>평균 00초</b>입니다.
+							</span>
+							<div class="video_gesture_graph action_guide_graph">
+								<div class="hitmap_my">
+									<div class="record_my gesture_record mr10">
+										<div>
+											<img src="images_ver1/img_gesture.svg" />
+											<canvas id="gesture_my"></canvas>
+											<span>횟수</span> 
+											<span class="">10회</span>
+										</div>
+										<div>
+											<img src="images_ver1/img_clock.svg" />
+											<span>시간</span>
+											<span>20초</span>
+										</div>
+									</div>
+									<img src="images_ver1/img_model_guideline_01.svg" />
+									<div class="gradation"></div>
+									<div class="guide">
+										<span>잦음</span>
+										<span>없음</span>
+									</div>
+									<div class="no_graph">
+										AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+									</div>
+								</div>
+								<div class="hitmap_all">
+									<img src="images_ver1/img_model_guideline_01.svg" />
+									<canvas id="gesture_all"></canvas>
+									<span>
+										<span class="mb5">전체평균</span>
+										<span>횟수 : 00</span> 
+										<span>시간 : 00</span>
+									</span>
+								</div>
+								<div class="hitmap_group">
+									<img src="images_ver1/img_model_guideline_01.svg" />
+									<canvas id="gesture_group"></canvas>
+									<span>
+										<span class="mb5">그룹평균</span>
+										<span>횟수 : 00</span>
+										<span>시간 : 00</span>
+									</span>
+								</div>
+							</div>
+							<div class="video_explain">
+								제스처에서는 면접 중 얼굴이나 머리에 손을 올려 표정을 가리거나 입을 가리는등 행동을 포함하여 면접 중 보였던 모든 제스처의 횟수와 유지한 시간을 보여줍니다. 
+								제스처는 집중력, 사교성, 표현능력, 비상시 대처능력과 커뮤니케이션 능력 등과 연관된 항목입니다.
+							</div>
+						</div>
+						<div class="gray_border action_fiv">
+							<h5>자세분석</h5>
+							<div class="posture">
+								<h6>자세각도</h6>
+								<span class="black">홍길동님의 머리와 어깨 자세각도는 <b>머리</b>가 <b>00도</b>, <b>어깨</b>가 <b>00도</b> 입니다.</span>
+								<div class="video_posture_graph">
+									<img src="images_ver1/img_angle.svg" />
+									<img class="w200" src="images_ver1/img_silhouette.svg" />
+									<img class="face_guide" style="transform:rotate(3deg)" src="images_ver1/img_face_guideline_normal.svg" />
+									<img class="body_guide w200" style="transform:rotate(3deg)" src="images_ver1/img_body_guideline_normal.svg" />
+									<p class="pst_avr">
+										<span class="all_avr">전체평균</span>
+										<span>머리 각도 : 00</span>
+										<span>어깨 각도 : 00</span>
+									</p>
+									<p class="pst_avr mt65">
+										<span class="grp_avr">그룹평균</span> 
+										<span>머리 각도 : 00</span>
+										<span>어깨 각도 : 00</span>
+									</p>
+									<div class="no_graph">
+										AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+									</div>
+								</div>
+								<div class="video_explain"> 
+									총 3번의 면접영상에서 얼굴과 어깨의 각도를 체크하여 응시자의 평균 자세를 보여줍니다.기울기가 높을 수록 면접시 바른 자세로의 교정이 필요합니다.
+								</div>
+							</div>
+							<div class="updown"></div>
+							<div class="posture">
+								<h6>어깨움직임</h6>
+								<span class="black">홍길동님은 <b>우측 어깨 00회</b>, 좌측 어깨 00회의 움직임과 <b>좌우로 00회</b>의 움직임이 확인됩니다.</span>
+								<div class="video_posture_graph"> 
+									<img src="images_ver1/img_checkerboard.svg" />
+									<img class="w200" src="images_ver1/img_silhouette.svg" />
+									<canvas id="shldrMvt"></canvas>
+									<p class="pst_avr">
+										<span class="all_avr">전체평균</span>
+										<span>우측 어깨 : 00</span>
+										<span>좌측 어깨 : 00</span>
+										<span>좌우 움직임 : 00</span>
+									</p>
+									<p class="pst_avr mt80">
+										<span class="grp_avr">그룹평균</span> 
+										<span>우측 어깨 : 00</span>
+										<span>좌측 어깨 : 00</span>
+										<span>좌우 움직임 : 00</span>
+									</p>  
+									
+									<div class="no_graph">
+										AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+									</div>
+								</div>
+								<div class="video_explain">
+									어깨의 움직임을 상하좌우 좌표를 체크하여 면접에서의 상체움직임 정도를 보여줍니다. 상하좌우의 좌표점 길이가 길수로 인터뷰 중 상체가 많이 흔들렸음을 의미합니다. 움직임은 직무에 필요한 인내심, 믿음과 신뢰, 강한 의지, 진실성, 장기근속 가능여부 등과 연관된 항목입니다.
+								</div>
+							</div>
+							<span class="blue">
+								<img src="images_ver1/icon_alert.svg" />
+								면접 진행시 어깨가 가려질 경우 측정결과가 부정확해질 확률이 높아지므로 머리카락 등으로 어깨가 가려지지 않도록 유의하시기 바랍니다.
+							</span>
+						</div>
+					</div>
+					<div id="analysis_voice" class="videoDetail_contents tab_contents" style="display:none">
+						<div class="gray_border relative">
+							<h5>면접 응답분석</h5>
+							<span class="black">홍길동님의 면접 응답분석은 면접별로 부족, 적합, 보통입니다.</span>
+							<table class="answer"> 
+								<colgroup>
+									<col width="160px;">
+									<col width="480px;">
+									<col width="100px;">
+									<col width="100px;">
+									<col width="100px;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th rowspan="2">질문</th>
+										<th rowspan="2">심층성향</th>
+										<th rowspan="1" colspan="3">응답 신중성도</th>
+									</tr>
+									<tr>
+										<th rowspan="1" colspan="1">부족</th>
+										<th rowspan="1" colspan="1">보통</th>
+										<th rowspan="1" colspan="1">적합</th>
+									</tr> 
+									<tr>
+										<td>질문1. <br>기본질문</td>
+										<td>
+											모든 응시자에게 공통으로 적용되는 기본 질문입니다. <br>응시자의 가치관, 경험등을 확인할 수 있습니다.
+										</td>
+										<td colspan="3">
+											<div class="voice_my">
+												<div class="voice_bar orange" role="progressbar" style="width: 30%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 30%;">응시자</span>
+											</div>
+											<div class="voice_all">
+												<div class="voice_bar navy" role="progressbar" style="width: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 50%;">전체평균</span>
+											</div>
+											<div class="voice_group">
+												<div class="voice_bar yellow" role="progressbar" style="width: 45%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 45%;">그룹평균</span> 
+											</div>
+										</td> 
+									</tr>
+									<tr>
+										<td>질문2. <br>직군관련질문</td>
+										<td>
+											지원 직군에 대한 직무 관련 질문입니다. <br>지원 직군에 대한 이해도와 적합 인재인 지를 확인할 수 있습니다.
+										</td>
+										<td colspan="3">
+											<div class="voice_my">
+												<div class="voice_bar skyblue" role="progressbar" style="width: 100%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 100%;">응시자</span>
+											</div>  
+											<div class="voice_all">
+												<div class="voice_bar navy" role="progressbar" style="width: 100%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 100%;">전체평균</span> 
+											</div>
+											<div class="voice_group">
+												<div class="voice_bar yellow" role="progressbar" style="width: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 50%;">그룹평균</span> 
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>질문3. <br>직군심층질문</td>
+										<td>
+											지원 직군에 대한 직무 심층 질문입니다. <br>지원 직군에 대한 이해도를 좀 더 심층적으로 확인할 수 있습니다.
+										</td>
+										<td colspan="3">
+											<div class="voice_my">
+												<div class="voice_bar green" role="progressbar" style="width: 40%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 40%;">응시자</span>
+											</div>
+											<div class="voice_all">
+												<div class="voice_bar navy" role="progressbar" style="width: 70%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 70%;">전체평균</span>
+											</div>
+											<div class="voice_group">
+												<div class="voice_bar yellow" role="progressbar" style="width: 65%;" aria-valuemin="0" aria-valuemax="100"></div>
+												<span style="left: 65%;">그룹평균</span> 
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- <div class="error_box"> -->
+								<div class="no_graph">
+									AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+								</div>
+							<!-- </div> -->
+							<div class="video_explain">
+								총 3번의 면접 질문의 답변을 통해 응시자가 응답에 대해 신중하게 답변을 하였는지 나타냅니다. <br>
+								부족에 가까운 경우 답변에 대한 신중함과 직군에 대한 이해가 필요로 합니다. 적당한 목소리 크기와 또렷한 발음으로 응답을 하고, <br>
+								질문에 대한 답변을 단답형으로 전달하는 것 보다 본인의 경험과 생각을 최대한 많이 전달되도록 하는것이 중요합니다.
+							</div>
+						</div>
+						<div class="gray_border">
+							<h5>언어분석</h5>
+							<div class="language">
+								<h6>사용 단어 빈도</h6>
+								<span class="black">홍길동님의 <b>자주 사용하는 단어는 oo, oo, oo</b>입니다.</span>
+								<div class="video_bubble_graph use_word"> 
+									<span class="bubble_2 bubble">단어</span>
+									<span class="bubble_1 bubble">단어</span>
+									<span class="bubble_3 bubble">단어</span>
+									<span class="bubble_4 bubble">단어</span>
+									<span class="bubble_5 bubble">단어</span>
+									<span class="bubble_6 bubble">단어</span>
+									<span class="bubble_7 bubble">단어</span>
+									<span class="bubble_8 bubble">단어</span>
+									<span class="bubble_9 bubble">단어</span>
+									<span class="bubble_10 bubble">단어</span> 
+								</div>	
+								<div class="no_bubble">
+									<span>없음</span>
+									<div class="no_graph">
+										AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+									</div>
+								</div>
+								<div class="video_explain">
+									단어 빈도수 그래프는 총 3번의 면접영상에서 자주 사용하는 단어 10순위를 선별하여 나열합니다. 어의 글자가 클수록, 중앙에 있을수록 사용 빈도수가 높음을 의미합니다.
+								</div>
+							</div>
+							<div class="language">
+								<h6>직무언어 사용 빈도</h6>
+								<span class="black">홍길동님이 <b>자주 사용한 상위 직무언어는 oo</b>입니다.</span>
+								<div class="video_bubble_graph work_word"> 
+									<span class="bubble_2 bubble">단어</span>
+									<span class="bubble_1 bubble">단어</span>
+									<span class="bubble_3 bubble">단어</span>
+									<span class="bubble_8 bubble">단어</span>
+									<span class="bubble_9 bubble">단어</span>  
+								</div>	
+								<div class="no_bubble">
+									<span>없음</span>
+									<div class="no_graph">
+										AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+									</div>
+								</div>
+								<div class="video_explain">
+									직무언어 그래프는 총 3번의 면접영상에서 자주 사용하는 직무언어 5순위를 선별하여 나열합니다. 단어의 글자가 클수록, 중앙에 위치할 수록 사용 빈도수가 높음을 의미합니다.
+								</div>
+							</div>
+							<div class="language_propensity" >
+								<h5 class="blue">언어성향</h5>
+								<span class="black">홍길동님은 긍정 성향의 어휘를 많이 사용한 것으로 확인됩니다.</span>
+								<div class="video_language_graph">
+									<div class="avg_label"> 
+										<div class="all_label mb10">
+											<img src="images_ver1/img_overallaverage.svg" />
+											<span>전체평균</span>
+										</div>
+										<div class="grp_label">
+											<img src="images_ver1/img_groupaverage.svg" />
+											<span>그룹평균</span>
+										</div>
+									</div>
+									<div class="lang_graph">
+										<div class="lang_label">
+											<img style="left:45%;" src="images_ver1/img_position_01.svg" />
+											<img style="left:50%;" src="images_ver1/img_position_02.svg" />
+										</div>
+									</div>
+									<div class="lang_my">
+										<div style="left: 70%;">
+											<span>응시자</span>
+											<img src="images_ver1/img_robot.svg" />
+										</div>
+									</div>
+									<img src="images_ver1/img_arrow.svg" />
+									<div class="lang_txt">
+										<span>부정</span>
+										<span>중립</span>
+										<span>긍정</span>
+									</div>
+									<div class="no_graph_box">
+										<div class="avg_label"> 
+											<div class="all_label mb10">
+												<img src="images_ver1/img_overallaverage.svg" />
+												<span>전체평균</span>
+											</div>
+											<div class="grp_label">
+												<img src="images_ver1/img_groupaverage.svg" />
+												<span>그룹평균</span>
+											</div>
+										</div>
+										<img src="images_ver1/img_arrow_null.svg" />
+										<div class="no_graph">
+											AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+										</div>
+									</div>
+								</div>
+								<div class="video_explain">언어 성향 그래프는 총 3번의 면접영상에서 답변한 어휘를 분석하여 인공지능을 통해 긍정, 부정, 중립으로 구분지어 그래프로 나타냅니다.</div>
+							</div>
+						</div>
+						<div class="gray_border"> 
+							<h5>음성분석</h5>
+							<div class="voice mr90">
+								<h6>목소리톤</h6>
+								<span class="black">홍길동님은 2번 질문에서 전체평균에 가까운 목소리톤으로 답하였습니다.</span>
+								<div class="graph">
+									<div class="position">
+										<img style="left: 70%;" src="images_ver1/img_all_label.svg" />
+										<img style="left: 60%" src="images_ver1/img_group_label.svg" />
+									</div>
+									<div class="num">
+										<span>0</span>
+										<span>50</span>
+										<span>100</span>
+									</div>
+									<div class="voice_que">
+										<div class="mb35">
+											<span>질문1</span>
+											<div class="voice_q_box">
+												<div class="voice_q_1" role="progressbar" style="width: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+										</div>
+										<div class="mb35">
+											<span>질문2</span>
+											<div class="voice_q_box">
+												<div class="voice_q_2" role="progressbar" style="width: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+										</div>
+										<div>
+											<span>질문3</span>
+											<div class="voice_q_box">
+												<div class="voice_q_3" role="progressbar" style="width: 40%;" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+										</div>
+									</div>
+									<div class="no_graph">
+										AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+									</div>
+								</div>
+								<div class="label_title">
+									<img src="images_ver1/img_label_allTitle.svg" />
+									<span class="mr20">전체평균</span>
+									<img src="images_ver1/img_label_groupTitle.svg" />
+									<span>그룹평균</span>
+								</div>
+								<div class="video_explain">
+									목소리톤 그래프는 총 3번의 면접영상 각각을 분석하여 평균화 한 수치입니다. 
+									<br><br>
+									목소리톤 변화는 직무수행능력, 피칭 능력, 새로운 프로젝트 도전 정신, 업무 실행력 및 추진력, 대인관계 개방성 및 융통성 등과 연관된 항목입니다.
+								</div>
+							</div>
+							<div class="voice">
+								<h6>목소리속도</h6>
+								<span class="black">홍길동님은 2번 질문에서 전체평균에 가까운 목소리속도로 답하였습니다.</span>
+								<div class="graph">
+									<div class="position">
+										<img style="left: 70%" src="images_ver1/img_all_label.svg" />
+										<img style="left: 60%" src="images_ver1/img_group_label.svg" />
+									</div>
+									<div class="num">
+										<span>0</span>
+										<span>50</span>
+										<span>100</span>
+									</div>
+									<div class="voice_que">
+										<div class="mb35">
+											<span>질문1</span>
+											<div class="voice_q_box">
+												<div class="voice_q_1" role="progressbar" style="width: 60%;" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+										</div>
+										<div class="mb35">
+											<span>질문2</span>
+											<div class="voice_q_box">
+												<div class="voice_q_2" role="progressbar" style="width: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+										</div>
+										<div>
+											<span>질문3</span>
+											<div class="voice_q_box">
+												<div class="voice_q_3" role="progressbar" style="width: 40%;" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+										</div>
+									</div>
+									<div class="no_graph">
+										AI분석을 위한 목소리, 얼굴, 상체 정보가 <br>확인되지 않아 분석이 어렵습니다.
+									</div>
+								</div>
+								<div class="label_title">
+									<img src="images_ver1/img_label_allTitle.svg" />
+									<span class="mr20">전체평균</span>
+									<img src="images_ver1/img_label_groupTitle.svg" />
+									<span>그룹평균</span>
+								</div>
+								<div class="video_explain">
+									목소리속도 그래프는 총 3번의 면접영상 각각을 분석하여 평균화 한 수치입니다. 
+									<br><br>
+									목소리속도는 배려심, 인성, 가치관, 비상시 대처능력, 소통능력 등과 연관된 항목입니다.
+								</div> 
+							</div>
+							<span class="blue">
+								<img src="images_ver1/icon_alert.svg" />
+								면접 진행 전 마이크 체크 및 면접 중 발성으로 분석되므로, 마이크 체크 및 발성이 체크되지 않을 경우 분석에 영향을 줄 수 있습니다.
+							</span>
+						</div>
+							
+					</div>
+					<div id="analysis_body" class="videoDetail_contents tab_contents" style="display:none">
+						<p>
+							우선 순위에서 제외 <br>
+							- 맥박, 체온 등을 이용한 분석<br>
+							- 차후 기술 적용
+
+						</p>
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="simpleheat.js"></script>
+	<script>
+		$('.tab_title').on("click", function() {
+	        $('.tab_title').removeClass("on");
+	        $(this).addClass("on");
+    	});
+		
+		$('.totalTab_detail').on("click", function() {
+	        $('.totalTab_detail').removeClass("on");
+	        $(this).addClass("on");
+    	});
+		
+		$('.videoTab_detail').on("click", function() {
+	        $('.videoTab_detail').removeClass("on");
+	        $(this).addClass("on");
+    	});
+		
+		$('.que_btn').on("click", function() {
+	        $('.que_btn').removeClass("on");
+	        $(this).addClass("on");
+    	});
+		
+	
+		function openTab(tabName) {
+			var i;
+			var x = document.getElementsByClassName("tab_total_container"); 
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			}
+			document.getElementById(tabName).style.display = "block";  
+		}
+		
+		function openTab_total(totalTab_detail) {
+			var i;
+			var x = document.getElementsByClassName("totalDetail_contents");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			}
+			document.getElementById(totalTab_detail).style.display = "block";  
+		}
+		
+		function openTab_video(videoTab_detail) {
+			var i;
+			var x = document.getElementsByClassName("videoDetail_contents");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			}
+			document.getElementById(videoTab_detail).style.display = "block";  
+		}
+		
+		function openTab_interview(interview_detail) {
+			var i;
+			var x = document.getElementsByClassName("interview_contents");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			}
+			document.getElementById(interview_detail).style.display = "block";  
+		}
+
+		$('.explanation_none').on("click", function() {
+			$('.explanation').css('display', 'none');
+		});
+		$('.explanation_block').on("click", function() {
+			$('.explanation').css('display', 'block');
+		});
+		
+		/*  영상 종합분석도  */
+		var video_total_chart = document.getElementById("video_total_chart");
+        var vitChart = new Chart(video_total_chart, {
+        	type: 'radar',
+				data: {
+					labels: [ "시선분포", "어깨각도", "얼굴각도", "어깨움직임", "목소리톤", "목소리속도" ],
+					datasets: [
+						{
+							label: '응시자',
+							data: [5, 10, 15, 20, 25, 30],
+							borderColor: '#137DDE',
+	                        fill: false
+						},
+						{
+							label: '전체평균',
+							data: [15, 20, 5, 10, 15, 40],
+							borderColor: '#2A3F61',
+	                        fill: false
+						},
+						{
+							label: '그룹평균',
+							data: [30, 40, 25, 1, 5, 30],
+							borderColor: '#FFAA30',
+	                        fill: false
+						} 
+					]
+				},
+	            options: {
+	                responsive: true,
+	                elements:{
+	                    line:{
+	                        tension:0,
+	                        borderWidth:3
+	                    }
+	                },
+	                tooltips: {
+	                    mode: 'index',
+	                    intersect: false,
+	                },
+	                hover: {
+	                    mode: 'nearest',
+	                    intersect: true
+	                },
+	                legend: {
+	                    display: false,
+	                    labels: {
+	                        fontSize: 16
+	                    }
+	                },
+                    scale: {
+                        pointLabels: {
+                            fontSize: 16
+                        }
+                    }
+	            }
+        });
+		
+		
+		/* 감정분석 */
+		var emotion_chart = document.getElementById("emotion_chart");
+        var emtChart = new Chart(emotion_chart, {
+            type: 'bar',
+            data: {
+                labels: [ "놀람", "공포", "혐오", "행복", "슬픔", "화남", "중립" ],
+                datasets: [
+                    {
+                        label: '응시자',
+                        data: [90, 45, 10, 50, 10, 20, 50],
+                        backgroundColor: 'rgba(19, 125, 222, 0.7)',
+                        borderWidth: 1,
+                        fill: true,
+                        lineTension: 0,
+                    	type: 'bar',
+                        order: 2
+                    },
+                    {
+                        label: '전체평균',
+                        data: [90, 80, 35, 70, 30, 20, 50],
+                        backgroundColor: '#293E62',
+                        borderColor: '#293E62',
+                        borderWidth: 5,
+                        fill: false,
+                        lineTension: 0,
+                    	type: 'line',
+                        order: 0
+                    },
+                    {
+                        label: '그룹평균',
+                         
+                        data: [100, 50, 20, 40, 20, 30, 25],
+                        backgroundColor: '#FFAA30',
+                        borderColor: '#FFAA30',
+                        borderWidth: 5,
+                        fill: false,
+                        lineTension: 0,
+                    	type: 'line',
+                        order: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+            	maintainAspectRatio: false,
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        barPercentage: 0.2,
+                        gridLines:{
+                            display: false
+                        },
+                        ticks: {
+                            fontSize: 16 
+                        },
+                        scaleLabel: {
+                            display: true
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        gridLines:{
+                            display: false
+                        },
+                        ticks: {
+                            suggestedMin: 0,
+                        },
+                        scaleLabel: {
+                            display: true
+                        }
+                    }]
+                },
+                legend: {
+                    display: false,
+                    labels: {
+                        "fontSize": 16
+                    }
+                }
+            }
+        });
+        
+        /* 시선분포 */
+        
+        $(function() {
+	        var eyes_my_data = [[0,0],[100,100],[244, 253], [236, 243], [234, 237], [236, 213], [236, 201], [236, 218], [236, 228], [234, 237], [231, 243], [225, 245], [213, 253], [188, 261], [183, 259], [178, 265], [170, 268], [175, 271], [170, 276], [180, 271], [175, 275], [177, 267], [179, 256], [177, 248], [184, 238], [175, 226], [186, 205], [196, 207], [175, 201], [187, 209], [198, 222], [203, 233], [212, 233], [210, 235], [207, 243], [197, 244], [205, 247], [217, 244], [219, 247], [219, 243], [226, 247], [237, 245], [243, 244], [246, 239], [236, 239], [229, 239], [225, 235], [227, 235], [227, 237], [224, 237], [228, 234], [230, 237], [240, 239], [245, 242], [259, 244], [255, 247], [260, 246], [267, 241], [267, 238], [268, 233], [265, 232], [264, 232], [265, 232], [265, 234], [262, 237], [263, 239], [262, 237], [258, 238], [254, 236], [246, 227], [242, 213], [240, 218], [239, 223], [240, 224], [237, 230], [234, 232], [230, 231], [227, 228], [223, 227], [222, 224], [221, 220], [219, 192], [224, 171], [228, 168], [227, 179], [230, 169], [231, 179], [230, 185], [226, 209], [215, 215], [206, 230], [202, 236], [214, 238], [225, 237], [230, 239], [237, 240], [237, 243], [235, 242], [236, 241], [234, 240], [235, 232], [235, 230], [245, 220], [253, 218], [253, 221], [255, 222], [252, 225], [252, 227], [254, 226], [253, 226], [260, 231], [262, 231], [267, 232], [271, 236], [272, 238], [272, 240], [277, 239], [277, 242], [273, 242], [271, 239], [275, 237], [268, 237], [262, 238], [263, 239], [261, 242], [262, 242], [262, 240], [263, 236], [261, 229], [267, 225], [256, 227], [258, 220], [251, 214], [253, 210], [254, 199], [250, 192], [244, 189], [247, 201], [243, 201], [242, 217], [243, 217], [242, 223], [249, 228], [246, 232], [240, 230], [226, 227], [203, 230], [188, 232], [184, 259], [181, 265], [193, 261], [193, 260], [194, 262], [199, 260], [202, 260], [210, 257], [203, 251], [203, 248], [207, 243], [209, 230], [216, 226], [210, 244], [224, 243], [227, 246], [228, 246], [229, 244], [223, 240], [218, 237], [219, 236], [217, 237], [221, 238], [225, 237], [231, 235], [233, 237], [237, 238], [236, 239], [238, 239], [238, 235], [240, 235], [241, 236], [240, 236], [239, 236], [237, 235], [239, 237], [237, 239], [236, 237], [236, 238], [236, 238], [237, 237], [235, 239], [231, 236], [232, 241], [234, 244], [235, 243], [240, 240], [242, 241], [249, 236], [245, 233], [250, 232]];
+	        var eyes_all_data = [[0,0],[100, 100],[244, 253], [236, 243], [234, 237], [236, 213], [236, 201], [236, 218], [236, 228], [234, 237], [231, 243], [225, 245], [213, 253], [188, 261], [183, 259], [178, 265], [170, 268], [175, 271], [170, 276], [180, 271], [175, 275], [177, 267], [179, 256], [177, 248], [184, 238], [175, 226], [186, 205], [196, 207], [175, 201], [187, 209], [198, 222], [203, 233], [212, 233], [210, 235], [207, 243], [197, 244], [205, 247], [217, 244], [219, 247], [219, 243], [226, 247], [237, 245], [243, 244], [246, 239], [236, 239], [229, 239], [225, 235], [227, 235], [227, 237], [224, 237], [228, 234], [230, 237], [240, 239], [245, 242], [259, 244], [255, 247], [260, 246], [267, 241], [267, 238], [268, 233], [265, 232], [264, 232], [265, 232], [265, 234], [262, 237], [263, 239], [262, 237], [258, 238], [254, 236], [246, 227], [242, 213], [240, 218], [239, 223], [240, 224], [237, 230], [234, 232], [230, 231], [227, 228], [223, 227], [222, 224], [221, 220], [219, 192], [224, 171], [228, 168], [227, 179], [230, 169], [231, 179], [230, 185], [226, 209], [215, 215], [206, 230], [202, 236], [214, 238], [225, 237], [230, 239], [237, 240], [237, 243], [235, 242], [236, 241], [234, 240], [235, 232], [235, 230], [245, 220], [253, 218], [253, 221], [255, 222], [252, 225], [252, 227], [254, 226], [253, 226], [260, 231], [262, 231], [267, 232], [271, 236], [272, 238], [272, 240], [277, 239], [277, 242], [273, 242], [271, 239], [275, 237], [268, 237], [262, 238], [263, 239], [261, 242], [262, 242], [262, 240], [263, 236], [261, 229], [267, 225], [256, 227], [258, 220], [251, 214], [253, 210], [254, 199], [250, 192], [244, 189], [247, 201], [243, 201], [242, 217], [243, 217], [242, 223], [249, 228], [246, 232], [240, 230], [226, 227], [203, 230], [188, 232], [184, 259], [181, 265], [193, 261], [193, 260], [194, 262], [199, 260], [202, 260], [210, 257], [203, 251], [203, 248], [207, 243], [209, 230], [216, 226], [210, 244], [224, 243], [227, 246], [228, 246], [229, 244], [223, 240], [218, 237], [219, 236], [217, 237], [221, 238], [225, 237], [231, 235], [233, 237], [237, 238], [236, 239], [238, 239], [238, 235], [240, 235], [241, 236], [240, 236], [239, 236], [237, 235], [239, 237], [237, 239], [236, 237], [236, 238], [236, 238], [237, 237], [235, 239], [231, 236], [232, 241], [234, 244], [235, 243], [240, 240], [242, 241], [249, 236], [245, 233], [250, 232]];
+	        var eyes_group_data = [[0,0],[100, 100],[244, 253], [236, 243], [234, 237], [236, 213], [236, 201], [236, 218], [236, 228], [234, 237], [231, 243], [225, 245], [213, 253], [188, 261], [183, 259], [178, 265], [170, 268], [175, 271], [170, 276], [180, 271], [175, 275], [177, 267], [179, 256], [177, 248], [184, 238], [175, 226], [186, 205], [196, 207], [175, 201], [187, 209], [198, 222], [203, 233], [212, 233], [210, 235], [207, 243], [197, 244], [205, 247], [217, 244], [219, 247], [219, 243], [226, 247], [237, 245], [243, 244], [246, 239], [236, 239], [229, 239], [225, 235], [227, 235], [227, 237], [224, 237], [228, 234], [230, 237], [240, 239], [245, 242], [259, 244], [255, 247], [260, 246], [267, 241], [267, 238], [268, 233], [265, 232], [264, 232], [265, 232], [265, 234], [262, 237], [263, 239], [262, 237], [258, 238], [254, 236], [246, 227], [242, 213], [240, 218], [239, 223], [240, 224], [237, 230], [234, 232], [230, 231], [227, 228], [223, 227], [222, 224], [221, 220], [219, 192], [224, 171], [228, 168], [227, 179], [230, 169], [231, 179], [230, 185], [226, 209], [215, 215], [206, 230], [202, 236], [214, 238], [225, 237], [230, 239], [237, 240], [237, 243], [235, 242], [236, 241], [234, 240], [235, 232], [235, 230], [245, 220], [253, 218], [253, 221], [255, 222], [252, 225], [252, 227], [254, 226], [253, 226], [260, 231], [262, 231], [267, 232], [271, 236], [272, 238], [272, 240], [277, 239], [277, 242], [273, 242], [271, 239], [275, 237], [268, 237], [262, 238], [263, 239], [261, 242], [262, 242], [262, 240], [263, 236], [261, 229], [267, 225], [256, 227], [258, 220], [251, 214], [253, 210], [254, 199], [250, 192], [244, 189], [247, 201], [243, 201], [242, 217], [243, 217], [242, 223], [249, 228], [246, 232], [240, 230], [226, 227], [203, 230], [188, 232], [184, 259], [181, 265], [193, 261], [193, 260], [194, 262], [199, 260], [202, 260], [210, 257], [203, 251], [203, 248], [207, 243], [209, 230], [216, 226], [210, 244], [224, 243], [227, 246], [228, 246], [229, 244], [223, 240], [218, 237], [219, 236], [217, 237], [221, 238], [225, 237], [231, 235], [233, 237], [237, 238], [236, 239], [238, 239], [238, 235], [240, 235], [241, 236], [240, 236], [239, 236], [237, 235], [239, 237], [237, 239], [236, 237], [236, 238], [236, 238], [237, 237], [235, 239], [231, 236], [232, 241], [234, 244], [235, 243], [240, 240], [242, 241], [249, 236], [245, 233], [250, 232]];
+	        var gesture_my_data = [[0,0],[100,100],[244, 253], [236, 243], [234, 237], [236, 213], [236, 201], [236, 218], [236, 228], [234, 237], [231, 243], [225, 245], [213, 253], [188, 261], [183, 259], [178, 265], [170, 268], [175, 271], [170, 276], [180, 271], [175, 275], [177, 267], [179, 256], [177, 248], [184, 238], [175, 226], [186, 205], [196, 207], [175, 201], [187, 209], [198, 222], [203, 233], [212, 233], [210, 235], [207, 243], [197, 244], [205, 247], [217, 244], [219, 247], [219, 243], [226, 247], [237, 245], [243, 244], [246, 239], [236, 239], [229, 239], [225, 235], [227, 235], [227, 237], [224, 237], [228, 234], [230, 237], [240, 239], [245, 242], [259, 244], [255, 247], [260, 246], [267, 241], [267, 238], [268, 233], [265, 232], [264, 232], [265, 232], [265, 234], [262, 237], [263, 239], [262, 237], [258, 238], [254, 236], [246, 227], [242, 213], [240, 218], [239, 223], [240, 224], [237, 230], [234, 232], [230, 231], [227, 228], [223, 227], [222, 224], [221, 220], [219, 192], [224, 171], [228, 168], [227, 179], [230, 169], [231, 179], [230, 185], [226, 209], [215, 215], [206, 230], [202, 236], [214, 238], [225, 237], [230, 239], [237, 240], [237, 243], [235, 242], [236, 241], [234, 240], [235, 232], [235, 230], [245, 220], [253, 218], [253, 221], [255, 222], [252, 225], [252, 227], [254, 226], [253, 226], [260, 231], [262, 231], [267, 232], [271, 236], [272, 238], [272, 240], [277, 239], [277, 242], [273, 242], [271, 239], [275, 237], [268, 237], [262, 238], [263, 239], [261, 242], [262, 242], [262, 240], [263, 236], [261, 229], [267, 225], [256, 227], [258, 220], [251, 214], [253, 210], [254, 199], [250, 192], [244, 189], [247, 201], [243, 201], [242, 217], [243, 217], [242, 223], [249, 228], [246, 232], [240, 230], [226, 227], [203, 230], [188, 232], [184, 259], [181, 265], [193, 261], [193, 260], [194, 262], [199, 260], [202, 260], [210, 257], [203, 251], [203, 248], [207, 243], [209, 230], [216, 226], [210, 244], [224, 243], [227, 246], [228, 246], [229, 244], [223, 240], [218, 237], [219, 236], [217, 237], [221, 238], [225, 237], [231, 235], [233, 237], [237, 238], [236, 239], [238, 239], [238, 235], [240, 235], [241, 236], [240, 236], [239, 236], [237, 235], [239, 237], [237, 239], [236, 237], [236, 238], [236, 238], [237, 237], [235, 239], [231, 236], [232, 241], [234, 244], [235, 243], [240, 240], [242, 241], [249, 236], [245, 233], [250, 232]];
+	        var gesture_all_data = [[0,0],[100, 100],[244, 253], [236, 243], [234, 237], [236, 213], [236, 201], [236, 218], [236, 228], [234, 237], [231, 243], [225, 245], [213, 253], [188, 261], [183, 259], [178, 265], [170, 268], [175, 271], [170, 276], [180, 271], [175, 275], [177, 267], [179, 256], [177, 248], [184, 238], [175, 226], [186, 205], [196, 207], [175, 201], [187, 209], [198, 222], [203, 233], [212, 233], [210, 235], [207, 243], [197, 244], [205, 247], [217, 244], [219, 247], [219, 243], [226, 247], [237, 245], [243, 244], [246, 239], [236, 239], [229, 239], [225, 235], [227, 235], [227, 237], [224, 237], [228, 234], [230, 237], [240, 239], [245, 242], [259, 244], [255, 247], [260, 246], [267, 241], [267, 238], [268, 233], [265, 232], [264, 232], [265, 232], [265, 234], [262, 237], [263, 239], [262, 237], [258, 238], [254, 236], [246, 227], [242, 213], [240, 218], [239, 223], [240, 224], [237, 230], [234, 232], [230, 231], [227, 228], [223, 227], [222, 224], [221, 220], [219, 192], [224, 171], [228, 168], [227, 179], [230, 169], [231, 179], [230, 185], [226, 209], [215, 215], [206, 230], [202, 236], [214, 238], [225, 237], [230, 239], [237, 240], [237, 243], [235, 242], [236, 241], [234, 240], [235, 232], [235, 230], [245, 220], [253, 218], [253, 221], [255, 222], [252, 225], [252, 227], [254, 226], [253, 226], [260, 231], [262, 231], [267, 232], [271, 236], [272, 238], [272, 240], [277, 239], [277, 242], [273, 242], [271, 239], [275, 237], [268, 237], [262, 238], [263, 239], [261, 242], [262, 242], [262, 240], [263, 236], [261, 229], [267, 225], [256, 227], [258, 220], [251, 214], [253, 210], [254, 199], [250, 192], [244, 189], [247, 201], [243, 201], [242, 217], [243, 217], [242, 223], [249, 228], [246, 232], [240, 230], [226, 227], [203, 230], [188, 232], [184, 259], [181, 265], [193, 261], [193, 260], [194, 262], [199, 260], [202, 260], [210, 257], [203, 251], [203, 248], [207, 243], [209, 230], [216, 226], [210, 244], [224, 243], [227, 246], [228, 246], [229, 244], [223, 240], [218, 237], [219, 236], [217, 237], [221, 238], [225, 237], [231, 235], [233, 237], [237, 238], [236, 239], [238, 239], [238, 235], [240, 235], [241, 236], [240, 236], [239, 236], [237, 235], [239, 237], [237, 239], [236, 237], [236, 238], [236, 238], [237, 237], [235, 239], [231, 236], [232, 241], [234, 244], [235, 243], [240, 240], [242, 241], [249, 236], [245, 233], [250, 232]];
+	        var gesture_group_data = [[0,0],[100, 100],[244, 253], [236, 243], [234, 237], [236, 213], [236, 201], [236, 218], [236, 228], [234, 237], [231, 243], [225, 245], [213, 253], [188, 261], [183, 259], [178, 265], [170, 268], [175, 271], [170, 276], [180, 271], [175, 275], [177, 267], [179, 256], [177, 248], [184, 238], [175, 226], [186, 205], [196, 207], [175, 201], [187, 209], [198, 222], [203, 233], [212, 233], [210, 235], [207, 243], [197, 244], [205, 247], [217, 244], [219, 247], [219, 243], [226, 247], [237, 245], [243, 244], [246, 239], [236, 239], [229, 239], [225, 235], [227, 235], [227, 237], [224, 237], [228, 234], [230, 237], [240, 239], [245, 242], [259, 244], [255, 247], [260, 246], [267, 241], [267, 238], [268, 233], [265, 232], [264, 232], [265, 232], [265, 234], [262, 237], [263, 239], [262, 237], [258, 238], [254, 236], [246, 227], [242, 213], [240, 218], [239, 223], [240, 224], [237, 230], [234, 232], [230, 231], [227, 228], [223, 227], [222, 224], [221, 220], [219, 192], [224, 171], [228, 168], [227, 179], [230, 169], [231, 179], [230, 185], [226, 209], [215, 215], [206, 230], [202, 236], [214, 238], [225, 237], [230, 239], [237, 240], [237, 243], [235, 242], [236, 241], [234, 240], [235, 232], [235, 230], [245, 220], [253, 218], [253, 221], [255, 222], [252, 225], [252, 227], [254, 226], [253, 226], [260, 231], [262, 231], [267, 232], [271, 236], [272, 238], [272, 240], [277, 239], [277, 242], [273, 242], [271, 239], [275, 237], [268, 237], [262, 238], [263, 239], [261, 242], [262, 242], [262, 240], [263, 236], [261, 229], [267, 225], [256, 227], [258, 220], [251, 214], [253, 210], [254, 199], [250, 192], [244, 189], [247, 201], [243, 201], [242, 217], [243, 217], [242, 223], [249, 228], [246, 232], [240, 230], [226, 227], [203, 230], [188, 232], [184, 259], [181, 265], [193, 261], [193, 260], [194, 262], [199, 260], [202, 260], [210, 257], [203, 251], [203, 248], [207, 243], [209, 230], [216, 226], [210, 244], [224, 243], [227, 246], [228, 246], [229, 244], [223, 240], [218, 237], [219, 236], [217, 237], [221, 238], [225, 237], [231, 235], [233, 237], [237, 238], [236, 239], [238, 239], [238, 235], [240, 235], [241, 236], [240, 236], [239, 236], [237, 235], [239, 237], [237, 239], [236, 237], [236, 238], [236, 238], [237, 237], [235, 239], [231, 236], [232, 241], [234, 244], [235, 243], [240, 240], [242, 241], [249, 236], [245, 233], [250, 232]];
+	        
+	        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+	        
+	        var heat_eyes_my = simpleheat('eyes_my').data(eyes_my_data);
+	        var heat_eyes_all = simpleheat('eyes_all').data(eyes_all_data);
+	        var heat_eyes_group = simpleheat('eyes_group').data(eyes_group_data);
+	        var heat_gesture_my = simpleheat('gesture_my').data(gesture_my_data);
+	        var heat_gesture_all = simpleheat('gesture_all').data(gesture_all_data);
+	        var heat_gesture_group = simpleheat('gesture_group').data(gesture_group_data);
+	        
+	        function draw() {
+	            heat_eyes_my.draw();
+	            heat_eyes_all.draw();
+	            heat_eyes_group.draw();
+	            heat_gesture_my.draw();
+	            heat_gesture_all.draw();
+	            heat_gesture_group.draw();
+	            
+	            frame = null;
+	        }
+	        
+	        draw();
+        });
+        
+        
+        /* 어깨 움직임 */
+        var shoulder = document.getElementById("shldrMvt");
+        
+		var center = shoulder.getContext("2d");
+		center.strokeStyle = '#137CDE';
+		center.lineWidth = 1.5;
+		
+		center.moveTo(10,10);
+		center.lineTo(100,20);
+		center.stroke();
+		
+		var left = shoulder.getContext("2d");
+		left.strokeStyle = '#137CDE';
+		left.lineWidth = 1.5;
+		
+		left.moveTo(0,0);
+		left.lineTo(100,100);
+		left.stroke();
+		
+		var right = shoulder.getContext("2d");
+		right.strokeStyle = '#137CDE';
+		right.lineWidth = 1.5;
+		
+		right.moveTo(200,200);
+		right.lineTo(180,180);
+		right.stroke();
+        
+        
+        
+        
+        
+		$('#savePdfBtn').click(function() {
+			  
+			//pdf_wrap을 canvas객체로 변환
+			html2canvas($('#pdfPrint')[0]).then(function(canvas) {
+			  var doc = new jsPDF('p', 'mm', 'a1'); //jspdf객체 생성
+			  var imgData = canvas.toDataURL('image/png'); //캔버스를 이미지로 변환
+			  
+			  var imgWidth = 210; // 이미지 가로 길이(mm) A4 기준
+			  var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+			  var imgHeight = canvas.height * imgWidth / canvas.width;
+			  var heightLeft = imgHeight;
+			   
+			      var doc = new jsPDF('p', 'mm');
+			      var position = 0;
+			       
+			      // 첫 페이지 출력
+			      doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+			      heightLeft -= pageHeight;
+			       
+			      // 한 페이지 이상일 경우 루프 돌면서 출력
+			      while (heightLeft >= 20) {
+			        position = heightLeft - imgHeight;
+			        doc.addPage();
+			        doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+			        heightLeft -= pageHeight;
+			      }
+			  
+			     doc.save('_인터뷰마스터 IM.pdf');
+			  
+			});
+		});
+        
+        
+        
+
+	// $(function() {
+	// 	var state = true;
+	// 	$( "#button" ).click(function() {
+	// 		if ( state ) {
+	// 			$( "#effect" ).animate({
+	// 				width: 500,	
+	// 				opacity:0.3
+	// 			}, 1000 );
+	// 		} else {
+	// 			$( "#effect" ).animate({
+	// 				width: 240,
+	// 				opacity:1
+	// 			}, 1000 );
+	// 		}
+	// 		state = !state;
+	// 	});
+	// });
+
+
+$(window).scroll(function () { 
+	var scrollValue = $(document).scrollTop(); 
+	console.log(scrollValue); 
+});
+
+
+// 스크롤 이벤트
+$(document).ready(function(){
+
+	$(window).scroll(function () {
+		// 종합 등급 분포도
+		if ( $(window).scrollTop() > 200 ) {
+			$(".progress_bar").eq(0).animate({
+				height: "15%"
+			});
+			$(".progress_bar").eq(1).animate({
+				height: "48%"
+			});
+			$(".progress_bar").eq(2).animate({
+				height: "60%"
+			});
+			$(".progress_bar").eq(3).animate({
+				height: "48%"
+			});
+			$(".progress_bar").eq(4).animate({
+				height: "48%"
+			});
+			$(".progress_bar").eq(5).animate({
+				height: "48%"
+			});
+			$(".progress_bar").eq(6).animate({
+				height: "48%"
+			});
+			$(".progress_bar").eq(7).animate({
+				height: "48%"
+			});
+			$(".progress_bar").eq(8).animate({
+				height: "48%"
+			});
+			$(".spread_avg_txt").animate({
+				bottom: "48%"
+			});
+			$(".spread_mine_num").animate({
+				bottom: "48%"
+			});
+        } 
+
+		// 성향분석
+		if ( $(window).scrollTop() > 700 ) {
+			$(".arrow_point > span").eq(0).animate({
+				left: "40%"
+			});
+			$(".arrow_point > span").eq(1).animate({
+				left: "50%"
+			});
+			$(".arrow_point > span").eq(2).animate({
+				left: "10%"
+			});
+			$(".arrow_point > span").eq(3).animate({
+				left: "30%"
+			});
+			$(".arrow_point > span").eq(4).animate({
+				left: "90%"
+			});
+			$(".arrow_point > span").eq(5).animate({
+				left: "45%"
+			});
+			$(".arrow_point > span").eq(6).animate({
+				left: "30%"
+			});
+			$(".arrow_point > span").eq(7).animate({
+				left: "70%"
+			});
+		}
+
+
+
+    });
+
+	
+});
+		
+        
+// 현재 위치 좌표
+$(function() {
+      var p = $(".total_grade_spread").offset();
+	  console.log(p.top + "top");
+  });
+		
+	</script>
+			
+<!-- 스크립트 애니메이션https://stackoverflow.com/questions/5047498/how-do-you-animate-the-value-for-a-jquery-ui-progressbar -->

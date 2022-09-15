@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        promptglowingcircle {
+            display: inline-block;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            text-align: center;
+            z-index: 1;
+            box-sizing: border-box;
+            padding: 0.45rem;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: #0078ff 1px solid;
+            animation: circle 1s infinite;
+        }
+
+    </style>
+</head> 
+<body>
+    
+    <promptglowingcircle></promptglowingcircle>
+    
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $( document ).ready(function(){
+        $(".pupil").addClass("two");
+    });
+
+</script>
+</html>

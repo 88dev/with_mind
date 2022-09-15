@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div.box {
+            position: relative;
+            width: 425.6px;
+            height: 425.6px;
+            border: 1px solid red;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        div.in {
+            position: relative;
+            position: absolute;
+            /* border: 1px solid blue; */
+            width: 300px;
+            height: 300px;
+            left: 61.5px;
+            top: 61.5px;
+        }
+
+        div.pupil {
+            position:absolute;
+            left:0;
+            width:100px;
+            height:100px;
+            background-color:#000;
+            border-radius: 50%;
+            color:#fff;
+        }
+
+        div.one{
+            /* 애니메이션 이름 */
+            animation-name: one;
+            animation-duration: 1s;
+            animation-duration: leaner;
+            animation-iteration-count: 1;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+        }
+
+        /* 키프레임 이름 = 애니메이션 이름 */
+        @-webkit-keyframes one {
+            0% {
+                left:100px;
+                top: 100px;
+            }
+            100% {
+                left: 0px;
+                top: 0px;
+                
+            }
+        }
+
+        div.two{
+            /* 애니메이션 이름 */
+            animation-name: two;
+            animation-duration: 1s;
+            animation-duration: leaner;
+            animation-iteration-count: 1;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+        }
+
+        /* 키프레임 이름 = 애니메이션 이름 */
+        @-webkit-keyframes two {
+            0% {
+                left:100px;
+                top: 100px;
+            }
+            100% {
+                left:100px;
+                top: -60px;
+                
+            }
+        }
+
+    </style>
+</head> 
+<body>
+    <ul>
+        <li><button>one</button></li>
+
+    </ul>
+
+    <div class="box">
+        <div class="in">
+            <div class="pupil">box</div>
+        </div>
+    </div>  
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $( document ).ready(function(){
+        $(".pupil").addClass("one");
+    });
+
+</script>
+</html>
