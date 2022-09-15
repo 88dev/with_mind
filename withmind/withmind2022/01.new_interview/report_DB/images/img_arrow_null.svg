@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="618" height="68" viewBox="0 0 618 68">
+  <defs>
+    <filter id="img_arrow_null" x="0" y="0" width="618" height="68" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#144788" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="img_arrow_null-2" x="0" y="0" width="618" height="68" filterUnits="userSpaceOnUse">
+      <feOffset dy="-2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur-2"/>
+      <feFlood flood-color="#aec4de" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#img_arrow_null)">
+      <path id="img_arrow_null-3" data-name="img_arrow_null" d="M1299.846,368.461l-32.291-25v11.762H999.846v0H732.137V343.461l-32.291,25,32.291,25V381.7H999.846v0h267.709v11.764Z" transform="translate(-690.85 -336.46)" fill="#e6effa"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#img_arrow_null-2)">
+      <path id="img_arrow_null-4" data-name="img_arrow_null" d="M1299.846,368.461l-32.291-25v11.762H999.846v0H732.137V343.461l-32.291,25,32.291,25V381.7H999.846v0h267.709v11.764Z" transform="translate(-690.85 -336.46)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="172" height="29" viewBox="0 0 172 29">
+  <defs>
+    <filter id="타원_524" x="136" y="0" width="24" height="24" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#bbb" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="타원_350" x="34" y="0" width="24" height="24" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#bbb" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="img_grade_a0" transform="translate(-112 -1105)">
+    <line id="선_220" data-name="선 220" x2="161" transform="translate(275.5 1113) rotate(180)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <circle id="타원_350-2" data-name="타원 350" cx="3" cy="3" r="3" transform="translate(280 1116) rotate(180)" fill="#fff"/>
+    <g id="그룹_21105" data-name="그룹 21105" transform="translate(1012 1668) rotate(180)">
+      <path id="패스_10085" data-name="패스 10085" d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" transform="translate(750 550)" fill="#fff"/>
+      <g transform="matrix(-1, 0, 0, -1, 900, 563)" filter="url(#타원_524)">
+        <circle id="타원_524-2" data-name="타원 524" cx="3" cy="3" r="3" transform="translate(148 11) rotate(180)" fill="#0068ed"/>
+      </g>
+    </g>
+    <circle id="타원_1232" data-name="타원 1232" cx="3" cy="3" r="3" transform="translate(199 1116) rotate(180)" fill="#fff"/>
+    <circle id="타원_1233" data-name="타원 1233" cx="3" cy="3" r="3" transform="translate(219 1116) rotate(180)" fill="#fff"/>
+    <circle id="타원_1234" data-name="타원 1234" cx="3" cy="3" r="3" transform="translate(239 1116) rotate(180)" fill="#fff"/>
+    <g transform="matrix(1, 0, 0, 1, 112, 1105)" filter="url(#타원_350)">
+      <circle id="타원_350-3" data-name="타원 350" cx="3" cy="3" r="3" transform="translate(46 11) rotate(180)" fill="#3b61d5"/>
+    </g>
+    <circle id="타원_1155" data-name="타원 1155" cx="3" cy="3" r="3" transform="translate(118 1116) rotate(180)" fill="#fff"/>
+    <circle id="타원_1156" data-name="타원 1156" cx="3" cy="3" r="3" transform="translate(158 1116) rotate(180)" fill="#fff"/>
+    <circle id="타원_525" data-name="타원 525" cx="3" cy="3" r="3" transform="translate(138 1116) rotate(180)" fill="#fff"/>
+    <circle id="타원_351" data-name="타원 351" cx="3" cy="3" r="3" transform="translate(179 1116) rotate(180)" fill="#fff"/>
+    <text id="F" transform="translate(112 1131)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em"><tspan x="0" y="0">F</tspan></text>
+    <text id="D0" transform="translate(129 1131)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em"><tspan x="0" y="0">D0</tspan></text>
+    <text id="D_" data-name="D+" transform="translate(150 1131)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em"><tspan x="0" y="0">D+</tspan></text>
+    <text id="C_" data-name="C+" transform="translate(190 1131)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em"><tspan x="0" y="0">C+</tspan></text>
+    <text id="B_" data-name="B+" transform="translate(231 1131)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em"><tspan x="0" y="0">B+</tspan></text>
+    <text id="A_" data-name="A+" transform="translate(272 1131)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em"><tspan x="0" y="0">A+</tspan></text>
+    <text id="B0" transform="translate(210 1131)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em"><tspan x="0" y="0">B0</tspan></text>
+    <text id="A0" transform="translate(251 1131)" fill="#0068ed" font-size="10" font-family="SpoqaHanSansNeo-Medium, Spoqa Han Sans Neo" font-weight="500" letter-spacing="-0.02em"><tspan x="0" y="0">A0</tspan></text>
+    <text id="C0" transform="translate(170 1131)" fill="#fff" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo" letter-spacing="-0.02em"><tspan x="0" y="0">C0</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_27142" data-name="사각형 27142" width="120" height="120" transform="translate(122 755)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.008" y1="-0.112" x2="0.962" y2="1.092" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffafbf"/>
+      <stop offset="1" stop-color="#ff4d6f"/>
+    </linearGradient>
+    <filter id="패스_10436" x="-11.953" y="-11.953" width="148.087" height="148.087" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+    </filter>
+    <filter id="패스_10436-2" x="-11.953" y="-11.953" width="148.087" height="148.087" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.251" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="B0" x="33.923" y="34.923" width="54" height="52" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-3"/>
+      <feFlood flood-color="#450c0c" flood-opacity="0.533"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="img_rank_b0" transform="translate(-122 -755)" clip-path="url(#clip-path)">
+    <g data-type="innerShadowGroup">
+      <g transform="matrix(1, 0, 0, 1, 122, 755)" filter="url(#패스_10436)">
+        <path id="패스_10436-3" data-name="패스 10436" d="M68.233,0,34.021.237a9.481,9.481,0,0,0-6.634,2.782L3.028,27.382A9.481,9.481,0,0,0,.24,34.01L0,68.223a9.221,9.221,0,0,0,2.7,6.6l24.02,24.023a9.222,9.222,0,0,0,6.6,2.7l34.212-.236a9.481,9.481,0,0,0,6.628-2.787L98.516,74.157a9.482,9.482,0,0,0,2.783-6.633l.24-34.213a9.217,9.217,0,0,0-2.69-6.591L74.823,2.691A9.216,9.216,0,0,0,68.233,0Z" transform="translate(-6 32.04) rotate(-22)" stroke="#fff" stroke-width="3" fill="url(#linear-gradient)"/>
+      </g>
+      <path id="패스_10436-4" data-name="패스 10436" d="M68.233,0,34.021.237a9.481,9.481,0,0,0-6.634,2.782L3.028,27.382A9.481,9.481,0,0,0,.24,34.01L0,68.223a9.221,9.221,0,0,0,2.7,6.6l24.02,24.023a9.222,9.222,0,0,0,6.6,2.7l34.212-.236a9.481,9.481,0,0,0,6.628-2.787L98.516,74.157a9.482,9.482,0,0,0,2.783-6.633l.24-34.213a9.217,9.217,0,0,0-2.69-6.591L74.823,2.691A9.216,9.216,0,0,0,68.233,0Z" transform="translate(116 787.037) rotate(-22)" fill="url(#linear-gradient)"/>
+      <g transform="matrix(1, 0, 0, 1, 122, 755)" filter="url(#패스_10436-2)">
+        <path id="패스_10436-5" data-name="패스 10436" d="M68.233,0,34.021.237a9.481,9.481,0,0,0-6.634,2.782L3.028,27.382A9.481,9.481,0,0,0,.24,34.01L0,68.223a9.221,9.221,0,0,0,2.7,6.6l24.02,24.023a9.222,9.222,0,0,0,6.6,2.7l34.212-.236a9.481,9.481,0,0,0,6.628-2.787L98.516,74.157a9.482,9.482,0,0,0,2.783-6.633l.24-34.213a9.217,9.217,0,0,0-2.69-6.591L74.823,2.691A9.216,9.216,0,0,0,68.233,0Z" transform="translate(-6 32.04) rotate(-22)" fill="#fff"/>
+      </g>
+      <path id="패스_10436-6" data-name="패스 10436" d="M68.233,0,34.021.237a9.481,9.481,0,0,0-6.634,2.782L3.028,27.382A9.481,9.481,0,0,0,.24,34.01L0,68.223a9.221,9.221,0,0,0,2.7,6.6l24.02,24.023a9.222,9.222,0,0,0,6.6,2.7l34.212-.236a9.481,9.481,0,0,0,6.628-2.787L98.516,74.157a9.482,9.482,0,0,0,2.783-6.633l.24-34.213a9.217,9.217,0,0,0-2.69-6.591L74.823,2.691A9.216,9.216,0,0,0,68.233,0Z" transform="translate(116 787.037) rotate(-22)" fill="none" stroke="#fff" stroke-width="3"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 122, 755)" filter="url(#B0)">
+      <text id="B0-2" data-name="B0" transform="translate(59.92 72.92)" fill="#fff" font-size="37" font-family="SpoqaHanSansNeo-Bold, Spoqa Han Sans Neo" font-weight="700"><tspan x="-23" y="0">B0</tspan></text>
+    </g>
+  </g>
+</svg>
