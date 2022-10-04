@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+    
+
+/*card input file images url css*/
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 1px solid #E8EAEF;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.filebox label {
+	display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    
+    width: 120px;
+    height: 30px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DDDDDD;
+    color: #666666;
+    box-sizing: border-box;
+}
+  
+/* named upload */
+.filebox .upload-name {
+	width: 335px;
+	background-color: #fff;
+	border: none;
+	height: 30px;
+	color: #333333;
+	line-height: 30px;
+	padding-left: 10px;
+	vertical-align: bottom; 
+    box-sizing: border-box;
+	-webkit-appearance: none;
+	
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.delBox img {
+	cursor: pointer;
+}
+
+.file_delete {
+	display: inline-block;
+	background: url("../images/icon/icon_file_delete.svg") no-repeat;
+	width: 16px;
+	height: 16px;
+	background-size: contain;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+</style>
+</head>
+<body>
+    <section>
+        <div class="file-div-wrapper" data-activity-template="true" data-activity="1">
+            <div class="filebox fileUpload-padding"> 
+                <label class="btn-file">파일 업로드
+                    <input type="file" name="file" id="imageFile" class="file-input-custom">
+                </label>
+                <input class="upload-name file-label-wrapper" disabled="disabled" id="printFile" value="" placeholder="선택된 파일 없음">
+                <button type="button" class="file_delete none" id="file_delete_btn"></button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+$("#file_delete_btn").on('click', function(e){
+    var delConfirm = confirm('첨부파일을 삭제 하시겠습니까?');
+    if(delConfirm){
+        $.ajax({
+            url : "${pageContext.request.contextPath}/user/deleteKioskFile",
+            method : "POST",
+            success : function(data) {	
+                    $("#printFile").val("");
+                    $("#file_delete_btn").addClass("none");
+                    $(".logout").children("span").children("img").remove();
+                    alert("삭제가 완료 되었습니다.");
+            },
+            error: function(xhr, status, err) {				
+                if (xhr.status == 403) {
+                    alert("세션이 만료되었습니다. 다시 로그인하세요.");
+                    location.reload();
+                } else if (xhr.status == 500) {
+                    alert("오류가 발생하였습니다. 관리자에게 문의하세요.");
+                }
+            }
+        });
+    }else{
+        alert("취소 되었습니다.");
+        return false;  
+    }
+});
+</script>
+</html>

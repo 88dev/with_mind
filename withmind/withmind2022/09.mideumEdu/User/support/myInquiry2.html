@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>나의 문의내역</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
+
+    <!-- 컨텐츠페이지의 CSS 영역이 들어감 -->
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+
+    <!-- 컨텐츠페이지의 스크립트 영역이 들어감 -->
+    <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script th:src="@{/js/common.js}"></script>
+
+</head>
+<th:block th:include="fragments/header"/>
+<main>
+    <article class="inquiry_area">
+        <section class="container">
+            <h5>나의 문의내역</h5>
+            <section class="contents">
+                <span class="total">총 <em>2개</em>의 문의 내역이 있습니다.</span>
+                <table>
+                    <tr>
+                        <th>제목</th>
+                        <th>작성일</th>
+                        <th>답변상태</th>
+                    </tr>
+                    <tr>
+                        <td><a th:href="@{/support/inquiry-detail}"><span class="kind">[문의구분]</span>사용자가 등록한 문의 제목이 표기되는 영역입니다.</a></td>
+                        <td>2022-09-01</td>
+                        <td><span class="complete">답변완료</span></td>
+                    </tr>
+                    <tr>
+                        <td><a><span class="kind">[상담문의]</span>사용자가 등록한 문의 제목이 표기되는 영역입니다.</a></td>
+                        <td>2022-09-01</td>
+                        <td><span class="before">답변 전</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><div class="no_result">등록된 1:1 문의가 없습니다.</div></td>
+                    </tr>
+                </table>
+            </section>
+        </section>
+    </article>
+</main>
+</html>

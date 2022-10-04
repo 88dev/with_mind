@@ -2,15 +2,97 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<link rel='styleSheet' href='css/reset.css' type='text/css'></link>
-<link rel='styleSheet' href='css/style.css' type='text/css'></link>
 <title></title>
+    <style>
+        ul, li, p {
+            margin: 0;
+            padding: 0;
+        }
+        .history_wrap {
+            display: flex;
+            max-width: 804px;
+            margin: 0 auto;
+        }
+        .history_wrap .year {
+            width: 155px;
+            padding-top: 25px;
+            font-size: 34px;
+            font-weight: 600;
+        }
+        ul {
+            width: calc(100% - 155px);
+        }
+        ul li {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            border-bottom: 1px solid #EEEEEE;
+            padding: 30px 0;
+        }
+        ul li .month {
+            color: #111111;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        ul li p {
+            margin-top: 14px;
+            font-size: 18px;
+            line-height: 28px;
+            word-break: keep-all;
+        }
+        ul li img {
+            width: 300px;
+            height: 180px;
+        }
+    </style>
 </head>
 <body>
-
+    
+<section class="history_area">
+    <div class="history_wrap">
+        <span class="year">2022</span>
+        <ul>
+            <li>
+                <div>
+                    <span class="month">2022년 4월</span>
+                    <p>2022 연혁 내용 텍스트 영역입니다.</p>
+                </div>
+                <img src="../images/img_history_220204.svg" />
+            </li>
+            <li>
+                <div>
+                    <span class="month">2022년 3월</span>
+                    <p>2022 연혁 내용 텍스트 영역입니다. 2022
+                        연혁 내용 텍스트 영역입니다.</p>
+                </div>
+                <img src="../images/img_history_220204.svg" />
+            </li>
+        </ul>
+    </div>
+    <div class="history_wrap">
+        <span class="year">2021</span>
+        <ul>
+            <li>
+                <div>
+                    <span class="month">2021년 4월</span>
+                    <p>2021 연혁 내용 텍스트 영역입니다.</p>
+                </div>
+                <img src="../images/img_history_220204.svg" />
+            </li>
+            <li>
+                <div>
+                    <span class="month">2021년 3월</span>
+                    <p>2021 연혁 내용 텍스트 영역입니다. 2021
+                        연혁 내용 텍스트 영역입니다.</p>
+                </div>
+                <img src="../images/img_history_220204.svg" />
+            </li>
+        </ul>
+    </div>
+</section>
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
 <script>
-
+    
 </script>
 </html>

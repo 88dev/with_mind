@@ -1,25 +1,173 @@
 /* 공통 */
 
 /* 버튼 */
-
+button {
+    outline: none;
+    border-radius: 2px;
+    font-size: 12px;
+}
+.btn_purple {
+    background: #7764CA;
+    color: #FFFFFF;
+    border: none;
+}
+.btn_white {
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+}
 /* 셀렉트 박스 */
+select {
+    background: #FFFFFF url('../images/icon_select_down.svg') no-repeat right 12px center;
+    border: 1px solid #EEEEEE;
+    border-radius: 2px;
+    padding: 7px 24px 7px 12px;
+    cursor: pointer;
 
+    -webkit-appearance:none; /* 크롬 화살표 없애기 */
+    -moz-appearance:none; /* 파이어폭스 화살표 없애기 */
+    appearance:none /* 화살표 없애기 */
+}
 /* 체크박스 */
 
 /* 라디오버튼 */
 
 /* 인풋[텍스트] */
 
+/* 달력 */
+.date_format {
+    background: #FFFFFF url('../images/icon_calendar.svg') no-repeat center right 8px;
+    border: 1px solid #EEEEEE;
+    height: 30px;
+    border-radius: 2px;
+    padding-left: 12px;
+}
 
-/* 모바일 */
-@media (max-width: 500px) { 
-    
-} 
-/* 테블릿 */
-@media (max-width: 768px) { 
-    
-} 
-/* 데스크탑 */
-@media (max-width: 1024px) { 
-    
-} 
+/* 내용 */
+.container {
+    position: absolute;
+    background: #F8F9FA;
+    top: 36px;
+    left: 240px;
+    width: calc(100vw - 240px);
+    min-height: calc(100vh - 36px);
+    padding: 30px 20px;
+    border: 1px solid blue;
+}
+.container h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+.container h2 span {
+    float: right;
+    color: #999999;
+    font-size: 12px;
+    font-weight: 500;
+}
+.container h2 span em {
+    color: #333333;
+}
+.container .wrap_period {
+    height: 90px;
+    margin-top: 14px;
+}
+.container .wrap_period table {
+    width: 100%;
+    height: 44px;
+}
+.container .wrap_period table th {
+    background: #F0F1F2;
+    width: 160px;
+}
+.container .wrap_period table td {
+    background: #FFFFFF;
+    width: calc(50% - 160px);
+    padding: 0 14px;
+}
+.container .wrap_period table input {
+    height: 30px;
+}
+.container .wrap_period table select {
+    width: 140px;
+    height: 30px;
+    font-size: 12px;
+}
+.container .wrap_period .wrap_btn {
+    float: right;
+    margin-top: 14px;
+}
+.container .wrap_period .wrap_btn button {
+    width: 100px;
+    height: 32px;
+    margin-left: 10px;
+}
+.container .wrap_chart {
+    padding-top: 30px;
+}
+.container .wrap_excel {
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+.container .wrap_excel .btn_excel {
+    position: absolute;
+    right: 0;
+    background: #FFFFFF url('../images/icon_excel.svg') no-repeat left 10px center / 14px;
+    border: 1px solid #3EA26A;
+    width: 110px;
+    height: 30px;
+    padding-left: 22px;
+    color: #0E8040;
+}
+.container .wrap_chart .wrap_grid {
+    display: grid;
+    grid-template-areas:
+    'statue_member statue_member'
+    'statue_inquiry statue_participate';
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 10px;
+}
+.container .wrap_chart .wrap_grid > div {
+    background: #FFFFFF;
+    padding: 20px;
+}
+.container .wrap_chart .wrap_grid .statue_member {
+    grid-area: statue_member;
+}
+.container .wrap_chart .wrap_grid .statue_inquiry {
+    grid-area: statue_inquiry;
+}
+.container .wrap_chart .wrap_grid .statue_participate {
+    grid-area: statue_participate;
+}
+.container .wrap_chart .wrap_grid strong {
+    font-size: 13px;
+    font-weight: 500;
+}
+.container .wrap_chart .wrap_grid .wrap_chart_label {
+    float: right;
+    border: 1px solid #EEEEEE;
+    border-radius: 2px;
+    padding: 7px 14px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.container .wrap_chart .wrap_grid .wrap_chart_label span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 1px;
+    margin-right: 7px;
+}
+.container .wrap_chart .wrap_grid .wrap_chart_label span:not(:first-of-type) {
+    margin-left: 16px;
+}
+.container .wrap_chart .wrap_grid .wrap_chart_label span:nth-of-type(1) {
+    background: #D9D2FF;
+}
+.container .wrap_chart .wrap_grid .wrap_chart_label span:nth-of-type(2) {
+    background: #FFBA52;
+}
+.container .wrap_chart .wrap_grid .wrap_chart_label span:nth-of-type(3) {
+    background: #FF7E7E;
+}

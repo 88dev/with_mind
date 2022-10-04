@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<title></title>
+<style>
+    *{
+        padding:0; 
+        margin:0;
+        box-sizing: border-box;
+    }
+
+    .list_menu {
+        width: 240px; 
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 13px;
+    }
+    .list_menu li {
+        border-bottom: 1px solid #F4F4F4;
+    }
+    .list_menu .menu {
+        background: #333333;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 18px;
+        color: #FFFFFF;
+    }
+    .list_menu li span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px; 
+        line-height: 40px; 
+        padding: 0 18px;
+        color: #333333;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .list_menu li span.on {
+        color: #7764CA;
+        font-weight: 700;
+    }
+    .list_menu li span::after {
+        position: absolute;
+        content: '';
+        background: url('../images/icon_arrow_down.svg') no-repeat center / 14px;
+        top: 13px;
+        right: 18px;
+        width: 14px;
+        height: 14px;
+    }
+    .list_menu li span.on::after {
+        background: url('../images/icon_arrow_up.svg') no-repeat center / 14px;
+    }
+    .list_menu li .li_none::after,
+    .list_menu li .li_none.on::after {
+        background: none;
+    }
+    .list_menu li .list_subMenu {
+        background: #F8F7FE;
+        padding: 8px 0;
+        list-style: none;
+    }
+    .list_menu li .list_subMenu li {
+        position: relative;
+        height: 36px;
+        line-height: 36px;
+        color: #333333;
+        padding: 0 28px;
+    }
+    .list_menu li .list_subMenu li.on {
+        color: #7764CA;
+        font-weight: 700;
+    }
+</style>
+</head>
+<body>
+
+    <ul class="list_menu">
+        <li class="menu">메뉴 항목 1</li>
+        <li>
+            <span href="#" class="li_none on">대시보드</span>
+        </li>
+        <li>
+            <span class="">메인 관리</span>
+            <ul class="list_subMenu">
+                <li class=""><a>배너 관리</a></li>
+                <li><a>팝업 관리</a></li>
+            </ul>
+        </li>
+        <li>
+            <span href="#" class="li_none">회원 관리</span>
+        </li>
+        <li>
+            <span href="#">서비스 관리</span>
+            <ul class="list_subMenu">
+                <li><a>문의 관리</a></li>
+                <li><a>약관 관리</a></li>
+                <li><a>채용/역량 강화 관리</a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+    $(document).ready(function(){
+        $(".list_subMenu").hide();
+        $(".list_subMenu.on").slideToggle(300);
+
+        $("ul li span").click(function(){
+            // $(this).addClass("on");
+            $(this).next().slideToggle(300);
+            $(this).next().addClass("on");
+            $("ul li span").not(this).next().slideUp(300);
+            $("ul li span").not(this).next().removeClass("on");
+            $("ul li span").not(this).removeClass("on");
+
+
+            if($(this).hasClass("on")) {
+                console.log("off!!!!!!");
+                $(this).removeClass("on");
+            } else {
+                console.log("on!!");
+                $(this).addClass("on");
+            }
+
+            return false;
+        });
+    });
+</script>
+</html>
