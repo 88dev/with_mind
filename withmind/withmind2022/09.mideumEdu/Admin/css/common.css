@@ -17,12 +17,37 @@ header .login_info {
     color: #FFFFFF;
     font-size: 12px;
 }
-header .login_info div {
+header .login_info .left {
+    float: left;
+}
+header .login_info .auto {
     display: inline-block;
     margin-left: 13px;
 }
 header .login_info span {
     font-weight: 700;
+}
+header .login_info .right {
+    float: right;
+}
+header .login_info .right button {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+}
+header .login_info .right .logout {
+    position: relative;
+    margin-right: 5px;
+    padding-right: 10px;
+}
+header .login_info .right .logout::after {
+    position: absolute;
+    content: '';
+    top: 5px;
+    right: 0;
+    width: 1px;
+    height: 8px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 

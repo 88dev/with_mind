@@ -10,7 +10,13 @@
 <body>
     <header>
         <section class="login_info">
-            홍길동님 안녕하세요.<div>자동 로그아웃까지 남은시간 : <span class="time">118분 50초</span></div>
+            <div class="left">
+                홍길동님 안녕하세요.<div class="auto">자동 로그아웃까지 남은시간 : <span class="time">118분 50초</span></div>
+            </div>
+            <div class="right">
+                <button type="button" class="logout">로그아웃</button>
+                <button type="button" class="my_page">정보수정</button>
+            </div>
         </section>
     </header>
     <nav>
@@ -65,7 +71,7 @@
         </section>
         <section class="wrap_chart">
             <div class="wrap_btn wrap_excel">
-                <button class="btn_excel">엑셀다운로드</button>
+                <button type="button" class="btn_excel">엑셀다운로드</button>
             </div>
             <section class="wrap_grid">
                 <div class="statue_member">
@@ -100,8 +106,8 @@
     </section>
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
-<script src='js/datepicker_common.js'></script>
-<script src='js/daterangepicker.min.js'></script>
+<!-- <script src='js/datepicker_common.js'></script>
+<script src='js/daterangepicker.min.js'></script> -->
 <script>
 $(document).ready(function(){
     $(".list_subMenu").hide();
