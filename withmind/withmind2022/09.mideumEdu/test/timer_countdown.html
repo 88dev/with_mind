@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<title></title>
+<style>
+    .warp_timer {
+        position: relative;
+    }
+    .warp_timer .num {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .timer {
+        background: -webkit-linear-gradient(left, #497BFE 50%, #eee 50%);
+        border-radius: 100%;
+        height: 100px;
+        width: 100px;
+        position: relative;
+
+        -webkit-animation: time 30s steps(1000, start) alternate;
+        -webkit-mask: radial-gradient(transparent 50%,#000 50%);
+        mask: radial-gradient(transparent 50%,#000 50%);
+    }
+    .mask {
+        border-radius: 100% 0 0 100% / 50% 0 0 50%;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 50%;
+        -webkit-animation: mask 30s steps(500, start) alternate;
+        -webkit-transform-origin: 100% 50%;
+    }
+    @-webkit-keyframes time {
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    @-webkit-keyframes mask {
+        0% {
+            background: #eee;
+            -webkit-transform: rotate(0deg);
+        }
+        50% {
+            background: #eee;
+            -webkit-transform: rotate(-180deg);
+        }
+        50.01% {
+            background: #497BFE;
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            background: #497BFE;
+            -webkit-transform: rotate(-180deg);
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- <div class="timer" style="--duration: 3;--size: 30;">
+        <div class="mask"></div>
+    </div> -->
+    
+    <div class="wrap_timer">
+        <div class="num">30</div>
+        <div class="timer">
+            <div class="mask"></div>
+        </div>
+    </div>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+</script>
+</html>

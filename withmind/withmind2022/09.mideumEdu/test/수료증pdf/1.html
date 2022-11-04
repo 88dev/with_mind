@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<title></title>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    @font-face {
+        font-family: 'ChosunCentennial_ttf';
+        src: url('./font/ChosunCentennial_ttf.ttf') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, div,body { -webkit-print-color-adjust:exact; }
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'ChosunCentennial_ttf';
+    }
+    .pdf {
+        position: relative;
+        border: 1px solid red;
+        width: 595px;
+        height: 841px;
+        margin: 0px;
+        padding: 40px 30px;
+        overflow: hidden;
+        
+    }
+    h1 {
+        text-align: center;
+    }
+    ul {
+        margin: 50px 0 0 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    #content ul li:nth-of-type(1),
+    #content ul li:nth-of-type(2) {
+        display: inline-block;
+        width: 49%;
+    }
+    #content ul li:not(:last-of-type) {
+        margin-bottom: 10px;
+    }
+    #content ul li b {
+        display: inline-block;
+        width: 100px;
+    }
+    #content p {
+        margin-top: 100px;
+        text-align: center;
+    }
+    #content .date {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+    }
+    #content img {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
+</head>
+<body>
+
+    <button id="save-pdf">save as pdf</button>
+    <div id="content" class="pdf">
+        <h1>수     료     증</h1>
+        <ul>
+            <li><b>성명:</b>홍길동</li>
+            <li><b>생년월일:</b>2000년 01월 01일</li>
+            <li><b>소속회사:</b>(주)미듬에듀</li>
+            <li><b>훈련과정:</b>직장 내 성희롱 예방교육</li>
+            <li><b>훈련기간:</b>2022년 04월 29일 ~ 2022년 12월 31일 (1h)</li>
+            <li><b>교육장소:</b>인터넷 훈련과정</li>
+        </ul>
+        <p>
+            위 사람은 본 교육원이 실시한<br>
+            상기의 교육을 성실히 수행하였기에<br>
+            본 증서를 수여합니다.
+        </p>
+        <span class="date">2022년 11월 3일</span>
+        <img src="../images/edu_stamp.PNG" />
+    </div>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script src='./font.js'></script>
+<script>
+
+    var content = document.querySelector("#save-pdf");
+    content.onclick = function() {
+
+        var _fonts = font();  //해당 내용이 엄청 길어서..따로 분리하여 사용하세요!
+
+        console.log(_fonts);
+
+        console.log('creating pdf');
+        var doc = new jspdf.jsPDF({unit: "pt"});
+
+        doc.addFileToVFS('ChosunCentennial_ttf.ttf', _fonts);  //_fonts 변수는 Base64 형태로 변환된 내용입니다.
+        doc.addFont('ChosunCentennial_ttf.ttf','ChosunCentennial_ttf', 'normal');
+        doc.setFont('ChosunCentennial_ttf'); 
+
+        // doc.addFileToVFS('ChosunCentennial_ttf');  //_fonts 변수는 Base64 형태로 변환된 내용입니다.
+        // doc.addFont('ChosunCentennial_ttf','ChosunCentennial_ttf', 'normal');
+        // doc.setFont('ChosunCentennial_ttf');
+        
+        var content = document.querySelector('#content');
+        doc.html(content, {
+            callback: function (doc) {
+                doc.save('수료증.pdf');
+            },
+            // margin: [50, 50, 50, 50],
+            // html2canvas: {
+            //  scale: 1,
+            // },
+            // x: 10,
+            // y: 10
+        });
+    }
+</script>
+</html>

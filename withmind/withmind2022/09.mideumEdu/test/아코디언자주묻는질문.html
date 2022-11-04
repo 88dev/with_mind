@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<title>자주묻는 질문</title>
+<style>
+    *{
+        padding:0; 
+        margin:0;
+        box-sizing: border-box;
+    }
+    .wrap_faq table {
+        width: 100%; 
+        border-top: 1px solid #333333;
+        list-style: none;
+        color: #111111;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .wrap_faq table th .grid_faq, .wrap_faq table td .grid_faq {
+        display: grid;
+        grid-template-areas: 
+        'no sort title';
+        grid-template-columns: 75px 120px auto;
+        text-align: center;
+        cursor: pointer;
+        border-bottom: 1px solid #EEEEEE;
+        width: 100%;
+        color: #333333;
+        cursor: pointer;
+    }
+    .wrap_faq table th .grid_faq > div,
+    .wrap_faq table td .grid_faq > div  {
+        padding: 20px 0;
+    }
+    .wrap_faq table .grid_faq .title {
+        position: relative;
+        grid-area: title;
+    }
+    .wrap_faq table td .grid_faq .title {
+        padding: 20px 50px 20px 30px;
+        text-align: left;
+    }
+    .wrap_faq table td .grid_faq .title::after {
+        position: absolute;
+        content: '';
+        background: url('./images/arrow_down.svg') no-repeat;
+        top: 50%;
+        right: 23px;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+    }
+    .wrap_faq table td .grid_faq.on .title::after {
+        background: url('./images/arrow_up.svg') no-repeat;
+    }
+    .wrap_faq table .grid_faq .no {
+        grid-area: no;
+    }
+    .wrap_faq table .grid_faq .sort {
+        grid-area: sort;
+    }
+    .wrap_faq table .qna_cont {
+        background: #F8F8F8;
+        padding: 30px;
+        list-style: none;    
+        line-height: 25px;
+        word-break: keep-all;
+    }
+    .wrap_faq table .qna_cont span {
+        color: #ED5B66;
+        text-decoration: underline;
+    }
+    @media (max-width: 650px) {
+        .wrap_faq table th {
+            display: none;
+        }
+        .wrap_faq table td .grid_faq {
+            display: flex;
+            padding: 20px;
+        }
+        .wrap_faq table td .grid_faq .title {
+            display: block;
+            width: calc(100% - 45px);
+            padding: 0 20px 0 0;
+        }
+        .wrap_faq table td .grid_faq .title::after {
+            right: 0;
+        }
+        .wrap_faq table td .grid_faq .sort {
+            position: relative;
+            display: inherit;
+            padding: 0 5px;
+            margin-right: 5px;
+        }
+        .wrap_faq table td .grid_faq .sort::before,
+        .wrap_faq table td .grid_faq .sort::after {
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            top: -1px;
+        }
+        .wrap_faq table td .grid_faq .sort::before {
+            content: '[';
+            left: 0;
+        }
+        .wrap_faq table td .grid_faq .sort::after {
+            content: ']';
+            right: 0;
+        }
+        .wrap_faq table td .grid_faq .no {
+            display: none;
+            padding-right: 16px;
+        }
+        .wrap_faq table .qna_cont {
+            padding: 24px;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <section class="wrap_faq">
+        <table>
+            <tr>
+                <th>
+                    <div class="grid_faq">
+                        <div class="no">번호</div>
+                        <div class="sort">구분</div>
+                        <div class="title">제목</div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="grid_faq on">
+                        <div class="no">2</div>
+                        <div class="sort">기타</div>
+                        <div class="title">고용보험 환급제도란 무엇인가요?</div>
+                    </div>
+                    <div class="qna_cont on">
+                        중간평가의 경우 60분의 시험 제한시간이 있습니다. 학습종료일까지는 반드시 중간평가 응시를 완료해 주셔야 합니다.<br>
+                        <span>평가 입장 시 제한시간은 접속종료 등의 상태에서도 중단 없이 계속 흘러가게 됩니다.</span><br>
+                        <br>
+                        예를 들어, 5시에 입장 시 학습자의 사정 창을 종료하셔도 6시에 평가가 종료되오니 이 점 유의하시어 응시하여 주시기 바랍니다.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="grid_faq">
+                        <div class="no">1</div>
+                        <div class="sort">평가</div>
+                        <div class="title">법정의무교육 과정 변경 정책의 건</div>
+                    </div>
+                    <div class="qna_cont">
+                        중간평가의 경우중간평가의 경우
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+    $(document).ready(function(){
+        $(".qna_cont").hide();
+        $(".qna_cont.on").slideToggle(300);
+
+        $(".grid_faq").click(function(){
+            $(this).next().slideToggle(300);
+            $(this).next().addClass("on");
+            if($(this).hasClass("on")) {
+                $(this).removeClass("on");
+            } else {
+                $(this).addClass("on");
+            }
+            return false;
+        });
+    });
+</script>
+</html>

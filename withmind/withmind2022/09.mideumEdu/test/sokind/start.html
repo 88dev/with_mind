@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+
+<title>sokind 시작</title>
+<style>
+    body{
+        margin: 0;
+    }
+    .m_camera {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+    .m_camera video {
+        width: 100%;
+        height: 100%;
+    }
+    #start .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(17, 17, 17, 0.6);
+        backdrop-filter: blur(2px);
+        width: 100%;
+        height: 100%;
+    }
+    .m_camera .cont {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .m_camera .cont .q {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+        width: 320px;
+        height: 132px;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+    .m_camera .cont button {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: transparent;
+        outline: none;
+        border: none;
+        padding-top: 72px;
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+    .m_camera .cont button::before {
+        position: absolute;
+        content: '';
+        background: url('../images/btn_mic.svg') no-repeat center / 64px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 64px;
+        height: 64px;
+    }
+</style>
+</head>
+<body>
+    <section id="start" class="m_camera">
+        <video></video>
+        <div class="cover"></div>
+        <section class="cont">
+            <div class="q">
+                “고객님! 찾으시는 제품과 비슷한 것으로 다양한 가격대 상품을 추천해드릴게요. 이 쪽에서 안내
+                도와드리겠습니다.”
+            </div>
+            <button type="button">
+                버튼을 눌러 말해주세요.
+            </button>
+        </section>
+    </section>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+</script>
+</html>

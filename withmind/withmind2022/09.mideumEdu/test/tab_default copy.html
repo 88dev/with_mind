@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .wrap_tab {
+                border: 1px solid red;
+                /* width: 804px; */
+                font-size: 15px;
+            }
+            .tab_title {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .tab_title li {
+                list-style: none;
+                /* float: left; */
+                width: 25%;
+                padding: 11.5px 15px;
+                cursor: pointer;
+                text-align: center;
+                border: 1px solid #EEEEEE;
+            }
+            .tab_title li.on {
+                background: #497BFE;
+                border: 1px solid #497BFE;
+                color: #FFFFFF;
+            }
+            .tab_cont {
+                clear: both;
+                border: 1px solid #dedede;
+                height: 130px;
+                background-color: #cecece;
+            }
+            .tab_cont section {
+                display: none;
+            }
+            .tab_cont section.on {
+                display: block;
+            }
+            @media (max-width: 650px) { 
+                .tab_title li {
+                    width: 50%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="wrap_tab tab_name">
+            <ul class="tab_title">
+                <li class="on">전체</li>
+                <li>회원가입</li>
+                <li>학습</li>
+                <li>평가</li>
+                <li>과제</li>
+                <li>회원탈퇴</li>
+                <li>기타</li>
+            </ul>
+            <section class="tab_cont">
+                <section class="on">
+                    tab1_content
+                </section>
+                <section>
+                    tab2_content
+                </section>
+                <section>
+                    tab3_content
+                </section>
+                <section>
+                    tab4_content
+                </section>
+                <section>
+                    tab5_content
+                </section>
+                <section>
+                    tab6_content
+                </section>
+                <section>
+                    tab7_content
+                </section>
+            </section>
+        </section>
+
+    </body>
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script>
+        $(document).ready(function() {
+            $(".tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".tab_title li").removeClass("on");
+                $(".tab_title li").eq(idx).addClass("on");
+                $(".tab_cont > section").hide();
+                $(".tab_cont > section").eq(idx).show();
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='../css/reset.css' type='text/css'></link>
+<link rel='styleSheet' href='../css/style.css' type='text/css'></link>
+<title></title>
+<style>
+    .close-fullscreen {display: none}
+</style>
+</head>
+<body>
+    <a class="fullscreen" href="#" title="전체화면" onclick="openFullScreenMode()">
+        전체화면
+    </a>
+    <a class="close-fullscreen" href="#" title="창모드" onclick="closeFullScreenMode()">
+        창모드
+    </a>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+    var doc = document.documentElement;
+    // 전체화면 설정
+    function openFullScreenMode() {
+        if (doc.requestFullscreen)
+            doc.requestFullscreen();
+        else if (doc.webkitRequestFullscreen) // Chrome, Safari (webkit)
+            doc.webkitRequestFullscreen();
+        else if (doc.mozRequestFullScreen) // Firefox
+            doc.mozRequestFullScreen();
+        else if (doc.msRequestFullscreen) // IE or Edge
+            doc.msRequestFullscreen();
+        $('.fullscreen').hide();
+        $('.close-fullscreen').show();
+    }
+    // 전체화면 해제
+    function closeFullScreenMode() {
+        if (document.exitFullscreen)
+            document.exitFullscreen();
+        else if (document.webkitExitFullscreen) // Chrome, Safari (webkit)
+            document.webkitExitFullscreen();
+        else if (document.mozCancelFullScreen) // Firefox
+            document.mozCancelFullScreen();
+        else if (document.msExitFullscreen) // IE or Edge
+            document.msExitFullscreen();
+        $('.fullscreen').show();
+        $('.close-fullscreen').hide();
+    }
+
+</script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<title></title>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    
+    .pdf {
+        border: 1px solid red;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 20px;
+    }
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    @media print {
+        html, body {
+            width: 210mm;
+            height: 297mm;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <button id="save-pdf">save as pdf</button>
+    <div id="content" class="pdf">
+        <img src="../images/img_logo_01.png" />
+        <h1>Lorem Ipsum</h1>
+        <div>
+        Known problems when rendering PDF:
+        <ul>
+            <li>The content doesn't respect page boundaries</li>
+            <li>The content looks zoomed in</li>
+            <li>The content is pasted across PDF pages</li>
+        </ul>
+        </div>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum vitae erat non pellentesque. Maecenas varius in risus eget vestibulum. Donec in tincidunt mi. Nullam finibus lorem elit, sit amet tristique ligula commodo a. Nullam eu tincidunt libero, quis sagittis metus. Donec varius eu mauris ut condimentum. Integer ac tortor magna. Etiam faucibus, velit ac tempor accumsan, urna dui condimentum felis, id ullamcorper lorem turpis nec ante. Donec diam quam, viverra a erat sed, venenatis efficitur libero. Vivamus est lectus, facilisis a tincidunt at, euismod vitae diam. Donec non ante enim. Nunc pharetra, felis non tristique mollis, neque dolor sodales lorem, quis sodales nisi leo et nibh.
+        </p>
+        <div>
+        <img src="https://placekitten.com/600/300">
+        </div
+        <p>
+        Sed pulvinar tempor augue, quis sodales lacus scelerisque in. Nullam lobortis tortor vel nunc aliquam facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a leo non leo mattis interdum. Etiam nec varius massa. Proin id elit sagittis, fermentum tortor sed, maximus lorem. Praesent tincidunt quam in ipsum hendrerit accumsan ac id lacus. Maecenas felis velit, pharetra sit amet viverra eget, euismod ut sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed mollis nisl a augue consequat suscipit. Morbi vehicula aliquam lacus ac ultrices.
+        </p>
+        <div>
+        <img src="https://placekitten.com/600/300">
+        </div
+        <p>
+        Nullam et massa ac sem pellentesque laoreet. Curabitur blandit mollis elit et dictum. Aliquam elementum lectus ac ipsum semper ultricies. Quisque orci mi, suscipit vel malesuada a, cursus nec purus. Suspendisse in sem nisl. Nullam egestas, nunc sit amet tincidunt vulputate, libero lectus ornare massa, at mattis enim erat dictum elit. Sed a efficitur orci. Integer mollis lobortis egestas. Pellentesque ullamcorper lobortis purus, non molestie felis tempor vitae. Vestibulum non feugiat lacus. In a consectetur massa, id pharetra tortor.
+        </p>
+        <div>
+        <img src="https://placekitten.com/600/300">
+        </div
+        <p>
+        Curabitur metus justo, pellentesque ac dignissim ac, fringilla quis elit. Proin eros dolor, pretium ut nulla id, hendrerit porta risus. Maecenas pretium ipsum eros, vulputate porttitor mauris tristique non. Donec at mauris semper, consequat neque non, porta neque. Integer semper, odio sed suscipit rutrum, nisl quam pellentesque nisi, et aliquet nibh quam ac augue. Sed iaculis imperdiet arcu, in posuere lorem condimentum ac. Morbi commodo maximus libero, vitae consectetur eros sodales vitae. Vivamus faucibus enim sit amet libero laoreet, in euismod elit fermentum. Phasellus et sodales enim. Sed accumsan, felis sed pulvinar aliquet, magna enim semper dolor, condimentum faucibus turpis dolor nec libero. Curabitur molestie, urna sed elementum tempor, nibh ante aliquet elit, lobortis tempus velit diam vel libero. Nulla scelerisque dictum varius. Aenean quis pellentesque ex. Duis a euismod ligula. Mauris tristique massa augue, id varius massa scelerisque commodo.
+        </p>
+        <p>
+        Vivamus consequat tortor a libero tincidunt, vel faucibus est porttitor. Fusce vitae ultricies dui. Donec id est quis dolor lobortis pulvinar id ut ante. Nullam eget fringilla lectus. Vestibulum sollicitudin velit eget rutrum tristique. Pellentesque in ornare nulla. Curabitur dolor diam, venenatis vel felis ac, feugiat efficitur quam. Vestibulum dictum nunc in leo tincidunt luctus. Ut felis augue, tempor eu ligula id, vulputate mattis justo. Nulla a nisl commodo mauris facilisis aliquet id sed felis. Proin bibendum rutrum nisi rhoncus lacinia. Fusce ullamcorper augue erat. Etiam ligula leo, gravida ut fringilla nec, eleifend nec eros. Nam vitae lectus dolor.
+        </p>
+        <p>
+        Phasellus tincidunt mattis mi, vel lobortis justo sollicitudin at. Aenean ut diam magna. Sed ultrices posuere augue, aliquet tincidunt libero viverra ac. Maecenas mollis volutpat diam faucibus semper. Integer placerat leo a nunc rhoncus, in egestas mi dignissim. Aenean a felis in leo placerat condimentum quis id eros. Ut a lorem sed lectus iaculis auctor non id metus. Quisque eget felis sagittis, elementum libero id, blandit ex. Praesent vehicula orci id elit egestas pellentesque. Morbi ac bibendum quam, eget pharetra leo. Phasellus ultricies, leo a porta hendrerit, ex justo volutpat magna, sit amet eleifend nunc turpis sit amet nulla. Vivamus nec condimentum ex. Mauris ut ornare elit. Nulla facilisi. Proin elementum cursus urna, in elementum lorem pretium nec. In imperdiet pretium ante nec blandit.
+        </p>
+        <p>
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus nec quam at interdum. Sed pellentesque, orci sodales tempor finibus, massa quam ultrices arcu, malesuada pharetra risus risus sit amet est. In hac habitasse platea dictumst. Vestibulum nunc ante, pulvinar a interdum sed, porttitor quis nisi. Nulla vel ipsum tincidunt, lobortis nibh eget, laoreet odio. Nam id sapien felis. Sed feugiat accumsan diam, fermentum euismod sapien convallis vitae. Nullam justo neque, condimentum a dictum in, aliquam quis augue. Sed porttitor fermentum urna, nec tempor velit imperdiet et. Cras consequat dui est, sed laoreet odio efficitur ut. Curabitur suscipit turpis vitae ligula bibendum mollis. Duis tristique dolor nec risus posuere, ac eleifend est posuere.
+        </p>
+        <p>
+        Aliquam cursus in mauris a vehicula. Etiam varius pellentesque quam sit amet dignissim. Sed venenatis fermentum nisi ut ultricies. Curabitur laoreet tellus suscipit augue suscipit convallis. Proin pretium turpis id lorem auctor, id pulvinar metus fringilla. Donec mattis velit urna, et interdum urna finibus ut. Vivamus volutpat, nisl eu fringilla viverra, neque nunc volutpat est, vel molestie turpis mi ac urna. Quisque condimentum libero sed luctus vehicula. Curabitur metus sem, malesuada id congue sit amet, feugiat vel metus.
+        </p>
+        <p>
+        Nam mattis tortor quis quam consectetur vulputate. Fusce condimentum nec diam in sodales. Ut at enim vehicula, tempus lacus sed, iaculis libero. In hac habitasse platea dictumst. Integer volutpat mollis tortor, in venenatis justo congue vitae. Donec venenatis vulputate enim, ac malesuada neque sagittis vitae. Donec in nunc et massa iaculis imperdiet sed vitae dui. Sed enim mauris, gravida ut ipsum non, accumsan efficitur eros. Aliquam ac metus dapibus, laoreet tortor a, ullamcorper massa.
+        </p>
+        <p>
+        Nulla magna dolor, mollis elementum ligula non, interdum efficitur nisl. Donec sed ultrices mi. Vestibulum fermentum, eros sit amet eleifend rhoncus, orci libero tempor mauris, sed efficitur quam massa ac massa. Quisque tellus tortor, auctor ut faucibus in, pulvinar a orci. Donec vitae nulla semper turpis sodales varius in id nulla. Etiam at magna cursus leo consectetur maximus id id massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi semper purus sit amet nisi egestas, sit amet molestie sapien laoreet. Nam facilisis vestibulum semper. Praesent hendrerit diam orci, sed convallis erat tristique ut. Fusce fermentum felis id mauris tincidunt egestas. Etiam faucibus facilisis dolor, sit amet fermentum nibh bibendum eu. Aliquam et massa a velit ornare ornare. Nullam vulputate ut est sed dignissim. Cras risus quam, porttitor vel tellus vitae, commodo ultricies augue. Curabitur dictum augue tristique tellus ornare semper.
+        </p>
+    </div>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+    var content = document.querySelector("#save-pdf");
+    content.onclick = function() {
+        console.log('creating pdf');
+        var doc = new jspdf.jsPDF({unit: "pt"});
+        var content = document.querySelector('#content');
+        doc.html(content, {
+            callback: function (doc) {
+                doc.save();
+            },
+            // margin: [50, 50, 50, 50],
+            // html2canvas: {
+            //  scale: 1,
+            // },
+            // x: 10,
+            // y: 10
+        });
+    }
+</script>
+</html>

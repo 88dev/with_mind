@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .wrap_tab {
+                width: 280px;
+                border: 1px solid #EEEEEE;
+                border-radius: 4px 4px 0 0;
+            }
+            .tab_title {
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+            .tab_title li {
+                list-style: none;
+                float: left;
+                flex: 1;
+                height: 42px;
+                line-height: 42px;
+                cursor: pointer;
+                font-size: 14px;
+                text-align: center;
+            }
+            .tab_title li:first-of-type {
+                border-radius: 4px 0px 0px 0px;
+            }
+
+            .tab_title li:last-of-type {
+                border-radius: 0px 4px 0px 0px;
+            }
+            .tab_title li.on {
+                background-color: #333333;
+                color: #FFFFFF;
+            }
+            .tab_cont {
+                clear: both;
+                height: 490px;
+                border-top: 1px solid #EEEEEE;
+                padding: 16px;
+            }
+            .tab_cont section {
+                display: none;
+            }
+            .tab_cont section.on {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+            
+            <section class="wrap_tab">
+                <ul class="tab_title">
+                    <li class="on">학습요강</li>
+                    <li>질문하기</li>
+                </ul>
+                <section class="tab_cont">
+                    <section class="on">
+                        tab1_content
+                    </section>
+                    <section>
+                        tab2_content
+                    </section>
+                </section>
+            </section>
+
+    </body>
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script>
+        $(document).ready(function() {
+            $(".tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".tab_title li").removeClass("on");
+                $(".tab_title li").eq(idx).addClass("on");
+                $(".tab_cont > section").hide();
+                $(".tab_cont > section").eq(idx).show();
+            });
+        });
+    </script>
+</html>

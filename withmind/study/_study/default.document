@@ -1,0 +1,53 @@
+API post test 
+
+// html
+{/* <table>
+    <thead>
+    <tr>
+        <th></th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>날짜</th>
+        <th>수정</th>
+    </tr>
+    </thead> 
+    <tbody id="content-tbody">
+    <tr>
+        <th>1</th>
+        <td>문의 제목 1</td>
+        <td>문의 내용 1</td>
+        <td>2022-10-19</td>
+    </tr>
+    </tbody>
+</table> */}
+
+
+// $(document).ready(function () {
+
+//     $.ajax({
+//         type: "get", // HTTP METHOD post, get , post ,delete
+//         url: "/api/posts", // API URL
+//         contentType: "application/json;charset=utf-8", // 요청 데이터에 타입
+//         dataType: 'json', // 응답 데이터 타입
+//     }).done(res => { // 응답 성공
+
+//         let item = "";
+//         for (let i = 0; i < res.data.length; i++) {
+//             item += "<tr>";
+//             item += "<th>"+res.data[i].id+"</th>";
+//             item += "<td>"+res.data[i].subject+"</td>";
+//             item += "<td>"+res.data[i].content+"</td>";
+//             item += "<td>"+res.data[i].datetime+"</td>";
+//             item += "<td><a href='/post/updateForm?id="+res.data[i].id+"'>수정</a></td>";
+//             item += "<td><a onclick='deleteBtn("+res.data[i].id+");'>삭제</a></td>";
+//             item += "</tr>";
+//         }
+//         $("#content-tbody").html(item);
+//     }).fail(error => { // 응답 실패
+//         if(error.responseJSON.data == null){
+//             alert(error.responseJSON.message);
+//         }else{
+//             alert(JSON.stringify(error.responseJSON.data));
+//         }
+//     });
+// });

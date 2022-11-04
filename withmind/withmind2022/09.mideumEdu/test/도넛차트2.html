@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<title></title>
+<style>
+.donut {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.donut-default {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.donut-white {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: #fff;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.donut-line {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.donut-text {
+  top: 25px;
+  left: 25px;
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.donut-text span {
+  color: #48b2c1;
+}
+
+/* ============ instalment 1 ==========*/
+
+.instalment1 .donut-case {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #48b2c1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-clip: border-box;
+  overflow: hidden;
+}
+
+.instalment1 .donut-case::before {
+  content: "";
+  clip: rect(0 200px 100px 0);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(180deg);
+  background: #cbcb41;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.instalment1 .donut-case::after {
+  content: "";
+  clip: rect(0 100px 200px 0);
+  -webkit-transform: rotate(327.6deg);
+  transform: rotate(360deg);
+  background: #cbcb41;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* .instalment1 .donut-line::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  background: #fff;
+  z-index: 2;
+} */
+
+/* .instalment1 .donut-line::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  z-index: 2;
+} */
+
+
+
+</style>
+</head>
+<body>
+
+    <div class="donut instalment1">
+        <div class="donut-default"></div>
+        <div class="donut-line"></div>
+        <div class="donut-text">
+            <span>check</span>
+        </div>
+        <div class="donut-case"></div>
+    </div>
+    
+    
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+    
+
+</script>
+</html>
