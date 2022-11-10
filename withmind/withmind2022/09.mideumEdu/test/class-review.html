@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<title>수강후기</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    .wrap_review {
+        width: 100%;
+        max-width: 804px;
+        border-top: 1px solid #555555;
+        font-size: 14px;
+
+        margin: 30px auto;
+    }
+    .wrap_review .review {
+        display: flex;
+        gap: 30px;
+        padding: 20px;
+        border-bottom: 1px solid #EEEEEE;
+    }
+    .wrap_review .review .rating {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 96px;
+    }
+    .wrap_review .review .rating .num {
+        display: block;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+    .wrap_review .review .rating .num em {
+        display: inline-block;
+        margin-right: 2px;
+        font-size: 20px;
+        font-style: normal;
+    }
+    .wrap_review .review .comment strong {
+        color: #555555;
+        font-weight: 500;
+    }
+    .wrap_review .review .comment .info {
+        margin-top: 5px;
+        color: #AAAAAA;
+    }
+    .wrap_review .review .comment .info .name {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .wrap_review .review .comment p {
+        margin-top: 10px;
+    }
+
+    @media (max-width: 650px) { 
+        .wrap_review .review {
+            flex-direction: column;
+            gap: 8px;
+            padding: 20px 16px;
+        }
+        .wrap_review .review .rating {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+        }
+        .wrap_review .review .rating .num em {
+            font-size: 14px;
+        }
+        .wrap_review .review .comment p {
+            margin-top: 12px;
+        }
+    }
+</style>
+</head>
+<body>
+    <section class="wrap_review">
+        <div class="review">
+            <div class="rating">
+                <span class="num"><em>4</em>점</span>
+                <span class="star">
+                    <img src="./images/img_star_4.svg" />
+                </span>
+            </div>
+            <div class="comment">
+                <strong>빅데이터는 나의 친구 _ 나도 빅데이터 전문가</strong>
+                <div class="info">
+                    <span class="name">박*정(asd*****)</span>
+                    <span class="date">2022-05-14</span>
+                </div>
+                <p>문제는 어려웠지만 내용은 좋았음</p>
+            </div>
+        </div>
+        <div class="review">
+            <div class="rating">
+                <span class="num"><em>5</em>점</span>
+                <span class="star">
+                    <img src="./images/img_star_5.svg" />
+                </span>
+            </div>
+            <div class="comment">
+                <strong>빅데이터는 나의 친구 _ 나도 빅데이터 전문가</strong>
+                <div class="info">
+                    <span class="name">박*정(asd*****)</span>
+                    <span class="date">2022-05-14</span>
+                </div>
+                <p>문제는 어려웠지만 내용은 좋았음</p>
+            </div>
+        </div>
+    </section>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+</script>
+</html>

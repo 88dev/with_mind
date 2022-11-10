@@ -786,7 +786,7 @@ footer section .info .link a:not(:last-of-type) {
 
 } 
 /* 테블릿 */
-@media (max-width: 768px) { 
+@media (max-width: 900px) { 
     .container {
         padding:  0 40px;
     }
@@ -1006,7 +1006,7 @@ footer section .info .link a:not(:last-of-type) {
     }
 }
 /* 모바일 */
-@media (max-width: 500px) { 
+@media (max-width: 650px) { 
     .container {
         padding:  0 20px;
     }
@@ -2115,4 +2115,22 @@ footer section .info .link a:not(:last-of-type) {
         flex-direction: column;
     }
     
+}
+
+
+
+
+
+
+
+
+
+.container .contents .table_form .table .table_row .table_td textarea {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 564px;
+    min-height: 160px;
+    resize: none;
 }

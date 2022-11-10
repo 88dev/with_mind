@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            p {
+                margin: 0;
+                padding: 0;
+            }
+            .wrap_tab {
+                width: 100%;
+                max-width: 804px;
+
+                font-size: 15px;
+            }
+            .tab_title {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                border: 1px solid #EEEEEE;
+                border-radius: 4px;
+            }
+            .tab_title li {
+                list-style: none;
+                width: 33.3%;
+                padding: 11.5px 15px;
+                cursor: pointer;
+                color: #555555;
+                text-align: center;
+            }
+            .tab_title li:nth-of-type(2) {
+                border-left: 1px solid #EEEEEE;
+                border-right: 1px solid #EEEEEE;
+            }
+            .tab_title li.on {
+                background: #497BFE;
+                color: #FFFFFF;
+            }
+
+            .tab_title li:nth-of-type(1).on {
+                border-radius: 4px 0 0 4px;
+            }
+            .tab_title li:nth-of-type(3).on {
+                border-radius: 0 4px 4px 0;
+            }
+
+            .tab_cont {
+                clear: both;
+                border: 1px solid red;
+                margin-top: 30px;
+                word-break: keep-all;
+            }
+            .tab_cont section {
+                display: none;
+            }
+            .tab_cont section.on {
+                display: block;
+            }
+            .tab_cont section strong {
+                display: block;
+                color: #111111;
+                font-size: 18px;
+            }
+            .tab_cont section b {
+                display: block;
+                margin-top: 20px;
+                color: #111111;
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .tab_cont section b + p {
+                margin-top: 12px;
+            }
+            .tab_cont section p {
+                margin-top: 20px;
+                color: #333333;
+            }
+            .tab_cont section p.pink {
+                color: #ED5B66;
+            }
+            .tab_cont section p.red {
+                color: #F21F1F;
+            }
+            .tab_cont section p + strong {
+                display: block;
+                margin-top: 30px;
+            }
+            .tab_cont section p.box {
+                border: 1px solid #DDDDDD;
+                border-radius: 3px;
+                padding: 24px;
+            }
+
+
+            @media (max-width: 650px) { 
+                .tab_title li {
+                    width: 50%;
+                }
+                .tab_title li:nth-of-type(1),
+                .tab_title li:nth-of-type(3),
+                .tab_title li:nth-of-type(5),
+                .tab_title li:nth-of-type(6) {
+                    border-right: 1px solid #EEEEEE;
+                }
+                .tab_title li:nth-of-type(2) {
+                    border-right: none;
+                }
+                .tab_title li:nth-of-type(1),
+                .tab_title li:nth-of-type(2) {
+                    border-bottom: 1px solid #EEEEEE;
+                }
+                .tab_title li:nth-of-type(1).on {
+                    border-radius: 4px 0 0 0;
+                }
+                .tab_title li:nth-of-type(2).on {
+                    border-radius: 0 4px 0 0;
+                }
+                .tab_title li:nth-of-type(3).on {
+                    border-radius: 0 0 0 4px;
+                }
+                
+                .tab_cont section p {
+                    margin-top: 14px;
+                }
+                .tab_cont section p.box {
+                    padding: 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="wrap_tab">
+            <ul class="tab_title">
+                <li class="on">수료기준</li>
+                <li>평가응시안내</li>
+                <li>모사방지 및 관리</li>
+            </ul>
+            <section class="tab_cont">
+                <section class="on">
+                    <strong>학습제도 및 유의사항</strong>
+                    <p>
+                        귀하께서 수강 신청한 인터넷원격 훈련과정은 근로자직업능력개발법 제20조, 제24조규정에 의하여 한국산업인력공단으로부터 
+                        직업능력개발훈련 과정으로 인정받은 훈련과정입니다. 동 과정의 훈련비는 귀하의 사업주가 전액 부담합니다.<br>
+                        그러므로 근로자 직업능력개발법 시행령 제19조제 3항 소정의 기준에 따라 동 과정을 수료한 경우에 귀하가 소속해 있는 사업주는 수료생 
+                        1인당 표준훈련비용의 최대90% (우선지원대상기업 90%, 대규모기업 80%, 상시근로자 1,000인 이상기업 40% , 직무법정필수 우선지원 
+                        대상기업 50%, 대규모기업 40%, 상시근로자 1,000인 이상기업 20%)를 한국 산업인력공단으로부터 환급 받을 수 있습니다. 귀하께서는 
+                        다음 사항에 유의하여 훈련에 임해주시기 바랍니다.
+                    </p>
+                    <p>
+                        01. 시험과 과제를 대리 · 허위 작성 및 기타 부정한 방법으로 평가에 임할 경우 수료할 수 없으며, 향후 귀하가 소속되어 있는 사업주는 1년간 
+                        고용보험법 상의 직업능력개발훈련 비용 지원을 받을 수 없게 될 수도 있습니다.<br>
+                        02. 모든 과정의 수료기준은 다음과 같습니다.<br>
+                        &nbsp;&nbsp;- 전체 진도율 80% 이상(단, 1일 진도 8시간(8차시)이내로 제한)<br>
+                        &nbsp;&nbsp;- 100점 만점 기준 평가항목(시험, 과제, 진행단계평가)합산60점 이상<br>
+                    </p>
+                    <p class="pink">
+                        ※ 직업능력심사평가원에서 지정한 과정에 해당될 경우 환급률은 달라지게 됩니다.<br>
+                        ※ 기타 훈련과정 및 진행일정 등 문의하실 사항이 있으신 경우 미듬에듀(T. 02-0000-0000)로 연락주시기 바랍니다.
+                    </p>
+                    <strong>수료기준 및 1일 학습 진도제한</strong>
+                    <p>
+                        ･ 시험 및 과제 기한 내 제출했으며 진행단계평가를 포함한 평가성적이 60점(100점 만점 기준) 이상일 것<br>
+                        ･ 학습진도율(출석율)이 100분의 80 이상일 것. 다만, 1일 학습시간은 8시간(8차시)을 초과할 수 없다.<br>
+                        ･ 위의 2가지 사항 이외에 훈련실시자가 수립한 수료기준에 도달할 것<br>
+                        ･ 2개 이상의 훈련과정으로 구성될 경우에 위의 3가지 사항의 수료기준에 각각 도달할 것
+                    </p>
+                    <p class="red">
+                        ※ 위 조건을 모두 충족할 경우에 수료로 인정(단, 모사답안 또는 대리시험 적발시 미수료 처리함)
+                    </p>
+                </section>
+                <section>
+                    <strong>진행단계평가</strong>
+                    <p>
+                        ･ 진행단계평가 응시는 일정 정도의 차시학습 후에 이루어지며, 평가 후 다음 차시의 학습이 가능<br>
+                        ･ 진행단계평가는 60분이며, 수강기간 내 1회만 응시가능하며, 수강종료일 다음 날로부터 1주일간 재응시 가능 (N차 재응시 가능)
+                    </p>
+                    <strong>시험</strong>
+                    <p>
+                        ･ 시험 응시 시점은 교육원에서 지정한 기간에 가능하며, 이때 진도율이 최소 80% 이상이어야 함<br>
+                        ･ 시험 제한시간은 훈련과정에 따라 60~90분이며 수강기간 내 1회만 응시가능하며, 수강종료일 다음 날로부터 1주일간 재응시 가능 (N차 재응시 가능)
+                    </p>
+                    <strong>과제</strong>
+                    <p>
+                        ･ 과제 응시 시점은 교육원에서 지정한 수강기간 내 1회만 응시 가능하며 이때 진도율이 최소 80% 이상이어야 함<br>
+                        ･ 과제 제한 시간은 없으며, 수강종료일 다음 날로부터 1주일간 재제출 가능 (N차 재제출 가능)
+                    </p>
+                    <p class="box">
+                        ･ 시험 및 과제는 각 과정별 3배수 이상 유형을 구성하여 학습자 별 문제의 중복을 방지<br>
+                        ･ 과제와 토론은 각 과정에 적합한 유형의 서술형으로 구성되고, 시험문제는 선다형, 약술형, 단답형으로 구성<br>
+                        ･ 시험 및 과제, 진행단계 평가응시 시점은 교육원에서 지정한 기간에 응시 가능하며 이때 진도율이 최소 80% 이상이어야 함<br>
+                        ･ 과제 응시 시점은 교육원에서 지정한 수강기간 내 1회만 응시 가능하며 이때 진도율이 최소 80% 이상이어야 함<br>
+                        ･ 과제 제한 시간은 없으며, 수강종료일 다음 날로부터 1주일간 재제출 가능 (N차 재제출 가능)
+                    </p>
+                </section>
+                <section>
+                    <strong>모사답안방지정책 </strong>
+                    <b>모사답안의 정의</b>
+                    <p>
+                        ･ 훈련생간에 제출답안 비교시 100% 동일 답안으로 판별될 경우(제출한 답안의 byte수 검사) <br>
+                        ･ 서술한 답안의 유사성이 확실한 경우<br>
+                        ･ 오타 및 띄어쓰기, 접두/접미어를 이용한 유사한 답안을 제출한 경우<br>
+                        ･ 모사답안 판정 여부는 첨삭강사에 의해 최종 결정
+                    </p>
+                    <b>모사답안의 정책</b>
+                    <p>
+                        ･ 팝업 공지 및 학습유의사항 메뉴에서 모사답안 방지 내용을 게시합니다.<br>
+                        ･ 시험 및 과제 평가 랜덤 출제합니다. (학습자별로 다르게 구성)<br>
+                        ･ 시험, 과제, 진행단계평가 응시 화면에서 복사 및 붙여넣기 기능을 제한합니다.<br>
+                        ･ 시스템 내에서 모사답안 필터링 기능이 작동됩니다.<br>
+                        ･ 첨삭 강사의 첨삭 지도에 따라 모사답안 최종 판별을 합니다.
+                    </p>
+                    <b>모사답안 발생 시 처리기준</b>
+                    <p>
+                        ･ 모사답안이 발생할 경우 해당문항 및 과제가 0점 처리 됩니다.<br>
+                        ･ 모사답안이 발생하여 수료점수 미달 시 재시험 및 과제 재 제출은 없습니다.<br>
+                        ･ 모사답안이 발생하여 수료점수 미달 시 미수료로 처리 됩니다.
+                    </p>
+                    <strong>대리시험</strong>
+                    <b>대리시험의 정의</b>
+                    <p>
+                        ･ 나의강의실에 훈련생 본인이 아닌 다른 사람의 계정으로 접속 후 평가에 응시하는 것을 말합니다.
+                    </p>
+                    <b>대리시험방지 정책</b>
+                    <p>
+                        ･ SMS나 아이핀 인증을 통한 본인인증 절차를 최초 로그인 시 받도록 하고 있습니다.<br>
+                        ･ 중복 IP추적을 통해 대리시험 여부를 확인합니다. (한국산업인력공단의 자동모니터링을 통해서도 확인됨)<br>
+                        ･ 대리시험 발각시에는 수료기준 도달여부와 상관없이 미수료 처리됩니다.
+                    </p>
+                </section>
+            </section>
+        </section>
+
+    </body>
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script>
+        $(document).ready(function() {
+            $(".tab_title li").click(function() {
+                var idx = $(this).index();
+                $(".tab_title li").removeClass("on");
+                $(".tab_title li").eq(idx).addClass("on");
+                $(".tab_cont > section").hide();
+                $(".tab_cont > section").eq(idx).show();
+            });
+        });
+    </script>
+</html>

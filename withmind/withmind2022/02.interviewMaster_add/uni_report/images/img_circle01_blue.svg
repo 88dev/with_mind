@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="184" height="184" viewBox="0 0 184 184">
+  <defs>
+    <filter id="img_circle01_blue" x="0" y="0" width="184" height="184" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#144788" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="img_circle01_blue-2" x="0" y="0" width="184" height="184" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" dy="-1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur-2"/>
+      <feFlood flood-color="#0068ed" flood-opacity="0.8" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#img_circle01_blue)">
+      <circle id="img_circle01_blue-3" data-name="img_circle01_blue" cx="80" cy="80" r="80" transform="translate(10 6)" fill="#54adff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#img_circle01_blue-2)">
+      <circle id="img_circle01_blue-4" data-name="img_circle01_blue" cx="80" cy="80" r="80" transform="translate(10 6)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

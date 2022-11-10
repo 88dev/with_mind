@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<link rel='styleSheet' href='./style.css' type='text/css'></link>
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
+<title>UNI 화상 리포트 PDF</title>
+</head>
+<body>
+    <main id="uni">
+        <section class="uni">
+            <section class="uni_header">
+                <div class="logo">
+                    <img src="./images/img_logo.svg" />
+                </div>
+                <div class="user">홍길동</div>
+            </section>
+            <section class="uni_body">
+                <section class="frame">
+                    <section class="wrap_contents">
+                        <section class="inner_wrap various_graph">
+                            <section class="inner_section item1">
+                                <h5 class="title">영상 종합분석도</h5>
+                                <p class="smry">홍길동님은 <b>시선분포 53점, 어깨각도 100점, 얼굴각도46점, 어깨움직임 73점, 목소리톤 95점, 목소리 속도 89점</b>으로 나왔습니다.</p>
+                                <div class="wrap_graph">
+                                    <ul>
+                                        <li><span>시선분포</span><b>63</b></li>
+                                        <li><span>어깨각도</span><b>48</b></li>
+                                        <li><span>얼굴각도</span><b>46</b></li>
+                                        <li><b>50</b><span>어깨움직임</span></li>
+                                        <li><b>56</b><span>목소리톤</span></li>
+                                        <li><span>목소리속도</span><b>68</b></li>
+                                    </ul>
+                                    <div class="wrap_canvas">
+                                        <canvas id="video_chart" width="275" height="260" style="display: block;"></canvas>
+                                    </div>
+                                    <div class="graph_label">
+                                        <span class="blue"></span>응시자
+                                    </div>
+                                    <p class="gray">총 3번의 면접영상에서 시선분포, 어깨각도, 얼굴각도, 어깨움직임, 목소리톤, 목소리속도 평균을 그래프화 합니다. 각각의 분석항목들을 점수화하여 분포도가 넓은 면적을 나타낼수록 인터뷰 중 안정적임을 나타냅니다.</p>
+                                    
+                                </div>
+                            </section>
+                            <section class="inner_section item2 tension_level">
+                                <h4 class="title">면접 긴장도</h4>
+                                <!-- normal / high / low -->
+                                <div class="heart_arrow normal">
+                                    <div class="arrow_wrap">
+                                        <img class="heart_pin" src="./images/img_heart_pin02.svg">
+                                    </div>
+                                </div>
+                                <p class="smry">영상과 심반 분석 결과, 홍길동님의 면접 긴장도는 <b>보통</b>인 것으로 예상됩니다.</p>
+                            </section>
+                            <section class="inner_section item3 wrap_heart_rate">
+                                <h4 class="title">심박 수치</h4>
+                                <div class="heart_rate">
+                                    <img src="./images/img_heartrate.svg">
+                                    <p>평균심박<br><span>89<i>bpm</i></span></p>
+                                    <p><em class="red">최고</em>심박<br><span>100<i>bpm</i></span></p>
+                                    <p><em class="blue">최저</em>심박<br><span>80<i>bpm</i></span></p>
+                                </div>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section wrap_bubble b_t">
+                                <h4 class="title">언어분석</h4>
+                                <section class="bubble">
+                                    <section>
+                                        <h6 class="sub_title">사용 단어 빈도</h6>
+                                        <p class="smry">홍길동님의 자주 사용하는 상위 단어는 <b>디자인, 나트륨, 인간, 자연환경, 통합, 문제, 개념, 환경</b>입니다.</p>
+                                        <div class="graph">
+                                            <span class="blue_1 bubble_1">디자인</span>
+                                            <span class="blue_2 bubble_2">나트륨</span>
+                                            <span class="blue_3 bubble_2">인간</span>
+                                            <span class="blue_4 bubble_3">자연환경</span>
+                                            <span class="blue_5 bubble_3">통합</span>
+                                            <span class="blue_6 bubble_3">통합</span>
+                                            <span class="blue_7 bubble_4">개념</span>
+                                            <span class="blue_8 bubble_4">환경</span>
+                                            <span class="blue_9 bubble_4">환경2</span>
+                                            <span class="blue_10 bubble_4">환경3</span>
+                                        </div>
+                                        <p class="gray">단어 빈도 수 그래프는 총 3개의 면접영상에서 자주 사용하는 단어 10순위를 선별하여 나열합니다. 단어의 글자가 클수록, 중앙에 위치할수록 사용 빈도수가 높음을 의미합니다.</p>
+                                    </section>
+                                    <section>
+                                        <h6 class="sub_title">직무언어 사용빈도</h6>
+                                        <p class="smry">홍길동님의 자주 사용하는 상위 단어는 <b>환경, 디자인, 인간, 통합, 문제</b>입니다.</p>
+                                        <div class="graph">
+                                            <span class="red_1 bubble_1">환경</span>
+                                            <span class="red_2 bubble_2">디자인</span>
+                                            <span class="red_3 bubble_2">인간</span>
+                                            <span class="red_4 bubble_3">자연환경</span>
+                                            <span class="red_5 bubble_3">통합</span>
+                                        </div>
+                                        <p class="gray">직무언어 그래프는 총 3개의 면접영상에서 자주 사용하는 직무언어 5순위를 선별하여 나열합니다. 단어의 글자가 클수록, 중앙에 위치할수록 사용 빈도수가 높음을 의미합니다.</p>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section language_tendency b_t">
+                                <h4 class="title">언어성향</h4>
+                                <p class="smry">홍길동님은 <b>중립</b> 성향의 어휘를 많이 사용한 것으로 확인됩니다.</p>
+                                <div class="video_language_graph">
+                                    <div class="lang_graph">
+                                    </div>
+                                    <div class="lang_my">
+                                        <div id="robot_pin" style="left: 75.0001%;">
+                                            <img src="./images/img_robot.svg">
+                                        </div>
+                                    </div>
+                                    <img src="./images/img_arrow_null.svg">
+                                    <div class="lang_txt">
+                                        <span>부정</span>
+                                        <span>중립</span>
+                                        <span>긍정</span>
+                                    </div>
+                                </div>
+                                <div class="graph_label">
+                                    <span class="user"></span>응시자
+                                </div>
+                                <P class="gray">언어 성향 그래프는 총 3번의 면접영상에서 답변한 어휘를 분석하여 인공지능을 통해 긍정, 부정, 중립으로 구분지어 그래프로 나타냅니다.</P> 
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section b_t">
+                                <h4 class="title">음성분석</h4>
+                                <section class="voice">
+                                    <section>
+                                        <h6 class="sub_title">목소리톤</h6>
+                                        <p class="smry">전체평균과 비교했을 때, 홍길동님의 목소리톤은 <b>양호</b>합니다. 홍길동님은 <b>2번</b> 질문에서 평균에 가까운 목소리톤으로 답하였습니다.</p>
+                                        <div class="graph">
+                                            <div class="num">
+                                                <span>0</span>
+                                                <span>250</span>
+                                                <span>500</span>
+                                            </div>
+                                            <div class="voice_set">
+                                                <div>
+                                                    <span>질문1</span>
+                                                    <div class="voice_set_box">
+                                                        <div class="voice_value voice_value1" role="progressbar" style="width: 30%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>질문2</span>
+                                                    <div class="voice_set_box">
+                                                        <div class="voice_value voice_value2" role="progressbar" style="width: 40%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>질문3</span>
+                                                    <div class="voice_set_box">
+                                                        <div class="voice_value voice_value3" role="progressbar" style="width: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="graph_label">
+                                            <span class="blue"></span>응시자
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <h6 class="sub_title">목소리 속도</h6>
+                                        <p class="smry">전체평균과 비교했을 때, 홍길동님의 목소리속도는 <b>미흡</b>하여 연습이 필요해보입니다. 홍길동님은 <b>3번</b> 질문에서 전체평균에 가까운 목소리속도로 답하였습니다.</p>
+                                        <div class="graph">
+                                            <div class="num">
+                                                <span>0</span>
+                                                <span>250</span>
+                                                <span>500</span>
+                                            </div>
+                                            <div class="voice_set">
+                                                <div>
+                                                    <span>질문1</span>
+                                                    <div class="voice_set_box">
+                                                        <div class="voice_value voice_value1" role="progressbar" style="width: 30%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>질문2</span>
+                                                    <div class="voice_set_box">
+                                                        <div class="voice_value voice_value2" role="progressbar" style="width: 40%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>질문3</span>
+                                                    <div class="voice_set_box">
+                                                        <div class="voice_value voice_value3" role="progressbar" style="width: 50%;" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="graph_label">
+                                            <span class="blue"></span>응시자
+                                        </div>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                        <section class="inner_wrap">
+                            <section class="inner_section wrap_emotion b_t">
+                                <h4 class="title">감정분석</h4>
+                                <p class="smry">홍길동님이 보여준 가장 높은 비율의 감정상태는 <b>중립</b>입니다.</p>
+                                <div class="wrap_graph">
+                                    <div class="graph">
+                                        <div class="emotion"><span role="progressbar" style="height: 10%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                        <div class="emotion"><span role="progressbar" style="height: 20%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                        <div class="emotion"><span role="progressbar" style="height: 30%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                        <div class="emotion"><span role="progressbar" style="height: 40%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                        <div class="emotion"><span role="progressbar" style="height: 50%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                        <div class="emotion"><span role="progressbar" style="height: 60%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                        <div class="emotion"><span role="progressbar" style="height: 70%;" aria-valuemin="0" aria-valuemax="100"></span></div>
+                                    </div>
+                                </div>
+                                <p class="gray">총 3번의 면접영상에서의 표정, 안면분석을 통해 도출한 놀람, 공포, 혐오, 행복, 슬픔, 화남, 중립 7가지 감정의 평균 비율입니다.</p>
+                            </section>
+                        </section>
+                        <section class="inner_wrap wrap_action b_t">
+                            <section class="inner_section">
+                                <h4 class="title">시선분포</h4>
+                                <p class="smry">전체분포와 비교했을 때, 홍길동님의 시선분포 정도는 <b>양호</b>하며 면접 중 시선이 가장 많이 머무른 곳은 <b>오른쪽 하단</b> 입니다.</p>
+                                <div class="graph">
+                                    <div class="person">
+                                        <em>L</em>
+                                        <em>R</em>
+                                        <div class="eyes">
+                                            <span class="pupil x1"><img src="./images/img_eyes_black.svg" alt="검은자"></span>
+                                        </div>
+                                    </div>
+                                    <div class="red">
+                                        <div>
+                                            <table class="red_box" style="border-collapse: collapse;">
+                                                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="red_1_1 red_3"></td>
+                                                    <td class="red_1_2 red_1"></td>
+                                                    <td class="red_1_3 red_2"></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="red_2_1 red_4"></td>
+                                                    <td class="red_2_2 red_4"></td>
+                                                    <td class="red_2_3 red_2"></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="red_3_1 red_3"></td>
+                                                    <td class="red_3_2 red_4"></td>
+                                                    <td class="red_3_3 red_5"></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                            </table>
+                                            <span>응시자</span>
+                                        </div>
+                                        <div class="gradation">
+                                            <div></div>
+                                            <div>
+                                                <span>높음</span>
+                                                <span>낮음</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="gray">시선분포의 분포도가 십자모양의 중앙에 위치할수록 면접 중 안정적임을 나타냅니다. 영역색이 진할 수록 시선이 오래 머무른 곳이며, 영역이 널리 흩어져 있다면 시선변화가 많음을 의미합니다. 눈동자 움직임은 면접 중 시선이 많이 머문 방향을 나타냅니다.</p>
+                            </section>
+                            <section class="inner_section pose">
+                                <h4 class="sub_title">자세각도</h4>
+                                <p class="smry">전체평균과 비교했을 때, 홍길동님의 자세각도는 <b>양호</b>합니다. 홍길동님의 머리와 어깨 자세각도는 <b>머리가 6.674도, 어깨가 0.013도</b> 입니다.</p>
+                                <div class="graph">
+                                    <div class="person_pin">
+                                        <em>-</em>
+                                        <em>+</em>
+                                        <img id="head_angle" src="./images/img_sillhouette_head.png">
+                                        <img id="head_shoulder" src="./images/img_sillhouette_shoulder.png">
+                                    </div>
+                                    <div class="avg">
+                                        <div>
+                                            <p class="purple">전체평균</p>
+                                            <p>머리 각도 : 1.18</p>
+                                            <p>어깨 각도 : 0.02</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="gray">얼굴과 어깨의 각도를 체크하여 응시자의 평균 자세를 보여줍니다. 자세각도의 기울기가 높을 수록 면접 시 바른 자세로의 교정이 필요합니다.</p>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+ /*  영상 종합분석도  */
+ var video_total_chart = document.getElementById("video_chart");
+    var vitChart = new Chart(video_total_chart, {
+        type: 'radar',
+            data: {
+                labels: [ "시선분포", "어깨각도", "얼굴각도", "어깨움직임", "목소리톤", "목소리속도" ],
+                datasets: [
+                    {
+                        label: '응시자',
+                        data: [100, 100, 100, 100, 100, 100],
+                        borderColor: '#0068ED',
+                        pointBorderColor: "#0068ED",
+                        pointBackgroundColor: "#fff",
+                        backgroundColor: "#0068ED26",
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                elements:{
+                    line:{
+                        tension:0,
+                        borderWidth:1
+                    }
+                },
+                legend: {
+                    display: false,
+                },
+                tooltips: {
+                    enabled: false                    
+                },
+                scale: {
+                    pointLabels: {
+                        fontSize: 0,
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    gridLines:{
+                        display: false
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 100,
+                        stepSize: 100,
+                        display: false
+                    }
+                },
+            }
+    });
+</script>
+</html>

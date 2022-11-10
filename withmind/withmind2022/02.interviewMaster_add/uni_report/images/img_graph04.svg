@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="445" height="204" viewBox="0 0 445 204">
+  <g id="img_graph04" transform="translate(-970 -1045)">
+    <path id="패스_9676" data-name="패스 9676" d="M-17307,4894h405" transform="translate(18317 -3842)" fill="none" stroke="#ddd" stroke-width="1"/>
+    <path id="패스_9677" data-name="패스 9677" d="M-17307,4894h405" transform="translate(18317 -3811)" fill="none" stroke="#ddd" stroke-width="1"/>
+    <path id="패스_9678" data-name="패스 9678" d="M-17307,4894h405" transform="translate(18317 -3780)" fill="none" stroke="#ddd" stroke-width="1"/>
+    <path id="패스_9679" data-name="패스 9679" d="M-17307,4894h405" transform="translate(18317 -3748)" fill="none" stroke="#ddd" stroke-width="1"/>
+    <path id="패스_9680" data-name="패스 9680" d="M-17307,4894h405" transform="translate(18317 -3717)" fill="none" stroke="#ddd" stroke-width="1"/>
+    <path id="패스_9681" data-name="패스 9681" d="M-17307,4894h405" transform="translate(18317 -3686)" fill="none" stroke="#ddd" stroke-width="1"/>
+    <text id="_초_sec_" data-name="(초/sec)" transform="translate(1202 1246)" fill="#999" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="0" y="0">(초/</tspan><tspan y="0">sec)</tspan></text>
+    <text id="_심박수_bpm_" data-name="(심박수/bpm)" transform="translate(980 1159.918) rotate(-90)" fill="#999" font-size="10" font-family="SpoqaHanSansNeo-Regular, Spoqa Han Sans Neo"><tspan x="0" y="0">(심박수/</tspan><tspan y="0">bpm)</tspan></text>
+  </g>
+</svg>

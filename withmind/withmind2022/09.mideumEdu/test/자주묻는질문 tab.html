@@ -6,15 +6,16 @@
                 box-sizing: border-box;
             }
             .wrap_tab {
-                border: 1px solid red;
-                /* width: 804px; */
                 font-size: 15px;
+                padding:30px
             }
             .tab_title {
                 margin: 0;
                 padding: 0;
                 display: flex;
                 flex-wrap: wrap;
+                border: 1px solid #EEEEEE;
+                border-radius: 4px;
             }
             .tab_title li {
                 list-style: none;
@@ -23,18 +24,39 @@
                 padding: 11.5px 15px;
                 cursor: pointer;
                 text-align: center;
-                border: 1px solid #EEEEEE;
+                /* border: 1px solid #EEEEEE; */
+            }
+            .tab_title li:nth-of-type(1),
+            .tab_title li:nth-of-type(2),
+            .tab_title li:nth-of-type(3),
+            .tab_title li:nth-of-type(4) {
+                border-bottom: 1px solid #EEEEEE;
+            }
+            .tab_title li:not(:nth-of-type(4)) {
+                border-right: 1px solid #EEEEEE;
             }
             .tab_title li.on {
                 background: #497BFE;
-                border: 1px solid #497BFE;
+                /* border: 1px solid #497BFE; */
                 color: #FFFFFF;
             }
+
+            .tab_title li:nth-of-type(1).on {
+                border-radius: 4px 0 0 0;
+            }
+            .tab_title li:nth-of-type(4).on {
+                border-radius: 0 4px 0 0;
+            }
+            .tab_title li:nth-of-type(5).on {
+                border-radius: 0 0 0 4px;
+            }
+
             .tab_cont {
                 clear: both;
                 border: 1px solid #dedede;
                 height: 130px;
                 background-color: #cecece;
+                margin-top: 30px;
             }
             .tab_cont section {
                 display: none;
@@ -46,11 +68,35 @@
                 .tab_title li {
                     width: 50%;
                 }
+                .tab_title li:nth-of-type(1),
+                .tab_title li:nth-of-type(3),
+                .tab_title li:nth-of-type(5),
+                .tab_title li:nth-of-type(6) {
+                    border-right: 1px solid #EEEEEE;
+                }
+                .tab_title li:nth-of-type(2),
+                .tab_title li:nth-of-type(4),
+                .tab_title li:nth-of-type(6) {
+                    border-right: none;
+                }
+                .tab_title li:not(:nth-of-type(7)) {
+                    border-bottom: 1px solid #EEEEEE;
+                }
+                .tab_title li:nth-of-type(2).on {
+                    border-radius: 0 4px 0 0;
+                }
+                .tab_title li:nth-of-type(4).on,
+                .tab_title li:nth-of-type(5).on {
+                    border-radius: 0;
+                }
+                .tab_title li:nth-of-type(7).on {
+                    border-radius: 0 0 0 4px;
+                }
             }
         </style>
     </head>
     <body>
-        <section class="wrap_tab tab_name">
+        <section class="wrap_tab">
             <ul class="tab_title">
                 <li class="on">전체</li>
                 <li>회원가입</li>
