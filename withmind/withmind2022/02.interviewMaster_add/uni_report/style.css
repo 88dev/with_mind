@@ -183,7 +183,7 @@ p.gray {
 
 .uni_body .various_graph .wrap_graph {
     position: relative;
-    margin-top: 45px;
+    margin-top: 20px;
     padding-top: 10px;
 }
 .uni_body .various_graph .wrap_graph ul {
@@ -245,7 +245,7 @@ p.gray {
     margin-top: 8px;
 }
 .uni_body .various_graph .wrap_graph .graph_label {
-    margin: 40px auto 20px
+    margin: 10px auto;
 }
 
 
@@ -255,7 +255,7 @@ p.gray {
 }
 .inner_wrap .tension_level .heart_arrow {
     display: block;
-    width: 189px;
+    width: 175px;
     height: 173px;
     margin: 30px auto 10px;
 }
@@ -296,21 +296,22 @@ p.gray {
     transform:rotate(135deg);   
 }
 .inner_wrap .wrap_heart_rate {
+    width: 100%;
     margin: 10px auto;
+}
+.inner_wrap .wrap_heart_rate .heart_rate {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
 }
 .inner_wrap .wrap_heart_rate .heart_rate img,
 .inner_wrap .wrap_heart_rate .heart_rate p {
     display: inline-block;
 }
-.inner_wrap .wrap_heart_rate .heart_rate img {
-    margin-top: 20px;
-}
 .inner_wrap .wrap_heart_rate .heart_rate p {
-    font-size: 14px;
     text-align: center;
-    margin-left: 42px;
-    margin-top: 60px;
-    vertical-align: top;
+    font-size: 14px;
 }
 .inner_wrap .wrap_heart_rate .heart_rate p .red {
     color: var(--color-red);
@@ -319,6 +320,8 @@ p.gray {
     color: #158FE4;
 }
 .inner_wrap .wrap_heart_rate .heart_rate p span {
+    display: block;
+    margin-top: 5px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -343,7 +346,7 @@ p.gray {
 .bubble .graph {
     position: relative;
     height: 260px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 .bubble .graph span {
     position: absolute;
