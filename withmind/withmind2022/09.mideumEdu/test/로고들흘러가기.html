@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title>로고 이미지 흘러가기</title>
+<style>
+    .flow_logo {
+        background: #F5F5F5;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 1024px;
+        height: 170px;
+    }
+    .flow_logo div {
+        display: flex;
+        position: absolute;
+        overflow: hidden;
+        width: 3480px;
+        height: 170px;
+        animation: marquee 20s linear infinite;
+    }
+    .flow_logo div span {
+        display: flex;
+        gap: 30px;
+        width: 1370px;
+        margin-right: 30px;
+    }
+    .flow_logo div span img {
+        width: 170px;
+    }
+    @keyframes marquee {
+        0% { left: 0; }
+        100% { left: -1740px; }
+    }
+    @media (max-width: 650px) { 
+        .flow_logo, .flow_logo div {
+            height: 150px;
+        }
+        .flow_logo div span img {
+            width: 150px;
+        }
+    }
+</style>
+</head>
+<body>
+    <section class="flow_logo">
+        <div>
+            <span>
+                <img src="images/logo_01.png" alt="" />
+                <img src="images/logo_02.png" alt="" />
+                <img src="images/logo_03.png" alt="" />
+                <img src="images/logo_04.png" alt="" />
+                <img src="images/logo_05.png" alt="" />
+                <img src="images/logo_06.png" alt="" />
+                <img src="images/logo_07.png" alt="" />
+            </span>
+            <span>
+                <img src="images/logo_01.png" alt="" />
+                <img src="images/logo_02.png" alt="" />
+                <img src="images/logo_03.png" alt="" />
+                <img src="images/logo_04.png" alt="" />
+                <img src="images/logo_05.png" alt="" />
+                <img src="images/logo_06.png" alt="" />
+                <img src="images/logo_07.png" alt="" />
+            </span>
+        </div>
+    </section>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+</script>
+</html>

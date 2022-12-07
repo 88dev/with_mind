@@ -61,7 +61,7 @@ p.gray {
     font-size: 14px;
 }
 .b_t {
-    border-top: 1px solid var(--color-blue);
+    border-top: 1px solid #DDDDDD;
 }
 
 
@@ -136,7 +136,6 @@ p.gray {
 }
 .uni_body .frame .wrap_contents {
     background: #FFFFFF;
-    border: 1px solid #4C8BDD;
     border-radius: 10px;
 }
 .wrap_contents .inner_wrap .inner_section {
@@ -174,18 +173,25 @@ p.gray {
     margin-right: 14px;
 }
 .uni_body .various_graph {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     'total_video total_ability'
-    'total_video total_propensity';
+    'total_video total_propensity'; */
+
+    display: flex;
                                                                                                 /* border-bottom: 1px solid red; */
 }
-.uni_body .various_graph .item1 {grid-area: total_video; border-right: 1px solid #4C8BDD;}
-.uni_body .various_graph .item2 {grid-area: total_ability; border-bottom: 1px solid #4C8BDD;}
-.uni_body .various_graph .item3 {grid-area: total_propensity;}
-
-
+/* .uni_body .various_graph .item1 {grid-area: total_video; border-right: 1px solid #DDDDDD;}
+.uni_body .various_graph .item2 {grid-area: total_ability; border-bottom: 1px solid #DDDDDD;}
+.uni_body .various_graph .item3 {grid-area: total_propensity;} */
+.uni_body .various_graph .tension_level,
+.uni_body .various_graph .wrap_heart_rate {
+    flex: 1;
+}
+.uni_body .various_graph .tension_level {
+    border-right: 1px solid #DDDDDD;
+}
 .uni_body .various_graph .wrap_graph {
     position: relative;
     margin-top: 20px;
@@ -300,14 +306,11 @@ p.gray {
     bottom: -6px;
     transform:rotate(135deg);   
 }
-.inner_wrap .wrap_heart_rate {
-    width: 100%;
-    margin: 10px auto;
-}
 .inner_wrap .wrap_heart_rate .heart_rate {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 190px;
     margin-top: 15px;
 }
 .inner_wrap .wrap_heart_rate .heart_rate img,
@@ -324,18 +327,21 @@ p.gray {
 .inner_wrap .wrap_heart_rate .heart_rate p .blue {
     color: #158FE4;
 }
+.inner_wrap .wrap_heart_rate .heart_rate p .green {
+    color: #148F1D;
+}
 .inner_wrap .wrap_heart_rate .heart_rate p span {
     display: block;
     margin-top: 5px;
     font-size: 20px;
     font-weight: bold;
 }
-.inner_wrap .wrap_heart_rate .heart_rate p span i {
+/* .inner_wrap .wrap_heart_rate .heart_rate p span i {
     display: inline-block;
     margin-left: 5px;
     color: #999999;
     font-size: 14px;
-}
+} */
 
 .wrap_bubble .bubble {
     display: grid;
@@ -352,7 +358,7 @@ p.gray {
     padding-right: 20px;
 }
 .wrap_bubble .bubble > section:nth-of-type(1) .graph {
-    border-right: 1px solid var(--color-blue);
+    border-right: 1px solid #DDDDDD;
 }
 
 .wrap_bubble .bubble > section:nth-of-type(2) {
@@ -579,7 +585,7 @@ p.gray {
     position: relative;
 }
 .voice > section:nth-of-type(1) {
-    border-right: 1px solid var(--color-blue);
+    border-right: 1px solid #DDDDDD;
     padding-right: 20px;
 }
 .voice > section:nth-of-type(2) {
@@ -678,7 +684,7 @@ p.gray {
     grid-template-columns: 1fr 1fr;
 }
 .wrap_action .inner_section:first-of-type {
-    border-right: 1px solid var(--color-blue);
+    border-right: 1px solid #DDDDDD;
 }
 .wrap_action .smry {
     height: 45px;

@@ -2,15 +2,160 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<link rel='styleSheet' href='css/reset.css' type='text/css'></link>
-<link rel='styleSheet' href='css/style.css' type='text/css'></link>
-<title></title>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<title>미듬에듀 소개 페이지</title>
+<style>
+    .midum_area .part6 {
+        border:1px solid red;
+    }
+    .midum_area .part6 .wrap_slide {
+        position: relative;
+    }
+    .midum_area .part6 .wrap_slide .slick-arrow {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        z-index: 100;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        cursor: pointer;
+    }
+    .midum_area .part6 .wrap_slide #arr_prev {
+        background: url("../images/btn_slide_arrow_left.svg");
+        left: 16px;
+    }
+    .midum_area .part6 .wrap_slide #arr_next {
+        background: url("../images/btn_slide_arrow_right.svg");
+        right: 16px;
+    }
+    .midum_area .part6 .wrap_slide .tab_title {
+        background: #FF9344;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .midum_area .part6 .wrap_slide .tab_title li {
+        list-style: none;
+        cursor: pointer;
+        text-align: center;
+        height:72px;
+        line-height: 72px;
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .midum_area .part6 .wrap_slide .tab_title li.on {
+        background: #FFFFFF;
+        border-radius: 8px;
+        color: #333333;
+    }
+    .midum_area .part6 .tab_cont {
+        clear: both;
+        border: 1px solid #dedede;
+        height: 130px;
+        background-color: #cecece;
+    }
+    .midum_area .part6 .tab_cont section {
+        display: none;
+    }
+    .midum_area .part6 .tab_cont section.on {
+        display: block;
+    }
+    @media (max-width: 900px) {
+        .midum_area .part6 .wrap_slide .tab_title {
+            width: 100%;
+        }
+        .midum_area .part6 .wrap_slide {
+            width: 100%;
+        }
+        .midum_area .part6 .wrap_slide .tab_title li {
+            width: 334px;
+        }
+    }
+    @media (max-width: 650px) {
+
+    }
+</style>
+
 </head>
 <body>
+    <section class="midum_area">
+        <section class="education_area part6">
+            <section class="wrap_slide">
+                <button type="button" id="arr_prev"></button>
+                <ul class="wrap_education tab_title">
+                    <li class="on" data-point="1">비대면 학습 시스템</li>
+                    <li data-point="2">자체개발 LMS 시스템</li>
+                    <li data-point="3">직무교육</li>
+                    <li data-point="4">리더십 교육</li>
+                    <li data-point="5">자격증</li>
+                    <li data-point="6">외국어</li>
+                </ul>
+                <button type="button" id="arr_next"></button>
+            </section>
+            <section class="tab_cont">
+                <section class="on">
+                    비대면 학습 시스템
+                </section>
+                <section>
+                    자체개발 LMS 시스템
+                </section>
+                <section>
+                    직무교육
+                </section>
+                <section>
+                    리더십 교육
+                </section>
+                <section>
+                    자격증
+                </section>
+                <section>
+                    외국어
+                </section>
+            </section>
+        </section>
+    </section>
 
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
+   
+    $(document).ready(function() {
+        $(".tab_title li").click(function() {
+            var tit_idx = $(this).index();
+            let cont_idx = $(this).data("point");
+            // console.log($(this).data("point"));
+            $(".tab_title li").removeClass("on");
+            $(".tab_title li").eq(tit_idx).addClass("on");
+            $(".tab_cont > section").hide();
+            $(".tab_cont > section").eq(cont_idx-1).show();
+        });
 
+        $('.wrap_education').slick({
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay: false,
+            autoplaySpeed: 2000,
+            prevArrow: $('#arr_prev'),
+            nextArrow: $('#arr_next'),
+            responsive: [
+                {
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 650,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+            ]
+        });
+    });
 </script>
 </html>

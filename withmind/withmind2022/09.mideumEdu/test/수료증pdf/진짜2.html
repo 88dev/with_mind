@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' certificate='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='certificate-Security-Policy' certificate='upgrade-insecure-requests'>
+<title>미듬에듀 수료증</title>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    @font-face {
+        font-family: 'pretendard';
+        src: url('./pretendard') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'pretendard';
+        src: url('./pretendard.ttf') format('woff');
+        font-weight: bold;
+        font-style: normal;
+    }
+    
+    h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, div,body { -webkit-print-color-adjust:exact; }
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'pretendard';
+    }
+    #certificate {
+        /* border: 1px solid red; */
+        position: relative;
+        width: 595px;
+        height: 841px;
+        margin: 0px;
+        padding: 40px 30px;
+        overflow: hidden;
+        color: #333333;
+    }
+    #certificate #bg {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 555px;
+        height: 801px;
+        z-index: -2;
+    }
+    #certificate h1 {
+        text-align: center;
+        word-spacing: 30px;
+        margin: 60px 0;
+    }
+    #certificate ul {
+        margin: 0;
+        padding: 0 30px;
+        font-size: 14px;
+    }
+    #certificate ul li {
+        list-style: none;
+        color: #555555;
+    }
+    #certificate ul li:nth-of-type(1) {
+        display: inline-block;
+    }
+    #certificate ul li:nth-of-type(2) {
+        float: right;
+    }
+    #certificate ul li:not(:last-of-type) {
+        margin-bottom: 12px;
+    }
+    #certificate ul li:nth-of-type(1) b {
+        word-spacing: 23px;
+    }
+    #certificate ul li b {
+        display: inline-block;
+        width: 60px;
+        margin-right: 15px;
+    }
+    #certificate p {
+        margin-top: 97px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+    }
+    #certificate .date {
+        display: block;
+        text-align: center;
+        margin-top: 96px;
+        font-size: 16px;
+    }
+    #certificate strong {
+        display: block;
+        margin: 55px auto 0;
+        text-align: center;
+        font-size: 24px;
+    }
+    #certificate #stamp {
+        position: absolute;
+        right: 76px;
+        bottom: 74px;
+        width: 98px;
+        height: 98px;
+        z-index: -1;
+
+        background: rgba(243, 101, 101, 0.6);
+        border-radius: 2px;
+    }
+</style>
+</head>
+<body>
+
+    <button id="save-pdf">save as pdf</button>
+    <div id="certificate" class="pdf">
+        <h1>수 료 증</h1>
+        <ul>
+            <li><b>성 명</b>홍길동</li>
+            <li><b>생년월일</b>2000년 01월 01일</li>
+            <li><b>소속회사</b>(주)미듬에듀</li>
+            <li><b>훈련과정</b>직장 내 성희롱 예방교육</li>
+            <li><b>훈련기간</b>2022년 04월 29일 ~ 2022년 12월 31일 (1h)</li>
+            <li><b>교육장소</b>인터넷 훈련과정</li>
+        </ul>
+        <p>
+            위 사람은 본 교육원이 실시한<br>
+            상기의 교육을 성실히 수행하였기에<br>
+            본 증서를 수여합니다.
+        </p>
+        <span class="date">2022년 11월 3일</span>
+        <strong>지비비에듀원격평생교육원</strong>
+        <!-- <img src="" id="stamp" /> -->
+        <span id="stamp"></span>
+        <img src="./img_certificate.png" id="bg" />
+    </div>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script src='./pretendard.js'></script>
+<script>
+
+    var certificate = document.querySelector("#save-pdf");
+    certificate.onclick = function() {
+
+        var _fonts = font();  //해당 내용이 엄청 길어서..따로 분리하여 사용하세요!
+
+        // console.log(_fonts);
+
+        // console.log('creating pdf');
+        var doc = new jspdf.jsPDF({unit: "pt"});
+
+        doc.addFileToVFS('pretendard.ttf', _fonts);  //_fonts 변수는 Base64 형태로 변환된 내용입니다.
+        doc.addFont('pretendard.ttf','pretendard', 'normal');
+        doc.setFont('pretendard'); 
+
+        // doc.addFileToVFS('ChosunCentennial_ttf');  //_fonts 변수는 Base64 형태로 변환된 내용입니다.
+        // doc.addFont('ChosunCentennial_ttf','ChosunCentennial_ttf', 'normal');
+        // doc.setFont('ChosunCentennial_ttf');
+        
+        var certificate = document.querySelector('#certificate');
+        doc.html(certificate, {
+            callback: function (doc) {
+                doc.save('수료증.pdf');
+            },
+            // margin: [50, 50, 50, 50],
+            // html2canvas: {
+            //  scale: 1,
+            // },
+            // x: 10,
+            // y: 10
+        });
+    }
+</script>
+</html>

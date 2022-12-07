@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+	.detail_table table tr td .wrap_file_btn {
+		position: relative;
+	}
+	.detail_table table tr td .btn_file {
+		background: #FFFFFF;
+		border: 1px solid #6F6EEC;
+		border-radius: 2px;
+		width: 79px;
+		height: 32px;
+		color: #6F6EEC;
+		font-size: 14px;
+		cursor: pointer;
+	}
+	.detail_table table tr td .upload_file {
+		position: absolute;
+		width: 79px;
+		height: 32px;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		cursor: pointer;
+	}
+	::-webkit-file-upload-button { cursor:pointer; }
+	.detail_table table tr td .wrap_preview {
+		/* display:none; */
+		margin-top:10px; 
+	}
+	.detail_table table tr td .preview {
+		width: 130px; 
+		height: 50px;
+	}
+</style>
+</head>
+<body>
+	<section class="detail_table">
+		<table>
+			<tr>
+				<td>
+					<!-- 첨부파일(이미지파일만 업로드가능) -->
+					<div class="wrap_file_btn">
+						<button type="button" class="btn_file">파일 첨부</button>
+						<input type="file" id="upload_file" name="upload_file" class="upload_file" accept="image/*">
+					</div>
+
+					<!-- 이미지 미리보기 영역 -->
+					<div class="wrap_preview">
+						<img id="img_preview" class="preview" onerror="imgAreaError()"/>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<!-- 첨부파일(이미지파일만 업로드가능) -->
+					<div class="wrap_file_btn">
+						<button type="button" class="btn_file">파일 첨부</button>
+						<input type="file" id="upload_file" name="upload_file" class="upload_file" accept="image/*">
+					</div>
+
+					<!-- 이미지 미리보기 영역 -->
+					<div class="wrap_preview">
+						<img id="img_preview" class="preview bottom" onerror="imgAreaError()"/>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+    // 콘텐츠 수정 :: 사진 수정 시 이미지 미리보기
+    function readURL(input) {
+		if (input.files && input.files[0]) {
+			let reader = new FileReader();
+			reader.onload = function(e) {
+				$('#img_preview').attr('src', e.target.result); 
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	$(":input[name='upload_file']").change(function() {
+		if( $(":input[name='upload_file']").val() == '' ) {
+			$('#img_preview').attr('src' , '');  
+		}
+		$('.wrap_preview').css({ 'display' : '' });
+		readURL(this);
+	});
+
+	// 이미지 에러 시 미리보기영역 미노출
+	function imgAreaError(){
+		$('.wrap_preview').css({ 'display' : 'none' });
+	}
+
+</script>
+</html>

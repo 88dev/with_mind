@@ -63,7 +63,7 @@
                                         <div class="grade_b"></div>
                                     </div>
                                     <!-- step_1 / step_2 / step_3 ... -->
-                                    <div class="step_1">
+                                    <div class="step_4">
                                         <span><b>82</b><i>점</i><br>양호</span>
                                     </div>
                                 </div>
@@ -333,7 +333,7 @@
                         </section>
 
                         <!-- 기업용 역량 종합분석 -->
-                        <section class="inner_wrap for_biz for_common">
+                        <section class="inner_wrap for_biz for_common" style="display: none;">
                             <section class="inner_section item1">
                                 <h4 class="tit_txt">영상 종합분석도</h4>
                                 <p class="cont_smry">홍길동님은 <b>시선분포 53점, 어깨각도 100점, 얼굴각도46점, 어깨움직임 73점, 목소리톤 95점, 목소리 속도 89점</b>으로 나왔습니다.</p>
@@ -346,9 +346,9 @@
                                         <li><b>56</b><span>목소리톤</span></li>
                                         <li><span>목소리속도</span><b>68</b></li>
                                     </ul>
-                                    <div class="wrap_canvas">
+                                    <!-- <div class="wrap_canvas">
                                         <canvas id="video_total_biz_chart" width="275" height="260"></canvas>
-                                    </div>
+                                    </div> -->
                                     <div class="graph_label">
                                         <span></span>응시자
                                         <span></span>전체평균
@@ -2031,74 +2031,74 @@
 
 
 /*  영상 종합분석도(기업)  */
-var video_total_chart = document.getElementById("video_total_biz_chart");
-    var vitChart = new Chart(video_total_chart, {
-        type: 'radar',
-            data: {
-                labels: [ "시선분포", "어깨각도", "얼굴각도", "어깨움직임", "목소리톤", "목소리속도" ],
-                datasets: [
-                    {
-                        label: '응시자',
-                        data: [100, 100, 100, 100, 100, 100],
-                        borderColor: '#0068ED',
-                        pointBorderColor: "#0068ED",
-                        pointBackgroundColor: "#fff",
-                        backgroundColor: "#0068ED26",
-                        fill: true
-                    },
-                    {
-                        label: '전체평균',
-                        data: [15, 20, 5, 10, 15, 40],
-                        borderColor: '#5F4EEE',
-                        pointBorderColor: "#5F4EEE",
-                        pointBackgroundColor: "#fff",
-                        fill: false
-                    },
-                    {
-                        label: '그룹평균',
-                        data: [30, 40, 25, 1, 5, 30],
-                        borderColor: '#FFAA30',
-                        pointBorderColor: "#FFAA30",
-                        pointBackgroundColor: "#fff",
-                        fill: false
-                    } 
-                ]
-            },
-            options: {
-                responsive: false,
-                elements:{
-                    line:{
-                        tension:0,
-                        borderWidth:1
-                    }
-                },
-                legend: {
-                    display: false,
-                },
-                tooltips: {
-                    enabled: false                    
-                },
-                scale: {
-                    pointLabels: {
-                        fontSize: 0,
-                        display: false
-                    },
-                    angleLines: {
-                        display: false
-                    },
-                    gridLines:{
-                        display: false
-                    },
-                    ticks: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 100,
-                        stepSize: 100,
-                        display: false
-                    }
-                },
-            }
-    });
+    var video_total_chart = document.getElementById("video_total_biz_chart");
+    // var vitChart = new Chart(video_total_chart, {
+    //     type: 'radar',
+    //         data: {
+    //             labels: [ "시선분포", "어깨각도", "얼굴각도", "어깨움직임", "목소리톤", "목소리속도" ],
+    //             datasets: [
+    //                 {
+    //                     label: '응시자',
+    //                     data: [100, 100, 100, 100, 100, 100],
+    //                     borderColor: '#0068ED',
+    //                     pointBorderColor: "#0068ED",
+    //                     pointBackgroundColor: "#fff",
+    //                     backgroundColor: "#0068ED26",
+    //                     fill: true
+    //                 },
+    //                 {
+    //                     label: '전체평균',
+    //                     data: [15, 20, 5, 10, 15, 40],
+    //                     borderColor: '#5F4EEE',
+    //                     pointBorderColor: "#5F4EEE",
+    //                     pointBackgroundColor: "#fff",
+    //                     fill: false
+    //                 },
+    //                 {
+    //                     label: '그룹평균',
+    //                     data: [30, 40, 25, 1, 5, 30],
+    //                     borderColor: '#FFAA30',
+    //                     pointBorderColor: "#FFAA30",
+    //                     pointBackgroundColor: "#fff",
+    //                     fill: false
+    //                 } 
+    //             ]
+    //         },
+    //         options: {
+    //             responsive: false,
+    //             elements:{
+    //                 line:{
+    //                     tension:0,
+    //                     borderWidth:1
+    //                 }
+    //             },
+    //             legend: {
+    //                 display: false,
+    //             },
+    //             tooltips: {
+    //                 enabled: false                    
+    //             },
+    //             scale: {
+    //                 pointLabels: {
+    //                     fontSize: 0,
+    //                     display: false
+    //                 },
+    //                 angleLines: {
+    //                     display: false
+    //                 },
+    //                 gridLines:{
+    //                     display: false
+    //                 },
+    //                 ticks: {
+    //                     beginAtZero: true,
+    //                     min: 0,
+    //                     max: 100,
+    //                     stepSize: 100,
+    //                     display: false
+    //                 }
+    //             },
+    //         }
+    // });
 
             } 
             //감정분석

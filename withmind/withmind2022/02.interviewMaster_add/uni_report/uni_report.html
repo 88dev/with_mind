@@ -23,29 +23,7 @@
                 <section class="frame">
                     <section class="wrap_contents">
                         <section class="inner_wrap various_graph">
-                            <section class="inner_section item1">
-                                <h5 class="title">영상 종합분석도</h5>
-                                <p class="smry">홍길동님은 <b>시선분포 53점, 어깨각도 100점, 얼굴각도46점, 어깨움직임 73점, 목소리톤 95점, 목소리 속도 89점</b>으로 나왔습니다.</p>
-                                <div class="wrap_graph">
-                                    <ul>
-                                        <li><span>시선분포</span><b>63</b></li>
-                                        <li><span>어깨각도</span><b>48</b></li>
-                                        <li><span>얼굴각도</span><b>46</b></li>
-                                        <li><b>50</b><span>어깨움직임</span></li>
-                                        <li><b>56</b><span>목소리톤</span></li>
-                                        <li><span>목소리속도</span><b>68</b></li>
-                                    </ul>
-                                    <div class="wrap_canvas">
-                                        <canvas id="video_chart" width="275" height="260" style="display: block;"></canvas>
-                                    </div>
-                                    <div class="graph_label">
-                                        <span class="blue"></span>응시자
-                                    </div>
-                                    <p class="gray">응시자의 시선분포, 심박수치, 얼굴각도, 어깨움직임, 목소리톤, 목소리속도 평균을 그래프화합니다. 각각의 분석항목들을 점수화하여 분포도가 넓은 면적을 나타낼수록 인터뷰 중 안정적임을 나타냅니다.</p>
-                                    
-                                </div>
-                            </section>
-                            <section class="inner_section item2 tension_level">
+                            <section class="inner_section tension_level">
                                 <h5 class="title">면접 긴장도</h5>
                                 <!-- normal / high / low -->
                                 <div class="heart_arrow normal">
@@ -53,16 +31,17 @@
                                         <img class="heart_pin" src="./images/img_heart_pin02.svg">
                                     </div>
                                 </div>
-                                <p class="smry">심박 분석 결과, 홍길동님의 면접 긴장도는 보통인 것으로 예상됩니다.</p>
+                                <p class="smry">영상과 심박 분석 결과, 홍길동님의 면접 긴장도는 <b>보통</b>인 것으로 예상됩니다.</p>
                             </section>
-                            <section class="inner_section item3 wrap_heart_rate">
+                            <section class="inner_section wrap_heart_rate">
                                 <h5 class="title">심박 수치</h5>
                                 <div class="heart_rate">
                                     <img src="./images/img_heartrate.svg">
-                                    <p>평균심박<span>89<i>bpm</i></span></p>
-                                    <p><em class="red">최고</em>심박<span>100<i>bpm</i></span></p>
-                                    <p><em class="blue">최저</em>심박<span>80<i>bpm</i></span></p>
+                                    <p>평균심박<span class="green">적절</span></p>
+                                    <p><em class="red">최고</em>심박<span class="blue">높음</span></p>
+                                    <p><em class="blue">최저</em>심박<span class="red">낮음</span></p>
                                 </div>
+                                <p class="smry">심박 분석 결과, 홍길동님의 면접 긴장도는 보통인 것으로 예상됩니다.</p>
                             </section>
                         </section>
                         <section class="inner_wrap">
@@ -135,9 +114,11 @@
                                         <p class="smry">홍길동님의 목소리톤은 <b>미흡</b>하여 연습이 필요해 보입니다.</p>
                                         <div class="voice_set">
                                             <div class="num">
+                                                <span>매우 미흡</span>
                                                 <span>미흡</span>
                                                 <span>보통</span>
                                                 <span>우수</span>
+                                                <span>매우 우수</span>
                                             </div>
                                             <div class="voice_set_box">
                                                 <div class="voice_value voice_value1" role="progressbar" style="width: 30%;" aria-valuemin="0" aria-valuemax="100"></div>
@@ -161,9 +142,7 @@
                                         <div class="voice_set">
                                             <div class="num">
                                                 <span>느림</span>
-                                                <span>다소 느림</span>
                                                 <span>적당</span>
-                                                <span>다소 빠름</span>
                                                 <span>빠름</span>
                                             </div>
                                             <div class="voice_set_box">

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+    table, tr{
+        border: solid 1px;
+        width: 90%;
+    }
+
+    td,th {
+        border: solid 1px;
+    }
+</style>
+</head>
+<body>
+    <input type="button" name="addOpt" value="옵션추가">
+    <table id="box">
+        <thead>
+            <th>옵션명</th>
+            <th>항목명</th>
+            <th>필수항목</th>
+            <th>가격</th>
+            <th>재고</th>
+            <th>옵션추가</th>
+        </thead>
+        <tbody>
+            <tr class="1rows">
+                <td class="optionName"><input type="text"><input type="button" name="addPro[]" value="항목추가"></td>
+                <td></td>
+                <td><input type="checkbox"></td>
+                <td></td>
+                <td></td>
+                <td><input type="button" name="del[]" value="삭제"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</table>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+    $(function(){
+            var newRow = $(".1rows").eq(0);
+
+            $("input[name=addOpt]").click(function() {
+                $("#box tbody").append(newRow.clone(true));
+                $("#box tr:last").attr('class',($(".optionName").length+'rows'));
+                $("#box tr:last").find("td:first").removeAttr("rowspan");
+            })
+
+            $("input[name='del[]']").click(function() {
+                var clickDel = $(this).parent().parent();
+                clsName= clickDel.attr("class");
+
+                if (clickDel.find("td:first").attr("class")=="optionName" && clickDel.attr("class")==clickDel.next().attr("class")) {
+                    clickDel.next().prepend(clickDel.find("td:first").clone(true));
+                    clickDel.remove();                    
+                } else {
+                    clickDel.remove();
+                }
+                
+                rowspanNum(clsName);
+            })
+
+            $("input[name='addPro[]']").click(function(){
+                clickRow=$(this).parent().parent();
+                clickRow.after(clickRow.clone(true));
+                clickRow.next().find("td:first").remove();
+                clsName= clickRow.attr("class");
+                
+                rowspanNum(clsName);
+            })
+
+            function rowspanNum(clsName) {
+                rowspan= $('.'+clsName).length;
+                $("."+clsName+":first").find("td:first").attr("rowspan",rowspan);
+            }
+        });
+
+</script>
+</html>

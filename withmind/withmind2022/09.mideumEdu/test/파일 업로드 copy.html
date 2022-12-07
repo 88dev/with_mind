@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+    * {box-sizing: border-box;}
+    .file-upload{
+        position: relative;
+        display:inline-block;
+        text-align:center;
+        font-size: 14px;
+    }
+    .file-upload .file-select{
+        position:relative;
+        display:block;
+        text-align:left;
+        background:#FFFFFF;
+        overflow:hidden;
+    }
+    .file-upload .file-select .file-select-button{
+        display:inline-block;
+        background: #FFFFFF;
+        border: 1px solid #6F6EEC;
+        border-radius: 2px;
+        width: 79px;
+        height: 32px;
+        line-height: 32px;
+        color: #6F6EEC;
+        font-size: 14px;
+        text-align: center;
+        vertical-align: top;
+    }
+    .file-upload .file-select .file-select-name{
+        display:inline-block;
+        background: #FFFFFF;
+        border: 1px solid #DDDDDD;
+        border-radius: 2px;
+        width: 400px;
+        height: 32px;
+        line-height: 32px;
+        padding:0 14px;
+        color: #CCCCCC;
+    }
+    .file-upload .file-select input[type=file]{
+        position:absolute;
+        height:100%;
+        width:100%;
+        top:0;
+        left:0;
+        opacity:0;
+        cursor: pointer;
+        z-index:100;
+    }
+    ::-webkit-file-upload-button { cursor:pointer; }
+</style>
+</head>
+<body>
+    <div class="file-upload">
+        <div class="file-select">
+            <div class="file-select-button" id="fileName">파일 선택</div>
+            <div class="file-select-name" id="noFile">선택된 파일 없음</div> 
+            <input type="file" name="chooseFile" id="chooseFile">
+        </div>
+    </div>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+    $('#chooseFile').bind('change', function () {
+        var filename = $("#chooseFile").val();
+        if (/^\s*$/.test(filename)) {
+            $("#noFile").text("선택된 파일 없음"); 
+        } else {
+            $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+        }
+    });
+
+</script>
+</html>

@@ -2,132 +2,42 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<link rel='styleSheet' href='css/reset.css' type='text/css'></link>
-<link rel='styleSheet' href='css/style.css' type='text/css'></link>
-<link rel='styleSheet' href='css/common.css' type='text/css'></link>
-<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-<title></title>
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<link rel='styleSheet' href='./css/style.css' type='text/css'></link>
+<link rel='styleSheet' href='./css/common.css' type='text/css'></link>
+<title>미듬에듀 관리자</title>
 </head>
 <body>
     <header>
-        <section class="login_info">
-            <div class="left">
-                홍길동님 안녕하세요.<div class="auto">자동 로그아웃까지 남은시간 : <span class="time">118분 50초</span></div>
-            </div>
-            <div class="right">
-                <button type="button" class="logout">로그아웃</button>
-                <button type="button" class="my_page">정보수정</button>
-            </div>
-        </section>
-    </header>
-    <nav>
         <h1><a></a></h1>
-        <ul class="list_menu">
-            <li class="menu">메뉴 항목 1</li>
-            <li>
-                <span href="#" class="li_none on">대시보드</span>
-            </li>
-            <li>
-                <span class="">메인 관리</span>
-                <ul class="list_subMenu">
-                    <li class=""><a>배너 관리</a></li>
-                    <li><a>팝업 관리</a></li>
-                </ul>
-            </li>
-            <li>
-                <span href="#" class="li_none">회원 관리</span>
-            </li>
-            <li>
-                <span href="#">서비스 관리</span>
-                <ul class="list_subMenu">
-                    <li><a>문의 관리</a></li>
-                    <li><a>약관 관리</a></li>
-                    <li><a>채용/역량 강화 관리</a></li>
-                </ul>
-            </li>
+        <ul>
+            <li class="on">대시보드</li>
+            <li>회원관리</li>
+            <li>수강관리</li>
+            <li>독려관리</li>
+            <li>컨텐츠관리</li>
+            <li>커뮤니티관리</li>
+            <li>통계관리</li>
+            <li>사이트관리</li>
         </ul>
-    </nav>
-    <section class="container dashboard">
-        <h2>대시보드<span>Admin <img src="./images/icon_arrow_right_grey.svg" /> <em>대시보드</em></span></h2>
-        <section class="wrap_period">
-            <table>
-                <tr>
-                    <th>기간 설정</th>
-                    <td>
-                        <input name="regdate" id="regdate" class="date_format" value="" type="text" data-daterange="true" autocomplete="off" placeholder="날짜">
-                    </td>
-                    <th>표기 단위</th>
-                    <td>
-                        <select>
-                            <option>일간</option>
-                            <option>월간</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-            <div class="wrap_btn rifht">
-                <button class="btn_purple">검색</button>
-                <button class="btn_white">초기화</button>
-            </div>
-        </section>
-        <section class="wrap_chart">
-            <div class="wrap_btn wrap_excel">
-                <button type="button" class="btn_excel">엑셀다운로드</button>
-            </div>
-            <section class="wrap_grid">
-                <div class="statue_member">
-                    <strong>회원 현황
-                        <div class="wrap_chart_label">
-                            <span></span>누적회원
-                            <span></span>신규회원
-                            <span></span>탈퇴회원
-                        </div>
-                    </strong>
-                </div>
-                <div class="statue_inquiry">
-                    <strong>문의 현황
-                        <div class="wrap_chart_label">
-                            <span></span>컨설팅 관련
-                            <span></span>기업교육 관련
-                            <span></span>노무, 세무 자문
-                        </div>
-                    </strong>
-                </div>
-                <div class="statue_participate">
-                    
-                    <strong>참여 현황
-                        <div class="wrap_chart_label">
-                            <span></span>인터뷰마스터
-                            <span></span>쏘카인드
-                        </div>
-                    </strong>
-                </div>
-            </section>
-        </section>
+    </header>
+    <section class="container">
+        <nav>
+
+        </nav>
     </section>
+
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
-<!-- <script src='js/datepicker_common.js'></script>
-<script src='js/daterangepicker.min.js'></script> -->
 <script>
-$(document).ready(function(){
-    $(".list_subMenu").hide();
-    $(".list_subMenu.on").slideToggle(300);
-
-    $("ul li span").click(function(){
-        $(this).next().slideToggle(300);
-        $(this).next().addClass("on");
-        $("ul li span").not(this).next().slideUp(300);
-        $("ul li span").not(this).next().removeClass("on");
-        $("ul li span").not(this).removeClass("on");
-
-        if($(this).hasClass("on")) {
-            $(this).removeClass("on");
-        } else {
-            $(this).addClass("on");
-        }
-        return false;
+    $(document).ready(function() {
+        $("header ul li").click(function() {
+            let idx = $(this).index();
+            $("header ul li").removeClass("on");
+            $("header ul li").eq(idx).addClass("on");
+        });
     });
-});
 </script>
 </html>

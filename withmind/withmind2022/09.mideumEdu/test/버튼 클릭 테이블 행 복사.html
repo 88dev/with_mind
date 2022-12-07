@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+    .delBtn {
+        cursor: pointer;
+        z-index: 100;
+    }
+</style>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <td></td>
+            <td>화면ID</td>
+            <td>화면주제</td>
+            <td>화면경로</td>
+            <td>폴더경로</td>
+            <td>화면레이아웃</td>
+            <td>추가/삭제</td>
+        </tr>
+        <tr class="item">
+            <td style="width:5%; text-align: center">1</td>
+            <td><input type="text" name="screenid[]" size="15"  title="화면ID" placeholder=" ID를 입력해주세요"/></td>
+            <td><input type="text" name="screentheme[]" title="화면주제(짧은 설명)" placeholder="화면 주제를 입력해주세요"/></td>
+            <td><input type="text" name="screenroute[]" size="40" title="화면경로(URI)" placeholder="화면경로를 입력해주세요"/></td>
+            <td><input type="text" name="folderroute[]" size="40" title="폴더경로" placeholder="폴더경로를 입력해주세요"></td>
+            <td><input type="file" name="screenimage[]" value="이미지 업로드" title="화면레이아웃" ></td>
+            <td><button type="button" class="addBtn">(+)</button></td>
+        </tr>
+    </table>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+$(document).ready(function(){
+
+    // 항목추가 버튼 클릭시
+    $(".addBtn").click(function(){
+        console.log("add!!");
+        let clickedRow = $(this).parent().parent();
+        let cls = clickedRow.attr("class"); //class가 있는 요소 오브젝트로 담김
+        let newrow = clickedRow.clone(); //tr복사
+        newrow.find("input").val('');
+        newrow.find("td:last").children().remove(); //tr에 들어있는 항목버튼 삭제
+        newrow.find("td:last").html("<button type='button' class='delBtn' >삭제</button>"); //마지막 td요소에 삭제버튼 추가
+        newrow.insertAfter($("#table ."+cls+":last"));	// id가 example인 요소 안의 마지막 class인 요소 선택
+    });   
+
+});
+
+
+$(document).on("click", ".delBtn", function(){
+        let clickedRow = $(this).closest("tr");
+        let cls = clickedRow.attr("class");
+        // 각 항목의 첫번째 row를 삭제한 경우 다음 row에 td 하나를 추가해 준다.
+        if( clickedRow.find("td:eq(0)").attr("rowspan") ){
+            if( clickedRow.next().hasClass(cls) ){
+                clickedRow.next().prepend(clickedRow.find("td:eq(0)"));
+            }
+        }
+        clickedRow.remove();
+    });
+</script>
+</html>

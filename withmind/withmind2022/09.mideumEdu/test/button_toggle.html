@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3 Toggle Switch Button</title>
+<style>
+
+    .status_switch {
+        position: relative;
+        display: block;
+        width: 40px;
+        height: 24px;
+        border-radius: 18px;
+        cursor: pointer;
+    }
+    .status_switch .status_switch_input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    .status_switch .status_switch_label {
+        position: relative;
+        display: block;
+        height: inherit;
+        font-size: 10px;
+        text-transform: uppercase;
+        background: #DDDDDD;
+        border-radius: inherit;
+    }
+    .status_switch .status_switch_input:checked ~ .status_switch_label {
+        background: #40B535;
+    }
+    .status_switch .status_switch_input:checked ~ .status_switch_label:before {
+        opacity: 0;
+    }
+    .status_switch .status_switch_input:checked ~ .status_switch_label:after {
+        opacity: 1;
+    }
+    .status_switch .status_switch_handle {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        background: #FFF;
+        border-radius: 100%;
+    }
+    .status_switch .status_switch_input:checked ~ .status_switch_handle {
+        left: 19px;
+    }
+    /* Transition ========================== */
+    .status_switch .status_switch_label, .status_switch .status_switch_handle {
+        transition: All 0.3s ease;
+        -webkit-transition: All 0.3s ease;
+        -moz-transition: All 0.3s ease;
+        -o-transition: All 0.3s ease;
+    }
+    
+</style>
+    </head>
+
+    <body>
+
+    <label class="status_switch">
+        <input class="status_switch_input" type="checkbox" />
+        <span class="status_switch_label"></span> <span class="status_switch_handle"></span> 
+    </label>
+    
+    <label class="status_switch">
+        <input class="status_switch_input" type="checkbox" />
+        <span class="status_switch_label"></span> <span class="status_switch_handle"></span> 
+    </label>
+
+</body>
+</html>

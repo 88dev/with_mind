@@ -77,8 +77,11 @@ em {
 /* IM 리포트 시작 */
 #report {
     width: 1080px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     color: #333333;
+
+    box-shadow: 0px 3px 6px #00000029;
+    margin: 50px auto;
 }
 .report_header div:first-child {
     height: 80px;
