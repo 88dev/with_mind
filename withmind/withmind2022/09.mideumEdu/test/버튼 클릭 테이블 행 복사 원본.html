@@ -32,32 +32,29 @@
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
 <script>
 
-    // 항목추가 버튼 클릭시
-    $(document).on("click", ".btn_add", function(){
-        console.log("add!!");
-        let copyRow = $(this).parent().parent();
-        let classObj = copyRow.attr("class"); //class가 있는 요소 오브젝트로 담김
-        let newRow = copyRow.clone(); //tr복사
-        copyRow.find("td:last").children().remove();
-        copyRow.find("td:last").html("<button type='button' class='btn_del' >삭제</button>");
-        newRow.find("input").val('');
-        newRow.insertAfter($("#enter_student ."+classObj+":last"));	// id가 example인 요소 안의 마지막 class인 요소 선택
-    });  
+    $(document).ready(function(){
+        // 항목추가 버튼 클릭시
+        $(".addBtn").click(function(){
+            var clickedRow = $(this).parent().parent();
+            var cls = clickedRow.attr("class"); //class가 있는 요소 오브젝트로 담김
+            var newrow = clickedRow.clone(); //tr복사
+            newrow.find("td:last").children().remove(); //tr에 들어있는 항목버튼 삭제
+            newrow.find("td:last").html("<button class='delBtn'>삭제</button>"); //마지막 td요소에 삭제버튼 추가
+            newrow.insertAfter($("#table ."+cls+":last"));	// id가 example인 요소 안의 마지막 class인 요소 선택
+        });
 
-
-    $(document).on("click", ".btn_del", function(){
-        let copyRow = $(this).closest("tr");
-        let classObj = copyRow.attr("class");
-        // 각 항목의 첫번째 row를 삭제한 경우 다음 row에 td 하나를 추가해 준다.
-        if( copyRow.find("td:eq(0)").attr("rowspan") ){
-            if( copyRow.next().hasClass(classObj) ){
-                copyRow.next().prepend(copyRow.find("td:eq(0)"));
+        // 삭제버튼 클릭시
+        $(".delBtn").live("click", function(){
+            var clickedRow = $(this).parent().parent(); //
+            var cls = clickedRow.attr("class");
+            // 각 항목의 첫번째 row를 삭제한 경우 다음 row에 td 하나를 추가해 준다.
+            if( clickedRow.find("td:eq(0)").attr("rowspan") ){
+                if( clickedRow.next().hasClass(cls) ){
+                    clickedRow.next().prepend(clickedRow.find("td:eq(0)"));
+                }
             }
-        }
-        copyRow.remove();
+            clickedRow.remove();
+        });
     });
 </script>
 </html>
-
-
-<!-- https://tibang.tistory.com/entry/jquery-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%8F%99%EC%A0%81%EC%9C%BC%EB%A1%9C-%ED%85%8C%EC%9D%B4%EB%B8%94-%ED%96%89-%EC%83%9D%EC%84%B1 -->
