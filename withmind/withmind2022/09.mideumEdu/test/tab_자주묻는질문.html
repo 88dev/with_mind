@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            ul, li {
+                margin:0;
+                padding:0;
+                list-style: none;
+            }
+
+
+            .wrap_tab .tab_tit {
+                display: flex;
+                gap: 30px;
+                height: 30px;
+                border-bottom: 1px solid #EEEEEE;
+            }
+            .wrap_tab .tab_tit li {
+                position: relative;
+                color: #AAAAAA;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .wrap_tab .tab_tit li.on {
+                color: #333333;
+                font-weight: 600;
+            }
+            .wrap_tab .tab_tit li.on::after {
+                position: absolute;
+                content: '';
+                border-bottom: 2px solid #333333;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+            }
+            .wrap_search {
+                height: 40px;
+            }
+            .wrap_tab .tab_cont {
+                border: 1px solid red;
+                height: 130px;
+            }
+            .wrap_tab .tab_cont > section {
+                display: none;
+            }
+            .wrap_tab .tab_cont > section.on {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="wrap_tab">
+            <ul class="tab_tit">
+                <li class="on">전체</li>
+                <li>회원가입</li>
+                <li>학습</li>
+                <li>평가</li>
+                <li>과제</li>
+                <li>회원탈퇴</li>
+                <li>기타</li>
+            </ul>
+            <div class="wrap_search">
+                <input type="text" />
+            </div>
+            <section class="tab_cont">
+                <section class="on">
+                    전체
+                </section>
+                <section>
+                    회원가입
+                </section>
+                <section>
+                    학습
+                </section>
+                <section>평가</section>
+                <section>과제</section>
+                <section>회원탈퇴</section>
+                <section>기타</section>
+            </section>
+        </section>
+
+    </body>
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script>
+        $(document).ready(function() {
+            $(".tab_tit li").click(function() {
+                var idx = $(this).index();
+                $(".tab_tit li").removeClass("on");
+                $(".tab_tit li").eq(idx).addClass("on");
+                $(".tab_cont > section").hide();
+                $(".tab_cont > section").eq(idx).show();
+            });
+        });
+    </script>
+</html>

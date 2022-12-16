@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<!-- <link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link> -->
+<title></title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+    ol, p {
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
+    
+    .wrap_tree {
+        border: 1px solid #EEEEEE;
+        border-radius: 8px;
+    }
+    .wrap_tree .tit {
+        height: 40px;
+        background-color: #F6F6F6;
+        padding: 12px 20px;
+    }
+    .wrap_tree .cont {
+      padding: 20px 0;
+    }
+    .tree,
+    .tree ul {
+      margin:0; /* indentation */
+      padding:0;
+      list-style:none;
+      color:#555555;
+      position:relative;
+    }
+
+    .tree ul {margin-left:.5em} /* (indentation/2) */
+
+    /* .tree:before, */
+    .tree ul:before {
+      content:"";
+      display:block;
+      width:0;
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      border-left:1px solid #EEEEEE;
+    }
+
+    .tree li {
+      margin:0;
+      padding:0 20px; /* indentation + .5em */
+      line-height:2em; /* default list item's `line-height` */
+      font-weight:bold;
+      position:relative;
+    }
+
+    .tree li:before {
+      content:"";
+      display:block;
+      width:10px; /* same with indentation */
+      height:0;
+      border-top:1px solid #EEEEEE;
+      margin-top:-1px; /* border top width */
+      position:absolute;
+      top:1em; /* (line-height/2) */
+      left:0;
+    }
+    .tree > li:before {
+      border-top: none;
+    }
+
+    .tree li:last-child:before {
+      background:white; /* same with body background */
+      height:auto;
+      top:1em; /* (line-height/2) */
+      bottom:0;
+    }
+
+    .tree li input[type=checkbox] {
+      display: none;
+    }
+    .tree li input[type=checkbox] + label {
+      position: relative;
+      cursor: pointer;
+      padding-left: 23px;
+
+      background: url('./images/icon_tree_uncheck.svg') no-repeat left center;
+    }
+    .tree li input[type=checkbox]:checked + label {
+      background: url('./images/icon_tree_check.svg') no-repeat left center;
+    }
+    .tree li input[type=checkbox] + label::before {
+      position: absolute;
+    }
+    .tree li input[type=checkbox] + label + ul {
+      display: none;
+    }
+    .tree li input[type=checkbox]:checked + label + ul {
+      display: block;
+    }
+
+
+</style>
+</head>
+<body>
+    
+    <div class="wrap_tree">
+        <div class="tit">관리자</div>
+        <div class="cont">
+              <div>
+                <ul class="tree">
+                  <li>
+                    <input type="checkbox" id="c1-1" checked>
+                    <label for="c1-1">Animals</label>
+                    <ul>
+                      <li>Birds</li>
+                      <li>
+                        <input type="checkbox" id="c1-2">
+                        <label for="c1-2">Mammals</label>
+                        <ul>
+                          <li>Elephant</li>
+                          <li>Mouse</li>
+                        </ul>
+                      </li>
+                      <li>Reptiles</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="c2-1" checked>
+                    <label for="c2-1">Plants</label>
+                    <ul>
+                      <li>
+                        <input type="checkbox" id="c2-2" checked>
+                        <label for="c2-2">Flowers</label>
+                        <ul>
+                          <li>Rose</li>
+                          <li>
+                            <input type="checkbox" id="c2-3" checked>
+                            <label for="c2-3">Tulip</label>
+                            <ul>
+                              <li>List item 1</li>
+                              <li>List item 2
+                                <ul>
+                                  <li>List item 2.1</li>
+                                  <li>List item 2.2</li>
+                                  <li>List item 2.3</li>
+                                </ul>
+                              </li>
+                              <li>List item 3</li>
+                              <li>List item 4</li>
+                              <li>List item 5
+                                <ul>
+                                  <li>List item 5.1</li>
+                                  <li>List item 5.2
+                                    <ul>
+                                      <li>List item 5.2.1</li>
+                                      <li>List item 5.2.2</li>
+                                      <li>List item 5.2.3</li>
+                                      <li>List item 5.2.4</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>List item 6</li>
+                              <li>List item 7</li>
+                              <li>List item 8</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>Trees</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+        </div>
+    </section>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+</script>
+</html>

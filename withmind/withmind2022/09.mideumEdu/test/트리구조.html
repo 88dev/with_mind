@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+</head>
+<body>
+    <div id="tab_article_2" class="tab_contents">
+        <table>
+            <tr><td>
+                <div id="tree_search">
+                    <span>
+                        <img id="all_open" src="image/all_open.jpg" alt="전체열기" />
+                        <img id="all_close" src="image/all_close.jpg" alt="전체닫기" />
+                    </span>
+                    <ul>
+                        <li>아이템
+                            <ul>
+                                <li>아이템</li>
+                                <li>아이템</li>
+                                <li>아이템</li>
+                            </ul>
+                        </li>
+                        <li>아이템
+                            <ul>
+                                <li>아이템</li>
+                                <li>아이템</li>
+                                <li>아이템</li>
+                            </ul>
+                        </li>
+                        <li>아이템</li>
+                    </ul>
+                </div></td>
+            </tr>
+            <tr><td><a class="view_btn" href="#"><img src="image/btn_view.jpg" onmouseover='this.src="image/btn_view_over.jpg"' onmouseout='this.src="image/btn_view.jpg"' alt="조회" /></a></td></tr>
+        </table>
+    </div><!-- tab_article_2 -->
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+// 트리구조 리스트
+$(function(){
+	$('li:has(ul)').addClass("haschild")
+		.click(function(event){
+			if (this == event.target) {
+				if ($(this).children().is(':hidden')) {
+					$(this)
+					.removeClass("haschild")
+					.addClass("openchild")
+					.children().slideDown();
+				}
+				else {
+					$(this)
+					.addClass("haschild")
+					.removeClass("openchild")
+					.children().slideUp();
+				}
+			}
+			return false;
+			})
+			.css({cursor:'pointer',
+			'list-style-image':'url(plus.gif)'})
+			.children().hide();
+			$('li:not(:has(ul))').css({
+			cursor: 'default',
+			'list-style-image':'none'
+		});
+	});
+	
+	// 전체열기, 전체닫기
+	$("#all_open").click(function() {
+		$("#all_open").attr({src:"image/all_open_click.jpg"});
+		$("#all_close").attr({src:"image/all_close.jpg"});
+		
+		$("#tree_search li:has(ul)")
+			.removeClass("haschild")
+			.addClass("openchild")
+			.children().slideDown();
+	});
+	$("#all_close").click(function() {
+		$("#all_close").attr({src:"image/all_close_click.jpg"});
+		$("#all_open").attr({src:"image/all_open.jpg"});
+
+		$("#tree_search li:has(ul)")
+			.addClass("haschild")
+			.removeClass("openchild")
+			.children().slideUp();
+	});
+	
+});
+</script>
+</html>

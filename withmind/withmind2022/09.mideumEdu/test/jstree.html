@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+<title></title>
+</head>
+<body>
+    <div id="tree">
+
+    </div>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+<script>
+    $('#tree').jstree({ 
+        'core' : {
+            'data' : [
+                { "id" : "ajson1", "parent" : "#", "text" : "최고관리자" },
+                { "id" : "ajson2", "parent" : "#", "text" : "Root node 2" },
+                { "id" : "ajson3", "parent" : "ajson2", "text" : "Child 1" },
+                { "id" : "ajson4", "parent" : "ajson2", "text" : "Child 2" },
+                { "id" : "ajson5", "parent" : "#", "text" : "자식" },
+            ]
+        }
+    });
+</script>
+</html>

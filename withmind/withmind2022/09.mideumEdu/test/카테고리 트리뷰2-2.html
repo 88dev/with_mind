@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+<title></title>
+<style>
+    li {
+        list-style: none;
+    }
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 20px;
+}
+.wrap_tree {
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+}
+.wrap_tree .tit {
+    height: 40px;
+    background-color: #F6F6F6;
+    padding: 12px 20px;
+}
+.wrap_tree .tree-category {
+    padding: 10px 20px;
+}
+.wrap_tree .tree-category li {
+    min-height: 40px;
+}
+.wrap_tree .tree-category li ol.depth-2 li:last-of-type {
+    padding-bottom: 10px;
+}
+.wrap_tree .tree-category li > input[type=checkbox] {
+    display: none;
+    position: relative
+}
+.wrap_tree .tree-category li .menu-label {
+    display: inline-block;
+    color: #555555;
+    font-size: 14px;
+    cursor: pointer;
+}
+.wrap_tree .tree-category li .menu-label span {
+    display: inline-block;
+    margin-left: 3px;
+    color: #6F6EEC;
+    font-size: 14px;
+    font-weight: 500;
+}
+.wrap_tree .depth-1 > li:first-of-type > label {
+    padding-top: 0;
+}
+
+
+
+li input[type=checkbox] + .menu-label + ol > li {
+    display: none;
+}
+.wrap_tree .tree-category li input[type=checkbox]:checked + .menu-label + ol > li {
+    display: block;
+    background: url('./images/icon_tree_line.svg') no-repeat top left;
+    min-height: 40px;
+    padding-top: 20px;
+    margin-top: -10px;
+}
+.wrap_tree .tree-category li .menu-label:before {
+    background: url('./images/icon_tree_uncheck.svg') no-repeat top 0 center / 15px;
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 17px;
+    margin-right: 8px;
+    vertical-align: bottom;
+}
+.wrap_tree .tree-category li input[type=checkbox]:checked + .menu-label:before {
+    background: url('./images/icon_tree_check.svg') no-repeat;
+    content: "";
+}
+.wrap_tree .tree-category .page::before{
+    display: inline-block;
+    background: url('./images/icon_tree_uncheck.svg') no-repeat top 0 center / 15px;
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;  
+}
+.wrap_tree .tree-category li ol {
+    padding-left: 7px;
+}
+ol li ol li:not(:last-of-type) ol {
+    border-left: 1px solid #EEEEEE;
+}
+ol > li > ol > li > ol > li.page {
+    background: url('./images/icon_tree_line.svg') no-repeat top left, url('./images/icon_tree_uncheck.svg') no-repeat left 16px top 25px / 15px !important;
+    margin-left: 16px;
+    padding-left: 39px;
+}
+.wrap_tree .tree-category li ol li label {
+    padding-left: 16px;
+}
+.depth-3 > li,
+.depth-4 > li {
+    margin-left: 16px;
+}
+
+
+
+
+
+/* .depth-3 > li label {
+    padding-left: 0 !important;
+}
+.depth-3 > li label::before {
+    background: none !important;
+    margin-left: -24px !important;
+}
+.depth-4 {
+    margin-left: -39px;
+}
+.depth-4 li {
+    z-index: 0;
+} */
+
+
+</style>
+</head>
+<body>
+    <section class="wrap_tree">
+        <div class="tit">관리자</div>
+        <div class="cont">
+            <ol class="tree-category depth-1">
+                <li>
+                    <input type="checkbox" id="c1" checked />
+                    <label class="menu-label" for="c1">최고관리자<span>2</span></label>
+                    <ol class="depth-2">
+                        <li>
+                            <input type="checkbox" id="c2" checked />
+                            <label for="c2" class="menu-label">팀장<span>3</span></label>
+                            <ol class="depth-3">
+                                <li class="page">Third Level Item1</li>
+                                <li class="page">Third Level Item2</li>
+                                <li class="page">Third Level Item3</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="c3" checked />
+                            <label for="c3" class="menu-label">운영팀<span>2</span></label>
+                            <ol>
+                                <li class="page">Third Level Item1</li>
+                                <li class="page">Third Level Item2</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+        
+                <li>
+                    <input type="checkbox" id="c5" checked />
+                    <label class="menu-label" for="c5">일반관리자<span>2</span></label>
+                    
+                    <ol class="depth-2">
+                        <li>
+                            <input type="checkbox" id="c6" checked />
+                            <label for="c6" class="menu-label">Second Level Item1<span>1</span></label>
+                            <ol class="depth-3">
+                                <li class="page">Third Level Item1</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="c7" checked />
+                            <label for="c7" class="menu-label">Second Level Item1<span>3</span></label>
+                            <ol class="depth-3">
+                                <li class="page">Third Level Item1</li>
+                                <li>
+                                    <input type="checkbox" id="c8" checked />
+                                    <label class="menu-label" for="c8">운영팀<span>2</span></label>
+                                    <ol class="depth-4">
+                                        <li class="page">Third Level Item1</li>
+                                        <li>
+                                            <input type="checkbox" id="c8" checked />
+                                            <label class="menu-label" for="c8">운영팀<span>2</span></label>
+                                            <ol class="depth-5">
+                                                <li class="page">fourth Level Item1</li>
+                                                <li class="page">fourth Level Item2</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li class="page">Third Level Item1</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                
+            </ol>
+        </div>
+    </section>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script>
+
+</script>
+</html>

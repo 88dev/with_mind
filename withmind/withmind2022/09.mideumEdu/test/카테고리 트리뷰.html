@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<!-- <link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+<title></title>
+<style>
+    
+.tree-menu li {
+    list-style: none;
+}
+
+li > input[type=checkbox] {
+    display: none;
+    position: relative
+}
+
+li .menu-label {
+    color: #555555;
+    font-size: 14px;
+     cursor: pointer;
+}
+
+li input[type=checkbox] + .menu-label + ol > li {
+    display: none;
+}
+
+li input[type=checkbox]:checked + .menu-label + ol > li {
+    display: block;
+}
+
+li .menu-label:before {
+    background: url('./images/icon_tree_uncheck.svg') no-repeat;
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+}
+
+li input[type=checkbox]:checked + .menu-label:before {
+    background: url('./images/icon_tree_check.svg') no-repeat;
+    content: "";
+}
+
+.page:before{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    width: 14px;
+    height: 14px;
+    content: "\f0f6";
+    margin-right: 6px;  
+}
+
+</style>
+</head>
+<body>
+    <ol class="tree-menu">
+        <li>
+            <input type="checkbox" id="c1" />
+            <label class="menu-label" for="c1">First Level Item 1</label>
+        
+            <ol>
+                <li>
+                    <input type="checkbox" id="c2" />
+                    <label for="c2" class="menu-label">Second Level Item1</label>
+
+                    <ol>
+                        <li class="page"><a href="#">Third Level Item1</a></li>
+                        <li class="page"><a href="#">Third Level Item2</a></li>
+                        <li class="page"><a href="#">Third Level Item3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <input type="checkbox" id="c3" />
+                    <label for="c3" class="menu-label">Second Level Item2</label>
+
+                    <ol>
+                        <li class="page"><a href="#">Third Level Item1</a></li>
+            
+                        <li>
+                            <input type="checkbox" id="c4" />
+                            <label for="c4" class="menu-label">Third Level Item2 </label>
+                        
+                            <ol>
+                                    <li class="page">Fourth Level Item1</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+
+        <li>
+            <input type="checkbox" id="c5" />
+            <label class="menu-label" for="c5">First Level Item 2</label>
+            
+            <ol>
+                <li>
+                    <input type="checkbox" id="c6" />
+                    <label for="c6" class="menu-label">Second Level Item1</label>
+                    
+                    <ol>
+                        <li class="page"><a href="#">Third Level Item1</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <input type="checkbox" id="c7" />
+                    <label for="c7" class="menu-label">Second Level Item1</label>
+
+                    <ol>
+                        <li class="page"><a href="#">Third Level Item1</a></li>
+                        <li>
+                            <input type="checkbox" id="c8" />
+                            <label for="c8" class="menu-label">Third Level Item1</label>
+                        
+                            <ol>
+                                <li class="page"><a href="#">Fourth Level Item1</a></li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        
+    </ol>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script>
+
+</script>
+</html>
