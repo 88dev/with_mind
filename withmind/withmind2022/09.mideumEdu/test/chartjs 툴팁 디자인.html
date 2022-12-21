@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script type ="text/javascript" src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<title></title>
+</head>
+<body>
+
+    <div class="graph">
+        <canvas id="timeChart" style="width:100%;height:350px;"></canvas>
+    </div>
+    <div>
+        <input type="text" class="phoneNumber"  maxlength="13"/>
+    </div>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+$(document).on("keyup", ".phoneNumber", function() { 
+	$(this).val( $(this).val().replace(/[^0-9]/g, "").replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,"$1-$2-$3").replace("--", "-") );
+});
+
+    const time_ctx = document.getElementById("timeChart");
+    const timeChart = new Chart(time_ctx, {
+        type: 'line',
+        data: {
+            labels: ["0H","1H","2H","3H","4H","5H","6H","7H","8H","9H","10H","11H","12H","13H","14H","15H","16H","17H","18H","19H","20H","21H","22H","23H"],
+            datasets: [{
+                data: [35,38,10,20,30,28,12,24,35,46,34,11,35,38,10,20,30,28,12,24,35,46,34,11],
+                backgroundColor: 'transparent' ,
+                borderColor: '#FF819E' ,
+                borderWidth: 1,
+                pointStyle: 'circle',
+                pointBackgroundColor: "rgba(255, 129, 158, 0.4)",
+                pointRadius: 8,
+                pointHoverRadius: 15,
+                lineTension: 0,
+            }]
+        },
+        options: {
+            maxBarThickness: 10,
+            responsive: false,
+            legend: {
+                display: false,
+            },
+            tooltips: {
+                backgroundColor: '#252A2F',
+                displayColors: false,
+                yPadding: 16,
+                xPadding: 16,
+                xAlign: 'center',
+                yAlign: 'bottom',
+                callbacks: {
+                    title: function(tooltipItems, data) {
+                        //Return value for title
+                        return '1111: ' + tooltipItems.xLabel + ' GMT+2';
+                    },
+                    label: function(tooltipItem) {
+                        /*  return "$" + Number(tooltipItem.yLabel) + " and so worth it !";*/
+                        return "dddddddd";
+                    }
+                },
+            },
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                    },
+                    ticks: {
+                        maxRotation: 0,
+                        minRotation: 0,
+                        fontColor : "#AAAAAA",
+                        fontSize : 14,
+                        beginAtZero: false
+                    }
+                }],
+                yAxes: [{
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        padding: 20,
+                    }
+                }]
+            },
+        }
+    });
+</script>
+</html>
