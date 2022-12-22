@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+    #states {
+        border: 1px solid red;
+        width: 300px;
+    }
+</style>
+</head>
+<body>
+
+    <input type='text' id='search'>
+
+    <ul id='states'>
+        <li>Alabama </li> 
+        <li>Alaska </li> 
+        <li>Arizona </li> 
+        <li>Arkansas </li> 
+        <li>California </li> 
+        <li>Colorado </li> 
+        <li>Connecticut </li> 
+        <li>Delaware </li> 
+        <li>Florida </li> 
+        <li>Georgia </li> 
+        <li>Hawaii </li> 
+        <li>Idaho </li> 
+        <li>Illinois </li> 
+        <li>Indiana </li> 
+        <li>Iowa </li> 
+        <li>Kansas </li> 
+        <li>Kentucky </li> 
+        <li>Louisiana </li> 
+        <li>Maine </li> 
+        <li>Maryland </li> 
+        <li>Massachusetts </li> 
+        <li>Michigan </li> 
+        <li>Minnesota </li> 
+        <li>Mississippi </li> 
+        <li>Missouri </li> 
+        <li>Montana </li> 
+        <li>Nebraska </li> 
+        <li>Nevada </li> 
+        <li>New Hampshire </li> 
+        <li>New Jersey </li> 
+        <li>New Mexico </li> 
+        <li>New York </li> 
+        <li>North Carolina </li> 
+        <li>North Dakota </li> 
+        <li>Ohio </li> 
+        <li>Oklahoma </li> 
+        <li>Oregon </li> 
+        <li>Pennsylvania </li> 
+        <li>Rhode Island </li> 
+        <li>South Carolina </li> 
+        <li>South Dakota </li> 
+        <li>Tennessee </li> 
+        <li>Texas </li> 
+        <li>Utah </li> 
+        <li>Vermont </li> 
+        <li>Virginia </li> 
+        <li>Washington </li> 
+        <li>West Virginia </li> 
+        <li>Wisconsin </li> 
+        <li>Wyoming </li>
+    </ul>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+    
+    $(function(){
+
+        var search = function(term,predict,textBox){
+            var list = 'ul#states'; //jquery reference to list
+            var itemInList = 'li'; //jquery reference to item inside list
+            var found = false;
+            
+            $(list).find(itemInList).css('display','list-item').each(function(){
+                if($(this).html().toLowerCase().substr(0,term.length) != term.toLowerCase()){
+                $(this).css('display','none');
+                }else{
+                if(found == false && term != '' && predict == true){
+                    found = true;
+                    var length = term.length;
+                    var firstResult = $.trim($(this).html().toLowerCase()); //remove white space from first result
+                    $('#search').val(firstResult);
+                    $('#search')[0].setSelectionRange(length,firstResult.length); // Highlights reminaing part
+                    
+                    
+                    
+                }
+                }
+            });
+        }
+
+        $('ul#states li').click(function(){
+            $('#search').val($(this).html()).trigger('keyup');
+        })
+
+        //sample code to make search function work
+        $('#search').keyup(function(e){
+            var noPredict = [8,37,39]
+            var noPredictBool = noPredict.indexOf(e.keyCode) == -1
+            
+            //search takes two parameters
+            //1) the text to search for
+            //2) If it should auto complete
+            search($(this).val(), noPredictBool);
+        });
+    });
+
+</script>
+</html>
+<!-- 
+출처
+https://codepen.io/avovk/pen/AbmmgV 
+-->
