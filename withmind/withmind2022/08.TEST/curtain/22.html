@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica;
+    }
+    .fullpage {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5em;
+    }
+    .container {
+        position: fixed;
+        width: 110vw;
+        height: 110vh;
+        /* left: -5vw;
+        top: -5vh; */
+        z-index: -1;
+        background: #ff0;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+
+    </div>
+    
+    <div class="fullpage">
+        Curtain Scrolling
+    </div>
+    <div class="fullpage trigger">
+        Pink Section
+    </div>
+    <div class="fullpage ">
+        More Curtains
+    </div>
+    <div class="fullpage">
+        Blue Section
+    </div>
+    
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+
+var vh = $(window).height(),
+    vw = $(window).width(),
+    triggerPoint = $('.trigger').offset().top;
+
+var firstStop = 0,
+    endStop = 0;
+
+var colors = ['#ff0', '#f0f', '#0ff'];
+
+$(window).scroll(function() {
+    var scrollPos = $(document).scrollTop();
+    if(scrollPos < triggerPoint) {
+        firstStop = scrollPos / vh * 75;
+        endStop = 100 - (scrollPos / vh * 75);
+        $('.container').css({
+            'background': 'linear-gradient(135deg, ' + colors[1] + ' ' + firstStop + '%, ' + colors[0] + ' ' + firstStop + '%, ' + colors[0] + ' ' + endStop + '%, ' + colors[1] + ' ' + endStop + '%)'
+        });
+    } else {
+        endStop = (scrollPos - triggerPoint) / vh * 75;
+        firstStop = 100 - (scrollPos - triggerPoint) / vh * 75;
+        $('.container').css({
+            'background': 'linear-gradient(225deg, ' + colors[1] + ' ' + firstStop + '%, ' + colors[2] + ' ' + firstStop + '%, ' + colors[2] + ' ' + endStop + '%, ' + colors[1] + ' ' + endStop + '%)'
+        });
+    }
+});
+
+</script>
+</html>
