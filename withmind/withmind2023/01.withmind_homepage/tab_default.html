@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .wrap_compete {
+                display: flex;
+                gap: 70px;
+            }
+            .wrap_compete .compete_title {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                margin: 0;
+                padding: 0;
+            }
+            .compete_title li {
+                list-style: none;
+                color: #AAAAAA;
+                font-size: 24px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            .compete_title li.on {
+                color: #333333;
+            }
+            .compete_cont {
+                clear: both;
+                border: 1px solid #dedede;
+                background-color: #cecece;
+            }
+            .compete_cont section {
+                position: relative;
+                display: none;
+                width: 800px;
+            }
+            .compete_cont section.on {
+                display: block;
+            }
+            .compete_cont section > div {
+                position: absolute;
+                width: 370px;
+                height: 390px;
+            }
+            .compete_cont section > div:nth-child(1) {
+                left: 0;
+            }
+            .compete_cont section > div:nth-child(2) {
+                right: 0;
+                margin-top: 290px;
+            }
+            .compete_cont section > div:nth-child(3) {
+                margin-top: 580px;
+            }
+        </style>
+    </head>
+    <body>
+        <strong>경쟁력</strong>
+        <section class="wrap_compete">
+            <ul class="compete_title">
+                <li class="on">DEEP TECH</li>
+                <li>BIG DATA</li>
+                <li>선제적 시장대응력</li>
+                <li>합리적 수익모델</li>
+            </ul>
+            <section class="compete_cont">
+                <section class="on">
+                    <div style="background: #111;"></div>
+                    <div style="background: #222;"></div>
+                    <div style="background: #333;"></div>
+                </section>
+                <section>
+                    BIG DATA
+                </section>
+                <section>
+                    선제적 시장대응력
+                </section>
+                <section>
+                    합리적 수익모델
+                </section>
+            </section>
+        </section>
+
+    </body>
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script>
+        $(document).ready(function() {
+            $(".compete_title li").click(function() {
+                var idx = $(this).index();
+                $(".compete_title li").removeClass("on");
+                $(".compete_title li").eq(idx).addClass("on");
+                $(".compete_cont > section").hide();
+                $(".compete_cont > section").eq(idx).show();
+            });
+        });
+    </script>
+</html>
