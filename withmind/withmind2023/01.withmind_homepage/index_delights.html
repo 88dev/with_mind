@@ -8,7 +8,6 @@
 <link rel='styleSheet' href='./css/style.css' type='text/css'></link>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-
 <title>위드마인드</title>
 <style>
     /* value animation */
@@ -47,19 +46,19 @@
         height: 100%;
     }
 </style>
+</head>
 <header>
     <section>
         <h1></h1>
         <ul>
-            <li><a class="company">COMPANY</a></li>
-            <li><a class="technology">TECHNOLOGY</a></li>
-            <li><a class="service">SERVICE</a></li>
-            <li><a class="news">NEWS</a></li>
-            <li><a class="contact">CONTACT</a></li>
+            <li>COMPANY</li>
+            <li>TECHNOLOGY</li>
+            <li>SERVICE</li>
+            <li>NEWS</li>
+            <li>CONTACT</li>
         </ul>
     </section>
 </header>
-</head>
 <body>
     <section class="main_01">
         <section>
@@ -71,7 +70,7 @@
             </p>
         </section>
     </section>
-    <section class="main_02" id="company">
+    <section class="main_02">
         <section class="inner">
             <hr>
             <h3>위드마인드는 4차 산업 기술을 개발하여 <br>인간 중심의 서비스를 제공하는 것을 목표로 하고 있습니다.</h3>
@@ -180,7 +179,7 @@
             </section>
         </section>
     </section>
-    <section class="main_05" id="technology">
+    <section class="main_05">
         <section class="inner">
             <h2>TECHNOLOGY</h2>
             <p class="txt">총 8개의 AI엔진이 탑재된 AI 플랫폼 API를 통해,<br>위드마인드만의 차별화된 기술 서비스를 제공하고 있습니다.</p>
@@ -246,82 +245,10 @@
             </section>
         </section>
     </section>
-    <section class="main_06" id="service">
-        <div class="space-holder">
-            <div class="sticky">
-                <h2>SERVICE</h2>
-                <div class="horizontal">
-                    <section role="feed" class="wrap_card">
-                        <h2>SERVICE</h2>
-                        <div class="card">
-                            <img src="./images/img_service_01.png" />
-                            <b>AI모의면접 IM-PRI</b>
-                            <p>교육·취업기관을 위한 AI 면접 연습 서비스</p>
-                        </div>
-                        <div class="card">
-                            <img src="./images/img_service_02.png" />
-                            <b>AI모의면접 IM</b>
-                            <p>취업 준비생을 위한 AI 면접 연습 서비스</p>
-                        </div>
-                        <div class="card">
-                            <img src="./images/img_service_03.png" />
-                            <b>AI기업면접 IM-BIZ</b>
-                            <p>기업을 위한 AI 채용 면접 서비스</p>
-                        </div>
-                        <div class="card">
-                            <img src="./images/img_service_04.png" />
-                            <b>AI화상면접 IM-UNI</b>
-                            <p>기업을 위한 실시간  AI 화상 면접 서비스</p>
-                        </div>
-                        <div class="card">
-                            <img src="./images/img_service_05.png" />
-                            <b>AI HR교육 서비스</b>
-                            <p>AI 서비스직 트레이닝 솔루션</p>
-                        </div>
-                        <div class="card">
-                            <img src="./images/img_service_06.png" />
-                            <b>인지중재 치료 서비스</b>
-                            <p>다중 영역 인지기능 향상 프로그램 시스템 구축 사용자 데이터를 통한 맞춤형 콘텐츠 제공</p>
-                        </div>
-                        <div class="card">
-                            <img src="./images/img_service_07.png" />
-                            <b>FHE Cloud Drive 서비스</b>
-                            <p>완전동형암호 기반 클라우드 드라이브 서비스 국제 공동 R&D 선정 위드마인드, ETRI(국내), CSEM(스위스), ITER(이탈리아)</p>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
+    <section class="main_06">
+        
     </section>
-    <section class="main_07">
-        <section class="inner">
-            <h2>HISTORY</h2>
-        </section>
-    </section>
-    <section class="main_08" id="news">
-        <section class="inner">
-            <h2>NEWS</h2>
 
-        </section>
-    </section>
-    <section class="main_09">
-        <section class="inner">
-            <h2>PARTNER</h2>
-
-        </section>
-    </section>
-    <section class="main_10" id="contact">
-        <section class="inner">
-            <h2>CONTACT</h2>
-
-        </section>
-    </section>
-    <section class="main_11">
-        <section class="inner">
-            <h3>제휴 문의하기</h3>
-
-        </section>
-    </section>
 
 
 
@@ -329,16 +256,8 @@
 </body>
 <script src='./js/jquery-3.4.1.min.js'></script>
 <script type="text/javascript" src="./plugin/delighters.js"></script>
-<script src='./js/scroll.js'></script>
 <script>
-        $(document).ready(function() {
-
-            // $('.company').click(function(){
-            //     var offset = $('#company').offset(); //선택한 태그의 위치를 반환
-            //         //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
-            //     $('html').animate({scrollTop : offset.top}, 400);
-            // });
-
+    $(document).ready(function() {
         $(".compete_title li").click(function() {
             var idx = $(this).index();
             $(".compete_title li").removeClass("on");

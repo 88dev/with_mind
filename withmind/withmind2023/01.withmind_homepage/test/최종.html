@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+    *, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.bumper {
+  text-align: center;
+  padding: 128px 16px;
+  background-color: #efefef;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.space-holder {
+  position: relative;
+  width: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.horizontal {
+  position: absolute;
+  height: 100%;
+  will-change: transform;
+}
+
+.cards {
+  position: relative;
+  height: 100%;
+  padding: 0 0 0 150px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sample-card {
+  position: relative;
+  height: 300px;
+  width: 500px;
+  background-color: #111f30;
+  margin-right: 75px;
+  flex-shrink: 0;
+}
+
+
+</style>
+</head>
+<body>
+
+    <div class="bumper">
+        <button type="button" class="company">click</button>
+        <div style="height: 2000px;">
+            <span id="company" style="display: block;width: 500px; height: 100px; background: red;margin-top: 1000px;"></span>
+        </div>
+        <h2>There should be a horizontal scroll area just below</h2>
+      </div>
+      
+      <section class="container">
+        <div class="space-holder">
+          <div class="sticky">
+            <div class="horizontal">
+              <section role="feed" class="cards">
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+                <article class="sample-card"></article>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <div class="bumper">
+        <h2>Scroll up to see a horizontal scroll section</h2>
+      </div>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+    $(document).ready(function() {
+        $('.company').click(function(){
+            var offset = $('#company').offset(); //선택한 태그의 위치를 반환
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+            $('html').animate({scrollTop : offset.top}, 400);
+        });
+    });
+    
+</script>
+</html>
+
+<!-- 출처
+https://codepen.io/KhaledPen/pen/YzXeXLm -->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+    html, body { height: 100%; margin: 0; }
+    body { overflow-x: hidden; }
+    #container { width: 500%; height: 100%; display: flex; flex-wrap: nowrap; }
+    #container section { width: 100%; height: 100%; position: relative; display: flex; justify-content: center; align-items: center; }
+    .section01 { background: orange; }
+    .section02 { background: yellowgreen; }
+    .section03 { background: firebrick; }
+    .section04 { background: cornflowerblue; }
+    .section05 { background: seagreen; }
+</style>
+</head>
+<body>
+    <section style="height: 1000px;background-color: pink;"></section>
+    <div id="container">
+        <section class="section01">
+            <h1>section01</h1>
+        </section>
+        <section class="section02">
+            <h1>section02</h1>
+        </section>
+        <section class="section03">
+            <h1>section03</h1>	
+        </section>
+        <section class="section04">
+            <h1>section04</h1>
+        </section>
+        <section class="section05">
+            <h1>section05</h1>
+        </section>
+    </div>
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+    let SECTIONS = gsap.utils.toArray("section");
+
+    gsap.to(SECTIONS, {
+        xPercent: -100 * ( SECTIONS.length -1 ),
+        ease: "none",
+        scrollTrigger: {
+            trigger: '#container',
+            end: ()=> "+=" + document.querySelector("#container").offsetWidth,
+            pin: true,
+            scrub: 1,
+            snap: 1 / (SECTIONS.length -1),
+        }
+    });
+</script>
+</html>

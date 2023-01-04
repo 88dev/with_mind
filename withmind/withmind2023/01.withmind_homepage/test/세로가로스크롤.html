@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<title></title>
+<style>
+    .massiveImage {
+        height: 100vh;
+        width: 400vw;
+        background-size: cover;
+        background-position: center;
+    }
+    .header-section {
+        padding-bottom: 50vh;
+        margin-bottom: 0;
+    }
+
+</style>
+</head>
+<body>
+
+    <button type="button">click</button>
+    
+    <section style="height: 5000px; background-color: yellow;"></section>
+
+    <h1 class="header-section">Scroll down to see a horizontal scroll section</h1>
+    
+    <div class="massiveImage"></div>
+
+    <h1 class="header-section">Now we're back to regular scrolling</h1>
+
+
+
+
+    <header>
+        <a href="https://greensock.com/scrolltrigger">
+            <img class="greensock-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg" width="200" height="64" />
+        </a> 
+    </header>
+
+    <section style="height: 5000px; background-color: pink;"></section>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.set(".massiveImage", {backgroundImage: `url(https://source.unsplash.com/random/${innerWidth * 3}x${innerHeight})`})
+
+gsap.to(".massiveImage", {
+  xPercent: -100, 
+  x: () => innerWidth,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".massiveImage",
+    start: "top top",
+    end: () => innerWidth * 3,
+    scrub: true,
+    pin: true,
+    invalidateOnRefresh: true,
+    anticipatePin: 1
+  }
+});
+
+
+
+
+
+</script>
+</html>
