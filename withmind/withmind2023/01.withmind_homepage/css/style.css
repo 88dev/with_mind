@@ -1,4 +1,7 @@
 /* 데스크탑 및 공통 */
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
     overflow-x: hidden;
@@ -536,3 +539,333 @@ h3 {
         font-size: 15px;
     }
 } 
+
+
+
+
+
+/* news */
+.news-view .news-head {
+    text-align: center;
+}
+.news-view .news-head span {
+    color: #AAAAAA;
+    font-size: 14px;
+    font-weight: 400;
+}
+.news-view .news-head h2 {
+    margin-top: 12px;
+    font-size: 30px;
+    font-weight: 700;
+}
+.news-view .news-body {
+    margin-top: 30px;
+}
+.news-view .news-body img {
+    display: block;
+    margin: 0 auto;
+}
+.news-view .news-body img + p {
+    margin-top: 60px;
+}
+.news-view .news-body p {
+    margin-bottom: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.news-view .news-body span {
+    display: block;
+    color: #AAAAAA;
+    font-weight: 400;
+    font-size: 14px;
+}
+.news-view .news-body span + span {
+    margin-top: 10px;
+}
+.news-view .news-btn {
+    width: 100%;
+    border-top: 1px solid #EBEBEB;
+    margin: 24px 0 100px;
+    padding-top: 36px;
+}
+.news-view .news-btn button {
+    display: block;
+    background: #FFFFFF;
+    width: 87px;
+    height: 48px;
+    margin: 0 auto;
+    color: #AAAAAA;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.news-view .news-btn button:hover {
+    background: #F4F4F4;
+}
+/* 모바일 */
+@media (max-width: 650px) { 
+    .news-view .news-head {
+        text-align: left;
+    }
+    .news-view .news-head h2 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .news-view .news-body {
+        margin-top: 24px;
+    }
+    .news-view .news-body img {
+        width: 100%;;
+    }
+    .news-view .news-body img + p {
+        margin-top: 24px;
+    }
+    .news-view .news-body p {
+        font-size: 15px;
+    }
+    .news-view .news-btn {
+        margin: 36px 0 0;
+    }
+}
+/* contact */
+.contact .wrap_tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.contact .wrap_tit h2 {
+    font-size: 30px;
+}
+.contact .wrap_tit span {
+    color: #AAAAAA;
+    font-size: 15px;
+}
+.contact .group + .group {
+    margin-top: 36px;
+}
+.contact .group b {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.contact .group b span {
+    display: inline-block;
+    margin-left: 4px;
+    color: #AAAAAA;
+    font-size: 15px;
+}
+.contact .group .wrap_check {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 26px;
+}
+.contact .group .wrap_check input[type=checkbox] + label {
+    display: inline-block;
+    background: url('../images/checkbox_unchecked.svg') no-repeat left center / 24px;
+    height: 24px;
+    padding-left: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.contact .group .wrap_check input[type=checkbox]:checked + label {
+    background: url('../images/checkbox_checked.svg') no-repeat left center / 24px;
+}
+.contact .group .wrap_flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+.contact .group .wrap_flex span {
+    position: relative;
+    width: 510px;
+    height: 70px;
+    border-bottom: 1px solid #EBEBEB;
+}
+.contact .group .wrap_flex span input {
+    width: 100%;
+    height: 100%;
+    padding-left: 70px;
+    border: none;
+}
+.contact .group .wrap_flex span label {
+    position: absolute;
+    left: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #AAAAAA;
+    font-size: 16px;
+    font-weight: 600;
+}
+.contact .group textarea {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-bottom: 1px solid #EBEBEB;
+    resize: none;
+    margin-top: 12px;
+}
+.contact .group textarea::placeholder {
+    color: #AAAAAA;
+    font-size: 16px;
+    font-weight: 600;
+}
+.contact .agree {
+    margin-top: 24px;
+}
+.contact .agree input[type=checkbox] + label {
+    display: inline-block;
+    background: url('../images/checkbox_square_unchecked.svg') no-repeat left center / 20px;
+    height: 20px;
+    padding-left: 32px;
+    color: #808080;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.contact .agree input[type=checkbox]:checked + label {
+    /* background: url('../images/checkbox_checked.svg') no-repeat left center / 24px; */
+}
+.contact .agree input[type=checkbox] + label span {
+    text-decoration: underline;
+}
+.contact .agree label button {
+    background: #FFFFFF;
+    color: #808080;
+    font-size: 16px;
+    text-decoration: underline;
+}
+.contact .wrap_btn {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 60px;
+
+}
+.contact .wrap_btn button {
+    width: 160px;
+    height: 54px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.contact .wrap_btn .btn_white {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    color: #AAAAAA;
+}
+.contact .wrap_btn .btn_black {
+    background: #000719;
+    color: #FFFFFF;
+}
+/* contact modal */
+.modal-open {
+    overflow: hidden;
+}
+#privacy .modal-dialog {
+    border: 3px solid red;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    width: 740px;
+}
+#privacy .modal-dialog .modal-content {
+    padding: 40px 60px;
+}
+#privacy .modal-dialog .modal_close {
+    background: url('../images/icon_close.svg') no-repeat;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 26px;
+    height: 26px;
+    z-index: 100;
+    opacity: 1;
+}
+#privacy .modal-dialog .modal-body {
+    padding: 0;
+}
+#privacy h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+}
+#privacy h3 {
+    margin-top: 24px;
+    font-size: 16px; 
+    font-weight: 600;
+}
+#privacy h4 {
+    margin-top: 23px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+#privacy h5 {
+    margin-top: 6px;
+    line-height: 23px;
+}
+#privacy p {
+    margin-top: 6px;
+    color: #808080;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+}
+#privacy .wrap_btn {
+    border:  1px solid blue;
+}
+
+@media (max-width: 1024px) { 
+    .contact .group .wrap_flex span {
+        width: 100%;
+    }
+    #privacy .modal-dialog {
+        width: 630px;
+    }
+    #privacy .modal-dialog .modal-content {
+        padding: 40px 30px;
+    }
+}
+@media (max-width: 650px) { 
+    .contact .wrap_tit {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    .contact .wrap_tit h2 {
+        font-size: 28px;
+    }
+    .contact .group .wrap_check input[type=checkbox] + label {
+        font-size: 15px;
+    }
+    .contact .group .wrap_check {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .contact .group + .group {
+        margin-top: 24px;
+    }
+    .contact .group .wrap_flex span {
+        height: 60px;
+    }
+    .contact .group .wrap_flex span label {
+        font-size: 15px;
+    }
+    #privacy .modal-dialog {
+        width: 335px;
+        height: 545px;
+    }
+    #privacy .modal-dialog .modal-content {
+        height: 545px;
+        overflow-y: auto;
+        padding: 30px 20px;
+    }
+}

@@ -33,3 +33,4 @@ input, textarea, button {-webkit-appearance:none; -moz-appearance:none; appearan
 input, textarea, button, select {-webkit-border-radius:0; -moz-border-radius:0; -o-border-radius:0; border-radius:0; outline:none;}
 input[type="password"]{font-family:'Noto Sans KR' !important; }
 input[type="password"]::placeholder{font-family:'Noto Sans KR', "Apple SD Gothic Neo", "Malgun Gothic"}
+button {border: none;cursor: pointer;}
