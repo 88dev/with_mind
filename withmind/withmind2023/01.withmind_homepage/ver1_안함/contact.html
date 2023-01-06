@@ -110,7 +110,7 @@
                         해당 정보를 지체없이 파기합니다.</p>
                 </div>
                 <div class="wrap_btn">
-                    <button type="button">확인 및 승인</button>
+                    <button type="button" class="btn_black" data-dismiss="modal" aria-label="Close" onclick="check()">확인 및 승인</button>
                 </div>
             </div>
         </div>
@@ -125,5 +125,10 @@
     $(document).ready(function() {
         // $("#privacy").show();
     });
+
+    function check(){
+        console.log("check");
+        $("#동의").prop("checked", true);
+    }
 </script>
 </html>
