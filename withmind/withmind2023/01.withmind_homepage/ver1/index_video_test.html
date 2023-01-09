@@ -436,7 +436,26 @@
     <section class="main_10" id="contact">
         <section class="inner">
             <h2>CONTACT</h2>
-
+            <section class="contact">
+                <h4>본사</h4>
+                <div class="wrap_map">
+                    <div id="daumRoughmapContainer1673245381374" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                    <p>대전광역시 유성구 가정로 219, 3층 302-2-3호 (주)위드마인드</p>
+                </div>
+            </section>
+            <section class="contact">
+                <h4>지점</h4>
+                <div class="wrap_map">
+                    <div id="daumRoughmapContainer1673246054702" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                    <p>서울특별시 마포구 백범로 31길 21, 서울창업허브 809호</p>
+                    <div class="info">
+                        <b>Tel</b>
+                        <span>02-313-7705</span>
+                        <b>E-mail</b>
+                        <span>sales@withmind.net</span>
+                    </div>
+                </div>
+            </section>
         </section>
     </section>
     <section class="main_11">
@@ -453,6 +472,7 @@
 <script src='./js/jquery-3.4.1.min.js'></script>
 <script type="text/javascript" src="./plugin/delighters.js"></script>
 <script src='./js/scroll.js'></script>
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 <script>
         $(document).ready(function() {
 
@@ -477,5 +497,18 @@
             $(".history_cont > section").eq(idx).show();
         });
     });
+    //본사
+    new daum.roughmap.Lander({
+		"timestamp" : "1673245381374",
+		"key" : "2dcwv",
+		"mapWidth" : "775",
+		"mapHeight" : "400"
+	}).render();
+    new daum.roughmap.Lander({
+		"timestamp" : "1673246054702",
+		"key" : "2dcx9",
+		"mapWidth" : "775",
+		"mapHeight" : "400"
+	}).render();
 </script>
 </html>
