@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from 'react-bootstrap';
 
@@ -76,4 +76,4 @@ function TabContent({탭}){
     </div>)
 }
 
-export default Detail;
+export default Detail; 
