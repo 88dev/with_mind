@@ -9,6 +9,7 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link href="https://font.elice.io/EliceDigitalBaeum.css" rel="stylesheet" />
 
 <title>위드마인드</title>
 <style>
@@ -47,6 +48,7 @@
     .wrap_value {
         height: 100%;
     }
+
     .main_01 {
         position: relative;
         background: none;
@@ -327,6 +329,94 @@
     <section class="main_07">
         <section class="inner">
             <h2>HISTORY</h2>
+            <p>위드마인드는 2017년 설립 이래, 매년 기술 발전과 사업 성장을 이루고 있습니다.  </p>
+            <section class="wrap_history">
+                <ul class="history_title">
+                    <li class="on">2017~2018</li>
+                    <li>2019~2020</li>
+                    <li>2021~현재</li>
+                </ul>
+                <section class="history_cont">
+                    <section class="on">
+                        <section class="wrap_flex">
+                            <div>
+                                <span></span>
+                                <p>2017~2018 : Create</p>
+                            </div>
+                            <div>
+                                <b>2017</b>
+                                <ul>
+                                    <li><b>07</b>(주)위드마인드 설립</li>
+                                    <li><b>08</b>기업부설 연구소 설립</li>
+                                    <li><b>11</b>음성기반 감정분석 기술 개발</li>
+                                    <li><b>12</b>분당서울대 병원 음성감정분석 임상테스트</li>
+                                </ul>
+                                <b>2017</b>
+                                <ul>
+                                    <li><b>04</b>기술전문기업 협력 R&D (영상분석기술 도입)</li>
+                                    <li><b>06</b>AI면접 서비스 개발</li>
+                                    <li><b>09</b>영어 발음 교정 어플리케이션 APP ‘SPEAKING(스피킹)’ 런칭</li>
+                                    <li><b>11</b>표정 및 행동 AI 분석기술 협력개발</li>
+                                    <li><b>12</b>멀티모달 AI분석 시스템 개발</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                    <section>
+                        <section class="wrap_flex">
+                            <div>
+                                <span></span>
+                                <p>2019~2020 : Model</p>
+                            </div>
+                            <div>
+                                <b>2019</b>
+                                <ul>
+                                    <li><b>01</b>인지중재 치료 서비스 시스템 구축</li>
+                                    <li><b>08</b>AI면접 서비스 Beta 런칭</li>
+                                    <li><b>12</b>nipa 진흥원장상 수상</li>
+                                </ul>
+                                <b>2020</b>
+                                <ul>
+                                    <li><b>03</b>온라인 채용 서비스 AI면접</li>
+                                    <li><b>05</b>SBA 취업캠프 AI면접 서비스</li>
+                                    <li class="blank">이화여대 인턴십 AI면접 서비스</li>
+                                    <li><b>06</b>KPC 2,000명 AI면접</li>
+                                    <li><b>08</b>ETRI Holdings 투자유치</li>
+                                    <li><b>09</b>본점 이전 및 연구소기업 등록</li>
+                                    <li><b>11</b>TIPS 선정</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                    <section>
+                        <section class="wrap_flex">
+                            <div>
+                                <span></span>
+                                <p>2021~현재 : Scaleup</p>
+                            </div>
+                            <div>
+                                <b>2021</b>
+                                <ul>
+                                    <li><b>01</b>서울창업허브 지점 설립</li>
+                                    <li class="blank">IBK창공(N15) 액셀러레이팅 선정</li>
+                                    <li class="blank">총10개 R&D 수행 (총 과제규모 약 20억)</li>
+                                    <li><b>03</b>AI CS교육 서비스 개발</li>
+                                    <li class="blank">대덕특구 엑셀러레이팅 선정</li>
+                                    <li><b>11</b>서울대, 인천시, 특성화고 70곳, 취업센터</li>
+                                </ul>
+                                <b>현재</b>
+                                <ul>
+                                    <li><b>01</b>메타버스 기반 AI화상면접 출시</li>
+                                    <li class="blank">싱가포르 법인설립(에듀샐러드)</li>
+                                    <li><b>02</b>AI기반 공급기업 4곳 선정</li>
+                                    <li><b>05</b>(주)미듬에듀기업직무교육 플랫폼 사업화 제휴</li>
+                                    <li><b>06</b>동부화재, 청호나이스 영업자 HR교육 서비스 협의</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
         </section>
     </section>
     <section class="main_08" id="news">
@@ -376,6 +466,13 @@
             $(".compete_title li").eq(idx).addClass("on");
             $(".compete_cont > section").hide();
             $(".compete_cont > section").eq(idx).show();
+        });
+        $(".history_title li").click(function() {
+            var idx = $(this).index();
+            $(".history_title li").removeClass("on");
+            $(".history_title li").eq(idx).addClass("on");
+            $(".history_cont > section").hide();
+            $(".history_cont > section").eq(idx).show();
         });
     });
 </script>

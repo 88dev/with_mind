@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .wrap_history {
+                
+            }
+            .history_title li {
+                list-style: none;
+                float: left;
+                width: 100px;
+                padding: 10px 15px;
+                cursor: pointer;
+                text-align: center;
+                border: 1px solid #bebebe;
+            }
+            .history_title li.on {
+                background-color: #ffb715;
+            }
+            .history_cont {
+                clear: both;
+                border: 1px solid #dedede;
+                height: 130px;
+                background-color: #cecece;
+            }
+            .history_cont section {
+                display: none;
+            }
+            .history_cont section.on {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="wrap_history">
+            <ul class="history_title">
+                <li class="on">tab1</li>
+                <li>tab2</li>
+                <li>tab3</li>
+            </ul>
+            <section class="history_cont">
+                <section class="on">
+                    tab1_content
+                </section>
+                <section>
+                    tab2_content
+                </section>
+                <section>
+                    tab3_content
+                </section>
+            </section>
+        </section>
+
+    </body>
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script>
+        $(document).ready(function() {
+            $(".history_title li").click(function() {
+                var idx = $(this).index();
+                $(".history_title li").removeClass("on");
+                $(".history_title li").eq(idx).addClass("on");
+                $(".history_cont > section").hide();
+                $(".history_cont > section").eq(idx).show();
+            });
+        });
+    </script>
+</html>

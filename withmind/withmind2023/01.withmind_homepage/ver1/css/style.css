@@ -355,6 +355,96 @@ h3 {
     line-height: 26px;
     opacity: 0.8;
 }
+.main_07 h2 + p {
+    margin-top: 12px;
+    color: #808080;
+    font-size: 20px;
+    font-weight: 500;
+}
+.wrap_history {
+    margin-top: 36px;
+}
+.wrap_history .history_title {
+    display: flex;
+}
+.history_title li {
+    flex: 1;
+    height: 58px;
+    line-height: 58px;
+    border: 1px solid #EBEBEB;
+    color: #AAAAAA;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+.history_title li:not(:last-of-type) {
+    border-right: none;
+}
+.history_title li.on {
+    background: #000719;
+    color: #FFFFFF;
+}
+.history_cont {
+    border: 1px solid red;
+    margin-top: 50px;
+}
+.history_cont section {
+    display: none;
+}
+.history_cont section.on {
+    display: block;
+}
+.history_cont .wrap_flex {
+    display: flex;
+    gap: 100px;
+}
+.history_cont .wrap_flex div:first-of-type span {
+    display: block;
+    width: 430px;
+    height: 306px;
+}
+.history_cont > section:nth-of-type(1) .wrap_flex div:first-of-type span {
+    background: url('../images/img_history_01.png') no-repeat;
+}
+.history_cont > section:nth-of-type(2) .wrap_flex div:first-of-type span {
+    background: url('../images/img_history_02.png') no-repeat;
+}
+.history_cont > section:nth-of-type(3) .wrap_flex div:first-of-type span {
+    background: url('../images/img_history_03.png') no-repeat;
+}
+.history_cont .wrap_flex div:first-of-type p {
+    margin-top: 12px;
+    color: #333333;
+    font-size: 30px;
+    font-weight: 600;
+}
+.history_cont .wrap_flex div:last-of-type b {
+    margin-right: 14px;
+    color:#333333;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Elice Digital Baeum", sans-serif;
+}
+.history_cont .wrap_flex div:last-of-type > b {
+    color: #5B9BD5;
+}
+.history_cont > section:nth-of-type(1) .wrap_flex div:last-of-type > b {
+    color: #3B61D5;
+
+}
+.history_cont .wrap_flex ul li {
+    margin-top: 10px;
+    color: #808080;
+    font-size: 18px;
+    font-weight: 400;
+}
+.history_cont .wrap_flex ul + b {
+    display: block;
+    margin-top: 36px;
+}
+.history_cont .wrap_flex ul .blank {
+    padding-left: 35px;
+}
 
 
 /* 테블릿 */
@@ -536,6 +626,10 @@ h3 {
         font-size: 20px;
     }
     .main_06 .space-holder .sticky .horizontal .wrap_card .card p {
+        font-size: 15px;
+    }
+    .main_07 h2 + p {
+        margin-top: 6px;
         font-size: 15px;
     }
 } 
