@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<link rel='styleSheet' href='./css/reset.css' type='text/css'></link>
+<link rel='styleSheet' href='./css/style.css' type='text/css'></link>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
+<title>위드마인드</title>
+<style>
+    /* value animation */
+    .wrap_curtain section {
+        position: relative;
+    }
+    .box {
+        position: absolute;
+        width: 50%; 
+        height: 100%;
+        background: #FFF; 
+        text-align: center;
+        color: #fff;
+        font-size: 0.8em;
+    }
+    .wrap_box {
+        min-height: auto;
+        height: 600px;
+        padding: 0;
+    }
+    .delighter.right { transform:translate(-100%); opacity:0; transition: all .75s ease-out; }
+    .delighter.right.started { transform:none; opacity:1; }
+    
+    .delighter.left { transform:translate(100%); opacity:0; transition: all .75s ease-out; }
+    .delighter.left.started { transform:none; opacity:1; }
+    
+    .delighter.bottom { transform:translatey(300%); opacity:0; transition: all .75s ease-out; }
+    .delighter.bottom.started { transform:none; opacity:1; }
+    .delighter .box { transition: all .5s ease-out; }
+    .delighter .box:nth-child(1) { transform: translate(-290px, 0); }
+    .delighter .box:nth-child(2) { transform: translate(calc(100% + 290px), 0); }
+    
+    .delighter.started .box:nth-child(1) { transform: translate(-100%, 0); }
+    .delighter.started .box:nth-child(2) { transform: translate(200%, 0); }
+    .wrap_value {
+        height: 100%;
+    }
+</style>
+<header>
+    <section>
+        <h1></h1>
+        <ul>
+            <li><a class="company">COMPANY</a></li>
+            <li><a class="technology">TECHNOLOGY</a></li>
+            <li><a class="service">SERVICE</a></li>
+            <li><a class="news">NEWS</a></li>
+            <li><a class="contact">CONTACT</a></li>
+        </ul>
+    </section>
+</header>
+</head>
+<body>
+    <section class="main_01">
+        <section class="wrap_txt">
+            <span>사람 중심의 서비스</span>
+            <strong>WITHMIND</strong>
+            <p>
+                (주)위드마인드는 비즈니스와 IT의 융합으로 미래 가치를 만들어나갑니다.<br>
+                R&D 역량과 전문성을 바탕으로 우리의 도전은 계속됩니다. 
+            </p>
+        </section>
+    </section>
+    <section class="main_02" id="company">
+        <section class="inner">
+            <hr>
+            <h3>위드마인드는 4차 산업 기술을 개발하여 <br>인간 중심의 서비스를 제공하는 것을 목표로 하고 있습니다.</h3>
+            <p>위드마인드는 음성데이터 기반 감정 분석 기술 및 생체데이터 기반 멀티모달 AI 분석 기술력을 스마트 디바이스에 접목하여, <br>빠르게 변화하고 있는 산업 트렌드의 기대에 부응하는 서비스 상품을 선보이고자 노력하고 있습니다.</p>
+            <p>모든 사람들이 편안하고 풍요롭게 살아가는 세상은 우리가 꿈꾸는 미래의 모습이며, 위드마인드의 목표이기도 합니다.</p>
+            <p>온 마음을 다해 우수한 솔루션과 효율적인 제품을 고객들에게 제공하고 안정적으로 지원하겠습니다.</p>
+        </section>
+    </section>
+    <section class="main_03">
+        <h2>VALUE</h2>
+        <section class="wrap_curtain">
+            <div class="foo" data-delighter></div>
+            <section class="wrap_box" data-delighter="start:0.7">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="wrap_value">
+                    <div class="wrap_flex">
+                        <img src="./images/icon_human.svg" />
+                        <div class="wrap_txt">
+                            <span>HUMAN</span>
+                            <b>사람</b>
+                            <p>사람을 위한 서비스를 생각합니다.</p>
+                        </div>
+                    </div>
+                    <div class="wrap_flex">
+                        <img src="./images/icon_future.svg" />
+                        <div class="wrap_txt">
+                            <span>FUTURE</span>
+                            <b>미래</b>
+                            <p>4차 산업 트렌드에 발맞추어<br>새로운 기술 개발을 선도합니다.</p>
+                        </div>
+                    </div>
+                    <div class="wrap_flex">
+                        <img src="./images/icon_respect.svg" />
+                        <div class="wrap_txt">
+                            <span>RESPECT</span>
+                            <b>존중</b>
+                            <p>존중과 배려에 최우선 가치를 둡니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+    <section class="main_04">
+        <section class="inner">
+            <h2>경쟁력</h2>
+            <section class="wrap_compete">
+                <ul class="compete_title">
+                    <li class="on">DEEP TECH</li>
+                    <li>BIG DATA</li>
+                    <li>선제적 시장대응력</li>
+                    <li>합리적 수익모델</li>
+                </ul>
+                <section class="compete_cont">
+                    <section class="on">
+                        <div>
+                            <img src="./images/img_deeptech_01.png" />
+                            <p>Multimodal</p>
+                        </div>
+                        <div>
+                            <img src="./images/img_deeptech_02.png" />
+                            <p>NLP<br>(자연어처리 기술)</p>
+                        </div>
+                        <div>
+                            <img src="./images/img_deeptech_03.png" />
+                            <p>AI Human</p>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <img src="./images/img_bigdata_01.png" />
+                            <p>100,000건 +<br>HR 영상 데이터 보유</p>
+                        </div>
+                        <div>
+                            <img src="./images/img_bigdata_02.png" />
+                            <p>데이터 거래 사업모델(동형암호 BM)</p>
+                            <span>ETRI, CSEM(스위스) 연구기관 협력</span>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <img src="./images/img_respond_01.png" />
+                            <p>NLP 기술 기반 사용자 맞춤형 서비스</p>
+                        </div>
+                        <div>
+                            <img src="./images/img_respond_02.png" />
+                            <p>뉴노멀 시대를 이끄는 비대면 서비스</p>
+                        </div>
+                        <div>
+                            <img src="./images/img_respond_03.png" />
+                            <p>정부 핵심 정책 AI, 고용 시장</p>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <img src="./images/img_model_01.png" />
+                            <p>솔루션 기반  수익모델</p>
+                        </div>
+                        <div>
+                            <img src="./images/img_model_02.png" />
+                            <p>정량데이터 기반 수익모델</p>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="main_05" id="technology">
+        <section class="inner">
+            <h2>TECHNOLOGY</h2>
+            <p class="txt">총 8개의 AI엔진이 탑재된 AI 플랫폼 API를 통해,<br>위드마인드만의 차별화된 기술 서비스를 제공하고 있습니다.</p>
+            <section class="wrap_tech">
+                <div>
+                    <img src="./images/img_tech_01.svg" />
+                    <span>표정분석 기술</span>
+                </div>
+                <div>
+                    <img src="./images/img_tech_02.svg" />
+                    <span>시선추적 기술</span>
+                </div>
+                <div>
+                    <img src="./images/img_tech_03.svg" />
+                    <span>심박분석 기술</span>
+                </div>
+                <div>
+                    <img src="./images/img_tech_04.svg" />
+                    <span>안면인식 기술</span>
+                </div>
+                <div>
+                    <img src="./images/img_tech_05.svg" />
+                    <span>음성인식 기술</span>
+                </div>
+                <div>
+                    <img src="./images/img_tech_06.svg" />
+                    <span>심층질의 기술</span>
+                </div>
+                <div>
+                    <img src="./images/img_tech_07.svg" />
+                    <span>답변분석 기술</span>
+                </div>
+                <div>
+                    <img src="./images/img_tech_08.svg" />
+                    <span>성향분석 기술</span>
+                </div>
+            </section>
+            <p class="txt">각 분야별 전문기관들과 파트너쉽을 맺음으로써, <br>더욱 견고한 AI 기술 구축에 힘쓰고 있습니다.</p>
+            <section class="partner">
+                <div class="group">
+                    <div class="tit">생체분석</div>
+                    <div><img src="./images/logo_01.png" /></div>
+                    <div><img src="./images/logo_02.png" /></div>
+                </div>
+                <div class="group">
+                    <div class="tit">자연어 처리</div>
+                    <div><img src="./images/logo_03.png" /></div>
+                    <div><img src="./images/logo_04.png" /></div>
+                </div>
+                <div class="group">
+                    <div class="tit">딥러닝</div>
+                    <div><img src="./images/logo_05.png" /></div>
+                    <div><img src="./images/logo_06.png" /></div>
+                </div>
+                <div class="group">
+                    <div class="tit">HR 데이터</div>
+                    <div><img src="./images/logo_07.png" /></div>
+                    <div><img src="./images/logo_08.png" /></div>
+                    <div><img src="./images/logo_09.png" /></div>
+                    <div><img src="./images/logo_10.png" /></div>
+                    <div><img src="./images/logo_11.png" /></div>
+                </div>
+            </section>
+        </section>
+    </section>
+    <section class="main_06" id="service">
+        <div class="space-holder">
+            <div class="sticky">
+                <h2>SERVICE</h2>
+                <div class="horizontal">
+                    <section role="feed" class="wrap_card">
+                        <h2>SERVICE</h2>
+                        <div class="card">
+                            <img src="./images/img_service_01.png" />
+                            <b>AI모의면접 IM-PRI</b>
+                            <p>교육·취업기관을 위한 AI 면접 연습 서비스</p>
+                        </div>
+                        <div class="card">
+                            <img src="./images/img_service_02.png" />
+                            <b>AI모의면접 IM</b>
+                            <p>취업 준비생을 위한 AI 면접 연습 서비스</p>
+                        </div>
+                        <div class="card">
+                            <img src="./images/img_service_03.png" />
+                            <b>AI기업면접 IM-BIZ</b>
+                            <p>기업을 위한 AI 채용 면접 서비스</p>
+                        </div>
+                        <div class="card">
+                            <img src="./images/img_service_04.png" />
+                            <b>AI화상면접 IM-UNI</b>
+                            <p>기업을 위한 실시간  AI 화상 면접 서비스</p>
+                        </div>
+                        <div class="card">
+                            <img src="./images/img_service_05.png" />
+                            <b>AI HR교육 서비스</b>
+                            <p>AI 서비스직 트레이닝 솔루션</p>
+                        </div>
+                        <div class="card">
+                            <img src="./images/img_service_06.png" />
+                            <b>인지중재 치료 서비스</b>
+                            <p>다중 영역 인지기능 향상 프로그램 시스템 구축 사용자 데이터를 통한 맞춤형 콘텐츠 제공</p>
+                        </div>
+                        <div class="card">
+                            <img src="./images/img_service_07.png" />
+                            <b>FHE Cloud Drive 서비스</b>
+                            <p>완전동형암호 기반 클라우드 드라이브 서비스 국제 공동 R&D 선정 위드마인드, ETRI(국내), CSEM(스위스), ITER(이탈리아)</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main_07">
+        <section class="inner">
+            <h2>HISTORY</h2>
+        </section>
+    </section>
+    <section class="main_08" id="news">
+        <section class="inner">
+            <h2>NEWS</h2>
+
+        </section>
+    </section>
+    <section class="main_09">
+        <section class="inner">
+            <h2>PARTNER</h2>
+
+        </section>
+    </section>
+    <section class="main_10" id="contact">
+        <section class="inner">
+            <h2>CONTACT</h2>
+
+        </section>
+    </section>
+    <section class="main_11">
+        <section class="inner">
+            <h3>제휴 문의하기</h3>
+
+        </section>
+    </section>
+
+
+
+
+</body>
+<script src='./js/jquery-3.4.1.min.js'></script>
+<script type="text/javascript" src="./plugin/delighters.js"></script>
+<script src='./js/scroll.js'></script>
+<script>
+        $(document).ready(function() {
+
+            // $('.company').click(function(){
+            //     var offset = $('#company').offset(); //선택한 태그의 위치를 반환
+            //         //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+            //     $('html').animate({scrollTop : offset.top}, 400);
+            // });
+
+        $(".compete_title li").click(function() {
+            var idx = $(this).index();
+            $(".compete_title li").removeClass("on");
+            $(".compete_title li").eq(idx).addClass("on");
+            $(".compete_cont > section").hide();
+            $(".compete_cont > section").eq(idx).show();
+        });
+    });
+</script>
+</html>

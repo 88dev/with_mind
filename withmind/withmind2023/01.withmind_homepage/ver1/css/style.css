@@ -63,7 +63,7 @@ h3 {
     height: 700px;
     color: #FFFFFF;
 }
-.main_01 > section {
+.main_01 .wrap_txt {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,16 +72,16 @@ h3 {
     height: 100%;
     margin: 0 auto;
 }
-.main_01 > section span {
+.main_01 .wrap_txt span {
     font-size: 20px;
 }
-.main_01 > section strong {
+.main_01 .wrap_txt strong {
     margin: 4px 0 12px;
     font-size: 50px;
     font-weight: 800;
     line-height: 60px;
 }
-.main_01 > section p {
+.main_01 .wrap_txt p {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
