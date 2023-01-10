@@ -461,7 +461,10 @@ h3 {
     font-size: 36px;
     font-weight: 800;
 }
-.main_10 .contact .wrap_map > div {
+.main_10 .contact .wrap_map {
+    width: 100%;
+}
+.main_10 .contact .wrap_map iframe {
     border-radius: 16px;
 }
 .main_10 .contact .wrap_map p {
@@ -728,6 +731,9 @@ h3 {
     .main_10 .contact h4 {
         font-size: 20px;
         line-height: 20px;
+    }
+    .main_10 .contact .wrap_map iframe {
+        height: 205px;   
     }
     .main_10 .contact .wrap_map p {
         font-size: 18px;

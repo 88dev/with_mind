@@ -91,17 +91,18 @@
         <section class="bg-video">
             <video class="bg-video__content" autoplay muted loop>
                 <source src="./video/withmind.mp4" type="video/mp4" />
-                <!-- <source src="img/video.webm" type="video/webm" />
-                    Your browser is not supported! -->
+                <source src="./video/withmind.webm" type="video/webm" />
             </video>
         </section>
         <section class="wrap_txt">
-            <span class="animate__animated animate__fadeInUp animate_faster">사람 중심의 서비스</span>
+            <span class="animate__animated animate__fadeInUp animate_faster">사람을 위한 인공지능</span>
+            <strong class="animate__animated animate__fadeInUp animate__delay-1s animate_faster">WITHMIND</strong>
+            <!-- <span class="animate__animated animate__fadeInUp animate_faster">사람 중심의 서비스</span>
             <strong class="animate__animated animate__fadeInUp animate__delay-1s animate_faster">WITHMIND</strong>
             <p class="animate__animated animate__fadeInUp animate__delay-2s animate_faster">
                 (주)위드마인드는 비즈니스와 IT의 융합으로 미래 가치를 만들어나갑니다.<br>
                 R&D 역량과 전문성을 바탕으로 우리의 도전은 계속됩니다. 
-            </p>
+            </p> -->
         </section>
     </section>
     <section class="main_02" id="company">
@@ -439,14 +440,14 @@
             <section class="contact">
                 <h4>본사</h4>
                 <div class="wrap_map">
-                    <div id="daumRoughmapContainer1673245381374" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-                    <p>대전광역시 유성구 가정로 219, 3층 302-2-3호 (주)위드마인드</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3212.1231998610924!2d127.36726348687304!3d36.382011482467774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654a36c61b287f%3A0x8db8458da6e90e8d!2z64yA7KCE6rSR7Jet7IucIOycoOyEseq1rCDqsIDsoJXroZwgMjE4!5e0!3m2!1sko!2skr!4v1673314510122!5m2!1sko!2skr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p>대전광역시 유성구 가정로 218, 3층 302-2-3호 (주)위드마인드</p>
                 </div>
             </section>
             <section class="contact">
                 <h4>지점</h4>
                 <div class="wrap_map">
-                    <div id="daumRoughmapContainer1673246054702" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.3495888131724!2d126.94787711558794!3d37.54682663301381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c98a19f5ee043%3A0xd91ee523e8ea4438!2z7ISc7Jq47Yq567OE7IucIOuniO2PrOq1rCDrsLHrspTroZwzMeq4uCAyMQ!5e0!3m2!1sko!2skr!4v1673313523796!5m2!1sko!2skr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <p>서울특별시 마포구 백범로 31길 21, 서울창업허브 809호</p>
                     <div class="info">
                         <b>Tel</b>
@@ -497,18 +498,5 @@
             $(".history_cont > section").eq(idx).show();
         });
     });
-    //본사
-    new daum.roughmap.Lander({
-		"timestamp" : "1673245381374",
-		"key" : "2dcwv",
-		"mapWidth" : "775",
-		"mapHeight" : "400"
-	}).render();
-    new daum.roughmap.Lander({
-		"timestamp" : "1673246054702",
-		"key" : "2dcx9",
-		"mapWidth" : "775",
-		"mapHeight" : "400"
-	}).render();
 </script>
 </html>
