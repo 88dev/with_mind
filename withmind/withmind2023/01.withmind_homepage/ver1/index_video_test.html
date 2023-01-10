@@ -8,8 +8,9 @@
 <link rel='styleSheet' href='./css/style.css' type='text/css'></link>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
 <link href="https://font.elice.io/EliceDigitalBaeum.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 <title>위드마인드</title>
 <style>
@@ -95,8 +96,8 @@
             </video>
         </section>
         <section class="wrap_txt">
-            <span class="animate__animated animate__fadeInUp animate_faster">사람을 위한 인공지능</span>
-            <strong class="animate__animated animate__fadeInUp animate__delay-1s animate_faster">WITHMIND</strong>
+            <span data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-once="false">사람을 위한 인공지능</span>
+            <strong data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-once="false">WITHMIND</strong>
             <!-- <span class="animate__animated animate__fadeInUp animate_faster">사람 중심의 서비스</span>
             <strong class="animate__animated animate__fadeInUp animate__delay-1s animate_faster">WITHMIND</strong>
             <p class="animate__animated animate__fadeInUp animate__delay-2s animate_faster">
@@ -108,15 +109,17 @@
     <section class="main_02" id="company">
         <section class="inner">
             <hr>
-            <h3>위드마인드는 4차 산업 기술을 개발하여 <br>인간 중심의 서비스를 제공하는 것을 목표로 하고 있습니다.</h3>
-            <p>위드마인드는 음성데이터 기반 감정 분석 기술 및 생체데이터 기반 멀티모달 AI 분석 기술력을 스마트 디바이스에 접목하여, <br>빠르게 변화하고 있는 산업 트렌드의 기대에 부응하는 서비스 상품을 선보이고자 노력하고 있습니다.</p>
-            <p>모든 사람들이 편안하고 풍요롭게 살아가는 세상은 우리가 꿈꾸는 미래의 모습이며, 위드마인드의 목표이기도 합니다.</p>
-            <p>온 마음을 다해 우수한 솔루션과 효율적인 제품을 고객들에게 제공하고 안정적으로 지원하겠습니다.</p>
+            <h3 data-aos="fade-up" data-aos-once="true">위드마인드는 4차 산업 기술을 개발하여 <br>인간 중심의 서비스를 제공하는 것을 목표로 하고 있습니다.</h3>
+            <div data-aos="fade-up" data-aos-once="true">
+                <p>위드마인드는 음성데이터 기반 감정 분석 기술 및 생체데이터 기반 멀티모달 AI 분석 기술력을 스마트 디바이스에 접목하여, <br>빠르게 변화하고 있는 산업 트렌드의 기대에 부응하는 서비스 상품을 선보이고자 노력하고 있습니다.</p>
+                <p>모든 사람들이 편안하고 풍요롭게 살아가는 세상은 우리가 꿈꾸는 미래의 모습이며, 위드마인드의 목표이기도 합니다.</p>
+                <p>온 마음을 다해 우수한 솔루션과 효율적인 제품을 고객들에게 제공하고 안정적으로 지원하겠습니다.</p>
+            </div>
         </section>
     </section>
     <section class="main_03">
         <h2>VALUE</h2>
-        <section class="wrap_curtain">
+        <section class="wrhttp://www.hbpaper.kr/ap_curtain" data-aos="fade-up">
             <div class="foo" data-delighter></div>
             <section class="wrap_box" data-delighter="start:0.7">
                 <div class="box"></div>
@@ -473,9 +476,9 @@
 <script src='./js/jquery-3.4.1.min.js'></script>
 <script type="text/javascript" src="./plugin/delighters.js"></script>
 <script src='./js/scroll.js'></script>
-<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-        $(document).ready(function() {
+    $(document).ready(function() {
 
             // $('.company').click(function(){
             //     var offset = $('#company').offset(); //선택한 태그의 위치를 반환
@@ -498,5 +501,6 @@
             $(".history_cont > section").eq(idx).show();
         });
     });
+    AOS.init();
 </script>
 </html>
