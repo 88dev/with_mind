@@ -18,34 +18,56 @@ header {
     z-index: 100;
     border-bottom: 1px solid #FFFFFF;
 }
-header section {
+header .header {
     display: flex;
     justify-content: space-between;
     width: 100%;
     max-width: 1040px;
 }
-header section h1 {
+header .header h1 {
     background: url('../images/img_logo_withmind.svg') no-repeat;
     width: 124px;
     height: 24px;
 }
-header section ul {
+header .header ul {
     display: flex;
     gap: 70px;
 }
-header section ul li {
+header .header ul li {
     font-family: 'Lexend', sans-serif;
     color: #FFFFFF;
     font-size: 15px;
     font-weight: 500;
 }
-header section ul li a {
+header .header ul li a {
     cursor: pointer;
+}
+/* header .hamburger, header nav {
+    display: none;
+}
+@media (max-width: 1024px) {
+    header .header ul {
+        display: none;
+    }
+    header .hamburger, header nav {
+        display: block;
+    }
+} */
+@media (max-width: 650px) {
+
 }
 h2 {
     font-size: 40px;
     font-weight: 800;
     line-height: 54px;
+}
+h2.tit {
+    line-height: 24px;
+    color: #4C99D3;
+    font-size: 16px;
+}
+h2.tit + h2 {
+    margin-top: 12px;
 }
 h3 {
     font-size: 36px;
@@ -495,49 +517,167 @@ h3 {
 }
 
 
+.main_09 {
+    padding-bottom: 80px;
+}
+.main_09 h2 {
+    text-align: center;
+}
+.main_09 h2 + p {
+    margin-top: 12px;
+    line-height: 54px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+.main_09 .wrap_marquee {
+    --space: 65px;
 
-.main_10 .contact {
+    display: grid;
+    align-content: center;
+    overflow: hidden;
+    gap: var(--space);
+    width: 100%;
+    margin-top: 45px;
+}
+.main_09 .wrap_marquee .marquee {
+    --duration: 30s;
+    --gap: var(--space);
+
     display: flex;
-    gap: 200px;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+}
+.main_09 .wrap_marquee .marquee .marquee__group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: rolling var(--duration) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+    .main_09 .marquee__group {
+        animation-play-state: paused;
+    }
+}
+.main_09 .wrap_marquee .marquee .marquee__group img {
+    width: 130px;
+    object-fit: cover;
+}
+.main_09 .wrap_marquee .marquee--reverse .marquee__group {
+    animation: rolling 50s linear infinite;
+    animation-direction: reverse;
+    animation-delay: calc(var(--duration) / -2);
+}
+@keyframes rolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+
+
+
+.main_10 .wrap_map {
+    display: flex;
+    gap: 40px;
     margin-top: 36px;
 }
-.main_10 .contact + .contact {
-    margin-top: 70px;
+.main_10 .wrap_map .map iframe {
+    width: 500px;
+    height: 340px;
 }
-.main_10 .contact h4 {
-    color: #808080;
-    font-size: 36px;
-    font-weight: 800;
+.main_10 .wrap_map .map b {
+    display: block;
+    margin-top: 24px;
+    font-size: 24px;
 }
-.main_10 .contact .wrap_map {
-    width: 100%;
-}
-.main_10 .contact .wrap_map iframe {
-    border-radius: 16px;
-}
-.main_10 .contact .wrap_map p {
-    margin-top: 20px;
-    color: #333333;
-    font-size: 20px;
-    font-weight: 600;
-}
-.main_10 .wrap_controllers {
-    display: none;
-}
-.main_10 .contact .wrap_map .info {
+.main_10 .wrap_map .map div {
     margin-top: 12px;
+    padding-top: 24px;
+    border-top: 1px solid #EBEBEB;
 }
-.main_10 .contact .wrap_map .info b {
-    margin-right: 18px;
-    color: #333333;
-    font-size: 20px;
-    font-weight: 600;
-}
-.main_10 .contact .wrap_map .info span {
-    margin-right: 36px;
-    color: #AAAAAA;
+.main_10 .wrap_map .map p {
+    color: #808080;
     font-size: 18px;
     font-weight: 400;
+}
+.main_10 .wrap_map .map span {
+    position: relative;
+    display: inline-block;
+    margin-top: 12px;
+    padding-left: 22px;
+    color: #808080;
+    font-size: 16px;
+    font-weight: 400;
+}
+.main_10 .wrap_map .map span::before {
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 0;
+}
+.main_10 .wrap_map .map span:first-of-type {
+    margin-right: 12px;
+    padding-right: 12px;
+}
+.main_10 .wrap_map .map span:first-of-type::before {
+    background: url('../images/icon_tel.svg') no-repeat;
+}
+.main_10 .wrap_map .map span:first-of-type::after {
+    position: absolute;
+    content: '';
+    border-right: 1px solid #DDDDDD;
+    width: 1px;
+    height: 8px;
+    top: 7px;
+    right: 0;
+}
+.main_10 .wrap_map .map span:last-of-type::before {
+    background: url('../images/icon_mail.svg') no-repeat;
+}
+.main_11 {
+    background: url('../images/img_contact.png') no-repeat center;
+    height: 650px;
+}
+.main_11 .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    color: #FFFFFF;
+}
+.main_11 h3 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 60px;
+}
+.main_11 p {
+    line-height: 26px;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.main_11 a {
+    border: 1px solid #FFFFFF;
+    border-radius: 50px;
+    background: transparent;
+    width: 139px;
+    height: 50px;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
 }
 
 
@@ -642,16 +782,6 @@ h3 {
     }
     .history_cont > section:nth-of-type(3) .wrap_flex div:first-of-type span {
         background: url('../images/img_history_03.png') no-repeat center / cover;
-    }
-    .main_10 .contact {
-        flex-direction: column;
-        gap: 36px;
-    }
-    .main_10 .contact + .contact {
-        margin-top: 50px;
-    }
-    .root_daum_roughmap {
-        width: 100% !important;
     }
 
 } 
@@ -770,33 +900,6 @@ h3 {
     .history_cont .wrap_flex div > b {
         margin-bottom: 3px;
     }
-    .main_10 .contact {
-        gap: 12px;
-    }
-    .main_10 .contact + .contact {
-        margin-top: 24px;
-    }
-    .main_10 .contact h4 {
-        font-size: 20px;
-        line-height: 20px;
-    }
-    .main_10 .contact .wrap_map iframe {
-        height: 205px;   
-    }
-    .main_10 .contact .wrap_map p {
-        font-size: 18px;
-    }
-    .main_10 .contact .wrap_map .info b {
-        margin-right: 6px;
-        font-size: 16px;
-    }
-    .main_10 .contact .wrap_map .info span {
-        margin-right: 12px;
-        font-size: 14px;
-    }
-    .root_daum_roughmap {
-        height: 205px !important;
-    }
 } 
 
 
@@ -889,6 +992,9 @@ h3 {
         margin: 36px 0 0;
     }
 }
+
+
+
 /* contact */
 .contact .wrap_tit {
     display: flex;

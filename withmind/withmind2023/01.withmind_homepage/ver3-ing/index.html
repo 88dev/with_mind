@@ -6,6 +6,7 @@
 <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
 <link rel='styleSheet' href='./css/reset.css' type='text/css'></link>
 <link rel='styleSheet' href='./css/style.css' type='text/css'></link>
+<link rel='styleSheet' href='./css/header.css' type='text/css'></link>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
@@ -18,7 +19,7 @@
 </head>
 <body>
     <header>
-        <section>
+        <section class="header">
             <h1></h1>
             <ul>
                 <li><a class="company">COMPANY</a></li>
@@ -27,7 +28,28 @@
                 <li><a class="news">NEWS</a></li>
                 <li><a class="contact">CONTACT</a></li>
             </ul>
+            <!-- <div class="hamburger">
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>  
+            </div> -->
         </section>
+        <!-- <nav>
+            <div class="navbar">
+                <div class="container nav-container">                    
+                    <div class="menu-items">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">blogs</a></li>
+                        <li><a href="#">portfolio</a></li>
+                        <li><a href="#">contact</a></li>
+                    </div>
+                </div>
+            </div>
+        </nav> -->
     </header>
     <section class="main_01">
         <section class="bg_video">
@@ -88,7 +110,7 @@
             </section>
         </section>
     </section>
-    <section class="main_04">
+    <section class="main_04" style="border: 3px solid red;">
         <section class="inner">
             <h2>경쟁력</h2>
             <section class="wrap_compete">
@@ -267,7 +289,8 @@
     </section>
     <section class="main_07">
         <section class="inner">
-            <h2>HISTORY</h2>
+            <h2 class="tit">HISTORY</h2>
+            <h2>연혁</h2>
             <p>위드마인드는 2017년 설립 이래, 매년 기술 발전과 사업 성장을 이루고 있습니다.  </p>
             <section class="wrap_history">
                 <ul class="history_title">
@@ -362,45 +385,126 @@
     </section>
     <section class="main_08" id="news">
         <section class="inner">
-            <h2>NEWS</h2>
+            <h2 class="tit">NEWS</h2>
 
         </section>
     </section>
     <section class="main_09">
-        <section class="inner">
-            <h2>CLIENT</h2>
-
+        <h2 class="tit">CLIENT</h2>
+        <p>이미 수많은 기업, 공공기관, 교육기관, 컨설팅 업체<br>가위드마인드와 함께하고 있습니다.</p>
+        <section class="wrap_marquee">
+            <div class="marquee">
+                <div class="marquee__group">
+                    <img src="./images/logo/img_logo_01.png" />
+                    <img src="./images/logo/img_logo_02.png" />
+                    <img src="./images/logo/img_logo_03.png" />
+                    <img src="./images/logo/img_logo_04.png" />
+                    <img src="./images/logo/img_logo_05.png" />
+                    <img src="./images/logo/img_logo_06.png" />
+                    <img src="./images/logo/img_logo_07.png" />
+                    <img src="./images/logo/img_logo_08.png" />
+                    <img src="./images/logo/img_logo_09.png" />
+                    <img src="./images/logo/img_logo_10.png" />
+                    <img src="./images/logo/img_logo_11.png" />
+                </div>
+                <div aria-hidden="true" class="marquee__group">
+                    <img src="./images/logo/img_logo_01.png" />
+                    <img src="./images/logo/img_logo_02.png" />
+                    <img src="./images/logo/img_logo_03.png" />
+                    <img src="./images/logo/img_logo_04.png" />
+                    <img src="./images/logo/img_logo_05.png" />
+                    <img src="./images/logo/img_logo_06.png" />
+                    <img src="./images/logo/img_logo_07.png" />
+                    <img src="./images/logo/img_logo_08.png" />
+                    <img src="./images/logo/img_logo_09.png" />
+                    <img src="./images/logo/img_logo_10.png" />
+                    <img src="./images/logo/img_logo_11.png" />
+                </div>
+            </div>
+            <div class="marquee marquee--reverse">
+                <div class="marquee__group">
+                    <img src="./images/logo/img_logo_12.png" />
+                    <img src="./images/logo/img_logo_13.png" />
+                    <img src="./images/logo/img_logo_14.png" />
+                    <img src="./images/logo/img_logo_15.png" />
+                    <img src="./images/logo/img_logo_16.png" />
+                    <img src="./images/logo/img_logo_17.png" />
+                    <img src="./images/logo/img_logo_18.png" />
+                    <img src="./images/logo/img_logo_19.jpg" />
+                    <img src="./images/logo/img_logo_20.png" />
+                    <img src="./images/logo/img_logo_21.png" />
+                    <img src="./images/logo/img_logo_22.png" />
+                    <img src="./images/logo/img_logo_23.png" />
+                    <img src="./images/logo/img_logo_24.png" />
+                    <img src="./images/logo/img_logo_25.png" />
+                    <img src="./images/logo/img_logo_26.png" />
+                    <img src="./images/logo/img_logo_27.png" />
+                    <img src="./images/logo/img_logo_28.png" />
+                    <img src="./images/logo/img_logo_29.png" />
+                    <img src="./images/logo/img_logo_30.png" />
+                    <img src="./images/logo/img_logo_31.png" />
+                    <img src="./images/logo/img_logo_32.png" />
+                    <img src="./images/logo/img_logo_33.png" />
+                </div>
+                
+                <div aria-hidden="true" class="marquee__group">
+                    <img src="./images/logo/img_logo_12.png" />
+                    <img src="./images/logo/img_logo_13.png" />
+                    <img src="./images/logo/img_logo_14.png" />
+                    <img src="./images/logo/img_logo_15.png" />
+                    <img src="./images/logo/img_logo_16.png" />
+                    <img src="./images/logo/img_logo_17.png" />
+                    <img src="./images/logo/img_logo_18.png" />
+                    <img src="./images/logo/img_logo_19.jpg" />
+                    <img src="./images/logo/img_logo_20.png" />
+                    <img src="./images/logo/img_logo_21.png" />
+                    <img src="./images/logo/img_logo_22.png" />
+                    <img src="./images/logo/img_logo_23.png" />
+                    <img src="./images/logo/img_logo_24.png" />
+                    <img src="./images/logo/img_logo_25.png" />
+                    <img src="./images/logo/img_logo_26.png" />
+                    <img src="./images/logo/img_logo_27.png" />
+                    <img src="./images/logo/img_logo_28.png" />
+                    <img src="./images/logo/img_logo_29.png" />
+                    <img src="./images/logo/img_logo_30.png" />
+                    <img src="./images/logo/img_logo_31.png" />
+                    <img src="./images/logo/img_logo_32.png" />
+                    <img src="./images/logo/img_logo_33.png" />
+                </div>
+            </div>
         </section>
     </section>
     <section class="main_10" id="contact">
         <section class="inner">
-            <h2>CONTACT</h2>
-            <section class="contact">
-                <h4>본사</h4>
-                <div class="wrap_map">
+            <h2 class="tit">CONTACT</h2>
+            <h2>오시는 길</h2>
+            <section class="wrap_map">
+                <section class="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3212.1231998610924!2d127.36726348687304!3d36.382011482467774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654a36c61b287f%3A0x8db8458da6e90e8d!2z64yA7KCE6rSR7Jet7IucIOycoOyEseq1rCDqsIDsoJXroZwgMjE4!5e0!3m2!1sko!2skr!4v1673314510122!5m2!1sko!2skr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <p>대전광역시 유성구 가정로 218, 3층 302-2-3호 (주)위드마인드</p>
-                </div>
-            </section>
-            <section class="contact">
-                <h4>지점</h4>
-                <div class="wrap_map">
+                    <b>본사</b>
+                    <div>
+                        <p>대전광역시 유성구 가정로 218, 3층 302-2-3호 (주)위드마인드</p>
+                    </div>
+                </section>
+                <section class="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.3495888131724!2d126.94787711558794!3d37.54682663301381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c98a19f5ee043%3A0xd91ee523e8ea4438!2z7ISc7Jq47Yq567OE7IucIOuniO2PrOq1rCDrsLHrspTroZwzMeq4uCAyMQ!5e0!3m2!1sko!2skr!4v1673313523796!5m2!1sko!2skr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <p>서울특별시 마포구 백범로 31길 21, 서울창업허브 809호</p>
-                    <div class="info">
-                        <b>Tel</b>
+                    <b>지점</b>
+                    <div>
+                        <p>서울특별시 마포구 백범로 31길 21, 서울창업허브 809호</p>
                         <span>02-313-7705</span>
-                        <b>E-mail</b>
                         <span>sales@withmind.net</span>
                     </div>
-                </div>
+                </section>
             </section>
         </section>
     </section>
     <section class="main_11">
         <section class="inner">
-            <h3>제휴 문의하기</h3>
-
+            <div>
+                <h3>제휴 문의하기</h3>
+                <p>문의하실 내용을 보내주시면,<br>확인후 최대한 빠른 시일 내 답변을 드리도록 하겠습니다.</p>
+            </div>
+            <a href="">문의하기 →</a>
         </section>
     </section>
 
@@ -413,6 +517,8 @@
 <script src='./js/scroll.js'></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    
+
     $(document).ready(function() {
 
         $(".compete_title li").click(function() {

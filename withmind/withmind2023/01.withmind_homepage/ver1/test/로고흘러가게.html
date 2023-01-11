@@ -5,212 +5,153 @@
 <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
 <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
 <link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
-<title></title>
+<title>로고 흘러가게</title>
 <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-    }
 
-    body {
-        background-color: #eee;
-    }
+  * {
+    box-sizing: border-box;
+  }
+  .wrap_marquee {
+    --space: 65px;
 
-    .wrapper {
-        background-color: #fff;
-        margin: auto;
-        max-width: 100vw;
-        overflow: hidden;
-        display: flex;
-    }
+    display: grid;
+    align-content: center;
+    overflow: hidden;
+    gap: var(--space);
+    width: 100%;
+  }
+  .wrap_marquee .marquee {
+    --duration: 30s;
+    --gap: var(--space);
 
-    .images-line {
-        width: fit-content;
-        display: flex;
-        padding: 24px 0;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+  }
+  .wrap_marquee .marquee .marquee__group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: rolling var(--duration) linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__group {
+      animation-play-state: paused;
     }
-
-    .rolling {
-        backface-visibility: hidden;
-        transform: translateX(0);
+  }
+  .wrap_marquee .marquee .marquee__group img {
+    width: 130px;
+    object-fit: cover;
+  }
+  .wrap_marquee .marquee--reverse .marquee__group {
+    animation: rolling 50s linear infinite;
+    animation-direction: reverse;
+    animation-delay: calc(var(--duration) / -2);
+  }
+  @keyframes rolling {
+    0% {
+      transform: translateX(0);
     }
-
-    .images-line .rolling-image {
-        display: block;
-        filter: grayscale(1);
-        width: 120px;
-        margin: 0 24px;
+    100% {
+      transform: translateX(calc(-100% - var(--gap)));
     }
+  }
 
 </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="images-line">
-            <img src="https://logos-world.net/wp-content/uploads/2021/02/Trello-Symbol.png" alt="Trello" class="rolling-image">
-            <img src="https://logos-world.net/wp-content/uploads/2020/03/Coca-Cola-Logo-1987-2009.png" alt="CocaColla" class="rolling-image">
-            <img src="https://logos-world.net/wp-content/uploads/2021/02/Trello-Symbol.png" alt="Trello" class="rolling-image">
-            <img src="https://logos-world.net/wp-content/uploads/2020/03/Coca-Cola-Logo-1987-2009.png" alt="CocaColla" class="rolling-image">
-            <img src="https://logos-world.net/wp-content/uploads/2021/02/Trello-Symbol.png" alt="Trello" class="rolling-image">
-            <img src="https://logos-world.net/wp-content/uploads/2020/03/Coca-Cola-Logo-1987-2009.png" alt="CocaColla" class="rolling-image">
-            <img src="https://logos-world.net/wp-content/uploads/2021/02/Trello-Symbol.png" alt="Trello" class="rolling-image">
-            <img src="https://logos-world.net/wp-content/uploads/2020/03/Coca-Cola-Logo-1987-2009.png" alt="CocaColla" class="rolling-image">
-        </div>
+  <section class="wrap_marquee">
+    <div class="marquee">
+      <div class="marquee__group">
+        <img src="../images/logo/img_logo_01.png" />
+        <img src="../images/logo/img_logo_02.png" />
+        <img src="../images/logo/img_logo_03.png" />
+        <img src="../images/logo/img_logo_04.png" />
+        <img src="../images/logo/img_logo_05.png" />
+        <img src="../images/logo/img_logo_06.png" />
+        <img src="../images/logo/img_logo_07.png" />
+        <img src="../images/logo/img_logo_08.png" />
+        <img src="../images/logo/img_logo_09.png" />
+        <img src="../images/logo/img_logo_10.png" />
+        <img src="../images/logo/img_logo_11.png" />
+      </div>
+      <div aria-hidden="true" class="marquee__group">
+        <img src="../images/logo/img_logo_01.png" />
+        <img src="../images/logo/img_logo_02.png" />
+        <img src="../images/logo/img_logo_03.png" />
+        <img src="../images/logo/img_logo_04.png" />
+        <img src="../images/logo/img_logo_05.png" />
+        <img src="../images/logo/img_logo_06.png" />
+        <img src="../images/logo/img_logo_07.png" />
+        <img src="../images/logo/img_logo_08.png" />
+        <img src="../images/logo/img_logo_09.png" />
+        <img src="../images/logo/img_logo_10.png" />
+        <img src="../images/logo/img_logo_11.png" />
+      </div>
     </div>
+    <div class="marquee marquee--reverse">
+      <div class="marquee__group">
+        <img src="../images/logo/img_logo_12.png" />
+        <img src="../images/logo/img_logo_13.png" />
+        <img src="../images/logo/img_logo_14.png" />
+        <img src="../images/logo/img_logo_15.png" />
+        <img src="../images/logo/img_logo_16.png" />
+        <img src="../images/logo/img_logo_17.png" />
+        <img src="../images/logo/img_logo_18.png" />
+        <img src="../images/logo/img_logo_19.jpg" />
+        <img src="../images/logo/img_logo_20.png" />
+        <img src="../images/logo/img_logo_21.png" />
+        <img src="../images/logo/img_logo_22.png" />
+        <img src="../images/logo/img_logo_23.png" />
+        <img src="../images/logo/img_logo_24.png" />
+        <img src="../images/logo/img_logo_25.png" />
+        <img src="../images/logo/img_logo_26.png" />
+        <img src="../images/logo/img_logo_27.png" />
+        <img src="../images/logo/img_logo_28.png" />
+        <img src="../images/logo/img_logo_29.png" />
+        <img src="../images/logo/img_logo_30.png" />
+        <img src="../images/logo/img_logo_31.png" />
+        <img src="../images/logo/img_logo_32.png" />
+        <img src="../images/logo/img_logo_33.png" />
+      </div>
+    
+      <div aria-hidden="true" class="marquee__group">
+        <img src="../images/logo/img_logo_12.png" />
+        <img src="../images/logo/img_logo_13.png" />
+        <img src="../images/logo/img_logo_14.png" />
+        <img src="../images/logo/img_logo_15.png" />
+        <img src="../images/logo/img_logo_16.png" />
+        <img src="../images/logo/img_logo_17.png" />
+        <img src="../images/logo/img_logo_18.png" />
+        <img src="../images/logo/img_logo_19.jpg" />
+        <img src="../images/logo/img_logo_20.png" />
+        <img src="../images/logo/img_logo_21.png" />
+        <img src="../images/logo/img_logo_22.png" />
+        <img src="../images/logo/img_logo_23.png" />
+        <img src="../images/logo/img_logo_24.png" />
+        <img src="../images/logo/img_logo_25.png" />
+        <img src="../images/logo/img_logo_26.png" />
+        <img src="../images/logo/img_logo_27.png" />
+        <img src="../images/logo/img_logo_28.png" />
+        <img src="../images/logo/img_logo_29.png" />
+        <img src="../images/logo/img_logo_30.png" />
+        <img src="../images/logo/img_logo_31.png" />
+        <img src="../images/logo/img_logo_32.png" />
+        <img src="../images/logo/img_logo_33.png" />
+      </div>
+    </div>
+  </section>
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
 <script>
-/*
-  -- Start Rolling --
-*/
-
-/*
-  !!!!!
-  == This might cause a Stack Overflowing error, bacause of endless recursion, use carefully ==
-  !!!!!
-*/
-
-const container = document.querySelector('.images-line')
-const basis = container.querySelectorAll('.rolling-image').length || 0
-
-function rolling (loop) {
-  if (container) {
-    const imageList = container.querySelectorAll('.rolling-image')
-    const basicWidth = imageList[0].offsetWidth + parseInt(getComputedStyle(imageList[0]).marginLeft) + parseInt(getComputedStyle(imageList[0]).marginRight)
-
-    let translation = 0
-      
-    if (!loop) {
-      if (imageList && imageList.length !== 0) {
-        const urlList = []
-        imageList.forEach(image => {
-          urlList.push(image.src)
-        })
-
-        urlList.forEach((url, i) => {
-          const image = document.createElement('img')
-          image.classList.add('rolling-image')
-          image.src = urlList[i]
-          image.alt = imageList[i].alt
-
-          container.append(image)
-
-          if (i < urlList.length / 2) {
-             translation -= basicWidth
-          }
-        })
-
-        container.classList.add('rolling')
-        container.style.transform = `translateX(${translation}px)`
-        container.style.transition = 'transform 6s linear'
-
-        setInterval(() => {
-          container.style.transform = 'translateX(0)'
-          container.style.transition = 'none'
-          
-          rolling(true)
-        }, 6000)
-      }
-    } else {
-      if (imageList && imageList.length !== 0) {
-        const urlList = [] 
-        imageList.forEach(image => {
-          urlList.push(image.src)
-        })
-
-        urlList.forEach((url, i) => {
-          if (i < urlList.length / 2) {
-            if (i < urlList.length / 4) {
-              translation -= basicWidth
-            }
-          }
-        })
-        
-        container.style.transform = `translateX(${translation}px)`
-        container.style.transition = 'transform 6s linear'
-
-        setInterval(() => {
-          container.style.transform = 'translateX(0)'
-          container.style.transition = 'none'
-          
-          rolling(true)
-        }, 6000)
-      }
-    }
-    
-    return
-  }
-  
-  return
-}
-
-window.addEventListener('load', rolling(false))
-
-/*
-  -- DEPRECATED --
-*/
-
-// const urlList = []
-
-// imageList.forEach(image => {
-//   urlList.push(image.src)
-// })
-
-// let transform = 0
-// let counter = -1
-// let amount = -1
-
-// function rolling () { 
-//   const limit = container.offsetWidth
-//   container.classList.add('rolling')
-  
-//   if (container.children.length < urlList.length * 2) {
-//     if (transform > -limit + 168) {
-//       transform -= 168
-//     } else {
-//       transform = -limit
-//     }
-//   } else {
-//     container.classList.remove('rolling')
-//     const toRemove = container.querySelectorAll('.rolling-image')
- 
-    
-//     // !!!
-    
-//     transform += 168 * 5
-    
-//     // !!!
-
-//     for (let i = 0; i < urlList.length; i++) {
-//       toRemove[i].remove()
-//     }
-//   }
-
-//   if (counter < urlList.length - 1) {
-//     counter++
-//   } else {
-//     counter = 0
-//   }
-
-//   const image = document.createElement('img')
-//   image.classList.add('rolling-image')
-//   image.src = urlList[counter]
-//   image.alt = imageList[counter].alt
-
-//   container.append(image)
-
-//   container.style.transform = `translate(${transform}px)`
-  
-//   console.log('elements: ', container.children.length)
-// }
-
-// setInterval(() => {
-//   window.requestAnimationFrame(() => rolling())
-// }, 1000)
 
 </script>
 </html>
 <!-- 
 출처
-https://codepen.io/antonmiazyn/pen/gORroXB 
+https://codepen.io/agsymonds/pen/jOpOGWP
 -->
