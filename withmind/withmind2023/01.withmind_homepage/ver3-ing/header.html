@@ -4,9 +4,18 @@
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
 <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
-<link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link>
+<!-- <link rel='styleSheet' href='/withmind/withmind2022/00.default/css/reset.css' type='text/css'></link> -->
 <link rel='styleSheet' href='./css/header.css' type='text/css'></link>
 <title></title>
+<style>
+    ul, li {
+        margin: 0;
+        padding: 0;
+    }
+    ul li {
+        list-style: none;
+    }
+</style>
 </head>
 <body>
 
@@ -14,7 +23,7 @@
     <header>
         <section class="header">
             <h1></h1>
-            <ul>
+            <ul id="gnb">
                 <li>COMPANY</li>
                 <li>TECHNOLOGY</li>
                 <li>SERVICE</li>
@@ -22,22 +31,34 @@
                 <li>CONTACT</li>
             </ul>
             <div class="wrap_hamburger">
-                <input class="checkbox" type="checkbox" name="" id="nav" />
+                <input type="checkbox" id="nav" name="nav" onclick="fnNav()" />
                 <label for="nav"></label>
             </div>
         </section>
-        <ul class="menu_items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">blogs</a></li>
-            <li><a href="#">portfolio</a></li>
-            <li><a href="#">contact</a></li>
-        </ul>
     </header>
 
 </body>
 <script src='http://code.jquery.com/jquery-latest.min.js'></script>
 <script>
+    function fnNav() {
+        const nav = document.getElementById("nav");
+        const gnb = document.getElementById("gnb");
+        if (nav.checked == true){
+            gnb.style.display = "block";
+        } else {
+            gnb.style.display = "none";
+        }
+    }
+
+    $( window ).resize( function() {
+        $('#nav').prop('checked', false); // Unchecks it
+        $('#gnb').css("display", "none");
+
+        if($(window).width() > 1024) { 	
+            $('#gnb').css("display", "flex");
+        } 
+    });
+
 
 </script>
 </html>

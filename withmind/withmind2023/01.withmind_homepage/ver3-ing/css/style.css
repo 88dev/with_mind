@@ -42,20 +42,160 @@ header .header ul li {
 header .header ul li a {
     cursor: pointer;
 }
-/* header .hamburger, header nav {
+header .header .wrap_hamburger #nav {
     display: none;
 }
+header .header .wrap_hamburger {
+    display: none;
+}footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #EBEBEB;
+}
+footer > section {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    width: 100%;
+    max-width: 1040px;
+    padding: 45px 0 50px
+}
+footer h2 {
+    background: url('../images/img_logo_withmind_gr.svg') no-repeat;
+    width: 124px;
+    height: 24px;
+}
+footer h2 a {
+    display: block;
+    text-indent: -9999px;
+}
+footer > section > section {
+    flex: 1;
+}
+footer ul li {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 22px;
+}
+footer ul li:first-of-type {
+    position: relative;
+    padding-right: 12px;
+    margin-right: 8px;
+    color: #808080;
+}
+footer ul li:first-of-type::after {
+    position: absolute;
+    content: '';
+    border-right: 1px solid #EBEBEB;
+    width: 1px;
+    height: 12px;
+    right: 0;
+    top: 4px;
+}
+footer ul li:last-of-type {
+    color: #333333;
+    font-weight: 600;
+}
+footer .info {
+    margin: 20px 0 24px;
+    color: #808080;
+    font-size: 13px;
+}
+footer .info .detail span + span {
+    position: relative;
+    padding-left: 12px;
+    margin-left: 8px;
+}
+footer .info .detail span + span::before {
+    position: absolute;
+    content: '';
+    border-left: 1px solid #EBEBEB;
+    width: 1px;
+    height: 12px;
+    left: 0;
+    top: 4px;
+}
+footer .info .detail span em {
+    color: #AAAAAA;
+    font-style: normal;
+}
+footer .info div + div {
+    margin-top: 6px;
+}   
+footer p {
+    color: #AAAAAA;
+    font-size: 13px;
+    font-weight: 600;
+}
 @media (max-width: 1024px) {
+    header {
+        padding: 0 40px;
+        background: #FFFFFF;
+    }
     header .header ul {
         display: none;
+        background: #FFFFFF;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 64px);
+        padding: 55px 40px;
     }
-    header .hamburger, header nav {
+    header .header ul li {
+        color: #333333;
+    }
+    header .header ul li:not(:first-of-type) {
+        margin-top: 70px;
+    }
+    header .header .wrap_hamburger {
+        display: block;
+        width: 32px;
+        height: 32px;
+    }
+    header .header .wrap_hamburger #nav + label {
+        display: block;
+        background: url('../images/icon_hamburger.png') no-repeat;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    }
+    header .header .wrap_hamburger #nav:checked + label {
+        background: url('../images/icon_close.png') no-repeat;
+    }
+    footer > section {
+        gap: 37px;
+        padding: 36px 40px;
+    }
+}
+@media (max-width: 650px) {
+    header {
+        padding: 0 20px;
+    }
+    header .header ul {
+        padding: 30px 20px;
+    }
+    footer > section {
+        flex-direction: column;
+        gap: 12px;
+        padding: 30px 20px;
+    }
+    footer .info {
+        margin: 12px 0;
+    }
+    footer .info .detail span {
         display: block;
     }
-} */
-@media (max-width: 650px) {
-
+    footer .info .detail span + span {
+        margin-top: 4px;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    footer .info .detail span::before {
+        display: none;
+    }
 }
+
 h2 {
     font-size: 40px;
     font-weight: 800;

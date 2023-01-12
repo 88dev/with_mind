@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0' />
+<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+<title></title>
+<style>
+    #nav, #gnb {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+    <input type="checkbox" id="nav" name="nav" onclick="fnNav()" />
+    <label for="nav">check</label>
+
+    <ul id="gnb">
+        <li>1</li>
+    </ul>
+
+    <div>121</div>
+
+</body>
+<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script>
+    // $(document).ready(function() {
+    //     console.log("check!!!");
+    //     if ($('#nav').is(':checked')) {
+    //         console.log("check");
+    //         $('.gnb').css('display', 'block')
+    //     }
+    // });
+
+
+    function fnNav() {
+        var nav = document.getElementById("nav");
+        var gnb = document.getElementById("gnb");
+        if (nav.checked == true){
+            gnb.style.display = "block";
+        } else {
+            gnb.style.display = "none";
+        }
+    }
+    
+</script>
+</html>

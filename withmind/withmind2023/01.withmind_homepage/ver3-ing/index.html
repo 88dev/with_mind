@@ -6,7 +6,7 @@
 <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
 <link rel='styleSheet' href='./css/reset.css' type='text/css'></link>
 <link rel='styleSheet' href='./css/style.css' type='text/css'></link>
-<link rel='styleSheet' href='./css/header.css' type='text/css'></link>
+<!-- <link rel='styleSheet' href='./css/header.css' type='text/css'></link> -->
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
@@ -21,35 +21,18 @@
     <header>
         <section class="header">
             <h1></h1>
-            <ul>
+            <ul id="gnb">
                 <li><a class="company">COMPANY</a></li>
                 <li><a class="technology">TECHNOLOGY</a></li>
                 <li><a class="service">SERVICE</a></li>
                 <li><a class="news">NEWS</a></li>
                 <li><a class="contact">CONTACT</a></li>
             </ul>
-            <!-- <div class="hamburger">
-                <input class="checkbox" type="checkbox" name="" id="" />
-                <div class="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
-                </div>  
-            </div> -->
-        </section>
-        <!-- <nav>
-            <div class="navbar">
-                <div class="container nav-container">                    
-                    <div class="menu-items">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">about</a></li>
-                        <li><a href="#">blogs</a></li>
-                        <li><a href="#">portfolio</a></li>
-                        <li><a href="#">contact</a></li>
-                    </div>
-                </div>
+            <div class="wrap_hamburger">
+                <input type="checkbox" id="nav" name="nav" onclick="fnNav()" />
+                <label for="nav"></label>
             </div>
-        </nav> -->
+        </section>
     </header>
     <section class="main_01">
         <section class="bg_video">
@@ -504,9 +487,35 @@
                 <h3>제휴 문의하기</h3>
                 <p>문의하실 내용을 보내주시면,<br>확인후 최대한 빠른 시일 내 답변을 드리도록 하겠습니다.</p>
             </div>
-            <a href="">문의하기 →</a>
+            <a href="./contact.html">문의하기 →</a>
         </section>
     </section>
+    <footer>
+        <section>
+            <h2><a href="./index.html">위드마인드</a></h2>
+            <section>
+                <ul>
+                    <li><a>이용약관</a></li>
+                    <li><a>개인정보처리방침</a></li>
+                </ul>
+                <div class="info">
+                    <div>(주)위드마인드</div>
+                    <div class="detail">
+                        <span>대표이사 : 주민성</span>
+                        <span>연구소 본점 : 대전광역시 유성구 가정로 218, 3층 302-2-3호</span>
+                        <span>서울지점 : 서울시 마포구 백범로 31길 21, 서울창업허브</span>
+                    </div>
+                    <div class="detail">
+                        <span>제휴문의 : info@withmind.net</span>
+                        <span>전화 : 02-313-7705 <em>평일 09:00 ~ 18:00 (주말, 공휴일 제외)</em></span>
+                        <span>사업자등록번호 : 794-87-00687</span>
+                        <span>통신판매업신고번호 : 2019-서울마포-2020호</span>
+                    </div>
+                </div>
+                <p>&copy; WITHMIND, ALL RIGHTS RESERVED.</p>
+            </section>
+        </section>
+    </footer>
 
 
 
@@ -514,7 +523,7 @@
 </body>
 <script src='./js/jquery-3.4.1.min.js'></script>
 <script type="text/javascript" src="./plugin/delighters.js"></script>
-<script src='./js/scroll.js'></script>
+<script src='./js/common.js'></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     
