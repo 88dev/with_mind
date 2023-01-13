@@ -11,6 +11,8 @@ function fnNav() {
 }
 
 $( window ).resize( function() {
+    console.log("resize");
+
     $('#nav').prop('checked', false);
     $('#gnb').css("display", "none");
 
@@ -44,6 +46,9 @@ $(document).ready(function() {
         $( 'body' ).css("overflow-y", "auto");
         $('#nav').prop('checked', false);
         $('#gnb').css("display", "none");
+        if($(window).width() > 1024) { 	
+            $('#gnb').css("display", "flex");
+        } 
     });
     $('.company').click(function(){
         var offset = $('#company').offset();
@@ -65,5 +70,7 @@ $(document).ready(function() {
         var offset = $('#contact').offset();
         $('html').animate({scrollTop : offset.top}, 400);
     });
+
+    
 
 });

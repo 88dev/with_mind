@@ -17,6 +17,8 @@ header {
     height: 64px;
     z-index: 100;
     border-bottom: 1px solid #FFFFFF;
+    
+    position: fixed;
 }
 header .header {
     display: flex;
@@ -30,6 +32,7 @@ header .header h1 {
     height: 24px;
 }
 header .header ul {
+    display: block;
     display: flex;
     gap: 70px;
 }

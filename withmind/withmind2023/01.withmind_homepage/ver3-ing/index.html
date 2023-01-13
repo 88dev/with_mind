@@ -374,7 +374,7 @@
     </section>
     <section class="main_09">
         <h2 class="tit">CLIENT</h2>
-        <p>이미 수많은 기업, 공공기관, 교육기관, 컨설팅 업체<br>가위드마인드와 함께하고 있습니다.</p>
+        <p>이미 수많은 기업, 공공기관, 교육기관, 컨설팅 업체가<br>위드마인드와 함께하고 있습니다.</p>
         <section class="wrap_marquee">
             <div class="marquee">
                 <div class="marquee__group">
@@ -526,9 +526,20 @@
 <script src='./js/common.js'></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    
 
     $(document).ready(function() {
+        
+        $(window).on('scroll',function(){
+            if($(window).scrollTop()){
+                $('header').css('background', '#FFFFFF');
+                $('header ul li').css('color', '#333333');
+                $('header').css('transition', '1s');
+            }else{
+                $('header').css('background', 'none');
+                $('header ul li').css('color', '#FFFFFF');
+                $('header').css('transition', '1s');
+            }
+        });
 
         $(".compete_title li").click(function() {
             var idx = $(this).index();
@@ -544,7 +555,10 @@
             $(".history_cont > section").hide();
             $(".history_cont > section").eq(idx).show();
         });
+
     });
+
     AOS.init();
+
 </script>
 </html>
