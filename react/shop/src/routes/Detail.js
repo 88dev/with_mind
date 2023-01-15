@@ -10,6 +10,11 @@ function Detail(props){
     let [탭, 탭변경] = useState(0)
 
 
+    // useEffect(()=>{
+        
+    // }, [])
+
+
     useEffect(()=>{
         let a = setTimeout(()=>{ setAlert(false)}, 2000);
         return()=>{
