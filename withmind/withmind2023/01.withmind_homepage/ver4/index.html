@@ -16,9 +16,9 @@
 </style>
 </head>
 <body>
-    <header>
+    <header class="off">
         <section class="header">
-            <h1></h1>
+            <h1 class="h1"></h1>
             <ul id="gnb">
                 <li><a class="btn_company">COMPANY</a></li>
                 <li><a class="btn_technology">TECHNOLOGY</a></li>
@@ -32,7 +32,7 @@
             </div>
         </section>
     </header>
-    <section class="main">
+    <section class="main" id="main">
         <section class="bg_video">
             <video class="bg_video__content" autoplay muted loop>
                 <source src="./video/withmind2.mp4" type="video/mp4" />
@@ -424,12 +424,12 @@
         
         $(window).on('scroll',function(){
             if($(window).scrollTop()){
-                $('header').css('background', '#FFFFFF');
-                $('header ul li').css('color', '#333333');
+                $('header').addClass("on");
+                $('header').removeClass("off");
                 $('header').css('transition', '1s');
             }else{
-                $('header').css('background', 'none');
-                $('header ul li').css('color', '#FFFFFF');
+                $('header').addClass("off");
+                $('header').removeClass("on");
                 $('header').css('transition', '1s');
             }
         });

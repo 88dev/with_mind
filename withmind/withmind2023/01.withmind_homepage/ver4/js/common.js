@@ -3,14 +3,14 @@ function fnNav() {
     const gnb = document.getElementById("gnb");
     if (nav.checked == true){
         gnb.style.display = "block";
-        $('header').css('background', '#FFFFFF');
-        $('header ul li').css('color', '#333333');
+        $('header').addClass("on");
+        $('header').removeClass("off");
         $( 'body' ).css("overflow-y", "hidden");
         $('header').css('transition', '0s');
     } else {
         gnb.style.display = "none";
-        $('header').css('background', 'none');
-        $('header ul li').css('color', '#FFFFFF');
+        $('header').addClass("off");
+        $('header').removeClass("on");
         $( 'body' ).css("overflow-y", "auto");
         $('header').css('transition', '0s');
     }
@@ -18,17 +18,18 @@ function fnNav() {
 
 $( window ).resize( function() {
 
-    $('header').css('background', 'none');
+    $('header').addClass("off");
+    $('header').removeClass("on");
     $('#nav').prop('checked', false);
     $('#gnb').css("display", "none");
 
     if($(window).width() > 1024) { 	
         $('#gnb').css("display", "flex");
     } else if($(window).scrollTop()) {
-        $('header').css('background', '#FFFFFF');
-        $('header ul li').css('color', '#333333');
+        $('header').removeClass("on");
+        $('header').addClass("off");
         $('header').css('transition', '1s');
-    }
+    } 
 
     
 });
@@ -42,6 +43,10 @@ $(document).ready(function() {
         if($(window).width() > 1024) { 	
             $('#gnb').css("display", "flex");
         } 
+    });
+    $('.h1').click(function(){
+        var offset = $('#main').offset();
+        $('html').animate({scrollTop : offset.top}, 400);
     });
     $('.btn_company').click(function(){
         var offset = $('#company').offset();
