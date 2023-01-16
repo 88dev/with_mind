@@ -50,7 +50,8 @@ header .header .wrap_hamburger #nav {
 }
 header .header .wrap_hamburger {
     display: none;
-}footer {
+}
+footer {
     display: flex;
     justify-content: center;
     border-top: 1px solid #EBEBEB;
@@ -291,6 +292,7 @@ h3 {
     display: block;
     text-align: center;
 }
+
 /* value animation */
 .wrap_curtain section {
     position: relative;

@@ -3,16 +3,23 @@ function fnNav() {
     const gnb = document.getElementById("gnb");
     if (nav.checked == true){
         gnb.style.display = "block";
+        $('header').css('background', '#FFFFFF');
+        $('header ul li').css('color', '#333333');
         $( 'body' ).css("overflow-y", "hidden");
+        $('header').css('transition', '0s');
     } else {
         gnb.style.display = "none";
+        $('header').css('background', 'none');
+        $('header ul li').css('color', '#FFFFFF');
         $( 'body' ).css("overflow-y", "auto");
+        $('header').css('transition', '0s');
     }
 }
 
 $( window ).resize( function() {
     console.log("resize");
 
+    $('header').css('background', 'none');
     $('#nav').prop('checked', false);
     $('#gnb').css("display", "none");
 
