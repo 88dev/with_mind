@@ -25,18 +25,13 @@ header {
     border-bottom: 1px solid #FFFFFF;
     
     position: fixed;
+    background: none;
 }
 header.on {
     background: #FFFFFF;
 }
-header.off {
-    background: none;
-}
-header.on ul li {
+header.on .header ul li a {
     color: #333333;
-}
-header.off ul li a {
-    color: #FFFFFF !important;
 }
 header.detail {
     background: #FFFFFF;
@@ -70,6 +65,7 @@ header .header ul li {
     font-weight: 500;
 }
 header .header ul li a {
+    color: #FFFFFF;
     cursor: pointer;
 }
 header .header .wrap_hamburger #nav {
@@ -161,7 +157,6 @@ footer p {
 @media (max-width: 1080px) {
     header {
         padding: 0 40px;
-        background: #FFFFFF;
     }
     header .header ul {
         display: none;

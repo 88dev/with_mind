@@ -16,7 +16,7 @@
 </style>
 </head>
 <body>
-    <header class="off">
+    <header>
         <section class="header">
             <h1 class="h1"></h1>
             <ul id="gnb">
@@ -97,7 +97,7 @@
             <h4>TECHNOLOGY</h4>
             <h2>기술력</h2>
             <p class="txt">총 8개의 AI엔진이 탑재된 AI 플랫폼 API를 통해,<br>위드마인드만의 차별화된 기술 서비스를 제공하고 있습니다.</p>
-            <section class="wrap_tech">
+            <section class="wrap_tech" data-aos="fade-up" data-aos-once="true">
                 <div>
                     <img src="./images/img_tech_01.svg" />
                     <span>표정분석 기술</span>
@@ -491,32 +491,6 @@
 <script src='./js/common.js'></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-
-    $(document).ready(function() {
-        
-        $(window).on('scroll',function(){
-            if($(window).scrollTop()){
-                $('header').addClass("on");
-                $('header').removeClass("off");
-                $('header').css('transition', '1s');
-            }else{
-                $('header').addClass("off");
-                $('header').removeClass("on");
-                $('header').css('transition', '1s');
-            }
-        });
-
-        $(".history_title li").click(function() {
-            var idx = $(this).index();
-            $(".history_title li").removeClass("on");
-            $(".history_title li").eq(idx).addClass("on");
-            $(".history_cont > section").hide();
-            $(".history_cont > section").eq(idx).show();
-        });
-
-    });
-
-    AOS.init();
 
 </script>
 </html>
