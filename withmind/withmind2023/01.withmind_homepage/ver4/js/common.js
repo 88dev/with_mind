@@ -1,5 +1,3 @@
-AOS.init();
-
 function fnNav() {
     const nav = document.getElementById("nav");
     const gnb = document.getElementById("gnb");
