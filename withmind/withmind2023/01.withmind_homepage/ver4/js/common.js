@@ -23,7 +23,7 @@ $( window ).resize( function() {
     $('#nav').prop('checked', false);
     $('#gnb').css("display", "none");
 
-    if($(window).width() > 1024) { 	
+    if($(window).width() > 1080) { 	
         $('#gnb').css("display", "flex");
     } else if($(window).scrollTop()) {
         $('header').removeClass("on");
