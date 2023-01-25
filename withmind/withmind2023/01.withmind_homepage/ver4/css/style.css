@@ -425,6 +425,7 @@ h3 {
     background: url('../images/img_main_04.png') center / cover;
     height: 960px;
     overflow: hidden;
+    margin-top: 80px;
 }
 .technology h2 {
     color: #FFFFFF;
@@ -977,6 +978,9 @@ h3 {
     }
     .wrap_value .wrap_flex .wrap_txt p {
         font-size: 15px;
+    }
+    .technology {
+        margin-top: 60px;
     }
     .technology .txt {
         font-size: 15px;
