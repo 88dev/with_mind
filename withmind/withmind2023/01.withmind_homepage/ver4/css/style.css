@@ -392,13 +392,30 @@ h3 {
     font-size: 16px;
     opacity: 0.8;
 }
+.technology {
+    position: relative;
+    /* background: url('../images/img_tech.png') no-repeat center, url('../images/img_main_04.png') center / cover; */
+    background: url('../images/img_main_04.png') center / cover;
+    height: 960px;
+    overflow: hidden;
+}
+.technology h2 {
+    color: #FFFFFF;
+}
 .technology .txt {
     margin-top: 12px;
-    color: #808080;
+    color: #FFFFFF;
     font-size: 20px;
     line-height: 26px;
 }
-.technology .wrap_tech {
+.technology img {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    mix-blend-mode: screen;
+}
+/* .technology .wrap_tech {
     display: flex;
     flex-wrap: wrap;
     margin-top: 36px;
@@ -419,7 +436,7 @@ h3 {
 .technology .wrap_tech div span {
     font-size: 18px;
     font-weight: 600;
-}
+} */
 .service {
     background: #F6F6F6;
 }
@@ -549,10 +566,6 @@ h3 {
 .history_cont .wrap_flex div:last-of-type > b {
     color: #5B9BD5;
 }
-.history_cont > section:nth-of-type(1) .wrap_flex div:last-of-type > b {
-    color: #3B61D5;
-
-}
 .history_cont .wrap_flex ul li {
     margin-top: 10px;
     color: #808080;
@@ -681,7 +694,7 @@ h3 {
     object-fit: cover;
 }
 .client .wrap_marquee .marquee--reverse .marquee__group {
-    animation: rolling 50s linear infinite;
+    animation: rolling 60s linear infinite;
     animation-direction: reverse;
     animation-delay: calc(var(--duration) / -2);
 }
@@ -829,15 +842,16 @@ h3 {
         width: 220px;
         text-align: left;
     }
-    .technology .wrap_tech {
+    /* .technology .wrap_tech {
         justify-content: center;
         gap: 20px 16px;
     }
     .technology .wrap_tech div {
         width: 150px;
         height: 180px;
-    }
+    } */
     .service .wrap_item .wrap_txt {
+        height: 140px;
         padding: 20px;
     }
     .service .wrap_item .wrap_txt strong {
@@ -926,13 +940,13 @@ h3 {
         margin: 40px 0 24px;
         text-align: center;
     }
-    .technology .wrap_tech {
+    /* .technology .wrap_tech {
         gap: 0 35px;
     }
     .technology .wrap_tech div {
         width: 150px;
         height: 150px;
-    }
+    } */
     .service h2 + h5 {
         margin-top: 24px;
     }
@@ -1027,9 +1041,6 @@ h3 {
 
 
 /* news */
-.news {
-    background: url('../images/img_news_bg.jpg');
-}
 .news-view .news-head {
     text-align: center;
 }
