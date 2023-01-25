@@ -1126,11 +1126,12 @@ h3 {
     margin: 24px 0 100px;
     padding-top: 36px;
 }
-.news-view .news-btn button {
+.news-view .news-btn a {
     display: block;
     background: #FFFFFF;
     width: 87px;
     height: 48px;
+    line-height: 48px;
     margin: 0 auto;
     color: #AAAAAA;
     font-size: 15px;
@@ -1139,7 +1140,7 @@ h3 {
     text-decoration: none;
     border-radius: 8px;
 }
-.news-view .news-btn button:hover {
+.news-view .news-btn a:hover {
     background: #F4F4F4;
 }
 @media (max-width: 650px) { 
