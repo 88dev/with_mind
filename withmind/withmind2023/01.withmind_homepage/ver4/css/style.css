@@ -154,7 +154,7 @@ footer p {
     font-size: 13px;
     font-weight: 600;
 }
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
     header {
         padding: 0 40px;
     }
@@ -245,9 +245,6 @@ h3 {
     margin: 0 auto;
     padding: 100px 0;
 }
-.competition, .main_04, .technology {
-    background: #FFFFFF;
-}
 .main {
     position: relative;
     background: none;
@@ -285,37 +282,75 @@ h3 {
     font-size: 20px;
 }
 .main .wrap_txt strong {
-    margin: 4px 0 12px;
-    font-size: 50px;
-    font-weight: 800;
+    margin-top: 12px;
+    font-size: 60px;
+    font-weight: 700;
     line-height: 60px;
 }
 .competition {
-    text-align: center;
+    background: url('../images/img_main_02.png') no-repeat left bottom;
+    height: 736px;
+    text-align: left;
 }
-.competition hr {
-    width: 1px;
-    height: 44px;
-    margin: 0 auto;
-    border-left: 1px solid #222222;
+.competition h2 {
+    font-weight: 700;
 }
-.competition h3 {
+.competition .inner {
+    display: flex;
+    gap: 180px;
+}
+.competition .wrap_cont {
+    width: 400px;
+}
+.competition .wrap_cont b {
+    position: relative;
     display: block;
-    margin-top: 30px;
-    line-height: 45px;
+    padding-top: 92px;
+    font-weight: 600;
+    font-size: 30px;
 }
-.competition p {
-    margin-top: 12px;
-    color: #808080;
+.competition .wrap_cont b::before {
+    content: '';
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    top: 0;
+}
+.competition .wrap_cont div:first-of-type b::before {
+    background: url('../images/icon_tech_01.svg') no-repeat;
+}
+.competition .wrap_cont div:last-of-type {
+    margin-top: 50px;
+}
+.competition .wrap_cont div:last-of-type b::before {
+    background: url('../images/icon_tech_02.svg') no-repeat;
+}
+.competition .wrap_cont b span {
+    display: block;
+    margin-bottom: 12px;
     font-size: 18px;
-    line-height: 26px;
+    font-weight: 400;
 }
+.competition .wrap_cont p {
+    margin-top: 18px;
+    color: #808080;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
+
+
 .value h2, .value h4 {
     display: block;
     text-align: center;
 }
 
 /* value animation */
+.value {
+    padding-top: 80px;
+}
 .wrap_curtain section {
     position: relative;
 }
@@ -604,6 +639,7 @@ h3 {
     box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.04);
 }
 .news .wrap_item .item .wrap_img {
+    position: relative;
     width: 100%;
     height: 200px;
     overflow: hidden;
@@ -615,6 +651,19 @@ h3 {
 }
 .news .wrap_item .item:hover img {
     transform: scale(1.1);
+}
+.news .wrap_item .item .cover {
+    display: none;
+}
+.news .wrap_item .item:hover .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background: rgba(76, 153, 211, 0.72) url('../images/img_news_txt.svg') no-repeat center / 86px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
 }
 .news .wrap_item .item .wrap_tit {
     padding: 16px 20px 24px;
@@ -657,7 +706,7 @@ h3 {
     text-align: center;
 }
 .client .wrap_marquee {
-    --space: 65px;
+    --space: 40px;
 
     display: grid;
     align-content: center;
@@ -690,7 +739,7 @@ h3 {
     }
 }
 .client .wrap_marquee .marquee .marquee__group img {
-    width: 130px;
+    width: 150px;
     object-fit: cover;
 }
 .client .wrap_marquee .marquee--reverse .marquee__group {
@@ -808,7 +857,7 @@ h3 {
 
 
 /* 테블릿 */
-@media (max-width: 1080px) { 
+@media (max-width: 1280px) { 
     h2.tit + h2 {
         padding: 0 60px;
     }
@@ -818,9 +867,22 @@ h3 {
     .main > section {
         padding: 0 60px;
     }
-    .competition p {
-        margin-top: 16px;
+    .competition {
+        background: url('../images/img_main_02.png') no-repeat left -250px bottom -100px;
+        height: 812px;
     }
+    .competition .inner {
+        flex-direction: column;
+        gap: 0;
+    }
+    .competition .wrap_cont {
+        width: 100%;
+    }
+    .competition .wrap_cont div {
+        margin-top: 36px;
+    }
+
+
     .value .box {
         display: none;
     }
@@ -877,6 +939,12 @@ h3 {
     .history_cont > section:nth-of-type(3) .wrap_flex div:first-of-type span {
         background: url('../images/img_history_03.png') no-repeat center / cover;
     }
+    .client .wrap_marquee .marquee .marquee__group {
+        gap: 36px;
+    }
+    .client .wrap_marquee .marquee .marquee__group img {
+        width: 100px;
+    }
     .contact .wrap_map {
         flex-direction: column;
         gap: 60px;
@@ -909,17 +977,36 @@ h3 {
         padding: 60px 20px;
     }
     .main > section {
-        justify-content: center;
-        text-align: center;
+        justify-content: center;    
+        padding: 0 20px;
     }
-    .competition h3 {
+    .main .wrap_txt span {
+        font-size: 15px;
+    }
+    .main .wrap_txt strong {
+        font-size: 32px;
+    }
+    .competition {
+        background: url('../images/img_main_02_m.png') no-repeat left 0px top 130px;
+        height: 687px;
+    }
+    .competition .wrap_cont div {
         margin-top: 24px;
     }
-    .competition h3 + p {
-        margin-top: 24px;
+    .competition .wrap_cont b {
+        font-size: 20px;
     }
-    .competition p {
+    .competition .wrap_cont b span {
+        margin-bottom: 4px;
+        font-size: 16px;
+    }
+    .competition .wrap_cont p {
         margin-top: 12px;
+        font-size: 15px;
+    }
+
+    .value {
+        padding-top: 60px;
     }
     .wrap_value .wrap_flex {
         padding: 0 30px;
@@ -1327,7 +1414,7 @@ h3 {
     font-weight: 600;
 }
 
-@media (max-width: 1080px) { 
+@media (max-width: 1280px) { 
     .contact .group .wrap_flex span {
         width: 100%;
     }

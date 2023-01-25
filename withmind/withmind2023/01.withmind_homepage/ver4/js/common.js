@@ -19,7 +19,7 @@ $( window ).resize( function() {
     $('#nav').prop('checked', false);
     $('#gnb').css("display", "none");
 
-    if($(window).width() > 1080) { 	
+    if($(window).width() > 1280) { 	
         $('#gnb').css("display", "flex");
     }
 
