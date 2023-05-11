@@ -1,0 +1,385 @@
+/* 모바일 */
+
+body.locked{
+    overflow: hidden;
+}
+.mall-modal{
+    position: fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    z-index: 9999;
+    display: none;
+}
+
+.mall-modal.show{
+    display: block;
+}
+
+.mall-modal .bg{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0 ,0 ,0, .7);
+}
+
+.mall-modal .modal-body{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    width : 70vw;
+    background-color :#FFF;
+    border-radius : 10px;
+    padding: 40px 24px;
+    transform : translate( -50% , -50%);
+    display: flex;
+    align-items: center;
+    justify-content : center;
+    flex-direction : column;
+}
+
+.mall-modal .modal-body img{
+    content: url('../img/img-alert-01.png');
+    margin-bottom : 20px;
+}
+
+.mall-modal .modal-body button.btn-close-modal{
+    position: absolute;
+    top : 24px;
+    right : 24px;
+    width : 24px;
+    height : 24px;
+    background-color : transparent;
+}
+
+.mall-modal .modal-body button.btn-close-modal span:first-child{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    width: 1px;
+    height : 20px;
+    background-color: #333;
+    transform : translate( -50% , -50%) rotate(45deg);
+}
+
+.mall-modal .modal-body button.btn-close-modal span:last-child{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    width: 1px;
+    height : 20px;
+    background-color: #333;
+    transform : translate( -50% , -50%) rotate(-45deg);
+}
+
+.mall-modal .modal-body p.txt-a{
+    color : rgba(51, 51, 51, 1);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.mall-modal .modal-body p.txt-b{
+    color : rgba(85, 85, 85, 1);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -1px;
+    text-align: center;
+
+}
+
+
+.container .wrap footer .nm {
+    margin-bottom : 5vw; /* edit by buck */
+}
+
+.container .wrap footer .info {
+    text-align: unset;
+    display: flex;
+    gap : 3vw;
+}
+
+.container .wrap footer .footer-body {
+    position: unset;
+    left: 50%;
+    top: 5.31818182rem;
+}
+
+.container .wrap footer .footer-body p{
+    color : rgba(153, 153, 153, 1);
+    font-size:  3.33333333vw;
+    font-weight: 500;
+    line-height: 5.3vw;
+    letter-spacing: -0.01em;
+    text-align: left;
+    word-break: keep-all;
+}
+
+.container .wrap footer .footer-body p.txt-a{
+    max-width: 24rem;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    body.locked{
+        overflow: hidden;
+    }
+    .mall-modal{
+        position: fixed;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        display: none;
+    }
+
+    .mall-modal.show{
+        display: block;
+    }
+
+    .mall-modal .bg{
+        position: absolute;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        background-color : rgba(0 ,0 ,0, .7);
+    }
+
+    .mall-modal .modal-body{
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        width : calc(420px - 48px);
+        background-color :#FFF;
+        border-radius : 10px;
+        padding: 40px 24px;
+        transform : translate( -50% , -50%);
+        display: flex;
+        align-items: center;
+        justify-content : center;
+        flex-direction : column;
+    }
+
+    .mall-modal .modal-body img{
+        content: url('../img/img-alert-01.png');
+        margin-bottom : 20px;
+    }
+
+    .mall-modal .modal-body button.btn-close-modal{
+        position: absolute;
+        top : 24px;
+        right : 24px;
+        width : 24px;
+        height : 24px;
+        background-color : transparent;
+    }
+
+    .mall-modal .modal-body button.btn-close-modal span:first-child{
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        width: 1px;
+        height : 20px;
+        background-color: #333;
+        transform : translate( -50% , -50%) rotate(45deg);
+    }
+
+    .mall-modal .modal-body button.btn-close-modal span:last-child{
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        width: 1px;
+        height : 20px;
+        background-color: #333;
+        transform : translate( -50% , -50%) rotate(-45deg);
+    }
+
+    .mall-modal .modal-body p.txt-a{
+        color : rgba(51, 51, 51, 1);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        letter-spacing: -1px;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    .mall-modal .modal-body p.txt-b{
+        color : rgba(85, 85, 85, 1);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: -1px;
+        text-align: center;
+    }
+
+    .container .wrap footer .footer-body {
+        position: unset;
+        left: 50%;
+        top: 5.31818182rem;
+    }
+
+    .container .wrap footer .footer-body p{
+        color : rgba(153, 153, 153, 1);
+        font-size:  1.82291667vw;
+        font-weight: 500;
+        line-height: 2.4vw;
+        letter-spacing: -0.01em;
+        text-align: left;
+        word-break: keep-all;
+    }
+
+    .container .wrap footer .footer-body p.txt-a{
+        margin-bottom : 1rem;
+        max-width: 40rem;
+    }
+
+    .popup .holder .inner {
+        height: auto;
+    }
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+
+    body.locked{
+        overflow: hidden;
+    }
+
+    .mall-modal{
+        position: fixed;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        z-index: 9999;
+        display: none;
+    }
+    .mall-modal.show{
+        display: block;
+    }
+
+    .mall-modal .bg{
+        position: absolute;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        background-color : rgba(0 ,0 ,0, .7);
+    }
+
+    .mall-modal .modal-body{
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        width : calc(420px - 48px);
+        background-color :#FFF;
+        border-radius : 10px;
+        padding: 40px 24px;
+        transform : translate( -50% , -50%);
+        display: flex;
+        align-items: center;
+        justify-content : center;
+        flex-direction : column;
+    }
+
+    .mall-modal .modal-body img{
+        content: url('../img/img-alert-01.png');
+        margin-bottom : 20px;
+    }
+
+    .mall-modal .modal-body button.btn-close-modal{
+        position: absolute;
+        top : 24px;
+        right : 24px;
+        width : 24px;
+        height : 24px;
+        background-color : transparent;
+    }
+
+    .mall-modal .modal-body button.btn-close-modal span:first-child{
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        width: 1px;
+        height : 20px;
+        background-color: #333;
+        transform : translate( -50% , -50%) rotate(45deg);
+    }
+
+    .mall-modal .modal-body button.btn-close-modal span:last-child{
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        width: 1px;
+        height : 20px;
+        background-color: #333;
+        transform : translate( -50% , -50%) rotate(-45deg);
+    }
+
+    .mall-modal .modal-body p.txt-a{
+        color : rgba(51, 51, 51, 1);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        letter-spacing: -1px;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    .mall-modal .modal-body p.txt-b{
+        color : rgba(85, 85, 85, 1);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: -1px;
+        text-align: center;
+
+    }
+
+    .container .wrap footer .footer-body {
+        position: absolute;
+        left: 50%;
+        margin-left: -29.09090909rem;
+        top: 4.81818182rem;
+    }
+
+    .container .wrap footer .footer-body p{
+        color : rgba(153, 153, 153, 1);
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        word-break: keep-all;
+    }
+
+    .container .wrap footer .footer-body p.txt-a{
+        margin-bottom : 1rem;
+        max-width: 46rem;
+    }
+
+    .popup .holder .inner {
+        width: 44.36363636rem;
+        margin-left: -22.18181818rem;
+    }
+
+    .container .wrap footer {
+        height: 12.36363636rem; /* edit by buck */
+    }
+}
